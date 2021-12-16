@@ -1,0 +1,15 @@
+{
+  "name": "DBC-Wiki",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DeepBrainChain/DBC-Wiki.git",
+  "author": "kaigedong <dongkaige@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.27"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
