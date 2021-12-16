@@ -2,10 +2,29 @@ module.exports = {
   lang: "zh-CN",
   title: "DBC-Wiki",
   description: "这是DBC-Wiki站点",
-
+  locales: {
+    "/": {
+      lang: "zh-CN",
+      title: "DBC-Wkik",
+      description: "Vue 驱动的静态网站生成器",
+    },
+    "/en/": {
+      lang: "en-US",
+      title: "DBC-Wiki",
+      description: "Vue-powered Static Site Generator",
+    },
+  },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   themeConfig: {
     logo: "/images/dbc.icon.png",
+    locales: {
+      "/": {
+        selectLanguageName: "简体中文",
+      },
+      "/en": {
+        selectLanguageName: "English",
+      },
+    },
     navbar: [
       // NavbarItem
       {
@@ -14,7 +33,6 @@ module.exports = {
         children: [
           "/onchain-guide/bonding_machine.md",
           "/onchain-guide/Machine_verification.md",
-          "/onchain-guide/machine_online_en.md",
           "/onchain-guide/maintain_machine.md",
         ],
       },
@@ -23,32 +41,22 @@ module.exports = {
         link: "/onchain-api",
         children: ["/onchain-api/Custom_RPC.md"],
       },
-
-      // NavbarGroup
-      {
-        text: "Group",
-        link: "/onchain-guide",
-        children: ["/group/foo.md", "/group/bar.md"],
-      },
-      // 字符串 - 页面文件路径
-      // "/bar/README.md",
     ],
     sidebar: {
       "/onchain-guide/": [
         {
-          text: "Guide",
+          text: "OnchainGuide",
           children: [
             "/onchain-guide/maintain_machine.md",
             "/onchain-guide/bonding_machine.md",
-            "/onchain-guide/machine_online_en.md",
             "/onchain-guide/Machine_verification.md",
           ],
         },
       ],
-      "/reference/": [
+      "/onchain-api/": [
         {
-          text: "Reference",
-          children: ["/reference/cli.md", "/reference/config.md"],
+          text: "OnchainAPI",
+          children: ["/onchain-api/Custom_RPC.md"],
         },
       ],
     },
