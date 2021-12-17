@@ -16,21 +16,13 @@ module.exports = {
   },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   themeConfig: {
-    logo: "/images/dbc.icon.png",
-    locales: {
-      "/": {
-        selectLanguageName: "简体中文",
-      },
-      "/en": {
-        selectLanguageName: "English",
-      },
-    },
     navbar: [
       // NavbarItem
       {
         text: "链上操作说明",
         link: "/onchain-guide",
         children: [
+          "/onchain-guide/generate_new_account.md",
           "/onchain-guide/bonding_machine.md",
           "/onchain-guide/Machine_verification.md",
           "/onchain-guide/maintain_machine.md",
@@ -47,6 +39,7 @@ module.exports = {
         {
           text: "OnchainGuide",
           children: [
+            "/onchain-guide/generate_new_account.md",
             "/onchain-guide/maintain_machine.md",
             "/onchain-guide/bonding_machine.md",
             "/onchain-guide/Machine_verification.md",
@@ -59,6 +52,15 @@ module.exports = {
           children: ["/onchain-api/Custom_RPC.md"],
         },
       ],
+    },
+    logo: "/images/dbc.icon.png",
+    locales: {
+      "/": {
+        selectLanguageName: "简体中文",
+      },
+      "/en": {
+        selectLanguageName: "English",
+      },
     },
   },
   base: "/DBC-Wiki/",
