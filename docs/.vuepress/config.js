@@ -64,22 +64,4 @@ module.exports = {
     },
   },
   base: "/DBC-Wiki/",
-  plugins: [
-    [
-      "@vuepress/plugin-search",
-      {
-        // 排除首页
-        isSearchable: (page) => page.path !== "/",
-        locales: {
-          "/": {
-            placeholder: "搜索",
-          },
-          "/en/": {
-            placeholder: "Search",
-          },
-        },
-        getExtraFields: (page) => page.frontmatter.tags ?? ["method", "params"],
-      },
-    ],
-  ],
 };
