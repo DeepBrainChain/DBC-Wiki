@@ -20,7 +20,7 @@ GPU 机器上线，可以获得在线奖励。本文介绍机器的上线步骤�
 
 点击`开发者`--`交易`，如下图选择`onlineProfile`模块的`setController`方法，分别选择`资金账户`和`控制账户`，点击右下角"提交交易"，进行绑定。
 
-![image-20210629104434008](./bonding_machine.assets/image-20210629104434008.png)
+<img src="./bonding_machine.assets/image-20210629104434008.png" width="50%" height="50%">
 
 > 如上图，BOB_STASH 账户(`资金账户`) 将 DAVE 账户设置为了`控制账户`。
 >
@@ -32,7 +32,7 @@ GPU 机器上线，可以获得在线奖励。本文介绍机器的上线步骤�
 
 如下图，当资金账户绑定成功控制账户后，可以通过`开发者`--`链状态`，选择`onlineProfile`模块的`controllerStash`存储，来查询`控制账户`对应的资金账户。下图，查询到了一个控制账户对应的资金账户。
 
-![image-20210714140945243](./bonding_machine.assets/image-20210714140945243.png)
+<img src="./bonding_machine.assets/image-20210714140945243.png" width="50%" height="50%">
 
 ## 2. 机器生成签名消息
 
@@ -80,13 +80,13 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 导航到：`开发者`--`交易`，如下图选择`onlineProfile`模块的`bondMachine`方法。使用`控制账户`，将`机器ID`(`MachineId`)与`控制账户`进行绑定即可。参数填写如下图：
 
-![image-20210707140400114](./bonding_machine.assets/image-20210707140400114.png)
+<img src="./bonding_machine.assets/image-20210707140400114.png" width="50%" height="50%">
 
 ### 2.4 查询机器是否绑定成功
 
 完成上一步后，可以通过`开发者`--`链状态`--`onlineProfile`--`liveMachines`查询系统中的机器。如下图，查询到一台机器已被绑定。接下来需要补充机器信息
 
-![image-20210714141352887](./bonding_machine.assets/image-20210714141352887.png)
+<img src="./bonding_machine.assets/image-20210714141352887.png" width="50%" height="50%">
 
 ## 3. `控制账户`生成机房信息
 
@@ -98,19 +98,19 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 ### 3.1 操作：链上生成新的机房信息
 
-![image-20210817114537368](./bonding_machine.assets/image-20210817114537368.png)
+<img src="./bonding_machine.assets/image-20210817114537368.png" width="50%" height="50%">
 
 ### 3.2 查询资金账户下生成的机房记录
 
 导航到`开发者`--`链状态`，通过`资金账户`，查看**资金账户**下绑定的机房：下图生成了两个机房，查询参数为资金账户。
 
-![image-20210817114925965](./bonding_machine.assets/image-20210817114925965.png)
+<img src="./bonding_machine.assets/image-20210817114925965.png" width="50%" height="50%">
 
 ## 4. `控制账户`添加机器信息
 
 `控制账户`还需要补充机器信息：导航到`开发者`--`交易`--`onlineProfile`--`addMachineInfo`
 
-![image-20210817115411030](./bonding_machine.assets/image-20210817115411030.png)
+<img src="./bonding_machine.assets/image-20210817115411030.png" width="50%" height="50%">
 
 - 参数说明：
   - server_name: 选择上一步生成的机房 ID
@@ -128,13 +128,13 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 其中，`can_claim_reward`为能够领取的奖励，`left_reard`为之前每天获得奖励的剩余部分（剩下的 75%，这 75%将在随后的 150 天线性释放）。
 
-![image-20210623143656481](./bonding_machine.assets/image-20210623143656481.png)
+<img src="./bonding_machine.assets/image-20210623143656481.png" width="50%" height="50%">
 
 #### 5.2. 领取奖励
 
 使用**控制账户**领取即可，奖励将发放到**`资金账户`**。
 
-![image-20210623144049700](./bonding_machine.assets/image-20210623144049700.png)
+<img src="./bonding_machine.assets/image-20210623144049700.png" width="50%" height="50%">
 
 ## 6. 查询账户绑定的机器
 
