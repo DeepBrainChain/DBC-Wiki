@@ -1,6 +1,6 @@
 # 如何生成账户
 
-## 方式1: 通过命令行生成账户
+## 方式 1: 通过命令行生成账户
 
 `subkey generate --scheme sr25519`，生成账户，输出内容如下：
 
@@ -27,7 +27,7 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 
 ## 使用命令行工具 subkey,将助记词转私钥种子
 
-链上的一些操作，有时候会需要使用私钥来签名。在保存了助记词时，可以通过subkey来将助记词转换成私钥。
+链上的一些操作，有时候会需要使用私钥来签名。在保存了助记词时，可以通过 subkey 来将助记词转换成私钥。
 
 ```
 subkey inspect "grief cabin hint replace chalk recall alpha crunch vacant range success rent"
@@ -45,4 +45,3 @@ Secret phrase `grief cabin hint replace chalk recall alpha crunch vacant range s
 ```
 
 其中，`Secret seed`即为私钥种子
-
