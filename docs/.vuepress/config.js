@@ -40,9 +40,9 @@ module.exports = {
           text: "OnchainGuide",
           children: [
             "/onchain-guide/generate_new_account.md",
-            "/onchain-guide/maintain_machine.md",
             "/onchain-guide/bonding_machine.md",
             "/onchain-guide/Machine_verification.md",
+            "/onchain-guide/maintain_machine.md",
           ],
         },
       ],
