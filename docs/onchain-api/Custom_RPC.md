@@ -19,7 +19,7 @@
 
 例如，利用 Postman 连接 websocket 查询机器信息：
 
-![image-20210630233136723](Custom_RPC.assets/image-20210630233136723.png)
+![image-20210630233136723](./Custom_RPC.assets/image-20210630233136723.png)
 
 #### 查询在线奖励模块资金账户数量
 

@@ -1,0 +1,434 @@
+# DBC-Blockchain主网 RPC
+
+> 发送RPC请求的方式，请参考上一篇文章
+
+所有DBC RPC方法
+
+- [x] onlineProfile_getMachineEraReleasedReward
+- [x] onlineProfile_getMachineEraReward
+- [x] onlineProfile_getMachineInfo
+- [ ] onlineProfile_getMachineList
+- [ ] onlineProfile_getOpInfo
+- [ ] onlineProfile_getPosGpuInfo
+- [ ] onlineProfile_getStakerIdentity
+- [x] onlineProfile_getStakerInfo
+- [ ] onlineProfile_getStakerListInfo
+- [x] onlineProfile_getStakerNum
+- [x] onlineProfile_getStashEraReleasedReward
+- [x] onlineProfile_getStashEraReward
+
+
+
+- [ ] committee_getCommitteeList
+
+
+
+- [ ] onilneCommittee_getCommitteeMachineList
+- [ ] onlineCommittee_getCommitteeOps
+- [ ] onlineCommittee_getMachineCommitteeList
+
+
+
+- [x] rentMachine_getRentList
+- [x] rentMachine_getRentOrder
+
+## 1. onlineProfile模块
+
+onlineProfile 模块记录了机器在线奖励的信息
+
+### 1.1 查询某个资金账户控制的所有机器
+
++ 示例
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineProfile_getStakerInfo",
+      "params": ["5FEio5dgXeXsASdo3Wh5DQ8zfbRfQJTXYmFkCbSCFk2qsTt6"] # 资金账户 (stash account)
+}
+```
+
++ 结果说明
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bondedMachines": [
+            {
+                "calcPoint": 51775, # 机器算力点数
+                "gpuNum": 4, # 机器GPU数量
+                "machineId": [53,97,53,51,52,...], # 机器ID
+                "machineStatus": "online" # 机器当前状态
+            },
+            {
+                "calcPoint": 51775,
+                "gpuNum": 4,
+                "machineId": [97, 52, 100, 98, 98,...],
+                "machineStatus": "online"
+            },
+            {
+                "calcPoint": 94143,
+                "gpuNum": 4,
+                "machineId": [100, 56, 54, 97, 101, 53,...],
+                "machineStatus": "online"
+            }
+        ],
+        "stashStatistic": {
+            "canClaimReward": "664079816723400000", # 可以领取的DBC奖励
+            "onlineMachine": [ # 在线的机器
+                [53,97,53,51,52,...],
+                [97, 52, 100, 98, 98,...],
+                [100, 56, 54, 97, 101, 53,...]
+            ],
+            "totalBurnFee": "0", # 银河竞赛开启后，销毁的租金数
+            "totalCalcPoints": 197930, # 总算力点数
+            "totalClaimedReward": "0", # 已经领取的奖励
+            "totalEarnedReward": "2656319266893600000", # 已经获得的奖励
+            "totalGpuNum": 12, # 总绑定的GPU数量
+            "totalMachine": [ # 绑定的机器
+                [53, 97, 53, 51, 10,...],
+                [97, 52, 100, 98, 98, 100,...],
+                [100, 56, 54, 97, 101,...]
+            ],
+            "totalRentFee": "0", # 获得的机器租金
+            "totalRentedGpu": 0 # 被租用的GPU数量
+        }
+    },
+    "id": 1
+}
+```
+
+
+
+### 1.2 查询机器某个 Era 获得收益
+
+- 示例
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "onlineProfile_getMachineEraReward",
+    "params": [
+      "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", # 机器ID
+      1  # 第几个Era
+    ]
+  }
+  ```
+
+- 结果说明
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "result": "123456", # Era 1该机器获取的总奖励数量
+    "id": 1
+  }
+  ```
+
+### 3. 查询机器某个 Era 解锁收益
+
+- 示例
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "onlineProfile_getMachineEraReleasedReward",
+    "params": [
+      "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", 1] # 机器ID；第几个Era
+  }
+  ```
+
+- 结果
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "result": "123456", # Era 1 该机器解锁的奖励
+    "id": 1
+  }
+  ```
+
+### 4. 查询资金账户某个 Era 获得收益
+
+- 示例：
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "onlineProfile_getStashEraReward",
+    "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+  }
+  ```
+
+- 结果：
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "result": "123456", # Era 1 该资金账户获得的奖励
+    "id": 1
+  }
+  ```
+
+### 5. 查询资金账户某个 Era 解锁奖励
+
+- 示例：
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "onlineProfile_getStashEraReward",
+    "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+  }
+  ```
+
+- 结果：
+
+  ```json
+  {
+    "jsonrpc": "2.0",
+    "result": "123456", # Era 1 该资金账户解锁的奖励
+    "id": 1
+  }
+  ```
+
+### 6. 查询机器详细信息
+
++ 示例：
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineProfile_getMachineInfo",
+      "params": ["ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875"] # 机器ID
+}
+```
+
++ 结果
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bondingHeight": 531155, # 开始上链时间
+        "controller": "5FTWuKEDhPsRWaeK5Jfn68a6rEFPsW8AAVF5YtfqNrznTWfv", # 机器控制账户
+        "initStakePerGpu": "100000000000000000000", # 上链时每卡质押数量
+        "lastMachineRenter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # 最后一个机器租用人
+        "lastMachineRestake": 537808, # 机器付全部质押时间
+        "lastOnlineHeight": 580412, # 机器最后一次状态为online的时间
+        "machineInfoDetail": { # 机器详细信息
+            "committee_upload_info": {
+                "calc_point": 60775,
+                "cpu_core_num": 64,
+                "cpu_rate": 2900,
+                "cpu_type": [73,110,116,101,...],
+                "cuda_core": 8704,
+                "data_disk": 1800,
+                "gpu_mem": 10,
+                "gpu_num": 4,
+                "gpu_type": [71,101,70,111,114,...],
+                "is_support": true,
+                "machine_id": [101,101,48,100,48,48,51,...],
+                "mem_num": 471,
+                "rand_str": [],
+                "sys_disk": 350
+            },
+            "staker_customize_info": { # 机器其他信息
+                "download_net": 20,
+                "latitude": {
+                    "North": 306667
+                },
+                "longitude": {
+                    "East": 1040667
+                },
+                "server_room": "0x6465f54d26f4b406261e7e5201a4a17551ad4d27448609f2d7cdcb75b413524c",
+                "telecom_operators": [
+                    [67,104,105,110,...]
+                ],
+                "upload_net": 20
+            }
+        },
+        "machineStash": "5HWSG8FXkCSe4NgwzbnA64nT5bmRFKRKgbSKj2X8Pe7KyYcQ", # 机器资金账户
+        "machineStatus": "rented", # 机器当前状态
+        "onlineHeight": 537808, # 机器上线时间
+        "rewardCommittee": [ # 可以获得机器在线奖励的委员会列表
+            "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
+            "5G3oJ8cGv4mhzRvtoBtGG9cX3MTNKxNTcMNAVykxA5ZFz8wi",
+            "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX"
+        ],
+        "rewardDeadline": 733, # 委员会奖励结束时间（era）
+        "stakeAmount": "400000000000000000000", # 机器质押数量
+        "totalBurnFee": "0", # 因银河竞赛开启，销毁的租金数
+        "totalRentFee": "60329673396778369975", # 总租金数
+        "totalRentedDuration": 14, # 被租用时长
+        "totalRentedTimes": 2 # 被租用次数
+    },
+    "id": 1
+}
+```
+
+
+
+### 7. 查询链上历史币价
+
+TODO:
+
+<details>
+  <summary>committee_getCommitteeList</summary>
+
+说明：
+
+例子:
+
+</details>
+
+```bash
+committee_getCommitteeList
+
+onilneCommittee_getCommitteeMachineList
+onlineCommittee_getCommitteeOps
+onlineCommittee_getMachineCommitteeList
+
+onlineProfile_getStashEraReward
+onlineProfile_getStashEraReleasedReward
+onlineProfile_getMachineEraReward
+onlineProfile_getMachineEraReleasedReward
+
+onlineProfile_getMachineInfo
+onlineProfile_getMachineList
+onlineProfile_getOpInfo
+onlineProfile_getPosGpuInfo
+onlineProfile_getStakerIdentity
+onlineProfile_getStakerInfo
+onlineProfile_getStakerListInfo
+onlineProfile_getStakerNum
+
+rentMachine_getRentList
+rentMachine_getRentOrder
+```
+
+
+
+### 8. 查看矿工个数
+
+示例：
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineProfile_getStakerNum",
+      "params": []
+}
+```
+
+结果说明：
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": 13, # 矿工个数（>=1台机器）
+    "id": 1
+}
+```
+
+
+
+## 2. Committee模块
+
+### 2.1 committee_getCommitteeList
+
++ 示例：
++ 结果说明： 
+
+
+
+## 3. OnlineCommittee 模块
+
+### 3.1
+
++ 示例：
++ 结果说明： 
+
+onlineCommittee_getMachineCommitteeList
+
+### 3.2
+
++ 示例：
++ 结果说明： 
+
+
+onlineCommittee_getCommitteeOps
+
+### 3.3
+
++ 示例：
++ 结果说明： 
+
+onilneCommittee_getCommitteeMachineList
+
+
+
+## 4. RentMachine模块
+
+### 4.1 查看机器的租用信息
+
++ 示例 
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"rentMachine_getRentOrder",
+      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # 机器ID
+}
+```
+
++ 结果说明
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "confirmRent": 539746, # 确认租用块高
+        "rentEnd": 623264, # 租用结束时间
+        "rentStart": 539744, # 租用开始时间
+        "rentStatus": "renting", # 当前订单状态
+        "renter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # 租用者
+        "stakeAmount": "0" # 租用者质押金额
+    },
+    "id": 1
+}
+```
+
+### 4.2 查看某个账户租用的机器列表
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"rentMachine_getRentList",
+      "params": ["5E7123qZExgZaYKnmTcJacu68c2GbLeSHo9qNWmUWcaw4RSR"] # 账户地址
+}
+```
+
++ 结果说明
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        [102, 97, 101, 100, 99, 53, 53, ...] # 地址，为u8 Array格式
+    ],
+    "id": 1
+}
+```
+
+
+
