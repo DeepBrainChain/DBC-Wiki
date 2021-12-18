@@ -1,14 +1,8 @@
 # DBC-Blockchain 主网 RPC
 
-> 发送 RPC 请求的方式，请参考上一篇文章
-
-DBC RPC 方法
-
-- [ ] onlineProfile_getMachineList
-- [ ] onlineProfile_getOpInfo
-- [ ] onlineProfile_getPosGpuInfo
-- [ ] onlineProfile_getStakerIdentity
-- [ ] onlineProfile_getStakerListInfo
+> 发送 RPC 请求的方式，请参考上一篇文章。
+>
+> 并不是所有的链上数据都有 RPC 接口。如果想要查询的数据（包括历史数据）没有通过 RPC 暴露出来，可以通过查询链上存储来获取对应数据。
 
 ## 1. onlineProfile 模块
 
@@ -82,99 +76,99 @@ onlineProfile 模块记录了机器在线奖励的信息
 
 - 示例
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "onlineProfile_getMachineEraReward",
-    "params": [
-      "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", # 机器ID
-      1  # 第几个Era
-    ]
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getMachineEraReward",
+  "params": [
+    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", # 机器ID
+    1  # 第几个Era
+  ]
+}
+```
 
 - 结果说明
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "result": "123456", # Era 1该机器获取的总奖励数量
-    "id": 1
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "123456", # Era 1该机器获取的总奖励数量
+  "id": 1
+}
+```
 
-### 3. 查询机器某个 Era 解锁收益
+### 1.3. 查询机器某个 Era 解锁收益
 
 - 示例
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "onlineProfile_getMachineEraReleasedReward",
-    "params": [
-      "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", 1] # 机器ID；第几个Era
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getMachineEraReleasedReward",
+  "params": [
+    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", 1] # 机器ID；第几个Era
+}
+```
 
 - 结果
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "result": "123456", # Era 1 该机器解锁的奖励
-    "id": 1
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "123456", # Era 1 该机器解锁的奖励
+  "id": 1
+}
+```
 
-### 4. 查询资金账户某个 Era 获得收益
-
-- 示例：
-
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "onlineProfile_getStashEraReward",
-    "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
-  }
-  ```
-
-- 结果：
-
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "result": "123456", # Era 1 该资金账户获得的奖励
-    "id": 1
-  }
-  ```
-
-### 5. 查询资金账户某个 Era 解锁奖励
+### 1.4. 查询资金账户某个 Era 获得收益
 
 - 示例：
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "onlineProfile_getStashEraReward",
-    "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getStashEraReward",
+  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+}
+```
 
 - 结果：
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "result": "123456", # Era 1 该资金账户解锁的奖励
-    "id": 1
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "123456", # Era 1 该资金账户获得的奖励
+  "id": 1
+}
+```
 
-### 6. 查询机器详细信息
+### 1.5. 查询资金账户某个 Era 解锁奖励
+
+- 示例：
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getStashEraReward",
+  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+}
+```
+
+- 结果：
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": "123456", # Era 1 该资金账户解锁的奖励
+  "id": 1
+}
+```
+
+### 1.6. 查询机器详细信息
 
 - 示例：
 
@@ -250,45 +244,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 7. 查询链上历史币价
-
-TODO:
-
-<details>
-  <summary>committee_getCommitteeList</summary>
-
-说明：
-
-例子:
-
-</details>
-
-```bash
-committee_getCommitteeList
-
-onilneCommittee_getCommitteeMachineList
-onlineCommittee_getCommitteeOps
-onlineCommittee_getMachineCommitteeList
-
-onlineProfile_getStashEraReward
-onlineProfile_getStashEraReleasedReward
-onlineProfile_getMachineEraReward
-onlineProfile_getMachineEraReleasedReward
-
-onlineProfile_getMachineInfo
-onlineProfile_getMachineList
-onlineProfile_getOpInfo
-onlineProfile_getPosGpuInfo
-onlineProfile_getStakerIdentity
-onlineProfile_getStakerInfo
-onlineProfile_getStakerListInfo
-onlineProfile_getStakerNum
-
-rentMachine_getRentList
-rentMachine_getRentOrder
-```
-
-### 8. 查看矿工个数
+### 1.7. 查看矿工个数
 
 示例：
 
@@ -311,49 +267,253 @@ rentMachine_getRentOrder
 }
 ```
 
+### 1.8. 查看所有机器列表
+
+- 示例：
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getMachineList",
+  "params": []
+}
+```
+
+- 结果说明：
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bondingMachine": [],
+        "bookedMachine": [
+            [51,101,55,98,...],
+            [53,97,99,54,99,57,...]
+        ],
+        "confirmedMachine": [],
+        "fulfillingMachine": [],
+        "offlineMachine": [],
+        "onlineMachine": [],
+        "refusedMachine": [],
+        "refusedMutHardwareMachine": [],
+        "rentedMachine": []
+    },
+    "id": 1
+}
+```
+
+### 1.9 查看 onlineProfile 模块统计信息
+
+- 示例
+
+```
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineProfile_getOpInfo",
+      "params": []
+}
+```
+
+- 结果说明：
+
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "totalBurnFee": "0",
+    "totalCalcPoints": 21389044,
+    "totalGpuNum": 961,
+    "totalRentFee": "15509145941941806044301",
+    "totalRentedGpu": 937,
+    "totalStake": "96215000000000000000000",
+    "totalStaker": 13
+  },
+  "id": 1
+}
+```
+
+### 1.10 获取账户链上身份
+
+- 示例
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getStakerIdentity",
+  "params": ["5CqTCD23gTbfmP8s6g1ehbJ66i6wi4Er4AguAw7yggDAKmPu"]
+}
+```
+
+- 结果说明：
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [226,156,168,100,98,...],
+    "id": 1
+}
+```
+
+### 1.11 获取矿工统计信息
+
+- 示例
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getStakerListInfo",
+  "params": [0, 5]
+}
+```
+
+- 结果说明
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "calcPoints": 10045876,
+            "index": 0,
+            "stakerAccount": "5CsRZJCDiFJbZas6m2NnuYpBqo9gYv2nixHbzGLUVGdgx94w",
+            "stakerName": [229,133,131,...],
+            "totalBurnFee": "0",
+            "totalGpuNum": 400,
+            "totalReleasedReward": "3058070375932000902000",
+            "totalRentFee": "6923734258518997224842",
+            "totalRentedGpu": 400,
+            "totalReward": "10311175917767854800000"
+        },
+        {
+            "calcPoints": 3153803,
+            "index": 2,
+            "stak {
+            "calcPoints": 617340,
+            "index": 4,
+            "stakerAccount": "5Gg1z77NCrUNyV4c5rm9tb3x27rYjBVYh74UrVNJh1TJGsx4",
+            "stakerName": [232,135,170,231,132,182,...],
+            "totalBurnFee": "0",
+            "totalGpuNum": 28,
+            "totalReleasedReward": "279809088882620814000",
+            "totalRentFee": "527263236025890876875",
+            "totalRentedGpu": 28,
+            "totalReward": "893193550619416200000"
+        }erAccount": "5HJugpuDxQGKLJwmv6K5eWFepDPkhPbwyTDR5vKjCv1MwUcS",
+            "stakerName": [229,133,131,232,190,...],
+            "totalBurnFee": "0",
+            "totalGpuNum": 132,
+            "totalReleasedReward": "1392103944062414253000",
+            "totalRentFee": "2669666089085907226556",
+            "totalRentedGpu": 132,
+            "totalReward": "4458201216316382700000"
+        },
+
+
+    ],
+    "id": 1
+}
+```
+
+### 1.12 按位置获取统计信息
+
+- 示例
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getPosGpuInfo",
+  "params": []
+}
+```
+
+- 结果说明
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": [
+        [
+            {
+                "East": 1182946
+            },
+            {
+                "North": 340643
+            },
+            {
+                "offlineGpu": 0,
+                "onlineGpu": 400,
+                "onlineGpuCalcPoints": 7496900,
+                "rentedGpu": 400
+            }
+        ],
+        [
+            {
+                "East": 1399262
+            },
+            {
+                "North": 353817
+            },
+            {
+                "offlineGpu": 0,
+                "onlineGpu": 1,
+                "onlineGpuCalcPoints": 21029,
+                "rentedGpu": 1
+            }
+        ],
+	...,
+    ],
+    "id": 1
+}
+```
+
 ## 2. Committee 模块
 
 ### 2.1 committee_getCommitteeList
 
 - 示例：
 
-  ```json
-  {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "committee_getCommitteeList",
-    "params": []
-  }
-  ```
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "committee_getCommitteeList",
+  "params": []
+}
+```
 
 - 结果说明：
 
-  ```json
-  {
-      "jsonrpc": "2.0",
-      "result": {
-          "chillList": [
-              "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX" # 当前停止接单的委员会
-          ],
-          "fulfillingList": [],
-          "normal": [ # 当前状态正常的委员会
-              "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
-              "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
-              "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
-              "5EhZqXq9objj6Qf7DzCxmjZfUHUbZh9JK5Xb3DgKmpvjyMMV",
-              "5FyU86E1arMRNwdxtRJvBs6qX4Y1o1UB2TXHUV3ZJcmQVkQK",
-              "5G3oJ8cGv4mhzRvtoBtGG9cX3MTNKxNTcMNAVykxA5ZFz8wi",
-              "5GFCgrhHv2jwimWZAgnDzSdvJocDzEadCk78B5AZJc5tYSYp",
-              "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW",
-              "5HDjo1p7DNmfXsjvcAjFogQ8Ue8fNb26Z1RAD9XqmWrKETFk"
-          ],
-          "waitingBoxPubkey": [ # 还没设置boxPubkey的委员会
-              "5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"
-          ]
-      },
-      "id": 1
-  }
-  ```
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "chillList": [
+            "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX" # 当前停止接单的委员会
+        ],
+        "fulfillingList": [],
+        "normal": [ # 当前状态正常的委员会
+            "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+            "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+            "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
+            "5EhZqXq9objj6Qf7DzCxmjZfUHUbZh9JK5Xb3DgKmpvjyMMV",
+            "5FyU86E1arMRNwdxtRJvBs6qX4Y1o1UB2TXHUV3ZJcmQVkQK",
+            "5G3oJ8cGv4mhzRvtoBtGG9cX3MTNKxNTcMNAVykxA5ZFz8wi",
+            "5GFCgrhHv2jwimWZAgnDzSdvJocDzEadCk78B5AZJc5tYSYp",
+            "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW",
+            "5HDjo1p7DNmfXsjvcAjFogQ8Ue8fNb26Z1RAD9XqmWrKETFk"
+        ],
+        "waitingBoxPubkey": [ # 还没设置boxPubkey的委员会
+            "5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"
+        ]
+    },
+    "id": 1
+}
+```
 
 ## 3. OnlineCommittee 模块
 
