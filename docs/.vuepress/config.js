@@ -22,6 +22,7 @@ module.exports = {
         text: "链上操作说明",
         link: "/onchain-guide",
         children: [
+          "onchain-guide/dbc_chain_logic",
           "/onchain-guide/generate_new_account",
           "/onchain-guide/bonding_machine",
           "/onchain-guide/Machine_verification",
@@ -44,6 +45,7 @@ module.exports = {
         {
           text: "OnchainGuide",
           children: [
+            "onchain-guide/dbc_chain_logic",
             "/onchain-guide/generate_new_account",
             "/onchain-guide/bonding_machine",
             "/onchain-guide/Machine_verification",
