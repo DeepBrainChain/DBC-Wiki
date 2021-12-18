@@ -2,35 +2,13 @@
 
 > 发送RPC请求的方式，请参考上一篇文章
 
-所有DBC RPC方法
+DBC RPC方法
 
-- [x] onlineProfile_getMachineEraReleasedReward
-- [x] onlineProfile_getMachineEraReward
-- [x] onlineProfile_getMachineInfo
 - [ ] onlineProfile_getMachineList
 - [ ] onlineProfile_getOpInfo
 - [ ] onlineProfile_getPosGpuInfo
 - [ ] onlineProfile_getStakerIdentity
-- [x] onlineProfile_getStakerInfo
 - [ ] onlineProfile_getStakerListInfo
-- [x] onlineProfile_getStakerNum
-- [x] onlineProfile_getStashEraReleasedReward
-- [x] onlineProfile_getStashEraReward
-
-
-
-- [ ] committee_getCommitteeList
-
-
-
-- [ ] onilneCommittee_getCommitteeMachineList
-- [ ] onlineCommittee_getCommitteeOps
-- [ ] onlineCommittee_getMachineCommitteeList
-
-
-
-- [x] rentMachine_getRentList
-- [x] rentMachine_getRentOrder
 
 ## 1. onlineProfile模块
 
@@ -345,35 +323,176 @@ rentMachine_getRentOrder
 ### 2.1 committee_getCommitteeList
 
 + 示例：
+
+  ```json
+  {
+       "jsonrpc":"2.0",
+        "id":1,
+        "method":"committee_getCommitteeList",
+        "params": []
+  }
+  ```
+
+  
+
 + 结果说明： 
 
-
+  ```json
+  {
+      "jsonrpc": "2.0",
+      "result": {
+          "chillList": [
+              "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX" # 当前停止接单的委员会
+          ],
+          "fulfillingList": [],
+          "normal": [ # 当前状态正常的委员会
+              "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+              "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+              "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
+              "5EhZqXq9objj6Qf7DzCxmjZfUHUbZh9JK5Xb3DgKmpvjyMMV",
+              "5FyU86E1arMRNwdxtRJvBs6qX4Y1o1UB2TXHUV3ZJcmQVkQK",
+              "5G3oJ8cGv4mhzRvtoBtGG9cX3MTNKxNTcMNAVykxA5ZFz8wi",
+              "5GFCgrhHv2jwimWZAgnDzSdvJocDzEadCk78B5AZJc5tYSYp",
+              "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW",
+              "5HDjo1p7DNmfXsjvcAjFogQ8Ue8fNb26Z1RAD9XqmWrKETFk"
+          ],
+          "waitingBoxPubkey": [ # 还没设置boxPubkey的委员会
+              "5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"
+          ]
+      },
+      "id": 1
+  }
+  ```
 
 ## 3. OnlineCommittee 模块
 
-### 3.1
+### 3.1 获取机器分配的委员会列表
 
 + 示例：
-+ 结果说明： 
 
-onlineCommittee_getMachineCommitteeList
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineCommittee_getMachineCommitteeList",
+      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # 机器ID
+}
+```
 
-### 3.2
++ 结果说明
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bookTime": 533682, # 派单时间
+        "bookedCommittee": [ # 派单委员会
+            "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+            "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+            "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
+        ],
+        "confirmStartTime": 538002, # 开始提交原始机器信息时间
+        "confirmedCommittee": [ # 已提交了原始值的委员会
+            "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+            "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+            "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
+        ],
+        "hashedCommittee": [ # 已提交了机器信息Hash的委员会
+            "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+            "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+            "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
+        ],
+        "onlinedCommittee": [ # 机器上线成功，将会获得奖励的委员会
+            "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
+            "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
+            "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
+        ],
+        "status": "finished" # 派单状态
+    },
+    "id": 1
+}
+```
+
+### 3.2 获取委员会对机器的审核时间
 
 + 示例：
-+ 结果说明： 
+
+```json
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onlineCommittee_getCommitteeOps",
+      "params": ["5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r", "74339d3413c1386d23d92e55586ccf25090c7eb762928f9bc69799b677f65f51"] # 委员会ID； 机器ID
+}
+```
+
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bookedTime": 600340, # 派单时间
+        "confirmHash": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # 提交的机器信息Hash
+        "confirmTime": 0,
+        "hashTime": 0,
+        "machineInfo": { # 提交的机器信息
+            "calc_point": 0,
+            "cpu_core_num": 0,
+            "cpu_rate": 0,
+            "cpu_type": [],
+            "cuda_core": 0,
+            "data_disk": 0,
+            "gpu_mem": 0,
+            "gpu_num": 0,
+            "gpu_type": [],
+            "is_support": false,
+            "machine_id": [],
+            "mem_num": 0,
+            "rand_str": [],
+            "sys_disk": 0
+        },
+        "machineStatus": "booked",
+        "stakedDbc": "1000000000000000000",
+        "verifyTime": [
+            600820,
+            602260,
+            603700
+        ]
+    },
+    "id": 1
+}
+```
 
 
-onlineCommittee_getCommitteeOps
 
-### 3.3
+### 3.3 获取委员会所有派单的机器列表
 
 + 示例：
+
+```
+{
+     "jsonrpc":"2.0",
+      "id":1,
+      "method":"onilneCommittee_getCommitteeMachineList",
+      "params": ["5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"] # 委员会ID
+}
+```
+
+
+
 + 结果说明： 
 
-onilneCommittee_getCommitteeMachineList
-
-
+```
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "bookedMachine": [], # 当前的派单
+        "confirmedMachine": [], # 提交了原始值的机器列表
+        "hashedMachine": [], # 提交了Hash的机器列表
+        "onlineMachine": [] # 现在已经在线的机器
+    },
+    "id": 1
+}
+```
 
 ## 4. RentMachine模块
 
