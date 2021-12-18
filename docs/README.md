@@ -3,7 +3,7 @@ home: true
 title: DBC-Wiki Home
 description: 欢迎来到DBC-Wiki
 actions:
-  - text: 开始链上操作
+  - text: 链上操作
     link: /onchain-guide
     type: primary
   - text: RPC介绍
