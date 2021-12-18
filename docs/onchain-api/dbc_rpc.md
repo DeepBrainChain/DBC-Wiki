@@ -1,8 +1,8 @@
-# DBC-Blockchain主网 RPC
+# DBC-Blockchain 主网 RPC
 
-> 发送RPC请求的方式，请参考上一篇文章
+> 发送 RPC 请求的方式，请参考上一篇文章
 
-DBC RPC方法
+DBC RPC 方法
 
 - [ ] onlineProfile_getMachineList
 - [ ] onlineProfile_getOpInfo
@@ -10,13 +10,13 @@ DBC RPC方法
 - [ ] onlineProfile_getStakerIdentity
 - [ ] onlineProfile_getStakerListInfo
 
-## 1. onlineProfile模块
+## 1. onlineProfile 模块
 
 onlineProfile 模块记录了机器在线奖励的信息
 
 ### 1.1 查询某个资金账户控制的所有机器
 
-+ 示例
+- 示例
 
 ```json
 {
@@ -27,7 +27,8 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-+ 结果说明
+- 结果说明
+
 ```json
 {
     "jsonrpc": "2.0",
@@ -76,8 +77,6 @@ onlineProfile 模块记录了机器在线奖励的信息
     "id": 1
 }
 ```
-
-
 
 ### 1.2 查询机器某个 Era 获得收益
 
@@ -177,7 +176,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 
 ### 6. 查询机器详细信息
 
-+ 示例：
+- 示例：
 
 ```json
 {
@@ -188,7 +187,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-+ 结果
+- 结果
 
 ```json
 {
@@ -251,8 +250,6 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-
-
 ### 7. 查询链上历史币价
 
 TODO:
@@ -291,18 +288,16 @@ rentMachine_getRentList
 rentMachine_getRentOrder
 ```
 
-
-
 ### 8. 查看矿工个数
 
 示例：
 
 ```json
 {
-     "jsonrpc":"2.0",
-      "id":1,
-      "method":"onlineProfile_getStakerNum",
-      "params": []
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "onlineProfile_getStakerNum",
+  "params": []
 }
 ```
 
@@ -316,26 +311,22 @@ rentMachine_getRentOrder
 }
 ```
 
-
-
-## 2. Committee模块
+## 2. Committee 模块
 
 ### 2.1 committee_getCommitteeList
 
-+ 示例：
+- 示例：
 
   ```json
   {
-       "jsonrpc":"2.0",
-        "id":1,
-        "method":"committee_getCommitteeList",
-        "params": []
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "committee_getCommitteeList",
+    "params": []
   }
   ```
 
-  
-
-+ 结果说明： 
+- 结果说明：
 
   ```json
   {
@@ -368,7 +359,7 @@ rentMachine_getRentOrder
 
 ### 3.1 获取机器分配的委员会列表
 
-+ 示例：
+- 示例：
 
 ```json
 {
@@ -379,7 +370,7 @@ rentMachine_getRentOrder
 }
 ```
 
-+ 结果说明
+- 结果说明
 
 ```json
 {
@@ -415,7 +406,7 @@ rentMachine_getRentOrder
 
 ### 3.2 获取委员会对机器的审核时间
 
-+ 示例：
+- 示例：
 
 ```json
 {
@@ -462,11 +453,9 @@ rentMachine_getRentOrder
 }
 ```
 
-
-
 ### 3.3 获取委员会所有派单的机器列表
 
-+ 示例：
+- 示例：
 
 ```
 {
@@ -477,9 +466,7 @@ rentMachine_getRentOrder
 }
 ```
 
-
-
-+ 结果说明： 
+- 结果说明：
 
 ```
 {
@@ -494,11 +481,11 @@ rentMachine_getRentOrder
 }
 ```
 
-## 4. RentMachine模块
+## 4. RentMachine 模块
 
 ### 4.1 查看机器的租用信息
 
-+ 示例 
+- 示例
 
 ```json
 {
@@ -509,7 +496,7 @@ rentMachine_getRentOrder
 }
 ```
 
-+ 结果说明
+- 结果说明
 
 ```json
 {
@@ -537,7 +524,7 @@ rentMachine_getRentOrder
 }
 ```
 
-+ 结果说明
+- 结果说明
 
 ```json
 {
@@ -548,6 +535,3 @@ rentMachine_getRentOrder
     "id": 1
 }
 ```
-
-
-

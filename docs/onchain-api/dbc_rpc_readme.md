@@ -1,5 +1,4 @@
-# DBC-Blockchain主网 RPC说明
-
+# DBC-Blockchain 主网 RPC 说明
 
 ## 1. RPC 说明
 
@@ -7,9 +6,9 @@
 
 文档适用 dbc 主网，主网分支[`master`](https://github.com/DeepBrainChain/DeepBrainChain-MainChain)，websocket 接口地址： `wss://info.dbcwallet.io`
 
-### 1.2 搭建自己的RPC节点
+### 1.2 搭建自己的 RPC 节点
 
-除了使用DBC提供的`websocket接口`，还可以自己搭建同步节点使用自己的节点提供的`websocket`或`HTTP接口`获取数据。
+除了使用 DBC 提供的`websocket接口`，还可以自己搭建同步节点使用自己的节点提供的`websocket`或`HTTP接口`获取数据。
 
 ```bash
 # 配置Rust编译环境
@@ -35,7 +34,7 @@ cargo build --release
 
 使用 HTTP 接口获取数据的例子，可以查看本文件夹下的`dbc_chain_rpc.postman_collection.json`，导入 Postman 进行查看。
 
-### 1.3 RPC请求格式
+### 1.3 RPC 请求格式
 
 ```json
 {
@@ -56,21 +55,19 @@ cargo build --release
 
 ### 1.4 如何访问链上历史数据
 
-在1.3中，获取到的数据为链上的当前状态。如果想获取过去某个时间的状态，需要传入某个时间对应区块的Hash。
+在 1.3 中，获取到的数据为链上的当前状态。如果想获取过去某个时间的状态，需要传入某个时间对应区块的 Hash。
 
-如想要查看两天前的数据，在发送post请求的"params" 字段的最后一个参数添加两天前的区块Hash即可。
+如想要查看两天前的数据，在发送 post 请求的"params" 字段的最后一个参数添加两天前的区块 Hash 即可。
 
-### 1.5 未包含的RPC文档
+### 1.5 未包含的 RPC 文档
 
-本文档仅包含DBC主网 **`自定义RPC的说明`** ，如果想查看 **`波卡链原生RPC的文档说明`** ，可以参考: https://polkadot.js.org/docs/substrate/rpc/；
+本文档仅包含 DBC 主网 **`自定义RPC的说明`** ，如果想查看 **`波卡链原生RPC的文档说明`** ，可以参考: https://polkadot.js.org/docs/substrate/rpc/；
 
-### 1.6 查看所有 支持的RPC 的方法
+### 1.6 查看所有 支持的 RPC 的方法
 
 可到 dbc 网页钱包：https://www.dbcwallet.io/ ，点击左侧切换网络，在自定义终端中，输入 websocket 地址。然后如下图导航到 `RPC calls`，查看区块链支持的所有 RPC。如图，选择 `rpc`模块的`methods`方法，点击右边的`提交RPC调用`，将列出所有的 RPC 方法名。
 
 <img src="./README.assets/image-20210813113734192.png" width="50%" height="50%">
-
-
 
 ## 2. **关于`块高`，奖励发放时间，与`Era`的说明**
 

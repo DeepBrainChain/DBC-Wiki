@@ -6,12 +6,12 @@ module.exports = {
     "/": {
       lang: "zh-CN",
       title: "DBC-Wkik",
-      description: "Vue 驱动的静态网站生成器",
+      description: "欢迎来到DBC-Wiki",
     },
     "/en/": {
       lang: "en-US",
       title: "DBC-Wiki",
-      description: "Vue-powered Static Site Generator",
+      description: "Welcome to DBC-Wiki",
     },
   },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
@@ -22,16 +22,21 @@ module.exports = {
         text: "链上操作说明",
         link: "/onchain-guide",
         children: [
-          "/onchain-guide/generate_new_account.md",
-          "/onchain-guide/bonding_machine.md",
-          "/onchain-guide/Machine_verification.md",
-          "/onchain-guide/maintain_machine.md",
+          "/onchain-guide/generate_new_account",
+          "/onchain-guide/bonding_machine",
+          "/onchain-guide/Machine_verification",
+          "/onchain-guide/maintain_machine",
         ],
       },
       {
         text: "链上API",
         link: "/onchain-api",
-        children: ["/onchain-api/Custom_RPC.md"],
+        children: [
+          "/onchain-api/dbc_rpc_readme",
+          "/onchain-api/dbc_rpc",
+          "/onchain-api/Custom_RPC",
+          "/onchain-api/dbc_storage",
+        ],
       },
     ],
     sidebar: {
@@ -39,17 +44,22 @@ module.exports = {
         {
           text: "OnchainGuide",
           children: [
-            "/onchain-guide/generate_new_account.md",
-            "/onchain-guide/bonding_machine.md",
-            "/onchain-guide/Machine_verification.md",
-            "/onchain-guide/maintain_machine.md",
+            "/onchain-guide/generate_new_account",
+            "/onchain-guide/bonding_machine",
+            "/onchain-guide/Machine_verification",
+            "/onchain-guide/maintain_machine",
           ],
         },
       ],
       "/onchain-api/": [
         {
           text: "OnchainAPI",
-          children: ["/onchain-api/Custom_RPC.md"],
+          children: [
+            "/onchain-api/dbc_rpc_readme",
+            "/onchain-api/dbc_rpc",
+            "/onchain-api/Custom_RPC",
+            "/onchain-api/dbc_storage",
+          ],
         },
       ],
     },
