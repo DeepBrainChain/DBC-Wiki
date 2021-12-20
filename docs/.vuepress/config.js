@@ -22,11 +22,12 @@ module.exports = {
         text: "链上操作说明",
         link: "/onchain-guide",
         children: [
-          "onchain-guide/dbc_chain_logic",
+          "/onchain-guide/dbc_chain_logic",
           "/onchain-guide/generate_new_account",
           "/onchain-guide/bonding_machine",
           "/onchain-guide/Machine_verification",
           "/onchain-guide/maintain_machine",
+          "/onchain-guide/onchain_errors",
         ],
       },
       {
@@ -35,7 +36,6 @@ module.exports = {
         children: [
           "/onchain-api/dbc_rpc_readme",
           "/onchain-api/dbc_rpc",
-          "/onchain-api/Custom_RPC",
           "/onchain-api/dbc_storage",
         ],
       },
@@ -45,11 +45,12 @@ module.exports = {
         {
           text: "OnchainGuide",
           children: [
-            "onchain-guide/dbc_chain_logic",
+            "/onchain-guide/dbc_chain_logic",
             "/onchain-guide/generate_new_account",
             "/onchain-guide/bonding_machine",
             "/onchain-guide/Machine_verification",
             "/onchain-guide/maintain_machine",
+            "/onchain-guide/onchain_errors",
           ],
         },
       ],
@@ -59,7 +60,6 @@ module.exports = {
           children: [
             "/onchain-api/dbc_rpc_readme",
             "/onchain-api/dbc_rpc",
-            "/onchain-api/Custom_RPC",
             "/onchain-api/dbc_storage",
           ],
         },
