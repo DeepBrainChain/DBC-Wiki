@@ -1,6 +1,7 @@
+# DBC 链上逻辑说明
+
 - 项目地址：https://github.com/DeepBrainChain/DeepBrainChain-MainChain
-- 当前开发分支：`alpha-v2.1`
-- 最新 release: [pre-main-v1.0](https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/tag/pre-main-1.0)
+- 当前开发分支：`master`
 - 项目基于 substrate [v3.0.0](https://github.com/paritytech/substrate/releases/tag/v3.0.0)
 
 - 项目结构说明
@@ -34,7 +35,7 @@
   cargo test -p maintain-committee
   ```
 
-### dbc-chain 主要模块功能说明
+## dbc-chain 主要模块功能说明
 
 1. 委员会模块(`committee` pallet)：通过公投（Root 权限）添加委员会，委员会成员(committee)质押一定 DBC，参与机器的管理并获取 DBC 奖励
 
@@ -65,9 +66,9 @@
 
       4). 当机器处于闲置状态，机器无法租用
 
-#### 奖励与惩罚说明
+## 奖励与惩罚说明
 
-##### 奖励
+### 奖励
 
 stash 账户的奖励：
 
@@ -81,7 +82,7 @@ committee 的奖励
 3. 机器因修改配置下线时，需要 stash 质押一定金额，并进行委员会审核。随后机器成功上线时，有效的审核的委员会，将分得质押的金额。
 4. 当机器被举报时，并且举报被通过时，委员会将获得一定比例的对 stash 的惩罚
 
-##### 惩罚
+### 惩罚
 
 stash 账户的惩罚
 
@@ -95,6 +96,6 @@ committee 的惩罚
 1. 没有做完分派的任务：机器上线时，会随机挑选委员会进行验证。没有完成验证任务的将会被惩罚
 2. 与其他委员会意见不一致：当需要审核（包括机器上线时的系统自动派单，以及机器被举报时委员会主动抢单）时，通常需要委员会先提交结果的 Hash，等到所有委员会提交完 Hash 后，再提交原始信息。如果提交的原始信息与大多数委员会不一致，将被惩罚
 
-##### 惩罚的申述
+### 惩罚的申述
 
 所有的惩罚都会被记录，并延迟执行。允许被惩罚人质押并申述。技术委员会有权限取消惩罚。
