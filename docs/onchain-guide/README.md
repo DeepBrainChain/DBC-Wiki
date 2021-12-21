@@ -1,6 +1,6 @@
 ## 目录
 
-- [DBC 链上模块概述](dbc_chain_logic.md)
+- [DBC 链上模块说明](dbc_chain_logic.md)
 - [如何生成链上账户](generate_new_account.md)
 - [提交机器上线请求](bonding_machine.md)
 - [DBC 链上委员会](become_onchain_committee.md)

@@ -1,4 +1,4 @@
-# DBC 链上逻辑说明
+# DBC 链上模块说明
 
 - 项目地址：https://github.com/DeepBrainChain/DeepBrainChain-MainChain
 - 当前开发分支：`master`
