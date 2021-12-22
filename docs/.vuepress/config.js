@@ -41,6 +41,24 @@ module.exports = {
           "/onchain-api/dbc_storage",
         ],
       },
+      {
+        text: "安装DBC程序",
+        link: "/install_and_update_dbc",
+        children: [
+          "/install_and_update_dbc/install_update_dbc_client_cn",
+          "/install_and_update_dbc/install_dbc_compute_node_cn",
+          "/install_and_update_dbc/update_dbc_compute_node_cn",
+        ]
+      },
+      {
+        text: "DBC客户端-HTTP请求",
+        link: "/install_and_update_dbc",
+        children: [
+          "/install_and_update_dbc/install_tool",
+          "/install_and_update_dbc/http_request_format",
+          "/install_and_update_dbc/http_api",
+        ]
+      }
     ],
     sidebar: {
       "/onchain-guide/": [
@@ -68,6 +86,26 @@ module.exports = {
           ],
         },
       ],
+      "/install_and_update_dbc/": [
+        {
+          text: "install-dbc",
+          children: [
+            "/install_and_update_dbc/install_update_dbc_client_cn",
+            "/install_and_update_dbc/install_dbc_compute_node_cn",
+            "/install_and_update_dbc/update_dbc_compute_node_cn"
+          ],
+        },
+      ],
+      "/install_and_update_dbc/": [
+        {
+          text: "dbc-http-api",
+          children: [
+            "/install_and_update_dbc/install_tool",
+            "/install_and_update_dbc/http_request_format",
+            "/install_and_update_dbc/http_api",
+          ],
+        },
+      ]
     },
     logo: "/images/dbc.icon.png",
     locales: {
