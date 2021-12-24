@@ -20,29 +20,41 @@ module.exports = {
       // NavbarItem
       {
         text: "链上操作说明",
-        link: "/onchain-guide",
+        link: "/staking-model",
         children: [
-          "/onchain-guide/dbc_chain_logic",
-          "/onchain-guide/generate_new_account",
-          "/onchain-guide/join_dbc_network",
-          "/onchain-guide/staking_dbc_and_voting",
-          "/onchain-guide/machine_reward_model",
-          "/onchain-guide/machine_slash_model",
-          "/onchain-guide/bonding_machine",
-          "/onchain-guide/become_onchain_committee",
-          "/onchain-guide/machine_verification",
-          // "/onchain-guide/rent_machine",
-          "/onchain-guide/maintain_machine",
-          "/onchain-guide/onchain_errors",
-        ],
-      },
-      {
-        text: "链上API",
-        link: "/onchain-api",
-        children: [
-          "/onchain-api/dbc_rpc_readme",
-          "/onchain-api/dbc_rpc",
-          "/onchain-api/dbc_storage",
+          {
+            text: "质押DBC",
+            link: "/staking-model",
+            children: [
+              "/staking-model/generate_new_account",
+              "/staking-model/join_dbc_network",
+              "/staking-model/staking_dbc_and_voting",
+            ],
+          },
+          {
+            text: "链上算力平台",
+            link: "/onchain-guide",
+            children: [
+              "/onchain-guide/dbc_chain_logic",
+              "/onchain-guide/machine_reward_model",
+              "/onchain-guide/machine_slash_model",
+              "/onchain-guide/bonding_machine",
+              "/onchain-guide/become_onchain_committee",
+              "/onchain-guide/machine_verification",
+              // "/onchain-guide/rent_machine",
+              "/onchain-guide/maintain_machine",
+              "/onchain-guide/onchain_errors",
+            ],
+          },
+          {
+            text: "链上API",
+            link: "/onchain-api",
+            children: [
+              "/onchain-api/dbc_rpc_readme",
+              "/onchain-api/dbc_rpc",
+              "/onchain-api/dbc_storage",
+            ],
+          },
         ],
       },
       {
@@ -65,6 +77,16 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/staking-model/": [
+        {
+          text: "StakingModel",
+          children: [
+            "/staking-model/generate_new_account",
+            "/staking-model/join_dbc_network",
+            "/staking-model/staking_dbc_and_voting",
+          ],
+        },
+      ],
       "/onchain-guide/": [
         {
           text: "OnchainGuide",
@@ -119,6 +141,7 @@ module.exports = {
     locales: {
       "/": {
         selectLanguageName: "简体中文",
+        selectLanguageText: "选择语言",
       },
       "/en": {
         selectLanguageName: "English",
