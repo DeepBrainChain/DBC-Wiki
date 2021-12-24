@@ -1,55 +1,41 @@
 # 如何成为 DBC 提名人
 
-1. 生成资金账户（已有资金账户可以略过）
+## 1. 生成资金账户（已有资金账户可以略过）
 
-   - 方式 1：`polkadot{.js}`浏览器插件（推荐）：
+参考： [如何生成账户](generate_new_account.md)
 
-     - Chrome 安装链接：[Chrome web store](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
-       - [https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
-     - Firefox 安装链接：[Firefox add-ons](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/)
-       - [https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/)
+## 2. 获取一些的 DBC
 
-     安装完成后，通过浏览器插件生成即可
+打开[https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts), 查看您的账户与余额
 
-   - 方式 2：通过网页钱包[https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) ，点击`账户`--`添加账户`进行生成。
+<img src="./assets/staking_dbc_and_voting.assets/image-20210122210826588.png" width="50%" height="50%">
 
-   - 方式 3：通过命令行方式生成
+## 3. 提名验证人
 
-     ```bash
-     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-     cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
-     ```
+- 导航到`网络 > 质押 > 账户操作`，点击`提名人`
 
-2. 获取一些的 DBC。打开[https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts), 您将能看到您的账户与余额
+<img src="./assets/staking_dbc_and_voting.assets/image-20210122210945889.png" width="50%" height="50%">
 
-   ![image-20210122210826588](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
+- 在弹窗中选择存储账户(stash account)，控制账户(controller account)，并填写`绑定的金额(value bonded)`，点击下一步
 
-3. 提名验证人。
+<img src="./assets/staking_dbc_and_voting.assets/image-20210122211057762.png" width="50%" height="50%">
 
-   - 导航到`网络 > 质押 > 账户操作`，点击`提名人`
+- 接下来选择您要提名的验证人，点击左侧的账户，或者在输入框中输入地址，将您要提名的验证人添加到右侧（**您可以提名多个验证人**）。
 
-     ![image-20210122210945889](./assets/staking_dbc_and_voting.assets/image-20210122210945889.png)
+<img src="./assets/staking_dbc_and_voting.assets/image-20210122211203371.png" width="50%" height="50%">
 
-   - 在弹窗中选择存储账户(stash account)，控制账户(controller account)，并填写`绑定的金额(value bonded)`，点击下一步
+- 最后点击`Bond & Nominate`发送交易，完成提名。
 
-     ![image-20210122211057762](./assets/staking_dbc_and_voting.assets/image-20210122211057762.png)
+## 4. 查看您提名的结果
 
-   - 接下来选择您要提名的验证人，点击左侧的账户，或者在输入框中输入地址，将您要提名的验证人添加到右侧（**您可以提名多个验证人**）。
+导航到`网络 > 质押 > 账户操作`，您可以看到绑定的 DBC 数目，与提名的候选人。
 
-     ![image-20210122211203371](./assets/staking_dbc_and_voting.assets/image-20210122211203371.png)
+<img src="./assets/staking_dbc_and_voting.assets/image-20210122211537605.png" width="50%" height="50%">
 
-   - 最后点击`Bond & Nominate`发送交易，完成提名。
+## 5. 第二次提名
 
-4. 查看您提名的结果
+`步骤6`的提名实际上包含了两个步骤：`存储账户`设置`控制账户` 和 `提名验证人`。
 
-   导航到`网络 > 质押 > 账户操作`，您可以看到绑定的 DBC 数目，与提名的候选人。
+我们想要再次提名，只需要点击下方的`提名`进行提名这一个步骤即可：
 
-   ![image-20210122211537605](./assets/staking_dbc_and_voting.assets/image-20210122211537605.png)
-
-5. 第二次提名
-
-   `步骤6`的提名实际上包含了两个步骤：`存储账户`设置`控制账户` 和 `提名验证人`。
-
-   我们想要再次提名，只需要点击下方的`提名`进行提名这一个步骤即可：
-
-   导航到`网络 > 质押 > 账户操作`，在存储账户列表的右边点击`提名`按钮，在弹出的选项中，选择你要提名的验证人。
+导航到`网络 > 质押 > 账户操作`，在存储账户列表的右边点击`提名`按钮，在弹出的选项中，选择你要提名的验证人。

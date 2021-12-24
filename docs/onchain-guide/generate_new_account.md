@@ -1,8 +1,20 @@
 # 如何生成账户
 
-## 方式 1: 通过命令行生成账户
+## 方式 1： 通过`polkadot{.js}`浏览器插件生成
 
-`subkey generate --scheme sr25519`，生成账户，输出内容如下：
+- Chrome 安装链接：[Chrome web store](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
+
+- Firefox 安装链接：[Firefox add-ons](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/)
+
+安装完成后，通过浏览器插件生成即可
+
+## 方式 2: 通过命令行生成账户
+
+```shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
+subkey generate --scheme sr25519 # 生成账户，输出内容如下：
+```
 
 ```
 Secret phrase `final huge obscure action vacuum public banner autumn remove close exotic rotate` is account:
@@ -17,9 +29,9 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 >
 > `subkey`的安装及其他用法，请参考：https://substrate.dev/docs/en/knowledgebase/integrate/subkey
 
-## 方式 2: **通过网页生成账户**
+## 方式 3: **通过网页生成账户**
 
-到[网页钱包 https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/explorer](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/explorer)，点击`添加账户`，在弹出框中会提示`助记词`，**点击右侧`助记词`**，可以**_切换到`原始种子`，即为需要保存的私钥，妥善保存！_**
+到[网页钱包 https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer)，点击`添加账户`，在弹出框中会提示`助记词`，**点击右侧`助记词`**，可以**_切换到`原始种子`，即为需要保存的私钥，妥善保存！_**
 
 <img src="./assets/generate_new_account.assets/2021-09-13_09-58.png" width="50%" height="50%">
 

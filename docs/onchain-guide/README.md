@@ -7,4 +7,4 @@
 - [委员会处理机器上链请求](machine_verification.md)
 - [租用链上机器](rent_machine.md)
 - [委员会处理租用人的报告](maintain_machine.md)
-- [链上错误简介](onchain_errors.md)
+- [链上错误说明](onchain_errors.md)
