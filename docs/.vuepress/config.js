@@ -23,6 +23,8 @@ module.exports = {
         link: "/onchain-guide",
         children: [
           "/onchain-guide/dbc_chain_logic",
+          "/onchain-guide/machine_reward_model",
+          "/onchain-guide/machine_slash_model",
           "/onchain-guide/generate_new_account",
           "/onchain-guide/bonding_machine",
           "/onchain-guide/become_onchain_committee",
@@ -48,7 +50,7 @@ module.exports = {
           "/install_and_update_dbc/install_update_dbc_client",
           "/install_and_update_dbc/install_dbc_compute_node",
           "/install_and_update_dbc/update_dbc_compute_node",
-        ]
+        ],
       },
       {
         text: "DBC客户端-HTTP请求",
@@ -57,8 +59,8 @@ module.exports = {
           "/dbc_client_api/install_tool",
           "/dbc_client_api/http_request_format",
           "/dbc_client_api/http_api",
-        ]
-      }
+        ],
+      },
     ],
     sidebar: {
       "/onchain-guide/": [
@@ -66,6 +68,8 @@ module.exports = {
           text: "OnchainGuide",
           children: [
             "/onchain-guide/dbc_chain_logic",
+            "/onchain-guide/machine_reward_model",
+            "/onchain-guide/machine_slash_model",
             "/onchain-guide/generate_new_account",
             "/onchain-guide/bonding_machine",
             "/onchain-guide/become_onchain_committee",
@@ -92,7 +96,7 @@ module.exports = {
           children: [
             "/install_and_update_dbc/install_update_dbc_client",
             "/install_and_update_dbc/install_dbc_compute_node",
-            "/install_and_update_dbc/update_dbc_compute_node"
+            "/install_and_update_dbc/update_dbc_compute_node",
           ],
         },
       ],
@@ -105,7 +109,7 @@ module.exports = {
             "/dbc_client_api/http_api",
           ],
         },
-      ]
+      ],
     },
     logo: "/images/dbc.icon.png",
     locales: {
