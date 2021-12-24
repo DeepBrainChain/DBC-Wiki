@@ -52,11 +52,11 @@ module.exports = {
       },
       {
         text: "DBC客户端-HTTP请求",
-        link: "/install_and_update_dbc",
+        link: "/dbc_client_api",
         children: [
-          "/install_and_update_dbc/install_tool",
-          "/install_and_update_dbc/http_request_format",
-          "/install_and_update_dbc/http_api",
+          "/dbc_client_api/install_tool",
+          "/dbc_client_api/http_request_format",
+          "/dbc_client_api/http_api",
         ]
       }
     ],
@@ -96,13 +96,13 @@ module.exports = {
           ],
         },
       ],
-      "/install_and_update_dbc/": [
+      "/dbc_client_api/": [
         {
           text: "dbc-http-api",
           children: [
-            "/install_and_update_dbc/install_tool",
-            "/install_and_update_dbc/http_request_format",
-            "/install_and_update_dbc/http_api",
+            "/dbc_client_api/install_tool",
+            "/dbc_client_api/http_request_format",
+            "/dbc_client_api/http_api",
           ],
         },
       ]
