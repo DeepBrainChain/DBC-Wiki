@@ -45,9 +45,9 @@ module.exports = {
         text: "安装DBC程序",
         link: "/install_and_update_dbc",
         children: [
-          "/install_and_update_dbc/install_update_dbc_client_cn",
-          "/install_and_update_dbc/install_dbc_compute_node_cn",
-          "/install_and_update_dbc/update_dbc_compute_node_cn",
+          "/install_and_update_dbc/install_update_dbc_client",
+          "/install_and_update_dbc/install_dbc_compute_node",
+          "/install_and_update_dbc/update_dbc_compute_node",
         ]
       },
       {
@@ -90,9 +90,9 @@ module.exports = {
         {
           text: "install-dbc",
           children: [
-            "/install_and_update_dbc/install_update_dbc_client_cn",
-            "/install_and_update_dbc/install_dbc_compute_node_cn",
-            "/install_and_update_dbc/update_dbc_compute_node_cn"
+            "/install_and_update_dbc/install_update_dbc_client",
+            "/install_and_update_dbc/install_dbc_compute_node",
+            "/install_and_update_dbc/update_dbc_compute_node"
           ],
         },
       ],
