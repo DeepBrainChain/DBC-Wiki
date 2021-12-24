@@ -10,13 +10,13 @@
 
 补充质押的操作：
 
-<img src="./maintain_machine.assets/image-20210628174246842.png" width="50%" height="50%">
+<img src="./assets/maintain_machine.assets/image-20210628174246842.png" width="50%" height="50%">
 
 ### 重新绑定
 
 > 当机器被委员会拒绝后，有 10 天的时间可以声明重新绑定。
 
-<img src="./maintain_machine.assets/image-20210628173325854.png" width="50%" height="50%">
+<img src="./assets/maintain_machine.assets/image-20210628173325854.png" width="50%" height="50%">
 
 ### 因故障声明机器下线
 
@@ -24,7 +24,7 @@
 
 操作：`onlineProfile` -- `controllerReportOffline`
 
-<img src="./maintain_machine.assets/image-20210628174652781.png" width="50%" height="50%">
+<img src="./assets/maintain_machine.assets/image-20210628174652781.png" width="50%" height="50%">
 
 ### （因故障声明下线后）声明机器上线
 
@@ -32,12 +32,12 @@
 
 操作：`onlineProfile`--`controllerReportOnline`
 
-<img src="./maintain_machine.assets/image-20210628174734910.png" width="50%" height="50%">
+<img src="./assets/maintain_machine.assets/image-20210628174734910.png" width="50%" height="50%">
 
 ### 下线修改机器配置（将会被重新进行验证）
 
 操作： onlineProfile -- offlineMachineChangeHardwareInfo
 
-<img src="./maintain_machine.assets/2021-12-15_14-12.png" width="50%" height="50%">
+<img src="./assets/maintain_machine.assets/2021-12-15_14-12.png" width="50%" height="50%">
 
 然后执行： onlineProfile -- addMachineInfo 重新添加机器信息之后，将会被重新分配进行验证
