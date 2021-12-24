@@ -6,16 +6,16 @@
   - [RPC 说明](#rpc-说明)
   - [如何搭建自己的 RPC 节点](#如何搭建自己的-rpc-节点)
   - [**关于`块高`，奖励发放时间，与`Era`的说明**：](#关于块高奖励发放时间与era的说明)
-    - [获取当前块高](#获取当前块高)
-    - [Era 与奖励发放时间](#era-与奖励发放时间)
+      - [获取当前块高](#获取当前块高)
+      - [Era 与奖励发放时间](#era-与奖励发放时间)
   - [DBC Custom RPC](#dbc-custom-rpc)
-    - [1. 查询某个资金账户控制的所有机器:](#1-查询某个资金账户控制的所有机器)
-    - [2. 查询机器某个 Era 获得收益： `onlineProfile_getMachineEraReward`](#2-查询机器某个-era-获得收益-onlineprofile_getmachineerareward)
-    - [3. 查询机器某个 Era 解锁收益](#3-查询机器某个-era-解锁收益)
-    - [4. 查询资金账户某个 Era 获得收益](#4-查询资金账户某个-era-获得收益)
-    - [5. 查询资金账户某个 Era 解锁奖励](#5-查询资金账户某个-era-解锁奖励)
-    - [6. 查询机器详细信息](#6-查询机器详细信息)
-    - [7. 查询链上历史币价](#7-查询链上历史币价)
+      - [1. 查询某个资金账户控制的所有机器:](#1-查询某个资金账户控制的所有机器)
+      - [2. 查询机器某个 Era 获得收益： `onlineProfile_getMachineEraReward`](#2-查询机器某个-era-获得收益-onlineprofile_getmachineerareward)
+      - [3. 查询机器某个 Era 解锁收益](#3-查询机器某个-era-解锁收益)
+      - [4. 查询资金账户某个 Era 获得收益](#4-查询资金账户某个-era-获得收益)
+      - [5. 查询资金账户某个 Era 解锁奖励](#5-查询资金账户某个-era-解锁奖励)
+      - [6. 查询机器详细信息](#6-查询机器详细信息)
+      - [7. 查询链上历史币价](#7-查询链上历史币价)
 
 ## RPC 说明
 
@@ -40,13 +40,13 @@
 
 > Postman 创建 websocket API 的方法：https://blog.postman.com/postman-supports-websocket-apis/
 >
-> ![image-20211020111401731](README.assets/image-20211020111401731.png)
+> ![image-20211020111401731](./assets/README.assets/image-20211020111401731.png)
 
 **说明 4：** 本文档仅包含 **`自定义RPC的说明`** ，如果想查看 **`基于波卡链原生RPC的文档说明`** ，可以参考: https://polkadot.js.org/docs/substrate/rpc/；
 
 **说明 5:** 查看所有 RPC 的方法：可到 dbc 网页钱包：https://www.dbcwallet.io/ ，点击左侧切换网络，在自定义终端中，输入 websocket 地址。然后如下图导航到 `RPC calls`，查看区块链支持的所有 RPC。如图，选择 `rpc`模块的`methods`方法，点击右边的`提交RPC调用`，将列出所有的 RPC 方法名。
 
-![image-20210813113734192](README.assets/image-20210813113734192.png)
+![image-20210813113734192](./assets/README.assets/image-20210813113734192.png)
 
 ## 如何搭建自己的 RPC 节点
 

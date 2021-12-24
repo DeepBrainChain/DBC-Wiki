@@ -21,7 +21,7 @@
 
 - Navigate to: `Developer`--`Transaction`, as shown below, select the `setController` method of the `onlineProfile` module, select your `stash account` and `control account` respectively, and click bind in the lower right corner
 
-  ![image-20210629104434008](bonding_machine.assets/image-20210629104434008.png)
+  ![image-20210629104434008](./assets/bonding_machine.assets/image-20210629104434008.png)
 
   > As shown above, BOB_STASH account (`Stash account`) set DAVE account as `control account`.
   >
@@ -31,7 +31,7 @@
 
 - Query whether the capital account and the control account are successfully bound\*\*: as shown in the figure below, when the capital account is successfully bound to the control account, you can select `controllerStash` of the `onlineProfile` module through `Developer`--`Chain Status` Store, to query the fund account corresponding to the `control account`. In the figure below, a fund account corresponding to a control account is queried.
 
-  ![image-20210714140945243](bonding_machine.assets/image-20210714140945243.png)
+  ![image-20210714140945243](./assets/bonding_machine.assets/image-20210714140945243.png)
 
 ### 2. The machine generates a signed message
 
@@ -75,19 +75,19 @@ The data after `Signature:` is the **signature data**.
 
 Now, we need to broadcast the **_signature data_** generated in the previous step through the `control account`.
 
-Navigate to: `Developer`--`Transaction`, and select the `bondMachine` method of the `onlineProfile` module as shown below. Use `Control Account` to bind `Machine ID` (`MachineId`) with `Control Account`. Fill in the parameters as shown below:![image-20210707140400114](bonding_machine.assets/image-20210707140400114.png)
+Navigate to: `Developer`--`Transaction`, and select the `bondMachine` method of the `onlineProfile` module as shown below. Use `Control Account` to bind `Machine ID` (`MachineId`) with `Control Account`. Fill in the parameters as shown below:![image-20210707140400114](./assets/bonding_machine.assets/image-20210707140400114.png)
 
 #### Query whether the machine is successfully bound:
 
 After completing this step, you can query the machines in the system through `Developer`--`Chain Status`--`onlineProfile`--`liveMachines`. As shown in the figure below, a machine is queried that has been bound. Next, you need to add machine information
 
-- ![image-20210714141352887](bonding_machine.assets/image-20210714141352887.png)
+- ![image-20210714141352887](./assets/bonding_machine.assets/image-20210714141352887.png)
 
 #### `Control account` add machine information
 
 `Control account` also needs to add machine information:Navigate to `Developer` -- `Transaction`--`onlineProfile`--`addMachineInfo`
 
-![2021-08-09_11-15](Machine_winding_steps_english.assets/2021-08-09_11-15-16284796475672.png)
+![2021-08-09_11-15](./assets/Machine_winding_steps_english.assets/2021-08-09_11-15-16284796475672.png)
 
 - Parameter description:
   - upload_net: upload bandwidth (take 20MB bandwidth as an example, fill in 20).
@@ -105,13 +105,13 @@ In the developer-chain status, select: the `stashMachines` method of the `online
 
 Among them, `can_claim_reward` is the reward that can be claimed, and `left_reard` is the remaining part of the reward obtained every day before (the remaining 75%, this 75% will be released in the subsequent 150 antennas).
 
-![image-20210623143656481](bonding_machine.assets/image-20210623143656481.png)
+![image-20210623143656481](./assets/bonding_machine.assets/image-20210623143656481.png)
 
 #### 2. Collect rewards
 
 Use **Control Account** to receive it, and rewards will be issued to **`Stash Account`**.
 
-![image-20210623144049700](bonding_machine.assets/image-20210623144049700.png)
+![image-20210623144049700](./assets/bonding_machine.assets/image-20210623144049700.png)
 
 ## Query the machine bound to the account
 
@@ -125,7 +125,7 @@ Use **Control Account** to receive it, and rewards will be issued to **`Stash Ac
 - Machine offline
   - Navigate to `Developer`----`Transaction`----`onlineprofile`----`controllerReportOffline`----`Enter machine id`----`Submit transaction`
   - Note that the initiator needs to be a controlling account
-    ![img](bonding_machine.assets/offline.png)
+    ![img](./assets/bonding_machine.assets/offline.png)
 - Modify machine information
   - Navigate to `Developer`----`Transaction`----`onlineprofile`----`addMachineInfo`
 - The machine is back online

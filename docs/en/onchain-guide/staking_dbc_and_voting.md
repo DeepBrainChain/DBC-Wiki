@@ -22,17 +22,17 @@
 
 2. Get some DBC. Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) and you can see your account and your balance:
 
-   ![image-20210122210826588](./staking_dbc_and_voting.assets/image-20210122210826588.png)
+   ![image-20210122210826588](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 
 3. Nominator
 
    - Navigate to `Network > Staking > Account actions`, click `Nominator`
 
-     ![image-20210122210945889](./staking_dbc_and_voting.assets/image-20210122210945889.png)
+     ![image-20210122210945889](./assets/staking_dbc_and_voting.assets/image-20210122210945889.png)
 
-   - set your stash account，controller account and`value bonded`，then click next![image-20210122211057762](./staking_dbc_and_voting.assets/image-20210122211057762.png)
+   - set your stash account，controller account and`value bonded`，then click next![image-20210122211057762](./assets/staking_dbc_and_voting.assets/image-20210122211057762.png)
 
-   - then, you should select the validator. (**You can nominate more than one validator**).![image-20210122211203371](./staking_dbc_and_voting.assets/image-20210122211203371.png)
+   - then, you should select the validator. (**You can nominate more than one validator**).![image-20210122211203371](./assets/staking_dbc_and_voting.assets/image-20210122211203371.png)
 
    - Finally click `Bond & Nominate` to send the transaction and finished the nominate.
 
@@ -40,7 +40,7 @@
 
    Navigate to`Network > Staking > Account actions`, you can see the balance of bonded DBC and the validator you nominated.
 
-   ![image-20210122211537605](./staking_dbc_and_voting.assets/image-20210122211537605.png)
+   ![image-20210122211537605](./assets/staking_dbc_and_voting.assets/image-20210122211537605.png)
 
 5. Nominate the second time
 
