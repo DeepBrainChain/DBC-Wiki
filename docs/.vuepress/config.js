@@ -23,7 +23,7 @@ module.exports = {
         link: "/staking-model",
         children: [
           {
-            text: "质押DBC",
+            text: "参与 DBC 深脑链说明",
             link: "/staking-model",
             children: [
               "/staking-model/generate_new_account",
@@ -81,6 +81,7 @@ module.exports = {
         {
           text: "StakingModel",
           children: [
+            "/staking-model/",
             "/staking-model/generate_new_account",
             "/staking-model/join_dbc_network",
             "/staking-model/staking_dbc_and_voting",
@@ -92,9 +93,6 @@ module.exports = {
           text: "OnchainGuide",
           children: [
             "/onchain-guide/dbc_chain_logic",
-            "/onchain-guide/generate_new_account",
-            "/onchain-guide/join_dbc_network",
-            "/onchain-guide/staking_dbc_and_voting",
             "/onchain-guide/machine_reward_model",
             "/onchain-guide/machine_slash_model",
             "/onchain-guide/bonding_machine",
