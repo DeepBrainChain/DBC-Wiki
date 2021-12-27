@@ -8,7 +8,9 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/create
 
-`请求body`:`{
+`请求body`:
+         ```
+{
 
   "peer_nodes_list": [
 
@@ -50,8 +52,8 @@
 
    "session_id_sign":"租用者分发的session_id_sign"
 
-}`
-
+}
+        ```
 实例：
 
 ![create_snap](create_snap.png)
