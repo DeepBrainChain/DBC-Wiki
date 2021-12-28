@@ -25,15 +25,27 @@ module.exports = {
           "/dbc-introduction/dbc-applications",
           {
             text: "社区治理",
-            link: "/dbc-democracy",
+            link: "/dbc-democracy/",
             children: [
               "/dbc-democracy/dbc-council",
               "/dbc-democracy/join-council",
             ],
           },
           {
+            text: "DBC介绍",
+            link: "/dbc-introduction",
+            children: [
+              "/dbc-introduction/dbc-community",
+              "/dbc-introduction/dbc-ecology",
+              "/dbc-introduction/dbc-gpu-rent",
+              "/dbc-introduction/dbc-profit",
+              "/dbc-introduction/dbc-report",
+              "/dbc-introduction/dbc-trade",
+            ],
+          },
+          {
             text: "DBC AMA",
-            link: "/dbc-introduction/dbc-ama",
+            link: "/dbc-introduction/dbc-ama/",
             children: [
               "/dbc-introduction/dbc-ama/8bit-ama",
               "/dbc-introduction/dbc-ama/galaxy-ama",
@@ -110,6 +122,12 @@ module.exports = {
           children: [
             "/dbc-introduction/",
             "/dbc-introduction/dbc-applications",
+            "/dbc-introduction/dbc-community",
+            "/dbc-introduction/dbc-ecology",
+            "/dbc-introduction/dbc-gpu-rent",
+            "/dbc-introduction/dbc-profit",
+            "/dbc-introduction/dbc-report",
+            "/dbc-introduction/dbc-trade",
           ],
         },
       ],
