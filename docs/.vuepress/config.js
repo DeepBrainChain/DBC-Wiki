@@ -157,23 +157,25 @@ module.exports = {
           ],
         },
       ],
-      "/dbc-report": {
-        text: "DBC 媒体报道",
-        children: [
-          "/dbc-report/dbc-36kr-report",
-          "/dbc-report/dbc-apnews-report",
-          "/dbc-report/dbc-asiaone-report",
-          "/dbc-report/dbc-businessinsider-report",
-          "/dbc-report/dbc-coindeals-report",
-          "/dbc-report/dbc-dailyherald-report",
-          "/dbc-report/dbc-marketscreener",
-          "/dbc-report/dbc-post-gazette",
-          "/dbc-report/dbc-theblockbeats-report",
-          "/dbc-report/dbc-uk-tech-daily",
-          "/dbc-report/dbc-yahoo-report2",
-          "/dbc-report/dbc-yahoo-report",
-        ],
-      },
+      "/dbc-report": [
+        {
+          text: "DBC 媒体报道",
+          children: [
+            "/dbc-report/dbc-36kr-report",
+            "/dbc-report/dbc-apnews-report",
+            "/dbc-report/dbc-asiaone-report",
+            "/dbc-report/dbc-businessinsider-report",
+            "/dbc-report/dbc-coindeals-report",
+            "/dbc-report/dbc-dailyherald-report",
+            "/dbc-report/dbc-marketscreener",
+            "/dbc-report/dbc-post-gazette",
+            "/dbc-report/dbc-theblockbeats-report",
+            "/dbc-report/dbc-uk-tech-daily",
+            "/dbc-report/dbc-yahoo-report2",
+            "/dbc-report/dbc-yahoo-report",
+          ],
+        },
+      ],
       "/staking-model/": [
         {
           text: "StakingModel",
