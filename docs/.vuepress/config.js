@@ -147,7 +147,7 @@ module.exports = {
           ],
         },
       ],
-      "/dbc-democraycy": [
+      "/dbc-democracy/": [
         {
           text: "社区治理",
           children: [
