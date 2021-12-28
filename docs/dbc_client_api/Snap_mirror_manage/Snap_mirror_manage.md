@@ -40,7 +40,7 @@
 >
 >        "disk_name":"vdb",  //磁盘名称
 >
->        "snapshot_type":"no"  //no不创建快照
+>        "snapshot_type":"no"  //no不创建快照(不填写默认使用external)
 >
 >      }
 >
