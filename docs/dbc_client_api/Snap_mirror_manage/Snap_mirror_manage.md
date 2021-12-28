@@ -32,7 +32,7 @@
 >
 >        "disk_name":"vda",   //磁盘名称
 >
->        "snapshot_type":"external"  //创建外部快照
+>        "snapshot_type":"external"  //external创建外部快照
 >
 >      },
 >
@@ -40,7 +40,7 @@
 >
 >        "disk_name":"vdb",  //磁盘名称
 >
->        "snapshot_type":"no"  //不创建快照
+>        "snapshot_type":"no"  //no不创建快照
 >
 >      }
 >
@@ -64,26 +64,28 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>
 
-`请求body`:`{
-
-  "peer_nodes_list": [
-
-​    // 请求的机器id
-
-​    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-
-  ],
-
-  "additional": {
-
-  },
-
-   "session_id": "租用者分发的session_id",
-
-   "session_id_sign":"租用者分发的session_id_sign"
-
-}`
-
+`请求body`:
+>    ```
+> {
+>
+>  "peer_nodes_list": [
+>
+>    // 请求的机器id
+>
+>    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+>
+>  ],
+>
+>  "additional": {
+>
+>  },
+>
+>   "session_id": "租用者分发的session_id",
+>
+>   "session_id_sign":"租用者分发的session_id_sign"
+>
+>}
+>    ```
 实例：
 
 ![snap_list](snap_list.png)
@@ -94,25 +96,28 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/<snap_name>
 
-`请求body`:`{
-
-  "peer_nodes_list": [
-
-​    // 请求的机器id
-
-​    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-
-  ],
-
-  "additional": {
-
-  },
-
-   "session_id": "租用者分发的session_id",
-
-   "session_id_sign":"租用者分发的session_id_sign"
-
-}`
+`请求body`:
+>    ```
+> {
+>
+>  "peer_nodes_list": [
+>
+>    // 请求的机器id
+>
+>    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+>
+>  ],
+>
+>  "additional": {
+>
+>  },
+>
+>   "session_id": "租用者分发的session_id",
+>
+>   "session_id_sign":"租用者分发的session_id_sign"
+>
+>}
+>    ```
 
 实例：![snap_list](snap_list.png)
 
@@ -122,18 +127,19 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images
 
-`请求body`: `{
-
-  "peer_nodes_list": [
-
-  ],
-
-  "additional": {
-
-  }
-
-}`
-
+`请求body`:
+>    ```
+>
+>  "peer_nodes_list": [
+>
+>  ],
+>
+>  "additional": {
+>
+>  }
+>
+>}
+>    ```
 实例：
 
 ![all_images](all_images.png)
@@ -144,25 +150,28 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload/<images_name>
 
-`请求body`:	`{
-
-  "peer_nodes_list": [
-
-​    // 请求的机器id
-
-​    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-
-  ],
-
-  "additional": {
-
-  },
-
-   "session_id": "租用者分发的session_id",
-
-   "session_id_sign":"租用者分发的session_id_sign"
-
-}`
+`请求body`:
+>    ```
+> {
+>
+>  "peer_nodes_list": [
+>
+>    // 请求的机器id
+>
+>    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+>
+>  ],
+>
+>  "additional": {
+>
+>  },
+>
+>   "session_id": "租用者分发的session_id",
+>
+>   "session_id_sign":"租用者分发的session_id_sign"
+>
+>}
+>    ```
 
 实例：
 
@@ -174,25 +183,28 @@
 
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download/<images_name>
 
-`请求body`:	`{
-
-  "peer_nodes_list": [
-
-​    // 请求的机器id
-
-​    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-
-  ],
-
-  "additional": {
-
-  },
-
-   "session_id": "租用者分发的session_id",
-
-   "session_id_sign":"租用者分发的session_id_sign"
-
-}`
+`请求body`:	
+>    ```
+> {
+>
+>  "peer_nodes_list": [
+>
+>    // 请求的机器id
+>
+>    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+>
+>  ],
+>
+>  "additional": {
+>
+>  },
+>
+>   "session_id": "租用者分发的session_id",
+>
+>   "session_id_sign":"租用者分发的session_id_sign"
+>
+>}
+>    ```
 
 实例：
 
