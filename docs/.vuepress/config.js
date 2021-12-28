@@ -19,6 +19,60 @@ module.exports = {
     navbar: [
       // NavbarItem
       {
+        text: "了解DBC",
+        link: "/dbc-introduction",
+        children: [
+          "/dbc-introduction/dbc-applications",
+          {
+            text: "社区治理",
+            link: "/dbc-democracy/",
+            children: [
+              "/dbc-democracy/dbc-council",
+              "/dbc-democracy/join-council",
+            ],
+          },
+          {
+            text: "DBC介绍",
+            link: "/dbc-introduction",
+            children: [
+              "/dbc-introduction/dbc-ecology",
+              "/dbc-introduction/dbc-gpu-rent",
+              "/dbc-introduction/dbc-profit",
+              "/dbc-introduction/dbc-trade",
+              "/dbc-introduction/dbc-community",
+            ],
+          },
+          {
+            text: "DBC AMA",
+            link: "/dbc-introduction/dbc-ama/",
+            children: [
+              "/dbc-introduction/dbc-ama/8bit-ama",
+              "/dbc-introduction/dbc-ama/galaxy-ama",
+              "/dbc-introduction/dbc-ama/council-ama",
+              "/dbc-introduction/dbc-ama/foreign-ama",
+            ],
+          },
+          {
+            text: "DBC 媒体报道",
+            link: "/dbc-report/",
+            children: [
+              "/dbc-report/dbc-36kr-report",
+              "/dbc-report/dbc-apnews-report",
+              "/dbc-report/dbc-asiaone-report",
+              "/dbc-report/dbc-businessinsider-report",
+              "/dbc-report/dbc-coindeals-report",
+              "/dbc-report/dbc-dailyherald-report",
+              "/dbc-report/dbc-marketscreener",
+              "/dbc-report/dbc-post-gazette",
+              "/dbc-report/dbc-theblockbeats-report",
+              "/dbc-report/dbc-uk-tech-daily",
+              "/dbc-report/dbc-yahoo-report2",
+              "/dbc-report/dbc-yahoo-report",
+            ],
+          },
+        ],
+      },
+      {
         text: "链上操作说明",
         link: "/staking-model",
         children: [
@@ -79,6 +133,47 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/dbc-introduction": [
+        {
+          text: "了解DBC",
+          children: [
+            "/dbc-introduction/",
+            "/dbc-introduction/dbc-applications",
+            "/dbc-introduction/dbc-ecology",
+            "/dbc-introduction/dbc-gpu-rent",
+            "/dbc-introduction/dbc-profit",
+            "/dbc-introduction/dbc-trade",
+            "/dbc-introduction/dbc-community",
+          ],
+        },
+      ],
+      "/dbc-democraycy": [
+        {
+          text: "社区治理",
+          children: [
+            "/dbc-democracy/",
+            "/dbc-democracy/dbc-council",
+            "/dbc-democracy/join-council",
+          ],
+        },
+      ],
+      "/dbc-report": {
+        text: "DBC 媒体报道",
+        children: [
+          "/dbc-report/dbc-36kr-report",
+          "/dbc-report/dbc-apnews-report",
+          "/dbc-report/dbc-asiaone-report",
+          "/dbc-report/dbc-businessinsider-report",
+          "/dbc-report/dbc-coindeals-report",
+          "/dbc-report/dbc-dailyherald-report",
+          "/dbc-report/dbc-marketscreener",
+          "/dbc-report/dbc-post-gazette",
+          "/dbc-report/dbc-theblockbeats-report",
+          "/dbc-report/dbc-uk-tech-daily",
+          "/dbc-report/dbc-yahoo-report2",
+          "/dbc-report/dbc-yahoo-report",
+        ],
+      },
       "/staking-model/": [
         {
           text: "StakingModel",
