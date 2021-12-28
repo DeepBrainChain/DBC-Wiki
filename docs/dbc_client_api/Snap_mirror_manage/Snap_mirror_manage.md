@@ -9,51 +9,51 @@
 `请求url`：http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/create
 
 `请求body`:
-         ```
-{
-
-  "peer_nodes_list": [
-
-​    //请求的机器id
-
-​    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-
-  ],
-
-  "additional": {
-
-​    "snapshot_name":"snap2",    //自定义的镜像名
-
-​    "description":"finish hello world",  // 自定义的镜像描述（可不写）
-
-​    "disks":[  //选择磁盘创建（可以不写，如果没有"disks"，则默认对所有磁盘做外部增量快照，快照文件由libvirt自动生成）
-
-​      {
-
-​        "disk_name":"vda",   //磁盘名称
-
-​        "snapshot_type":"external"  //创建外部快照
-
-​      },
-
-​      {
-
-​        "disk_name":"vdb",  //磁盘名称
-
-​        "snapshot_type":"no"  //不创建快照
-
-​      }
-
-​    ]
-
-  },
-
-   "session_id": "租用者分发的session_id",
-
-   "session_id_sign":"租用者分发的session_id_sign"
-
-}
-        ```
+>    ```
+>    {
+>
+>       "peer_nodes_list": [
+>
+>        //请求的机器id
+> 
+>     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+>
+>   ],
+>
+>      "additional": {
+>
+>      "snapshot_name":"snap2",    //自定义的镜像名
+>
+>     "description":"finish hello world",  // 自定义的镜像描述（可不写）
+> 
+>     "disks":[  //选择磁盘创建（可以不写，如果没有"disks"，则默认对所有磁盘做外部增量快照，快照文件由libvirt自动生成）
+>
+>      {
+>
+>        "disk_name":"vda",   //磁盘名称
+>
+>        "snapshot_type":"external"  //创建外部快照
+>
+>      },
+>
+>      {
+>
+>        "disk_name":"vdb",  //磁盘名称
+>
+>        "snapshot_type":"no"  //不创建快照
+>
+>      }
+>
+>    ]
+>
+>  },
+>
+>  "session_id": "租用者分发的session_id",
+>
+>   "session_id_sign":"租用者分发的session_id_sign"
+>
+>     }
+>    ```
 实例：
 
 ![create_snap](create_snap.png)
