@@ -19,6 +19,31 @@ module.exports = {
     navbar: [
       // NavbarItem
       {
+        text: "了解DBC",
+        link: "/dbc-introduction",
+        children: [
+          "/dbc-introduction/dbc-applications",
+          {
+            text: "社区治理",
+            link: "/dbc-democracy",
+            children: [
+              "/dbc-democracy/dbc-council",
+              "/dbc-democracy/join-council",
+            ],
+          },
+          {
+            text: "DBC AMA",
+            link: "/dbc-introduction/dbc-ama",
+            children: [
+              "/dbc-introduction/dbc-ama/8bit-ama",
+              "/dbc-introduction/dbc-ama/galaxy-ama",
+              "/dbc-introduction/dbc-ama/council-ama",
+              "/dbc-introduction/dbc-ama/foreign-ama",
+            ],
+          },
+        ],
+      },
+      {
         text: "链上操作说明",
         link: "/staking-model",
         children: [
@@ -79,6 +104,25 @@ module.exports = {
       },
     ],
     sidebar: {
+      "/dbc-introduction": [
+        {
+          text: "了解DBC",
+          children: [
+            "/dbc-introduction/",
+            "/dbc-introduction/dbc-applications",
+          ],
+        },
+      ],
+      "/dbc-democraycy": [
+        {
+          text: "社区治理",
+          children: [
+            "/dbc-democracy/",
+            "/dbc-democracy/dbc-council",
+            "/dbc-democracy/join-council",
+          ],
+        },
+      ],
       "/staking-model/": [
         {
           text: "StakingModel",
