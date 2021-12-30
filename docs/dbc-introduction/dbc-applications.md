@@ -5,18 +5,31 @@
 ## **DBC 已经取得的进展**
 
 - Jul.2017 The DeepBrain Chain was established, defining the objectives and vision as well as the technical architecture.
+
 - Dec. 2017 Fund-raising completed.
+
 - Jan.2018 DBC launched on Huobi.pro.
+
 - Aug.2018 DBC computing power network goes live and the code is open sourced on GitHub. (https://github.com/DeepBrainChain)
+
 - Nov.2019 DBChain, the first cloud platform based on DeepBrain Chain, goes live. (https://www.dbchain.ai)
+
 - Jul.2020 The first DeepBrain Chain-based enterprise cloud platform, Congtu Cloud, goes live. (https://www.congtu.cloud)
+
 - Dec.2020 DBChain global AI developer users exceed 10,000, serving more than 500 AI-related universities and labs worldwide.
+
 - May 2021 DeepBrain Chain node mainnet officially launched. (https://www.dbcwallet.io)
+
 - Jun.2021 DeepBrain Chain mainnet browser goes online. (https://dbc.subscan.io)
+
 - Jun.2021 The number of GPU cloud platforms based on DeepBrain Chain exceeds 50.
+
 - Jul.2021 DeepBrain Chain GPU computing power mainnet starts public testing.
+
 - Aug.2021 Congtu Cloud enterprise customers exceed 100.%
+
 - Oct.2021 Total number of GPU computing power in the public test exceeds 1200 cards, and the rental rate is over 98%. (https://galaxyrace.deepbrainchain.org)
+
 - Nov.2021 DBC GPU mainnet will launch officially.
 
 ## DBC 产品路线图
