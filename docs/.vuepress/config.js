@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     "/": {
       lang: "zh-CN",
-      title: "DBC-Wkik",
+      title: "DBC-Wiki",
       description: "欢迎来到DBC-Wiki",
     },
     "/en/": {
@@ -83,6 +83,7 @@ module.exports = {
               "/staking-model/generate_new_account",
               "/staking-model/join_dbc_network",
               "/staking-model/staking_dbc_and_voting",
+              "/staking-model/common_questions",
             ],
           },
           {
@@ -184,6 +185,7 @@ module.exports = {
             "/staking-model/generate_new_account",
             "/staking-model/join_dbc_network",
             "/staking-model/staking_dbc_and_voting",
+            "/staking-model/common_questions",
           ],
         },
       ],
