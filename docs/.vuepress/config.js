@@ -53,17 +53,19 @@ module.exports = {
         children: [
           {
             text: "DBC AMA",
-            link: "/dbc-introduction/dbc-ama/",
+            link: "/dbc-information/dbc-ama/",
             children: [
               "/dbc-information/dbc-ama/8bit-ama",
               "/dbc-information/dbc-ama/galaxy-ama",
               "/dbc-information/dbc-ama/council-ama",
               "/dbc-information/dbc-ama/foreign-ama",
+              "/dbc-information/dbc-ama/dbc-ama-collection",
+              "/dbc-information/dbc-ama/dbc-hot-link",
             ],
           },
           {
             text: "DBC 媒体报道",
-            link: "/dbc-report/",
+            link: "/dbc-information/dbc-report/",
             children: [
               "/dbc-information/dbc-report/dbc-36kr-report",
               "/dbc-information/dbc-report/dbc-apnews-report",
@@ -163,17 +165,19 @@ module.exports = {
           children: [
             {
               text: "DBC AMA",
-              link: "/dbc-introduction/dbc-ama/",
+              link: "/dbc-information/dbc-ama/",
               children: [
                 "/dbc-information/dbc-ama/8bit-ama",
                 "/dbc-information/dbc-ama/galaxy-ama",
                 "/dbc-information/dbc-ama/council-ama",
                 "/dbc-information/dbc-ama/foreign-ama",
+                "/dbc-information/dbc-ama/dbc-ama-collection",
+                "/dbc-information/dbc-ama/dbc-hot-link",
               ],
             },
             {
               text: "DBC 媒体报道",
-              link: "/dbc-report/",
+              link: "/dbc-information/dbc-report/",
               children: [
                 "/dbc-information/dbc-report/dbc-36kr-report",
                 "/dbc-information/dbc-report/dbc-apnews-report",
