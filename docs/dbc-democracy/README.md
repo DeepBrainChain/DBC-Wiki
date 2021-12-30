@@ -6,10 +6,6 @@ Treasury 资金申请流程：https://bihu.com/article/1346918775?i=1PXRwU&c=1&s
 
 How to apply funds from DBC Treasury: https://docs.google.com/document/d/1XgDXhXLpB72D8zmnLK8udkqGTOrcuOKmlKpAyYZivec/edit?usp=sharing
 
-NFT 申请及发放规则：https://m.bitalk.com/flash/detail/472323921396502528
-
-How to apply for DBC NFT from DBC Council: https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea
-
 DBC 创建账号、质押、超级节点选举投票教程：https://m.bihu.com/article/1930794414
 
 DBC 超级节点选举质押、投票链接：https://www.dbcwallet.io/#/staking/actions

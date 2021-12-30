@@ -50,9 +50,10 @@ chmod +x sign_tool
 <img src="./assets/machine_verification.assets/133870889-61976abb-ae6b-4cd6-97e3-9e9205745346.png" width="50%" height="50%">
 
 在下图中替换：sign、nonce、wallet （注意：同一个机器 sign、nonce 只能使用一次），可以查询到机器信息
-<img width="50%" height="50" alt="1631934612(1)" src="./assets/machine_verification.assets/133870573-04dbcb84-9112-4837-b8e4-20db8538c079.png">
 
-<img width="50%" height="50" alt="46ee522c8a34cfe14979db0e7b91ca6" src="./assets/machine_verification.assets/133871452-06dde25a-9691-44dc-b35b-124dbece44fd.png">
+<img width="50%" height="50%" alt="1631934612(1)" src="./assets/machine_verification.assets/133870573-04dbcb84-9112-4837-b8e4-20db8538c079.png">
+
+<img width="50%" height="50%" alt="46ee522c8a34cfe14979db0e7b91ca6" src="./assets/machine_verification.assets/133871452-06dde25a-9691-44dc-b35b-124dbece44fd.png">
 
 查看机器 GPU 信息
 

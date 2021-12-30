@@ -29,6 +29,7 @@ module.exports = {
             children: [
               "/dbc-democracy/dbc-council",
               "/dbc-democracy/join-council",
+              "/dbc-democracy/dbc-nft",
             ],
           },
           {
@@ -155,6 +156,7 @@ module.exports = {
             "/dbc-democracy/",
             "/dbc-democracy/dbc-council",
             "/dbc-democracy/join-council",
+            "/dbc-democracy/dbc-nft",
           ],
         },
       ],
