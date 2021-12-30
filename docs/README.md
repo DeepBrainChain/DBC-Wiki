@@ -14,5 +14,5 @@ features:
     details: 机器上链或验证
   - title: 链上 API
     details: 使用API与链进行交互
-footer: MIT Licensed | Copyright © 2018-present DeepBrainChain
+footer: MIT Licensed | Copyright © 2017-present DeepBrainChain
 ---
