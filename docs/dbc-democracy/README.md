@@ -2,15 +2,9 @@
 
 How to participate in Council voting: https://deepbrainchainglobal.medium.com/how-to-participate-in-council-voting-a-step-by-step-guide-f156ba6cb89f
 
-Treasury 资金申请流程： [https://bihu.com/article/1346918775?i=1PXRwU&c=1&s=1t9x6n](https://bihu.com/article/1346918775?i=1PXRwU&c=1&s=1t9x6n)
-
 How to apply funds from DBC Treasury:
 
 https://docs.google.com/document/d/1XgDXhXLpB72D8zmnLK8udkqGTOrcuOKmlKpAyYZivec/edit?usp=sharing
-
-DBC 创建账号、质押、超级节点选举投票教程：https://m.bihu.com/article/1930794414
-
-DBC 超级节点选举质押、投票链接：[https://www.dbcwallet.io/#/staking/actions](https://www.dbcwallet.io/#/staking/actions)
 
 DBC 理事会选举投票连接：[https://www.dbcwallet.io/#/council](https://www.dbcwallet.io/#/council)
 

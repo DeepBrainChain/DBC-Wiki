@@ -30,6 +30,8 @@ module.exports = {
               "/dbc-democracy/dbc-council",
               "/dbc-democracy/join-council",
               "/dbc-democracy/dbc-nft",
+              "/dbc-democracy/apply-treasury",
+              "/dbc-democracy/staking-voting",
             ],
           },
           {
@@ -157,6 +159,8 @@ module.exports = {
             "/dbc-democracy/dbc-council",
             "/dbc-democracy/join-council",
             "/dbc-democracy/dbc-nft",
+            "/dbc-democracy/apply-treasury",
+            "/dbc-democracy/staking-voting",
           ],
         },
       ],
