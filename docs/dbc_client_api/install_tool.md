@@ -1,6 +1,6 @@
 # 准备工作
 - 下载安装Http请求工具：https://www.postman.com/downloads/
-- 下载json文件：http://121.57.95.175:20027/index.html/deepbrainchain.postman_collection.json
+- 下载json文件：http://36.102.233.175:20027/index.html/deepbrainchain.postman_collection.json
 
 - 导入json文件：
   <img src="./assets/import_postman_json.png" width = "400" height = "240"  align=center />
