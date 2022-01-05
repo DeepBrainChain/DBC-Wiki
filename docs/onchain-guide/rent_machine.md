@@ -20,7 +20,7 @@
 
 - 输入完成后点击提交交易，并在三十分钟内确认机器是否可用。（如果 30 分钟内不确认租用，支付的`dbc`会退回，但是交易手续费 10 `dbc`是无法退回的）
 
-- 创建虚拟机等相关操作请[参考](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/creat_macine.md)
+- 创建虚拟机等相关操作请[参考](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/create_macine.md)
 
 ## 步骤三：确认可用并租赁
 
