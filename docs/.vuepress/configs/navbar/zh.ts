@@ -98,7 +98,6 @@ export const zh: NavbarConfig = [
       },
       {
         text: "链上API",
-        link: "/onchain-api",
         children: [
           "/onchain-api/dbc-rpc-readme",
           "/onchain-api/dbc-rpc",

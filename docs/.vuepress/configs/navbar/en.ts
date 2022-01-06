@@ -97,7 +97,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "Onchain API",
-        link: "/en/onchain-api",
         children: [
           "/en/onchain-api/dbc-rpc-readme",
           "/en/onchain-api/dbc-rpc",
