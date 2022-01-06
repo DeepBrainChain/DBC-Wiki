@@ -2,12 +2,12 @@ import type { NavbarConfig } from "@vuepress/theme-default";
 
 export const en: NavbarConfig = [
   {
-    text: "了解DBC",
+    text: "DBC Introduction",
     link: "/en/dbc-introduction",
     children: [
       "/en/dbc-introduction/dbc-applications",
       {
-        text: "社区治理",
+        text: "DBC Democracy",
         link: "/en/dbc-democracy/",
         children: [
           "/en/dbc-democracy/dbc-council",
@@ -18,7 +18,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: "DBC介绍",
+        text: "DBC Introduction",
         link: "/en/dbc-introduction",
         children: [
           "/en/dbc-introduction/dbc-ecology",
@@ -31,7 +31,7 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "DBC资讯",
+    text: "DBC News",
     link: "/en/dbc-information",
     children: [
       {
@@ -47,7 +47,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: "DBC 媒体报道",
+        text: "DBC Report",
         link: "/en/dbc-information/dbc-report/",
         children: [
           "/en/dbc-information/dbc-report/dbc-36kr-report",
@@ -67,11 +67,11 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "链上操作说明",
+    text: "Onchain Operate",
     link: "/en/staking-model",
     children: [
       {
-        text: "参与 DBC 深脑链说明",
+        text: "Introduction for Joining DBC Network",
         children: [
           "/en/staking-model/dbc-chain-params",
           "/en/staking-model/generate-new-account",
@@ -81,7 +81,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: "链上算力平台",
+        text: "On-chain computing platform",
         link: "/en/onchain-guide",
         children: [
           "/en/onchain-guide/dbc-chain-logic",
@@ -96,7 +96,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: "链上API",
+        text: "Onchain API",
         link: "/en/onchain-api",
         children: [
           "/en/onchain-api/dbc-rpc-readme",
@@ -107,7 +107,7 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "安装DBC程序",
+    text: "Install DBC Client",
     link: "/en/install-and-update-dbc",
     children: [
       "/en/install-and-update-dbc/install-dbc-compute-node",
@@ -116,7 +116,7 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "DBC客户端-HTTP请求",
+    text: "DBC Client HTTP API",
     link: "/en/dbc-client-api",
     children: [
       "/en/dbc-client-api/install-tool",

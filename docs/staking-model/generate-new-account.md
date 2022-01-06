@@ -31,9 +31,9 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 
 > 其中，Secret phrase 为 助记词；Secret seed，即是私钥种子
 >
-> `subkey`的安装及其他用法，请参考：https://substrate.dev/docs/en/knowledgebase/integrate/subkey
+> `subkey`的安装及其他用法，请参考：[https://substrate.dev/docs/en/knowledgebase/integrate/subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
 
-## 方式 3: **通过网页生成账户**
+## 方式 3: 通过网页生成账户
 
 到[网页钱包 https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer)，点击`添加账户`，在弹出框中会提示`助记词`，**点击右侧`助记词`**，可以**切换到`原始种子`，即为需要保存的私钥，妥善保存！**
 
@@ -47,13 +47,13 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 
 链上的一些操作，有时候会需要使用私钥来签名。在保存了助记词时，可以通过 subkey 来将助记词转换成私钥。
 
-```
+```bash
 subkey inspect "grief cabin hint replace chalk recall alpha crunch vacant range success rent"
 ```
 
 生成内容如下：
 
-```
+```bash
 Secret phrase `grief cabin hint replace chalk recall alpha crunch vacant range success rent` is account:
   Secret seed:       0xb4789ce6da4c3eece566ae7848f91822079d7e9b07e4cb77f00beafcb28fb611
   Public key (hex):  0xfabef9d9550ecc3247035be7091ea7d8b384cfdeb1dfae3ff80ba9515cca2570

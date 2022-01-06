@@ -67,7 +67,7 @@ export const en: SidebarConfig = {
   ],
   "/en/staking-model/": [
     {
-      text: "/en/StakingModel",
+      text: "DBC Staking Model",
       children: [
         "/en/staking-model/dbc-chain-params",
         "/en/staking-model/generate-new-account",
