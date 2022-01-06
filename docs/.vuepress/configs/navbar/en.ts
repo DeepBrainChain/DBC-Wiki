@@ -111,7 +111,7 @@ export const en: NavbarConfig = [
     link: "/en/install-and-update-dbc",
     children: [
       "/en/install-and-update-dbc/install-dbc-compute-node",
-      "/en/install-and-update-dbc/install-update_dbc-client",
+      "/en/install-and-update-dbc/install-update-dbc-client",
       "/en/install-and-update-dbc/update-dbc-compute-node",
     ],
   },
