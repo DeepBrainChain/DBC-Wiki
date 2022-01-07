@@ -7,7 +7,7 @@ actions:
     link: /onchain-guide
     type: primary
   - text: RPC介绍
-    link: /onchain-api
+    link: /onchain-api/dbc-rpc-readme
     type: secondary
 features:
   - title: 了解DBC

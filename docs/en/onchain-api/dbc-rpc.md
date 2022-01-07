@@ -1,27 +1,26 @@
-# DBC-Blockchain 主网 RPC
+# DBC-Blockchain Mainnet RPC
 
-> 发送 RPC 请求的方式，请参考上一篇文章。
+> For the method of sending RPC requests, please refer to the previous article.
 >
-> 并不是所有的链上数据都有 RPC 接口。如果想要查询的数据（包括历史数据）没有通过 RPC 暴露出来，可以通过查询链上存储来获取对应数据。
+> Not all data on the chain has an RPC interface. If the data you want to query (including historical data) is not exposed through RPC, you can obtain the corresponding data by querying the storage on the chain.
 
-## 1. onlineProfile 模块
+## 1. onlineProfile Module
 
-onlineProfile 模块记录了机器在线奖励的信息
+onlineProfile Module records the information of the machine's online rewards
 
-### 1.1 查询某个资金账户控制的所有机器
+### 1.1 Query all machines controlled by a certain fund account
 
-- 示例
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"onlineProfile_getStakerInfo",
-      "params": ["5FEio5dgXeXsASdo3Wh5DQ8zfbRfQJTXYmFkCbSCFk2qsTt6"] # 资金账户 (stash account)
+      "params": ["5FEio5dgXeXsASdo3Wh5DQ8zfbRfQJTXYmFkCbSCFk2qsTt6"] # (stash account)
 }
 ```
-
-- 结果说明
+- Explanation of results
 
 ```json
 {
@@ -29,10 +28,10 @@ onlineProfile 模块记录了机器在线奖励的信息
     "result": {
         "bondedMachines": [
             {
-                "calcPoint": 51775, # 机器算力点数
-                "gpuNum": 4, # 机器GPU数量
-                "machineId": [53,97,53,51,52,...], # 机器ID
-                "machineStatus": "online" # 机器当前状态
+                "calcPoint": 51775, # Machine power points
+                "gpuNum": 4, # Machine GPU Num
+                "machineId": [53,97,53,51,52,...], # Machine ID
+                "machineStatus": "online" # The current state of the machine
             },
             {
                 "calcPoint": 51775,
@@ -48,33 +47,33 @@ onlineProfile 模块记录了机器在线奖励的信息
             }
         ],
         "stashStatistic": {
-            "canClaimReward": "664079816723400000", # 可以领取的DBC奖励
-            "onlineMachine": [ # 在线的机器
+            "canClaimReward": "664079816723400000", # DBC rewards that can be received
+            "onlineMachine": [ # Online machine
                 [53,97,53,51,52,...],
                 [97, 52, 100, 98, 98,...],
                 [100, 56, 54, 97, 101, 53,...]
             ],
-            "totalBurnFee": "0", # 银河竞赛开启后，销毁的租金数
-            "totalCalcPoints": 197930, # 总算力点数
-            "totalClaimedReward": "0", # 已经领取的奖励
-            "totalEarnedReward": "2656319266893600000", # 已经获得的奖励
-            "totalGpuNum": 12, # 总绑定的GPU数量
-            "totalMachine": [ # 绑定的机器
+            "totalBurnFee": "0", # The number of rents destroyed after the start of the Galaxy Contest
+            "totalCalcPoints": 197930, # Machine total calc Points
+            "totalClaimedReward": "0", # Reward already received
+            "totalEarnedReward": "2656319266893600000", # Rewards already rewarded
+            "totalGpuNum": 12, # GPU bond to stash account
+            "totalMachine": [ # Stash account Bound machine
                 [53, 97, 53, 51, 10,...],
                 [97, 52, 100, 98, 98, 100,...],
                 [100, 56, 54, 97, 101,...]
             ],
-            "totalRentFee": "0", # 获得的机器租金
-            "totalRentedGpu": 0 # 被租用的GPU数量
+            "totalRentFee": "0", # Machine obtained rent fee
+            "totalRentedGpu": 0 # Number of rented GPUs
         }
     },
     "id": 1
 }
 ```
 
-### 1.2 查询机器某个 Era 获得收益
+### 1.2 Query a certain Era of the machine to obtain revenue
 
-- 示例
+- Example
 
 ```json
 {
@@ -82,25 +81,25 @@ onlineProfile 模块记录了机器在线奖励的信息
   "id": 1,
   "method": "onlineProfile_getMachineEraReward",
   "params": [
-    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", # 机器ID
-    1  # 第几个Era
+    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", # Machine ID
+    1  # Which Era
   ]
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": "123456", # Era 1该机器获取的总奖励数量
+  "result": "123456", # Era 1 Total rewards obtained by the machine
   "id": 1
 }
 ```
 
-### 1.3. 查询机器某个 Era 解锁收益
+### 1.3. Query the machine's unlocking revenue in some Era
 
-- 示例
+- Example
 
 ```json
 {
@@ -108,57 +107,57 @@ onlineProfile 模块记录了机器在线奖励的信息
   "id": 1,
   "method": "onlineProfile_getMachineEraReleasedReward",
   "params": [
-    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", 1] # 机器ID；第几个Era
+    "ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875", 1] # Machine ID；Which Era
 }
 ```
 
-- 结果
+- Explanation of results
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": "123456", # Era 1 该机器解锁的奖励
+  "result": "123456", # Era 1 Rewards for unlocking the machine
   "id": 1
 }
 ```
 
-### 1.4. 查询资金账户某个 Era 获得收益
+### 1.4. Query a certain Era of the fund account to obtain income
 
-- 示例：
+- Example
 
 ```json
 {
   "jsonrpc": "2.0",
   "id": 1,
   "method": "onlineProfile_getStashEraReward",
-  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # Stash account; the number of Era
 }
 ```
 
-- 结果：
+- Explanation of results
 
 ```json
 {
   "jsonrpc": "2.0",
-  "result": "123456", # Era 1 该资金账户获得的奖励
+  "result": "123456", # Era 1 Reward for this stash account
   "id": 1
 }
 ```
 
-### 1.5. 查询资金账户某个 Era 解锁奖励
+### 1.5. Check the stash account for a certain Era unlocked reward
 
-- 示例：
+- Example
 
 ```json
 {
   "jsonrpc": "2.0",
   "id": 1,
   "method": "onlineProfile_getStashEraReward",
-  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # 资金账户； 第几个Era
+  "params": ["5DhR2dxiPZquPhFjfPzFg5jZENdr375hbX643kr9FBXMVa2z", 1] # Stash account; the number of Era
 }
 ```
 
-- 结果：
+- Explanation of results
 
 ```json
 {
@@ -168,32 +167,32 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 1.6. 查询机器详细信息
+### 1.6. Query machine details
 
-- 示例：
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"onlineProfile_getMachineInfo",
-      "params": ["ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875"] # 机器ID
+      "params": ["ee0d003006f8ddbccb97dff96bcb4bee1b8c1aeaf7c64e0ca9d0f31752d17875"] # Machine ID
 }
 ```
 
-- 结果
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": {
-        "bondingHeight": 531155, # 开始上链时间
-        "controller": "5FTWuKEDhPsRWaeK5Jfn68a6rEFPsW8AAVF5YtfqNrznTWfv", # 机器控制账户
-        "initStakePerGpu": "100000000000000000000", # 上链时每卡质押数量
-        "lastMachineRenter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # 最后一个机器租用人
-        "lastMachineRestake": 537808, # 机器付全部质押时间
-        "lastOnlineHeight": 580412, # 机器最后一次状态为online的时间
-        "machineInfoDetail": { # 机器详细信息
+        "bondingHeight": 531155, # Machine onchain time
+        "controller": "5FTWuKEDhPsRWaeK5Jfn68a6rEFPsW8AAVF5YtfqNrznTWfv", # Machine control account
+        "initStakePerGpu": "100000000000000000000", # The number of pledges per card when it is on the chain
+        "lastMachineRenter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # Last machine renter
+        "lastMachineRestake": 537808, # Machine pays all staking time
+        "lastOnlineHeight": 580412, # The last time the machine was online
+        "machineInfoDetail": { # Machine details info
             "committee_upload_info": {
                 "calc_point": 60775,
                 "cpu_core_num": 64,
@@ -210,7 +209,7 @@ onlineProfile 模块记录了机器在线奖励的信息
                 "rand_str": [],
                 "sys_disk": 350
             },
-            "staker_customize_info": { # 机器其他信息
+            "staker_customize_info": { # Other machine information
                 "download_net": 20,
                 "latitude": {
                     "North": 306667
@@ -225,28 +224,28 @@ onlineProfile 模块记录了机器在线奖励的信息
                 "upload_net": 20
             }
         },
-        "machineStash": "5HWSG8FXkCSe4NgwzbnA64nT5bmRFKRKgbSKj2X8Pe7KyYcQ", # 机器资金账户
-        "machineStatus": "rented", # 机器当前状态
-        "onlineHeight": 537808, # 机器上线时间
-        "rewardCommittee": [ # 可以获得机器在线奖励的委员会列表
+        "machineStash": "5HWSG8FXkCSe4NgwzbnA64nT5bmRFKRKgbSKj2X8Pe7KyYcQ", # Machine stash Account
+        "machineStatus": "rented", # The current state of the machine
+        "onlineHeight": 537808, # Machine online time
+        "rewardCommittee": [ # List of committees that can receive machine online rewards
             "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
             "5G3oJ8cGv4mhzRvtoBtGG9cX3MTNKxNTcMNAVykxA5ZFz8wi",
             "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX"
         ],
-        "rewardDeadline": 733, # 委员会奖励结束时间（era）
-        "stakeAmount": "400000000000000000000", # 机器质押数量
-        "totalBurnFee": "0", # 因银河竞赛开启，销毁的租金数
-        "totalRentFee": "60329673396778369975", # 总租金数
-        "totalRentedDuration": 14, # 被租用时长
-        "totalRentedTimes": 2 # 被租用次数
+        "rewardDeadline": 733, # Committee award end time（era）
+        "stakeAmount": "400000000000000000000", # Number of machine pledges
+        "totalBurnFee": "0", # The number of rents destroyed due to the start of the Galaxy Contest
+        "totalRentFee": "60329673396778369975", # Total rent fee
+        "totalRentedDuration": 14, # Total rented duration
+        "totalRentedTimes": 2 # Total rented time
     },
     "id": 1
 }
 ```
 
-### 1.7. 查看矿工个数
+### 1.7. Check the number of stash accounts
 
-示例：
+- Example
 
 ```json
 {
@@ -257,19 +256,19 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-结果说明：
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
-    "result": 13, # 矿工个数（>=1台机器）
+    "result": 13, # Number of Stash（>=1台机器）
     "id": 1
 }
 ```
 
-### 1.8. 查看所有机器列表
+### 1.8. View all machines in a list
 
-- 示例：
+- Example
 
 ```json
 {
@@ -280,7 +279,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```json
 {
@@ -303,9 +302,9 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 1.9 查看 onlineProfile 模块统计信息
+### 1.9 View onlineProfile module statistics
 
-- 示例
+- Example
 
 ```
 {
@@ -316,7 +315,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```json
 {
@@ -334,9 +333,9 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 1.10 获取账户链上身份
+### 1.10 Get the identity on the account chain
 
-- 示例
+- Example
 
 ```json
 {
@@ -347,7 +346,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```json
 {
@@ -357,9 +356,9 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 1.11 获取矿工统计信息
+### 1.11 Get stash account statistics
 
-- 示例
+- Example
 
 ```json
 {
@@ -370,7 +369,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
@@ -418,9 +417,9 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 1.12 按位置获取统计信息
+### 1.12 Get statistics by location
 
-- 示例
+- Example
 
 ```json
 {
@@ -431,7 +430,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
@@ -471,11 +470,11 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-## 2. Committee 模块
+## 2. Committee Module
 
 ### 2.1 committee_getCommitteeList
 
-- 示例：
+- Example
 
 ```json
 {
@@ -486,17 +485,17 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": {
         "chillList": [
-            "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX" # 当前停止接单的委员会
+            "5GGcwSx1xb4tpCfopfk8kSmJNQ6qpH38yjFVLEYYqdnECwcX" # Committees that currently stop taking orders
         ],
         "fulfillingList": [],
-        "normal": [ # 当前状态正常的委员会
+        "normal": [ # Committees in a normal state
             "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
             "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
             "5EfFToHMVc3SEzJCiSisAMMu3zVMsufaxWwNECUM3k2qUEFQ",
@@ -507,7 +506,7 @@ onlineProfile 模块记录了机器在线奖励的信息
             "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW",
             "5HDjo1p7DNmfXsjvcAjFogQ8Ue8fNb26Z1RAD9XqmWrKETFk"
         ],
-        "waitingBoxPubkey": [ # 还没设置boxPubkey的委员会
+        "waitingBoxPubkey": [ # Committees that has not been set up boxPubkey
             "5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"
         ]
     },
@@ -515,79 +514,79 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-## 3. OnlineCommittee 模块
+## 3. OnlineCommittee Module
 
-### 3.1 获取机器分配的委员会列表
+### 3.1 Get the list of committees assigned by the machine
 
-- 示例：
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"onlineCommittee_getMachineCommitteeList",
-      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # 机器ID
+      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # Machine ID
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": {
-        "bookTime": 533682, # 派单时间
-        "bookedCommittee": [ # 派单委员会
+        "bookTime": 533682, # Order Dispatch time
+        "bookedCommittee": [ # Order Dispatch committee
             "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
             "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
             "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
         ],
-        "confirmStartTime": 538002, # 开始提交原始机器信息时间
-        "confirmedCommittee": [ # 已提交了原始值的委员会
+        "confirmStartTime": 538002, # Time to submit original machine information
+        "confirmedCommittee": [ # The committee that has submitted the original value
             "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
             "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
             "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
         ],
-        "hashedCommittee": [ # 已提交了机器信息Hash的委员会
+        "hashedCommittee": [ # The committee that has submitted the machine information hash
             "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
             "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
             "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
         ],
-        "onlinedCommittee": [ # 机器上线成功，将会获得奖励的委员会
+        "onlinedCommittee": [ # The machine is successfully online and committee will be rewarded
             "5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r",
             "5DdA3eHdWKuHLjqEquKQzyvhumNBEN32RxRWkuuaFvda474S",
             "5Gy6ANnyoWwo6WxuN5Vxz5hogY2JXg51FZbR99gYtQ49qckW"
         ],
-        "status": "finished" # 派单状态
+        "status": "finished" # Order Dispatch status
     },
     "id": 1
 }
 ```
 
-### 3.2 获取委员会对机器的审核时间
+### 3.2 Get the committee's review time for the machine
 
-- 示例：
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"onlineCommittee_getCommitteeOps",
-      "params": ["5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r", "74339d3413c1386d23d92e55586ccf25090c7eb762928f9bc69799b677f65f51"] # 委员会ID； 机器ID
+      "params": ["5D1vwMoK1DjBF7pfApKjT9Gi5C4DKHvZMztFRhTsMqo71B8r", "74339d3413c1386d23d92e55586ccf25090c7eb762928f9bc69799b677f65f51"] # Committee Account ID; Machine ID
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": {
-        "bookedTime": 600340, # 派单时间
-        "confirmHash": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # 提交的机器信息Hash
+        "bookedTime": 600340, # Order Dispatch time
+        "confirmHash": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], # Submitted machine information Hash
         "confirmTime": 0,
         "hashTime": 0,
-        "machineInfo": { # 提交的机器信息
+        "machineInfo": { # Submitted machine information
             "calc_point": 0,
             "cpu_core_num": 0,
             "cpu_rate": 0,
@@ -615,88 +614,88 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 3.3 获取委员会所有派单的机器列表
+### 3.3 Get a list of all the machines dispatched by the committee
 
-- 示例：
+- Example
 
 ```
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"onilneCommittee_getCommitteeMachineList",
-      "params": ["5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"] # 委员会ID
+      "params": ["5Gv3FyFA7bFbUqqgXWXwkgCkazMaaBpfbVnwtVVRP5vgUYRs"] # Committee Account ID
 }
 ```
 
-- 结果说明：
+- Explanation of results
 
 ```
 {
     "jsonrpc": "2.0",
     "result": {
-        "bookedMachine": [], # 当前的派单
-        "confirmedMachine": [], # 提交了原始值的机器列表
-        "hashedMachine": [], # 提交了Hash的机器列表
-        "onlineMachine": [] # 现在已经在线的机器
+        "bookedMachine": [], # Current dispatched order
+        "confirmedMachine": [], # List of machines that submitted the original info
+        "hashedMachine": [], # The list of machines that submitted the Hash
+        "onlineMachine": [] # Machines that are now online
     },
     "id": 1
 }
 ```
 
-## 4. RentMachine 模块
+## 4. RentMachine Modul
 
-### 4.1 查看机器的租用信息
+### 4.1  View machine rental information
 
-- 示例
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"rentMachine_getRentOrder",
-      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # 机器ID
+      "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # Machine ID
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": {
-        "confirmRent": 539746, # 确认租用块高
-        "rentEnd": 623264, # 租用结束时间
-        "rentStart": 539744, # 租用开始时间
-        "rentStatus": "renting", # 当前订单状态
-        "renter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # 租用者
-        "stakeAmount": "0" # 租用者质押金额
+        "confirmRent": 539746, # Confirm rent succeed block height
+        "rentEnd": 623264, # Rental end time
+        "rentStart": 539744, # Rental start time
+        "rentStatus": "renting", # Current order status
+        "renter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5",
+        "stakeAmount": "0" # Renter's staked amount
     },
     "id": 1
 }
 ```
 
-### 4.2 查看某个账户租用的机器列表
+### 4.2 View the list of machines rented by an account
 
-- 示例
-
+- Example
 
 ```json
 {
      "jsonrpc":"2.0",
       "id":1,
       "method":"rentMachine_getRentList",
-      "params": ["5E7123qZExgZaYKnmTcJacu68c2GbLeSHo9qNWmUWcaw4RSR"] # 账户地址
+      "params": ["5E7123qZExgZaYKnmTcJacu68c2GbLeSHo9qNWmUWcaw4RSR"] # Renter Account
 }
 ```
 
-- 结果说明
+- Explanation of results
 
 ```json
 {
     "jsonrpc": "2.0",
     "result": [
-        [102, 97, 101, 100, 99, 53, 53, ...] # 地址，为u8 Array格式
+        [102, 97, 101, 100, 99, 53, 53, ...] # MachineId，u8 Array
     ],
     "id": 1
 }
 ```
+
