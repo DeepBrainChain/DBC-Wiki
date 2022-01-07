@@ -1,4 +1,4 @@
-# # On-chain rent machine
+# On-chain rent machine
 
 ## Step 1: Determine the machine to be rented
 
