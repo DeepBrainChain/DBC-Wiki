@@ -1,6 +1,6 @@
-# 链上错误说明
+# On-chain error description
 
-## onlineProfile模块
+## onlineProfile Module
 BadSignature,
 MachineIdExist,
 BalanceNotEnough,
@@ -30,7 +30,7 @@ SlashIdNotExist,
 TimeNotAllowed,
 ExpiredSlash,
 
-## onlineCommittee模块
+## onlineCommittee Module
 NotInBookList,
 AlreadySubmitHash,
 NotAllHashSubmited,
