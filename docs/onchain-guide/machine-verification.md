@@ -2,7 +2,7 @@
 
 ## 1. 查看系统分配给自己的订单
 
-导航到 `开发者`-->`链状态`-->`存储`，在其中选择`onlineCommittee`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如果所示，该委员会有一个系统分配的订单
+导航到 `开发者`-->`链状态`-->`存储`，在其中选择`onlineCommittee`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
 
 <img src="./assets/machine_verification.assets/image-20210601164137286.png" width="50%" height="50%">
 
