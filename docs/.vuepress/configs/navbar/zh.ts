@@ -83,7 +83,6 @@ export const zh: NavbarConfig = [
       },
       {
         text: "链上算力平台",
-        link: "/onchain-guide",
         children: [
           "/onchain-guide/dbc-chain-logic",
           "/onchain-guide/machine-reward-model",

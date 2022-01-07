@@ -82,7 +82,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "On-chain computing platform",
-        link: "/en/onchain-guide",
         children: [
           "/en/onchain-guide/dbc-chain-logic",
           "/en/onchain-guide/machine-reward-model",
