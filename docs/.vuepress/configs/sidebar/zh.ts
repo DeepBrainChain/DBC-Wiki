@@ -82,8 +82,8 @@ export const zh: SidebarConfig = {
       text: "OnchainGuide",
       children: [
         "/onchain-guide/dbc-chain-logic",
-        "/onchain-guide/machine-reward_model",
-        "/onchain-guide/machine-slash_model",
+        "/onchain-guide/machine-reward-model",
+        "/onchain-guide/machine-slash-model",
         "/onchain-guide/bonding-machine",
         "/onchain-guide/become-onchain-committee",
         "/onchain-guide/machine-verification",
