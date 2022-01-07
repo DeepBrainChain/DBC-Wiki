@@ -1,41 +1,44 @@
-# TODO
+# The committee handles the renter’s report
 
-### 补充质押
+## TODO
 
-> 机器第一次绑定时，质押绑定一张卡所需要的 DBC，当机器被委员会审核通过后，系统将根据委员会提交的信息（GPU 数）检查并增加卡数对应的质押。
+### Supplementary staking
+
+> When the machine is bound for the first time, pledge the DBC required to bind a card. After the machine is approved by the committee, the system will check and increase the pledge corresponding to the number of cards based on the information submitted by the committee (the number of GPUs).
 >
-> 此时，当质押不够时，机器 ID 将被放到`online_profile模块`--`live_machine`变量的`fulfilling_machine`字段中，表示需要**补充质押**，才能上线。
+> At this time, when the staking is not enough, the machine ID will be placed in the `fulfilling_machine` field of the `online_profile module`--`live_machine` variable, indicating that it needs **supplemental pledge** to go online.
 
-补充质押的操作：
+Operation of supplementary pledge:
 
-![image-20210628174246842](./assets/maintain_machine.assets/image-20210628174246842.png)
+<img src="./assets/maintain_machine.assets/image-20210628174246842.png" width="50%" height="50%">
 
-### 重新绑定
+### Rebind
 
-> 当机器被委员会拒绝后，有 10 天的时间可以声明重新绑定。
+> When the machine is rejected by the committee, there are 10 days to declare rebinding.
 
-![image-20210628173325854](./assets/maintain_machine.assets/image-20210628173325854.png)
+<img src="./assets/maintain_machine.assets/image-20210628173325854.png" width="50%" height="50%">
 
-### 因故障声明机器下线
+### The machine is declared offline due to a fault
 
-> 当机器出现故障时，为了避免被举报，机器维护者需要及时声明**机器下线**，来及时处理机器问题。
+> When a machine has fault, in order to avoid being reported, the machine maintainer needs to promptly declare the **machine is offline** to deal with the machine problem in time.
 
-操作：`onlineProfile` -- `controllerReportOffline`
+Operation：`onlineProfile` -- `controllerReportOffline`
 
-![image-20210628174652781](./assets/maintain_machine.assets/image-20210628174652781.png)
+<img src="./assets/maintain_machine.assets/image-20210628174652781.png" width="50%" height="50%">
 
-### （因故障声明下线后）声明机器上线
+### (After being declared offline due to failure) Declaring that the machine is online
 
-> 当机器从故障中恢复后，需要及时声明机器上线。
+> When the machine recovers from the failure, it is necessary to declare that the machine is online in time.
 
-操作：`onlineProfile`--`controllerReportOnline`
+Operation：`onlineProfile`--`controllerReportOnline`
 
-![image-20210628174734910](./assets/maintain_machine.assets/image-20210628174734910.png)
+<img src="./assets/maintain_machine.assets/image-20210628174734910.png" width="50%" height="50%">
 
-### 下线修改机器配置（将会被重新进行验证）
+### Modify the machine configuration offline (will be re-verified)
 
-操作： onlineProfile -- offlineMachineChangeHardwareInfo
+Operation： onlineProfile -- offlineMachineChangeHardwareInfo
 
-![image](./assets/maintain_machine.assets/2021-12-15_14-12.png)
+<img src="./assets/maintain_machine.assets/2021-12-15_14-12.png" width="50%" height="50%">
 
-然后执行： onlineProfile -- addMachineInfo 重新添加机器信息之后，将会被重新分配进行验证
+Then execute: onlineProfile - addMachineInfo After re-adding the machine information, it will be reassigned for verification
+
