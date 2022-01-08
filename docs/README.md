@@ -18,9 +18,7 @@ features:
     details: 机器上链或验证
   - title: 链上 API
     details: 使用API与链进行交互
-  - title: DBC节点客户端
-    details: DBC节点客户端部署与升级
-  - title: DBC节点客户端API
-    details: HTTP请求与快照/镜像管理
+  - title: 安装&升级DBC节点
+    details: 安装&升级DBC节点
 footer: MIT Licensed | Copyright © 2017-present DeepBrainChain
 ---
