@@ -106,22 +106,28 @@ export const zh: NavbarConfig = [
     ],
   },
   {
-    text: "安装DBC程序",
+    text: "安装&升级DBC节点",
     link: "/install-and-update-dbc",
     children: [
-      "/install-and-update-dbc/install-dbc-compute-node",
-      "/install-and-update-dbc/install-update-dbc-client",
-      "/install-and-update-dbc/update-dbc-compute-node",
-    ],
-  },
-  {
-    text: "DBC客户端-HTTP请求",
-    link: "/dbc-client-api",
-    children: [
-      "/dbc-client-api/install-tool",
-      "/dbc-client-api/http-request-format",
-      "/dbc-client-api/http-api",
-      "/dbc-client-api/snap-mirror-manage",
-    ],
-  },
+      {
+        text: "安装和升级DBC节点",
+        link: "/install-and-update-dbc/install-update",
+        children: [
+          "/install-and-update-dbc/install-update/install-dbc-compute-node",
+          "/install-and-update-dbc/install-update/update-dbc-compute-node",
+          "/install-and-update-dbc/install-update/install-update-dbc-client"          
+        ]
+      },
+      {
+        text: "DBC客户端-HTTP请求",
+        link: "/install-and-update-dbc/dbc-client-api",
+        children: [
+          "/install-and-update-dbc/dbc-client-api/install-tool",
+          "/install-and-update-dbc/dbc-client-api/http-request-format",
+          "/install-and-update-dbc/dbc-client-api/http-api",
+          "/install-and-update-dbc/dbc-client-api/snap-mirror-manage"
+        ]
+      }
+    ]
+  }
 ];
