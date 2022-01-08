@@ -2,7 +2,7 @@
 
 ## (一) 安装前准备(基于已配置好固定公网ip地址），部署KVM安装环境
 
-### 注意：系统采用ubuntu18.04 LTS或者20.04LTS,，并在开始前请卸载掉已经安装的显卡驱动，本操作不可带有显卡驱动
+**注意：系统采用ubuntu18.04 LTS或者20.04LTS,，并在开始前请卸载掉已经安装的显卡驱动，本操作不可带有显卡驱动**
 
 ```shell
 sudo echo "140.82.114.4 gitub.com"   >> /etc/hosts
@@ -15,11 +15,11 @@ sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-util
 
 ## (二) 创建和挂载XFS文件系统
 
-### 1、查看硬盘分区情况
+**1、查看硬盘分区情况**
 
 `lsblk`
 
-### 2、创建数据盘文件夹并且格式化硬盘、挂载硬盘(数据盘挂载目录务必为/data)
+**2、创建数据盘文件夹并且格式化硬盘、挂载硬盘(数据盘挂载目录务必为/data)**
 
 ```shell
 sudo mkdir /data
@@ -33,14 +33,14 @@ sudo mount -a
 
 ## (三) 判断机器是否支持虚拟化
 
-### 1、开启硬件支持
+**1、开启硬件支持**
 
 > BIOS开启VT-d（如果是AMD平台，需要开启AMD-Vi     具体操作根据主板类型浏览器搜索即可）
 > VT（VT-x）及VT-d支持，AMD叫AMD-Vi。需要将相关支持设置为enable，默认开启
 >
 > 一般情况下路径：Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)
 
-### 2、环境依赖，检查CPU是否支持虚拟化以及KVM是否可用
+**2、环境依赖，检查CPU是否支持虚拟化以及KVM是否可用**
 
 `egrep -c '(svm|vm)' /proc/cpuinfo`
 
@@ -54,7 +54,7 @@ sudo mount -a
 > KVM acceleration can be used
 > 表示可以进行后续操作，如果显示与其不相符，请检查VT-d是否正确开启
 
-### 如果您是20.04系统，操作以下内容即可，无需再去操作其他关于vfio-pci步骤，如果您是ubuntu18.04系统，请按照第四步开始操作
+**如果您是20.04系统，操作以下内容即可，无需再去操作其他关于vfio-pci步骤，如果您是ubuntu18.04系统，请按照第四步开始操作**
 + 设置黑名单，使卡不被占用
 ```shell
 sudo vim /etc/modprobe.d/blacklist.conf  
@@ -92,8 +92,9 @@ lspci -vv -s <显卡PCI接口> | grep driver
 
 ## (四) 启用系统分组
 
-### 1、配置iommu分组
-#### （以下内容中请根据服务器平台进行iommu替换，intel使用intel_iommu,AMD使用amd_iommu）
+**1、配置iommu分组**
+
+（以下内容中请根据服务器平台进行iommu替换，intel使用intel_iommu,AMD使用amd_iommu）
 
 ```shell
 sudo vim /etc/default/grub
@@ -104,7 +105,7 @@ quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
 intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
 ```
 
-### 2、配置模块文件
+**2、配置模块文件**
 
 ```shell
 sudo vim  /etc/modules
@@ -127,7 +128,7 @@ dmesg | grep -i iommu
 
 ## (五) 隔离GPU资源
 
-### 1、设置黑名单，使卡不被占用
+**1、设置黑名单，使卡不被占用**
 
 ```shell
 sudo vim /etc/modprobe.d/blacklist.conf  
@@ -141,7 +142,7 @@ blacklist nvidiafb
 blacklist rivatv
 ```
 
-### 2、收集PCI设备信息
+**2、收集PCI设备信息**
 
 ```shell
 lspci -nnv | grep NVIDIA
@@ -171,7 +172,7 @@ lspci -nnv | grep NVIDIA
 65:00.3
 ```
 
-### 3、设置vfio并隔离用于直通的GPU
+**3、设置vfio并隔离用于直通的GPU**
 
 ```shell
 sudo vim /etc/modprobe.d/vfio.conf
@@ -186,7 +187,7 @@ vfio-pci kvmgt vfio-iommu-type1 vfio-mdev
 sudo reboot
 ```
 
-### 4、查看GPU状态(所有接口都要查询，防止出现未被vfio-pci占用)
+**4、查看GPU状态(所有接口都要查询，防止出现未被vfio-pci占用)**
 
 ```shell
 #请注意PCI接口内容替换！
@@ -205,10 +206,9 @@ lspci -vv -s 17:00.3 | grep driver
 > **如果有PCI未被vfio-pci占用，请继续往下执行，如果已经成功被vfio-pci占用，可跳过下一步**。
 
 
-
 ## (六) 如果驱动查询为Kernel driver in use: vfio-pci，无需操作以下内容，未成功绑定请继续执行
 
-### 1、解绑设备
+**1、解绑设备**
 
 > 如果驱动查询显示非Kernel driver in user: vfio-pci，将设备解绑（每组id都要解绑，以下仅为示例，请根据自身查询pci接口修改）
 
@@ -232,7 +232,7 @@ find /sys/kernel/iommu_groups/*/devices/*
 lspci -vv -s 17:00.0 | grep driver
 ```
 
-### 2、手动绑定GPU
+**2、手动绑定GPU**
 
 ```shell
 #执行命令进行绑定(注意：echo后的内容为机器查询到的显卡id）已经被占用的PCI可不用再手动绑定
@@ -251,7 +251,7 @@ lspci -vv -s 17:00.0 | grep driver
 
 ## (七) 确认机器显卡被vfio-pci占用后，启动libvirtd服务并设置开机自启(这一步配置非常重要***如果没有正确配置将无法正确接收请求，会直接影响机器在链状态，影响出租，造成损失***）
 
-### 1、开启virt tcp监听服务：
+**1、开启virt tcp监听服务：**
 
 ```shell
 修改配置文件：
@@ -272,13 +272,14 @@ libvirtd_opts="-l"
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
 ```
 
-### 2、启动libvirtd并设置开机自启&检查服务状态
+**2、启动libvirtd并设置开机自启&检查服务状态**
 
 + sudo systemctl restart libvirtd.service
 + sudo systemctl enable libvirtd.service
 + systemctl status libvirtd
 
-### 3、测试libvirtd是否启动成功
+**3、测试libvirtd是否启动成功**
+
 + virsh connect qemu+tcp://localhost:16509/system
 + 如果没有输出错误，就说明启动成功了；
 
@@ -291,8 +292,6 @@ sudo chmod +x add_dbc_user.sh
 sudo ./add_dbc_user.sh dbc
 #dbc用户密码自行设定
 ```
-
-
 
 ## (九) 安装DBC功能节点程序
 

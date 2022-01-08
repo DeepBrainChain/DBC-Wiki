@@ -107,18 +107,18 @@ export const zh: SidebarConfig = {
     {
       text: "安装和升级DBC节点",
       children: [
-        "/install-and-update-dbc/install-update/install-dbc-compute-node",
-        "/install-and-update-dbc/install-update/update-dbc-compute-node",
-        "/install-and-update-dbc/install-update/install-update-dbc-client"          
+        "install-update/install-dbc-compute-node",
+        "install-update/update-dbc-compute-node",
+        "install-update/install-update-dbc-client"          
       ]
     },
     {
       text: "DBC客户端-HTTP请求",
       children: [
-        "/install-and-update-dbc/dbc-client-api/install-tool",
-        "/install-and-update-dbc/dbc-client-api/http-request-format",
-        "/install-and-update-dbc/dbc-client-api/http-api",
-        "/install-and-update-dbc/dbc-client-api/snap-mirror-manage"
+        "dbc-client-api/install-tool",
+        "dbc-client-api/http-request-format",
+        "dbc-client-api/http-api",
+        "dbc-client-api/snap-mirror-manage"
       ]
     }
   ]
