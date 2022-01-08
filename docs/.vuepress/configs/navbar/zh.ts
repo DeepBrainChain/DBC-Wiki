@@ -111,9 +111,9 @@ export const zh: NavbarConfig = [
     children: [
       {
         text: "安装和升级DBC节点",
-        link: "/install-and-update-dbc/install-update",
+        link: "install-update",
         children: [
-          "/install-and-update-dbc/install-update/install-dbc-compute-node",
+          "install-dbc-compute-node",
           "/install-and-update-dbc/install-update/update-dbc-compute-node",
           "/install-and-update-dbc/install-update/install-update-dbc-client"          
         ]
