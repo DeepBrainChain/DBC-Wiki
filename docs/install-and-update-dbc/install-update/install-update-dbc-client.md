@@ -9,18 +9,18 @@
 ## (一) 安装DBC客户端
 ---
 
-### 安装环境
+**安装环境**
 `apt-get  install libvirt-clients libvirt-daemon-system`
 
-### 1. 下载安装脚本：
+**1. 下载安装脚本：**
 https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
 
 下载其中的install_client.sh脚本文件
 
-### 2. 给install_client.sh脚本文件添加执行权限：
+**2. 给install_client.sh脚本文件添加执行权限：**
 命令行下执行：`chmod +x install_client.sh`
 
-### 3. 运行安装脚本:
+**3. 运行安装脚本:**
 命令行下执行：`./install_client.sh [安装目录]`
 
 安装过程中会要求用户输入2个端口号：
@@ -32,15 +32,15 @@ https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
 ## (二) 升级DBC客户端
 ---
 
-### 1. 下载升级脚本：
+**1. 下载升级脚本：**
 https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
 
 下载其中的update_client.sh脚本文件
 
-### 2. 给update_client.sh脚本文件添加执行权限：
+**2. 给update_client.sh脚本文件添加执行权限：**
 命令行下执行：`chmod +x update_client.sh`
 
-### 3. 运行升级脚本:
+**3. 运行升级脚本:**
 命令行下执行：`./update_client.sh [安装目录]`
 
 
