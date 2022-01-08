@@ -109,7 +109,7 @@ export const zh: SidebarConfig = {
       children: [
         {
           text: "安装和升级DBC节点",
-          link: "/install-update-dbc-node/install-update-dbc",
+          link: "/install-update-dbc-node/install-update-dbc/",
           children: [
             "/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
             "/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
@@ -118,7 +118,7 @@ export const zh: SidebarConfig = {
         },
         {
           text: "DBC客户端-HTTP请求",
-          link: "/install-update-dbc-node/dbc-client-api",
+          link: "/install-update-dbc-node/dbc-client-api/",
           children: [
             "/install-update-dbc-node/dbc-client-api/install-tool",
             "/install-update-dbc-node/dbc-client-api/http-request-format",
