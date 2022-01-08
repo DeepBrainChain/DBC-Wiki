@@ -1,4 +1,4 @@
-# 2. 升级DBC算力节点
+# 升级DBC算力节点
 
 ## (一) 下载升级脚本：
 https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
