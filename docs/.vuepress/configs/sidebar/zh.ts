@@ -103,7 +103,7 @@ export const zh: SidebarConfig = {
       ],
     },
   ],
-  "/install-and-update-dbc": [
+  "/install-update-dbc-node": [
     {
       text: "安装和升级DBC节点",
       children: [
