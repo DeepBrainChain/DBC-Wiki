@@ -14,13 +14,9 @@ features:
     details: DBC介绍、社区治理
   - title: DBC资讯
     details: DBC AMA合集、媒体报道
-  - title: 链上操作
+  - title: 链上操作说明
     details: 机器上链或验证
-  - title: 链上 API
-    details: 使用API与链进行交互
   - title: 安装&升级DBC节点
-    details: 安装&升级DBC节点
-  - title: 
-    details: 
+    details: 安装和升级DBC节点
 footer: MIT Licensed | Copyright © 2017-present DeepBrainChain
 ---
