@@ -105,7 +105,7 @@ export const zh: SidebarConfig = {
   ],
   "/install-update-dbc-node": [
     {
-      text: "安装和升级DBC节点",
+      text: "安装&升级DBC节点",
       children: [
         {
           text: "安装和升级DBC节点",
