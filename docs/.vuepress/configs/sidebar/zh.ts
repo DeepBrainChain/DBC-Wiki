@@ -122,8 +122,7 @@ export const zh: SidebarConfig = {
           children: [
             "/install-update-dbc-node/dbc-client-api/install-tool",
             "/install-update-dbc-node/dbc-client-api/http-request-format",
-            "/install-update-dbc-node/dbc-client-api/http-api",
-            "/install-update-dbc-node/dbc-client-api/snap-mirror-manage"
+            "/install-update-dbc-node/dbc-client-api/http-api"
           ]
         }
       ]
