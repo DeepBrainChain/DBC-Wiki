@@ -1,1 +1,1 @@
-# install-update-dbc
+# 安装和升级DBC节点
