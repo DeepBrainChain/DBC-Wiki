@@ -1,5 +1,8 @@
 # HTTP客户端请求API
-#### ( 以下HTTP请求其中的dbc_client_ip和dbc_client_port为用户自己部署的DBC客户端访问地址 )
+:::tip 注意！
+以下HTTP请求其中的dbc_client_ip和dbc_client_port为用户自己部署的DBC客户端访问地址
+:::
+
 ---
 
 ## 1. 查询GPU节点机器配置信息

@@ -3,6 +3,7 @@
 - 下载json文件：http://36.102.233.175:20027/index.html/deepbrainchain.postman_collection.json
 
 - 导入json文件：
+
   <img src="./assets/import_postman_json.png" width = "400" height = "240"  align=center />
 
 - 下载签名工具，稍后会用到：
