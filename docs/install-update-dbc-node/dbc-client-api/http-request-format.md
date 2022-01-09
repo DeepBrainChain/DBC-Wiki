@@ -5,7 +5,7 @@
 `URL格式`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/**具体请求路径**
 
 `请求body`：
-```
+```json
 {
     "peer_nodes_list": [
         // DBC节点的node_id，目前仅支持填写1个
@@ -30,7 +30,7 @@
 >>输出：
 >>![import](./assets/wallet_sign.png)
 >- 将生成的3个值填写到请求body中，最终的请求body格式：
->    ```
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -49,7 +49,7 @@
 >***说明***: 需要知道多签账户的所有`钱包地址`，以及`阈值(threshold)`数量个账户的钱包签名。
 >- 以3签2为例，各字段的释义：
 > 
->    ```
+>    ```json
 >    "multisig_accounts": {
 >        // 多签账户的所有钱包地址
 >        "wallets": [
@@ -74,7 +74,7 @@
 >        ]
 >    }
 >- 最终的请求body格式：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -112,7 +112,7 @@
 >***注意***：session_id只能由`租用者`向机器请求获取和修改（请求方式：参考上述第1种和第2种类型）
 >
 >- 机器租用者请求机器获取session_id（请求方式：参考上述第1种和第2种类型; 此处以第1种方式为例），返回值为session_id：
->    ```
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -129,7 +129,7 @@
 > ![import](./assets/session_id_sign.png)
 > 将生成的session_id和session_id_sign分发给第三方用户即可。
 >- `第三方用户`拿到这个session_id和session_id_sign后，请求的body格式为：
->    ```
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"

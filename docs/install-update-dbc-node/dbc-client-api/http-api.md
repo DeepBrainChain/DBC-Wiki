@@ -11,7 +11,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes
 >
 >`请求body`：
->    ```
+>    ```json
 >    {
 >        "peer_nodes_list": [
 >            // 请求机器的node_id
@@ -33,7 +33,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes/session_id
 >
 >`请求body`：
->    ```
+>    ```json
 >    {
 >        "peer_nodes_list": [
 >            // 请求机器的node_id
@@ -57,7 +57,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
 >
 >`请求body`：
->    ```
+>    ```json
 >    {
 >        "peer_nodes_list": [
 >            // 请求机器的node_id
@@ -98,7 +98,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要查询的task_id值>
 >
 >`请求body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // 请求机器的node_id
@@ -122,7 +122,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks
 >
 >`请求body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // 请求机器的node_id
@@ -145,7 +145,7 @@
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
 >
 >`请求body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // 请求机器的node_id
