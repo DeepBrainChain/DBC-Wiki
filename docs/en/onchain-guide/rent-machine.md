@@ -2,11 +2,11 @@
 
 ## Step 1: Determine the machine to be rented
 
--Open [Mainnet Wallet](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io)
+- Open [Mainnet Wallet](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io)
 
--Create a wallet: Account-->Add account (The mnemonic phrase must be saved, if the mnemonic phrase is lost, the account cannot be retrieved, and the currency is lost)
+- Create a wallet: Account-->Add account (The mnemonic phrase must be saved, if the mnemonic phrase is lost, the account cannot be retrieved, and the currency is lost)
 
--Go to [Galactic Race Machine List](https://galaxyrace.deepbrainchain.org/table) to find the corresponding type of idle machine
+- Go to [Galactic Race Machine List](https://galaxyrace.deepbrainchain.org/table) to find the corresponding type of idle machine
 
 ![find_machine](./assets/rent_machine.assets/find_machine.png)
 
@@ -14,9 +14,9 @@
 
 - Navigate to `Developer`---`Transactions`---`rentMachine` ----`rentMachine(machine_id, duration)`
 
-- machine_id Enter the id of the machine to be rented, the `0x` in the input box must be deleted first
+- `machine_id`: Enter the id of the machine to be rented, the `0x` in the input box must be deleted first
 
-- duration enter the number of days you need to rent
+- `duration`: enter the number of days you need to rent
 
 - After the input is complete, click Submit Transaction, and confirm whether the machine is available within 30 minutes. (If the lease is not confirmed within 30 minutes, the payment of `dbc` will be refunded, but the transaction fee of 10 `dbc` cannot be refunded)
 
