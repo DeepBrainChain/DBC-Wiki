@@ -4,7 +4,7 @@ title: DBC-Wiki Home
 description: 欢迎来到DBC-Wiki
 actions:
   - text: 链上操作
-    link: /onchain-guide
+    link: /staking-model/dbc-chain-params
     type: primary
   - text: RPC介绍
     link: /onchain-api/dbc-rpc-readme
