@@ -127,7 +127,6 @@ export const zh: SidebarConfig = {
         },
         {
           text: "创建windows虚拟机使用omniverse",
-          link: "/install-update-dbc-node/create-win-machine-omniverse/",
           children: [
             "/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
           ]
