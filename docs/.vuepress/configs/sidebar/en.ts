@@ -122,7 +122,9 @@ export const en: SidebarConfig = {
         "/en/dbc-client-api/http-api",
         "/en/dbc-client-api/snap-mirror-manage",
       ],
-    "/en/install-and-update-dbc/": [
+    },
+  ],
+  "/en/install-and-update-dbc/": [
     {
       text: "Create windows virtual machine application omniverse",
       children: [
