@@ -67,7 +67,7 @@
   >```
   >
   >示例：
-  >![create_win](./imagecreate_win.png)
+  >![create_win](./image/create_win.png)
 
   * The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
   * You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
