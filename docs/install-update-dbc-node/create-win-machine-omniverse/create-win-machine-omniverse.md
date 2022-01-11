@@ -97,7 +97,7 @@ ____
 
   ![connect](./image/connect.png)
 
-## 步骤六：下载omniverse
+## 步骤六：下载omniverse安装Audio2Face
 
 * 打开`NVIDIA`官网下载`NVIDIA omniverse`：https://www.nvidia.cn/omniverse/#
 
