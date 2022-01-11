@@ -123,4 +123,10 @@ export const en: NavbarConfig = [
       "/en/dbc-client-api/snap-mirror-manage",
     ],
   },
+  {
+    text: "Create windows virtual machine application omniverse",
+    children: [
+      "/en/install-and-update-dbc/Create-win-machine-omniverse",
+    ],
+  },
 ];
