@@ -124,7 +124,7 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "Create windows virtual machine application omniverse",
+    text: "Create wins-machine application omniverse",
     children: [
       "/en/install-and-update-dbc/Create-win-machine-omniverse",
     ],
