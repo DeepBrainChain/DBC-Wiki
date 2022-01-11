@@ -10,7 +10,7 @@
 
 - Go to [Galaxy Race Machine List](https://galaxyrace.deepbrainchain.org/table) to find the corresponding type of idle machine
 
-  ![find_machine](/find_machine.png)
+  ![find_machine](./images/find_machine.png)
 
 ## Step 2: Rent an on-chain machine
 
@@ -67,7 +67,7 @@
   >```
   >
   >示例：
-  >![create_win](C:\Users\Administrator\Pictures\window虚拟机\create_win.png)
+  >![create_win](./images/create_win.png)
 
   * The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
   * You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
@@ -97,7 +97,7 @@ When the machine expires, the virtual machine will be automatically stopped to e
 
 * After viewing the login method of the virtual machine, open a remote connection locally
 
-  ![connect](connect.png)
+  ![connect](./images/connect.png)
 
 ## Step 6: Download omniverse
 
@@ -105,10 +105,10 @@ When the machine expires, the virtual machine will be automatically stopped to e
 
 * After the installation is complete according to the documentation on the official website: Navigate to `EXCHANGE`, find `Audio2Face` in the `Apps` section, then click `"Install"` and `"Launch" )`.
 
-  ![install](install.png)
+  ![install](./images/install.png)
 
 * After startup, you can see the default avatar and accompanying voice and template parameters (it will take a few minutes to load the template engine)
 
   For more operation details, please [Reference](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
-  ![face_info](face_info.png)
+  ![face_info](./images/face_info.png)
