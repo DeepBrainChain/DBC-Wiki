@@ -126,7 +126,14 @@ export const zh: NavbarConfig = [
           "/install-update-dbc-node/dbc-client-api/http-request-format",
           "/install-update-dbc-node/dbc-client-api/http-api"
         ]
-      }
+      },
+      {
+          text: "创建windows虚拟机使用omniverse",
+          link: "/install-update-dbc-node/create-win-machine-omniverse/",
+          children: [
+            "/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
+          ]
+       }
     ]
   }
 ];
