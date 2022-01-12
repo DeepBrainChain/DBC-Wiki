@@ -72,8 +72,14 @@ ____
   * 可以通过请求`虚拟机详细信息`，查询到虚拟机`登录方式`以及虚拟机的`当前状态`（当状态值为"creating"，表示虚拟机正在创建过程中）
 
   相关操作请[参考](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/create_macine.md)
+  
+## 步骤三：远程连接虚拟机
 
-## 步骤三：确认可用并租赁
+* 查看到虚拟机登录方式后，在本地打开远程连接
+
+  ![connect](./image/connect.png)
+
+## 步骤四：确认可用并租赁
 
 ::: warning
 确认之前必须要确认虚拟机能够正常启动。确认租用成功过后，表示机器租用成功，DBC 租金无法退回
@@ -83,22 +89,7 @@ ____
 
 - 输入机器 id 并提交交易即可
 
-## 步骤四：机器续租
-
-::: warning
-机器到期会自动停止虚拟机，确保在租用到期之前续租成功
-:::
-
-- 导航到`开发者`----`交易`----`rentMachine`----`reletMachine(machine_id, add_duration)`
-- 输入机器 id 以及续租天数，提交交易
-
-## 步骤五：远程连接虚拟机
-
-* 查看到虚拟机登录方式后，在本地打开远程连接
-
-  ![connect](./image/connect.png)
-
-## 步骤六：下载omniverse安装Audio2Face
+## 步骤五：下载omniverse安装Audio2Face
 
 * 打开`NVIDIA`官网下载`NVIDIA omniverse`：https://www.nvidia.cn/omniverse/#
 
@@ -111,3 +102,12 @@ ____
   更多操作详情请[参考](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
   ![face_info](./image/face_info.png)
+  
+## 步骤六：机器续租
+
+::: warning
+机器到期会自动停止虚拟机，确保在租用到期之前续租成功
+:::
+
+- 导航到`开发者`----`交易`----`rentMachine`----`reletMachine(machine_id, add_duration)`
+- 输入机器 id 以及续租天数，提交交易
