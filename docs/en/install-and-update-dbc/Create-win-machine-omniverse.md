@@ -43,7 +43,7 @@
   >       //Virtual machine image name (make sure the image name written in the virtual machine or image management center)
   >        "image_name": "windows_1909.qcow2",
   >       // Fill in the name of the data disk (you can leave it blank, if you leave it blank, dbc exists in the form of data_1_<task_id>.qcow2 by default,
-             If you fill in, it will check whether the file exists, and if it exists, the data disk will exist in the form of .qcow2 of the filled file)
+  >          If you fill in, it will check whether the file exists, and if it exists, the data disk will exist in the form of .qcow2 of the filled file)
   >        "data_file_name": "",
   >        // Number of gpus (greater than or equal to 0)
   >        "gpu_count": "1",
