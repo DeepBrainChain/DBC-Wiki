@@ -1,17 +1,17 @@
-# HTTP客户端请求API
-#### ( 以下HTTP请求其中的dbc_client_ip和dbc_client_port为用户自己部署的DBC客户端访问地址 )
+# HTTP client request API
+#### ( The dbc_client_ip and dbc_client_port in the following HTTP request are the DBC client access addresses deployed by the user )
 ---
 
-## 1. 查询GPU节点机器配置信息
->`请求方式`：POST
+## 1. Querying GPU Node Machine Configuration Information
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes
 >
->`请求body`：
+>`request body`：
 >    ```
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            // The node_id of the requesting machine
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
@@ -19,143 +19,143 @@
 >        }
 >    }
 >    ```
-示例：
+Example：
 <img src="./assets/query_machine_info.png" width = "500" height = "160"  align=center />
 
 <br/>
 
-## 2. 租用者查询获取session_id
->`请求方式`：POST
+## 2. Tenant query to get session_id
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes/session_id
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes/session_id
 >
->`请求body`：
+>`request body`：
 >    ```
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            // The node_id of the requesting machine
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
 >
 >        },
->       //身份认证信息，使用租用者签名或者多签账户签名（参考HTTP请求格式说明），两者选一
+>       //Identity authentication information, use tenant signature or multi-signature account signature (refer to the description of HTTP request format), choose one of the two
 >       ...
 >    }
 >    ```
-示例（此处使用的是租用者签名，也可以使用多签账户签名）：
+Example (the tenant's signature is used here, and a multi-signature account signature can also be used)：
 <img src="./assets/query_session_id.png" width = "500" height = "180"  align=center />
 
 <br/>
 
-## 3. 创建虚拟机
->`请求方式`：POST
+## 3. Create a virtual machine
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
 >
->`请求body`：
+>`request body`：
 >    ```
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            // The node_id of the requesting machine
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
->            // 登录虚拟机时的端口号（每个虚拟机设置一个不同的值）
+>            // The port number when logging into the virtual machine (set a different value for each virtual machine)
 >            "ssh_port": "5684",
->            // 镜像名字
+>            // Image name (fill in according to the image owned by the machine or the image existing in the image management center)
 >            "image_name": "ubuntu.qcow2",
->            // gpu数量（大于等于 0）
+>            // Number of gpus (greater than or equal to 0)
 >            "gpu_count": "0",
->            // cpu数量（大于0）
+>            // Number of CPUs (greater than 0)
 >            "cpu_cores": "4",
->            // 内存大小（大于0，单位：G）
+>            // Memory size (greater than 0, unit: G)
 >            "mem_size": "8",
->            // 磁盘大小（大于0，单位：G）
+>            // Disk size (greater than 0, unit: G)
 >            "disk_size": "10",
->            // 使用vnc连接该虚拟机时的端口号（每个虚拟机设置一个不同的值）
+>            // The port number when connecting to this virtual machine using vnc (set a different value for each virtual machine)
 >            "vnc_port": "5904"
 >        },
 >
->        "session_id": "租用者分发的session_id",
->        "session_id_sign": "租用者分发的session_id_sign"
+>        "session_id": "The session_id distributed by the renter",
+>        "session_id_sign": "session_id_sign distributed by the renter"
 >    }
 >    ```
-示例：
+Example：
 <img src="./assets/create_task.png" width = "500" height = "240"  align=center />
 
-* 创建过程的时间长短，会根据配置的不同而不同，大约在五分钟到十五分钟之间。
-* 可以通过请求`虚拟机详细信息`，查询到虚拟机`登录方式`以及虚拟机的`当前状态`（当状态值为"creating"，表示虚拟机正在创建过程中）
+* The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
+* You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
 
 <br/>
 
-## 4. 查询虚拟机详细信息
->`请求方式`：POST
+## 4. Querying Virtual Machine Details
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要查询的task_id值>
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<task_id value to query>
 >
->`请求body`：
+>`request body`：
 >   ```
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           // The node_id of the requesting machine
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
 >            
 >       },
 >
->       "session_id": "租用者分发的session_id",
->       "session_id_sign": "租用者分发的session_id_sign"
+>       "session_id": "The session_id distributed by the renter",
+>       "session_id_sign": "session_id_sign distributed by the renter"
 >  }
 >  ```
 
-示例：
+Example：
 <img src="./assets/query_task_info.png" width = "500" height = "240"  align=center />
 
-## 5. 查询虚拟机列表
->`请求方式`：POST
+## 5. Query the list of virtual machines
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks
 >
->`请求body`：
+>`request body`：
 >   ```
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           // The node_id of the requesting machine
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
 >            
 >       },
 >
->       "session_id": "租用者分发的session_id",
->       "session_id_sign": "租用者分发的session_id_sign"
+>       "session_id": "The session_id distributed by the renter",
+>       "session_id_sign": "session_id_sign distributed by the renter"
 >  }
 >  ```
-示例：
+Example：
 <img src="./assets/list_task.png" width = "500" height = "200"  align=center />
 
-## 6. 删除虚拟机
->`请求方式`：POST
+## 6. delete virtual machine
+>`request method`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
 >
->`请求body`：
+>`request body`：
 >   ```
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           // The node_id of the requesting machine
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
 >            
 >       },
 >
->       "session_id": "租用者分发的session_id",
->       "session_id_sign": "租用者分发的session_id_sign"
+>       "session_id": "The session_id distributed by the renter",
+>       "session_id_sign": "session_id_sign distributed by the renter"
 >  }
 >  ```
-示例：
+Example：
 <img src="./assets/delete_task.png" width = "500" height = "200"  align=center />
 
