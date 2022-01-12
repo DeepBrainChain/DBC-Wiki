@@ -42,7 +42,8 @@
   >        "rdp_port":"3389",
   >       //Virtual machine image name (make sure the image name written in the virtual machine or image management center)
   >        "image_name": "windows_1909.qcow2",
-  >       // The name of the created data disk can be left blank and created by default
+  >       // The name of the data disk to be created (can be left blank, dbc is created with the name of data_1_<task_id>.qcow2 by default, if filled in, it will check     
+  >       whether the file exists, if it exists, the data disk will be created in the form of .qcow2)
   >        "data_file_name": "",
   >        // Number of gpus (greater than or equal to 0)
   >        "gpu_count": "1",
