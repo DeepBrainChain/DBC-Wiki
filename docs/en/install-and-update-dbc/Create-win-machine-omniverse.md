@@ -74,8 +74,14 @@
   * You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
 
   For related operations, please [Reference](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/create_macine.md)
+  
+## Step 3: Connect to the virtual machine remotely
 
-## Step 3: Confirm availability and lease
+* After viewing the login method of the virtual machine, open a remote connection locally
+
+  ![connect](./images/connect.png)
+  
+## Step 4: Confirm availability and lease
 
 ::: warning
 Before confirming, you must confirm that the virtual machine can be started normally. After confirming that the lease is successful, it means that the machine is leased successfully, and the DBC rent cannot be refunded.
@@ -85,22 +91,7 @@ Before confirming, you must confirm that the virtual machine can be started norm
 
 - Enter the machine id and submit the transaction
 
-## Step 4: Machine lease renewal
-
-::: warning
-When the machine expires, the virtual machine will be automatically stopped to ensure that the lease is successfully renewed before the lease expires.
-:::
-
-- Navigate to `developer`----`transaction`----`rentMachine`----`reletMachine(machine_id, add_duration)`
-- Enter the machine id and the number of days to renew the lease and submit the transaction
-
-## Step 5: Connect to the virtual machine remotely
-
-* After viewing the login method of the virtual machine, open a remote connection locally
-
-  ![connect](./images/connect.png)
-
-## Step 6: Download omniverse
+## Step 5: Download omniverse
 
 * Open `NVIDIA` official website to download `NVIDIA omniverse`: https://www.nvidia.cn/omniverse/#
 
@@ -113,3 +104,12 @@ When the machine expires, the virtual machine will be automatically stopped to e
   For more operation details, please [Reference](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
   ![face_info](./images/face_info.png)
+  
+## Step 6: Machine lease renewal
+
+::: warning
+When the machine expires, the virtual machine will be automatically stopped to ensure that the lease is successfully renewed before the lease expires.
+:::
+
+- Navigate to `developer`----`transaction`----`rentMachine`----`reletMachine(machine_id, add_duration)`
+- Enter the machine id and the number of days to renew the lease and submit the transaction
