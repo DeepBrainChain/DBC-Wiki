@@ -105,28 +105,34 @@ export const en: NavbarConfig = [
     ],
   },
   {
-    text: "Install DBC Client",
-    link: "/en/install-and-update-dbc",
+    text: "Install and upgrade DBC nodes",
+    // link: "/en/staking-model",
     children: [
-      "/en/install-and-update-dbc/install-dbc-compute-node",
-      "/en/install-and-update-dbc/install-update-dbc-client",
-      "/en/install-and-update-dbc/update-dbc-compute-node",
-    ],
-  },
-  {
-    text: "DBC Client HTTP API",
-    link: "/en/dbc-client-api",
-    children: [
-      "/en/dbc-client-api/install-tool",
-      "/en/dbc-client-api/http-request-format",
-      "/en/dbc-client-api/http-api",
-      "/en/dbc-client-api/snap-mirror-manage",
-    ],
-  },
-  {
-    text: "Create wins-machine application omniverse",
-    children: [
-      "/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
-    ],
+      {
+        text: "Install DBC Client",
+        // link: "/en/install-and-update-dbc",
+        children: [
+          "/en/install-and-update-dbc/install-dbc-compute-node",
+          "/en/install-and-update-dbc/install-update-dbc-client",
+          "/en/install-and-update-dbc/update-dbc-compute-node",
+        ],
+      },
+      {
+        text: "DBC Client HTTP API",
+        // link: "/en/dbc-client-api",
+        children: [
+          "/en/dbc-client-api/install-tool",
+          "/en/dbc-client-api/http-request-format",
+          "/en/dbc-client-api/http-api",
+          "/en/dbc-client-api/snap-mirror-manage",
+        ],
+      },
+      {
+        text: "Create wins-machine application omniverse",
+        children: [
+          "/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
+        ],
+      },
+    ]
   },
 ];
