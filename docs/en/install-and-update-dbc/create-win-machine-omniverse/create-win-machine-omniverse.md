@@ -10,7 +10,7 @@
 
 - Go to [Galaxy Race Machine List](https://galaxyrace.deepbrainchain.org/table) to find the corresponding type of idle machine
 
-  ![find_machine](./images/find_machine.png)
+  ![find_machine](./assets/find_machine.png)
 
 ## Step 2: Rent an on-chain machine
 
@@ -68,7 +68,7 @@
   >```
   >
   >示例：
-  >![create_win](./images/create_win.png)
+  >![create_win](./assets/create_win.png)
 
   * The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
   * You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
@@ -79,7 +79,7 @@
 
 * After viewing the login method of the virtual machine, open a remote connection locally
 
-  ![connect](./images/connect.png)
+  ![connect](./assets/connect.png)
   
 ## Step 4: Confirm availability and lease
 
@@ -97,13 +97,13 @@ Before confirming, you must confirm that the virtual machine can be started norm
 
 * After the installation is complete according to the documentation on the official website: Navigate to `EXCHANGE`, find `Audio2Face` in the `Apps` section, then click `"Install"` and `"Launch" )`.
 
-  ![install](./images/install.png)
+  ![install](./assets/install.png)
 
 * After startup, you can see the default avatar and accompanying voice and template parameters (it will take a few minutes to load the template engine)
 
   For more operation details, please [Reference](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
-  ![face_info](./images/face_info.png)
+  ![face_info](./assets/face_info.png)
   
 ## Step 6: Machine lease renewal
 

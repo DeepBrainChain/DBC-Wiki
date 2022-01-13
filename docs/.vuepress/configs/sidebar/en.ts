@@ -128,7 +128,7 @@ export const en: SidebarConfig = {
     {
       text: "Create wins-machine application omniverse",
       children: [
-        "en/install-and-update-dbc/Create-win-machine-omniverse",
+        "en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
       ],
     },
   ],
