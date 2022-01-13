@@ -18,7 +18,15 @@ export const en: SidebarConfig = {
   "/en/dbc-information": [
     {
       text: "DBC News",
+      link: "/en/dbc-information/dbc-progress",
       children: [
+        {
+          text: "DBC Progress",
+          children: [
+            "/en/dbc-information/dbc-progress/2021",
+            "/en/dbc-information/dbc-progress/2022-01-01",
+          ],
+        },
         {
           text: "DBC AMA",
           link: "/en/dbc-information/dbc-ama/",
