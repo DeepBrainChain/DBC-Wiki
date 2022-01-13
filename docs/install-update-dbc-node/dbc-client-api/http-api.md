@@ -172,7 +172,9 @@
 示例：
 <img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
 
-### 5. 启动虚拟机(唤醒处于睡眠状态的虚拟机)
+### 5. 启动虚拟机
+>**唤醒处于睡眠状态的虚拟机，也是用此借口**
+>
 >`请求方式`：POST
 >
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要启动的task_id值>
