@@ -68,20 +68,26 @@
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
->            // 登录虚拟机时的端口号（每个虚拟机设置一个不同的值）
+>            // ssh登录linux虚拟机时使用的端口号（每个虚拟机设置一个不同的值）
 >            "ssh_port": "5684",
+>            // 登录windows虚拟机时使用的端口号
+>            "rdp_port": "5685",
+>            // 使用vnc连接该虚拟机时的端口号（每个虚拟机设置一个不同的值）
+>            "vnc_port": "5904",
 >            // 镜像名字(查看机器信息时显示机器拥有的镜像或在镜像管理中心拥有的镜像均可填写应用)
 >            "image_name": "ubuntu.qcow2",
+>            // 操作系统名字: win 、ubuntu
+>            "operation_system": "",
+>            // 引导方式: legacy 、uefi
+>            "bios_mode": "",
 >            // gpu数量（大于等于 0）
->            "gpu_count": "0",
+>            "gpu_count": "2",
 >            // cpu数量（大于0）
->            "cpu_cores": "4",
+>            "cpu_cores": "8",
 >            // 内存大小（大于0，单位：G）
 >            "mem_size": "8",
 >            // 磁盘大小（大于0，单位：G）
->            "disk_size": "10",
->            // 使用vnc连接该虚拟机时的端口号（每个虚拟机设置一个不同的值）
->            "vnc_port": "5904"
+>            "disk_size": "10"
 >        },
 >
 >        "session_id": "租用者分发的session_id",
@@ -143,7 +149,53 @@
 示例：
 <img src="./assets/list_task.png" width = "500" height = "200"  align=center />
 
-### 4. 删除虚拟机
+### 4. 停止虚拟机
+>`请求方式`：POST
+>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要停止的task_id值>
+>
+>`请求body`：
+>   ```json
+>   {
+>       "peer_nodes_list": [
+>           // 请求机器的node_id
+>           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>       ],
+>       "additional": {
+>            
+>       },
+>
+>       "session_id": "租用者分发的session_id",
+>       "session_id_sign": "租用者分发的session_id_sign"
+>  }
+>  ```
+示例：
+<img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
+
+### 5. 启动虚拟机(唤醒处于睡眠状态的虚拟机)
+>`请求方式`：POST
+>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要启动的task_id值>
+>
+>`请求body`：
+>   ```json
+>   {
+>       "peer_nodes_list": [
+>           // 请求机器的node_id
+>           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>       ],
+>       "additional": {
+>            
+>       },
+>
+>       "session_id": "租用者分发的session_id",
+>       "session_id_sign": "租用者分发的session_id_sign"
+>  }
+>  ```
+示例：
+<img src="./assets/start_task.jpg" width = "500" height = "200"  align=center />
+
+### 6. 删除虚拟机
 >`请求方式`：POST
 >
 >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
