@@ -124,8 +124,8 @@ export const zh: NavbarConfig = [
         children: [
           "/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
           "/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
-          "/install-update-dbc-node/install-update-dbc/install-update-dbc-client"
-        ]
+          "/install-update-dbc-node/install-update-dbc/install-update-dbc-client",
+        ],
       },
       {
         text: "DBC客户端-HTTP请求",
@@ -133,15 +133,15 @@ export const zh: NavbarConfig = [
         children: [
           "/install-update-dbc-node/dbc-client-api/install-tool",
           "/install-update-dbc-node/dbc-client-api/http-request-format",
-          "/install-update-dbc-node/dbc-client-api/http-api"
-        ]
+          "/install-update-dbc-node/dbc-client-api/http-api",
+        ],
       },
       {
-          text: "创建windows虚拟机使用omniverse",
-          children: [
-            "/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
-          ]
-       }
-    ]
-  }
+        text: "创建windows虚拟机使用omniverse",
+        children: [
+          "/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
+        ],
+      },
+    ],
+  },
 ];

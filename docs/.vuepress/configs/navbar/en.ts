@@ -142,6 +142,6 @@ export const en: NavbarConfig = [
           "/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
         ],
       },
-    ]
+    ],
   },
 ];
