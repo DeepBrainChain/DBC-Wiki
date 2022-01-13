@@ -37,6 +37,8 @@ export const en: NavbarConfig = [
       {
         text: "DBC progress",
         children: [
+          "/en/dbc-information/dbc-progress/2020",
+          "/en/dbc-information/dbc-progress/2021-01-01",
           "/en/dbc-information/dbc-progress/2021",
           "/en/dbc-information/dbc-progress/2022-01-01",
         ],

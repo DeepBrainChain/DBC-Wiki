@@ -23,6 +23,8 @@ export const zh: SidebarConfig = {
           text: "DBC 进展",
           link: "/dbc-information/dbc-progress",
           children: [
+            "/dbc-information/dbc-progress/2020",
+            "/dbc-information/dbc-progress/2021-01-01",
             "/dbc-information/dbc-progress/2021",
             "/dbc-information/dbc-progress/2022-01-01",
           ],
