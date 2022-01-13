@@ -38,6 +38,7 @@ export const zh: NavbarConfig = [
       {
         text: "DBC 进展",
         children: [
+          "/dbc-information/dbc-progress/2021",
           "/dbc-information/dbc-progress/2022-01-01",
         ],
       },

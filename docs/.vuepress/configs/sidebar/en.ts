@@ -23,6 +23,7 @@ export const en: SidebarConfig = {
         {
           text: "DBC Progress",
           children: [
+            "/en/dbc-information/dbc-progress/2021",
             "/en/dbc-information/dbc-progress/2022-01-01",
           ],
         },
