@@ -36,6 +36,12 @@ export const zh: NavbarConfig = [
     link: "/dbc-information",
     children: [
       {
+        text: "DBC 进展",
+        children: [
+          "/dbc-information/dbc-progress/2022-01-01",
+        ],
+      },
+      {
         text: "DBC AMA",
         link: "/dbc-information/dbc-ama/",
         children: [
@@ -115,7 +121,7 @@ export const zh: NavbarConfig = [
         children: [
           "/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
           "/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
-          "/install-update-dbc-node/install-update-dbc/install-update-dbc-client"          
+          "/install-update-dbc-node/install-update-dbc/install-update-dbc-client"
         ]
       },
       {
