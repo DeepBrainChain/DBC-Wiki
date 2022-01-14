@@ -2,7 +2,7 @@
 
 1.通过云平台租用 GPU：[https://www.dbchain.ai](https://www.dbchain.ai)
 
-2.链上直接租用 GPU：[https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent_machine.html](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent_machine.html)
+2.链上直接租用 GPU：[https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)
 
 ## GPU 虚拟机 API 接口
 
