@@ -46,7 +46,6 @@ export const zh: NavbarConfig = [
       },
       {
         text: "DBC AMA",
-        link: "/dbc-information/dbc-ama/",
         children: [
           "/dbc-information/dbc-ama/8bit-ama",
           "/dbc-information/dbc-ama/galaxy-ama",
@@ -58,7 +57,6 @@ export const zh: NavbarConfig = [
       },
       {
         text: "DBC 媒体报道",
-        link: "/dbc-information/dbc-report/",
         children: [
           "/dbc-information/dbc-report/dbc-36kr-report",
           "/dbc-information/dbc-report/dbc-apnews-report",

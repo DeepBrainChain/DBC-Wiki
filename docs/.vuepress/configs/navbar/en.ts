@@ -45,7 +45,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "DBC AMA",
-        link: "/en/dbc-information/dbc-ama/",
         children: [
           "/en/dbc-information/dbc-ama/8bit-ama",
           "/en/dbc-information/dbc-ama/galaxy-ama",
@@ -57,7 +56,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "DBC Report",
-        link: "/en/dbc-information/dbc-report/",
         children: [
           "/en/dbc-information/dbc-report/dbc-36kr-report",
           "/en/dbc-information/dbc-report/dbc-apnews-report",

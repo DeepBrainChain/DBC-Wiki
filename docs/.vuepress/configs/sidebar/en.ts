@@ -18,7 +18,6 @@ export const en: SidebarConfig = {
   "/en/dbc-information": [
     {
       text: "DBC News",
-      link: "/en/dbc-information/dbc-progress",
       children: [
         {
           text: "DBC Progress",
@@ -31,7 +30,6 @@ export const en: SidebarConfig = {
         },
         {
           text: "DBC AMA",
-          link: "/en/dbc-information/dbc-ama/",
           children: [
             "/en/dbc-information/dbc-ama/8bit-ama",
             "/en/dbc-information/dbc-ama/galaxy-ama",
@@ -43,7 +41,6 @@ export const en: SidebarConfig = {
         },
         {
           text: "DBC Report",
-          link: "/en/dbc-information/dbc-report/",
           children: [
             "/en/dbc-information/dbc-report/dbc-36kr-report",
             "/en/dbc-information/dbc-report/dbc-apnews-report",

@@ -21,7 +21,6 @@ export const zh: SidebarConfig = {
       children: [
         {
           text: "DBC 进展",
-          link: "/dbc-information/dbc-progress",
           children: [
             "/dbc-information/dbc-progress/2020",
             "/dbc-information/dbc-progress/2021-01-01",
@@ -31,7 +30,6 @@ export const zh: SidebarConfig = {
         },
         {
           text: "DBC AMA",
-          link: "/dbc-information/dbc-ama/",
           children: [
             "/dbc-information/dbc-ama/8bit-ama",
             "/dbc-information/dbc-ama/galaxy-ama",
@@ -43,7 +41,6 @@ export const zh: SidebarConfig = {
         },
         {
           text: "DBC 媒体报道",
-          link: "/dbc-information/dbc-report/",
           children: [
             "/dbc-information/dbc-report/dbc-36kr-report",
             "/dbc-information/dbc-report/dbc-apnews-report",
