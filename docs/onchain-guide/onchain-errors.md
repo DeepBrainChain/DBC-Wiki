@@ -1,6 +1,7 @@
 # 链上错误说明
 
-## onlineProfile模块
+## onlineProfile 模块
+
 BadSignature,
 MachineIdExist,
 BalanceNotEnough,
@@ -30,7 +31,8 @@ SlashIdNotExist,
 TimeNotAllowed,
 ExpiredSlash,
 
-## onlineCommittee模块
+## onlineCommittee 模块
+
 NotInBookList,
 AlreadySubmitHash,
 NotAllHashSubmited,

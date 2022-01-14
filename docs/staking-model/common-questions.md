@@ -48,13 +48,13 @@
 
 ## 5. 如何解绑民主投票里的质押
 
-### 5.1 到subscan查询自己民主投票记录
+### 5.1 到 subscan 查询自己民主投票记录
 
 [subscan](https://dbc.subscan.io)
 
-+ 5.2 在`开发者--交易`页面，选择`democracy`--`removeVote`，并执行。
+- 5.2 在`开发者--交易`页面，选择`democracy`--`removeVote`，并执行。
 
-+ 5.3 然后，在`开发者--交易` 页面，选择`democracy`--`unlock`，并执行。
+- 5.3 然后，在`开发者--交易` 页面，选择`democracy`--`unlock`，并执行。
 
 ## 6. 如何退出委员会候选人
 

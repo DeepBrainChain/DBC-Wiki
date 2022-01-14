@@ -679,7 +679,6 @@ onlineProfile 模块记录了机器在线奖励的信息
 
 - 示例
 
-
 ```json
 {
      "jsonrpc":"2.0",
