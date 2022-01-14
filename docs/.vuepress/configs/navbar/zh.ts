@@ -8,17 +8,6 @@ export const zh: NavbarConfig = [
     children: [
       "/dbc-introduction/dbc-applications",
       {
-        text: "社区治理",
-        link: "/dbc-democracy/",
-        children: [
-          "/dbc-democracy/dbc-council",
-          "/dbc-democracy/join-council",
-          "/dbc-democracy/dbc-nft",
-          "/dbc-democracy/apply-treasury",
-          "/dbc-democracy/staking-voting",
-        ],
-      },
-      {
         text: "DBC介绍",
         link: "/dbc-introduction",
         children: [
@@ -27,6 +16,17 @@ export const zh: NavbarConfig = [
           "/dbc-introduction/dbc-profit",
           "/dbc-introduction/dbc-trade",
           "/dbc-introduction/dbc-community",
+        ],
+      },
+      {
+        text: "社区治理",
+        link: "/dbc-democracy/",
+        children: [
+          "/dbc-democracy/dbc-council",
+          "/dbc-democracy/join-council",
+          "/dbc-democracy/dbc-nft",
+          "/dbc-democracy/apply-treasury",
+          "/dbc-democracy/staking-voting",
         ],
       },
     ],

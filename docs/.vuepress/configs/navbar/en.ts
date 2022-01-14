@@ -7,17 +7,6 @@ export const en: NavbarConfig = [
     children: [
       "/en/dbc-introduction/dbc-applications",
       {
-        text: "DBC Democracy",
-        link: "/en/dbc-democracy/",
-        children: [
-          "/en/dbc-democracy/dbc-council",
-          "/en/dbc-democracy/join-council",
-          "/en/dbc-democracy/dbc-nft",
-          "/en/dbc-democracy/apply-treasury",
-          "/en/dbc-democracy/staking-voting",
-        ],
-      },
-      {
         text: "DBC Introduction",
         link: "/en/dbc-introduction",
         children: [
@@ -26,6 +15,17 @@ export const en: NavbarConfig = [
           "/en/dbc-introduction/dbc-profit",
           "/en/dbc-introduction/dbc-trade",
           "/en/dbc-introduction/dbc-community",
+        ],
+      },
+      {
+        text: "DBC Democracy",
+        link: "/en/dbc-democracy/",
+        children: [
+          "/en/dbc-democracy/dbc-council",
+          "/en/dbc-democracy/join-council",
+          "/en/dbc-democracy/dbc-nft",
+          "/en/dbc-democracy/apply-treasury",
+          "/en/dbc-democracy/staking-voting",
         ],
       },
     ],
