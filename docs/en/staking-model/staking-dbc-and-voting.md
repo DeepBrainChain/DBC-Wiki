@@ -4,7 +4,7 @@
 
 （If you already have stash account, you can skip this）
 
-  Reference: [How to generate new account](generate_new_account.md)
+  Reference: [How to generate new account](generate-new-account.md)
 
 ## 2. Get some DBC.
 

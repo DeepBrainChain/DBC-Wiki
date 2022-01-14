@@ -2,7 +2,7 @@
 
 ## 1. 生成资金账户（已有资金账户可以略过）
 
-参考： [如何生成账户](generate_new_account.md)
+参考： [如何生成账户](generate-new-account.md)
 
 ## 2. 获取一些的 DBC
 
