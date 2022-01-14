@@ -75,11 +75,11 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ## 6. Bond stash
 
-- open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](join_dbc_network.assets/image-20210121194808850.png)
+- open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
 
-- navigate to`Staking > Account actions`，click `stash`![image-20210121194953014](join_dbc_network.assets/image-20210121194953014.png)
+- navigate to`Staking > Account actions`，click `stash`![image-20210121194953014](./assets/join_dbc_network.assets/image-20210121194953014.png)
 
-- You should set bond balance（Make sure not to bond all your DBC balance since you will be unable to pay transaction fees from your bonded balance.）：![image-20210121195033167](join_dbc_network.assets/image-20210121195033167.png)
+- You should set bond balance（Make sure not to bond all your DBC balance since you will be unable to pay transaction fees from your bonded balance.）：![image-20210121195033167](./assets/join_dbc_network.assets/image-20210121195033167.png)
 
 **Description：**
 
@@ -93,30 +93,30 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ## 7. Set Session Keys
 
-- After bond your stash，you can see in Polkadot UI `Session Key`button：![image-20210121195307711](join_dbc_network.assets/image-20210121195307711.png)
+- After bond your stash，you can see in Polkadot UI `Session Key`button：![image-20210121195307711](./assets/join_dbc_network.assets/image-20210121195307711.png)
 
-- click it and input the result in step 5`rotateKeys`![image-20210121200709277](join_dbc_network.assets/image-20210121200709277.png)
+- click it and input the result in step 5`rotateKeys`![image-20210121200709277](./assets/join_dbc_network.assets/image-20210121200709277.png)
 
-- Now, check in [Telemetry](https://telemetry.polkadot.io/#list/0xd523fa2e0581f069b4f0c7b5944c21e9abc72305a08067868c91b898d1bf1dff) and you can see your node.![image-20210121234945030](join_dbc_network.assets/image-20210121234945030.png)
+- Now, check in [Telemetry](https://telemetry.polkadot.io/#list/0xd523fa2e0581f069b4f0c7b5944c21e9abc72305a08067868c91b898d1bf1dff) and you can see your node.![image-20210121234945030](./assets/join_dbc_network.assets/image-20210121234945030.png)
 
 ## 8. Validate
 
 - After steps above you can see`Validate` button and click it,
 
-![image-20210121235144583](join_dbc_network.assets/image-20210121235144583.png)
+![image-20210121235144583](./assets/join_dbc_network.assets/image-20210121235144583.png)
 
 - You should set your preference as a validator.
 
-![image-20210121235217665](join_dbc_network.assets/image-20210121235217665.png)
+![image-20210121235217665](./assets/join_dbc_network.assets/image-20210121235217665.png)
 
 - In `reward commission percentage` you should input your commission preference. Then clieck `Validate` to send this transaction。Then，in `Waiting` page，you are waiting status`Era` to be a validator.
 
-![image-20210121235451552](join_dbc_network.assets/image-20210121235451552.png)
+![image-20210121235451552](./assets/join_dbc_network.assets/image-20210121235451552.png)
 
 ## 9. Claim your rewards payout？
 
 Navigate to `Staking > Payouts > Max, 84 eras` ，you may see all the rewards to be payout：
 
-![image-20210329095933403](join_dbc_network_EN.assets/image-20210329095933403.png)
+![image-20210329095933403](./assets/join_dbc_network.assets/image-20210329095933403.png)
 
 chick `Payout all` button to send a transaction.
