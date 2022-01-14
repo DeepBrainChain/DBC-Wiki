@@ -34,4 +34,21 @@ module.exports = {
     },
   },
   base: "/DBC-Wiki/",
+  plugins: [
+    [
+      '@vuepress/docsearch',
+      {
+        apiKey: '<API_KEY>',
+        indexName: '<INDEX_NAME>',
+        locales: {
+          '/en/': {
+            placeholder: 'Search Documentation',
+          },
+          '/': {
+            placeholder: '搜索文档',
+          },
+        },
+      },
+    ],
+  ],
 };
