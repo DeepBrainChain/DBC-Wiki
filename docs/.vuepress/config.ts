@@ -19,6 +19,9 @@ module.exports = {
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   logo: "/images/dbc.icon.png",
   themeConfig: {
+    repo: "DeepBrainChain/DBC-Wiki",
+    docsDir: "docs",
+    docsBranch: "main",
     locales: {
       "/": {
         navbar: navbar.zh,
@@ -42,9 +45,6 @@ module.exports = {
     },
   },
   base: "/DBC-Wiki/",
-  docsRepo: "https://github.com/DeepBrainChain/DBC-Wiki",
-  docsDir: "docs",
-  docsBranch: "main",
   plugins: [
     [
       "@vuepress/docsearch",
