@@ -16,4 +16,4 @@ YouTube：[https://www.youtube.com/channel/UCE8fSDw-zYrw4OQc62JG_pQ](https://www
 
 Twitter： [https://twitter.com/DeepBrainChain](https://twitter.com/DeepBrainChain)
 
-Discord： [https://discord.gg/e979V35jvc](https://discord.gg/e979V35jvc)
+Discord： [https://discord.gg/X9gaqGRWVs](https://discord.gg/X9gaqGRWVs)
