@@ -2,12 +2,12 @@
 ## 一. 注册钱包
 进入我的钱包页面 --> 点击 创建钱包账号 按钮，按提示完成操作即可
 
-<img src="./assets/rent_virtual.assets/rentvir_1.png" width="70%">
+<img src="./assets/rent_virtual.assets/rentvir_01.png" width="70%">
 
 ## 二. 购买DBC
 租用虚拟机时，需要钱包里面有一定数量的DBC，1个DBC目前不到3分钱，点击 如何购买DBC，进入购买
 
-<img src="./assets/rent_virtual.assets/rentvir_2.png" width="70%">
+<img src="./assets/rent_virtual.assets/rentvir_02.png" width="70%">
 
 ::: warning
 DBC不是积分，他是一种数字货币，他的价格是时刻都在波动的，购买DBC后，不仅仅在当前网站可以使用，也可以转账到其他支持DBC钱包或者数字货币交易所买卖，比如下图，你可以转账到任何其他的DBC钱包地址，当转出去过后，DBC将不再属于你，而是属于这个钱包地址的所有者。
