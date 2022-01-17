@@ -11,6 +11,7 @@ export const zh: SidebarConfig = {
         "/dbc-introduction/dbc-gpu-rent",
         "/dbc-introduction/dbc-profit",
         "/dbc-introduction/dbc-trade",
+		"/dbc-introduction/rentVirtual",
         "/dbc-democracy/",
         "/dbc-introduction/dbc-community",
         "/dbc-democracy/dbc-council",
