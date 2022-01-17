@@ -1,11 +1,11 @@
-# 准备工作
-- 下载安装Http请求工具：https://www.postman.com/downloads/
-- 下载json文件：http://121.57.95.175:20027/index.html/deepbrainchain.postman_collection.json
+# Get ready
+- download and install http request tool：https://www.postman.com/downloads/
+- download json file：http://36.102.233.175:20027/index.html/deepbrainchain.postman_collection.json
 
-- 导入json文件：
+- import json file：
   <img src="./assets/import_postman_json.png" width = "400" height = "240"  align=center />
 
-- 下载签名工具，稍后会用到：
+- download the signature tool, it will be used later：
   https://github.com/DeepBrainChain/DBC-AIComputingNet/releases
-  下载其中的sign_tool文件
-- 给签名工具sign_tool文件添加可执行权限：`chmod +x ./sign_tool`
+  download the file named sign_tool in it
+- add executable permission to the signing tool with the file name sign_tool：`chmod +x ./sign_tool`

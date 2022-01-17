@@ -1,36 +1,36 @@
-# Http请求格式说明
+# Http request format description
 
-`请求方式`：POST
+`request method`：POST
 
-`URL格式`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/**具体请求路径**
+`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/**specific request path**
 
-`请求body`：
-```
+`request body`：
+```json
 {
     "peer_nodes_list": [
-        // DBC节点的node_id，目前仅支持填写1个
+        // The node_id of the requesting machine, currently only supports filling in 1
         "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
     ],
     "additional": {
-        // 每个请求要传递的各种参数
+        // Various parameters to be passed with each request
 
     },
-   // 身份认证信息
+   // Identity authentication information
    ...
 }
 ```
-**身份认证信息**一共有3种类型，请求时，填写任意一种即可：
+**identity authentication information**There are a total of 3 types, when requesting, fill in any one of the following：
 
->**第 1 种类型：租用者钱包签名**
+>**Type 1: renter wallet signature**
 >
->***说明***: 需要知道租用者的`钱包地址`和`对应的钱包私钥`，所以，使用此方式的一般是`租用者本人`。
+>***instruction***: It is necessary to know the renter's wallet address and the corresponding wallet private key. Therefore, the renter himself is usually the one who uses this method.。
 >
->- 签名方法：`./sign_tool [钱包地址] [钱包私钥]`
+>- Signature method：`./sign_tool [wallet address] [wallet private key]`
 >
->>输出：
+>>output：
 >>![import](./assets/wallet_sign.png)
->- 将生成的3个值填写到请求body中，最终的请求body格式：
->    ```
+>- Fill in the generated 3 values into the request body, the final request body format is as follows：
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -44,22 +44,22 @@
 >    }
 >    ```
 
->**第 2 种类型：多签钱包签名**
+>**Type 2: Multi-signature wallet signature**
 >
->***说明***: 需要知道多签账户的所有`钱包地址`，以及`阈值(threshold)`数量个账户的钱包签名。
->- 以3签2为例，各字段的释义：
+>***instruction***: Need to know all wallet addresses of multi-signature accounts, and wallet signatures of a threshold number of accounts。
+>- Take 3 wallet addresses of multi-signature accounts and 2 wallet signatures as an example, the interpretation of each field is as follows：
 > 
->    ```
+>    ```json
 >    "multisig_accounts": {
->        // 多签账户的所有钱包地址
+>        // All wallet addresses of multi-signature accounts
 >        "wallets": [
 >            "5Dy8ULx1De6u3WE9ixpy1VKK2CVssvsjQT15qcmQsG662Zj4",
 >            "5HgVTsXnUBmaL5F2RBjKmXMoAeG9Avuyk9tmgnnVx28u2ZrS",
 >            "5DhBmvUkj9YWvdDtJWJwaGrFRpzeqW4Ch5oTyTamXG2LMHVQ"
 >        ],
->        // 创建多签钱包时的阈值(threshold)
+>        // The threshold when creating a multi-signature wallet
 >        "threshold": "2",
->        // 使用多签账户中的任意2个钱包私钥签名（签名方法与第1种类型中的签名方法相同）
+>        // Sign with any 2 wallet private keys in the multi-signature account (signature method is the same as in the first type)
 >        "signs": [
 >            {
 >                "wallet":"5Dy8ULx1De6u3WE9ixpy1VKK2CVssvsjQT15qcmQsG662Zj4",
@@ -73,8 +73,8 @@
 >            }
 >        ]
 >    }
->- 最终的请求body格式：
->   ```
+>- The final request body format is as follows：
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -105,14 +105,14 @@
 >   }
 >   ```
 
->**第 3 种类型：使用机器租用者分发的session_id和session_id_sign**
+>**Type 3: Use session_id and session_id_sign distributed by the machine renter**
 >
->***说明***: session_id和session_id_sign是`租用者`给其他想要使用该机器的`第三方用户`的`身份凭证`，第三方用户可以使用该session_id访问该机器。
+>***instruction***: session_id and session_id_sign are the credentials of the renter to other third-party users who want to use the machine, and third-party users can use the session_id to access the machine.。
 >
->***注意***：session_id只能由`租用者`向机器请求获取和修改（请求方式：参考上述第1种和第2种类型）
+>***notice***：session_id can only be obtained and modified by the renter requesting the machine (request method: refer to the first and second types above)
 >
->- 机器租用者请求机器获取session_id（请求方式：参考上述第1种和第2种类型; 此处以第1种方式为例），返回值为session_id：
->    ```
+>- The machine renter requests to obtain the session_id of the machine (request method: refer to the first and second types above; here the first method is used as an example), the return value is session_id：
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
@@ -125,11 +125,11 @@
 >        "sign":"2460725b2f5e737cd810c773be61b9b27c3b9dbdac4af9cf25c7be9949ad7202a0b7467f71ad843888f482662d3ae2e4fa566d3c1930a3fa90f3dcb97ea4098d"
 >    }
 >    ```
->- 机器租用者对session_id进行签名：
+>- Machine renter signs session_id：
 > ![import](./assets/session_id_sign.png)
-> 将生成的session_id和session_id_sign分发给第三方用户即可。
->- `第三方用户`拿到这个session_id和session_id_sign后，请求的body格式为：
->    ```
+> Distribute the generated session_id and session_id_sign to third-party users。
+>- `After the third-party user gets the session_id and session_id_sign, the body format of the request is：
+>    ```json
 >    {
 >       "peer_nodes_list": [
 >            "460e56d4cdade97065ddf4d0dfeee7ab7e6e77d0058fad07e43123fadd1d8d2a"
