@@ -2,7 +2,7 @@
 
 Since the establishment of DeepBrainChain, it has been committed to improving the ease of use of DeepBrainChain computing power network and promoting commercialization, and has made great progress in blockchain, artificial intelligence, cloud games, visual rendering, biopharmaceuticals , semiconductor simulation and other scenarios have been widely used, providing high-cost GPU computing power for many enterprises. A total of more than 50 manufacturers around the world have deployed high-performance GPU cloud platforms based on the DeepBrainChain network, serving hundreds of artificial intelligence and cloud gaming-related companies and more than 20,000 AI practitioners.
 
-## **Progress DBC has made **
+## **Progress DBC has made**
 
 - Jul.2017 The DeepBrain Chain was established, defining the objectives and vision as well as the technical architecture.
 

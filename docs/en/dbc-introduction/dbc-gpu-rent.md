@@ -2,7 +2,7 @@
 
 1.Rent GPU server through cloud platform：[https://www.dbchain.ai](https://www.dbchain.ai)
 
-2.Rent GPU server directly On-chain：[https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)
+2.Rent GPU server directly On-chain：[https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/rent-machine.html](https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/rent-machine.html)
 
 ## GPU virtual machine API interface
 
