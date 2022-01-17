@@ -25,27 +25,38 @@ module.exports = {
         sidebar: sidebar.zh,
         selectLanguageName: "简体中文",
         selectLanguageText: "选择语言",
+
+        // page meta
+        editLinkText: "在 GitHub 上编辑此页",
+        lastUpdatedText: "上次更新",
+        contributorsText: "贡献者",
       },
       "/en/": {
         navbar: navbar.en,
         sidebar: sidebar.en,
         selectLanguageName: "English",
+
+        // page meta
+        editLinkText: "Edit this page on GitHub",
       },
     },
   },
   base: "/DBC-Wiki/",
+  docsRepo: "https://github.com/DeepBrainChain/DBC-Wiki",
+  docsDir: "docs",
+  docsBranch: "main",
   plugins: [
     [
-      '@vuepress/docsearch',
+      "@vuepress/docsearch",
       {
-        apiKey: '<API_KEY>',
-        indexName: '<INDEX_NAME>',
+        apiKey: "<API_KEY>",
+        indexName: "<INDEX_NAME>",
         locales: {
-          '/en/': {
-            placeholder: 'Search Documentation',
+          "/en/": {
+            placeholder: "Search Documentation",
           },
-          '/': {
-            placeholder: '搜索文档',
+          "/": {
+            placeholder: "搜索文档",
           },
         },
       },
