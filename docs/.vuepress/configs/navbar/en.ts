@@ -49,7 +49,6 @@ export const en: NavbarConfig = [
           "/en/dbc-information/dbc-ama/8bit-ama",
           "/en/dbc-information/dbc-ama/galaxy-ama",
           "/en/dbc-information/dbc-ama/council-ama",
-          "/en/dbc-information/dbc-ama/foreign-ama",
           "/en/dbc-information/dbc-ama/dbc-ama-collection",
           "/en/dbc-information/dbc-ama/dbc-hot-link",
         ],

@@ -41,7 +41,6 @@ export const zh: SidebarConfig = {
             "/dbc-information/dbc-ama/8bit-ama",
             "/dbc-information/dbc-ama/galaxy-ama",
             "/dbc-information/dbc-ama/council-ama",
-            "/dbc-information/dbc-ama/foreign-ama",
             "/dbc-information/dbc-ama/dbc-ama-collection",
             "/dbc-information/dbc-ama/dbc-hot-link",
           ],
