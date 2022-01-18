@@ -1,7 +1,5 @@
 # DBC 常用链接
 
-> DBC 常用链接：https://docs.google.com/document/d/1LdxZVrlQI6KR72MYxNvx3tK-iyAAkD5QTiuX0YZTFVI/edit?usp=sharing
-
 欢迎关注深脑链 DeepBrain Chain！
 深脑链成立于 2017 年，愿景是基于区块链技术构建无限扩容的分布式高性能算力网络，成为 AI+元宇宙时代最重要的算力基础设施。深脑链包含两个部分：高性能算力网络和区块链主网。高性能算力网络 2018 年年底正式上线，主网于 2021 年 5 月 20 日上线，目前已实现大规模商业化落地。
 
@@ -78,49 +76,3 @@ DBC 电报群：[https://t.me/deepbrainchainglobal](https://t.me/deepbrainchaing
 Twitter: [https://twitter.com/DeepBrainChain](https://twitter.com/DeepBrainChain)
 
 Discord: [https://discord.gg/e979V35jvc](https://discord.gg/e979V35jvc)
-
-英文版
-
-Vision & Slogan：
-
-DeepBrain Chain- building the most important computing infrastructure in the era of AI + Metaverse
-
-Official website: [https://www.deepbrainchain.org](https://www.deepbrainchain.org)
-
-Mainnet: [https://www.dbcwallet.io/](https://www.dbcwallet.io/)
-
-Block browser: [https://dbc.subscan.io](https://dbc.subscan.io)
-
-Video intro: [https://www.youtube.com/watch?v=V6k8ggbBkSk](https://www.youtube.com/watch?v=V6k8ggbBkSk)
-
-White paper: [https://www.deepbrainchain.org/assets/pdf/DeepBrainChainWhitepaper_en.pdf](https://www.deepbrainchain.org/assets/pdf/DeepBrainChainWhitepaper_en.pdf)
-
-GitHub (open source): [https://github.com/DeepBrainChain](https://github.com/DeepBrainChain)
-
-Listed Exchanges: Huobi Global, Huobi Korea, Lbank, Gate.io, Bitbns
-
-Social Media:
-
-Telegram: [https://t.me/deepbrainchainglobal](https://t.me/deepbrainchainglobal)
-
-twitter: [https://twitter.com/DeepBrainChain](https://twitter.com/DeepBrainChain)
-
-Medium: [https://deepbrainchainglobal.medium.com/](https://deepbrainchainglobal.medium.com/)
-
-PR:
-
-yahoo Finance: [https://finance.yahoo.com/news/deepbrain-chain-dbc-mainnet-launching-052000902.html](https://finance.yahoo.com/news/deepbrain-chain-dbc-mainnet-launching-052000902.html)
-
-CoinDeals:
-h[ttps://coindeals.info/metaverse-supported-by-deepbrain-chain-a-distributed-high-performance-computing-network/](ttps://coindeals.info/metaverse-supported-by-deepbrain-chain-a-distributed-high-performance-computing-network/)
-
-AP News:
-h[ttps://apnews.com/press-release/marketersmedia/technology-blockchain-artificial-intelligence-5baa7937549a0f02b1cb0612f9afefa5](ttps://apnews.com/press-release/marketersmedia/technology-blockchain-artificial-intelligence-5baa7937549a0f02b1cb0612f9afefa5)
-
-Community Governance:
-
-How to apply funds from DBC Treasury: [https://docs.google.com/document/d/1XgDXhXLpB72D8zmnLK8udkqGTOrcuOKmlKpAyYZivec/edit?usp=sharing](https://docs.google.com/document/d/1XgDXhXLpB72D8zmnLK8udkqGTOrcuOKmlKpAyYZivec/edit?usp=sharing)
-
-How to participate in Council voting: [https://deepbrainchainglobal.medium.com/how-to-participate-in-council-voting-a-step-by-step-guide-f156ba6cb89f](https://deepbrainchainglobal.medium.com/how-to-participate-in-council-voting-a-step-by-step-guide-f156ba6cb89f)
-
-How to apply for DBC NFT from DBC Council: [https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea](https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea)
