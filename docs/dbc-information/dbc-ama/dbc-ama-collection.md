@@ -1,6 +1,5 @@
-# BC 中国区 AMA 问答汇总
+# DBC AMA 问答集合
 
-> DBC AMA 问答集合
 >
 > 中文：https://docs.google.com/document/d/1xsrKkgitVhkw6LCR7K88ehr1HR3bfHENZY66x77uNew/edit?usp=sharing
 

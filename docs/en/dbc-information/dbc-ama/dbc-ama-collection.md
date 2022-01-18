@@ -1,244 +1,247 @@
-# BC 中国区 AMA 问答汇总
+# DBC AMA Collection
 
-> DBC AMA 问答集合
->
-> 中文：https://docs.google.com/document/d/1xsrKkgitVhkw6LCR7K88ehr1HR3bfHENZY66x77uNew/edit?usp=sharing
+> 英文：https://docs.google.com/document/d/1heRQZO2NOPdC1pdszASzM_S9islbPG6pTPWOktHj3cA/edit?usp=sharing
 
-Q：首先感谢你接受我们的邀请，欢迎来到我们社区，请简单介绍下你自己和你的项目。
+Q：First of all thank you for accepting our invitation and welcome to our community, can you please introduce yourself and your project?
 
-A： 我是深脑链创始人何永。我 2008 年本科毕业于中国海洋大学 计算机专业、中间短暂在中科院，后来到华东师范大学生物信息学硕博连读(2010 年开始辍学创业)。
+A： I am Feng He , the founder of DeepBrain Chain. I graduated from Ocean University of China in 2008 with a bachelor degree in Computer Science, briefly worked at the Chinese Academy of Sciences, and then went to East China Normal University for a master’s degree in Bioinformatics (I dropped out of school in 2010 to start my own business).
 
-我一直对人工智能技术情有独钟，读研究生的时候也是用人工智能技术做基因数据的分析，可以说很早就在进行人工智能的技术应用研发。后来创业也是在不断尝试将人工智能技术落地到实际产品中。从 2011 年开始在人工智能领域创业，先后拿了奇虎 360、戈壁、京东、金沙江等投资机构 800 万美金的投资。在 2011 年年底发布了中国第一款智能语音助手--智能 360，2014 年发布了全球第一款语音交互的人工智能音箱--小智超级音箱（比亚马逊 Echo 早半年，比小度音箱早 3 年），在 2017 年创立了深脑链，一直做到现在。
+I have always been fascinated by AI technology, and when I was a graduate student, I also used AI technology to do genetic data analysis, so I can say that I have been developing AI technology application early. Later, I started my own business to try to implement AI technology into real products. From 2011, we started our business in the field of artificial intelligence, and have taken $8 million investment from Qihoo 360, Gobi, JD, GSR and other investment institutions. At the end of 2011 we released China’s first smart voice assistant — Smart 360, in 2014 we released the world’s first voice interaction AI speaker — Xiaozhi Super Speaker (six months earlier than Amazon Echo, 3 years earlier than DuerOS speaker), in 2017 I founded DeepBrain Chain, and has been working on it til today.
 
-深脑链成立于 2017 年，愿景是基于区块链技术构建无限扩容的分布式高性能算力网络，成为 5G+AI+元宇宙时代最重要的算力基础设施。深脑链包含三个重要部分：高性能算力网络和区块链主网、GPU 算力主网，高性能算力网络 2018 年年底正式上线，区块链主网于 2021 年 5 月 20 号上线，经过将近 4 个月的公测，GPU 算力主网 2021 年 11 月正式上线
+DeepBrain Chain was founded in 2017 with the vision of building an infinitely scalable distributed high-performance computing network based on blockchain technology, in order to become the most important computing infrastructure in the era of AI+metaverse. DeepBrain Chain contains three important parts: high-performance computing network, blockchain mainnet and GPU computing mainnet. High-performance computing network officially launched at the end of 2018, blockchain mainnet on May 20th, 2021, after nearly 4 months of public testing, GPU computing mainnet have officially launched last month.
 
-深脑链主网基于波卡 Substrate 开发，深脑链也是区块链行业极少数实现大规模落地的高性能计算项目，深脑链成立之日起一直致力于提升深脑链算力网络的易用性以及推动商业化落地，并取得很大的进展，在人工智能、无人驾驶、云游戏、视觉渲染、生物制药等各个场景都得到广泛的应用，为众多企业提供了高性价 GPU 算力，累计全球超过 50 家厂商基于深脑链网络部署高性能 GPU 云平台，服务数百家企业以及数万 AI 开发者群体。比如中国的云游戏厂商网易云游戏底层 GPU 资源使用了深脑链的 GPU、中国领先的无人驾驶公司 AutoX 正在测试深脑链的 GPU 资源、中国领先的云游戏解决方案商庭宇科技正在合作，北京大学、清华大学、哈佛大学有学生和老师在使用深脑链的 GPU 做 AI 训练
+The mainnet of DeepBrain Chain is developed based on PolkaSubstrate, and DeepBrain Chain is also one of the very few high-performance computing projects in the blockchain industry that have achieved large-scale implementation. It has been widely used in various scenarios such as artificial intelligence, driverless vehicles, cloud games, visual rendering, biopharmaceuticals, etc. It has provided high-performance GPU computing power for many enterprises, and cumulatively more than 50 vendors worldwide have deployed high-performance GPU cloud platforms based on DeepBrain Chain network, serving hundreds of enterprises and tens of thousands of AI developer groups. For example, China’s cloud game vendor NetEase Cloud Game uses GPU resources from DeepBrain Chain, China’s leading driverless company AutoX is testing GPU resources from DeepBrain Chain, China’s leading cloud game solution provider TingYu Technology is cooperating with us, Beijing University, Tsinghua University and Harvard University have students and teachers using DeepBrain Chain’s GPUs for AI training.
 
-Q：我相信我们社区的大多数成员都不知道什么是高性能计算，你能不能告诉我们更多关于这个的信息，以及 DBC 如何将其整合到区块链中？
+Q：I am sure most of our community members don’t know what high performance computing is, can you please tell us more about this and how DeepBrain Chain can integrate this to blockchain?
 
-A：深脑链网络的高性能算力目前主要是指以 GPU 为核心的高性能计算资源，未来可能会包括 NPU/TPU，甚至是量子计算；但目前来看相当长的时间内会以 GPU 为主，目前高端 GPU 芯片厂商英伟达市值已经将近 CPU 芯片代表厂商英特尔市值的三倍，原因在于随着 5G、人工智能、生命科学、自动驾驶、元宇宙等各新兴行业的发展，这些行业都需要非常强大的计算能力，目前 GPU 是最好的选择，但 GPU 算力资源非常昂贵。
+A：DeepBrain Chain network of high-performance computing power is currently mainly only using GPU as the core of high-performance computing resources, in the future we may include NPU/TPU, or even quantum computing; but the current view is that it will be dominated by GPU for quite a long time, the current market value of high-end GPU chip manufacturers Nvidia has nearly three times the market value of CPU chip manufacturers Intel, the reason is that with the development of various emerging industries such as 5G, artificial intelligence, life sciences, autonomous driving, meta-universe, these industries need very powerful computing power, currently GPU is the best choice, but GPU computing power resources are very expensive.
 
-深脑链基于区块链技术打造一个无限扩容的分布式高性能算力网络，全球范围内闲置的 GPU 资源可以自主的加入深脑链网络，全球范围内的客户也可以自由的租用深脑链网络的 GPU 算力资源，而且每一笔交易数据都是链上可查，推动 AI 算力资源的普及以及平民化，同时推动区块链技术落地，服务更多实体产业，而非单纯的金融空转，经过四年多的研发以及商业化运营，证明这条路是完全可行的。DBC 银河竞赛：https://galaxyrace.deepbrainchain.org/
+Based on blockchain technology, DeepBrain Chain (DBC) created an infinitely scalable distributed high-performance computing network, the world’s idle GPU resources can independently join the DBC network, customers worldwide can also rent the GPU computing resources of the DBC network, and every transaction data is available on the chain, to promote the popularization and civilianization of AI computing resources, while promoting the blockchain technology on the ground to serve more real industries, it’s not just transactions of monetary value, after more than four years of research and development and commercial operation, this path has proved to be totally feasible.
 
-Q：DBC 主要基于哪种公链生态？我们知道 DBC 的主网已经上线了，有什么不同？
+DBCGalaxy race：https://galaxyrace.deepbrainchain.org/
 
-A： 深脑链主网基于波卡 Substrate 开发，深脑链本身是一条专注于人工计算领域的应用链力领域，侧重于应用以及商业化落地。
+Q：Which public chain ecology is DeepBrain Chain mainly based on? We know that the mainnet of DeepBrain Chain is now online. What are the differences?
 
-Q： 中国是人工智能技术的领先国家，在不久的将来，人工智能将在我们的生活中发挥非常重要的作用。你能告诉我们更多关于人工智能可以改变我们的日常生活，它将给我们带来什么样的好处吗？每个人都知道人工智能是什么，但对它没有任何了解。
+A： DeepBrain Chain mainnet is developed based on PocaSubstrate, and DeepBrain Chain itself is an application chain focused on artificial computing, focusing on application as well as commercialization.
 
-A：大家经常使用的 Tiktok，会有各种特效，背后就使用了 GPU 计算资源；目前很火的元宇宙，如果要实现元宇宙的需要用到云端 VR 和 AR 渲染才能达到逼真的模拟现实世界，而这些底层需要非常分布在全球的强大的 GPU 计才能满足做支持；我们所看的好莱坞大片，后也需要用到制作的算以及 GPU 计算，未来 L4 级别的现完全自动驾驶，背后 GPU 算以及计算资源等等。
+Q： China is a leading country in AI technology and AI will play a very important part in our life in near future. Can you please tell us more about what AI can change in our daily life, what kind of benefits it will give to us? As you can imagine, everyone knows what AI is, but don’t have any understanding about it.
 
-Q：现在市场上的热点可能更多是在 NFT、Metaverse 和 Gamefi 上。之后，DBC 是否会在这些领域发展业务？
+A：We often use Tiktok, on the app there will be a variety of special effects, these effects use computing and GPU computing resources; the current hot topic ‘’meta-universe’’, if you want to achieve that you need to use the cloud VR and AR rendering to achieve a realistic simulation of the real world, and these need powerful GPU distributed around the world to support the computing needs; we look at Hollywood blockbusters, they also need powerful computing power; and the future L4 level of fully autonomous driving also needs huge computing power.
 
-A：大家可能不清楚，深脑链构建的分布式高性能算力网络，正是元宇宙的关键支撑技术之一。元宇宙六大支撑性技术（区块链技术、物联网技术、交互技术、电子游戏技术、人工智能技术、网络及运算技术），其中四大技术和深脑链有密切关联，而深脑链目前正在重点服务的领域云游戏正是通向元宇宙时代的必经之路，以 GPU 为核心的分布式高性能计算正在成为未来元宇宙生态闭环中不可或缺的一部分，深脑链将近四年的时间一直在这个领域耕耘，成为这个赛道不容置疑的领先。
+Q：Now the hot spots in the market may be more on NFT, Metaverse and Gamefi. Will DeepBrain Chain develop business in these areas afterwards?
 
-Q：DBC 和传统云计算公司之间有什么区别？
+A：You may not be aware that the distributed high-performance computing network built by DeepBrain Chain is one of the key supporting technologies of the meta-universe. Among the six supporting technologies of metaverse (blockchain technology, Internet of Things technology, interaction technology, video game technology, artificial intelligence technology, network and computing technology), four of them are closely related to DeepBrain Chain, and the cloud game, which is the key service area of DeepBrain Chain, is the necessary path to the metaverse era. The distributed high-performance computing with GPU as the core is becoming an indispensable part of the closed loop of the future meta-universe ecosystem, and DeepBrain Chain has been working in this field for nearly four years and has become the undisputed leader in this space.
 
-A：深脑链利用区块链技术，构建全新的生产关系，创新性解决算力供给问题；通过重构云计算产业链，将云计算这样一个巨头主导的封闭体系，打造成一个人人可以参与共建、利益共享的开放体系，共同打造 5G+人工智能时代的基础设施。
+Q：What is the difference between DeepBrain Chain and traditional cloud computing companies?
 
-DBC 的优势：由于 5G+AI 技术的发展，边缘计算兴起，边缘侧的计算需求（高性能、高密度、低延时、低成本、全覆盖）越来越强烈，传统的几个或若干个超大型数据中心已经不能满足业务发展的需求，需要调度管理不同级别的数据中心（云计算节点、城域节点、边缘节点），打造统一的分布式算力网络迫在眉睫，更好地满足业务需求，同时提高算力资源的利用效率，这正是区块链技术的优势所在。
+A：DeepBrain Chain uses blockchain technology to build a new production relationship and innovatively solve the problem of computing power supply; by reconstructing the cloud computing industry chain, it turns a closed system dominated by giants like cloud computing into an open system where everyone can participate in common construction and share benefits, and jointly build the infrastructure in the era of 5G+AI.
 
-Q： 经过这么多年的技术发展，DBC 有什么独一无二的优势？
+Advantages of DBC: Due to the development of 5G+AI technology and the rise of edge computing, the demand for edge-side computing (high performance, high density, low latency, low cost and full coverage) is getting stronger and stronger, and the traditional mega data centers can no longer meet the demand of business development, and it is necessary to schedule and manage data centers of different levels (cloud nodes, metropolitan nodes and edge nodes), so it is urgent that we create an unified distributed computing network to better meet the business demand and at the same time improve the efficiency of computing resources utilization, which is where the advantages of blockchain technology lie.
 
-A：深脑链独特性在于它是一个人工智能公链，因此所有技术研发都是为这一定位服务，主要的技术创新包括：
+Q： After so many years of technology accumulation, what unique advantages does DeepBrain Chain have?
 
-1、去中心化 AI 云操作系统 Decentralized AI Cloud OS
-底层技术平台 Decentralized AI Cloud OS 所有代码为完全自主研发技术；
-负责计算资源和存储资源链接，实现计算资源之间的通讯、调度、失效恢复；
-支持向 ARM 等轻量级 IOT 设备无缝迁移，未来将计算能力迁移到 IOT 设备；
-基于该技术平台之上，构建去中心化 AI 云计算平台。
+A：The uniqueness of DeepBrain Chain lies in its being an artificial intelligence public chain, because all the technology research and development is for this positioning, and the main technical innovations are as follows:
 
-2、完全去中心化 AI 计算网络 AI Cloud Computation Network
-一站式解决方案、最优化的 AI 软件平台，支持业界所有主流的深度学习框架：TensorFlow、MXNet、PyTorch、Caffe、CNTK、H2O 等；
-支持多 AI 任务并行启动执行能力；
-灵活的小时级计费模式，实现真正的按需计费；
+Decentralized AI Cloud OS
 
-3、计算架构 Computation Architecture
-Open Container Computation Architecture 开放容器计算架构，秒级部署和启动，弹性扩容的计算能力；
-传统的物理 GPU 服务器上需一周安装部署的应用，在平台上一键式部署启动训练，时间缩短到秒级；
-AI 容器 Elastic AI Container 计算能力，开放自定义的容器镜像能力；
-dContainer Tech：安全的容器增强技术；
+The underlying technology platform Decentralized AI Cloud OS has all codes as completely self-developed technology;
 
-4、网络架构 Network Architecture
-无处不在的去中心化 AI 算力网络：支持高度的弹性伸缩，支持 10 个节点到 1 亿个节点的海量网络系统架构；
-Hybrid Multi-Layer Stack Network：非结构化、松散 P2P 对等网络+结构化混杂 P2P 网络的多层网络架构；
-Decentralized Virtual Tunnel Network：在去中心化网络架构下，构建虚拟二层交换、三层交换的加密隧道网络；
-多径消息路由机制；
-高效压缩+可扩展自编码协议；
-毫秒级的点对点通讯基础设施；
-网络支持 IPV6 网络演进；
-基于地理感知的 AI 推理网络架构，更弹性的边缘计算；
+Responsible for linking computing and storage resources, realizing communication, scheduling and failure recovery among computing resources.
 
-5、存储架构 Storage Architecture
-无限扩容的去中心化存储网络；
-基于地理感知的分布式存储系统；
+Supporting seamless migration to lightweight IOT devices such as ARM and future migration of computing power to IOT devices.
 
-Q： DBC 的应用层场景有哪些？
+Building a decentralized AI cloud computing platform based on top of this technology platform.
+Completely decentralized AI computation network. ‘’AI Cloud Computation Network’’
+One-stop solution, the most optimized AI software platform, supporting all mainstream deep learning frameworks in the industry: TensorFlow, MXNet, PyTorch, Caffe, CNTK, H2O, etc..
+Support for multi-AI tasks with parallel start-up execution capability.
+Flexible hourly billing model to achieve true on-demand billing.
+Computation Architecture
+Open docker computation architecture, second-level deployment and startup, elastic expansion of computing capacity.
+The traditional physical GPU server requires a week to install and deploy the application, in the platform it is one-click deployment and one-click to start training, the time is reduced to seconds.
+AI docker: Elastic AI Docker computing capabilities, open custom docker image capabilities.
+Docker Tech: secure docker enhancement technology.
+Network Architecture
+Ubiquitous decentralized AI computing network: support highly elastic scaling, support massive network system architecture from 10 nodes to 100 million nodes.
+Hybrid Multi-Layer Stack Network: a multi-layer network architecture of unstructured, loose P2P peer-to-peer network + structured hybrid P2P network.
+Decentralized Virtual Tunnel Network: construction of virtual Layer 2 switching and Layer 3 switching encrypted tunnel network under decentralized network architecture.
+Multi-path message routing mechanism.
+Efficient compression + scalable self-encoding protocols.
+Millisecond-scale peer-to-peer communication infrastructure.
+Network support for IPV6 network evolution.
+Geo-aware AI inference-based network architecture for more resilient edge computing.
+5.Storage Architecture
+Infinitely scalable decentralized storage network.
+Geo-awareness-based distributed storage system.
 
-A：人工智能、无人驾驶汽车、云游戏、视觉渲染、生物制药市场都是深脑链的应用场景， 其中，我们服务的云游戏、云渲染、云 XR 正是元宇宙的雏形。
+Q： What are the application scenarios of DeepBrain Chain?
 
-Q：请告诉我们目前的项目进展和后续计划
+A：Artificial intelligence, driverless cars, cloud games, visual rendering, and biopharmaceutical markets are all application scenarios of DeepBrain Chain. Among them, the cloud games, cloud rendering, and cloud XR we serve are the prototypes of the meta universe.
 
-A：我们在全球将继续拓展 DBC 算力生态，不断强化 DBC 算力网络供给侧，鼓励更多算池、算工加入 DBC 算力生态，同时进一步拓展需求侧更多生态伙伴 I 企业基于 DB 部署 GPU 云出租 GPU 算力平台，赋能更多产业，共建共享全球最大的分布式高性能算据汇聚，进而实现各产业共融共生，助力人工智能、元宇宙时代的到来。
+Q：Finally, tell us about the current project progress and follow-up plans, as well as some airdrops or event information that everyone is looking forward to.
 
-Q： 你们的路线图上有哪些关键的里程碑--包括你们已经取得的成果和我们可以期待的成果？
+A：We will continue to expand the DBC computing ecosystem globally, continuously strengthen the supply side of the DBC computing network, encourage more computing pools, computing workers to join the DBC computing ecosystem, while further expanding the demand side of more ecosystem partners, enterprises to deploy GPU cloud based on DBC, renting out GPU computing power; empower more industries to build and share the world’s largest distributed high-performance computing, and thus achieve co-integration and coexistence of industries to help artificial intelligence, meta-universe era push forward.
 
-A：2017 年 7 月：深脑链项目立项，确定目标和愿景以及技术架构方向
-2017 年 12 月：募资完成
-2018 年 1 月：DBC Token 上线 huobi 交易所
-2018 年 8 月：DBC 算力网络上线并且代码在 GitHub 开源
-（https://github.com/DeepBrainChain）
-2019 年 8 月：首个基于深脑链的云平台 DBChain 上线（https://www.dbchain.ai）
-2020 年 7 月：首个基于深脑链的企业级云平台聪图云上线（https://www.congtu.cloud）
-2020 年 12 月：DBChain 全球 AI 开发者用户突破 10000 人，服务全球人工智能相关高校和实验室超过 500 所
-2021 年 5 月： 深脑链节点主网正式上线（https://www.dbcwallet.io）
-2021 年 6 月： 深脑链主网浏览器上线（https://dbc.subscan.io）
-2021 年 6 月： 基于深脑链的 GPU 云平台数量超过 50 家
-2021 年 7 月： 深脑链 GPU 算力主网开始公测
-2021 年 8 月：聪图云企业客户突破 100 家
-2021 年 10 月：公测网络 GPU 算力总数超过 1200 张卡，租用率超过 98%
-（https://galaxyrace.deepbrainchain.org/）
-2021 年 11 月：深脑链 GPU 算力主网正式上线，租用率超 99%
-（https://galaxyrace.deepbrainchain.org/）
+At the same time we are also working to list DBC on more globally renowned exchanges.
 
-Q：最近，我们看到许多项目采用回购和烧毁计划，以支持长期的价格稳定和价值增长。你有没有想过纳入这个计划？还是你的项目会采用其他策略来确保价格稳定？
+Q： What are the key milestones on your roadmap — both things you have already achieved and things that we can look forward to? Any partnerships and short/long term technical milestones that you want to talk about or bring some attention to?
 
-A： 每个项目情况不一样，对于 DBC 来说，一旦网络里 GPU 超过 5000 卡就会自动开启销毁，GPU 算力租赁所获得的收益将 100%用户 DBC 回购销毁，网络 GPU 规模越大，用于销毁的租金收益越多；此外加入算力网络的每卡 GPU 需要质押 10 万 DBC 以保障服务的稳定性。
+A：Jul.2017
+The DeepBrain Chain was established, defining the objectives and vision as well as the technical architecture.
+Dec. 2017
+Fund-raising completed.
+Jan.2018
+DBC launched on Huobi.pro.
+Aug.2018
+DBC computing power network goes live and the code is open sourced on GitHub. (https://github.com/DeepBrainChain)
+Nov.2019
+DBChain, the first cloud platform based on DeepBrain Chain, goes live. (https://www.dbchain.ai)
+Jul.2020
+The first DeepBrain Chain-based enterprise cloud platform, Congtu Cloud, goes live. (https://www.congtu.cloud)
+Dec.2020
+DBChain global AI developer users exceed 10,000, serving more than 500 AI-related universities and labs worldwide.
+May 2021
+DeepBrain Chain node mainnet officially launched. (https://www.dbcwallet.io)
+Jun.2021
+DeepBrain Chain mainnet browser goes online. (https://dbc.subscan.io)
+Jun.2021
+The number of GPU cloud platforms based on DeepBrain Chain exceeds 50.
+Jul.2021
+DeepBrain Chain GPU computing power mainnet starts public testing.
+Oct.2021
+Total number of GPU computing power in the public test exceeds 1200 cards, and the rental rate is over 98%. (https://galaxyrace.deepbrainchain.org)
+Nov.2021
+DBC GPU mainnet launched officially.
 
-Q：Staking 是新的趋势，DBC 有哪些质押方式？是否有任何奖励？赚取 DBC 的方式有哪些？
+Q：Lately we’ve seen many projects adopt buyback-and-burn programs to support long term price stability and value growth. What do you think about it? Have you thought about incorporating this program? Or will your project use other strategies to ensure price stability？
+
+A： When the dbc network has more than 5,000 GPUs, the monthly dbc of 800,000 US dollars will be destroyed, if any, the monthly dbc of 8 million US dollars will be destroyed. And the more machines there are, the more dbc pledged. A gpu needs to pledge 100,000 dbc.
+
+Q：Staking is the new trend. What staking options are available for $DBC token? Are there any incentives for staking? What are the various ways to earn $DBC token and are there any limits to amount of $DBC I can earn?
 
 A： https://www.dbcwallet.io/#/staking
 
-Q：许多新项目最初发展良好，但突然被放弃了。DeepBrain Chain 将如何管理该项目，以保持其在市场上的地位，并成为区块链世界的一个好项目？
+Q：Many new projects initially developed well but were suddenly abandoned. How will DeepBrain manage the project to maintain its position in the market and become a good project in the blockchain world?
 
-A：1、项目本身必须有巨大的潜力和价值，技术和商业上具备可行性 2、需要良好的治理机制，尤其是社区自治 3、有一个强有力的领导团队，能够克服各种困难
+A：Dbc has been in development for 4 years and has experienced a complete bull-bear cycle in the blockchain industry. 95% of the projects we created at the same time 4 years ago are dead, but we are still alive and well. We have not only realized the technology mentioned in the white paper, but also dbc has truly served users and produced actual value. The dbc network now has 1,000 GPUs. These GPU servers are worth more than 7 million U.S. dollars. They generate rent every month. When the number of GPUs exceeds 5000, a large amount of dbc will be destroyed every month.
 
-Q：社区对您的项目有多重要？ 以及我们如何合作或帮助分享项目的发展？
+Q：How important is the community to Your project? and How can we collaborate or help share token for the development of the project?
 
-A：对于所有区块链项目来说，社区都是其不可获取的组成部分，离开社区的支持项目很难成功。对于深脑链来说，理事会是社区自治最重要的机构和组织，所有理事会成员来自于社区选举产生，理事会每年有 5100 万 DBC 经费，持续 15 年，所有社区成员都可以向理事会申请经费来为社区做贡献。
+A：The dbc has a council system. The board has the right to use 50 million dbc every year. For a total of 15 years, any community member can become a member of the board by voting, and any community member of the board can apply for the development of the dbc ecology.
 
-Q：DBC 的创立故事是什么？
+Q：What is the creation story of the DeepBrain Chain project?
+A：We have been focusing on AI projects since 2011, including voice assistants, smart speakers, and other products. We realized the importance of GPU early, but GPU resources are very expensive and many startups can't afford it. Blockchain technology can help achieve this goal.
 
-A：自 2011 年以来，我们一直专注于人工智能项目，包括语音助手、智能音箱等产品。 我们很早就意识到 GPU 的重要性，但是 GPU 资源非常昂贵，很多初创公司都负担不起。 区块链技术可以帮助实现这一目标，降低算力成本，推动 AI 算力民主化。
+Q：What advantages does DBC have over potential competitors?
+A：We believe that the team's knowledge of what they are doing makes or breaks things to a large extent. With almost 10 years of AI experience, we naturally have a deep understanding of AI computing, as well as over five years of experience with blockchain technology; it's impossible to do this with just an understanding of blockchain or just an understanding of AI. In four years, we have accomplished all the development goals on the whitepaper and commercialised multiple scenarios in meta-boundary, autonomous driving, AI, visual rendering, blockchain and more.
 
-Q：DBC 和潜在竞争对手比有哪些优势？
+Q：How can one acquire the DBC token and what are the utilities?
+A：You can buy DBC on Huobi or Gate exchange. DBC is the only payment credential in the entire DBC arithmetic network, and enterprises need to use DBC to provide arithmetic to the DBC network or rent arithmetic, including pledging.
 
-A：我们认为，团队对自己正在做的事情的认知在很大程度上决定了事情的成败。 我们拥有近 10 年的 AI 经验，自然对 AI 计算有着深刻的理解，以及 5 年以上的区块链技术经验； 仅了解区块链或仅了解 AI 是不可能做到这一点的。 四年来，我们已经完成了白皮书上的所有发展目标，并在元界、自动驾驶、AI、视觉渲染、区块链等多个场景商业化。
+Q：Can you tell us more about the Galaxy Computing Power Competition that DeepBrainChain is conducting? What is the competition intended for? Can we participate in the competition too?
+A：For all information about the Galaxy Race, you can check the official website: https://galaxyrace.deepbrainchain.org/
+About the contest rules, arithmetic map、 arithmetic details 、 AI server rental, and pledge are explained, everyone is welcome to actively participate. The purpose of Galaxy Race is to let more computing power providers join the DeepBrain Chain network, and at present, the arithmetic is in serious supply, all people are free to join the DeepBrain Chain network as long as the server configuration and storage environment meets the requirements.
 
-Q：如何获得 DBC 代币，有什么用处？
+Q ：I read that being a supernode in DBC can have its own benefits. But can you tell us the requirements to be a supernode? How often is the election done? Who all can vote? How are the rewards distributed?
+A:There are currently 100 million DBC per year awarded to supernodes, and there are currently 31 nodes in total. To become a supernode, you need to hold a certain number of DBC and the support of community coin holders, and you need to be able to rank in the top 31 to have a chance to be selected, and you need to have a server that can take care of the blocks. Currently, the election is held every 24 hours, and all coin holders have the opportunity to participate in the voting. The reward will be distributed proportionally according to the rules set by the nodes. You can check the official Twitter announcement and the DBC main network for details. https://www.dbcwallet.io
 
-A：您可以在火币或 Gate 交易所购买 DBC。 DBC 是整个 DBC 算力网络中唯一的支付凭证，企业需要使用 DBC 向 DBC 网络提供算力或租用算力，参与超级节点选举、质押等也需要使用 DBC。
+Q：An interesting feature that caught my attention was your integral cross-chain mining, so could you explain to me what this mining consists of and how beneficial it will be for the users to be able to participate in your mining
+A：The "mining" in DBC is essentially an online reward, where the computing power provider only needs to provide GPU resources to get the reward; these computing power will be used to be rented by customers in AI, cloud gaming, metaverse, visual rendering, autonomous driving, blockchain, and other related fields, and the computing power providers can get both online reward and computing power rental revenue.
 
-Q：你能告诉我们更多关于 DBC 正在进行的银河竞赛吗？这个比赛的目的是什么？我们也可以参加比赛吗？
+Q：In DeepBrainchain, you have combined two world best technologies, high performance compute network and blockchain technology. My question is what are the advantages and benefits that community can enjoy from deepbrainchain?
+A：DeepBrain Chain’s vision is to build an infinitely scalable high-performance distributed computing power network, and become the most important computing infrastructure in the AI+MetaVerse era.At present, DeepBrain Chain is in a leading position in this field. The high-performance computing market is a huge market worth hundreds of billions of dollars, and it may reach trillions of dollars in the future. The goal of DeepBrain Chain is to get a share of this field and the community can also benefit from it.
 
-A：https://galaxyrace.deepbrainchain.org/
-关于比赛规则、算力地图及算力详情以及 AI 服务器租用及质押情况都在说明，欢迎大家积极参与。银河算力竞赛目的是为了让更多算力加入深脑链网络，目前算力处于严重供不应求状况，所有人只要服务器配置及存放环境符合要求，都可以自由加入深脑链网络。
+Q：Please share complete tokenomics of $DBC token with its distribution and vesting period? Also tell us use cases of token in whole ecosystem of deepbrainChain?
+A：DBC has 10 billion DBC tokens in total, 40% of which will be distributed as online rewards to the computing power providers, 10% will be rewarded to the early computing power providers that provided computing power on DBC network before the mainnet went online, that is to say, 50% of the tokens are allocated to computing power providers. The team has 1 billion DBCs, which will be unlocked in ten years on average, and the Foundation and Council has a total of 2.5 billion, which will be unlocked in nineteen years, so the reason for doing this is to have enough patience for DBC. At present the total circulation of DBC is more than 4 billion.
+DBC computing power provider's rewards consist of two parts: supernodes block producing rewards and computing power provider online rewards, the first three years are 100 million and 400 million DBC respectively, from the third year on the amount is halved, after that the amount is halved again every five years.
+Supernode pledge: currently there are 31 supernodes, tentatively 10 nodes will be added each quarter.
+Each node first need to pledges DBC tokens to participate in the supernode election;
+Any DBC holder can pledge DBC to vote for the node, and rewards are also given to voters;
+The top 31 nodes voters can become supernodes, the election is held every 24 hours.
+GPU power provider pledge rules:
+From 0 to 10,000 GPUs, 100,000 DBCs are pledged per GPU.
+Starting from 10,001 GPU, the formula for the total number of DBC that needs to be pledged is:
+1 billion + 100,000 x (10000/10001 + 10000/10002 + ∙∙∙∙∙∙∙∙∙∙ + 10000/(10000+n)).
+If the above formula is accounted for and a single GPU is pledged at 1,500 USD 50,000 RMB, then the pledge is calculated at 1500 USD 50,000 RMB.
 
-Q ：成为 DBC 的超级节点可以有自己的好处。但你能告诉我们成为超级节点的要求吗？选举是多久进行一次？谁都可以投票？奖励是如何分配的？
+Example of the number of single GPU pledges:
 
-A:目前超级节点每年有 1 亿 DBC 奖励，目前总共 41 个节点，每个季度会增加 10 个节点，要成为超级节点需要持有一定数量 DBC 以及社区持币者的支持，能够排名前 41 位就有机会入选，同时需要有一台服务器能够负责出块。目前选举是每 24 小时选举一次，所有持币者都有机会参与投票。出块奖励会根据节点设置规则，按比例分配，具体详情可以查看官方 twitter 公告，以及 DBC 主网自行操作。www.dbcwallet.io
+Assuming that n0000 shows the first 1000 GPUs after 10,000, then the number of pledges for the 11000th GPU is: 100,000 x 10000/11000.
 
-Q：一个有趣的功能是你们的挖矿，所以你能向我解释一下这种挖矿包括什么，以及用户能够参与你们的挖矿会有什么好处吗？
+DBCs pledged by each graphics card need to be pledged for at least 365 days; when the machine is online for more than 365 days and no user uses it for more than 10 days, you can exit the pledged, take the machine offline and release the pledged DBC within 3 days, and the previously obtained rewards will continue to be released linearly.
 
-A：DBC 里面的“挖矿”本质上是在线奖励，算力提供者只需要提供 GPU 资源就可以获得奖励，这些算力会用来被 AI、云游戏、元宇宙、视觉渲染、自动驾驶、区块链等相关领域客户租用，算工既能获得在线奖励也能获得算力出租收益。
+There is also the deflationary model, which is the DBC burning rule.
 
-Q：你们结合了两种世界上最好的技术，高性能计算网络和区块链技术。我的问题是，社区可以从 DBC 享受到哪些优势和好处？
+When the DBC network reaches 5,000 GPUs across the network, 100% of the rents paid by users after activation are destroyed, which means DBC will enter a deflationary state. So reaching 5,000 GPUs in the DBC network will be an important milestone!
 
-A：深脑链的愿景是构建一个无限可扩展的高性能分布式算力网络，成为 AI+MetaVerse 时代最重要的计算基础设施。 目前，深脑链在该领域处于领先地位。 高性能计算市场是一个数千亿美元的巨大市场，未来可能会达到数万亿美元。 深脑链的目标是在这个领域分一杯羹，社区也能从中受益。
+DBC is the only payment credentials in the entire DBC arithmetic network, and enterprises need to use DBC to provide arithmetic to the DBC network or rent arithmetic, including pledging.
 
-Q：请分享 DBC 代币的完整的情况，包括它的分配和归属期？还请告诉我们代币在整个 DBC 生态系统中的使用情况？
+Q：What are your aims in next 2 years according to your roadmap? What if I ask you what is the ultimate goal of DeepBrainchain?
 
-A：深脑链的代币经济模型中，算工是最重要的部分，DBC 全网总共有 100 亿枚 DBC 代币，其中 40% 将作为在线奖励分给算工，10% 奖励给主网上线前的早期算工，也就是说 50% 的代币分配给算工。团队 10 亿 DBC ,平均分十年解锁，和理事会一共基金会 25 亿，分十九年解锁，之所以这样的做的原因对 dbc 有足够的耐心。目前 DBC 总的流通量为 40 亿。
-DBC 算工奖励分两部分：超级节点出块奖励和算工在线奖励，前三年分别为 1 亿和 4 亿 DBC 奖励，第三年起减半，后每五年减半一次。
-超级节点质：目前有 31 个超级，暂定每个季度会增加 10 个节点。 1.每个节点首先质押 dbc 参与超级节点竞选 2.任何 dbc 持币者，可以质押 dbc 给节点投票，投票可以获得奖励 3.节点本身以及投票人的 dbc 总数前 31 位可以成为超级节点，每 24 小时选举一次
-算工质押规则：
+A：On the supply side, the goal of DeepBrain Chain ecosystem in the next 2 years is to add 100 computing pools worldwide to join the DBC network, providing a continuous source of computing power for the computing network; at the same time, on the demand side, the goal of DeepBrain Chain ecosystem in the next 2 years is to add 50-100 AI cloud platforms globally, the value of these cloud platforms is so that the network can sell the computing power to them, and the income is used for the destruction of DBC, thus forming a closed business loop.
 
-1.  0-10000 卡，每卡质押 10 万个 DBC；
+DeepBrain Chain’s vision is to build an infinitely scalable high-performance distributed computing power network, and become the most important computing infrastructure in the AI+MetaVerse era.
 
-2.  从 10001 卡开始，质押总数公式为：
-    10 亿+10 万 ×（10000/10001+10000/10002+∙∙∙∙∙∙∙∙∙∙+10000/（10000+n）），
-    如果按照上述公式核算，单卡质 1500 美金 5 万元人民币，那么质押按 1500 美金 5 万元人民币计算；
-    单卡质押数量示例：
-    假设 n0000 示 1w 后的第一个 1000 卡，那么第 11000 张卡的质押数量是：10w×10000/11000；
+Q：What is the overall design of DBC’s community governance mechanism? What is the process of initiation if new institutions are to be added in the future (such as the Council to be established in the near future)?
 
-3.  每张显卡质押的 DBC，需要质押至少 365 天；当机器在线超过 365 天后，且没有用户使用超过 10 天，可以退出质押下线机器，3 天内释放质押 DBC，且之前获得的奖励继续线性释放；
-    还有一块是通缩模型，也就是 DBC 销毁规则。
-    当满足全网 5000 张，用户支付的激活后租金 100%销毁，这意味着 DBC 将进入通缩状态。所以 dbc 全网可以达到 5000 卡是一个重要的里程碑销毁！
+A：DeepBrain Chain community autonomy mainly relies on DeepBrain Chain Council, DeepBrain Chain Council has 51 million DBC per year for 15 years; all Council members are elected by the community and are responsible for managing the distribution of Council funds, all community members can propose to apply for funds and contribute to the ecosystem, Foundation members do not participate in the election and operation of the Council. At present, DeepBrain Chain Council is in the trial run stage, and will run officially from January next year.
 
-Q：根据你的路线图，你在未来两年的目标是什么？以及 DeepBrainchain 的最终目标是什么？
+Q：Currently, projects are continuously attacked by hackers. That is the nightmare of many projects. So, what is your strategy to anticipate hacking possibilities on your platform? What plan do you have in order not to let #DeepBrainChain get hacked and cost investors?
 
-A：在供给端，深脑链生态未来 2 年的目标是在全球新增 100 个算池加入 DBC 网络，为算力网络提供源源不断的算力； 同时，在需求端，深脑链生态未来 2 年的目标是在全球范围内增加 50-100 个 AI 云平台，这些云平台的价值在于网络可以向他们出售算力 ，收益用于销毁 DBC，从而形成业务闭环。
-深脑链的愿景是构建一个无限可扩展的高性能分布式算力网络，成为 AI+MetaVerse 时代最重要的计算基础设施。
+A：This is a very good question, we mainly deal with hacker attacks from two aspects: 1. DeepBrain Chain will conduct strict code audit every time it is upgraded, and find professional organizations in the industry to do security audit, and at the same time, it will run for a trial period before upgrading 2. DeepBrain Chain itself is a high performance computing network, the network has thousands of nodes, each node is a high performance server, currently there are 31 supernodes responsible for the producing blocks, and at the same time, 10 nodes will be added every quarter, so it is very difficult and incredibly costly to attack DeepBrain Chain network.
 
-Q：DBC 的社区治理机制的整体设计是什么？其启动过程是怎样的？
+Q：Do you think you can connect real-life and CryptoWorld with you project?How do you think the utility of you projects?
 
-A：深脑链社区自治主要依靠深脑链理事会，深脑链理事会 15 年每年拥有 5100 万 DBC； 所有理事会成员均由社区选举产生，负责管理理事会资金的分配，所有社区成员均可提出申请资金并为生态系统做出贡献，基金会成员不参与理事会的选举和运作。 目前，深脑链理事会处于试运行阶段，将于明年 1 月正式运行。
+A：Yes, the vision of DeepBrain Chain is to build an infinitely scalable distributed high-performance computing network and become the most important computing infrastructure in the era of AI+meta-universe. It was positioned as an application public chain at the beginning, hoping to serve real industries, and has successfully realized the industrial implementation in the past four years, and has served more than 100 enterprises and nearly 20,000 AI developers in many scenarios including AI, autonomous driving, meta-universe, visual rendering, etc.From this connection：https://galaxyrace.deepbrainchain.org, you can query the GPU rental status on the chain. It can be seen that the rental rate is very high. The GPUs on the DeepBrain Chain platform are very popular.
 
-Q：目前，很多项目不断受到黑客的攻击。那么，你们有什么策略来预测你们平台上的黑客攻击可能性？你们有什么计划？
+For example, the NetEase cloud gaming platform is using the GPU of the DBC platform
 
-A：这是一个很好的问题，我们主要从两个方面来应对黑客攻击： 1. 深脑链每次升级都会进行严格的代码审计，并找行业专业机构做安全审计； 2. 深脑链本身是一个高性能计算网络，网络有数千个节点，每个节点是一个高性能服务器，目前有 41 个超级节点负责出块，在 同时，每季度会增加 10 个节点，因此攻击深脑链网络非常困难且代价高昂。
+Q：What is your inspiration behind this project and how are u planning to expand your ecosystem and attracting more investors so that you can stay in the business for a long time?
 
-Q：你认为你能用你的项目连接现实生活和加密世界吗？
+A：We have been focusing on AI projects since 2011, including voice assistants, smart speakers and other products. We realized the importance of GPU early, but GPU resources are very expensive and many startups can't afford it. Blockchain technology can help achieve this goal.The gpu market is very large. The gpu cloud service market can reach 10 million cards in the next 5 years. We aim to have a global market share of 20% in the next 5 years. The annual rent from the DBC platform can exceed 4 billion U.S. dollars. And these equivalent DBCs will be destroyed
 
-A：是的，深脑链的愿景是构建一个无限扩展的分布式高性能计算网络，成为 AI+元宇宙时代最重要的计算基础设施。 DBC 一开始定位为应用公链，希望服务于实体行业，四年来已成功实现产业落地，在 AI、自主等多个场景服务了 100 多家企业和近 2 万名 AI 开发者 驾驶、元宇宙、视觉渲染等。
+Q：DeepBrainChain is deployed and issued as a substrate of Polkadot network. Can you explain to us why did your team decide to be that way? Was it convenient to implement your products and services as a substrate of Polkadot?
 
-从这个网站https://galaxyrace.deepbrainchain.org，可以查询链上GPU出租情况，可以看出 深脑链平台上的 GPU 非常受欢迎，将近 100%的租用率。
+A：As mentioned above, the mainnet is only a part of DeepBrain Chain's products. The high-performance computing network, and GPU computing mainnet are equally important. We chose to develop based on substrate because of its cross-chain technology, community governance mechanism and Polkadot ecology. So far, our choice is correct and everything is working well.
 
-Q：你在这个项目背后的灵感是什么，你打算如何扩大你的生态系统和吸引更多的投资者，以便你能够长期保持在这个行业？
+Q：What metaverse will your project develop? Will it be developed by your team or will DBC just serve as a network provider for other projects to be built on top of it?
 
-A：自 2011 年以来，我们一直专注于人工智能项目，包括语音助手、智能音箱等产品。 我们很早就意识到 GPU 的重要性，但是 GPU 资源非常昂贵，很多初创公司都负担不起。 区块链技术可以帮助他们解决这个问题。gpu 市场非常大。，未来 5 年 gpu 云服务市场规模可达 1000 万张卡， 我们的目标是在未来 5 年内拥有 20% 的全球市场份额，所有租金收入将用于 DBC 的回购和销毁，以回馈投资者。
+A：The advent of the meta-universe era must rely on a powerful distributed high-performance computing power network. This is where the value of DeepBrain Chain lies.
 
-Q：DeepBrainChain 是作为 Polkadot 网络的一个底层来部署和发行的。你能向我们解释一下为什么你的团队决定这样做吗？将你们的产品和服务作为 Polkadot 的底层来实施是否方便？
+DeepBrain Chain’s vision is to build an infinitely scalable high-performance distributed computing power network, and become the most important computing infrastructure in the AI+MetaVerse era. We will not develop meta-universe projects by ourselves.
 
-A：如上所述，主链只是深脑链产品的一部分。 高性能计算网络和 GPU 算力主网同等重要。 我们选择基于 substrate 进行开发，是因为它的跨链技术、社区治理机制和 Polkadot 生态。 到目前为止，我们的选择是正确的，一切运行良好。
+Q：The NFT Medal is the highest award of the DBC community. can the NFT medal be obtained by all users or can it be obtained by the general public too? how do we get the NFT medal? are there any special requirements to get the NFT medal? And can the NFT medal be sold in the future?
 
-Q：你们会开发元宇宙吗？还是 DBC 只是作为一个网络供应商，让其他项目在它的基础上进行开发？
-
-A：元宇宙时代的到来，必须依赖强大的分布式高性能算力网络。 这就是深脑链的价值所在。
-深脑链的愿景是构建一个无限可扩展的高性能分布式算力网络，成为 AI+MetaVerse 时代最重要的计算基础设施。 我们不会自己开发元宇宙项目。
-
-Q：NFT 奖章是 DBC 社区的最高奖项。NFT 奖章是否可以由所有用户获得，或者也可以由普通人获得？我们如何获得 NFT 奖章？获得 NFT 奖章有什么特殊要求吗？还有，NFT 奖章将来是否可以出售？
-
-A：NFT 奖章是赠送给为 DBC 生态做出贡献的社区成员的免费礼物。 它分为金、银和青铜。 社区成员可以向深脑链理事会会提出申请，理事会成员投票通过后颁发。 NFT 奖章也可以在 NFT 市场上交易。 基金会每年会回购一次。 回购价格如下：NFT 金牌折合 100 万 DBC，银牌折合 10 万 DBC，铜牌折合 1 万 DBC。
-
+A：The NFT medal is a free gift to community members who have contributed to the DBC ecology. It is divided into gold, silver, and bronze. Community members can apply to the board of directors, and they will be issued after the board of directors votes. NFT medals can also be traded on the NFT market. The foundation will repurchase once a year. The repurchase price is as follows: NFT gold medals are equivalent to 1 million DBC, silver medals 100,000 DBC, and bronze medals 10,000 DBC.
 https://www.dbcwallet.io/#/treasury
 https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea?source=user_profile---------2-------------------------------
 
-Q：我们知道，合作伙伴是一个项目能否成功的关键之一。DBC 已经有哪些合作伙伴？哪些新的合作伙伴将很快宣布？我们能不能得到一点相关的信息？
+Q：As we know, partners are one of the key success for the suistanability of a project. Which partners that DBC already had ? Which new partners that will announced soon ? Can we get a little sneak peek information about this ?
 
-A：目前已为多家企业提供高性能 GPU 算力，全球累计已有 50 多家厂商部署了基于深脑链网络的高性能 GPU 云平台，服务数百家企业和数万个 AI 开发者群体。 例如，中国云游戏厂商网易云游戏使用深脑链的 GPU 资源，中国领先的无人驾驶公司 AutoX 正在测试深脑链的 GPU 资源，中国领先的云游戏解决方案提供商庭宇科技正在与我们合作，北京大学、清华大学和哈佛 大学等众多知名高校有学生和老师使用深脑链的 GPU 进行 AI 训练。
+A：It has provided high-performance GPU computing power for many enterprises, and cumulatively more than 50 vendors worldwide have deployed high-performance GPU cloud platforms based on DeepBrain Chain network, serving hundreds of enterprises and tens of thousands of AI developer groups. For example, China’s cloud game vendor NetEase Cloud Game uses GPU resources from DeepBrain Chain, China’s leading driverless company AutoX is testing GPU resources from DeepBrain Chain, China’s leading cloud game solution provider TingYu Technology is cooperating with us, Beijing University, Tsinghua University and Harvard University have students and teachers using DeepBrain Chain’s GPUs for AI training.
 
-Q：DBC 市场营销团队的目标？
+Q：What are DeepBrainChain Marketing Department objectives?
 
-A：这是一个很好的问题。深脑链的愿景是构建一个无限可扩展的高性能分布式算力网络，成为 AI+MetaVerse 时代最重要的计算基础设施。目前深脑链在这方面处于领先地位 场地。 我们要做的是不断扩大网络 GPU 规模，并保证网络中的 GPU 出租出去，所得收益全部用于 DBC（5000 卡以上）的回购和销毁。 市场营销团队所有的工作都是为了达成这个目标。
+A：This is a very good question.DeepBrain Chain’s vision is to build an infinitely scalable high-performance distributed computing power network, and become the most important computing infrastructure in the AI+MetaVerse era.At present, DeepBrain Chain is in a leading position in this field. What we have to do is to continuously expand the network GPU scale , And ensure that the GPUs in the network are leased out, and all the income obtained will be used for the repurchase and destruction of DBC (above 5000 cards). All our marketing is to serve this goal.
 
-Q：DBC 是一个由区块链驱动的人工智能计算平台。但大多数用户并不了解这一点。那么你是否有关于 DBC 如何工作的教程或文章？你为什么认为人工智能计算在区块链中是必要的？你能分享一下链的关键性能指标，如每秒的区块数、交易完成时间、交易速度、每笔交易的成本或其他方面？
+Q：Deep Brain Chain is a AI computing platform powered by blockchain. But most of the users doesn’t understand this. So do you have a tutorial or article on how DBC works? Why do you think AI computing is necessary in blockchain? and can you share key performance indicators of the chain, such as Number of blocks per second, transaction completion time, transaction speed, cost per transaction or something else?
 
-A：人类正在进入智能时代，人工智能已经融入人们生活的方方面面。人工智能三驾马车：深度模型、大数据（互联网、传感器、IOT）、高性能计算（GPU、FPGA、专用芯片）。单个深度模型对计算能力的需求越来越大：ImageNet 图像识别——1~10 个 GPU，AlphaFold/AlphaFold2——100~200 个 GPU，BERT 语言模型——100~200 个 GPU，使用 1026 个 TPU，训练时间可以缩短到 76min， GPT-3 语言模型——1000 个 GPU OpenAI，1750 亿个参数，训练一次耗资百万美元，多模态大规模预训练模型——2000 个 GPU 北京人工智能研究院（BAAI）。人工智能竞赛是算力竞赛：解决算力供需问题迫在眉睫。
+A：Humanity is moving into the age of intelligence, and artificial intelligence has been integrated into every aspect of people’s lives. The Artificial intelligence troika: deep models, big data (Internet, sensors, IOT), and high-performance computing (GPU, FPGA, special chips). Individual deep models have an increasing demand for computing power: ImageNet image recognition — 1~10 GPUs, AlphaFold/AlphaFold2 — 100~200 GPUs, BERT language model — 100~200 GPUs, using 1026 TPUs, training time can be shortened to 76min, GPT- 3 language model — 1,000 GPUs OpenAI, 175 billion parameters, training once consumes millions of dollars, multimodal large-scale pre-training model — 2,000 GPUs Beijing Academy of Artificial Intelligence (BAAI). The Artificial intelligence race is the computing power race: solving the problem of computing power supply and demand and rewarding computing power is imminent. DeepBrain Chain hopes to build an infinitely scalable, distributed high-performance computing network through blockchain technology to achieve cost reduction and efficiency improvement of AI computing power worldwide, promote the popularization and democratization of AI computing power, and accelerate the arrival of the era of AI+ metaverse.
 
-深脑链希望通过区块链技术构建一个无限扩展、分布式的高性能计算网络，在全球范围内实现 AI 算力降本增效，推动 AI 算力普及和民主化，加速 AI+时代的到来元宇宙。
+DeepBrain Chain contains three important parts: high-performance computing network, blockchain mainnet and GPU computing mainnet. The high-performance computing network was officially launched at the end of 2018, blockchain mainnet was launched on May 20th, 2021, and GPU computing mainnet was launched on November 22nd.
 
-深脑链包含三个重要部分：高性能计算网络、区块链主网和 GPU 计算主网。高性能计算网络于 2018 年底正式上线，区块链主网于 2021 年 5 月 20 日上线，GPU 计算主网于 11 月 22 日上线。
+The blockchain mainnet of DeepBrain Chain is developed based on PolkaSubstrate. Except for one block in 30 seconds, everything else changes dynamically; if the network is not congested, it will be packaged in 30 seconds, and 2 blocks will be the most confirmed after packing; the transfer transaction fee, a transfer is currently about 0.00015 DBC.
 
-深脑链区块链主网基于 PolkaSubstrate 开发。除了 30 秒一个区块，其他一切都是动态变化的；如果网络不拥塞，30 秒内打包，打包后最多确认 2 个区块；转账交易手续费，一次转账目前约为 0.00015 DBC。
+From the perspective of DBC’s actual business operation, the current performance indicators of the main chain are fully sufficient to support the development of DBC business for a long time in the future.
 
-从 DBC 的实际业务运作来看，目前主链的各项性能指标完全足以支撑 DBC 业务在未来很长一段时间的发展。
+Q：DeepBrainChain is a computing project that is applicable in multiple scenarios but it captured my attention that it has been adopted by biopharmaceuticals, could you tell us how this technology is useful in healthcare systems? Do you have any examples?
 
-Q：为什么需要分布式高性能算力网络？DBC 的核心价值是什么？
+A：Take the research and development of new drugs as an example. At present, it takes about 12 to 15 years to invent a new drug, which requires a cost of 1 to 2 billion U.S. dollars. The cycle is very long and the cost is very high. The emergence of AI has played a very important role, and it can shorten this cycle a lot.
 
-A：由于 AI+元宇宙技术的发展和边缘计算的兴起，对边缘计算（高性能、高密度、低延迟、低成本、全覆盖）的需求越来越强烈，传统的大数据中心已经不能满足业务发展的需求，需要对不同层次（云节点、城域节点和边缘节点）的数据中心进行调度和管理，因此迫切需要创建统一的分布式计算网络来更好地满足业务需求，同时提高计算资源利用效率，这就是区块链技术的优势所在。
+There are several major trends in this. Now the entire biological world is digitizing. I have always said that the physical world is digitizing, and the biological world is also digitizing. Proteins, genes, and cells can be expressed in digital ways. The benefits of digitization are With a large amount of data, coupled with strong computing power and algorithms, the technology in artificial intelligence can be used for so many years. At present, many pharmaceuticals are looking for precise targets in small molecules. Now we use them for large molecules, antibodies, and TCR personalized vaccines and drugs, as well as the recent progress of AlphaFold in protein analysis.
 
-深脑链利用区块链技术构建新型生产关系，创新解决算力供给问题；通过重构云计算产业链，将云计算等巨头主导的封闭体系，转变为人人共建共享利益的开放体系，共建 AI+元宇宙时代的基础设施。欢迎大家以合适的方式参与 DBC 高性能算力生态建设。
+These are based on massive GPU computing resources, and we are currently actively expanding our customers in this area.
 
-Q：DBC 是一个适用于多种场景的计算项目，但吸引我注意的是 GPU 也已经被生物制药公司采用，您能告诉我们这项技术在医疗系统中的作用吗？您有什么例子吗？
+Q：Southeast Asia is a very vibrant market and many project developed here. so what do you think about Southeast Asia and do you have any plan to develop here?
 
-A：以新药研发为例。目前，发明一种新药大约需要 12 到 15 年的时间，需要 1 到 20 亿美元的成本。周期很长，成本很高。 AI 的出现起到了非常重要的作用，可以大大缩短这个周期。
-
-这有几个主要趋势。现在整个生物世界都在数字化。我一直说物理世界在数字化，生物世界也在数字化。蛋白质、基因和细胞可以以数字方式表达。数字化的好处是数据量大，加上强大的计算能力和算法，人工智能中的技术可以用这么多年。目前，很多药物都在寻找小分子中的精准靶点。现在我们将它们用于大分子、抗体和 TCR 个性化疫苗和药物，以及 AlphaFold 在蛋白质分析方面的最新进展。
-
-这些都是基于海量的 GPU 计算资源，我们目前正在积极拓展这方面的客户。
-
-Q：东南亚是一个非常有活力的市场，很多项目在这里开发。那么你对东南亚有什么看法，你有没有计划在这里发展？
-
-A：DBC 在新加坡注册，过去几年我们在新加坡、泰国、越南、印尼等多个国家办了多次线下会议和线上活动，受到大家的热烈欢迎。
-深脑链的愿景是构建一个无限扩展的高性能分布式算力网络，成为 AI+MetaVerse 时代最重要的计算基础设施。在未来几年，我们将增加越来越多的算池和更多的 AI 云平台 全球加入 DBC 网络，形成商业闭环。
+A：DBC registered in Singapore, so we started from Southeast Asia.
+DeepBrain Chain’s vision is to build an infinitely scalable high-performance distributed computing power network, and become the most important computing infrastructure in the AI+MetaVerse era.In the next few years,we will add more add more computing pools and more AI cloud platforms worldwide to join the DBC network,and the income is used for the destruction of DBC, thus forming a closed business loop.
