@@ -3,5 +3,10 @@
 }
 
 .custom-container.tip .custom-container-title {
-  display: none
+  display: none;
+}
+
+.navbar-dropdown-wrapper .navbar-dropdown {
+  left: 0;
+  right: auto;
 }
