@@ -1,4 +1,4 @@
-# Introduction of DBC
+# Brief Introduction of DBC
 
 DeepBrainChain was established in 2017 and launched on huobi in January 2018. DeepBrainChain is distributed computing with GPU as the core, and mainly provides GPU computing services for artificial intelligence, cloud games, movie rendering and other fields.
 

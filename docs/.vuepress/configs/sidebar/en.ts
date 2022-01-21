@@ -5,7 +5,7 @@ export const en: SidebarConfig = {
     {
       text: 'DBC Introduction',
       children: [
-        '/en/dbc-introduction',
+        '/en/dbc-introduction/dbc-introduction',
         '/en/dbc-introduction/dbc-applications',
         '/en/dbc-introduction/dbc-ecology',
         '/en/dbc-introduction/dbc-gpu-rent',
@@ -19,7 +19,6 @@ export const en: SidebarConfig = {
     {
       text: 'DBC Democracy',
       children: [
-        '/en/dbc-democracy',
         '/en/dbc-democracy/dbc-council',
         '/en/dbc-democracy/join-council',
         '/en/dbc-democracy/proposing-referenda',

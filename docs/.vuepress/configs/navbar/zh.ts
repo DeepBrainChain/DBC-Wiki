@@ -9,8 +9,8 @@ export const zh: NavbarConfig = [
       '/dbc-introduction/dbc-applications',
       {
         text: 'DBC介绍',
-        link: '/dbc-introduction',
         children: [
+          '/dbc-introduction/dbc-introduction',
           '/dbc-introduction/dbc-ecology',
           '/dbc-introduction/dbc-gpu-rent',
           '/dbc-introduction/dbc-profit',
@@ -20,7 +20,6 @@ export const zh: NavbarConfig = [
       },
       {
         text: '社区治理',
-        link: '/dbc-democracy',
         children: [
           '/dbc-democracy/dbc-council',
           '/dbc-democracy/join-council',

@@ -5,7 +5,7 @@ export const zh: SidebarConfig = {
     {
       text: '了解DBC',
       children: [
-        '/dbc-introduction',
+        '/dbc-introduction/dbc-introduction',
         '/dbc-introduction/dbc-applications',
         '/dbc-introduction/dbc-ecology',
         '/dbc-introduction/dbc-gpu-rent',
@@ -20,7 +20,6 @@ export const zh: SidebarConfig = {
     {
       text: 'DBC Democracy',
       children: [
-        '/dbc-democracy',
         '/dbc-democracy/dbc-council',
         '/dbc-democracy/join-council',
         '/dbc-democracy/proposing-referenda',

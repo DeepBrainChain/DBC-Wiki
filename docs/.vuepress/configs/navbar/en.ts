@@ -8,8 +8,8 @@ export const en: NavbarConfig = [
       '/en/dbc-introduction/dbc-applications',
       {
         text: 'DBC Introduction',
-        link: '/en/dbc-introduction',
         children: [
+          '/en/dbc-introduction/dbc-introduction',
           '/en/dbc-introduction/dbc-ecology',
           '/en/dbc-introduction/dbc-gpu-rent',
           '/en/dbc-introduction/dbc-profit',
@@ -19,7 +19,6 @@ export const en: NavbarConfig = [
       },
       {
         text: 'DBC Democracy',
-        link: '/en/dbc-democracy',
         children: [
           '/en/dbc-democracy/dbc-council',
           '/en/dbc-democracy/join-council',
