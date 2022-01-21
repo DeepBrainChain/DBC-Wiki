@@ -19,7 +19,7 @@ export const en: NavbarConfig = [
       },
       {
         text: 'DBC Democracy',
-        link: '/en/dbc-democracy/',
+        link: '/en/dbc-democracy',
         children: [
           '/en/dbc-democracy/dbc-council',
           '/en/dbc-democracy/join-council',

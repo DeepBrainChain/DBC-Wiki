@@ -1,4 +1,4 @@
-# Guide| Voting on Referenda on DBC Mainnet
+# Guide | Voting on Referenda on DBC Mainnet
 
 ## 1. The democracy page
 

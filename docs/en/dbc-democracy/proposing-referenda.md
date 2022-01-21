@@ -1,4 +1,4 @@
-# Guide| Proposing a referendum
+# Guide | Proposing a referendum
 
 Referenda are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved.
 

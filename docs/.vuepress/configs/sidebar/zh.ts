@@ -5,17 +5,26 @@ export const zh: SidebarConfig = {
     {
       text: '了解DBC',
       children: [
-        '/dbc-introduction/',
+        '/dbc-introduction',
         '/dbc-introduction/dbc-applications',
         '/dbc-introduction/dbc-ecology',
         '/dbc-introduction/dbc-gpu-rent',
         '/dbc-introduction/dbc-profit',
         '/dbc-introduction/dbc-trade',
         '/dbc-introduction/rentVirtual',
-        '/dbc-democracy/',
         '/dbc-introduction/dbc-community',
+      ],
+    },
+  ],
+  '/dbc-democracy': [
+    {
+      text: 'DBC Democracy',
+      children: [
+        '/dbc-democracy',
         '/dbc-democracy/dbc-council',
         '/dbc-democracy/join-council',
+        '/dbc-democracy/proposing-referenda',
+        '/dbc-democracy/voting-referenda',
         '/dbc-democracy/dbc-nft',
         '/dbc-democracy/apply-treasury',
         '/dbc-democracy/staking-voting',
@@ -62,21 +71,6 @@ export const zh: SidebarConfig = {
             '/dbc-information/dbc-report/dbc-yahoo-report',
           ],
         },
-      ],
-    },
-  ],
-  '/dbc-democracy/': [
-    {
-      text: '社区治理',
-      children: [
-        '/dbc-democracy/',
-        '/dbc-democracy/dbc-council',
-        '/dbc-democracy/join-council',
-        '/dbc-democracy/proposing-referenda',
-        '/dbc-democracy/voting-referenda',
-        '/dbc-democracy/dbc-nft',
-        '/dbc-democracy/apply-treasury',
-        '/dbc-democracy/staking-voting',
       ],
     },
   ],

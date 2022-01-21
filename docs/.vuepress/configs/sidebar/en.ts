@@ -5,15 +5,21 @@ export const en: SidebarConfig = {
     {
       text: 'DBC Introduction',
       children: [
-        '/en/dbc-introduction/',
+        '/en/dbc-introduction',
         '/en/dbc-introduction/dbc-applications',
         '/en/dbc-introduction/dbc-ecology',
         '/en/dbc-introduction/dbc-gpu-rent',
         '/en/dbc-introduction/dbc-profit',
         '/en/dbc-introduction/dbc-trade',
         '/en/dbc-introduction/dbc-community',
-        '/en/dbc-democracy/',
-        '/en/dbc-introduction/dbc-community',
+      ],
+    },
+  ],
+  '/en/dbc-democracy': [
+    {
+      text: 'DBC Democracy',
+      children: [
+        '/en/dbc-democracy',
         '/en/dbc-democracy/dbc-council',
         '/en/dbc-democracy/join-council',
         '/en/dbc-democracy/proposing-referenda',
@@ -64,19 +70,6 @@ export const en: SidebarConfig = {
             '/en/dbc-information/dbc-report/dbc-yahoo-report',
           ],
         },
-      ],
-    },
-  ],
-  '/en/dbc-democracy/': [
-    {
-      text: 'DBC Democracy',
-      children: [
-        '/en/dbc-democracy/',
-        '/en/dbc-democracy/dbc-council',
-        '/en/dbc-democracy/join-council',
-        '/en/dbc-democracy/dbc-nft',
-        '/en/dbc-democracy/apply-treasury',
-        '/en/dbc-democracy/staking-voting',
       ],
     },
   ],

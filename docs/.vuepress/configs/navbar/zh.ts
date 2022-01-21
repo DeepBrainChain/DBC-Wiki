@@ -20,7 +20,7 @@ export const zh: NavbarConfig = [
       },
       {
         text: '社区治理',
-        link: '/dbc-democracy/',
+        link: '/dbc-democracy',
         children: [
           '/dbc-democracy/dbc-council',
           '/dbc-democracy/join-council',
