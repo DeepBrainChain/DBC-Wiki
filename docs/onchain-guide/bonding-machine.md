@@ -61,8 +61,8 @@ node_private_key=398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f6cfd182e2aef8
 ```bash
 # 自行安装node.js v14
 # Clone 仓库，并下载依赖：
-git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git && cd DeepBrainChain-MainChain
-cd scripts/test_script && npm install
+git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git && cd DeepBrainChain-MainChain/scripts/test_script
+npm install
 
 # 生成签名
 node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f6cfd182e2aef89 --msg 8eaf04151687736326c9fea17e25fc5287613693c912909cb226aa4794f26a485CiPPseXPECbkjWCa6MnjNokrgYjMqmKndv2rSnekmSK2DjL
@@ -132,7 +132,7 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 ## 5. 奖励查询与领取
 
-#### 5.1. 查询奖励
+### 5.1. 查询奖励
 
 在开发者--链状态中选择：`onlineProfile`模块的`stashMachines`方法，参数填入**`资金账户`**，你将能查到该`资金账户`获得奖励的详细信息。
 
@@ -140,7 +140,7 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 <img src="./assets/bonding_machine.assets/image-20210623143656481.png" width="50%" height="50%">
 
-#### 5.2. 领取奖励
+### 5.2. 领取奖励
 
 使用**控制账户**领取即可，奖励将发放到**`资金账户`**。
 
