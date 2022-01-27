@@ -63,7 +63,7 @@ security:
 ## 二、java 部署
 
 ```bash
-通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
+#通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. 修改配置文件中的dbc算力网络客户端域名
 
 application-dev.properties  application-dev.properties   application-dev.properties 中clientUrl修改用自己部署的dbc客户端域名替代
@@ -146,9 +146,9 @@ apt-get install libvirt-clients libvirt-daemon-system
 ```bash
 #下载代码到本地或服务器
 1. 克隆代码
-#通过git克隆链接地址 [<https://github.com/DeepBrainChain/DBChainWebsite.git>](<https://github.com/DeepBrainChain/DBChainWebsite.git>) 将代码克隆到本地或服务器，运行
+#通过git克隆链接地址 https://github.com/DeepBrainChain/DBChainWebsite.git 将代码克隆到本地或服务器，运行
 
-git clone [<https://github.com/DeepBrainChain/DBChainWebsite.git>](<https://github.com/DeepBrainChain/DBChainWebsite.git>)
+git clone https://github.com/DeepBrainChain/DBChainWebsite.git
 npm run dev
 
 #成功运行后可以本地启动网页运行云平台，进行测试。
@@ -180,9 +180,9 @@ npm run build
 ```bash
 #克隆代码
 
-#通过git克隆链接地址 [<https://github.com/DeepBrainChain/DBC-NodeScript.git>](<https://github.com/DeepBrainChain/DBC-NodeScript.git>) 将代码克隆到本地或服务器
+#通过git克隆链接地址 https://github.com/DeepBrainChain/DBC-NodeScript.git将代码克隆到本地或服务器
 
-git clone [<https://github.com/DeepBrainChain/DBC-NodeScript.git>](<https://github.com/DeepBrainChain/DBC-NodeScript.git>)
+git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 
 ### 部署代码
 
@@ -258,28 +258,27 @@ forever部署示例请参考：<https://blog.csdn.net/superjunjin/article/detail
  * wssChain 调用链名称
  */
 export const wssChain = {
-  dbc: 'wss://infotest.dbcwallet.io:7777', // 公链测试链
-  // dbc: 'wss://info.dbcwallet.io' // 公链正式链
+  dbc: 'wss://info.dbcwallet.io' // 公链正式链，也可以自己部署DBC钱包客户端
 }
 
 /**
  * baseUrl c++ 端口
  */
-// export const baseUrl = '<http://115.231.234.37:5052>' // 聪图云私链端口
-// export const baseUrl = '<http://115.231.234.32:5052>' // 主网测试端口
-export const baseUrl = '<http://183.232.237.170:5016>' // 主网测试端口 -- 备用
-// export const baseUrl = '<http://115.231.234.34:5052>' // 主网端口
+
+
+export const baseUrl = '<http://ip:port>' // 步骤三中的dbc客户端ip和端口号
+
 
 /**
  * 连接mongo数据库
  */
 // export const mongoUrl = 'mongodb://localhost:27017/identifier' // 本地访问mongo
-export const mongoUrl = 'mongodb://d**:d*********Y@localhost:27017/identifier' // 服务器访问mongo
+export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // 服务器访问mongo
 
 /**
- * 定义租用机器扣除的指定钱包
+ * 定义租用机器获取收益差额的钱包
  */
-export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // 手续费指定钱包
+export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // 用户支付的dbc收益部分会进入此钱包，需替换成自己的钱包地址
 ```
 
 ## 六、部署 Nginx
