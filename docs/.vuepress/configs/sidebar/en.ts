@@ -80,6 +80,7 @@ export const en: SidebarConfig = {
         '/en/staking-model/generate-new-account',
         '/en/staking-model/join-dbc-network',
         '/en/staking-model/staking-dbc-and-voting',
+        '/en/staking-model/fast-track',
         '/en/staking-model/common-questions',
       ],
     },

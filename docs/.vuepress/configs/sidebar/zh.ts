@@ -81,6 +81,7 @@ export const zh: SidebarConfig = {
         '/staking-model/generate-new-account',
         '/staking-model/join-dbc-network',
         '/staking-model/staking-dbc-and-voting',
+        '/staking-model/fast-track',
         '/staking-model/common-questions',
       ],
     },
