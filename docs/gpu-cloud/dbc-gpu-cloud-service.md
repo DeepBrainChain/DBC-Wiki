@@ -152,13 +152,23 @@ npm run dev
 
 #成功运行后可以本地启动网页运行云平台，进行测试。
 
-2. 配置接口访问域名
+2. 修改云平台logo图案配置
+#打开文件夹 src--> locales --> CN.js && EN.js && RU.js, 将website_name字段设置为自己云平台的名称，本地运行即可查看
+#修改website_name
+
+export default {
+	···
+	website_name: 'dbchain', // dbchain, 1024lab, tycloud
+	···
+}
+
+3. 配置接口访问域名
 #打开文件夹 src--> api --> index.js,配置自己配置的服务器接口，即可修改自己所属的node接口访问域名
 #修改文件，使用nodeHost
 
 const nodeHost = '<http://localhost:8090>'
 
-3. 生成dist文件部署服务器
+4. 生成dist文件部署服务器
 npm run build
 
 #生成dist文件夹，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
@@ -176,6 +186,7 @@ git clone [<https://github.com/DeepBrainChain/DBC-NodeScript.git>](<https://gith
 ### 部署代码
 
 #代码克隆以后，可使用 forever 插件创建定时任务，将node代码运行在服务器后台，通过ip加启动router.js的启动server服务端口号，即可访问对应的接口。
+服务器安装node示例：<https://www.cnblogs.com/niuben/p/12938501.html>
 forever部署示例请参考：<https://blog.csdn.net/superjunjin/article/details/73252194>
 ```
 
