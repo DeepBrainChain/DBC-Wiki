@@ -112,6 +112,9 @@ export const zh: SidebarConfig = {
       ],
     },
   ],
+  '/gpu-cloud': [
+    { text: '部署GPU云平台', children: ['/gpu-cloud/dbc-gpu-cloud-service'] },
+  ],
   '/install-update-dbc-node': [
     {
       text: '安装&升级DBC节点',

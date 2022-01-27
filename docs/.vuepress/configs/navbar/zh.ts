@@ -114,6 +114,11 @@ export const zh: NavbarConfig = [
     ],
   },
   {
+    text: '部署GPU云平台',
+    link: '/gpu-cloud',
+    children: ['/gpu-cloud/dbc-gpu-cloud-service'],
+  },
+  {
     text: '安装&升级DBC节点',
     link: '/install-update-dbc-node',
     children: [
