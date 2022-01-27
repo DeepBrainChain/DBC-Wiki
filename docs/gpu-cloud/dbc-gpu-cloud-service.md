@@ -63,6 +63,7 @@ security:
 ## 二、java 部署
 
 ```bash
+通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. 修改配置文件中的dbc算力网络客户端域名
 
 application-dev.properties  application-dev.properties   application-dev.properties 中clientUrl修改用自己部署的dbc客户端域名替代
