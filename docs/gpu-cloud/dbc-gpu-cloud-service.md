@@ -50,13 +50,13 @@ security:
 
  1)mongod --dbpath /data/db/master,然后  mongo
  2)use admin
- 3)db.createUser({ user: "admin", pwd: "*****", roles: [{ role: "root", db: "admin" }] })
- 4)db.shutdownServer()
- 5)screen -S mongod
+ 3)db.createUser({ user: "admin", pwd: "*****", roles: [{ role: "root", db: "admin" }] })  设置管理员账户
+ 4)db.shutdownServer()  关闭mongo数据
+ 5)screen -S mongod  后台运行命令
  6)mongod --config /etc/mongod.conf （需要提前配置好mongod.conf文件） 此处如果要配置2个不同服务器的数据库自动备份，
     则用命令：mongod --master --slave --autoresync --config /etc/mongod.conf  --source ip:27017
  7)mongo,然后use admin ,然后 db.auth('admin','******')，
- 8)use identifier
+ 8)use identifier  创建identifier数据库,此处数据库名字和java服务器以及nodejs服务器代码中名字需要保持一致
  9)db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
 ```
 
