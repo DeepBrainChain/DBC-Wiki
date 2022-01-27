@@ -141,41 +141,8 @@ apt-get install libvirt-clients libvirt-daemon-system
 3. 运行升级脚本: 命令行下执行：./update_client.sh [原客户端安装目录]
 ```
 
-## 四、部署 web 环境
 
-```bash
-#下载代码到本地或服务器
-1. 克隆代码
-#通过git克隆链接地址 https://github.com/DeepBrainChain/DBChainWebsite.git 将代码克隆到本地或服务器，运行
-
-git clone https://github.com/DeepBrainChain/DBChainWebsite.git
-npm run dev
-
-#成功运行后可以本地启动网页运行云平台，进行测试。
-
-2. 修改云平台logo图案配置
-#打开文件夹 src--> locales --> CN.js && EN.js && RU.js, 将website_name字段设置为自己云平台的名称，本地运行即可查看
-#修改website_name
-
-export default {
-	···
-	website_name: 'dbchain', // dbchain, 1024lab, tycloud
-	···
-}
-
-3. 配置接口访问域名
-#打开文件夹 src--> api --> index.js,配置自己配置的服务器接口，即可修改自己所属的node接口访问域名
-#修改文件，使用nodeHost
-
-const nodeHost = '<http://localhost:8090>'
-
-4. 生成dist文件部署服务器
-npm run build
-
-#生成dist文件夹，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
-```
-
-## 五、部署 Node 服务器
+## 四、部署 Node 服务器
 
 ```bash
 #克隆代码
@@ -279,6 +246,41 @@ export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // 服
  * 定义租用机器获取收益差额的钱包
  */
 export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // 用户支付的dbc收益部分会进入此钱包，需替换成自己的钱包地址
+```
+
+## 五、部署 web 环境
+
+```bash
+#下载代码到本地或服务器
+1. 克隆代码
+#通过git克隆链接地址 https://github.com/DeepBrainChain/DBChainWebsite.git 将代码克隆到本地或服务器，运行
+
+git clone https://github.com/DeepBrainChain/DBChainWebsite.git
+npm run dev
+
+#成功运行后可以本地启动网页运行云平台，进行测试。
+
+2. 修改云平台logo图案配置
+#打开文件夹 src--> locales --> CN.js && EN.js && RU.js, 将website_name字段设置为自己云平台的名称，本地运行即可查看
+#修改website_name
+
+export default {
+	···
+	website_name: 'dbchain', // dbchain, 1024lab, tycloud
+	···
+}
+
+3. 配置接口访问域名
+#打开文件夹 src--> api --> index.js,配置自己配置的服务器接口，即可修改自己所属的node接口访问域名
+#修改文件，使用nodeHost
+
+const nodeHost = 'https://xxxxxx'   //nodejs 服务器地址
+const host = "https://xxxxx"; //java 服务器地址
+
+4. 生成dist文件部署服务器
+npm run build
+
+#生成dist文件夹，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
 ```
 
 ## 六、部署 Nginx
