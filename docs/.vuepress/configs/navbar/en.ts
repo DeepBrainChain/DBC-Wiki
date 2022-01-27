@@ -113,6 +113,11 @@ export const en: NavbarConfig = [
     ],
   },
   {
+    text: 'DBC GPU Cloud Service',
+    link: '/en/gpu-cloud',
+    children: ['/en/gpu-cloud/dbc-gpu-cloud-service'],
+  },
+  {
     text: 'Install and upgrade DBC nodes',
     // link: "/en/staking-model",
     children: [
