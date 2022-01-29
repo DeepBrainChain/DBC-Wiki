@@ -247,8 +247,9 @@
 >  }
 >  ```
 
-:::tip 注意！
-发送重启请求后，管理程序将选择它认为最好的关闭方法。请注意，虚拟机可能会忽略该请求。若要强制重启虚拟机，请给url加上force_reboot参数，参数等于true或者1即强制重启，等于false或者0或者不带参数则仍旧使用上面传统的方式重启。强制重启url如下：
+::: warning
+发送重启请求后，管理程序将选择它认为最好的关闭方法。请注意，虚拟机可能会忽略该请求。若要强制重启虚拟机，请给url加上force_reboot参数，参数等于true或者1即强制重启，等于false或者0或者不带参数则仍旧使用上面传统的方式重启。强制重启虚拟机的请求url如下：
+
 http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启的task_id值>?force_reboot=true
 :::
 
