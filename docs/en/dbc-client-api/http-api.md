@@ -139,7 +139,7 @@ Example：
 ## 6. delete virtual machine
 >`request method`：POST
 >
->`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
+>`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/delete/<要删除的task_id值>
 >
 >`request body`：
 >   ```

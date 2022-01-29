@@ -158,7 +158,7 @@
 ### 4. 停止虚拟机
 >`请求方式`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要停止的task_id值>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/stop/<要停止的task_id值>
 >
 >`请求body`：
 >   ```json
@@ -179,11 +179,11 @@
 <img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
 
 ### 5. 启动虚拟机
->**唤醒处于睡眠状态的虚拟机，也是用此借口**
+>**唤醒处于睡眠状态的虚拟机，也是用此接口**
 >
 >`请求方式`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要启动的task_id值>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start/<要启动的task_id值>
 >
 >`请求body`：
 >   ```json
@@ -206,7 +206,7 @@
 ### 6. 删除虚拟机
 >`请求方式`：POST
 >
->`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<要删除的task_id值>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/delete/<要删除的task_id值>
 >
 >`请求body`：
 >   ```json
@@ -225,6 +225,57 @@
 >  ```
 示例：
 <img src="./assets/delete_task.png" width = "500" height = "200"  align=center />
+
+### 7. 重启虚拟机
+>`请求方式`：POST
+>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启的task_id值>
+>
+>`请求body`：
+>   ```json
+>   {
+>       "peer_nodes_list": [
+>           // 请求机器的node_id
+>           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>       ],
+>       "additional": {
+>            
+>       },
+>
+>       "session_id": "租用者分发的session_id",
+>       "session_id_sign": "租用者分发的session_id_sign"
+>  }
+>  ```
+
+:::tip 注意！
+发送重启请求后，管理程序将选择它认为最好的关闭方法。请注意，虚拟机可能会忽略该请求。若要强制重启虚拟机，请给url加上force_reboot参数，参数等于true或者1即强制重启，等于false或者0或者不带参数则仍旧使用上面传统的方式重启。强制重启url如下：
+http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启的task_id值>?force_reboot=true
+:::
+
+### 8. 查询虚拟机日志
+>`请求方式`：POST
+>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/logs/<要查询的task_id值>?flag=tail&line_num=10
+>
+>`请求body`：
+>   ```json
+>   {
+>       "peer_nodes_list": [
+>           // 请求机器的node_id
+>           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>       ],
+>       "additional": {
+>            
+>       },
+>
+>       "session_id": "租用者分发的session_id",
+>       "session_id_sign": "租用者分发的session_id_sign"
+>  }
+>  ```
+
+:::tip 注意！
+查询虚拟机日志的请求url有两个参数，flag表示查询日志的方向，参数等于tail即从日志文件的尾部开始查询，等于head即从日志文件的头部开始查询。line_num表示要查询的日志行数，如果超过文件的实际行数，则以文件实际行数为准。最后，此请求最多返回1024个字节，超出范围的日志会被截断。
+:::
 
 <br/>
 
