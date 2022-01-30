@@ -112,7 +112,7 @@ export const en: SidebarConfig = {
     },
   ],
   '/en/gpu-cloud': [
-    { text: 'Deploy GPU cloud platform', children: ['/gpu-cloud/dbc-gpu-cloud-service'] },
+    { text: 'Deploy GPU cloud platform', children: ['/en/gpu-cloud/dbc-gpu-cloud-service'] },
   ],
   '/en/install-and-update-dbc/': [
     {
