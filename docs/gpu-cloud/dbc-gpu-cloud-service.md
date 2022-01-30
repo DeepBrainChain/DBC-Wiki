@@ -290,7 +290,7 @@ npm run build
 sudo apt install nginx -y
 
 # 配置nginx
-mkdir /etc/nginx/gpucloud 
+mkdir /etc/nginx/gpucloud //上传ssl证书到此文件夹中
 mkdir /etc/nginx/gpucloud.conf
 sudo vim /etc/nginx/gpucloud.conf
 
