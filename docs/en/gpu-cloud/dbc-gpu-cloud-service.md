@@ -59,13 +59,16 @@ security:
 ## 2.Java deployment
 
 ```bash
+# Clone link address via git: https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. Modify the domain name of the dbc computing network client in the configuration file
 
-  application-dev.properties application-dev.properties application-dev.properties The clientUrl modification is replaced by the dbc client domain name deployed by yourself
+  application-dev.properties application-dev.properties application-dev.properties 
+  The clientUrl modification is replaced by the dbc client domain name deployed by yourself
 #2. Modify the domain name of the client to access the DBC wallet on the wss chain
 
 Modify chainUrl = wss://infotest.dbcwallet.io:7777 to chainUrl = wss://info.dbcwallet.io
-It can also be modified to the DBC wallet client address deployed by yourself. info.dbcwallet.io is a public address, and 100% stability is not guaranteed.
+It can also be modified to the DBC wallet client address deployed by yourself. 
+info.dbcwallet.io is a public address, and 100% stability is not guaranteed.
 #3. Modify database address information
 
 spring.data.mongodb.uri=mongodb://usr:passwd@localhost:27017/database_name
@@ -88,7 +91,7 @@ usr and passwd must be the same as the username and password of database_name in
 Download address: <https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/start.sh>
 appName="GalaxyValidationService-0.0.1-SNAPSHOT.jar" , the name of the previously compiled jar package
 serverPort=8081, you can customize the startup port, the port setting here should be consistent with the port number in the nginx configuration
-profiles="test" , can be set to: dev\\test\\prod
+profiles="test" , can be set to: dev\test\prod
 #8. Server stop.sh script modification:
 
  Download address: <https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/stop.sh>
@@ -116,7 +119,7 @@ Download the install_client.sh script file in it
 
 3. Run the installation script: Execute on the command line: ./install_client.sh [installation directory]
 
-During the installation process, the user will be asked to enter 2 port numbers: fill in according to the situation
+During the installation process, the user will be asked to enter 2 port numbers,for example:net_listen_port=5001，http_port=5002
 
 #Upgrade DBC client
 1. Download the upgrade script: <https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/>
@@ -133,9 +136,9 @@ Download the update_client.sh script file in it
 ```bash
 #download code to local or server
 1. Clone the code
-#Clone the link address through git [<https://github.com/DeepBrainChain/DBChainWebsite.git>](<https://github.com/DeepBrainChain/DBChainWebsite.git>) Clone the code to the local or server, run
+#Clone the link address through git https://github.com/DeepBrainChain/DBChainWebsite.git Clone the code to the local or server, run
 
-git clone [<https://github.com/DeepBrainChain/DBChainWebsite.git>](<https://github.com/DeepBrainChain/DBChainWebsite.git>)
+git clone https://github.com/DeepBrainChain/DBChainWebsite.git
 npm run dev
 
 #After successful operation, you can start the web page to run the cloud platform locally for testing.
@@ -158,9 +161,9 @@ npm run build
 ```bash
 #clone code
 
-#Clone the code through git clone link address[<https://github.com/DeepBrainChain/DBC-NodeScript.git>](<https://github.com/DeepBrainChain/DBC-NodeScript.git>) server
+#Clone the code through git clone link address https://github.com/DeepBrainChain/DBC-NodeScript.git
 
-git clone [<https://github.com/DeepBrainChain/DBC-NodeScript.git>](<https://github.com/DeepBrainChain/DBC-NodeScript.git>)
+git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 
 ### deploy code
 
@@ -229,28 +232,25 @@ For example of forever deployment, please refer to: <https://blog.csdn.net/super
  * wssChain call chain name
  */
 export const wssChain = {
-  dbc: 'wss://infotest.dbcwallet.io:7777', // public chain test chain
-  // dbc: 'wss://info.dbcwallet.io' // Official chain of public chain
+  dbc: 'wss://info.dbcwallet.io'
 }
 
 /**
  * baseUrl c++ port
  */
-// export const baseUrl = '<http://115.231.234.37:5052>' // Satoshi cloud private chain port
-// export const baseUrl = '<http://115.231.234.32:5052>' // Mainnet test port
-export const baseUrl = '<http://183.232.237.170:5016>' // Mainnet test port -- backup
-// export const baseUrl = '<http://115.231.234.34:5052>' // Mainnet port
+export const baseUrl = '<http://ip:5002>' // The dbc client ip and port number in step 3
 
 /**
  * Connect to mongo database
  */
-// export const mongoUrl = 'mongodb://localhost:27017/identifier' // local access to mongo
-export const mongoUrl = 'mongodb://d**:d************Y@localhost:27017/identifier' // server access mongo
-
+ 
+// export const mongoUrl = 'mongodb://localhost:27017/identifier' //  local access to mongo
+export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // server access mongo
 /**
- * Define the specified wallet for rental machine deduction
+ * Define a wallet for renting a machine for income
  */
-export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // Designated wallet for handling fee
+export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // The dbc revenue part paid 
+//by the user will enter this wallet, which needs to be replaced with your own wallet address
 
 ```
 
@@ -261,97 +261,211 @@ export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVW
 sudo apt install nginx -y
 
 # configure nginx
-sudo vim /etc/nginx/nginx.conf
+mkdir /etc/nginx/gpucloud 
+mkdir /etc/nginx/gpucloud.conf
+sudo vim /etc/nginx/gpucloud.conf
 
 #The example is as follows, please change it according to your own environment, for reference only
 # If it is two hosts, please do load balancing
 
-user root;
-worker_processes auto;
-pid /run/nginx.pid;
-include /etc/nginx/modules-enabled/*.conf;
+server{
 
-events {
-worker_connections 768;
-# multi_accept on;
-}
+        listen 443;
+        server_name java.xxxx.xxxx;
+        ssl on;
 
-http {
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
 
-##
-# Basic Settings
-##
+        location / {
+
+        proxy_pass http://ip:8031; #java server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
 server {
-listen 80;
-server_name wwww.example.com;
-rewrite ^ https://$http_host$request_uri? permanent;
-}
+         listen 80;
+        server_name java.xxxx.xxxx;
 
-  upstream www{
-     server server_A:port weight=1 ;
-     server server_B:port weight=2 ;
-  }
+        location / {
+
+        proxy_pass http://ip:8031; #java server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+	
+server{
+
+        listen 443;
+        server_name nodejs.xxxx.xxxx;
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+        proxy_pass http://ip:8090; #nodejs server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
 server {
-    listen 443 ssl;
-    server_name www.example.com;
-    ssl on;
-    keepalive_timeout 70;
-server_tokens off;
-fastcgi_param HTTPS on;
-          fastcgi_param HTTP_SCHEME https;
-    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
-    ssl_certificate example.crt;
-    ssl_certificate_key example.key;
-    ssl_prefer_server_ciphers on;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    add_header X-Frame-Options DENY;
-    add_header X-Content-Type-Options nosniff;
-    add_header X-Xss-Protection 1;
-location / {
-root /data/deepbrainchain;
-index index.html;
-try_files $uri $uri/ /index.html;
-#autoindex on;
+         listen 80;
+        server_name nodejs.xxxx.xxxx;
+
+        location / {
+
+         proxy_pass http://ip:8090; #nodejs server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+
+server{
+
+        listen 443;
+        server_name dbcnode.xxxx.xxxx;
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+        proxy_pass http://ip:5002; #dbc client node ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
+server {
+         listen 80;
+        server_name dbcnode.xxxx.xxxx;
+
+        location / {
+
+        proxy_pass http://ip:5002; #dbc client node ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+
+
+server {
+         listen 443;
+        server_name www.xxxx.xxx; #gpu cloud website url
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+           index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
+    }
+	
+server {
+         listen 443;
+        server_name xxxx.xxx; #gpu cloud website url ,no include www
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+            index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
+    }
+
+
+server {
+        listen 80;
+        server_name deepbrainchain.org;
+        return 301 http://www.xxxx.xxx$request_uri;
 }
-  }
 
-sendfile on;
-tcp_nopush on;
-tcp_nodelay on;
-keepalive_timeout 65;
-types_hash_max_size 2048;
-# server_tokens off;
 
-# server_names_hash_bucket_size 64;
-# server_name_in_redirect off;
+server {
+        listen 80;
+        server_name www.xxxx.xxx;
+        rewrite ^(.*)$ https://${server_name}$1 permanent;
 
-include /etc/nginx/mime.types;
-default_type application/octet-stream;
+       }
 
-access_log /var/log/nginx/access.log;
-error_log /var/log/nginx/error.log;
 
-##
-# Gzip Settings
-##
-
-gzip on;
-
-# gzip_vary on;
-# gzip_proxied any;
-# gzip_comp_level 6;
-# gzip_buffers 16 8k;
-# gzip_http_version 1.1;
-# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
-##
-# Virtual Host Configs
-##
-
-include /etc/nginx/conf.d/*.conf;
-include /etc/nginx/sites-enabled/*;
-}
-}
 
 # Check if Nginx is configured correctly
 sudo nginx -t
