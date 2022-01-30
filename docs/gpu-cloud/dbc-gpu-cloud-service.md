@@ -129,7 +129,7 @@ apt-get install libvirt-clients libvirt-daemon-system
 
 3. 运行安装脚本: 命令行下执行：./install_client.sh [安装目录]
 
-安装过程中会要求用户输入2个端口号：根据情况填写即可
+安装过程中会要求用户输入2个端口号：根据情况填写即可，比如:net_listen_port=5001，http_port=5002
 
 #升级DBC客户端
 1. 下载升级脚本： <https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/>
@@ -290,97 +290,211 @@ npm run build
 sudo apt install nginx -y
 
 # 配置nginx
-sudo vim /etc/nginx/nginx.conf
+mkdir /etc/nginx/gpucloud 
+mkdir /etc/nginx/gpucloud.conf
+sudo vim /etc/nginx/gpucloud.conf
 
 #示例如下，实际请按照自身环境改动，仅作参考
-# 如果是两台主机，请做负载均衡
 
-user root;
-worker_processes auto;
-pid /run/nginx.pid;
-include /etc/nginx/modules-enabled/*.conf;
+server{
 
-events {
-	worker_connections 768;
-	# multi_accept on;
+        listen 443;
+        server_name java.xxxx.xxxx;
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+        proxy_pass http://ip:8031; #java server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
+server {
+         listen 80;
+        server_name java.xxxx.xxxx;
+
+        location / {
+
+        proxy_pass http://ip:8031; #java server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+	
+server{
+
+        listen 443;
+        server_name nodejs.xxxx.xxxx;
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+        proxy_pass http://ip:8090; #nodejs server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
+server {
+         listen 80;
+        server_name nodejs.xxxx.xxxx;
+
+        location / {
+
+         proxy_pass http://ip:8090; #nodejs server ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+
+server{
+
+        listen 443;
+        server_name dbcnode.xxxx.xxxx;
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+        proxy_pass http://ip:5002; #dbc client node ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
+    }
+
+
+server {
+         listen 80;
+        server_name dbcnode.xxxx.xxxx;
+
+        location / {
+
+        proxy_pass http://ip:5002; #dbc client node ip and port
+        proxy_set_header   Host             $host;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
+    }
+
+
+server {
+         listen 443;
+        server_name www.xxxx.xxx; #gpu cloud website url
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+           index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
+    }
+	
+server {
+         listen 443;
+        server_name xxxx.xxx; #gpu cloud website url ,no include www
+        ssl on;
+
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+            index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
+    }
+
+
+server {
+        listen 80;
+        server_name deepbrainchain.org;
+        return 301 http://www.xxxx.xxx$request_uri;
 }
 
-http {
 
-	##
-	# Basic Settings
-	##
-	server {
-	  listen 80;
-	  server_name wwww.example.com;
-	  rewrite ^ https://$http_host$request_uri? permanent;
-	}
+server {
+        listen 80;
+        server_name www.xxxx.xxx;
+        rewrite ^(.*)$ https://${server_name}$1 permanent;
 
-  upstream  www{
-     server server_A:port weight=1 ;
-     server server_B:port weight=2 ;
-  }
-	server {
-    	  listen 443 ssl;
-    	  server_name www.example.com;
-    	  ssl on;
-    	  keepalive_timeout 70;
-	  server_tokens off;
-	  fastcgi_param   HTTPS               on;
-          fastcgi_param   HTTP_SCHEME         https;
-    	  add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
-    	  ssl_certificate example.crt;
-    	  ssl_certificate_key example.key;
-    	  ssl_prefer_server_ciphers on;
-    	  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    	  add_header X-Frame-Options DENY;
-    	  add_header X-Content-Type-Options nosniff;
-    	  add_header X-Xss-Protection 1;
-	  location / {
-	    root  /data/deepbrainchain;
-	    index index.html;
-	    try_files $uri $uri/ /index.html;
-	    #autoindex on;
-	  }
-  }
+       }
 
-	sendfile on;
-	tcp_nopush on;
-	tcp_nodelay on;
-	keepalive_timeout 65;
-	types_hash_max_size 2048;
-	# server_tokens off;
 
-	# server_names_hash_bucket_size 64;
-	# server_name_in_redirect off;
 
-	include /etc/nginx/mime.types;
-	default_type application/octet-stream;
-
-	access_log /var/log/nginx/access.log;
-	error_log /var/log/nginx/error.log;
-
-	##
-	# Gzip Settings
-	##
-
-	gzip on;
-
-	# gzip_vary on;
-	# gzip_proxied any;
-	# gzip_comp_level 6;
-	# gzip_buffers 16 8k;
-	# gzip_http_version 1.1;
-	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
-	##
-	# Virtual Host Configs
-	##
-
-	include /etc/nginx/conf.d/*.conf;
-	include /etc/nginx/sites-enabled/*;
-}
-}
 
 # 检测Nginx配置是否正确
 sudo nginx -t
