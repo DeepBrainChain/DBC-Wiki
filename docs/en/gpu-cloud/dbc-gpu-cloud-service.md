@@ -453,7 +453,7 @@ server {
 
 server {
         listen 80;
-        server_name deepbrainchain.org;
+        server_name xxxx.xxx;
         return 301 http://www.xxxx.xxx$request_uri;
 }
 
