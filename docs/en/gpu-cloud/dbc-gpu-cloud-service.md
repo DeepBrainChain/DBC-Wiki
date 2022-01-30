@@ -261,7 +261,7 @@ export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVW
 sudo apt install nginx -y
 
 # configure nginx
-mkdir /etc/nginx/gpucloud 
+mkdir /etc/nginx/gpucloud //Upload the ssl certificate to this folder
 mkdir /etc/nginx/gpucloud.conf
 sudo vim /etc/nginx/gpucloud.conf
 
