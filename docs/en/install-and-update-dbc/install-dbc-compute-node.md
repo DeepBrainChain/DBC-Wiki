@@ -313,7 +313,7 @@ sudo systemctl status dbc
 
 ## Download the mirror template
 
-+ http://183.60.141.59:5100/ubuntu-img/
++ http://116.169.53.132:9000/
 
 Download: ubuntu.qcow2 and ubuntu-2004.qcow2 these two mirrors
 
