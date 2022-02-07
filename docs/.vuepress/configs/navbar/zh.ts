@@ -96,6 +96,7 @@ export const zh: NavbarConfig = [
           '/onchain-guide/machine-reward-model',
           '/onchain-guide/machine-slash-model',
           '/onchain-guide/bonding-machine',
+          '/onchain-guide/unbonding-machine',
           '/onchain-guide/become-onchain-committee',
           '/onchain-guide/machine-verification',
           '/onchain-guide/rent-machine',

@@ -92,7 +92,7 @@ export const en: SidebarConfig = {
         '/en/onchain-guide/dbc-chain-logic',
         '/en/onchain-guide/machine-reward-model',
         '/en/onchain-guide/machine-slash-model',
-        '/en/onchain-guide/bonding-machine',
+        '/en/onchain-guide/unbonding-machine',
         '/en/onchain-guide/become-onchain-committee',
         '/en/onchain-guide/machine-verification',
         '/en/onchain-guide/rent-machine',
