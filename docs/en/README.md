@@ -22,5 +22,5 @@ features:
     details: DBC client node deployment and upgrade
   - title: DBC client node API
     details: HTTP request and vm snapshot/image management
-footer: MIT Licensed | Copyright © 2017-present DeepBrainChain
+footer: MIT Licensed | Copyright © 2017-Present DeepBrainChain
 ---

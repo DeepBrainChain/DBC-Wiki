@@ -18,5 +18,5 @@ features:
     details: 机器上链或验证
   - title: 安装&升级DBC节点
     details: 安装和升级DBC节点
-footer: MIT Licensed | Copyright © 2017-present DeepBrainChain
+footer: MIT Licensed | Copyright © 2017-Present DeepBrainChain
 ---
