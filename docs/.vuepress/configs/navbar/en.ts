@@ -99,6 +99,7 @@ export const en: NavbarConfig = [
           '/en/onchain-guide/become-onchain-committee',
           '/en/onchain-guide/machine-verification',
           '/en/onchain-guide/rent-machine',
+          '/en/onchain-guide/report-machine-fault',
           '/en/onchain-guide/maintain-machine',
           '/en/onchain-guide/onchain-errors',
         ],

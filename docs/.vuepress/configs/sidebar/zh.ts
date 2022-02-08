@@ -98,6 +98,7 @@ export const zh: SidebarConfig = {
         '/onchain-guide/become-onchain-committee',
         '/onchain-guide/machine-verification',
         '/onchain-guide/rent-machine',
+        '/onchain-guide/report-machine-fault',
         '/onchain-guide/maintain-machine',
         '/onchain-guide/onchain-errors',
       ],
