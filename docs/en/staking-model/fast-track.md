@@ -1,4 +1,4 @@
-# Technical Committee Fast-track Update Process
+# Fast-track Process
 
 Note: The screenshots are all from testnet. The values in it need to be filled in according to the situation after reading this document. Please do not fill in directly according to the picture.
 
