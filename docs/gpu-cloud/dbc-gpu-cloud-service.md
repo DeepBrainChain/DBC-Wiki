@@ -65,7 +65,7 @@ security:
 ```bash
 #通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. 修改配置文件中的dbc算力网络客户端域名
-
+在DBCGPUCloudService/src/main/resources 文件夹下面：
 application-dev.properties  application-dev.properties   application-dev.properties 中clientUrl修改用自己部署的dbc客户端域名替代
 
 #2. 修改wss链上访问DBC钱包客户端域名
@@ -80,6 +80,10 @@ usr和passwd要和mongo中database_name用户名密码一致
 
 #4. 编译打包程序
 
+   进入ubuntu服务器的maven仓库文件夹:cd ~/.m2/repository
+   下载依赖包:https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
+   解压:rar x Repository.rar
+   拷贝：cp -r ~/.m2/repository/Repository/*  ~/.m2/repository/
    打包开发版本， 执行命令： mvn package -P dev
    打包测试版本， 执行命令： mvn package -P test
    打包正式版本， 执行命令： mvn package -P prod
