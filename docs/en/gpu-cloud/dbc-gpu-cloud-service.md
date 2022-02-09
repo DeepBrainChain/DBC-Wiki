@@ -75,6 +75,10 @@ spring.data.mongodb.uri=mongodb://usr:passwd@localhost:27017/database_name
 usr and passwd must be the same as the username and password of database_name in mongo
 #4. Compile the packager
 
+   Enter the maven repository folder of the ubuntu server: cd ~/.m2/repository
+   Download the dependency package: https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
+   Unzip: rar x Repository.rar
+   Copy: cp -r  ~/.m2/repository/Repository/*  ~/.m2/repository/
    To package the development version, execute the command: mvn package -P dev
    To package the test version, execute the command: mvn package -P test
    To package the official version, execute the command: mvn package -P prod
