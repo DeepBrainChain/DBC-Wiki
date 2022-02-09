@@ -61,7 +61,7 @@ security:
 ```bash
 # Clone link address via git: https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. Modify the domain name of the dbc computing network client in the configuration file
-
+  DBCGPUCloudService/src/main/resources
   application-dev.properties application-dev.properties application-dev.properties 
   The clientUrl modification is replaced by the dbc client domain name deployed by yourself
 #2. Modify the domain name of the client to access the DBC wallet on the wss chain
@@ -89,17 +89,17 @@ usr and passwd must be the same as the username and password of database_name in
    3) cd /data & mkdir lib
 #6. Upload the jar file to the server
 
-   Upload the local DBCWebService\\target\\DBCWebService-0.1.5-SNAPSHOT.jar file to the server lib folder
+   Upload the local DBCWebService\target\DBCGPUCloudService-0.0.1-SNAPSHOT.jar file to the server lib folder
 #7. Server start.sh script modification:
 
 Download address: <https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/start.sh>
-appName="GalaxyValidationService-0.0.1-SNAPSHOT.jar" , the name of the previously compiled jar package
+appName="DBCGPUCloudService-0.0.1-SNAPSHOT.jar" , the name of the previously compiled jar package
 serverPort=8081, you can customize the startup port, the port setting here should be consistent with the port number in the nginx configuration
 profiles="test" , can be set to: dev\test\prod
 #8. Server stop.sh script modification:
 
  Download address: <https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/stop.sh>
- APP_NAME="GalaxyValidationService-0.0.1-SNAPSHOT.jar", the name of the previously compiled jar package
+ APP_NAME="DBCGPUCloudService-0.0.1-SNAPSHOT.jar", the name of the previously compiled jar package
  SERVER_PORT=8081 is the same as the port number in the start.sh script
 #9. Deploy the startup server program
 
