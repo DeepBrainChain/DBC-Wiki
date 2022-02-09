@@ -96,19 +96,19 @@ usr和passwd要和mongo中database_name用户名密码一致
 
 #6. 上传jar文件到服务器
 
-   上传本地 DBCWebService\\target\\DBCWebService-0.1.5-SNAPSHOT.jar 文件到服务器 lib文件夹下面
+   上传本地 DBCWebService\target\DBCGPUCloudService-0.0.1-SNAPSHOT.jar 文件到服务器 lib文件夹下面
 
 #7. 服务器start.sh 脚本修改：
 
 下载地址：<https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/start.sh>
-appName="GalaxyValidationService-0.0.1-SNAPSHOT.jar" ,之前编译出来的jar包名字
+appName="DBCGPUCloudService-0.0.1-SNAPSHOT.jar" ,之前编译出来的jar包名字
 serverPort=8081，可以自定义启动端口，此处端口设置要和nginx配置中的端口号保持一致
 profiles="test"  ，可以设置为: dev\\test\\prod
 
 #8. 服务器stop.sh 脚本修改：
 
  下载地址：<https://github.com/DeepBrainChain/DBCGPUCloudService/releases/download/v0.0.1/stop.sh>
- APP_NAME="GalaxyValidationService-0.0.1-SNAPSHOT.jar",之前编译出来的jar包名字
+ APP_NAME="DBCGPUCloudService-0.0.1-SNAPSHOT.jar",之前编译出来的jar包名字
  SERVER_PORT=8081 和start.sh 脚本中的端口号保持一致
 
 #9. 部署启动服务器程序
