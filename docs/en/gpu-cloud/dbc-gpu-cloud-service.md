@@ -140,24 +140,38 @@ Download the update_client.sh script file in it
 ```bash
 #download code to local or server
 1. Clone the code
-#Clone the link address through git https://github.com/DeepBrainChain/DBChainWebsite.git Clone the code to the local or server, run
-
+#Clone the code to the local or server via git clone link address https://github.com/DeepBrainChain/DBChainWebsite.git, run
 git clone https://github.com/DeepBrainChain/DBChainWebsite.git
+
+#Check if Node is installed, run the following command to check if Node is installed globally
+node -v //v16.13.0
+
+#After the installation is complete, open the DBChainWebsite folder and run the following command to generate the node_modules file
+npm install
+
+#After the execution is successful, run the following command to start the web page locally to run the cloud platform for testing.
 npm run dev
 
-#After successful operation, you can start the web page to run the cloud platform locally for testing.
+2. Modify the cloud platform logo pattern configuration
+#Open the folder src--> locales --> CN.js && EN.js && RU.js, set the website_name field to the name of your cloud platform, run it locally to view
+#Modify website_name
 
-2. Configure the interface access domain name
-#Open the folder src--> api --> index.js, configure the server interface configured by yourself, you can modify your own node interface to access the domain name
+export default {
+  ···
+	website_name: 'dbchain', // dbchain, 1024lab, tycloud
+  ···
+}
+
+3. Configure the interface access domain name
+#Open the folder src--> api --> index.js, configure the server interface configured by yourself, you can modify the node interface you belong to to access the domain name
 #Modify the file, use nodeHost
 
-const nodeHost = '<http://localhost:8090>'
+const nodeHost = 'https://xxxxxx' //nodejs server address
+const host = "https://xxxxx"; //java server address
 
-3. Generate a dist file to deploy the server
-
+4. Generate a dist file to deploy the server
+#Open the DBChainWebsite folder, run the following command to generate the dist folder (under the DBChainWebsite folder), put the dist folder in the specified server file, and configure nginx to specify the index.html file in the dist file to access the page
 npm run build
-
-#Generate the dist folder, put the dist folder in the specified server file, and configure nginx to specify the index.html file in the dist file to access the page
 ```
 
 ## 5.Deploy Node service
@@ -165,17 +179,40 @@ npm run build
 ```bash
 #clone code
 
-#Clone the code through git clone link address https://github.com/DeepBrainChain/DBC-NodeScript.git
-
+#Clone the code to the local or server through git clone link address https://github.com/DeepBrainChain/DBC-NodeScript.git
 git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 
 ### deploy code
 
 #After the code is cloned, you can use the forever plugin to create a scheduled task, run the node code in the server background, and access the corresponding interface by adding the IP address to the server port number that starts router.js.
+Server installation node example: <https://www.cnblogs.com/niuben/p/12938501.html>
 For example of forever deployment, please refer to: <https://blog.csdn.net/superjunjin/article/details/73252194>
+
+#Check if node and forever are installed successfully, execute the following commands
+node -v // v16.13.0
+forever --version // v4.0.1
+
+#After the execution is correct, enter the DBC-NodeScript folder and run the following command to generate the node_modules folder under the folder
+npm install
+
+#After the execution is correct, open the publicResource.js file in the DBC-NodeScript folder and modify the relevant configuration information
+export const wssChain
+export const baseUrl
+export const mongoUrl
+export const designatedWallet
+
+#Enter the DBC-NodeScript\HttpRequest folder and execute
+forever start -o http-out.log -e http-err.log router.js //Start the server service of nodejs
+
+#At this point, router.js has been mounted to the background to run, the server service is started, and the interface can be accessed at this time
+nodeHost = http://xxx.xxx.xxx.xxx:8090
+
+#Enter the DBC-NodeScript\TimedTask folder, run the js file in the folder, start the scheduled task, and update the database information in real time, for example:
+forever start -o ver-out.log -e ver-err.log VerificationMachine.js
+#Note: All files in the TimedTask folder must be run, otherwise the database data will not match the actual data
 ```
 
-## The following section explains the directory:
+The following section explains the directory:
 
 ### HttpRequest directory
 
