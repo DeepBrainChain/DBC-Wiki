@@ -10,7 +10,9 @@ Reddit：[u/DeepBrainChainGlobal](https://www.reddit.com/user/DeepBrainChainGlob
 
 Medium：[https://deepbrainchainglobal.medium.com/](https://deepbrainchainglobal.medium.com/)
 
-Kakao：[https://open.kakao.com/o/svE0PtDd](https://open.kakao.com/o/svE0PtDd)
+Kakao：[https://open.kakao.com/o/g4mm83Pd](https://open.kakao.com/o/g4mm83Pd)
+
+Naver Blog: [https://blog.naver.com/dbc_korea](https://blog.naver.com/dbc_korea)
 
 YouTube：[https://www.youtube.com/channel/UCE8fSDw-zYrw4OQc62JG_pQ](https://www.youtube.com/channel/UCE8fSDw-zYrw4OQc62JG_pQ)
 
