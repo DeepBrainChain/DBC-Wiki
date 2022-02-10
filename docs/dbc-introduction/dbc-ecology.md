@@ -12,6 +12,6 @@ DBC 云平台：
 
 5. DBC 钱包: [https://www.dbcwallet.io](https://www.dbcwallet.io)
 
-6. 区块浏览器：[https://dbc.subscan.io](https://dbc.subscan.io)
+6. 区块链浏览器：[https://dbc.subscan.io](https://dbc.subscan.io)
 
 7. github：[https://github.com/DeepBrainChain](https://github.com/DeepBrainChain)

@@ -1,4 +1,4 @@
-# 中文版 DBC Treasury 资金申请流程
+# DBC Treasury 资金申请流程
 
 > Treasury 资金申请流程：https://bit.ly/3FJ4gwo
 
@@ -18,7 +18,7 @@
 
 目前 DBC 在 reddit 上建立了 subreddit 社区 DBC_Council（[https://www.reddit.com/r/DBC_Council/](https://www.reddit.com/r/DBC_Council/)），中国大陆使用需科学上网。该社区也建立了提案讨论的分区【proposal_draft discussion】。提案人亦可将草案发布至该社区，并添加 flair【proposal_draft discussion】，进行讨论。
 
-<img src="./assets/apply_treasury.assets/apply_treasury1.png" width="50%" height="50%">
+<img src="./assets/apply_treasury.assets/apply_treasury1.png">
 
 ## 3.链上提交
 
