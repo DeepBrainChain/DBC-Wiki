@@ -164,7 +164,7 @@ forever部署示例请参考：<https://blog.csdn.net/superjunjin/article/detail
 node -v // v16.13.0
 forever --version // v4.0.1
 
-#执行无误后，进入DBC-NodeScript文件夹下，运行以下命令，在文件夹下生成 node_module文件夹
+#执行无误后，进入DBC-NodeScript文件夹下，运行以下命令，在文件夹下生成 node_modules 文件夹
 npm install
 
 #执行无误后，在DBC-NodeScript文件夹下，打开publicResource.js文件，修改相关配置信息
@@ -280,11 +280,16 @@ export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVW
 #下载代码到本地或服务器
 1. 克隆代码
 #通过git克隆链接地址 https://github.com/DeepBrainChain/DBChainWebsite.git 将代码克隆到本地或服务器，运行
-
 git clone https://github.com/DeepBrainChain/DBChainWebsite.git
-npm run dev
 
-#成功运行后可以本地启动网页运行云平台，进行测试。
+#检查是否安装Node,运行以下命令，检查Node是否全局安装
+node -v //v16.13.0
+
+#安装完成后，打开DBChainWebsite文件夹，运行以下命令，生成node_modules文件
+npm install
+
+#执行成功后，运行以下命令，可以本地启动网页运行云平台，进行测试。
+npm run dev
 
 2. 修改云平台logo图案配置
 #打开文件夹 src--> locales --> CN.js && EN.js && RU.js, 将website_name字段设置为自己云平台的名称，本地运行即可查看
@@ -304,9 +309,9 @@ const nodeHost = 'https://xxxxxx'   //nodejs 服务器地址
 const host = "https://xxxxx"; //java 服务器地址
 
 4. 生成dist文件部署服务器
+#打开DBChainWebsite文件夹，运行以下命令，生成dist文件夹(DBChainWebsite文件夹下)，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
 npm run build
 
-#生成dist文件夹，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
 ```
 
 ## 六、部署 Nginx
