@@ -152,7 +152,6 @@ apt-get install libvirt-clients libvirt-daemon-system
 #克隆代码
 
 #通过git克隆链接地址 https://github.com/DeepBrainChain/DBC-NodeScript.git将代码克隆到本地或服务器
-
 git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 
 ### 部署代码
@@ -160,9 +159,32 @@ git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 #代码克隆以后，可使用 forever 插件创建定时任务，将node代码运行在服务器后台，通过ip加启动router.js的启动server服务端口号，即可访问对应的接口。
 服务器安装node示例：<https://www.cnblogs.com/niuben/p/12938501.html>
 forever部署示例请参考：<https://blog.csdn.net/superjunjin/article/details/73252194>
+
+#检查node 和 forever 是否安装成功,执行以下命令
+node -v // v16.13.0
+forever --version // v4.0.1
+
+#执行无误后，进入DBC-NodeScript文件夹下，运行以下命令，在文件夹下生成 node_module文件夹
+npm install
+
+#执行无误后，在DBC-NodeScript文件夹下，打开publicResource.js文件，修改相关配置信息
+export const wssChain
+export const baseUrl
+export const mongoUrl
+export const designatedWallet
+
+#进入 DBC-NodeScript\HttpRequest 文件夹下，执行
+forever start -o http-out.log -e http-err.log router.js //启动nodejs的server服务
+
+#此时已经将router.js挂载到后台运行，server服务启动，此时即可访问接口
+nodeHost = http://xxx.xxx.xxx.xxx:8090
+
+#进入 DBC-NodeScript\TimedTask 文件夹下，运行文件夹下的js文件，启动的定时任务，即可实时更新数据库信息，例如：
+forever start -o ver-out.log -e ver-err.log VerificationMachine.js
+#注意：TimedTask文件夹下的文件必须全部运行，否则会导致数据库数据与实际数据不符
 ```
 
-## 以下部分为目录解释：
+以下部分为目录解释：
 
 ### HttpRequest 目录
 
@@ -243,7 +265,7 @@ export const baseUrl = '<http://ip:port>' // 步骤三中的dbc客户端ip和端
 /**
  * 连接mongo数据库
  */
-// export const mongoUrl = 'mongodb://localhost:27017/identifier' // 本地访问mongo
+// export const mongoUrl = 'mongodb://localhost:27017/identifier' // 本地启动时访问mongo，服务器无效
 export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // 服务器访问mongo
 
 /**
