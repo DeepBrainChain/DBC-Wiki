@@ -169,7 +169,15 @@ export default {
 const nodeHost = 'https://xxxxxx' //nodejs server address
 const host = "https://xxxxx"; //java server address
 
-4. Generate a dist file to deploy the server
+4. Modify the access chain address
+#Open the folder src--> utlis --> dot --> api.ts && index.ts , configure the access chain
+const node = {
+  ···
+  dbc: 'wss://info.dbcwallet.io' // Official public chain
+  ···
+}
+
+5. Generate a dist file to deploy the server
 #Open the DBChainWebsite folder, run the following command to generate the dist folder (under the DBChainWebsite folder), put the dist folder in the specified server file, and configure nginx to specify the index.html file in the dist file to access the page
 npm run build
 ```

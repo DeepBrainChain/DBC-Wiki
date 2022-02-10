@@ -308,7 +308,15 @@ export default {
 const nodeHost = 'https://xxxxxx'   //nodejs 服务器地址
 const host = "https://xxxxx"; //java 服务器地址
 
-4. 生成dist文件部署服务器
+4. 修改访问链地址
+#打开文件夹 src--> utlis --> dot --> api.ts && index.ts ,配置访问链
+const node = {
+    ···
+    dbc: 'wss://info.dbcwallet.io' // 公链正式链
+    ···
+}
+
+5. 生成dist文件部署服务器
 #打开DBChainWebsite文件夹，运行以下命令，生成dist文件夹(DBChainWebsite文件夹下)，将dist文件夹放在指定的服务器文件，通过配置nginx指定dist文件中的index.html文件，即可访问页面
 npm run build
 
