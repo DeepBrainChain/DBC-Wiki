@@ -55,7 +55,7 @@ sudo mount -a
 > KVM acceleration can be used
 > 表示可以进行后续操作，如果显示与其不相符，请检查VT-d是否正确开启
 
-**3、检查ip_forward转发是否开启
+**3、检查ip_forward转发是否开启**
 
 > 查看/proc/sys/net/ipv4/ip_forward是否为1
 > 如果不为1则执行:
