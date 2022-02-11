@@ -54,6 +54,7 @@ sudo mount -a
 > 显示INFO: /dev/kvm exists  
 > KVM acceleration can be used
 > 表示可以进行后续操作，如果显示与其不相符，请检查VT-d是否正确开启
+> 
 > 查看/proc/sys/net/ipv4/ip_forward是否为1
 > 如果不为1则执行:
 > ```
@@ -99,8 +100,7 @@ sudo update-grub
 lspci -vv -s <显卡PCI接口> | grep driver
 ```
 > 显示vfio-pci即为正常，非vfio-pci请返回查看grub文件是否写对或者***按照第六步2步骤进行手动绑定***
-
-# 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
+> 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
 ***20.04LTS系统显卡隔离步骤到此结束，请前往步骤7继续操作***
 
