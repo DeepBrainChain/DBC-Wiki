@@ -54,6 +54,10 @@ security:
  7) mongo, then use admin, then db.auth('admin','******'),
  8) use identifier
  9)db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
+ 10) #Set the markup rule, the percentage is followed by a number, 1 is 1%, and the example is 40%
+      db.DBCPercentage.insert({ _id: 'percentage',percentage: 40 })     
+ 11) #to see if the setting takes effect
+      db.DBCPercentage.find({}).toArray()        
 ```
 
 ## 2.Java deployment
