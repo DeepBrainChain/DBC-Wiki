@@ -54,7 +54,9 @@ sudo mount -a
 > 显示INFO: /dev/kvm exists  
 > KVM acceleration can be used
 > 表示可以进行后续操作，如果显示与其不相符，请检查VT-d是否正确开启
-> 
+
+检查ip_forward转发是否开启
+
 > 查看/proc/sys/net/ipv4/ip_forward是否为1
 > 如果不为1则执行:
 > ```
@@ -66,6 +68,7 @@ sudo mount -a
 > ```
 > sudo sh -c 'echo "br_netfilter" > /etc/modules-load.d/br_netfilter.conf'
 > ```
+> 执行完后需要重启，也可以与设置完显卡直通后一起重启
 
 **如果您是20.04系统，操作以下内容即可，无需再去操作其他关于vfio-pci步骤，如果您是ubuntu18.04系统，请按照第四步开始操作**
 + 设置黑名单，使卡不被占用
@@ -100,7 +103,9 @@ sudo update-grub
 lspci -vv -s <显卡PCI接口> | grep driver
 ```
 > 显示vfio-pci即为正常，非vfio-pci请返回查看grub文件是否写对或者***按照第六步2步骤进行手动绑定***
-> 
+
+检查ip_forward转发是否开启成功
+
 > 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
 ***20.04LTS系统显卡隔离步骤到此结束，请前往步骤7继续操作***
@@ -220,7 +225,9 @@ lspci -vv -s 17:00.3 | grep driver
 ```
 
 > **如果有PCI未被vfio-pci占用，请继续往下执行，如果已经成功被vfio-pci占用，可跳过下一步**。
-> 
+
+检查ip_forward转发是否开启成功
+ 
 > 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
 ## (六) 如果驱动查询为Kernel driver in use: vfio-pci，无需操作以下内容，未成功绑定请继续执行
