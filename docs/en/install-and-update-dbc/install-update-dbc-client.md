@@ -30,6 +30,13 @@ chmod +x install_client.sh
 During the installation process, you need to input two listen port:
 <img src="./assets/install_dbc_client.png" width = "500" height = "260"  align=center />
 
+**4. update conf/core.conf， add image manage center address**
+
+image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>
+
+Example：
+image_server=127.0.0.1,22,test,123456,/data/images,ID_1
+
 <br/>
 
 ## (二) Update DBC Client
