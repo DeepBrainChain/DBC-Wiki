@@ -1,4 +1,4 @@
-#                        DBC computing node deployment
+# Install DBC Compute Node
 
 ## Pre-installation preparation (based on the configured fixed public network ip address), deploy the KVM installation environment
 

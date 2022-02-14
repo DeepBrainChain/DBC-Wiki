@@ -124,7 +124,7 @@ export const en: NavbarConfig = [
     // link: "/en/staking-model",
     children: [
       {
-        text: 'Install DBC Client',
+        text: 'Install And Update DBC Node',
         // link: "/en/install-and-update-dbc",
         children: [
           '/en/install-and-update-dbc/install-dbc-compute-node',
@@ -133,7 +133,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: 'DBC Client HTTP API',
+        text: 'DBC Client - HTTP API',
         // link: "/en/dbc-client-api",
         children: [
           '/en/dbc-client-api/install-tool',
