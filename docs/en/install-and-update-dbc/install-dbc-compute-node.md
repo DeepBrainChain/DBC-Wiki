@@ -1,7 +1,5 @@
 #                        DBC computing node deployment
 
-
-
 ## Pre-installation preparation (based on the configured fixed public network ip address), deploy the KVM installation environment
 
 ### Note: Please uninstall the installed graphics driver before starting, this operation cannot have graphics driver
@@ -9,10 +7,8 @@
 ```shell
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim -y
+sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
-
-
 
 ## create and mount the XFS file system
 
@@ -31,8 +27,6 @@ sudo chmod 777 /data
 sudo echo "/dev/sdb /data     xfs pquota 0 1" >> /etc/fstab
 sudo mount -a
 ```
-
-
 
 ## Determine whether the machine supports virtualization
 
@@ -292,7 +286,7 @@ sudo ./add_dbc_user.sh dbc
 
 + **Note**: need to switch to dbc user installation
 1. download install script: install_mining.sh
-   from: https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
+   http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. add executable permissions
    `chmod +x ./install_mining.sh`
 3. run install_mining.sh
@@ -301,19 +295,9 @@ sudo ./add_dbc_user.sh dbc
 (During the installation process, you need to input two listen port)
 
 
-## Restart DBC program & service status check
-
-```shell
-sudo systemctl stop dbc
-sudo systemctl start dbc
-sudo systemctl status dbc
-```
-
-
-
 ## Download the mirror template
 
-+ http://116.169.53.132:9000/
++ http://116.169.53.132:9000/image
 
 Download: ubuntu.qcow2 and ubuntu-2004.qcow2 these two mirrors
 
@@ -322,32 +306,8 @@ Download: ubuntu.qcow2 and ubuntu-2004.qcow2 these two mirrors
 
 Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/node.dat`, put it in a safe place, and use it later If you reinstall the system or reinstall DBC later, you need to use the original id and private key, otherwise the pledged coins will be deducted
 
-
-
-## Viewing personal wallet address
-
-`cat /home/dbc/0.3.7.3/dbc_repo/conf/core.conf`
-
-
-
-## Parameter check(Ignore it temporarily, it is being revised again, and the program package has been temporarily removed)
-
-```shell
-#Check the memory, hard disk, graphics card, IP, if you do not see the content of the following picture on the website, it means that the system does not detect the memory or hard disk, you need to manually execute a check command:
-sudo bash   /home/dbc/0.3.7.3/dbc_repo/tool/node_info/node_info.sh
-
-# Restart DBC:
-sudo systemctl restart dbc
-```
-
-> Perform this step to check whether the parameter acquisition is normal
->
-> cat /home/dbc/0.3.7.3/dbc_repo/.dbc_node_info.conf
->
-> If the GPU part is displayed as N/A, it can be ignored. Other parts show N/A or empty, please correct it manually and restart DBC
-
 ## Test to create a virtual machine with graphics card pass-through to check whether the previous configuration is correct
-+ Test program download address: https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/download/0.3.7.9/check_env
++ Test program download address: http://116.169.53.132:9000/dbc/package/check_env
 + Binary file, add execute permission and execute directly: chmod 777 chec_env ; ./check_env
 + If the green check 'vm domain_test successful' appears, it means success. If it does not appear, please check whether the previous configurations are correct.
 

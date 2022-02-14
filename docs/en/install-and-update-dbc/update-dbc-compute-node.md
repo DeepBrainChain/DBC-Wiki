@@ -4,7 +4,7 @@
 
 ## 1. download update script：
 
-[https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/](https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/) download `update_mining.sh` file
+http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_mining.sh
 
 ## 2. add executable permission：
 

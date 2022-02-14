@@ -10,18 +10,21 @@
 ---
 
 **安装环境**
-`apt-get  install libvirt-clients libvirt-daemon-system`
+
+`sudo apt-get  install libvirt-clients libvirt-daemon-system expect -y`
 
 **1. 下载安装脚本：**
-https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-
-下载其中的install_client.sh脚本文件
+http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
 
 **2. 给install_client.sh脚本文件添加执行权限：**
-命令行下执行：`chmod +x install_client.sh`
+```bash
+chmod +x install_client.sh`
+```
 
 **3. 运行安装脚本:**
-命令行下执行：`./install_client.sh [安装目录]`
+```bash
+./install_client.sh [安装目录]`
+```
 
 安装过程中会要求用户输入2个端口号：
 
@@ -29,19 +32,27 @@ https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
 
 <br/>
 
+**4. 修改conf/core.conf，添加镜像中心地址**
+
+image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<id>
+
+例如：
+image_server=127.0.0.1,22,test,123456,/data/images,ID_1
+
 ## (二) 升级DBC客户端
 ---
 
 **1. 下载升级脚本：**
-https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-
-下载其中的update_client.sh脚本文件
+http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
 
 **2. 给update_client.sh脚本文件添加执行权限：**
-命令行下执行：`chmod +x update_client.sh`
+```bash
+chmod +x update_client.sh`
+```
 
 **3. 运行升级脚本:**
-命令行下执行：`./update_client.sh [安装目录]`
-
+```bash
+./update_client.sh [安装目录]`
+```
 
 <img src="./assets/update_dbc_client.png" width = "500" height = "260"  align=center />

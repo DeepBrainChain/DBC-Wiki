@@ -8,20 +8,24 @@
 
 ---
 
-#### 0. install environment
+**install environment**
+```bash
+sudo apt-get  install libvirt-clients libvirt-daemon-system expect -y
+```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`apt-get  install libvirt-clients` libvirt-daemon-system
+**1. download install script：**
 
-#### 1. download install script：
+http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-  &nbsp;&nbsp;&nbsp;&nbsp;download the install_client.sh file
+**2. add executable permission：**
+```bash
+chmod +x install_client.sh
+```
 
-#### 2. add executable permission：
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```chmod +x install_client.sh```
-
-#### 3. run the script:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```./install_client.sh [install_dir]```
+**3. run the script:**
+```bash
+./install_client.sh [install_dir]
+```
 
 During the installation process, you need to input two listen port:
 <img src="./assets/install_dbc_client.png" width = "500" height = "260"  align=center />
@@ -31,13 +35,17 @@ During the installation process, you need to input two listen port:
 ## (二) Update DBC Client
 ---
 
-#### 1. download update client script：
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-  &nbsp;&nbsp;&nbsp;&nbsp;download update_client.sh file
-#### 2. add executable permission：
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```chmod +x update_client.sh```
+**1. download update client script：**
+http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
 
-#### 3. run the script:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```./update_client.sh [install_dir]```
+**2. add executable permission：**
+```bash
+chmod +x update_client.sh
+```
+
+**3. run the script:**
+```bash
+./update_client.sh [install_dir]
+```
 
 <img src="./assets/update_dbc_client.png" width = "500" height = "260"  align=center />

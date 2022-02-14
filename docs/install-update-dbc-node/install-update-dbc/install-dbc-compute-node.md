@@ -11,7 +11,7 @@ sudo echo "199.232.5.194 github.global.ssl.fastly.net"   >> /etc/hosts
 sudo echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim -y
+sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
 
 ## (二) 创建和挂载XFS文件系统
@@ -321,8 +321,7 @@ sudo ./add_dbc_user.sh dbc
 
 + **注意**：需要切换到dbc用户安装
 1. 下载dbc功能节点的安装脚本：
-  https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-  下载其中的install_mining.sh
+  http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. 给安装脚本添加可执行权限：
    命令行下执行：`chmod +x ./install_mining.sh`
 3. 运行安装脚本：
@@ -331,11 +330,9 @@ sudo ./add_dbc_user.sh dbc
 (安装过程中，需要用户输入2个本地监听端口号)
 
 
-
-
 ## (十) 下载镜像模板（请放置于/data目录下，dbc启动虚拟机会去/data目录搜寻）
 
- http://116.169.53.132:9000/
+ http://116.169.53.132:9000/image
 下载：ubuntu.qcow2 和 ubuntu-2004.qcow2 这两个镜像
 
 
@@ -345,7 +342,7 @@ sudo ./add_dbc_user.sh dbc
 
 
 ## (十二) 测试创建带有显卡直通的虚拟机,用来检测前面是否正确配置
-+ 测试程序下载地址：https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/download/0.3.7.9/check_env
++ 测试程序下载地址：http://116.169.53.132:9000/dbc/package/check_env
 + 二进制文件，添加执行权限直接执行即可: chmod 777 chec_env ;  ./check_env
 + 出现绿色`check vm domain_test successful`即为成功，若没有出现，请排查前面各项配置是否正确。
 

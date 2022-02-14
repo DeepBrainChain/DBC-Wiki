@@ -16,7 +16,7 @@
 >    ```json
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            //GPU节点的node_id
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
@@ -38,7 +38,7 @@
 >    ```json
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            //GPU节点的node_id
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
@@ -64,25 +64,26 @@
 >    ```json
 >    {
 >        "peer_nodes_list": [
->            // 请求机器的node_id
+>            //GPU节点的node_id
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
->            // ssh登录linux虚拟机时使用的端口号（每个虚拟机设置一个不同的值）
+>            // 远程登录linux虚拟机，ssh端口号（linux）
 >            "ssh_port": "5684",
->            // 登录windows虚拟机时使用的端口号
+>            // 远程登录windows虚拟机，rdp端口号（windows）
 >            "rdp_port": "5685",
->            // 使用vnc连接该虚拟机时的端口号（每个虚拟机设置一个不同的值）
+>            // vnc连接端口号
 >            "vnc_port": "5904",
->            // 镜像名字(查看机器信息时显示机器拥有的镜像或在镜像管理中心拥有的镜像均可填写应用)
+>            // 镜像名字
 >            "image_name": "ubuntu.qcow2",
->            // 填写数据盘的名称(可不填，不填dbc默认以形式为data_1_<task_id>.qcow2的名称存在,
->             // 如填写会检查文件是否存在，存在则数据盘会以填写的文件的.qcow2形式存在)
->            "data_file_name": "",
->            // 操作系统名字: win 、ubuntu
->            "operation_system": "",
->            // 引导方式: legacy 、uefi
->            "bios_mode": "",
+>            // 自定义虚拟机标识（例如：my-ubuntu-1804）
+>            "custom_image_name": "my-ubuntu-1804",
+>            // 操作系统类型: ubuntu、win
+>            "operation_system": "ubuntu",
+>            // 引导方式: 
+>            //   linux系统设置：legacy
+>            // windows系统设置：uefi
+>            "bios_mode": "legacy",
 >            // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
 >            // 添加多组播地址续在括号中用","相隔,也可不填
 >            "multicast":["230.0.0.1:5558"]
@@ -117,7 +118,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -141,7 +142,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -164,7 +165,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -189,7 +190,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -212,7 +213,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -235,7 +236,7 @@
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -262,7 +263,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >   ```json
 >   {
 >       "peer_nodes_list": [
->           // 请求机器的node_id
+>           //GPU节点的node_id
 >           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >       ],
 >       "additional": {
@@ -301,7 +302,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/create
 ```json
 {
   "peer_nodes_list": [
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" //请求的机器id
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "snapshot_name": "snap2", //自定义的镜像名
@@ -342,7 +344,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>
 ```json
 {
   "peer_nodes_list": [
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" // 请求的机器id
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {},
   "session_id": "租用者分发的session_id",
@@ -369,7 +372,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/<snap_nam
 ```json
 {
   "peer_nodes_list": [
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" // 请求的机器id
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {},
   "session_id": "租用者分发的session_id",
@@ -381,7 +385,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/<snap_nam
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-### 4.查询镜像管理中心的镜像列表(查看所有上传的镜像)
+### 4.查询镜像列表
 
 - 请求方式：POST
 
@@ -393,10 +397,33 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 
 - 请求 Body:
 
+**1. 查询镜像中心的镜像列表**
 ```json
 {
   "peer_nodes_list": [],
   "additional": {}
+}
+```
+**2. 查询GPU节点的镜像列表**
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {}
+}
+```
+**3. 查询GPU节点上某个用户的镜像列表**
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
 
@@ -411,19 +438,33 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 - 请求 URL：
 
 ```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload/<images_name>
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
 ```
 
 - 请求 Body:
 
+**1. 将GPU节点上的某个镜像上传到镜像中心**
+
 ```json
 {
   "peer_nodes_list": [
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" // 请求的机器id
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" 
   ],
-  "additional": {},
+  "additional": {
+    "image_filename": "ubuntu.qcow2"
+  },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+**2. 将客户端节点上的某个镜像上传到镜像中心**
+```json
+{
+  "peer_nodes_list": [],
+  "additional": {
+    "image_filename": "ubuntu.qcow2"
+  }
 }
 ```
 
@@ -438,17 +479,21 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload/<images_name>
 - 请求 URL：
 
 ```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download/<images_name>
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 ```
 
 - 请求 Body:
 
+**从镜像中心下载镜像到GPU节点**
 ```json
 {
   "peer_nodes_list": [
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" // 请求的机器id
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {},
+  "additional": {
+    "image_filename": "ubuntu.qcow2"
+  },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
 }
