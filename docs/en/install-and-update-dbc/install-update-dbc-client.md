@@ -32,7 +32,7 @@ During the installation process, you need to input two listen port:
 
 **4. update conf/core.conf， add image manage center address**
 
-image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>
+`image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>`
 
 Example：
 image_server=127.0.0.1,22,test,123456,/data/images,ID_1

@@ -34,7 +34,7 @@ chmod +x install_client.sh`
 
 **4. 修改conf/core.conf，添加镜像中心地址**
 
-image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>
+`image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>`
 
 例如：
 image_server=127.0.0.1,22,test,123456,/data/images,ID_1
