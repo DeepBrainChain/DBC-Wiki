@@ -48,7 +48,7 @@ export const zh: NavbarConfig = [
       {
         text: 'DBC AMA',
         children: [
-          '/dbc-information/dbc-ama/8bit-ama',
+          '/dbc-information/dbc-ama/8btc-ama',
           '/dbc-information/dbc-ama/galaxy-ama',
           '/dbc-information/dbc-ama/council-ama',
           '/dbc-information/dbc-ama/dbc-ama-collection',

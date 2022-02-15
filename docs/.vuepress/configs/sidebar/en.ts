@@ -45,7 +45,7 @@ export const en: SidebarConfig = {
         {
           text: 'DBC AMA',
           children: [
-            '/en/dbc-information/dbc-ama/8bit-ama',
+            '/en/dbc-information/dbc-ama/8btc-ama',
             '/en/dbc-information/dbc-ama/galaxy-ama',
             '/en/dbc-information/dbc-ama/council-ama',
             '/en/dbc-information/dbc-ama/dbc-ama-collection',
