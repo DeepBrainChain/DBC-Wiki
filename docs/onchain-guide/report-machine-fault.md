@@ -6,7 +6,7 @@
 
 可以举报的四种机器故障按处理方式的不同分为两类，
 
-1. 机器被租用时**无法访问故障(`RentedInaccessible(MachineId)`)**,
+1. 机器被租用后**无法访问故障(`RentedInaccessible(MachineId)`)**,
 
 2. 其他类型故障，包括
 
@@ -22,7 +22,7 @@
 在本文档中，验证人即验证委员会，因此验证人/委员会这样的描述可能会被混用。
 :::
 
-## 1. 机器被租用时无法访问
+## 1. 机器被租用后无法访问
 
 该类型被设计为验证人可以快速响应该报告，验证人可以用程序监控链上的这种报告并自动抢单，自动判断报告是否有效，并自动提交处理结果。因此，这种报告的故障处理速度最快。
 
@@ -34,9 +34,11 @@
 
 ![](./assets/report-machine-fault.assets/1.png)
 
-支付费用： 10 DBC
+支付费用： 10 DBC (此种类型举报的额外费用)
 
-存储变更：
+质押1000 DBC
+
+可以查到存储变更：
 
 ```json
 LiveReport.bookable_report,
@@ -62,7 +64,13 @@ ReportInfo: {
 
 在第一个验证人抢单之后，5 分钟内将会开始提交验证结果，10 分钟时结束验证。
 
+委员会可以监控maintainCommittee.bookableReport 来查看是否有可抢单的报告
+
+可以查询maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
+
 支付： 10 DBC
+
+质押： 0 DBC (这种类型的举报不需要委员会质押)
 
 存储变更：
 
@@ -86,6 +94,8 @@ live_report {
 committee_order {
     booked_report.add(report_id)
 }
+
+ReporterStake: 如果是初次触发质押，则先reserve 20000 DBC, 再记录上此次报告消耗了其中的1000 DBC
 ```
 
 ### 1.3. [角色：(其他)验证人] 进行抢单
@@ -95,6 +105,8 @@ committee_order {
 - 需要在第一个验证人抢单之后的 5 分钟(10 个块)内进行抢单
 
 - 最多有 3 个验证人进行抢单
+
+- 消耗 10 DBC 质押1000DBC
 
 ### 1.4. [角色：(已抢单)验证人] 提交`确认信息`的 Hash:
 
@@ -108,6 +120,8 @@ hash("report_id" + "committee_rand_str" + "is_support");
 :::
 
 ### 1.5. [角色： (已抢单)验证人]提交`确认信息`
+
+- 只有所有抢单的委员会都提交了Hash 或者 距离首次抢单5分钟(10个块)才允许验证人提交原始信息
 
 执行 `committee_submit_inaccessible_raw`
 
