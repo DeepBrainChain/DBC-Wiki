@@ -32,7 +32,7 @@ chmod +x install_client.sh`
 
 <br/>
 
-**4. 修改conf/core.conf，添加镜像中心地址**
+**4. 客户端节点也可以成为镜像中心：修改conf/core.conf，添加镜像中心地址**
 
 `image_server=<ip>,<ssh_port>,<username>,<passwd>,<images_dir>,<custom_server_id>`
 
