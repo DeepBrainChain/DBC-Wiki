@@ -104,7 +104,7 @@ lspci -vv -s <显卡PCI接口> | grep driver
 ```
 > 显示vfio-pci即为正常，非vfio-pci请返回查看grub文件是否写对或者***按照第六步2步骤进行手动绑定***
 
-+ 检查ip_forward转发是否开启成功
++ 检查内核参数：
 
 > 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
@@ -226,7 +226,7 @@ lspci -vv -s 17:00.3 | grep driver
 
 > **如果有PCI未被vfio-pci占用，请继续往下执行，如果已经成功被vfio-pci占用，可跳过下一步**。
 
-+ 检查ip_forward转发是否开启成功
++ 检查内核参数：
  
 > 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
