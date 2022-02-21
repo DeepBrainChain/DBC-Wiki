@@ -36,7 +36,7 @@
 
 支付费用： 10 DBC (此种类型举报的额外费用)
 
-质押1000 DBC
+质押 1000 DBC
 
 可以查到存储变更：
 
@@ -64,9 +64,9 @@ ReportInfo: {
 
 在第一个验证人抢单之后，5 分钟内将会开始提交验证结果，10 分钟时结束验证。
 
-委员会可以监控maintainCommittee.bookableReport 来查看是否有可抢单的报告
+委员会可以监控 maintainCommittee.bookableReport 来查看是否有可抢单的报告
 
-可以查询maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
+可以查询 maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
 
 支付： 10 DBC
 
@@ -106,7 +106,7 @@ ReporterStake: 如果是初次触发质押，则先reserve 20000 DBC, 再记录�
 
 - 最多有 3 个验证人进行抢单
 
-- 消耗 10 DBC 质押1000DBC
+- 消耗 10 DBC 质押 1000DBC
 
 ### 1.4. [角色：(已抢单)验证人] 提交`确认信息`的 Hash:
 
@@ -121,7 +121,7 @@ hash("report_id" + "committee_rand_str" + "is_support");
 
 ### 1.5. [角色： (已抢单)验证人]提交`确认信息`
 
-- 只有所有抢单的委员会都提交了Hash 或者 距离首次抢单5分钟(10个块)才允许验证人提交原始信息
+- 只有所有抢单的委员会都提交了 Hash 或者 距离首次抢单 5 分钟(10 个块)才允许验证人提交原始信息
 
 执行 `committee_submit_inaccessible_raw`
 
@@ -156,17 +156,17 @@ TODO
 
 如前所述，其他故障包括：
 
-   机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
+机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
 
-   机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
+机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
 
-   机器是在线状态，但是**无法租用(`OnlineRentFailed(ReportHash, BoxPubkey)`)**
+机器是在线状态，但是**无法租用(`OnlineRentFailed(ReportHash, BoxPubkey)`)**
 
 ### 2.1. [角色： 报告人] 向链上举报：
 
 执行 `report_machine_fault`，报告人需选择`故障类型`为上述三种错误之一。这里以`无法租用`为例:
 
-生成报告Hash: 根据报告内容，修改脚本中的`machine_id`和`rand_str`,然后执行下面命令生成报告Hash
+生成报告 Hash: 根据报告内容，修改脚本中的`machine_id`和`rand_str`,然后执行下面命令生成报告 Hash
 
 ```shell
 ❯ python hash_machine_fault.py
@@ -174,7 +174,8 @@ ReporterHash: 0x00e8af0f2ad79a07985e42fa5a045a55
 CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
 ```
 
-同时，还需要提供自己的BoxPubkey，用于委员会收到加密信息后的解密:
+同时，还需要提供自己的 BoxPubkey，用于委员会收到加密信息后的解密:
+
 ```
 ❯ node gen_boxpubkey.js --key 0xeb2a67b0d6d3e457076c3d4f9633e7400921fa49887324131b4a9520e5971c4c
 0x20859b983f7f4f3aaf0a41915d0e61b27f90f9b0ffb9310eeee201a997c8b910
@@ -184,16 +185,15 @@ CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
 
 ![](./assets/report-machine-fault.assets/4.png)
 
-
 ### 2.2. [角色：验证人] 进行抢单
 
 执行`committee_book_report`
 
 在第一个验证人抢单之后，5 分钟内将会开始提交验证结果，10 分钟时结束验证。
 
-委员会可以监控maintainCommittee.bookableReport 来查看是否有可抢单的报告
+委员会可以监控 maintainCommittee.bookableReport 来查看是否有可抢单的报告
 
-可以查询maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
+可以查询 maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
 
 支付： 10 DBC
 
@@ -201,7 +201,7 @@ CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
 
 ### 2.3 [角色：报告人]提交加密信息
 
-当验证人进行抢单后，报告人需要在30min (60个块)中内，提交加密信息给抢单的委员会，超时未提供加密信息，将导致举报失败(举报人将因此被惩罚)。
+当验证人进行抢单后，报告人需要在 30min (60 个块)中内，提交加密信息给抢单的委员会，超时未提供加密信息，将导致举报失败(举报人将因此被惩罚)。
 
 ```shell
 # 生成加密信息
@@ -210,7 +210,7 @@ node seal_msg.js --sender_privkey 0x0cdc17e4cd84743c66bae7761ad354d423c93ac1e398
 
 其中，
 `--sender_privkey`为举报人的私钥；
-`--receiver_box_pubkey`为委员会（接收人）的box_pubkey，可以通过下面方式查询：
+`--receiver_box_pubkey`为委员会（接收人）的 box_pubkey，可以通过下面方式查询：
 `--msg`为要加密的错误信息，比如为`machine_id 有内存故障`，注意一定要在`--msg`中加上要举报的`machine_id`信息
 
 ![](./assets/report-machine-fault.assets/5.png)
@@ -224,9 +224,9 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 ```
 
 其中，
-`--sender_box_pubkey` 为举报人的box_pubkey，可通过`maintainCommittee.reportInfo.machine_fault_type`中的信息查询；
+`--sender_box_pubkey` 为举报人的 box_pubkey，可通过`maintainCommittee.reportInfo.machine_fault_type`中的信息查询；
 
-`--receiver_privkey`为委员会自己的box_pubkey对应的私钥
+`--receiver_privkey`为委员会自己的 box_pubkey 对应的私钥
 `--sealed_msg`为委员会收到的加密的信息
 
 解密完成后，委员会需要根据实际情况判断，机器是否有问题。并提交到链上
@@ -236,3 +236,39 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 ![](./assets/report-machine-fault.assets/6.png)
 
 其中，`extra_err_info`为委员会判断的，可能不同于报告人认为的错误原因。该字段也可留空
+
+## 3. 结果执行与申述
+
+### 3.1 举报结束后的奖励与惩罚
+
+当举报完成，根据委员会提交的结果将会进行惩罚与奖励。简单的说，
+
+- 对于验证人来说，
+
+  - 未完成所有任务的委员会将被惩罚，如预订了报告/提交了验证 Hash，却没有最终提交确认信息
+
+  - 验证结果与多数委员会不同的情况，如 2 个委员会反对举报，1 个委员会支持举报，则支持的委员会会被惩罚，其余 2 个委员会会被奖励
+
+  - 当成功完成验证机器故障任务，并与其余多数委员会观点相同（都认为机器有故障/无故障）时，会被奖励
+
+- 对于举报人来说
+
+  - 当举报人举报需要提交加密信息的故障类型时，如没有在委员会抢单半小时内提交加密信息，举报将会失败，会被惩罚
+
+  - 当举报人的举报被大多数委员会所反对时，会被惩罚
+
+  - 当举报被大多数委员会支持时，会被奖励
+
+- 对 machine_stash 来说，
+
+  当举报成功时，会被惩罚
+
+### 3.2 奖励与惩罚发生后的申述
+
+    当举报发生后，链上将记录该惩罚，并在惩罚发生后的**两天后(2880*2个块)执行**，允许被惩罚的委员会/报告人进行申述。申述将会由技术委员会来处理。技术委员会判定申述有效后，将会取消该惩罚。
+
+其中，当机器因举报成功被下架后，需要检查、处理故障后，尽快上架以减少惩罚。当机器被错误惩罚后，也许要上架后，进行申述（同样有 2 天时间），请求技术委员会判定。
+
+未成功完成任务的委员会不允许申述
+
+申述需要质押一定的币，当申述失败后，质押的币将会被扣除。
