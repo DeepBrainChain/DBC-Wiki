@@ -151,3 +151,88 @@ ReportInfo {
 ### 1.6. 系统判定结果
 
 TODO
+
+## 2. 其他故障 (暂不支持多签租用的举报)
+
+如前所述，其他故障包括：
+
+   机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
+
+   机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
+
+   机器是在线状态，但是**无法租用(`OnlineRentFailed(ReportHash, BoxPubkey)`)**
+
+### 2.1. [角色： 报告人] 向链上举报：
+
+执行 `report_machine_fault`，报告人需选择`故障类型`为上述三种错误之一。这里以`无法租用`为例:
+
+生成报告Hash: 根据报告内容，修改脚本中的`machine_id`和`rand_str`,然后执行下面命令生成报告Hash
+
+```shell
+❯ python hash_machine_fault.py
+ReporterHash: 0x00e8af0f2ad79a07985e42fa5a045a55
+CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
+```
+
+同时，还需要提供自己的BoxPubkey，用于委员会收到加密信息后的解密:
+```
+❯ node gen_boxpubkey.js --key 0xeb2a67b0d6d3e457076c3d4f9633e7400921fa49887324131b4a9520e5971c4c
+0x20859b983f7f4f3aaf0a41915d0e61b27f90f9b0ffb9310eeee201a997c8b910
+```
+
+然后调用举报函数:
+
+![](./assets/report-machine-fault.assets/4.png)
+
+
+### 2.2. [角色：验证人] 进行抢单
+
+执行`committee_book_report`
+
+在第一个验证人抢单之后，5 分钟内将会开始提交验证结果，10 分钟时结束验证。
+
+委员会可以监控maintainCommittee.bookableReport 来查看是否有可抢单的报告
+
+可以查询maintainCommittee.reportInfo 来查询报告的具体信息(错误类型，举报时间等)
+
+支付： 10 DBC
+
+质押： 1000 DBC
+
+### 2.3 [角色：报告人]提交加密信息
+
+当验证人进行抢单后，报告人需要在30min (60个块)中内，提交加密信息给抢单的委员会，超时未提供加密信息，将导致举报失败(举报人将因此被惩罚)。
+
+```shell
+# 生成加密信息
+node seal_msg.js --sender_privkey 0x0cdc17e4cd84743c66bae7761ad354d423c93ac1e398630575d91371d6f713ce --receiver_box_pubkey 0x20da91ba45f5ed8fddd40d5439f817c9f00750694ed5c70d17e421caf15f437b --msg "abcdefg bcdefa"
+```
+
+其中，
+`--sender_privkey`为举报人的私钥；
+`--receiver_box_pubkey`为委员会（接收人）的box_pubkey，可以通过下面方式查询：
+`--msg`为要加密的错误信息，比如为`machine_id 有内存故障`，注意一定要在`--msg`中加上要举报的`machine_id`信息
+
+![](./assets/report-machine-fault.assets/5.png)
+
+### 2.4 [角色：委员会] 收到加密信息后解密
+
+当报告人提供了加密的信息后，委员会需要解密来查询报告人提交的信息
+
+```shell
+node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e24b7d9f9424b1a27bde3e866 --receiver_privkey 0x171baa0f7baa4fa7e2dd94b8f9efc0b95034a4ad5f3aba5b6b923e38130c3f0d --sealed_msg 0x01405deeef2a8b0f4a09380d14431dd10fde1ad62b3c27b3fbea4701311d
+```
+
+其中，
+`--sender_box_pubkey` 为举报人的box_pubkey，可通过`maintainCommittee.reportInfo.machine_fault_type`中的信息查询；
+
+`--receiver_privkey`为委员会自己的box_pubkey对应的私钥
+`--sealed_msg`为委员会收到的加密的信息
+
+解密完成后，委员会需要根据实际情况判断，机器是否有问题。并提交到链上
+
+### 2.5 [角色：委员会]判断机器故障信息，并提交到链上
+
+![](./assets/report-machine-fault.assets/6.png)
+
+其中，`extra_err_info`为委员会判断的，可能不同于报告人认为的错误原因。该字段也可留空
