@@ -153,7 +153,7 @@ node seal_msg.js --sender_privkey 0x0cdc17e4cd84743c66bae7761ad354d423c93ac1e398
 其中，
 `--sender_privkey`为举报人的私钥；
 `--receiver_box_pubkey`为委员会（接收人）的 box_pubkey，可以通过下面方式查询：
-`--msg`为要加密的错误信息，比如为`machine_id 有内存故障`，注意一定要在`--msg`中加上要举报的`machine_id`信息
+`--msg`为要加密的错误信息，比如为`machine_id 有内存故障`，注意: **`--msg` 为 要举报的`machine_id` + 报告人随机字符串 + 错误信息**，如`8eaf04151687736326c9fea17e25fc5287613693c912909cb226aa4794f26a48[abcdef]补充信息，可留空`
 
 ![](./assets/report-machine-fault.assets/5.png)
 
@@ -221,7 +221,7 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 
 只要到对应模块中调用取消惩罚(`cancel_slash`)即可，其中阈值设置为1（1/5），`slash_id`为申述的需要取消的惩罚。如，
 
-### [角色：技术委员会]根据申述取消惩罚
+### 4.1 [角色：技术委员会]根据申述取消惩罚
 
 + 取消报告人的惩罚，需要调用`maintainCommittee--cancelReporterSlash`
 
