@@ -38,22 +38,6 @@
 
 质押 1000 DBC
 
-可以查到存储变更：
-
-```json
-LiveReport.bookable_report,
-
-ReporterReport.processing_report
-
-ReportInfo: {
-    reporter,
-    report_time,
-    reporter_stake,
-    machine_fault_type,
-    report_status: Reported
-}
-```
-
 ::: tip 注意
 当且仅当在有人抢单之前，报告人可以取消报告
 :::
@@ -73,30 +57,6 @@ ReportInfo: {
 质押： 0 DBC (这种类型的举报不需要委员会质押)
 
 存储变更：
-
-```
-reporter_info {
-    first_book_time: now (when is first_book),
-    report_info.report_status: WaitingBook (when booked < 3) | Verifying (when booked == 3),
-   confirm_start: now + 10 (when is first_book),
-}
-
-committee_ops {
-    booked_time: now,
-    order_satus: Verifying,
-}
-
-live_report {
-    bookable_report.remove(report_id) (when booked_committee == 3),
-    verifying_report.add(report_id) (when booked_committee == 3),
-}
-
-committee_order {
-    booked_report.add(report_id)
-}
-
-ReporterStake: 如果是初次触发质押，则先reserve 20000 DBC, 再记录上此次报告消耗了其中的1000 DBC
-```
 
 ### 1.3. [角色：(其他)验证人] 进行抢单
 
@@ -134,19 +94,6 @@ hash("report_id" + "committee_rand_str" + "is_support");
 :::
 
 存储修改
-
-```
-CommitteeOps {
-    confirm_time: now,
-    confirm_result: is_support,
-}
-
-ReportInfo {
-    confirmed_committee.add(committee),
-    support_committee.add(committee) (is_support == true),
-    against_committee.add(committee) (is_support == false),
-}
-```
 
 ### 1.6. 系统判定结果
 
