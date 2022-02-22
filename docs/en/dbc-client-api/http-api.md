@@ -275,7 +275,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<task_id>?
 
 <br/>
 
-## Snapshot/Image Manage 快照/镜像管理
+## Snapshot Manage
 
 ### 1.创建快照
 
@@ -379,7 +379,28 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/<snap_nam
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-### 4.查询镜像列表
+## Image Manage
+
+### 1. 查询镜像中心ID列表
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/servers`
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [],
+  "additional": {}
+}
+```
+
+### 2.查询镜像列表
 
 - 请求方式：POST
 
@@ -395,7 +416,10 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 ```json
 {
   "peer_nodes_list": [],
-  "additional": {}
+  "additional": {
+    // 【必填】指定要查询的镜像中心ID
+    "image_server": "ID_1"
+  }
 }
 ```
 **2. 查询GPU节点的镜像列表**
@@ -405,7 +429,10 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
     //GPU节点的node_id
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {}
+  "additional": {
+    // 【选填】指定要查询的镜像中心ID
+    "image_server": "ID_1"
+  }
 }
 ```
 **3. 查询GPU节点上某个用户的镜像列表**
@@ -415,7 +442,10 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
     //GPU节点的node_id
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {},
+  "additional": {
+    // 指定要查询的镜像中心ID
+    "image_server": "ID_1"
+  },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
 }
@@ -425,7 +455,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 
 ![all_images](./assets/snap_mirror_manage.assets/all_images.png)
 
-### 5.上传镜像
+### 3.上传镜像
 
 - 请求方式：POST
 
@@ -446,7 +476,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965" 
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2"
+    "image_filename": "ubuntu.qcow2",
+    // 指定要查询的镜像中心ID
+    "image_server": "ID_1"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -457,7 +489,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
 {
   "peer_nodes_list": [],
   "additional": {
-    "image_filename": "ubuntu.qcow2"
+    "image_filename": "ubuntu.qcow2",
+    // 指定要查询的镜像中心ID
+    "image_server": "ID_1"
   }
 }
 ```
@@ -466,7 +500,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-### 6.下载镜像
+### 4.下载镜像
 
 - 请求方式：POST
 
@@ -486,6 +520,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
+    // 指定要查询的镜像中心ID
+    "image_server": "ID_1",
     "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
