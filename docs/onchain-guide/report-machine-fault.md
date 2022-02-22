@@ -85,8 +85,6 @@ hash("report_id" + "committee_rand_str" + "is_support");
 
 执行 `committee_submit_inaccessible_raw`
 
-**TODO** 修改该函数名称
-
 ![](./assets/report-machine-fault.assets/3.png)
 
 ::: tip
