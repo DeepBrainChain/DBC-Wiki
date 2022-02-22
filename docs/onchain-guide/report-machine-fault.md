@@ -214,3 +214,19 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 未成功完成任务的委员会不允许申述
 
 申述需要质押一定的币，当申述失败后，质押的币将会被扣除。
+
+## 4. 技术委员会取消惩罚
+
+当被惩罚人，质押一定的DBC，提出技术委员会申述后，技术委员会可以在惩罚执行前取消惩罚。
+
+只要到对应模块中调用取消惩罚(`cancel_slash`)即可，其中阈值设置为1（1/5），`slash_id`为申述的需要取消的惩罚。如，
+
+### [角色：技术委员会]根据申述取消惩罚
+
++ 取消报告人的惩罚，需要调用`maintainCommittee--cancelReporterSlash`
+
++ 取消stash(因机器下线后再上线导致)的惩罚，需要调用`onlineProfile--cancelSlash`
+
++ 取消上线委员会的惩罚（因没有分配的工作，或者与处理该订单的其他大多数委员会的观点不一致)，需要调用`onlineCommittee-cancelSlash`
+
+![](./assets/report-machine-fault.assets/7.png)
