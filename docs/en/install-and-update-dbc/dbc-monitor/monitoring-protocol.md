@@ -1,22 +1,22 @@
-# 监控数据交换协议
-数据交换主要基于JSON格式，请求和相应消息必须以header和data length开头。
+# monitoring protocol
+Server - dbc data exchange is based on JSON format, Request and response messages must begin with header and data length.
 
-本协议和文档主要参考[zabbix doc](https://www.zabbix.com/documentation/5.0/zh/manual/appendix/protocols)。
+This agreement and documentation mainly refer to [zabbix doc](https://www.zabbix.com/documentation/5.0/zh/manual/appendix/protocols).
 
 ## header 和 data length
-Zabbix 组件之间的响应和请求消息中存在标头和数据长度。 需要确定消息的长度。
+The header is present in response and request messages between Zabbix components. It is required to determine the length of message, if it is compressed or not and the format of message length fields. The header consists of:
 ```
-<HEADER> - "ZBXD\x01" (5 字节)
-<DATALEN> - data length (8 字节). 1 被转换为 01/00/00/00/00/00/00/00 (8个字节，64位小端存储)
+<HEADER> - "ZBXD\x01" (5 bytes)
+<DATALEN> - data length (8 bytes). 1 will be formatted as 01/00/00/00/00/00/00/00 (eight bytes, 64 bit number in little-endian format)
 ```
 
-## 协议转换示例
+## Protocol conversion example
 ```
 /**
- * @brief 将JSON字符串转换成zabbix需要的协议数据
- * @param json_data JSON格式字符串
+ * @brief Convert JSON string to protocol data required by zabbix
+ * @param json_data JSON format string
  * 
- * @return 符合zabbix协议的字符串
+ * @return A string that conforms to the zabbix protocol
  */
 std::string formatJsonData(const std::string &json_data) {
   std::string data = "ZBXD\x01";
@@ -28,48 +28,48 @@ std::string formatJsonData(const std::string &json_data) {
 }
 ```
 
-## 数据交换过程
-1. dbc 打开一个TCP连接(已知server的ip和端口)；
-2. dbc 发送符合协议的数据(`<HEADER><DATALEN><JSON>`)；
-3. server 处理数据并将结果返回；
-4. dbc 解析返回的结果；
-5. TCP 关闭连接。
+## data exchange process
+1. dbc opens a TCP connection(Known server ip and port)；
+2. dbc send protocol-compliant data(`<HEADER><DATALEN><JSON>`)；
+3. server process the data and return the result；
+4. dbc parse the returned result；
+5. TCP connection is closed.
 
-## 主动检查
->`请求目的`：dbc向server端询问是否接收某个虚拟机的监控数据
+## Active checks
+>`request purpose`：dbc asks the server whether to receive monitoring data of a virtual machine
 >
->`请求body`：
+>`request body`：
 >    ```
 >    <HEADER><DATALEN>{
 >        "request":"active checks",
->        // hostname 表示虚拟机的ID
+>        // hostname represents the ID of the virtual machine
 >        "host":"<hostname>"
 >    }
 >    ```
 >
->`返回结果示例`：
+>`request result example`：
 >    ```
 >    <HEADER><DATALEN>{
 >        "response":"success",
->        // data部分省略，暂时不做校验
+>        // The data part is omitted, and no verification is performed for the time being
 >        "data":[......]
 >    }
 >    ```
 
 ::: warning
-server必须响应成功。"response"字段为"success"表示成功，其他一律视为失败。
+The server must respond successfully. If the "response" field is "success", it means success, otherwise it will be regarded as failure.
 :::
 
-## 发送收集的监控数据
->`请求目的`：dbc向server端询发送收集的虚拟机监控数据
+## Send collected monitoring data
+>`request purpose`：dbc sends the collected virtual machine monitoring data to the server
 >
->`请求body`：
+>`request body`：
 >    ```
 >    <HEADER><DATALEN>{
 >        "request":"agent data",
 >        "data":[
 >            {
->                "host":"<虚拟机ID>",
+>                "host":"<ID of the virtual machine>",
 >                "key":"dom.state",
 >                "value":"running",
 >                "clock":1400675595,
@@ -77,7 +77,7 @@ server必须响应成功。"response"字段为"success"表示成功，其他一�
 >            },
 >            ......
 >            {
->                "host":"<虚拟机ID>",
+>                "host":"<ID of the virtual machine>",
 >                "key":"version",
 >                "value":"0.3.9.2",
 >                "clock":1400675595,
@@ -89,18 +89,18 @@ server必须响应成功。"response"字段为"success"表示成功，其他一�
 >    }
 >    ```
 >
->`返回结果示例`：
+>`request result example`：
 >    ```
 >    <HEADER><DATALEN>{
 >        "response":"success",
->        // info部分不做校验
+>        // The info part is not checked
 >        "info":"processed: 3; failed: 0; total: 3; seconds spent: 0.003534"
 >    }
 >    ```
 
-## zabbix server 设置
-server端若想接收dbc发送的数据，需要做到以下设置：
-1. 在zabbix中导入dbc监控项模板"DBC VM Template"；
-2. 创建虚拟机；
-3. 在zabbix中使用模板"DBC VM Template"添加主机，主机名称填写虚拟机的task id；
-4. 等待虚拟机创建完成后即可发送监控数据。
+## zabbix server settings
+If the server side wants to receive the data sent by dbc, it needs to do the following settings：
+1. Import the dbc item template "DBC VM Template" in zabbix；
+2. Create a virtual machine；
+3. Use the template "DBC VM Template" to add a host in zabbix, fill in the id of the virtual machine for the host name；
+4. After the virtual machine is created, the monitoring data can be sent.

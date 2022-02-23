@@ -1,4 +1,4 @@
-# 关于虚拟机监控的HTTP客户端请求API
+# 虚拟机监控的HTTP客户端API
 :::tip 注意！
 以下HTTP请求其中的dbc_client_ip和dbc_client_port为用户自己部署的DBC客户端访问地址
 :::
@@ -13,7 +13,7 @@
 >    ```json
 >    {
 >        "peer_nodes_list": [
->            //GPU节点的node_id
+>            // GPU节点的node_id
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
@@ -44,7 +44,7 @@
 >    ```json
 >    {
 >        "peer_nodes_list": [
->            //GPU节点的node_id
+>            // GPU节点的node_id
 >            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >        ],
 >        "additional": {
@@ -66,5 +66,6 @@
 
 ::: warning
 "additional"中的"servers"字段是个数组，用户最多可以填写两个服务，格式参考:["ip:port","ip:port"]。
+
 假如需要清空监控服务，数组为空即可，例如:[]。
 :::
