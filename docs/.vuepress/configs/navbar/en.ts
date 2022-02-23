@@ -148,6 +148,15 @@ export const en: NavbarConfig = [
           '/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse',
         ],
       },
+      {
+        text: 'DBC virtual machine monitor',
+        // link: '/en/install-and-update-dbc/dbc-monitor/',
+        children: [
+          '/en/install-and-update-dbc/dbc-monitor/http-monitor-api',
+          '/en/install-and-update-dbc/dbc-monitor/monitoring-items',
+          '/en/install-and-update-dbc/dbc-monitor/monitoring-protocol',
+        ],
+      },
     ],
   },
 ]
