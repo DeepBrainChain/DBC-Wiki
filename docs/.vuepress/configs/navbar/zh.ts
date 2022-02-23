@@ -148,6 +148,15 @@ export const zh: NavbarConfig = [
           '/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse',
         ],
       },
+      {
+        text: 'DBC虚拟机监控',
+        link: '/install-update-dbc-node/dbc-monitor/',
+        children: [
+          '/install-update-dbc-node/dbc-monitor/http-monitor-api',
+          '/install-update-dbc-node/dbc-monitor/monitoring-items',
+          '/install-update-dbc-node/dbc-monitor/monitoring-protocol',
+        ],
+      },
     ],
   },
 ]
