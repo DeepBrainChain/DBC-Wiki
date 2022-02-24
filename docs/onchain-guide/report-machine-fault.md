@@ -53,8 +53,6 @@
 
 质押： 0 DBC (这种类型的举报不需要委员会质押)
 
-存储变更：
-
 ### 1.3. [角色：(其他)验证人] 进行抢单
 
 - 执行`committee_book_report`
@@ -94,7 +92,7 @@ hash("report_id" + "committee_rand_str" + "is_support");
 
 TODO
 
-## 2. 其他故障 (暂不支持多签租用的举报)
+## 2. 其他故障
 
 如前所述，其他故障包括：
 
@@ -117,6 +115,12 @@ CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
 ```
 
 同时，还需要提供自己的 BoxPubkey，用于委员会收到加密信息后的解密:
+
+::: tip
+
+如果是多签账户，或者不知道私钥，可以重新生成一个SS58账户，并使用该SS58的私钥生成BoxPubkey。后续的操作使用该密钥对即可。
+
+:::
 
 ```
 ❯ node gen_boxpubkey.js --key 0xeb2a67b0d6d3e457076c3d4f9633e7400921fa49887324131b4a9520e5971c4c
@@ -155,8 +159,6 @@ node seal_msg.js --sender_privkey 0x0cdc17e4cd84743c66bae7761ad354d423c93ac1e398
 `--receiver_box_pubkey`为委员会（接收人）的 box_pubkey，可以通过下面方式查询：
 `--msg`为要加密的错误信息，比如为`machine_id 有内存故障`，注意: **`--msg` 为 要举报的`machine_id` + 报告人随机字符串 + 错误信息**，如`8eaf04151687736326c9fea17e25fc5287613693c912909cb226aa4794f26a48[abcdef]补充信息，可留空`
 
-![](./assets/report-machine-fault.assets/5.png)
-
 ### 2.4 [角色：委员会] 收到加密信息后解密
 
 当报告人提供了加密的信息后，委员会需要解密来查询报告人提交的信息
@@ -172,6 +174,14 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 `--sealed_msg`为委员会收到的加密的信息
 
 解密完成后，委员会需要根据实际情况判断，机器是否有问题。并提交到链上
+
+
+
+查询委员会BoxPubkey:
+
+![](./assets/report-machine-fault.assets/5.png)
+
+
 
 ### 2.5 [角色：委员会]判断机器故障信息，并提交到链上
 
