@@ -8,18 +8,20 @@
 ## (一) 部署镜像中心
 * **操作系统：ubuntu**
 * **设置开机启动rsync-daemon**
-    ```
-    sudo vim /etc/default/rsync
-    修改：将false改true
-    RSYNC_ENABLE=true   
-    ```
+    
+    `sudo vim /etc/default/rsync`
+    
+     将false改为true：
+    
+    `RSYNC_ENABLE=true`
+    
 * **修改配置文件rsyncd.conf**
 
     手动复制：
     sudo cp /usr/share/doc/rsync/examples/rsyncd.conf /etc
 
     修改 /etc/rsyncd.conf：
-    ```text
+    ```
     ######### 全局: 配置参数 ##########
     port=873    # 指定rsync端口。默认873
     uid = nobody # rsync服务的运行用户，默认是nobody，文件传输成功后属主将是这个uid
@@ -72,6 +74,7 @@
     `sudo apt-get  install libvirt-clients libvirt-daemon-system expect -y`
 
 * **下载安装脚本：**
+
     http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
 
 * **给install_client.sh脚本文件添加执行权限：**
@@ -91,6 +94,7 @@
 ## (三) 升级DBC客户端
 
 * **下载升级脚本：**
+
     http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
 
 * **给update_client.sh脚本文件添加执行权限：**

@@ -8,15 +8,18 @@
 * **操作系统：ubuntu**
 
 * **设置开机启动rsync-daemon**
-    ```
-    sudo vim /etc/default/rsync
-    #修改：将false改true
-    RSYNC_ENABLE=true   
-    ```
+    
+    `sudo vim /etc/default/rsync`
+
+     将false改为true:
+    
+    `RSYNC_ENABLE=true`
+    
 + **修改配置文件rsyncd.conf**
 
     手动复制：
-    sudo cp /usr/share/doc/rsync/examples/rsyncd.conf /etc
+    
+    `sudo cp /usr/share/doc/rsync/examples/rsyncd.conf /etc`
 
     修改 /etc/rsyncd.conf：
     ```
@@ -68,23 +71,20 @@
 ## (二) Install DBC Client
 
 * **install environment**
-    ```
-    sudo apt-get  install libvirt-clients libvirt-daemon-system expect -y
-    ```
+
+    `sudo apt-get  install libvirt-clients libvirt-daemon-system expect -y`
 
 * **download install script：**
 
     http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
 
 * **add executable permission：**
-    ```
-    chmod +x install_client.sh
-    ```
+    
+    `chmod +x install_client.sh`
 
 * **run the script:**
-    ```
-    ./install_client.sh [install_dir]
-    ```
+    
+    `./install_client.sh [install_dir]`
 
     During the installation process, you need to input two listen port:
     <img src="./assets/install_dbc_client.png" width = "500" height = "260"  align=center />
@@ -94,16 +94,15 @@
 ## (三) Update DBC Client
 
 * **download update client script：**
-http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
+
+    http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
 
 * **add executable permission：**
-    ```
-    chmod +x update_client.sh
-    ```
+
+    `chmod +x update_client.sh`
 
 * **run the script:**
-    ```
-    ./update_client.sh [install_dir]
-    ```
+    
+    `./update_client.sh [install_dir]`
 
     <img src="./assets/update_dbc_client.png" width = "500" height = "260"  align=center />
