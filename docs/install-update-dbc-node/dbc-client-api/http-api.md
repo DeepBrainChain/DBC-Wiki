@@ -529,7 +529,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
   "additional": {
     // 指定要查询的镜像中心ID
     "image_server": "ID_1",
-    "image_filename": "ubuntu.qcow2"
+    "image_filename": "ubuntu.qcow2",
+    // 本地存储路径
+    "local_dir": "/my_local_dir"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
