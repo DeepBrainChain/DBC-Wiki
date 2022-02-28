@@ -19,7 +19,7 @@
     sudo cp /usr/share/doc/rsync/examples/rsyncd.conf /etc
 
     修改 /etc/rsyncd.conf：
-    ```
+    ```text
     ######### 全局: 配置参数 ##########
     port=873    # 指定rsync端口。默认873
     uid = nobody # rsync服务的运行用户，默认是nobody，文件传输成功后属主将是这个uid
