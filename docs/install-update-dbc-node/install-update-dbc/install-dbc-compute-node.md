@@ -11,7 +11,7 @@ sudo echo "199.232.5.194 github.global.ssl.fastly.net"   >> /etc/hosts
 sudo echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim -y
+sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
 
 ## (二) 创建和挂载XFS文件系统
@@ -55,6 +55,21 @@ sudo mount -a
 > KVM acceleration can be used
 > 表示可以进行后续操作，如果显示与其不相符，请检查VT-d是否正确开启
 
+**3、检查ip_forward转发是否开启**
+
+> 查看/proc/sys/net/ipv4/ip_forward是否为1
+> 如果不为1则执行:
+> ```
+> sudo sh -c 'echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf'
+> sudo sysctl -p
+> ```
+> 查看lsmod | grep br_netfilter是否有输出
+> 如果没有输出则执行：
+> ```
+> sudo sh -c 'echo "br_netfilter" > /etc/modules-load.d/br_netfilter.conf'
+> ```
+> 执行完后需要重启，也可以与设置完显卡直通后一起重启
+
 **如果您是20.04系统，操作以下内容即可，无需再去操作其他关于vfio-pci步骤，如果您是ubuntu18.04系统，请按照第四步开始操作**
 + 设置黑名单，使卡不被占用
 ```shell
@@ -88,6 +103,11 @@ sudo update-grub
 lspci -vv -s <显卡PCI接口> | grep driver
 ```
 > 显示vfio-pci即为正常，非vfio-pci请返回查看grub文件是否写对或者***按照第六步2步骤进行手动绑定***
+
++ 检查内核参数：
+
+> 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
+
 ***20.04LTS系统显卡隔离步骤到此结束，请前往步骤7继续操作***
 
 
@@ -206,6 +226,9 @@ lspci -vv -s 17:00.3 | grep driver
 
 > **如果有PCI未被vfio-pci占用，请继续往下执行，如果已经成功被vfio-pci占用，可跳过下一步**。
 
++ 检查内核参数：
+ 
+> 检查`/proc/sys/net/bridge/bridge-nf-call-iptables`和`/proc/sys/net/bridge/bridge-nf-call-ip6tables`是否都=1
 
 ## (六) 如果驱动查询为Kernel driver in use: vfio-pci，无需操作以下内容，未成功绑定请继续执行
 
@@ -298,8 +321,7 @@ sudo ./add_dbc_user.sh dbc
 
 + **注意**：需要切换到dbc用户安装
 1. 下载dbc功能节点的安装脚本：
-  https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-  下载其中的install_mining.sh
+  http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. 给安装脚本添加可执行权限：
    命令行下执行：`chmod +x ./install_mining.sh`
 3. 运行安装脚本：
@@ -308,11 +330,9 @@ sudo ./add_dbc_user.sh dbc
 (安装过程中，需要用户输入2个本地监听端口号)
 
 
-
-
 ## (十) 下载镜像模板（请放置于/data目录下，dbc启动虚拟机会去/data目录搜寻）
 
- http://116.169.53.132:9000/
+ http://116.169.53.132:9000/image
 下载：ubuntu.qcow2 和 ubuntu-2004.qcow2 这两个镜像
 
 
@@ -322,7 +342,7 @@ sudo ./add_dbc_user.sh dbc
 
 
 ## (十二) 测试创建带有显卡直通的虚拟机,用来检测前面是否正确配置
-+ 测试程序下载地址：https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/download/0.3.7.9/check_env
++ 测试程序下载地址：http://116.169.53.132:9000/dbc/package/check_env
 + 二进制文件，添加执行权限直接执行即可: chmod 777 chec_env ;  ./check_env
 + 出现绿色`check vm domain_test successful`即为成功，若没有出现，请排查前面各项配置是否正确。
 

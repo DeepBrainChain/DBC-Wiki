@@ -47,7 +47,7 @@ export const en: NavbarConfig = [
       {
         text: 'DBC AMA',
         children: [
-          '/en/dbc-information/dbc-ama/8bit-ama',
+          '/en/dbc-information/dbc-ama/8btc-ama',
           '/en/dbc-information/dbc-ama/galaxy-ama',
           '/en/dbc-information/dbc-ama/council-ama',
           '/en/dbc-information/dbc-ama/dbc-ama-collection',
@@ -124,7 +124,7 @@ export const en: NavbarConfig = [
     // link: "/en/staking-model",
     children: [
       {
-        text: 'Install DBC Client',
+        text: 'Install And Update DBC Node',
         // link: "/en/install-and-update-dbc",
         children: [
           '/en/install-and-update-dbc/install-dbc-compute-node',
@@ -133,7 +133,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: 'DBC Client HTTP API',
+        text: 'DBC Client - HTTP API',
         // link: "/en/dbc-client-api",
         children: [
           '/en/dbc-client-api/install-tool',
@@ -146,6 +146,15 @@ export const en: NavbarConfig = [
         text: 'Create wins-machine application omniverse',
         children: [
           '/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse',
+        ],
+      },
+      {
+        text: 'DBC virtual machine monitor',
+        // link: '/en/install-and-update-dbc/dbc-monitor/',
+        children: [
+          '/en/install-and-update-dbc/dbc-monitor/http-monitor-api',
+          '/en/install-and-update-dbc/dbc-monitor/monitoring-items',
+          '/en/install-and-update-dbc/dbc-monitor/monitoring-protocol',
         ],
       },
     ],

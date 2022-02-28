@@ -45,7 +45,7 @@ export const en: SidebarConfig = {
         {
           text: 'DBC AMA',
           children: [
-            '/en/dbc-information/dbc-ama/8bit-ama',
+            '/en/dbc-information/dbc-ama/8btc-ama',
             '/en/dbc-information/dbc-ama/galaxy-ama',
             '/en/dbc-information/dbc-ama/council-ama',
             '/en/dbc-information/dbc-ama/dbc-ama-collection',
@@ -117,7 +117,7 @@ export const en: SidebarConfig = {
   ],
   '/en/install-and-update-dbc/': [
     {
-      text: 'install-dbc',
+      text: 'Install And Update DBC Node',
       children: [
         '/en/install-and-update-dbc/install-dbc-compute-node',
         '/en/install-and-update-dbc/install-update-dbc-client',
@@ -125,7 +125,15 @@ export const en: SidebarConfig = {
         {
           text: 'Create wins-machine application omniverse',
           children: [
-            'en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse',
+            '/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse',
+          ],
+        },
+        {
+          text: 'DBC virtual machine monitor',
+          children: [
+            '/en/install-and-update-dbc/dbc-monitor/http-monitor-api',
+            '/en/install-and-update-dbc/dbc-monitor/monitoring-items',
+            '/en/install-and-update-dbc/dbc-monitor/monitoring-protocol',
           ],
         },
       ],
@@ -133,7 +141,7 @@ export const en: SidebarConfig = {
   ],
   '/en/dbc-client-api/': [
     {
-      text: 'dbc-http-api',
+      text: 'DBC Client - HTTP API',
       children: [
         '/en/dbc-client-api/install-tool',
         '/en/dbc-client-api/http-request-format',

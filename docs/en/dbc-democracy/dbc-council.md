@@ -30,6 +30,6 @@ After a long period of preparation, the DeepBrain Chain Council began trial oper
 
 - Software development (wallets and wallet integration, clients and client upgrades).
 
-9. The members of the council are currently elected every 7 days. After the mainnet upgrade in September, elections will be held every month. Starting from January 2022, the members of the council will be elected every 6 months.
+9. The members of the council are currently elected every 7 days. After the mainnet upgrade in September, elections will be held every month. Starting from January 2022, the members of the council will be elected every 2 months.
 
 10. DBC staked for supernodes can also be used for the election of council members and voting on proposals, without the need for additional staking.
