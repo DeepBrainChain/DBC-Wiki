@@ -1,6 +1,118 @@
 # 监控项
 
-## 监控项列表
+## 宿主机的监控项列表
+<table>
+  <tr>
+    <td>key</td>
+    <td>描述</td>
+    <td>类型</td>
+    <td>单位</td>
+  </tr>
+  <tr>
+    <td>host.gpuCount</td>
+    <td>GPU数量</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpuUsed</td>
+    <td>已使用的GPU个数</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.vmCount</td>
+    <td>虚拟机数量</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.vmRunning</td>
+    <td>正在运行的虚拟机个数</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.cpuUsage</td>
+    <td>CPU使用率</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.memTotal</td>
+    <td>总内存</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.memFree</td>
+    <td>空闲内存</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.memUsage</td>
+    <td>内存使用率</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.rxFlow</td>
+    <td>接收总流量</td>
+    <td>long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.txFlow</td>
+    <td>发送总流量</td>
+    <td>long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.diskTotal</td>
+    <td>硬盘容量</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.diskFree</td>
+    <td>硬盘空闲容量</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.diskUsage</td>
+    <td>硬盘使用率</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.1</td>
+    <td>过去的1分钟内的平均负载</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.5</td>
+    <td>过去的5分钟内的平均负载</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.15</td>
+    <td>过去的15分钟内的平均负载</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.dbcVersion</td>
+    <td>DBC版本号</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+</table>
+
+## 虚拟机的监控项列表
 <table>
   <tr>
     <td></td>
@@ -46,7 +158,7 @@
     <td>dom.cpuUsage</td>
     <td>虚拟机的CPU平均使用率</td>
     <td>float</td>
-    <td></td>
+    <td>%</td>
   </tr>
   <tr>
     <td rowspan="4">内存信息</td>
@@ -71,7 +183,7 @@
     <td>memory.usage</td>
     <td>内存实时使用率</td>
     <td>float</td>
-    <td></td>
+    <td>%</td>
   </tr>
   <tr>
     <td rowspan="11">磁盘信息</td>

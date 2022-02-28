@@ -1,6 +1,118 @@
 # monitoring items
 
-## monitoring item list
+## monitoring item list of the host
+<table>
+  <tr>
+    <td>key</td>
+    <td>description</td>
+    <td>data type</td>
+    <td>unit</td>
+  </tr>
+  <tr>
+    <td>host.gpuCount</td>
+    <td>total number of GPUs</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpuUsed</td>
+    <td>number of GPUs used</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.vmCount</td>
+    <td>total number of virtual machines</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.vmRunning</td>
+    <td>number of running virtual machines</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.cpuUsage</td>
+    <td>CPU usage</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.memTotal</td>
+    <td>total memory</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.memFree</td>
+    <td>free memory</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.memUsage</td>
+    <td>memory usage</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.rxFlow</td>
+    <td>receive total flow</td>
+    <td>long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.txFlow</td>
+    <td>total flow sent</td>
+    <td>long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.diskTotal</td>
+    <td>data disk capacity</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.diskFree</td>
+    <td>data disk free capacity</td>
+    <td>unsigned long long</td>
+    <td>KB</td>
+  </tr>
+  <tr>
+    <td>host.diskUsage</td>
+    <td>data disk usage</td>
+    <td>float</td>
+    <td>%</td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.1</td>
+    <td>Average load over the past 1 minute</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.5</td>
+    <td>Average load over the past 5 minute</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.loadAverage.15</td>
+    <td>Average load over the past 15 minute</td>
+    <td>float</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.dbcVersion</td>
+    <td>DBC version number</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+</table>
+
+## monitoring item list of the virtual machine
 <table>
   <tr>
     <td></td>
@@ -46,7 +158,7 @@
     <td>dom.cpuUsage</td>
     <td>average CPU usage</td>
     <td>float</td>
-    <td></td>
+    <td>%</td>
   </tr>
   <tr>
     <td rowspan="4">memory information</td>
@@ -71,7 +183,7 @@
     <td>memory.usage</td>
     <td>real-time memory usage</td>
     <td>float</td>
-    <td></td>
+    <td>%</td>
   </tr>
   <tr>
     <td rowspan="11">disk information</td>
