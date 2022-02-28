@@ -524,3 +524,57 @@ sudo nginx -s reload
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
+## 7.Paypal related documents
+### Register a Paypal account
+- Register a Paypal account (individual companies are not limited) [https://www.paypal.com/c2/home](https://www.paypal.com/c2/home)
+- Login to paypal developer website [https://developer.paypal.com/developer/applications/](https://developer.paypal.com/developer/applications/)
+
+### Get Client ID and Secret
+- Go to the developer page, as shown below, select the Live option, click the Create App button, and create an application to receive REST API credentials for testing and live transactions.
+![](./assets/dbc-gpu-cloud-service.assets/paypal1.png)
+- Create an App according to the prompts on the page. After the operation is completed, you will generate your own App, as shown in the figure below, you can view your Client ID & Secret
+![](./assets/dbc-gpu-cloud-service.assets/paypal2.png)
+
+### Modify the relevant Paypal parameters in the cloud platform
+Open the folder src--> views --> trade_io --> buy_3.vue, modify the fields in it, where sandbox is the sandbox beta version, and production is the official online version
+
+```
+// Modify credentials, boxEnv
+
+// Fill in the Client ID obtained in step 2
+credentials: {
+    sandbox: '<sandbox client id>', // Sandbox beta version, on the official environment, you can leave this option blank
+    production: '<production client id>'  // On the official version, the official environment is required.
+},
+boxEnv: 'sandbox', // Sandbox Beta: sandbox, Production: production
+```
+![](./assets/dbc-gpu-cloud-service.assets/paypal3.png)
+### Modify the Paypal parameters related to the node server
+Open the folder DBC-NodeScript-->publicResource.js
+```
+// Modify paypalUrl
+/**
+ * paypal access domain name
+ */
+ export const paypalUrl = 'https://api-m.sandbox.paypal.com' // Sandbox beta version
+// export const paypalUrl = 'https://api-m.paypal.com' // official version
+```
+
+### Database configuration
+- Set up the contractwallet collection (storing the contract wallet address and private key for transfer)
+- Set paypalInfo collection (store CLIENT_ID and SECRET required for paypal query)
+```
+// contractwallet collection
+db.contractwallet.insert({
+    _id:'contractwallet', // Cannot be modified, fixed _id is 'contractwallet'
+    "wallet":'your wallet', // Wallet address for transfer
+    "seed":'your seed' // The wallet address private key used for transfer
+})
+
+// paypalInfo collection
+db.paypalInfo.insert({
+    _id:'paypal', // Cannot be modified, fixed _id is 'paypal'
+    "Client_ID":'your Client_ID', // Client_ID corresponding to your app
+    "Secret":'your Secret' // Secret corresponding to your app
+})
+```

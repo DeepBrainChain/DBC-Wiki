@@ -543,3 +543,57 @@ sudo nginx -s reload
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
+## 七、Paypal相关文档
+### 1.注册Paypal账户
+- 注册Paypal账户(个人公司不限) [https://www.paypal.com/c2/home](https://www.paypal.com/c2/home)
+- 登录paypal开发者网站 [https://developer.paypal.com/developer/applications/](https://developer.paypal.com/developer/applications/)
+
+### 2.获取 Client ID & Secret
+- 进去开发者页面，如下图，选择 Live 选项，点击Create App按钮，创建应用程序来接收用于测试和实时交易的 REST API凭证。
+![](./assets/dbc-gpu-cloud-service.assets/paypal1.png)
+- 根据页面提示创建App，操作完成后，即生成自己的App，如下图，可查看自己的 Client ID & Secret
+![](./assets/dbc-gpu-cloud-service.assets/paypal2.png)
+
+### 3. 修改云平台中相关的Paypal参数
+打开文件夹 src--> views --> trade_io --> buy_3.vue, 修改其中的字段，其中sandbox为沙盒测试版，production为正式上线版
+
+```
+// 修改credentials ， boxEnv
+
+// 填入步骤2中所获取的Client ID
+credentials: {
+    sandbox: '<sandbox client id>', // 沙盒测试版， 上正式环境，可不填此选项
+    production: '<production client id>'  // 正式版 上正式环境，必填项
+},
+boxEnv: 'sandbox', // 沙盒测试版: sandbox, 正式版: production
+```
+![](./assets/dbc-gpu-cloud-service.assets/paypal3.png)
+### 4. 修改node服务器端相关的Paypal参数
+打开文件夹 DBC-NodeScript--> publicResource.js
+```
+// 修改paypalUrl
+/**
+ * paypal访问域名
+ */
+ export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
+// export const paypalUrl = 'https://api-m.paypal.com' // 正式版本
+```
+
+### 5. 数据库配置
+- 设置contractwallet集合（存储用于转账的合约钱包地址及私钥）
+- 设置paypalInfo集合（存储paypal查询所需要的CLIENT_ID以及SECRET）
+```
+// contractwallet集合
+db.contractwallet.insert({
+    _id:'contractwallet', // 不能修改，固定_id为'contractwallet'
+    "wallet":'your wallet', // 转账用的钱包地址
+    "seed":'your seed' // 转账用的钱包地址私钥
+})
+
+// paypalInfo集合
+db.paypalInfo.insert({
+    _id:'paypal', // 不能修改，固定_id为'paypal'
+    "Client_ID":'your Client_ID', // 自己app对应的Client_ID
+    "Secret":'your Secret' // 自己app对应的Secret
+})
+```
