@@ -344,3 +344,7 @@ quest machine info，refer to：dbc_client_http_api
 
 https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/machine_online_en.md
 
+## Monitoring setting
++ Set the monitoring server address of DBC：add configuration "dbc_monitor_server=ip:port" in conf/core.conf
++ Set the miner's monitoring server address：add configuration "miner_monitor_server=ip:port" in conf/core.conf
++ Set the renter's monitoring server address：https://deepbrainchain.github.io/DBC-Wiki/en/install-and-update-dbc/dbc-monitor/http-monitor-api.html

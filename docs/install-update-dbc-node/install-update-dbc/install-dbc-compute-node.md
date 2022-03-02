@@ -380,3 +380,7 @@ sudo ./add_dbc_user.sh dbc
 
 https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/bonding_machine.md#%E6%9C%BA%E5%99%A8%E4%B8%8A%E7%BA%BF%E6%AD%A5%E9%AA%A4
 
+## (十五) 设置监控服务
++ 设置DBC的监控服务器地址：在conf/core.conf中添加配置"dbc_monitor_server=ip:port"
++ 设置矿工的监控服务器地址：在conf/core.conf中添加配置"miner_monitor_server=ip:port"
++ 设置租用人的监控服务器地址：https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-monitor/http-monitor-api.html
