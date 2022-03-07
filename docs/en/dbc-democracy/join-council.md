@@ -32,7 +32,7 @@ As for [submit candidate],
 
 ![](./assets/join-council.assets/5.png)
 
-Choose the account you want to participate in the election and bond 0.1 DBC, then the account is qualified for election.
+Choose the account you want to participate in the election and bond 10,000 DBC, then the account is qualified for election.
 
 After clicking submit and waiting for confirmation on the chain, you can go back to the “voting” step to vote for yourself.
 

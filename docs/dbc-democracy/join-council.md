@@ -51,7 +51,7 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 进入后选择自己想要参与竞选的账户
 
-“候选资格绑定”处默认绑定 0.1DBC 就可以获得竞选资格
+“候选资格绑定”处默认绑定 10,000DBC 就可以获得竞选资格
 
 点选提交等链上确认后，我们就可以回到“投票”步骤给自己投票了
 
