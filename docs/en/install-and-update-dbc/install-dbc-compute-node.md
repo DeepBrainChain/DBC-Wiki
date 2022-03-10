@@ -68,7 +68,7 @@ sudo mount -a
 + Set a blacklist so that the card is not occupied
 ```shell
 sudo vim /etc/modprobe.d/blacklist.conf  
-#最后添加内容：
+#Finally add content:
 blacklist snd_hda_intel
 blacklist amd76x_edac
 blacklist vga16fb
