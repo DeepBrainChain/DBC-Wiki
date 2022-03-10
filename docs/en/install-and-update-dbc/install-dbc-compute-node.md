@@ -1,15 +1,18 @@
-# Install DBC Compute Node
+# Install DBC computing node
 
-## Pre-installation preparation (based on the configured fixed public network ip address), deploy the KVM installation environment
-
-### Note: Please uninstall the installed graphics driver before starting, this operation cannot have graphics driver
+## (一) Prepare before installation (based on the fixed public IP address that has been configured), deploy the KVM installation environment
+:::tip Notice!
+The system uses the 20.04 server version
+:::
 
 ```shell
+sudo echo "140.82.114.4 gitub.com"   >> /etc/hosts
+sudo echo "199.232.5.194 github.global.ssl.fastly.net"   >> /etc/hosts
+sudo echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
-
 ## create and mount the XFS file system
 
 ### 1. Check the hard disk partition
@@ -50,88 +53,22 @@ sudo mount -a
 > display INFO: /dev/kvm exists  
 > KVM acceleration can be used
 > Indicates that subsequent operations can be performed. If the display does not match it, please check whether VT-d is turned on correctly
-
-## If you are a ubuntu20.04 system, please do the following
-
-+ Set up a blacklist to prevent the card from being occupied
-```shell
-sudo vim /etc/modprobe.d/blacklist.conf
-#Finally add content:
-blacklist snd_hda_intel
-blacklist amd76x_edac
-blacklist vga16fb
-blacklist nouveau
-blacklist rivafb
-blacklist nvidiafb
-blacklist rivatv
-```
-+ Set up graphics pass-through
-
-```shell
-#Query graphics card ID
-lspci -nnv | grep NVIDIA
-Copy the ID of the graphics card, such as 10de:2231 10de:1aef, and keep the duplicate content only once
-
-#Modify the core file
-sudo vim /etc/default/grub
-#Add in GRUB_CMDLINE_LINUX_DEFAULT field (if it is AMD platform, intel_iommu=on is changed to amd_iommu=on)
-quiet splash intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=<graphics card id, separated by commas>
-
-#Update kernel
-sudo update-grub
-
-#Restart the machine
-#Query graphics card occupancy
-lspci -vv -s <graphics card PCI interface> | grep driver
-```
-> If vfio-pci is displayed, it is normal. For non-vfio-pci, please go back and check whether the grub file is written correctly or ***Follow step 6 and 2 for manual binding***
-***This is the end of the 20.04LTS system graphics isolation step, please go to step 7 to continue the operation***
-
-
-## If you are a ubuntu18.04 system, please continue to operate
-## enable system grouping
-
-### 1. Configure intel_iommu
-
-```shell
-sudo vim /etc/default/grub
-
-#Add in the GRUB_CMDLINE_LINUX_DEFAULT field
-intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
-#Add in GRUB_CMDLINE_LINUX field
-intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
-```
-
-### 2. Configure the module file
-
-```shell
-sudo vim  /etc/modules
-#Add the following content:
-pci_stub
-vfio
-vfio_iommu_type1
-vfio_pci
-kvm
-kvm_intel
-
-#Update grub.cfg file
-sudo update-grub
-
-#Restart the machine, check whether iommu is correctly enabled (or restart and check after subsequent operations)
-dmesg | grep -i iommu
-
-#Display is similar to [3.887539] pci 0000:83:00.1: Adding to iommu group 46 means successful activation
-```
-
-
-
-## isolate GPU resources
-
-### 1. Set up a blacklist to prevent the card from being occupied
-
+### 3.Check whether ip_forward forwarding is enabled 
+> Check if /proc/sys/net/ipv4/ip_forward is 1, if not, execute:
+> ```
+> sudo sh -c 'echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf'
+> sudo sysctl -p
+> ```
+> Check if there is output from lsmod | grep br_netfilter If there is no output then execute:
+> ```
+> sudo sh -c 'echo "br_netfilter" > /etc/modules-load.d/br_netfilter.conf'
+> ```
+> It needs to be restarted after execution, or it can be restarted after setting the graphics card pass-through
+### vfio environment preparation
++ Set a blacklist so that the card is not occupied
 ```shell
 sudo vim /etc/modprobe.d/blacklist.conf  
-#Finally add content:
+#最后添加内容：
 blacklist snd_hda_intel
 blacklist amd76x_edac
 blacklist vga16fb
@@ -140,116 +77,50 @@ blacklist rivafb
 blacklist nvidiafb
 blacklist rivatv
 ```
-
-### 2. Collect PCI device information
-
++ Setting up graphics card passthrough
 ```shell
+# Querying the graphics card ID
 lspci -nnv | grep NVIDIA
-#Display similar to
-17:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080] [10de:1e82] (rev a1) (prog-if 00 [VGA controller])
-17:00.1 Audio device [0403]: NVIDIA Corporation TU104 HD Audio Controller [10de:10f8] (rev a1)
-17:00.2 USB controller [0c03]: NVIDIA Corporation TU104 USB 3.1 Host Controller [10de:1ad8] (rev a1) (prog-if 30 [XHCI])
-17:00.3 Serial bus controller [0c80]: NVIDIA Corporation TU104 USB Type-C UCSI Controller [10de:1ad9] (rev a1)
-65:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 2080] [10de:1e82] (rev a1) (prog-if 00 [VGA controller])
-65:00.1 Audio device [0403]: NVIDIA Corporation TU104 HD Audio Controller [10de:10f8] (rev a1)
-65:00.2 USB controller [0c03]: NVIDIA Corporation TU104 USB 3.1 Host Controller [10de:1ad8] (rev a1) (prog-if 30 [XHCI])
-65:00.3 Serial bus controller [0c80]: NVIDIA Corporation TU104 USB Type-C UCSI Controller [10de:1ad9] (rev a1)
+Copy the graphics card id, such as 10de:2231 10de:1aef, the duplicate content can be kept only once
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#Record all device codes and PCI id (repeated codes are only taken once)
-#E.g:
-#equipment number:
-10de:1e82,10de:10f8,10de:1ad8,10de:1ad9    （Repeat only once）
-#PCI interface id (The PCI interface of each machine is different, please note the record)
-17:00.0
-17:00.1
-17:00.2
-17:00.3
-65:00.0
-65:00.1
-65:00.2
-65:00.3
+#Modify the kernel file
+sudo vim /etc/default/grub
+#Add in the GRUB_CMDLINE_LINUX_DEFAULT field (if it is an AMD platform, change intel_iommu=on to amd_iommu=on) 
+quiet splash intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=Graphics card ids, separated by commas
+#Add in GRUB_CMDLINE_LINUX field
+quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
+
+
+#update the kernel
+sudo update-grub
+
+#reboot the machine
+reboot
+#Query graphics card usage
+lspci -vv -s <graphics card PCI interface, eg 00:01.0> | grep driver
 ```
+>  If vfio-pci is displayed, it is normal. If it is not vfio-pci, please check whether the grub file is correct. If there is no output, please perform the following manual binding
++ Check kernel parameters:
 
-### 3. Set up vfio and isolate the GPU for pass-through
+> Check that both `/proc/sys/net/bridge/bridge-nf-call-iptables` and `/proc/sys/net/bridge/bridge-nf-call-ip6tables`=1
+
+**Manually bind the GPU (only if there is no output from the previous query, the following example is only for demonstration, please replace it according to the actual query result)**
 
 ```shell
-sudo vim /etc/modprobe.d/vfio.conf
-#Write the device code information collected above (if repeated, just write it once):
-options vfio-pci ids=10de:1e82,10de:10f8,10de:1ad8,10de:1ad9
-
-sudo vim /etc/modules-load.d/vfio-pci.conf
-#Write the following
-vfio-pci kvmgt vfio-iommu-type1 vfio-mdev
-
-#Restart the machine
-sudo reboot
-```
-
-### 4. Check the GPU status (all interfaces must be queried to prevent it from being occupied by vfio-pci)
-
-```shell
-#Please pay attention to the replacement of PCI interface content!
-lspci -vv -s <PCI interface> | grep driver
-#E.g:
-lspci -vv -s 17:00.0 | grep driver
-lspci -vv -s 17:00.1 | grep driver
-lspci -vv -s 17:00.2 | grep driver
-lspci -vv -s 17:00.3 | grep driver
-
-#No output means there is no driver.
-#If Kernel driver in use: vfio-pci is displayed, the isolation is successful
-#If the display is similar to Kernel driver in user: snd_hda_intel indicates that the device is occupied by other drivers
-```
-
-> If there is a PCI that is not occupied by vfio-pci, please continue to execute, if it has been successfully occupied by vfio-pci, you can skip the next step
-
-
-
-## If the driver query is Kernel driver in use: vfio-pci, there is no need to operate the following content, please continue to execute if the binding is not successful
-
-### 1. Unbind the device
-
-> If the driver query shows a non-Kernel driver in user: vfio-pci, unbind the device (each group of IDs must be unbound, the following is only an example, please modify it according to your own query pci interface)
-
-```shell
-#Please pay attention to the replacement of the content, the following command is only for demonstration (need to unbind all occupied graphics card pci interfaces)
-sudo -i
-sudo echo 0000:17:00.0 > /sys/bus/pci/devices/0000\:17\:00.0/driver/unbind
-sudo echo 0000:83:00.0 > /sys/bus/pci/devices/0000\:83\:00.0/driver/unbind
-
-
-sudo modprobe vfio
-sudo modprobe vfio-pci
-sudo reboot
-
-#Restart the host and check if the GPU is isolated in a different IOMMU group and the vfio driver is being used
-#Execute the command to check whether the GPU is isolated in different IOMMU groups
-find /sys/kernel/iommu_groups/*/devices/*
-#Display grouping is normal
-
-#Re-query PCI (pay attention to replace), if vfio-pci is still not queried or other content is displayed, please perform a next step
-lspci -vv -s 17:00.0 | grep driver
-```
-
-### 2. Manually bind the GPU
-
-```shell
-#Execute the command to bind (Note: the content after echo is the ID of the graphics card that the machine queried) The already occupied PCI does not need to be manually bound
+#Execute the command to bind (note: the content after echo is the graphics card id queried by the machine) The already occupied PCI does not need to be bound manually.
 sudo -i
 sudo echo 10de 1e82 > /sys/bus/pci/drivers/vfio-pci/new_id
 sudo echo 10de 2206 >> /sys/bus/pci/drivers/vfio-pci/new_id
 …………
 
 
-#Check again after binding (check all items of each card)
+#Check again after the binding is completed (all items of each card must be checked)
 lspci -vv -s 17:00.0 | grep driver
-#If Kernel driver in use: vfio-pci appears, the binding is successful. If still unsuccessful, please go back and check
+#If Kernel driver in use : vfio-pci appears, the binding is successful. If still unsuccessful, go back and check
 ```
 
 
-
-## After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
+## (四) After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
 
 ### 1. Turn on the virt tcp monitoring service:
 
@@ -264,13 +135,21 @@ sudo vim /etc/libvirt/libvirtd.conf
 sudo vim /etc/default/libvirtd
 #Corresponding modification to the following configuration
 libvirtd_opts="-l"
+
+#After modification, please execute:
+systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
 ```
 
-### 2. Start libvirtd and set it to start at boot
+### 2. Start libvirtd and set up auto-start & check service status
 
-sudo systemctl start libvirtd.service
-sudo systemctl enable libvirtd.service
++ sudo systemctl restart libvirtd.service
++ sudo systemctl enable libvirtd.service
++ systemctl status libvirtd
 
+**3、Test whether libvirtd is started successfully**
+
++ virsh connect qemu+tcp://localhost:16509/system
++ If there is no output error, it means the startup is successful
 
 
 ## Create a dbc user
@@ -331,6 +210,72 @@ Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/nod
      + iptables -D LIBVIRT_FWI 2 -t filter
      + iptables -D LIBVIRT_FWO 2 -t filter
 
+## (十一) If the execution of pytest is stuck or nvidia does not have any calls, please troubleshoot according to the following ideas
+```shell
+# Check if vfio reports an error dmesg | grep vfio-pci
+
+root@HJICT:~# dmesg | grep vfio-pci
+[   42.583025] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=io+mem
+[   79.128425] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x1e@0x258
+[   79.128446] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[   79.128454] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x26@0xc1c
+[   79.128457] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x27@0xd00
+[   79.128461] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x25@0xe00
+[   79.129879] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[   79.148593] vfio-pci 0000:01:00.1: vfio_ecap_init: hiding ecap 0x25@0x160
+[  183.031546] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.031575] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.049344] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.049375] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+
+# vfio-pci has an obvious bug, look further
+
+root@HJICT:~# cat /proc/iomem 
+00000000-00000fff : Reserved
+00001000-0009d3ff : System RAM
+0009d400-0009ffff : Reserved
+000a0000-000bffff : PCI Bus 0000:00
+000c0000-000cf3ff : Video ROM
+000e0000-000fffff : Reserved
+  000f0000-000fffff : System ROM
+00100000-8ceacfff : System RAM
+8cead000-8e718fff : Reserved
+8e719000-8e895fff : System RAM
+8e896000-8ec98fff : ACPI Non-volatile Storage
+8ec99000-8f40efff : Reserved
+8f40f000-8f40ffff : System RAM
+8f410000-8fffffff : Reserved
+90000000-dfffffff : PCI Bus 0000:00
+  90000000-a1ffffff : PCI Bus 0000:01
+    90000000-9fffffff : 0000:01:00.0
+      90000000-9fffffff : vesafb
+    a0000000-a1ffffff : 0000:01:00.0
+      a0000000-a1ffffff : vfio-pci
+  a2000000-a30fffff : PCI Bus 0000:01
+    a2000000-a2ffffff : 0000:01:00.0
+      a2000000-a2ffffff : vfio-pci
+    a3080000-a3083fff : 0000:01:00.1
+      a3080000-a3083fff : vfio-pci
+  a3100000-a31fffff : 0000:00:1f.3
+  a3200000-a32fffff : PCI Bus 0000:02
+    a3200000-a32001ff : 0000:02:00.0
+      a3200000-a32001ff : ahci
+
+
+
+#  As you can see above, 90000000-9fffffff is occupied by vesafb, not vfio-pci
+
+# Modify /etc/default/grub, close vga,
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_iommu=on iommu=pt pcie_acs_override=multifunction nofb video=vesafb:off video=efifb:off vga=off"
+GRUB_CMDLINE_LINUX="quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci"
+
+
+update and restart
+update-initramfs -u -k all
+update-grub
+reboot
+```
+
 ## Check whether the machine is correctly added to the computing power network
 + Use the official client node to view
 + Mine pool build client node
@@ -338,6 +283,7 @@ Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/nod
 + After 1 minute, the machine information is requested through the client, and if the machine information can be found, the machine has been added to the network.
 quest machine info，refer to：dbc_client_http_api
 + About client nodes: It is recommended that each mining pool set up 2 or more client nodes to ensure that the network can still be normal when the official nodes or other mining pools provide nodes are offline. If there are too few client nodes in the network or hang Too much drop will affect the rental situation of the machine. The client node construction can start a container to deploy on other servers without taking up too much resources.
++ ***The client node can be deployed on the same machine as the computing power node. Be careful not to repeat the port number in the conf/core.conf configuration file of each node.***
 
 
 ## Machine on the chain
