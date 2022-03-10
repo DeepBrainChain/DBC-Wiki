@@ -93,14 +93,18 @@ lspci -nnv | grep NVIDIA
 #修改内核文件
 sudo vim /etc/default/grub
 #在GRUB_CMDLINE_LINUX_DEFAULT字段添加（如果是AMD平台，intel_iommu=on改为amd_iommu=on) 
-quiet splash intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=<显卡id，中间以逗号隔开>
+quiet splash intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=显卡id，中间以逗号隔开
+#在GRUB_CMDLINE_LINUX字段添加
+quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
+
 
 #更新内核
 sudo update-grub
 
 #重启机器
+reboot
 #查询显卡占用情况
-lspci -vv -s <显卡PCI接口> | grep driver
+lspci -vv -s <显卡PCI接口,例如00：01.0> | grep driver
 ```
 >  显示vfio-pci即为正常，非vfio-pci请返回查看grub文件是否正确，如果无任何输出，请执行下面的手动绑定
 + 检查内核参数：
@@ -218,18 +222,84 @@ sudo ./add_dbc_user.sh dbc
     + 结束后生成result文件夹导出性能报告;
 + 回到宿主机关闭并删除测试的虚拟机：./check_env  --localip  x.x.x.x  （x.x.x.x 为虚拟机的内网ip地址，这一步不操作，会导致dbc程序无法启动新的虚拟机，从而无法上链验证通过） 
 
-## (十一) 查看机器是否正确加入到算力网络
+## (十一) 如果执行pytest卡住或者nvidia没有任何调用，请按照以下思路排查
+```shell
+# 查看是否是vfio报错  dmesg | grep vfio-pci
+
+root@HJICT:~# dmesg | grep vfio-pci
+[   42.583025] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=io+mem
+[   79.128425] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x1e@0x258
+[   79.128446] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[   79.128454] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x26@0xc1c
+[   79.128457] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x27@0xd00
+[   79.128461] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x25@0xe00
+[   79.129879] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[   79.148593] vfio-pci 0000:01:00.1: vfio_ecap_init: hiding ecap 0x25@0x160
+[  183.031546] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.031575] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.049344] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+[  183.049375] vfio-pci 0000:01:00.0: BAR 1: can't reserve [mem 0x90000000-0x9fffffff 64bit pref]
+
+# vfio-pci 有一个明显的错误，进一步查看
+
+root@HJICT:~# cat /proc/iomem 
+00000000-00000fff : Reserved
+00001000-0009d3ff : System RAM
+0009d400-0009ffff : Reserved
+000a0000-000bffff : PCI Bus 0000:00
+000c0000-000cf3ff : Video ROM
+000e0000-000fffff : Reserved
+  000f0000-000fffff : System ROM
+00100000-8ceacfff : System RAM
+8cead000-8e718fff : Reserved
+8e719000-8e895fff : System RAM
+8e896000-8ec98fff : ACPI Non-volatile Storage
+8ec99000-8f40efff : Reserved
+8f40f000-8f40ffff : System RAM
+8f410000-8fffffff : Reserved
+90000000-dfffffff : PCI Bus 0000:00
+  90000000-a1ffffff : PCI Bus 0000:01
+    90000000-9fffffff : 0000:01:00.0
+      90000000-9fffffff : vesafb
+    a0000000-a1ffffff : 0000:01:00.0
+      a0000000-a1ffffff : vfio-pci
+  a2000000-a30fffff : PCI Bus 0000:01
+    a2000000-a2ffffff : 0000:01:00.0
+      a2000000-a2ffffff : vfio-pci
+    a3080000-a3083fff : 0000:01:00.1
+      a3080000-a3083fff : vfio-pci
+  a3100000-a31fffff : 0000:00:1f.3
+  a3200000-a32fffff : PCI Bus 0000:02
+    a3200000-a32001ff : 0000:02:00.0
+      a3200000-a32001ff : ahci
+
+
+
+#  上面可以看到，90000000-9fffffff  被vesafb占用，并非vfio-pci
+
+# 修改/etc/default/grub，关闭vga，
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_iommu=on iommu=pt pcie_acs_override=multifunction nofb video=vesafb:off video=efifb:off vga=off"
+GRUB_CMDLINE_LINUX="quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci"
+
+
+更新并重启
+update-initramfs -u -k all
+update-grub
+reboot
+```
+
+## (十二) 查看机器是否正确加入到算力网络
 + 矿池搭建客户端节点
   请参考 install_update_dbc_client_cn.md
 + 1分钟后，通过客户端请求机器信息，如果能够查到机器信息，说明机器已加入到网络中
   请求机器信息，请参考：dbc_client_http_api
 + 关于客户端节点：建议每家矿池搭建2个及以上客户端节点，保证在官方提供节点或者其他矿池提供节点掉线情况下依旧可以保证网络正常，如果网络中客户端节点过少或者挂掉过多，会影响机器出租情况。客户端节点搭建可以在其他服务器启动一个容器来部署，并不会占用太多资源。
 + ***客户端节点可以与算力节点部署在同一台机器，注意每个节点的conf/core.conf配置文件中的端口号不要重复***
-## (十二) 机器上链
+## (十三) 机器上链
 
 https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/bonding_machine.md#%E6%9C%BA%E5%99%A8%E4%B8%8A%E7%BA%BF%E6%AD%A5%E9%AA%A4
 
-## (十三) 设置监控服务
+## (十四) 设置监控服务
 + 设置DBC的监控服务器地址：在conf/core.conf中添加配置"dbc_monitor_server=ip:port"
 + 设置矿工的监控服务器地址：在conf/core.conf中添加配置"miner_monitor_server=ip:port"
 + 设置租用人的监控服务器地址：https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-monitor/http-monitor-api.html
