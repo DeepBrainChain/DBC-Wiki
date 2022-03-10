@@ -1,6 +1,6 @@
 # Install DBC computing node
 
-## (一) Prepare before installation (based on the fixed public IP address that has been configured), deploy the KVM installation environment
+##  Prepare before installation (based on the fixed public IP address that has been configured), deploy the KVM installation environment
 :::tip Notice!
 The system uses the 20.04 server version
 :::
@@ -15,11 +15,11 @@ sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-util
 ```
 ## create and mount the XFS file system
 
-### 1. Check the hard disk partition
+###  Check the hard disk partition
 
 `lsblk`
 
-### 2. Create a data disk folder, format the hard disk, and mount the hard disk (the data disk mounting directory must be /data)
+### Create a data disk folder, format the hard disk, and mount the hard disk (the data disk mounting directory must be /data)
 
 ```shell
 sudo mkdir /data
@@ -33,14 +33,14 @@ sudo mount -a
 
 ## Determine whether the machine supports virtualization
 
-### 1. Turn on hardware support
+### Turn on hardware support
 
 > BIOS open VT-d (search according to the motherboard type browser)
 > VT (VT-x) and VT-d support, you need to set related support to enable, which is enabled by default
 >
 > Path under normal circumstances: Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)
 
-### 2. Environment dependence, check whether the CPU supports virtualization and whether KVM is available
+###  Environment dependence, check whether the CPU supports virtualization and whether KVM is available
 
 `egrep -c '(svm|vm)' /proc/cpuinfo`
 
@@ -120,7 +120,7 @@ lspci -vv -s 17:00.0 | grep driver
 ```
 
 
-## (四) After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
+##  After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
 
 ### 1. Turn on the virt tcp monitoring service:
 
@@ -206,11 +206,9 @@ Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/nod
      + Short test summary info in the test result: If all are passed, it means the test passed, as long as one item is failed, it means the test failed and the fault needs to be checked;
      + After the end, the 'result' folder is generated to export the performance report;
 + Back to the host, shut down and delete the tested virtual machine: ./check_env --localip x.x.x.x (x.x.x.x is the internal network ip address of the virtual machine. If you do not operate this step, the dbc program will not be able to start the new virtual machine. Passed on-chain verification)
-+ Run the iptable command to grant the network access permission to the vm. (If you do not perform this step, external users cannot access the VM.)
-     + iptables -D LIBVIRT_FWI 2 -t filter
-     + iptables -D LIBVIRT_FWO 2 -t filter
 
-## (十一) If the execution of pytest is stuck or nvidia does not have any calls, please troubleshoot according to the following ideas
+
+##  If the execution of pytest is stuck or nvidia does not have any calls, please troubleshoot according to the following ideas
 ```shell
 # Check if vfio reports an error dmesg | grep vfio-pci
 
