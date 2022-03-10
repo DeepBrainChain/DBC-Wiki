@@ -4,17 +4,17 @@
 文档正在完善中
 :::
 
-可以举报的四种机器故障按处理方式的不同分为两类: 
+可以举报的四种机器故障按处理方式的不同分为两类:
 
 1. 机器被租用后**无法访问故障(`RentedInaccessible(MachineId)`)**,
 
 2. 其他类型故障，包括
 
-   机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
+   - 机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
 
-   机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
+   - 机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
 
-   机器是在线状态，但是**无法租用(`OnlineRentFailed(ReportHash, BoxPubkey)`)**
+   - 机器是在线状态，但是**无法租用(`OnlineRentFailed(ReportHash, BoxPubkey)`)**
 
 下面对两种举报的过程做简要说明：
 
@@ -22,7 +22,6 @@
 在本文档中，验证人即验证委员会，因此验证人/委员会这样的描述可能会被混用。
 
 当且仅当在有人抢单之前，报告人可以取消报告。
-
 :::
 
 ## 1. 机器被租用后无法访问
@@ -86,8 +85,6 @@ hash("report_id" + "committee_rand_str" + "is_support");
 等待所有已成功抢单的委员会提交原始信息或者到第一个验证人抢单之后 10 分钟时，将会统计委员会的验证结果，并进行处理
 :::
 
-存储修改
-
 ### 1.6. 系统判定结果
 
 TODO
@@ -117,9 +114,7 @@ CommitteeHash: 0xc45a1e9471d6e0e539febe382b009070
 同时，还需要提供自己的 BoxPubkey，用于委员会收到加密信息后的解密:
 
 ::: tip
-
-如果是多签账户，或者不知道私钥，可以重新生成一个SS58账户，并使用该SS58的私钥生成BoxPubkey。后续的操作使用该密钥对即可。
-
+如果是多签账户，或者不知道私钥，可以重新生成一个 SS58 账户，并使用该 SS58 的私钥生成 BoxPubkey。后续的操作使用该密钥对即可。
 :::
 
 ```
@@ -175,13 +170,9 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 
 解密完成后，委员会需要根据实际情况判断，机器是否有问题。并提交到链上
 
-
-
-查询委员会BoxPubkey:
+查询委员会 BoxPubkey:
 
 ![](./assets/report-machine-fault.assets/5.png)
-
-
 
 ### 2.5 [角色：委员会]判断机器故障信息，并提交到链上
 
@@ -217,7 +208,7 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 
 ### 3.2 奖励与惩罚发生后的申述
 
-当举报发生后，链上将记录该惩罚，并在惩罚发生后的**两天后(2880*2个块)执行**，允许被惩罚的委员会/报告人进行申述。申述将会由技术委员会来处理。技术委员会判定申述有效后，将会取消该惩罚。
+当举报发生后，链上将记录该惩罚，并在惩罚发生后的**两天后(2880\*2 个块)执行**，允许被惩罚的委员会/报告人进行申述。申述将会由技术委员会来处理。技术委员会判定申述有效后，将会取消该惩罚。
 
 其中，当机器因举报成功被下架后，需要检查、处理故障后，尽快上架以减少惩罚。当机器被错误惩罚后，也许要上架后，进行申述（同样有 2 天时间），请求技术委员会判定。
 
@@ -227,16 +218,16 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 
 ## 4. 技术委员会取消惩罚
 
-当被惩罚人，质押一定的DBC，提出技术委员会申述后，技术委员会可以在惩罚执行前取消惩罚。
+当被惩罚人，质押一定的 DBC，提出技术委员会申述后，技术委员会可以在惩罚执行前取消惩罚。
 
-只要到对应模块中调用取消惩罚(`cancel_slash`)即可，其中阈值设置为1（1/5），`slash_id`为申述的需要取消的惩罚。如，
+只要到对应模块中调用取消惩罚(`cancel_slash`)即可，其中阈值设置为 1（1/5），`slash_id`为申述的需要取消的惩罚。如，
 
 ### 4.1 [角色：技术委员会]根据申述取消惩罚
 
-+ 取消报告人的惩罚，需要调用`maintainCommittee--cancelReporterSlash`
+- 取消报告人的惩罚，需要调用`maintainCommittee--cancelReporterSlash`
 
-+ 取消stash(因机器下线后再上线导致)的惩罚，需要调用`onlineProfile--cancelSlash`
+- 取消 stash(因机器下线后再上线导致)的惩罚，需要调用`onlineProfile--cancelSlash`
 
-+ 取消上线委员会的惩罚（因没有分配的工作，或者与处理该订单的其他大多数委员会的观点不一致)，需要调用`onlineCommittee-cancelSlash`
+- 取消上线委员会的惩罚（因没有分配的工作，或者与处理该订单的其他大多数委员会的观点不一致)，需要调用`onlineCommittee-cancelSlash`
 
 ![](./assets/report-machine-fault.assets/7.png)
