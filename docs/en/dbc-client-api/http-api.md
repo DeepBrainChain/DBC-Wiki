@@ -10,7 +10,7 @@
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes
 >
 >`request body`：
->    ```
+>```json
 >    {
 >        "peer_nodes_list": [
 >            // node_id of GPU Node
@@ -20,7 +20,7 @@
 >
 >        }
 >    }
->    ```
+>```
 Example：
 <img src="./assets/query_machine_info.png" width = "500" height = "160"  align=center />
 
@@ -32,7 +32,7 @@ Example：
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/mining_nodes/session_id
 >
 >`request body`：
->    ```
+>    ```json
 >    {
 >        "peer_nodes_list": [
 >            // node_id of GPU Node
@@ -58,7 +58,7 @@ Example (the tenant's signature is used here, and a multi-signature account sign
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
 >
 >`request body`：
->    ```
+>```json
 >    {
 >        "peer_nodes_list": [
 >            // node_id of GPU Node
@@ -71,6 +71,16 @@ Example (the tenant's signature is used here, and a multi-signature account sign
 >            "rdp_port": "5685",
 >            // vnc connect port
 >            "vnc_port": "5904",
+>            "custom_port": [
+>               // 宿主机的123转发到虚拟机的123
+>               "tcp/udp,123",
+>               // 宿主机的111转发到虚拟机的222
+>               "tcp/udp,111:222",
+>               // 宿主机的333-444转发到虚拟机的444
+>               "tcp/udp,333-444",
+>               // 宿主机的[555-666]转发到虚拟机的[777-888]
+>               "tcp/udp,555-666:777-888"
+>            ],
 >            // image name
 >            "image_name": "ubuntu.qcow2",
 >            // custom image name/ID, such as: my-ubuntu-1804
@@ -96,7 +106,7 @@ Example (the tenant's signature is used here, and a multi-signature account sign
 >        "session_id": "The session_id distributed by the renter",
 >        "session_id_sign": "session_id_sign distributed by the renter"
 >    }
->    ```
+>```
 Example：
 <img src="./assets/create_task.png" width = "500" height = "240"  align=center />
 
@@ -111,7 +121,7 @@ Example：
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/<task_id value to query>
 >
 >`request body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // node_id of GPU Node
@@ -135,7 +145,7 @@ Example：
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks
 >
 >`request body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // node_id of GPU Node
@@ -206,7 +216,7 @@ Example：
 >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/delete/<task_id>
 >
 >`request body`：
->   ```
+>   ```json
 >   {
 >       "peer_nodes_list": [
 >           // node_id of GPU Node
@@ -272,6 +282,44 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<task_id>?
 :::tip 注意！
 查询虚拟机日志的请求url有两个参数，flag表示查询日志的方向，参数等于tail即从日志文件的尾部开始查询，等于head即从日志文件的头部开始查询。line_num表示要查询的日志行数，如果超过文件的实际行数，则以文件实际行数为准。最后，此请求最多返回1024个字节，超出范围的日志会被截断。
 :::
+
+### 9. 修改虚拟机配置
+
+:::tip
+需要先关闭虚拟机
+:::
+
+>`请求方式`：POST
+>
+>`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/modify/<task_id>
+>
+>`请求body`：
+>   ```json
+>   {
+>       "peer_nodes_list": [
+>           //GPU节点的node_id
+>           "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>       ],
+>       "additional": {
+>         "new_ssh_port": "5586",
+>         "new_vnc_port": "5986",
+>         "new_rdp_port": "5786",
+>         "new_custom_port": [
+>             "tcp,123", // host的123转发到guest的123
+>             "udp,111:222", // host的111转发到guest的222
+>             "tcp,333-444", // host的333-444转发到guest的444
+>             "udp,555-666:777-888" // host的[555-666]转发到guest的[777-888]
+>         ],
+>         "new_gpu_count": "2",  // >= 0
+>         "new_cpu_cores": "8",  // > 0, 单位G
+>         "new_mem_size": "8",  // > 0, 单位G
+>         "increase_disk_size": "10" // > 0, 单位G
+>       },
+>
+>       "session_id": "租用者分发的session_id",
+>       "session_id_sign": "租用者分发的session_id_sign"
+>  }
+>  ```
 
 <br/>
 
