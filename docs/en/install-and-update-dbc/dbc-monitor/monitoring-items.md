@@ -3,108 +3,187 @@
 ## monitoring item list of the host
 <table>
   <tr>
+    <td>classification</td>
     <td>key</td>
     <td>description</td>
     <td>data type</td>
     <td>unit</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.gpuCount</td>
     <td>total number of GPUs</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.gpuUsed</td>
     <td>number of GPUs used</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
+    <td rowspan="10">GPU</td>
+    <td>host.gpu.0.name</td>
+    <td>The product name of the first GPU device, the number in the middle is the number, starting from 0, the same below</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.busId</td>
+    <td>The tuple domain:bus:device.function PCI identifier</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.memTotal</td>
+    <td>Total physical device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.memFree</td>
+    <td>Unallocated device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.memUsed</td>
+    <td>Sum of Reserved and Allocated device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.gpuUtilization</td>
+    <td>gpu utilization：Percent of time over the past sample period during which one or more kernels was executing on the GPU</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.memUtilization</td>
+    <td>mem utilization：Percent of time over the past sample period during which global (device) memory was being read or written</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.powerUsage</td>
+    <td>the power usage information in milliwatts</td>
+    <td>unsigned int</td>
+    <td>milliwatt</td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.powerCap</td>
+    <td>the power management limit in milliwatts</td>
+    <td>unsigned int</td>
+    <td>milliwatt</td>
+  </tr>
+  <tr>
+    <td>host.gpu.0.temperature</td>
+    <td>the current temperature readings for the device</td>
+    <td>unsigned int</td>
+    <td>degrees C</td>
+  </tr>
+  <tr>
+    <td></td>
     <td>host.vmCount</td>
     <td>total number of virtual machines</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.vmRunning</td>
     <td>number of running virtual machines</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.cpuUsage</td>
     <td>CPU usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.memTotal</td>
     <td>total memory</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.memFree</td>
     <td>free memory</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.memUsage</td>
     <td>memory usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.rxFlow</td>
     <td>receive total flow</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.txFlow</td>
     <td>total flow sent</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.diskTotal</td>
     <td>data disk capacity</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.diskFree</td>
     <td>data disk free capacity</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.diskUsage</td>
     <td>data disk usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
+    <td></td>
     <td>host.loadAverage.1</td>
     <td>Average load over the past 1 minute</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.loadAverage.5</td>
     <td>Average load over the past 5 minute</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.loadAverage.15</td>
     <td>Average load over the past 15 minute</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
+    <td></td>
     <td>host.dbcVersion</td>
     <td>DBC version number</td>
     <td>string</td>
@@ -123,7 +202,7 @@
     <td>unit</td>
   </tr>
   <tr>
-    <td rowspan="33">virtual machine monitoring</td>
+    <td rowspan="46">virtual machine monitoring</td>
     <td rowspan="6">basic information</td>
     <td>dom.state</td>
     <td>the running state of virtual machine, such as running</td>
@@ -320,6 +399,85 @@
     <td>B/s</td>
   </tr>
   <tr>
+    <td rowspan="13">GPU</td>
+    <td>gpu.graphicsDriverVersion</td>
+    <td>the version of the system's graphics driver</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.nvmlVersion</td>
+    <td>the version of the NVML library</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.cudaVersion</td>
+    <td>the version of the CUDA driver</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.0.name</td>
+    <td>The product name of the first GPU device, the number in the middle is the number, starting from 0, the same below</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.0.busId</td>
+    <td>The tuple domain:bus:device.function PCI identifier</td>
+    <td>string</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.0.memTotal</td>
+    <td>Total physical device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>gpu.0.memFree</td>
+    <td>Unallocated device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>gpu.0.memUsed</td>
+    <td>Sum of Reserved and Allocated device memory</td>
+    <td>unsigned long long</td>
+    <td>B</td>
+  </tr>
+  <tr>
+    <td>gpu.0.gpuUtilization</td>
+    <td>gpu utilization：Percent of time over the past sample period during which one or more kernels was executing on the GPU</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.0.memUtilization</td>
+    <td>mem utilization：Percent of time over the past sample period during which global (device) memory was being read or written</td>
+    <td>unsigned int</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gpu.0.powerUsage</td>
+    <td>the power usage information in milliwatts</td>
+    <td>unsigned int</td>
+    <td>milliwatt</td>
+  </tr>
+  <tr>
+    <td>gpu.0.powerCap</td>
+    <td>the power management limit in milliwatts</td>
+    <td>unsigned int</td>
+    <td>milliwatt</td>
+  </tr>
+  <tr>
+    <td>gpu.0.temperature</td>
+    <td>the current temperature readings for the device</td>
+    <td>unsigned int</td>
+    <td>degrees C</td>
+  </tr>
+  <tr>
     <td>protocol</td>
     <td>version</td>
     <td>version number of dbc</td>
@@ -327,6 +485,18 @@
     <td></td>
   </tr>
 </table>
+
+## gpu monitoring must read
+Video card monitoring must read
+Because of the isolation of the graphics card device on the host computer, dbc cannot directly obtain the specific information of the graphics card. Therefore, based on the qemu guest agent, we integrated the functions of the NVIDIA Management Library and implemented a set of independent services, namely the dbc guest agent, which obtains the detailed information of the graphics card in the virtual machine through communication with the virtual machine.
+
+For custom images, to monitor graphics card information, please install the dbc guest agent service inside the virtual machine, refer to the installation script: http://116.169.53.132:9000/dbc_guest_agent/install.sh
+
+:::tip 注意！
+1. Graphics card monitoring currently only supports NVIDIA graphics cards.
+
+2. The graphics card monitor can only see the graphics card devices that have been used by the virtual machine.
+:::
 
 ## Calculation of usage and speed
 - CPU usage = (cpuTime2 - cpuTime1) / (realTime2 - realTime1) / Number of CPUs
