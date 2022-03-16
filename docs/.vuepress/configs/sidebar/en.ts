@@ -129,7 +129,7 @@ export const en: SidebarConfig = {
           ],
         },
         {
-          text: 'DBC virtual machine monitor',
+          text: 'DBC monitor',
           children: [
             '/en/install-and-update-dbc/dbc-monitor/http-monitor-api',
             '/en/install-and-update-dbc/dbc-monitor/monitoring-items',

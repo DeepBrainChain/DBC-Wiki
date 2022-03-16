@@ -146,7 +146,7 @@ export const zh: SidebarConfig = {
           ],
         },
         {
-          text: 'DBC虚拟机监控',
+          text: 'DBC监控',
           link: '/install-update-dbc-node/dbc-monitor/',
           children: [
             '/install-update-dbc-node/dbc-monitor/http-monitor-api',

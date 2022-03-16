@@ -149,7 +149,7 @@ export const en: NavbarConfig = [
         ],
       },
       {
-        text: 'DBC virtual machine monitor',
+        text: 'DBC monitor',
         // link: '/en/install-and-update-dbc/dbc-monitor/',
         children: [
           '/en/install-and-update-dbc/dbc-monitor/http-monitor-api',
