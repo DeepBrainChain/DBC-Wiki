@@ -605,8 +605,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 ```
 {
     "peer_nodes_list": [
-        //GPU节点的node_id
-        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+       
     ],
     "additional": {
         //创建网络的名称
@@ -634,6 +633,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 ```
 {
     "peer_nodes_list": [
+        //可选（填入id表示删除机器网络，不填入表示删除客户端网络）
         "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
     ],
     "additional": {
