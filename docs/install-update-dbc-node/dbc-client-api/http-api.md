@@ -105,7 +105,7 @@
 >            "mem_size": "8",
 >            // 磁盘大小（大于0，单位：G）
 >            "disk_size": "10"
->            //内网名称（创建网络时填的名称）
+>            //内网名称（创建虚拟机网络时填的名称）
 >            "network_name": "test",
 >        },
 >
@@ -620,9 +620,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
     "session_id_sign":"租用者分发的session_id_sign"
 }
 ```
-- 实例：
 
-### 2.删除网络（创建时请确保发送请求的客户端和机器是在同一机房）
+### 2.删除网络（发送请求时请确保发送请求的客户端和机器是在同一机房）
 - 请求方式：POST
 
 - 请求 URL：
@@ -644,4 +643,3 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
     "session_id_sign":"租用者分发的session_id_sign"
 }
 ```
-- 实例：
