@@ -105,6 +105,8 @@
 >            "mem_size": "8",
 >            // 磁盘大小（大于0，单位：G）
 >            "disk_size": "10"
+>            //内网名称（创建网络时填的名称）
+>            "network_name": "test",
 >        },
 >
 >        "session_id": "租用者分发的session_id",
@@ -589,3 +591,57 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 - 实例：
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
+## 虚拟机组网
+### 1.创建网络（创建时请确保发送请求的客户端和机器是在同一机房）
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
+```
+
+- 请求 Body:
+```
+{
+    "peer_nodes_list": [
+        //GPU节点的node_id
+        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    ],
+    "additional": {
+        //创建网络的名称
+        "network_name":"test",
+        //vni_ID(不可重复)
+        "vxlan_vni":"5801",
+        //网段/ 掩码位数
+        "ip_cidr":"192.168.66.0/24"
+    },
+    "session_id":"租用者分发的session_id",
+    "session_id_sign":"租用者分发的session_id_sign"
+}
+```
+- 实例：
+
+### 2.删除网络（创建时请确保发送请求的客户端和机器是在同一机房）
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
+```
+
+- 请求 Body:
+```
+{
+    "peer_nodes_list": [
+        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    ],
+    "additional": {
+        
+    },
+    "session_id":"租用者分发的session_id",
+    "session_id_sign":"租用者分发的session_id_sign"
+}
+```
+- 实例：
