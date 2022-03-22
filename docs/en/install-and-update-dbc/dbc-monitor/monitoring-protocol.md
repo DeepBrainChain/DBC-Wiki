@@ -100,12 +100,10 @@ The server must respond successfully. If the "response" field is "success", it m
 
 ## zabbix server settings
 If the server side wants to receive the data sent by dbc, it needs to do the following settings：
-1. Import the dbc item template "DBC VM Template" in zabbix；
+1. Import the dbc item template "[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml)" in zabbix；
 2. Create a virtual machine；
-3. Use the template "DBC VM Template" to add a host in zabbix, fill in the id of the virtual machine for the host name；
+3. Use the template "[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml)" to add a host in zabbix, fill in the id of the virtual machine for the host name；
 4. After the virtual machine is created, the monitoring data can be sent.
   
-  DBC VM Template:
-  https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml
   
   
