@@ -14,6 +14,7 @@ export const kr: NavbarConfig = [
           "/kr/dbc-introduction/dbc-gpu-rent",
           "/kr/dbc-introduction/dbc-profit",
           "/kr/dbc-introduction/dbc-trade",
+          "/kr/dbc-introduction/rentVirtual",
           "/kr/dbc-introduction/dbc-community",
         ],
       },

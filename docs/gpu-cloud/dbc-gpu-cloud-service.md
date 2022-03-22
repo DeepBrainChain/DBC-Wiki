@@ -291,7 +291,7 @@ node -v //v16.13.0
 npm install
 
 #执行成功后，运行以下命令，可以本地启动网页运行云平台，进行测试。
-npm run dev
+npm run serve
 
 2. 修改云平台logo图案配置
 #打开文件夹 src--> locales --> CN.js && EN.js && RU.js, 将website_name字段设置为自己云平台的名称，本地运行即可查看

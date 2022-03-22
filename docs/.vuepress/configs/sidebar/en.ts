@@ -11,6 +11,7 @@ export const en: SidebarConfig = {
         "/en/dbc-introduction/dbc-gpu-rent",
         "/en/dbc-introduction/dbc-profit",
         "/en/dbc-introduction/dbc-trade",
+        "/en/dbc-introduction/rentVirtual",
         "/en/dbc-introduction/dbc-community",
       ],
     },

@@ -15,6 +15,7 @@ export const zh: NavbarConfig = [
           "/dbc-introduction/dbc-gpu-rent",
           "/dbc-introduction/dbc-profit",
           "/dbc-introduction/dbc-trade",
+          "/dbc-introduction/rentVirtual",
           "/dbc-introduction/dbc-community",
         ],
       },

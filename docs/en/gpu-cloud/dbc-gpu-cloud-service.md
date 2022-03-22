@@ -154,7 +154,7 @@ node -v //v16.13.0
 npm install
 
 #After the execution is successful, run the following command to start the web page locally to run the cloud platform for testing.
-npm run dev
+npm run serve
 
 2. Modify the cloud platform logo pattern configuration
 #Open the folder src--> locales --> CN.js && EN.js && RU.js, set the website_name field to the name of your cloud platform, run it locally to view
