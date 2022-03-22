@@ -100,7 +100,9 @@ server必须响应成功。"response"字段为"success"表示成功，其他一�
 
 ## zabbix server 设置
 server端若想接收dbc发送的数据，需要做到以下设置：
-1. 在zabbix中导入dbc监控项模板"DBC VM Template"；
+1. 在zabbix中导入dbc监控项模板"[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml)"；
 2. 创建虚拟机；
-3. 在zabbix中使用模板"DBC VM Template"添加主机，主机名称填写虚拟机的task id；
+3. 在zabbix中使用模板"[DBC VM Template]https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml"添加主机，主机名称填写虚拟机的task id；
 4. 等待虚拟机创建完成后即可发送监控数据。
+  
+  
