@@ -15,6 +15,11 @@ module.exports = {
       title: "DBC-Wiki",
       description: "Welcome to DBC-Wiki",
     },
+    "/kr/": {
+      lang: "ko-KR",
+      title: "DBC-Wiki",
+      description: "DBC-Wiki에 오신 것을 환영합니다",
+    },
   },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   logo: "/images/dbc.icon.png",
@@ -42,6 +47,17 @@ module.exports = {
         // page meta
         editLinkText: "Edit this page on GitHub",
       },
+      "/kr/": {
+        navbar: navbar.kr,
+        sidebar: sidebar.kr,
+        selectLanguageName: "한국어",
+        selectLanguageText: "언어 선택",
+
+        // page meta
+        editLinkText: "GitHub에서 이 페이지 편집",
+        lastUpdatedText: "마지막 업데이트",
+        contributorsText: "기부자",
+      },
     },
   },
   base: "/DBC-Wiki/",
@@ -56,6 +72,9 @@ module.exports = {
           },
           "/zh/": {
             placeholder: "搜索",
+          },
+          "/kr/": {
+            placeholder: "검색",
           },
         },
       },
