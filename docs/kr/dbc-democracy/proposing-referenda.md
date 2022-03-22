@@ -1,55 +1,57 @@
-# Guide | Proposing a referendum
+# 메인넷 퍼블릭 투표방법
 
-Referenda are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved.
+퍼블릭 투표는 제안에 대한 대중 공개 투표 입니다. 거버넌스 결정은  제안서로 시작하여 , 대중 퍼블릭 투표를 통해 성립됩니다.여기서 제안은 계정 잔액 설정, 강제 이체 등과 같이 사용자가 직접 접촉 불가한 일련의 특권 기능 중 하나일 수 있습니다. 대중투표 제안은 대중 공개 제출, 이사회 제출 등에서 나올 수 있습니다. 여기서는 주로 대중이 퍼블릭 투표를 시작할 수 있는 방법을 소개합니다.
 
-Referenda can be started in one of several ways for example, from the public and council. This guide shows how the general public can propose a referendum.
 
-Anyone can propose a referendum by depositing the minimum amount of tokens for a certain period (number of blocks). If someone agrees with the proposal, they may deposit tokens to support it — this action is called second. The proposal with the highest amount of bonded support will be selected to be a referendum in the next voting cycle.
 
-## 1. Submitting a Preimage
+일정 기간 동안 최소한의 DBC를 예금하여 누구나 국민투표를 시작할 수 있으며 , 전체 프로세스는 [프리 이미지 제출]-[제안서 제출]-[ 제안 최다 보조모션 얻음]-[퍼블릭 투표 진행]을 포함합니다 . 
 
-Before submitting a proposal, you need to submit a preimage first.
+## 1.프리 이미지 제출
 
-Click on the “Submit preimage” button
+제안서 제출전  제안자는  사전 이미지 먼저 제출 해야합니다 . 
 
-![](./assets/referenda-tutorial.assets/1.png)
+[프리 이미지 제출]클릭
 
-Choose the system you want to change, fill in the required set code, and **copy the preimage hash**.
+![](./assets/proposing-referenda.assets/1.png)
 
-![](./assets/referenda-tutorial.assets/2.png)
+제안서 내용에 따라  system선택 , 관련 파라미터 기입, 이후 프리 이미지 해시를 복사합니다 . 
 
-For example, if someone wants to propose a force transfer, he needs to choose a “balances” system and provide the source, dest and value.
+![](./assets/proposing-referenda.assets/2.png)
 
-![](./assets/referenda-tutorial.assets/3.png)
+예)누군가 강제 이체를 시작하려면  시스템에서 "잔액"을 선택하고 표시되는 파라미터를 입력한 후 프리 이미지 해시를 복사해야 합니다 .
 
-## 2. Submitting a proposal
+![](./assets/proposing-referenda.assets/3.png)
 
-After submitting the preimage, click on “submit proposal”, and paste the preimage hash here.
+## 2.제안서 제출
 
-![](./assets/referenda-tutorial.assets/4.png)
+사전 이미지 제출 후 , [제안서 제출]클릭,  이전 단계 보사한 이미지 해시를 여기에  기입합니다 .
 
-Once the transaction is included you should see the information for your already submitted proposal.
+![](./assets/proposing-referenda.assets/4.png)
 
-![](./assets/referenda-tutorial.assets/5.png)
+제안서 제출후 , [제안]에서  제출한 제안서 확인 가능합니다 .
 
-You can post detailed proposals to our reddit community [https://www.reddit.com/r/DBC_Council/](https://www.reddit.com/r/DBC_Council/)
+![](./assets/proposing-referenda.assets/5.png)
 
-## 3. Seconding a Proposal
+Reddit 커뮤니티에 더욱 상세 제안서내용을 동시에 게시하시면 좋습니다 .https://www.reddit.com/r/DBC_Council/
 
-Seconding a proposal means that you are agreeing with the proposal and backing it with tokens. The bonded tokens will be released once the proposal is tabled (that is, brought to a vote), just like the original proposer’s bond. By seconding a proposal you will move it higher up the rank of proposals. The most seconded proposal — in value, not number of supporters — will be brought to a referendum every launch period. Note that it is possible for a single account to second a proposal multiple times.
+## 3.보조 모션
 
-To second a proposal, navigate to the proposal you want to second and click on the “Second” button.
+28일마다  대중에서  한  발의안, 즉 [보조모션] 가장 많은 발의안만 대중투표에 참여할 수 있습니다. 당신이 지지하고  일정량의 dbc를 보증하면  더 빨리 대중투표에 참여하도록 돕고 싶다면 [보조모션] 기능을 사용할 수 있습니다. 보증걸어둔 dbc는 퍼블릭 투표 진행시  잠금 해제됩니다.
 
-![](./assets/referenda-tutorial.assets/6.png)
+![](./assets/proposing-referenda.assets/6.png)
 
-Once successful you will see your second appear in the proposal details.
+![](./assets/proposing-referenda.assets/7.png)
 
-![](./assets/referenda-tutorial.assets/7.png)
+작업 완료후,  여기서 보조모션이 표시 됩니다 
 
-## 4. More Details about the mechanism
+![](./assets/proposing-referenda.assets/8.png)
 
-DBC mainnet is developed through Polkadot substrate, so the democracy mechanism of DBC is similar to that of Polkadot. To learn more about the referendum system, you can see
+## 4.거버넌스 메커니즘에 대한 추가 내용
 
-[https://wiki.polkadot.network/docs/learn-governance#referenda](https://wiki.polkadot.network/docs/learn-governance#referenda)
+DBC 메인넷은 Polkadot substrate 기반으로 개발되었으며 거버넌스 메커니즘은 Polkadot과 유사합니다. 거버넌스 메커니즘에 대해 상세 내용은 하기 링크 참고 부탁드립니다 :
 
-[https://wiki.polkadot.network/docs/maintain-guides-democracy](https://wiki.polkadot.network/docs/maintain-guides-democracy)
+https://mp.weixin.qq.com/s/K3_ISFO2Zhi5Uh3s07rWUQ(중문)
+
+https://wiki.polkadot.network/docs/learn-governance#referenda(영문)
+
+https://wiki.polkadot.network/docs/maintain-guides-democracy(영문)

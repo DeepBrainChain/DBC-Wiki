@@ -12,25 +12,25 @@ Before submitting a proposal, you need to submit a preimage first.
 
 Click on the “Submit preimage” button
 
-![](./assets/referenda-tutorial.assets/1.png)
+![](./assets/proposing-referenda.assets/1.png)
 
 Choose the system you want to change, fill in the required set code, and **copy the preimage hash**.
 
-![](./assets/referenda-tutorial.assets/2.png)
+![](./assets/proposing-referenda.assets/2.png)
 
 For example, if someone wants to propose a force transfer, he needs to choose a “balances” system and provide the source, dest and value.
 
-![](./assets/referenda-tutorial.assets/3.png)
+![](./assets/proposing-referenda.assets/3.png)
 
 ## 2. Submitting a proposal
 
 After submitting the preimage, click on “submit proposal”, and paste the preimage hash here.
 
-![](./assets/referenda-tutorial.assets/4.png)
+![](./assets/proposing-referenda.assets/4.png)
 
 Once the transaction is included you should see the information for your already submitted proposal.
 
-![](./assets/referenda-tutorial.assets/5.png)
+![](./assets/proposing-referenda.assets/5.png)
 
 You can post detailed proposals to our reddit community [https://www.reddit.com/r/DBC_Council/](https://www.reddit.com/r/DBC_Council/)
 
@@ -40,11 +40,11 @@ Seconding a proposal means that you are agreeing with the proposal and backing i
 
 To second a proposal, navigate to the proposal you want to second and click on the “Second” button.
 
-![](./assets/referenda-tutorial.assets/6.png)
+![](./assets/proposing-referenda.assets/6.png)
 
 Once successful you will see your second appear in the proposal details.
 
-![](./assets/referenda-tutorial.assets/7.png)
+![](./assets/proposing-referenda.assets/7.png)
 
 ## 4. More Details about the mechanism
 

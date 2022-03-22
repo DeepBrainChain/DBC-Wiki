@@ -10,25 +10,25 @@
 
 点击【提交原像】
 
-![](./assets/referenda-tutorial.assets/1.png)
+![](./assets/proposing-referenda.assets/1.png)
 
 根据你的提案内容选择 system，填入相关参数，然后复制预像哈希
 
-![](./assets/referenda-tutorial.assets/2.png)
+![](./assets/proposing-referenda.assets/2.png)
 
 例如，如果有个人想发起一笔强制转账，那么他需要在 system 处选择“balances”，并填入随之出现的参数，然后复制预像哈希。
 
-![](./assets/referenda-tutorial.assets/3.png)
+![](./assets/proposing-referenda.assets/3.png)
 
 ## 2. 提交议案
 
 在提交原像后，选择【提交议案】，并将上一部复制的预像哈希粘贴在此处。
 
-![](./assets/referenda-tutorial.assets/4.png)
+![](./assets/proposing-referenda.assets/4.png)
 
 提交议案后，你就可以在【提案】部分看到你的议案了
 
-![](./assets/referenda-tutorial.assets/5.png)
+![](./assets/proposing-referenda.assets/5.png)
 
 同时你也可以把更详细的议案内容发布至我们的 reddit 社区 [https://www.reddit.com/r/DBC_Council/](https://www.reddit.com/r/DBC_Council/)
 
@@ -36,13 +36,13 @@
 
 每 28 天，只有一个来自公众的议案可以进入公投环节，即获得【附议】最多的议案。如果你支持某个议案并愿意通过锁定一定数量的 dbc 帮助其更快进入公投环节，即可使用【附议】功能。锁定的 dbc 会在议案进入公投时解锁。
 
-![](./assets/referenda-tutorial.assets/6.png)
+![](./assets/proposing-referenda.assets/6.png)
 
-![](./assets/referenda-tutorial.assets/7.png)
+![](./assets/proposing-referenda.assets/7.png)
 
 操作成功后，这里就会出现你的附议
 
-![](./assets/referenda-tutorial.assets/8.png)
+![](./assets/proposing-referenda.assets/8.png)
 
 ## 4.关于治理机制的扩展阅读
 
