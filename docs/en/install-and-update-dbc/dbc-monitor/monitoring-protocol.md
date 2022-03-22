@@ -104,3 +104,6 @@ If the server side wants to receive the data sent by dbc, it needs to do the fol
 2. Create a virtual machine；
 3. Use the template "DBC VM Template" to add a host in zabbix, fill in the id of the virtual machine for the host name；
 4. After the virtual machine is created, the monitoring data can be sent.
+  DBC VM Template:
+  
+  
