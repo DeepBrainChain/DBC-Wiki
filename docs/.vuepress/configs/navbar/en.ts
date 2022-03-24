@@ -140,7 +140,7 @@ export const en: NavbarConfig = [
           "/en/dbc-client-api/install-tool",
           "/en/dbc-client-api/http-request-format",
           "/en/dbc-client-api/http-api",
-          "/en/dbc-client-api/snap-mirror-manage",
+          // "/en/dbc-client-api/snap-mirror-manage",
         ],
       },
       {

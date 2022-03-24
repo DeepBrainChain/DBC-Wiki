@@ -150,7 +150,7 @@ export const kr: SidebarConfig = {
         "/kr/dbc-client-api/install-tool",
         "/kr/dbc-client-api/http-request-format",
         "/kr/dbc-client-api/http-api",
-        "/kr/dbc-client-api/snap-mirror-manage",
+        // "/kr/dbc-client-api/snap-mirror-manage",
       ],
     },
   ],
