@@ -28,8 +28,6 @@ https://galaxyrace.deepbrainchain.org/table
 
 - windows 가상기기 만들기:
 
-​
-
 방식 요청 ：POST
 
 URL 요청：http://<dbc_client_ip>:<dbc_client_port>/api/v1/tasks/start
