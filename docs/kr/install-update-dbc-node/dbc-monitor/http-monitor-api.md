@@ -1,5 +1,5 @@
 # HTTP client request API for virtual machine monitoring
-:::tip 注意！
+:::tip
 The dbc_client_ip and dbc_client_port in the following HTTP request are the DBC client access addresses deployed by the user
 :::
 
