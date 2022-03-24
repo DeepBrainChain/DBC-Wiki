@@ -2,12 +2,12 @@ import type { NavbarConfig } from "@vuepress/theme-default";
 
 export const kr: NavbarConfig = [
   {
-    text: "DBC Introduction",
+    text: "DBC 소개",
     link: "/kr/dbc-introduction",
     children: [
       "/kr/dbc-introduction/dbc-applications",
       {
-        text: "DBC Introduction",
+        text: "DBC 소개",
         children: [
           "/kr/dbc-introduction/dbc-introduction",
           "/kr/dbc-introduction/dbc-ecology",
@@ -19,7 +19,7 @@ export const kr: NavbarConfig = [
         ],
       },
       {
-        text: "DBC Democracy",
+        text: "DBC 민주주의",
         children: [
           "/kr/dbc-democracy/dbc-council",
           "/kr/dbc-democracy/join-council",
@@ -33,11 +33,11 @@ export const kr: NavbarConfig = [
     ],
   },
   {
-    text: "DBC News",
+    text: "DBC 뉴스",
     link: "/kr/dbc-information",
     children: [
       {
-        text: "DBC progress",
+        text: "DBC 진행",
         children: [
           "/kr/dbc-information/dbc-progress/2020",
           "/kr/dbc-information/dbc-progress/2021-01-01",
@@ -56,7 +56,7 @@ export const kr: NavbarConfig = [
         ],
       },
       {
-        text: "DBC Report",
+        text: "DBC 보고서",
         children: [
           "/kr/dbc-information/dbc-report/dbc-36kr-report",
           "/kr/dbc-information/dbc-report/dbc-apnews-report",
@@ -75,11 +75,11 @@ export const kr: NavbarConfig = [
     ],
   },
   {
-    text: "Onchain Operate",
+    text: "온체인 운영",
     link: "/kr/staking-model",
     children: [
       {
-        text: "Introduction for Joining DBC Network",
+        text: "DBC 네트워크 가입 소개",
         children: [
           "/kr/staking-model/dbc-chain-params",
           "/kr/staking-model/generate-new-account",
@@ -116,16 +116,16 @@ export const kr: NavbarConfig = [
     ],
   },
   {
-    text: "DBC GPU Cloud Service",
+    text: "DBC GPU 클라우드 서비스",
     link: "/kr/gpu-cloud",
     children: ["/en/gpu-cloud/dbc-gpu-cloud-service"],
   },
   {
-    text: "Install and upgrade DBC nodes",
+    text: "DBC 노드 설치 및 업그레이드",
     // link: "/en/staking-model",
     children: [
       {
-        text: "Install And Update DBC Node",
+        text: "DBC 노드 설치 및 업그레이드",
         // link: "/en/install-and-update-dbc",
         children: [
           "/kr/install-and-update-dbc/install-dbc-compute-node",
