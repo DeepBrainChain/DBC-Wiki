@@ -119,38 +119,37 @@ export const en: SidebarConfig = {
       children: ["/en/gpu-cloud/dbc-gpu-cloud-service"],
     },
   ],
-  "/en/install-and-update-dbc/": [
+  "/en/install-update-dbc-node/": [
     {
       text: "Install And Update DBC Node",
+      link: "/en/install-update-dbc-node/install-update-dbc/",
       children: [
-        "/en/install-and-update-dbc/install-dbc-compute-node",
-        "/en/install-and-update-dbc/install-update-dbc-client",
-        "/en/install-and-update-dbc/update-dbc-compute-node",
-        {
-          text: "Create wins-machine application omniverse",
-          children: [
-            "/en/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
-          ],
-        },
-        {
-          text: "DBC monitor",
-          children: [
-            "/en/install-and-update-dbc/dbc-monitor/http-monitor-api",
-            "/en/install-and-update-dbc/dbc-monitor/monitoring-items",
-            "/en/install-and-update-dbc/dbc-monitor/monitoring-protocol",
-          ],
-        },
+        "/en/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
+        "/en/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
+        "/en/install-update-dbc-node/install-update-dbc/install-update-dbc-client",
       ],
     },
-  ],
-  "/en/dbc-client-api/": [
     {
       text: "DBC Client - HTTP API",
+      link: "/en/install-update-dbc-node/dbc-client-api/",
       children: [
-        "/en/dbc-client-api/install-tool",
-        "/en/dbc-client-api/http-request-format",
-        "/en/dbc-client-api/http-api",
-        // "/en/dbc-client-api/snap-mirror-manage",
+        "/en/install-update-dbc-node/dbc-client-api/install-tool",
+        "/en/install-update-dbc-node/dbc-client-api/http-request-format",
+        "/en/install-update-dbc-node/dbc-client-api/http-api",
+      ],
+    },
+    {
+      text: "Create wins-machine application omniverse",
+      children: [
+        "/en/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
+      ],
+    },
+    {
+      text: "DBC monitor",
+      children: [
+        "/en/install-update-dbc-node/dbc-monitor/http-monitor-api",
+        "/en/install-update-dbc-node/dbc-monitor/monitoring-items",
+        "/en/install-update-dbc-node/dbc-monitor/monitoring-protocol",
       ],
     },
   ],
