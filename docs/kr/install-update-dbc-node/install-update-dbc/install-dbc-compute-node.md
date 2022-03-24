@@ -111,7 +111,7 @@ vfio-pci가 표시되면 정상입니다, vfio-pci가 아니면 돌아가서 gru
 
 ## 【D】시스템 그룹화 활성
 
-​1. iommu그룹화 구성
+1. iommu그룹화 구성
 
 (다음 내용에서 서버 플랫폼에 따라 iommu를 교체하십시오. intel은 intel_iommu를 사용하고 AMD는 amd_iommu를 사용하십시오.)
 
@@ -312,7 +312,6 @@ sudo ./add_dbc_user.sh dbc
 
   3.설치 스크립트 운행 :명령줄에서 실행 ./install_mining.sh [설치목차] (설치 과정중, 유저가 2개의 로컬 수신감청 포트 번호 입력해야합니다)
 
-​
 
 ## 【J】미러이미지 모델 다운로드(/data 목차에 넣으면 dbc가 가상 기기 시작하고 /data 목차로 이동하여 검색합니다)
 
@@ -363,7 +362,7 @@ http://116.169.53.132:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qco
 - 호스트 기기로 돌아가 테스트한 가상 기기를 종료하고 삭제합니다：./check_env --localip x.x.x.x （x.x.x.x는 가상기기 내부 네트웍 ip주소입니다,이단계 진행 안할경우, dbc프로그램에서 새로운 가상기기 작동이 불가합니다, 하여 메인넷 올릴수 없으며 검증도 못받습니다 )
 
 - iptable명령 실행，기기 네트웍 방문 권한 오픈:（이단계 진행 안할경우, 외부에서 가상기기 방문 불가입니다 )
-  ​
+
   ▶iptables -D LIBVIRT_FWI 2 -t filter
 
 ▶iptables -D LIBVIRT_FWO 2 -t filter
