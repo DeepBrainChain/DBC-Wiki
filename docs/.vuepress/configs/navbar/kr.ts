@@ -122,40 +122,39 @@ export const kr: NavbarConfig = [
   },
   {
     text: "DBC 노드 설치 및 업그레이드",
-    // link: "/en/staking-model",
+    link: "/kr/install-update-dbc-node",
     children: [
       {
         text: "DBC 노드 설치 및 업그레이드",
-        // link: "/en/install-and-update-dbc",
+        link: "/kr/install-update-dbc-node/install-update-dbc/",
         children: [
-          "/kr/install-and-update-dbc/install-dbc-compute-node",
-          "/kr/install-and-update-dbc/install-update-dbc-client",
-          "/kr/install-and-update-dbc/update-dbc-compute-node",
+          "/kr/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
+          "/kr/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
+          "/kr/install-update-dbc-node/install-update-dbc/install-update-dbc-client",
         ],
       },
       {
         text: "DBC Client - HTTP API",
-        // link: "/en/dbc-client-api",
+        link: "/kr/install-update-dbc-node/dbc-client-api/",
         children: [
-          "/kr/dbc-client-api/install-tool",
-          "/kr/dbc-client-api/http-request-format",
-          "/kr/dbc-client-api/http-api",
-          // "/kr/dbc-client-api/snap-mirror-manage",
+          "/kr/install-update-dbc-node/dbc-client-api/install-tool",
+          "/kr/install-update-dbc-node/dbc-client-api/http-request-format",
+          "/kr/install-update-dbc-node/dbc-client-api/http-api",
         ],
       },
       {
         text: "Create wins-machine application omniverse",
         children: [
-          "/kr/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
+          "/kr/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
         ],
       },
       {
         text: "DBC monitor",
-        // link: '/en/install-and-update-dbc/dbc-monitor/',
+        link: "/kr/install-update-dbc-node/dbc-monitor/",
         children: [
-          "/kr/install-and-update-dbc/dbc-monitor/http-monitor-api",
-          "/kr/install-and-update-dbc/dbc-monitor/monitoring-items",
-          "/kr/install-and-update-dbc/dbc-monitor/monitoring-protocol",
+          "/kr/install-update-dbc-node/dbc-monitor/http-monitor-api",
+          "/kr/install-update-dbc-node/dbc-monitor/monitoring-items",
+          "/kr/install-update-dbc-node/dbc-monitor/monitoring-protocol",
         ],
       },
     ],

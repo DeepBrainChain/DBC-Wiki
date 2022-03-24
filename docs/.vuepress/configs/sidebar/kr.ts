@@ -11,7 +11,7 @@ export const kr: SidebarConfig = {
         "/kr/dbc-introduction/dbc-gpu-rent",
         "/kr/dbc-introduction/dbc-profit",
         "/kr/dbc-introduction/dbc-trade",
-        '/kr/dbc-introduction/rentVirtual',
+        "/kr/dbc-introduction/rentVirtual",
         "/kr/dbc-introduction/dbc-community",
       ],
     },
@@ -119,40 +119,38 @@ export const kr: SidebarConfig = {
       children: ["/en/gpu-cloud/dbc-gpu-cloud-service"],
     },
   ],
-  "/kr/install-and-update-dbc/": [
+  "/kr/install-update-dbc-node": [
     {
       text: "Install And Update DBC Node",
       children: [
-        "/kr/install-and-update-dbc/install-dbc-compute-node",
-        "/kr/install-and-update-dbc/install-update-dbc-client",
-        "/kr/install-and-update-dbc/update-dbc-compute-node",
-        {
-          text: "Create wins-machine application omniverse",
-          children: [
-            "/kr/install-and-update-dbc/create-win-machine-omniverse/create-win-machine-omniverse",
-          ],
-        },
-        {
-          text: "DBC monitor",
-          children: [
-            "/kr/install-and-update-dbc/dbc-monitor/http-monitor-api",
-            "/kr/install-and-update-dbc/dbc-monitor/monitoring-items",
-            "/kr/install-and-update-dbc/dbc-monitor/monitoring-protocol",
-          ],
-        },
+        "/kr/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
+        "/kr/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
+        "/kr/install-update-dbc-node/install-update-dbc/install-update-dbc-client",
       ],
     },
-  ],
-  "/kr/dbc-client-api/": [
     {
       text: "DBC Client - HTTP API",
+      link: "/kr/install-update-dbc-node/dbc-client-api/",
       children: [
-        "/kr/dbc-client-api/install-tool",
-        "/kr/dbc-client-api/http-request-format",
-        "/kr/dbc-client-api/http-api",
-        // "/kr/dbc-client-api/snap-mirror-manage",
+        "/kr/install-update-dbc-node/dbc-client-api/install-tool",
+        "/kr/install-update-dbc-node/dbc-client-api/http-request-format",
+        "/kr/install-update-dbc-node/dbc-client-api/http-api",
+      ],
+    },
+    {
+      text: "Create wins-machine application omniverse",
+      children: [
+        "/kr/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
+      ],
+    },
+    {
+      text: "DBC monitor",
+      link: "/kr/install-update-dbc-node/dbc-monitor/",
+      children: [
+        "/kr/install-update-dbc-node/dbc-monitor/http-monitor-api",
+        "/kr/install-update-dbc-node/dbc-monitor/monitoring-items",
+        "/kr/install-update-dbc-node/dbc-monitor/monitoring-protocol",
       ],
     },
   ],
 };
-
