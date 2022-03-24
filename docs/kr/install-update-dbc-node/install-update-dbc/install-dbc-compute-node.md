@@ -31,7 +31,7 @@ sudo echo "/dev/sdb /data xfs pquota 0 1" >> /etc/fstab
 sudo mount -a
 ```
 
-##【C】기기 가상화 지원 여부 판정
+## 【C】기기 가상화 지원 여부 판정
 
 1.하드웨어 지원 활성화
 
