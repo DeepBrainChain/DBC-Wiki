@@ -1,4 +1,4 @@
-# Participate in the election of council members and actively make proposals to promote DeepBrain Chain community governance
+# Explanation on Promoting DBC Council Member Elections and Proposals
 
 After a long period of preparation, the DeepBrain Chain Council began trial operation in September, and the funding source was first allocated manually by the foundation. Community members are welcome to actively participate in the election of council members and actively make proposals to promote DeepBrain Chain community governance, jointly building the world's largest distributed high-performance computing power network.
 

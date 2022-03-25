@@ -1,4 +1,4 @@
-# How to apply for DBC NFT from DBC Council?
+# How to apply for DBC NFT from DBC Council
 
 As DeepBrain Chain community self-governance system has launched, and the award of the DeepBrain Chain NFT medal has been handed over to DBC Council. This year the council can award up to 2 gold NFT medals, 20 silver NFT medals and 200 bronze NFT medals.
 

@@ -1,10 +1,6 @@
-# 为迎接主网上线，深脑链（DBC）铸造 NFT 纪念币免费赠予社区
+# 为迎接主网上线，深脑链（DBC）NFT 免费赠予社区
 
-2021-04-02 17:23
-
-> NFT 申请及发放规则：https://m.bitalk.com/flash/detail/472323921396502528
-
-> How to apply for DBC NFT from DBC Council: https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea
+> 如何向议会申请 DBC NFT: [https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea](https://deepbrainchainglobal.medium.com/how-to-apply-for-dbc-nft-from-dbc-council-46492cb3f2ea)
 
 最新消息，深脑链基金会为迎接主网上线，特意铸造一批 NFT 纪念币用于奖励对深脑链社区做出突出贡献的社区成员，并且承诺免费赠送，永不增发，保底回购，送完为止。
 

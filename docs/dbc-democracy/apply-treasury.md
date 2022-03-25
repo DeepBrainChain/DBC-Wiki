@@ -1,4 +1,4 @@
-# DBC Treasury 资金申请流程
+# 教程 | DBC Treasury 资金申请流程
 
 > Treasury 资金申请流程：https://bit.ly/3FJ4gwo
 
