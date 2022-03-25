@@ -13,7 +13,7 @@ export const kr: NavbarConfig = [
           "/kr/dbc-introduction/dbc-ecology",
           "/kr/dbc-introduction/dbc-gpu-rent",
           "/kr/dbc-introduction/dbc-profit-trade",
-          "/kr/dbc-introduction/rentVirtual",
+          "/kr/dbc-introduction/rent-virtual",
           "/kr/dbc-introduction/dbc-community",
         ],
       },

@@ -13,7 +13,7 @@ export const en: NavbarConfig = [
           "/en/dbc-introduction/dbc-ecology",
           "/en/dbc-introduction/dbc-gpu-rent",
           "/en/dbc-introduction/dbc-profit-trade",
-          "/en/dbc-introduction/rentVirtual",
+          "/en/dbc-introduction/rent-virtual",
           "/en/dbc-introduction/dbc-community",
         ],
       },
