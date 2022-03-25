@@ -122,7 +122,6 @@ export const zh: SidebarConfig = {
       children: [
         {
           text: "安装和升级DBC节点",
-          link: "/install-update-dbc-node/install-update-dbc/",
           children: [
             "/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
             "/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",

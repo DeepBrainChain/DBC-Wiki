@@ -125,7 +125,6 @@ export const kr: NavbarConfig = [
     children: [
       {
         text: "DBC 노드 설치 및 업그레이드",
-        link: "/kr/install-update-dbc-node/install-update-dbc/",
         children: [
           "/kr/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
           "/kr/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",

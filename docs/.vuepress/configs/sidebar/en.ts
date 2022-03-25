@@ -121,7 +121,6 @@ export const en: SidebarConfig = {
   "/en/install-update-dbc-node/": [
     {
       text: "Install And Update DBC Node",
-      link: "/en/install-update-dbc-node/install-update-dbc/",
       children: [
         "/en/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
         "/en/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
