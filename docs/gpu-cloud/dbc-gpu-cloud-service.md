@@ -542,15 +542,12 @@ boxEnv: 'sandbox', // 沙盒测试版: sandbox, 正式版: production
 打开文件夹 DBC-NodeScript--> publicResource.js
 
 ```
-
 // 修改 paypalUrl
-/\*\*
-
-- paypal 访问域名
-  \*/
-  export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
-  // export const paypalUrl = 'https://api-m.paypal.com' // 正式版本
-
+/**
+*paypal 访问域名
+*/
+export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
+// export const paypalUrl = 'https://api-m.paypal.com' // 正式版本
 ```
 
 ### 5. 数据库配置
@@ -561,14 +558,14 @@ boxEnv: 'sandbox', // 沙盒测试版: sandbox, 正式版: production
 ```
 // contractwallet 集合
 db.contractwallet.insert({
-  \_id:'contractwallet', // 不能修改，固定\_id 为'contractwallet'
+  _id:'contractwallet', // 不能修改，固定_id 为'contractwallet'
   "wallet":'your wallet', // 转账用的钱包地址
   "seed":'your seed' // 转账用的钱包地址私钥
 })
 
 // paypalInfo 集合
 db.paypalInfo.insert({
-  \_id:'paypal', // 不能修改，固定\_id 为'paypal'
+  _id:'paypal', // 不能修改，固定_id 为'paypal'
   "Client_ID":'your Client_ID', // 自己 app 对应的 Client_ID
   "Secret":'your Secret' // 自己 app 对应的 Secret
 })
