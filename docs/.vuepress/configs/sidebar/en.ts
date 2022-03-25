@@ -130,7 +130,6 @@ export const en: SidebarConfig = {
     },
     {
       text: "DBC Client - HTTP API",
-      link: "/en/install-update-dbc-node/dbc-client-api/",
       children: [
         "/en/install-update-dbc-node/dbc-client-api/install-tool",
         "/en/install-update-dbc-node/dbc-client-api/http-request-format",

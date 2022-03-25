@@ -131,7 +131,6 @@ export const zh: SidebarConfig = {
         },
         {
           text: "DBC客户端-HTTP请求",
-          link: "/install-update-dbc-node/dbc-client-api/",
           children: [
             "/install-update-dbc-node/dbc-client-api/install-tool",
             "/install-update-dbc-node/dbc-client-api/http-request-format",
@@ -146,7 +145,6 @@ export const zh: SidebarConfig = {
         },
         {
           text: "DBC监控",
-          link: "/install-update-dbc-node/dbc-monitor/",
           children: [
             "/install-update-dbc-node/dbc-monitor/http-monitor-api",
             "/install-update-dbc-node/dbc-monitor/monitoring-items",

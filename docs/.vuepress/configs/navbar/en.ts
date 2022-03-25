@@ -134,7 +134,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "DBC Client - HTTP API",
-        link: "/en/install-update-dbc-node/dbc-client-api/",
         children: [
           "/en/install-update-dbc-node/dbc-client-api/install-tool",
           "/en/install-update-dbc-node/dbc-client-api/http-request-format",
@@ -149,7 +148,6 @@ export const en: NavbarConfig = [
       },
       {
         text: "DBC monitor",
-        link: "/en/install-update-dbc-node/dbc-monitor/",
         children: [
           "/en/install-update-dbc-node/dbc-monitor/http-monitor-api",
           "/en/install-update-dbc-node/dbc-monitor/monitoring-items",

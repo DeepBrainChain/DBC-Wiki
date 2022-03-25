@@ -129,7 +129,6 @@ export const kr: SidebarConfig = {
     },
     {
       text: "DBC Client - HTTP API",
-      link: "/kr/install-update-dbc-node/dbc-client-api/",
       children: [
         "/kr/install-update-dbc-node/dbc-client-api/install-tool",
         "/kr/install-update-dbc-node/dbc-client-api/http-request-format",
@@ -144,7 +143,6 @@ export const kr: SidebarConfig = {
     },
     {
       text: "DBC monitor",
-      link: "/kr/install-update-dbc-node/dbc-monitor/",
       children: [
         "/kr/install-update-dbc-node/dbc-monitor/http-monitor-api",
         "/kr/install-update-dbc-node/dbc-monitor/monitoring-items",

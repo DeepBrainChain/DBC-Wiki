@@ -134,7 +134,6 @@ export const kr: NavbarConfig = [
       },
       {
         text: "DBC Client - HTTP API",
-        link: "/kr/install-update-dbc-node/dbc-client-api/",
         children: [
           "/kr/install-update-dbc-node/dbc-client-api/install-tool",
           "/kr/install-update-dbc-node/dbc-client-api/http-request-format",
@@ -149,7 +148,6 @@ export const kr: NavbarConfig = [
       },
       {
         text: "DBC monitor",
-        link: "/kr/install-update-dbc-node/dbc-monitor/",
         children: [
           "/kr/install-update-dbc-node/dbc-monitor/http-monitor-api",
           "/kr/install-update-dbc-node/dbc-monitor/monitoring-items",
