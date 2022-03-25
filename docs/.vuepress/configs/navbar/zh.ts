@@ -1,20 +1,18 @@
 import type { NavbarConfig } from "@vuepress/theme-default";
 
 export const zh: NavbarConfig = [
-  // NavbarItem
   {
     text: "了解DBC",
     link: "/dbc-introduction",
     children: [
-      "/dbc-introduction/dbc-applications",
+      "/dbc-introduction/dbc-introduction",
       {
         text: "DBC介绍",
         children: [
-          "/dbc-introduction/dbc-introduction",
+          "/dbc-introduction/dbc-applications",
           "/dbc-introduction/dbc-ecology",
           "/dbc-introduction/dbc-gpu-rent",
-          "/dbc-introduction/dbc-profit",
-          "/dbc-introduction/dbc-trade",
+          "/dbc-introduction/dbc-profit-trade",
           "/dbc-introduction/rentVirtual",
           "/dbc-introduction/dbc-community",
         ],

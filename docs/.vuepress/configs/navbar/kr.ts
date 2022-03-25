@@ -5,15 +5,14 @@ export const kr: NavbarConfig = [
     text: "DBC 소개",
     link: "/kr/dbc-introduction",
     children: [
-      "/kr/dbc-introduction/dbc-applications",
+      "/kr/dbc-introduction/dbc-introduction",
       {
         text: "DBC 소개",
         children: [
-          "/kr/dbc-introduction/dbc-introduction",
+          "/kr/dbc-introduction/dbc-applications",
           "/kr/dbc-introduction/dbc-ecology",
           "/kr/dbc-introduction/dbc-gpu-rent",
-          "/kr/dbc-introduction/dbc-profit",
-          "/kr/dbc-introduction/dbc-trade",
+          "/kr/dbc-introduction/dbc-profit-trade",
           "/kr/dbc-introduction/rentVirtual",
           "/kr/dbc-introduction/dbc-community",
         ],

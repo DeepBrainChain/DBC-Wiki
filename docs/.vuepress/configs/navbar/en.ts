@@ -5,15 +5,14 @@ export const en: NavbarConfig = [
     text: "DBC Introduction",
     link: "/en/dbc-introduction",
     children: [
-      "/en/dbc-introduction/dbc-applications",
+      "/en/dbc-introduction/dbc-introduction",
       {
         text: "DBC Introduction",
         children: [
-          "/en/dbc-introduction/dbc-introduction",
+          "/en/dbc-introduction/dbc-applications",
           "/en/dbc-introduction/dbc-ecology",
           "/en/dbc-introduction/dbc-gpu-rent",
-          "/en/dbc-introduction/dbc-profit",
-          "/en/dbc-introduction/dbc-trade",
+          "/en/dbc-introduction/dbc-profit-trade",
           "/en/dbc-introduction/rentVirtual",
           "/en/dbc-introduction/dbc-community",
         ],
