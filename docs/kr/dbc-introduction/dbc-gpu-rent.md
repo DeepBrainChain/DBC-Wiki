@@ -1,6 +1,6 @@
 # Rent GPU
 
-1.Rent GPU server through cloud platform：[https://www.dbchain.ai](https://www.dbchain.ai)
+1.Rent GPU server through cloud platform：[https://www.dbchain.ai](https://www.dbchain.ai). Guide: [rent virtual machine](./rent-virtual.md)
 
 2.Rent GPU server directly On-chain：[https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/rent-machine.html](https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/rent-machine.html)
 
