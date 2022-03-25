@@ -492,7 +492,10 @@
 
 因为宿主机上对显卡设备的隔离，导致 dbc 无法直接获取显卡的具体信息。因此我们在 qemu guest agent 的基础上，集成了 NVIDIA Management Library 的功能，实现了一套独立的服务，即 dbc guest agent，通过与虚拟机的通信，来获取虚拟机里面的显卡详细信息。
 
-对于自定义的镜像，想要监控显卡信息，请在虚拟机内部安装 dbc guest agent 服务，安装脚本：http://116.169.53.132:9000/dbc_guest_agent/install.sh
+对于自定义的镜像，想要监控显卡信息，请在虚拟机内部安装 dbc guest agent 服务。
+
+- Ubuntu 虚拟机安装脚本：http://116.169.53.132:9000/dbc_guest_agent/install.sh
+- Windows 64位虚拟机安装程序：http://116.169.53.132:9000/dbc_guest_agent/qemu-ga-x86_64.msi
 
 :::tip 注意！
 
