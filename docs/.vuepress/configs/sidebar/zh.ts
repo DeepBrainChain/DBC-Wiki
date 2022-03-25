@@ -12,6 +12,7 @@ export const zh: SidebarConfig = {
         "/dbc-introduction/dbc-gpu-rent",
         "/dbc-introduction/rent-virtual",
         "/dbc-introduction/dbc-community",
+        "/dbc-introduction/dbc-hot-link",
       ],
     },
   ],
@@ -49,7 +50,6 @@ export const zh: SidebarConfig = {
             "/dbc-information/dbc-ama/galaxy-ama",
             "/dbc-information/dbc-ama/council-ama",
             "/dbc-information/dbc-ama/dbc-ama-collection",
-            "/dbc-information/dbc-ama/dbc-hot-link",
           ],
         },
         {

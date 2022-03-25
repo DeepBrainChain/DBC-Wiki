@@ -12,6 +12,7 @@ export const en: SidebarConfig = {
         "/en/dbc-introduction/dbc-gpu-rent",
         "/en/dbc-introduction/rent-virtual",
         "/en/dbc-introduction/dbc-community",
+        "/en/dbc-introduction/dbc-hot-link",
       ],
     },
   ],
@@ -49,7 +50,6 @@ export const en: SidebarConfig = {
             "/en/dbc-information/dbc-ama/galaxy-ama",
             "/en/dbc-information/dbc-ama/council-ama",
             "/en/dbc-information/dbc-ama/dbc-ama-collection",
-            "/en/dbc-information/dbc-ama/dbc-hot-link",
           ],
         },
         {
