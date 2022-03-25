@@ -1,12 +1,10 @@
-# DBC GPU Cloud Service
+# DBC GPU 云服务
 
 ![](./assets/dbc-gpu-cloud-service.assets/1.png)
 
-:::warning 注意
+## 前言：
 
-以下内容仅作演示用例，具体实施请根据自身情况安装适合的软件版本，并及时关注相关中间件漏洞信息进行升级或者修补，以防被恶意攻击。
-
-:::
+- 以下内容仅作演示用例，具体实施请根据自身情况安装适合的软件版本，并及时关注相关中间件漏洞信息进行升级或者修补，以防被恶意攻击。
 
 ## 一、数据库部署
 
@@ -20,15 +18,18 @@ curl -O <https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz>
 tar -zxvf mongodb-linux-x86_64-3.0.6.tgz
 
 #3. 将解压包拷贝到指定目录:
+
 mkdir /data
 mkdir /data/mongodb
 mongodb-linux-x86_64-3.0.6/ /data/mongodb
 
 #4. 设置环境变量：
+
 sudo echo "export PATH=/data/mongodb/bin:$PATH"  >> /etc/profile
 source /etc/profile
 
 #5. 创建数据库目录：
+
 mkdir -p /data/db  mkdir -p /data/db/master
 
 #6. 创建：/etc/mongod.conf 添加授权（这样数据库需要密码才能登陆）
@@ -97,7 +98,7 @@ usr和passwd要和mongo中database_name用户名密码一致
 
 #6. 上传jar文件到服务器
 
-   上传本地 DBCWebService\target\DBCGPUCloudService-0.0.1-SNAPSHOT.jar 文件到服务器 lib文件夹下面
+   移动 DBCWebService\target\DBCGPUCloudService-0.0.1-SNAPSHOT.jar 文件到服务器 lib文件夹下面
 
 #7. 服务器start.sh 脚本修改：
 
@@ -122,29 +123,28 @@ profiles="test"  ，可以设置为: dev\\test\\prod
 
 ```bash
 #装DBC客户端
+安装环境
 
-# 安装环境
 apt-get install libvirt-clients libvirt-daemon-system
 
-# 1. 下载安装脚本： https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-# 下载其中的 install_client.sh 脚本文件
+1. 下载安装脚本： <https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/>
 
-# 2. 给install_client.sh脚本文件添加执行权限： 命令行下执行：
-chmod +x install_client.sh
+下载其中的install_client.sh脚本文件
 
-# 3. 运行安装脚本: 命令行下执行：
-# 安装过程中会要求用户输入2个端口号：根据情况填写即可，比如:net_listen_port=5001，http_port=5002
-./install_client.sh [安装目录]
+2. 给install_client.sh脚本文件添加执行权限： 命令行下执行：chmod +x install_client.sh
 
-# 升级DBC客户端
-# 1. 下载升级脚本： https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/
-# 下载其中的 update_client.sh 脚本文件
+3. 运行安装脚本: 命令行下执行：./install_client.sh [安装目录]
 
-# 2. 给update_client.sh脚本文件添加执行权限： 命令行下执行：
-chmod +x update_client.sh
+安装过程中会要求用户输入2个端口号：根据情况填写即可，比如:net_listen_port=5001，http_port=5002
 
-# 3. 运行升级脚本: 命令行下执行：
-./update_client.sh [原客户端安装目录]
+#升级DBC客户端
+1. 下载升级脚本： <https://github.com/DeepBrainChain/DBC-AIComputingNet/releases/>
+
+下载其中的update_client.sh脚本文件
+
+2. 给update_client.sh脚本文件添加执行权限： 命令行下执行：chmod +x update_client.sh
+
+3. 运行升级脚本: 命令行下执行：./update_client.sh [原客户端安装目录]
 ```
 
 ## 四、部署 Node 服务器
@@ -205,7 +205,7 @@ forever start -o ver-out.log -e ver-err.log VerificationMachine.js
 
     - 创建路由对应接口
 
-    ```javascript
+    ```
     Select.get('/', (request, response ,next) => {
         ******
         调用数据库，已经数据的处理与返回
@@ -247,31 +247,32 @@ forever start -o ver-out.log -e ver-err.log VerificationMachine.js
 
 - **用于公用基础信息配置，注意修改**
 
-```javascript
+```
 /**
  * wssChain 调用链名称
  */
 export const wssChain = {
-  dbc: "wss://info.dbcwallet.io", // 公链正式链，也可以自己部署DBC钱包客户端
-};
+  dbc: 'wss://info.dbcwallet.io' // 公链正式链，也可以自己部署DBC钱包客户端
+}
 
 /**
  * baseUrl c++ 端口
  */
 
-export const baseUrl = "<http://ip:port>"; // 步骤三中的dbc客户端ip和端口号
+
+export const baseUrl = '<http://ip:port>' // 步骤三中的dbc客户端ip和端口号
+
 
 /**
  * 连接mongo数据库
  */
 // export const mongoUrl = 'mongodb://localhost:27017/identifier' // 本地启动时访问mongo，服务器无效
-export const mongoUrl = "mongodb://usr:passwd@localhost:27017/identifier"; // 服务器访问mongo
+export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // 服务器访问mongo
 
 /**
  * 定义租用机器获取收益差额的钱包
  */
-export const designatedWallet =
-  "5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu"; // 用户支付的dbc收益部分会进入此钱包，需替换成自己的钱包地址
+export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // 用户支付的dbc收益部分会进入此钱包，需替换成自己的钱包地址
 ```
 
 ## 五、部署 web 环境
@@ -332,173 +333,213 @@ sudo apt install nginx -y
 mkdir /etc/nginx/gpucloud //上传ssl证书到此文件夹中
 mkdir /etc/nginx/gpucloud.conf
 sudo vim /etc/nginx/gpucloud.conf
-```
 
-```nginx
-# 示例如下，实际请按照自身环境改动，仅作参考
+#示例如下，实际请按照自身环境改动，仅作参考
 
 server{
-    listen 443;
-    server_name java.xxxx.xxxx;
-    ssl on;
 
-    ssl_certificate   cert/gpucloud/example.crt;
-    ssl_certificate_key  cert/gpucloud/example.key;
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
+        listen 443;
+        server_name java.xxxx.xxxx;
+        ssl on;
 
-    location / {
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
         proxy_pass http://ip:8031; #java server ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
     }
-}
+
 
 server {
-    listen 80;
-    server_name java.xxxx.xxxx;
+         listen 80;
+        server_name java.xxxx.xxxx;
 
-    location / {
+        location / {
+
         proxy_pass http://ip:8031; #java server ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
     }
-}
 
 server{
-    listen 443;
-    server_name nodejs.xxxx.xxxx;
-    ssl on;
 
-    ssl_certificate   cert/gpucloud/example.crt;
-    ssl_certificate_key  cert/gpucloud/example.key;
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
+        listen 443;
+        server_name nodejs.xxxx.xxxx;
+        ssl on;
 
-    location / {
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
         proxy_pass http://ip:8090; #nodejs server ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
     }
-}
+
 
 server {
-    listen 80;
-    server_name nodejs.xxxx.xxxx;
+         listen 80;
+        server_name nodejs.xxxx.xxxx;
 
-    location / {
-        proxy_pass http://ip:8090; #nodejs server ip and port
+        location / {
+
+         proxy_pass http://ip:8090; #nodejs server ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
     }
-}
 
 server{
-    listen 443;
-    server_name dbcnode.xxxx.xxxx;
-    ssl on;
 
-    ssl_certificate   cert/gpucloud/example.crt;
-    ssl_certificate_key  cert/gpucloud/example.key;
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
+        listen 443;
+        server_name dbcnode.xxxx.xxxx;
+        ssl on;
 
-    location / {
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+
         proxy_pass http://ip:5002; #dbc client node ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+
+        }
+
+
     }
-}
+
 
 server {
-    listen 80;
-    server_name dbcnode.xxxx.xxxx;
+         listen 80;
+        server_name dbcnode.xxxx.xxxx;
 
-    location / {
+        location / {
+
         proxy_pass http://ip:5002; #dbc client node ip and port
         proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                         proxy_set_header   X-Real-IP        $remote_addr;
+                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+        }
+
+
     }
-}
+
 
 server {
-    listen 443;
-    server_name www.xxxx.xxx; #gpu cloud website url
-    ssl on;
+         listen 443;
+        server_name www.xxxx.xxx; #gpu cloud website url
+        ssl on;
 
-    ssl_certificate   cert/gpucloud/example.crt;
-    ssl_certificate_key  cert/gpucloud/example.key;
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
 
-    location / {
-        root /data/dbc-website;
-        try_files $uri $uri/ /index.html;
-        index index.html index.htm;
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+           index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
     }
-    location = /50x.html {
-        root html;
-    }
-    error_page 500 502 503 504  /50x.html;
-}
 
 server {
-    listen 443;
-    server_name xxxx.xxx; #gpu cloud website url ,no include www
-    ssl on;
+         listen 443;
+        server_name xxxx.xxx; #gpu cloud website url ,no include www
+        ssl on;
 
-    ssl_certificate   cert/gpucloud/example.crt;
-    ssl_certificate_key  cert/gpucloud/example.key;
-    ssl_session_timeout 5m;
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
+        ssl_certificate   cert/gpucloud/example.crt;
+        ssl_certificate_key  cert/gpucloud/example.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
 
-    location / {
-        root /data/dbc-website;
-        try_files $uri $uri/ /index.html;
-        index index.html index.htm;
+        location / {
+
+            root /data/dbc-website;
+            try_files $uri $uri/ /index.html;
+            index index.html index.htm;
+
+        }
+        location = /50x.html {
+            root html;
+        }
+        error_page 500 502 503 504  /50x.html;
+
     }
-    location = /50x.html {
-        root html;
-    }
-    error_page 500 502 503 504  /50x.html;
-}
+
 
 server {
-    listen 80;
-    server_name xxxx.xxx;
-    return 301 http://www.xxxx.xxx$request_uri;
+        listen 80;
+        server_name xxxx.xxx;
+        return 301 http://www.xxxx.xxx$request_uri;
 }
+
 
 server {
-    listen 80;
-    server_name www.xxxx.xxx;
-    rewrite ^(.\*)$ https://${server_name}$1 permanent;
-}
-```
+        listen 80;
+        server_name www.xxxx.xxx;
+        rewrite ^(.*)$ https://${server_name}$1 permanent;
 
-```bash
-# 检测 Nginx 配置是否正确
+       }
 
+
+
+
+# 检测Nginx配置是否正确
 sudo nginx -t
 
 # 启动并设置开机自起
-
 sudo nginx -s reload
 sudo systemctl start nginx
 sudo systemctl enable nginx
@@ -523,16 +564,14 @@ sudo systemctl enable nginx
 打开文件夹 src--> views --> trade_io --> buy_3.vue, 修改其中的字段，其中 sandbox 为沙盒测试版，production 为正式上线版
 
 ```
+// 修改credentials ， boxEnv
 
-// 修改 credentials ， boxEnv
-
-// 填入步骤 2 中所获取的 Client ID
+// 填入步骤2中所获取的Client ID
 credentials: {
-sandbox: '<sandbox client id>', // 沙盒测试版， 上正式环境，可不填此选项
-production: '<production client id>' // 正式版 上正式环境，必填项
+    sandbox: '<sandbox client id>', // 沙盒测试版， 上正式环境，可不填此选项
+    production: '<production client id>'  // 正式版 上正式环境，必填项
 },
 boxEnv: 'sandbox', // 沙盒测试版: sandbox, 正式版: production
-
 ```
 
 ![](./assets/dbc-gpu-cloud-service.assets/paypal3.png)
@@ -542,11 +581,11 @@ boxEnv: 'sandbox', // 沙盒测试版: sandbox, 正式版: production
 打开文件夹 DBC-NodeScript--> publicResource.js
 
 ```
-// 修改 paypalUrl
+// 修改paypalUrl
 /**
-*paypal 访问域名
-*/
-export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
+ * paypal访问域名
+ */
+ export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
 // export const paypalUrl = 'https://api-m.paypal.com' // 正式版本
 ```
 
@@ -556,17 +595,37 @@ export const paypalUrl = 'https://api-m.sandbox.paypal.com' // 沙盒测试
 - 设置 paypalInfo 集合（存储 paypal 查询所需要的 CLIENT_ID 以及 SECRET）
 
 ```
-// contractwallet 集合
+// contractwallet集合
 db.contractwallet.insert({
-  _id:'contractwallet', // 不能修改，固定_id 为'contractwallet'
-  "wallet":'your wallet', // 转账用的钱包地址
-  "seed":'your seed' // 转账用的钱包地址私钥
+    _id:'contractwallet', // 不能修改，固定_id为'contractwallet'
+    "wallet":'your wallet', // 转账用的钱包地址
+    "seed":'your seed' // 转账用的钱包地址私钥
 })
 
-// paypalInfo 集合
+// paypalInfo集合
 db.paypalInfo.insert({
-  _id:'paypal', // 不能修改，固定_id 为'paypal'
-  "Client_ID":'your Client_ID', // 自己 app 对应的 Client_ID
-  "Secret":'your Secret' // 自己 app 对应的 Secret
+    _id:'paypal', // 不能修改，固定_id为'paypal'
+    "Client_ID":'your Client_ID', // 自己app对应的Client_ID
+    "Secret":'your Secret' // 自己app对应的Secret
 })
 ```
+## 八、问题总结
+
+### 1.start.log报错：map is null
+
+- 用服务器访问地址：[http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=](http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=37.404704734328,127.10515530866)  (location=纬度，经度)
+- 无法访问地址，执行：
+```
+ echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
+```
+- ping 111.206.208.72   
+- ping api.map.baidu.com
+- 可以ping 111.206.208.72 但无法 ping 通api.map.baidu.com时，在/etc/hosts配置：
+```
+111.206.208.72  api.map.baidu.com
+```
+### 2.dbc客户端无法连接到主网
+
+- 在安装目录下conf/peer.conf中添加节点：peer=116.169.53.134:5002,重启dbc
+- dbc日志出现报错：检查端口是否开启或被占用
+  ![](./assets/dbc-gpu-cloud-service.assets/error1.png)
