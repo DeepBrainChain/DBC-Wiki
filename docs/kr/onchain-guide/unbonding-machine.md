@@ -1,10 +1,10 @@
-# Machine offline steps 
+# Machine offline steps
 
 ::: warning Attention!
 ⚠️ Incorrect machine-offline may result in penalty of staking!
-::: 
+:::
 
-Machine offline is divided into two cases: `offline due to  malfunction` and `offline due to the need to change the hardware`.
+Machine offline is divided into two cases: `offline due to malfunction` and `offline due to the need to change the hardware`.
 
 - offline due to malfunction
 
@@ -18,11 +18,11 @@ When the machine hardware changes, in order to make the online and offline info 
 
 ## Machine offline due to malfunction
 
-Depending on the state of the machine (rented | free), going offline has different penalties. Refer to the amount of punishment [when the operator sends the offline notification actively](https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/machine-slash-model.html) 
+Depending on the state of the machine (rented | free), going offline has different penalties. Refer to the amount of punishment [when the operator sends the offline notification actively](https://deepbrainchain.github.io/DBC-Wiki/en/onchain-guide/machine-slash-model.html)
 
 The offline duration and free duration (since the end of the last rented) have an impact on the penalty amount. **If machine is free for more than 10 days, there will be no penalty after going offline. The staking of the machine can be returned after 365 days from the first online**
 
-After going offline, you can go online and/or permanently offline. If it is not online for more than 10 days, it will be processed as if it was offline for 10 days. 
+After going offline, you can go online and/or permanently offline. If it is not online for more than 10 days, it will be processed as if it was offline for 10 days.
 
 ### offchain operations
 
@@ -36,6 +36,6 @@ Go to Developer--Transactions, select `Control Account`, and execute the `contro
 
 ![](./assets/unbonding-machine.assets/2.png)
 
-## The machine is offline due to the need to change the hardware 
+## The machine is offline due to the need to change the hardware
 
-TODO 
+TODO

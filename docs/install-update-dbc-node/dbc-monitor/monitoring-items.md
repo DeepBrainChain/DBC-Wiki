@@ -1,6 +1,7 @@
 # 监控项
 
 ## 宿主机的监控项列表
+
 <table>
   <tr>
     <td>分类</td>
@@ -192,6 +193,7 @@
 </table>
 
 ## 虚拟机的监控项列表
+
 <table>
   <tr>
     <td></td>
@@ -487,21 +489,24 @@
 </table>
 
 ## 显卡监控必读
-因为宿主机上对显卡设备的隔离，导致dbc无法直接获取显卡的具体信息。因此我们在qemu guest agent的基础上，集成了NVIDIA Management Library的功能，实现了一套独立的服务，即dbc guest agent，通过与虚拟机的通信，来获取虚拟机里面的显卡详细信息。
 
-对于自定义的镜像，想要监控显卡信息，请在虚拟机内部安装dbc guest agent服务，安装脚本：http://116.169.53.132:9000/dbc_guest_agent/install.sh
+因为宿主机上对显卡设备的隔离，导致 dbc 无法直接获取显卡的具体信息。因此我们在 qemu guest agent 的基础上，集成了 NVIDIA Management Library 的功能，实现了一套独立的服务，即 dbc guest agent，通过与虚拟机的通信，来获取虚拟机里面的显卡详细信息。
+
+对于自定义的镜像，想要监控显卡信息，请在虚拟机内部安装 dbc guest agent 服务，安装脚本：http://116.169.53.132:9000/dbc_guest_agent/install.sh
 
 :::tip 注意！
-1. 显卡监控暂时只支持NVIDIA显卡。
+
+1. 显卡监控暂时只支持 NVIDIA 显卡。
 
 2. 显卡监控只能看到已被虚拟机使用的显卡设备。
-:::
+   :::
 
 ## 使用率和速度的计算
-- CPU使用率 = (cpuTime2 - cpuTime1) / (实际时间2 - 实际时间1) / CPU个数
+
+- CPU 使用率 = (cpuTime2 - cpuTime1) / (实际时间 2 - 实际时间 1) / CPU 个数
 - 内存使用率 = (total - unused) / total
-- 磁盘平均读取速度 = (rd_bytes2 - rd_bytes1) / (实际时间2 - 实际时间1)
-- 平均接收速度 = (rx_bytes2 - rx_bytes1) / (实际时间2 - 实际时间1)
+- 磁盘平均读取速度 = (rd_bytes2 - rd_bytes1) / (实际时间 2 - 实际时间 1)
+- 平均接收速度 = (rx_bytes2 - rx_bytes1) / (实际时间 2 - 实际时间 1)
 
 :::tip 注意！
 当两次采集数据间隔时间很长，比如每分钟采集一次，则磁盘读写速度和网络传输速度只能代表平均速度，无法表示实时速度。

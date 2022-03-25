@@ -8,9 +8,9 @@ On the web browser, navigate to:
 
 2. On the right side of the account, click the `⁝` symbol, and select according to your needs in the menu:
 
-  1. "Bond more": used to increase staking
+3. "Bond more": used to increase staking
 
-  2. "Unbound funds": used to reduce pledge
+4. "Unbound funds": used to reduce pledge
 
 <img src="./assets/common_questions.assets/staking_action.png" width="50%" height="50%">
 
@@ -21,7 +21,6 @@ On the web browser, navigate to:
 ::: warning
 To release the staking, you need to wait 14 days. After 14 days, you need to go to Figure 1 and choose to withdraw the bound funds. Or perform withdrawal of bound funds on the account page
 :::
-
 
 ## 2. "The election of new validator candidates is currently underway. Because such staking operations are not allowed."
 
@@ -43,7 +42,6 @@ Go to `Network-Staking-Account Operation`, find the account you want to operate,
 
 When you vote for the council candidates on the page of `democracy-council`, DBC will be staked to this module, and you need to manually cancel the vote to unbind.
 
-
 <img src="./assets/common_questions.assets/remove_council_voting.png" width="50%" height="50%">
 
 ## 5. How to release the staking in democracy
@@ -52,9 +50,9 @@ When you vote for the council candidates on the page of `democracy-council`, DBC
 
 [subscan](https://dbc.subscan.io)
 
-+ 5.2 On the `Developer-Transaction` page, select `democracy`-`removeVote` and execute.
+- 5.2 On the `Developer-Transaction` page, select `democracy`-`removeVote` and execute.
 
-+ 5.3 Then, on the `Developer-Transaction` page, select `democracy`-`unlock` and execute.
+- 5.3 Then, on the `Developer-Transaction` page, select `democracy`-`unlock` and execute.
 
 ## 6. How to withdraw a candidate from the committee
 

@@ -1,6 +1,6 @@
-# 创建windows虚拟机应用omniverse
+# 创建 windows 虚拟机应用 omniverse
 
-____
+---
 
 ## 步骤一: 确定要租用的机器
 
@@ -22,15 +22,16 @@ ____
 
 - 输入完成后点击提交交易，并在三十分钟内确认机器是否可用。（如果 30 分钟内不确认租用，支付的`dbc`会退回，但是交易手续费 10 `dbc`是无法退回的）
 
-- 创建windows虚拟机：
+- 创建 windows 虚拟机：
 
-  >`请求方式`：POST
+  > `请求方式`：POST
   >
-  >`请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
+  > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
   >
-  >`请求body`：
-  >```json
-  >{
+  > `请求body`：
+  >
+  > ```json
+  > {
   >   "peer_nodes_list": [
   >       // 请求机器的node_id
   >       "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
@@ -63,19 +64,20 @@ ____
   >
   >   "session_id": "租用者分发的session_id",
   >   "session_id_sign": "租用者分发的session_id_sign"
-  >}
-  >```
-  >示例：
-  >![create_win](./image/create_win.png)
+  > }
+  > ```
+  >
+  > 示例：
+  > ![create_win](./image/create_win.png)
 
-  * 创建过程的时间长短，会根据配置的不同而不同，大约在五分钟到十五分钟之间。
-  * 可以通过请求`虚拟机详细信息`，查询到虚拟机`登录方式`以及虚拟机的`当前状态`（当状态值为"creating"，表示虚拟机正在创建过程中）
+  - 创建过程的时间长短，会根据配置的不同而不同，大约在五分钟到十五分钟之间。
+  - 可以通过请求`虚拟机详细信息`，查询到虚拟机`登录方式`以及虚拟机的`当前状态`（当状态值为"creating"，表示虚拟机正在创建过程中）
 
   相关操作请[参考](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/create_macine.md)
-  
+
 ## 步骤三：远程连接虚拟机
 
-* 查看到虚拟机登录方式后，在本地打开远程连接
+- 查看到虚拟机登录方式后，在本地打开远程连接
 
   ![connect](./image/connect.png)
 
@@ -89,20 +91,20 @@ ____
 
 - 输入机器 id 并提交交易即可
 
-## 步骤五：下载omniverse安装Audio2Face
+## 步骤五：下载 omniverse 安装 Audio2Face
 
-* 打开`NVIDIA`官网下载`NVIDIA omniverse`：https://www.nvidia.cn/omniverse/#
+- 打开`NVIDIA`官网下载`NVIDIA omniverse`：https://www.nvidia.cn/omniverse/#
 
-* 根据官网的文档安装完成后：导航到`EXCHANGE(交易所)`在`Apps（应用）`部分中找到 `Audio2Face`，然后依次点击`“Install”（安装）`和`“Launch”（启动）`。
+- 根据官网的文档安装完成后：导航到`EXCHANGE(交易所)`在`Apps（应用）`部分中找到 `Audio2Face`，然后依次点击`“Install”（安装）`和`“Launch”（启动）`。
 
   ![install](./image/install.png)
 
-* 启动后，可以看到默认的头像及随附的语音及各模板参数（加载模板引擎时需等待几分钟）
+- 启动后，可以看到默认的头像及随附的语音及各模板参数（加载模板引擎时需等待几分钟）
 
   更多操作详情请[参考](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
   ![face_info](./image/face_info.png)
-  
+
 ## 步骤六：机器续租
 
 ::: warning

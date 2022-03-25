@@ -41,7 +41,6 @@ Go to DBC wallet: [https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explor
 
 <img src="./assets/generate_new_account.assets/2021-09-13_09-59.png" width="50%" height="50%">
 
-
 ## How to convert `secret phrase` to `private key`
 
 Some operations on the chain sometimes need to be signed with a private key. When the mnemonic phrase is saved, you can use subkey to convert the mnemonic phrase into a private key.

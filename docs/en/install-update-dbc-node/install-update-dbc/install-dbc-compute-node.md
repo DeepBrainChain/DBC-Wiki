@@ -1,6 +1,7 @@
 # Install DBC computing node
 
-##  Prepare before installation (based on the fixed public IP address that has been configured), deploy the KVM installation environment
+## Prepare before installation (based on the fixed public IP address that has been configured), deploy the KVM installation environment
+
 :::tip Notice!
 The system uses the 20.04 server version
 :::
@@ -13,9 +14,10 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
+
 ## create and mount the XFS file system
 
-###  Check the hard disk partition
+### Check the hard disk partition
 
 `lsblk`
 
@@ -40,7 +42,7 @@ sudo mount -a
 >
 > Path under normal circumstances: Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)
 
-###  Environment dependence, check whether the CPU supports virtualization and whether KVM is available
+### Environment dependence, check whether the CPU supports virtualization and whether KVM is available
 
 `egrep -c '(svm|vm)' /proc/cpuinfo`
 
@@ -53,21 +55,30 @@ sudo mount -a
 > display INFO: /dev/kvm exists  
 > KVM acceleration can be used
 > Indicates that subsequent operations can be performed. If the display does not match it, please check whether VT-d is turned on correctly
-### 3.Check whether ip_forward forwarding is enabled 
+
+### 3.Check whether ip_forward forwarding is enabled
+
 > Check if /proc/sys/net/ipv4/ip_forward is 1, if not, execute:
+>
 > ```
 > sudo sh -c 'echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf'
 > sudo sysctl -p
 > ```
+>
 > Check if there is output from lsmod | grep br_netfilter If there is no output then execute:
+>
 > ```
 > sudo sh -c 'echo "br_netfilter" > /etc/modules-load.d/br_netfilter.conf'
 > ```
+>
 > It needs to be restarted after execution, or it can be restarted after setting the graphics card pass-through
+
 ### vfio environment preparation
-+ Set a blacklist so that the card is not occupied
+
+- Set a blacklist so that the card is not occupied
+
 ```shell
-sudo vim /etc/modprobe.d/blacklist.conf  
+sudo vim /etc/modprobe.d/blacklist.conf
 #Finally add content:
 blacklist snd_hda_intel
 blacklist amd76x_edac
@@ -77,7 +88,9 @@ blacklist rivafb
 blacklist nvidiafb
 blacklist rivatv
 ```
-+ Setting up graphics card passthrough
+
+- Setting up graphics card passthrough
+
 ```shell
 # Querying the graphics card ID
 lspci -nnv | grep NVIDIA
@@ -85,7 +98,7 @@ Copy the graphics card id, such as 10de:2231 10de:1aef, the duplicate content ca
 
 #Modify the kernel file
 sudo vim /etc/default/grub
-#Add in the GRUB_CMDLINE_LINUX_DEFAULT field (if it is an AMD platform, change intel_iommu=on to amd_iommu=on) 
+#Add in the GRUB_CMDLINE_LINUX_DEFAULT field (if it is an AMD platform, change intel_iommu=on to amd_iommu=on)
 quiet splash intel_iommu=on kvm.ignore_msrs=1 vfio-pci.ids=Graphics card ids, separated by commas
 #Add in GRUB_CMDLINE_LINUX field
 quiet splash intel_iommu=on iommu=pt rd.driver.pre=vfio-pci
@@ -99,8 +112,10 @@ reboot
 #Query graphics card usage
 lspci -vv -s <graphics card PCI interface, eg 00:01.0> | grep driver
 ```
->  If vfio-pci is displayed, it is normal. If it is not vfio-pci, please check whether the grub file is correct. If there is no output, please perform the following manual binding
-+ Check kernel parameters:
+
+> If vfio-pci is displayed, it is normal. If it is not vfio-pci, please check whether the grub file is correct. If there is no output, please perform the following manual binding
+
+- Check kernel parameters:
 
 > Check that both `/proc/sys/net/bridge/bridge-nf-call-iptables` and `/proc/sys/net/bridge/bridge-nf-call-ip6tables`=1
 
@@ -119,8 +134,7 @@ lspci -vv -s 17:00.0 | grep driver
 #If Kernel driver in use : vfio-pci appears, the binding is successful. If still unsuccessful, go back and check
 ```
 
-
-##  After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
+## After confirming that the graphics card of the machine is occupied by vfio-pci, start the libvirtd service and set the boot to start automatically
 
 ### 1. Turn on the virt tcp monitoring service:
 
@@ -142,15 +156,14 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 
 ### 2. Start libvirtd and set up auto-start & check service status
 
-+ sudo systemctl restart libvirtd.service
-+ sudo systemctl enable libvirtd.service
-+ systemctl status libvirtd
+- sudo systemctl restart libvirtd.service
+- sudo systemctl enable libvirtd.service
+- systemctl status libvirtd
 
 **3、Test whether libvirtd is started successfully**
 
-+ virsh connect qemu+tcp://localhost:16509/system
-+ If there is no output error, it means the startup is successful
-
+- virsh connect qemu+tcp://localhost:16509/system
+- If there is no output error, it means the startup is successful
 
 ## Create a dbc user
 
@@ -163,7 +176,8 @@ sudo ./add_dbc_user.sh dbc
 
 ## Install the DBC node program
 
-+ **Note**: need to switch to dbc user installation
+- **Note**: need to switch to dbc user installation
+
 1. download install script: install_mining.sh
    http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. add executable permissions
@@ -173,42 +187,42 @@ sudo ./add_dbc_user.sh dbc
 
 (During the installation process, you need to input two listen port)
 
-
 ## Download the mirror template
 
-+ http://116.169.53.132:9000/image
+- http://116.169.53.132:9000/image
 
 Download: ubuntu.qcow2 and ubuntu-2004.qcow2 these two mirrors
-
 
 ## Back up the machine id and private key (very important,if this private key is lost, 50% of the pledged coins will be lost, please pay attention to multiple backups)
 
 Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/node.dat`, put it in a safe place, and use it later If you reinstall the system or reinstall DBC later, you need to use the original id and private key, otherwise the pledged coins will be deducted
 
 ## Test to create a virtual machine with graphics card pass-through to check whether the previous configuration is correct
-+ Test program download address: http://116.169.53.132:9000/dbc/package/check_env
-+ Binary file, add execute permission and execute directly: chmod 777 chec_env ; ./check_env
-+ If the green check 'vm domain_test successful' appears, it means success. If it does not appear, please check whether the previous configurations are correct.
+
+- Test program download address: http://116.169.53.132:9000/dbc/package/check_env
+- Binary file, add execute permission and execute directly: chmod 777 chec_env ; ./check_env
+- If the green check 'vm domain_test successful' appears, it means success. If it does not appear, please check whether the previous configurations are correct.
 
 ## Check whether the various hardware parameters of the machine are normal
-+ If the previous step is successful, a virtual machine will be successfully created, and log in to the virtual machine through ssh, where: vm_local_ip is the virtual machine's intranet ip address, the user name is dbc, and pwd is the login password
-+ ![image](https://user-images.githubusercontent.com/32829693/129731433-3e01b669-f274-419e-9ea0-d7891705a12e.png)
-+ Then cd to the test script directory and run:【pytest .】，
-     + cd /test/dbc_gpu_server_test/
-     + sudo -i (Switch to root user)
-     + pytest .
-+ A total of 18 tests;
-     + 10 unit tests, testing CPU, memory, hard disk, graphics card, video memory, cuda usability, etc.;
-     + 7 integration tests to test whether the actual usage conditions are normal (such as pytorch calculation, training and inference), and eliminate potential hardware failures;
-     + 1 benchmark speed test, testing the training and inference of dozens of CNN networks, lasting about ten minutes;
-     + If there is no red error, it will pass. If there is a red F/error, the test item corresponding to the error will be displayed, which can be checked according to the information;
-     + The full test process of 4 cards 2080ti is about 10 minutes. If the test time is too long, such as more than half an hour, there may be a problem with the machine, and the test can be aborted in advance.
-     + Short test summary info in the test result: If all are passed, it means the test passed, as long as one item is failed, it means the test failed and the fault needs to be checked;
-     + After the end, the 'result' folder is generated to export the performance report;
-+ Back to the host, shut down and delete the tested virtual machine: ./check_env --localip x.x.x.x (x.x.x.x is the internal network ip address of the virtual machine. If you do not operate this step, the dbc program will not be able to start the new virtual machine. Passed on-chain verification)
 
+- If the previous step is successful, a virtual machine will be successfully created, and log in to the virtual machine through ssh, where: vm_local_ip is the virtual machine's intranet ip address, the user name is dbc, and pwd is the login password
+- ![image](https://user-images.githubusercontent.com/32829693/129731433-3e01b669-f274-419e-9ea0-d7891705a12e.png)
+- Then cd to the test script directory and run:【pytest .】，
+  - cd /test/dbc_gpu_server_test/
+  - sudo -i (Switch to root user)
+  - pytest .
+- A total of 18 tests;
+  - 10 unit tests, testing CPU, memory, hard disk, graphics card, video memory, cuda usability, etc.;
+  - 7 integration tests to test whether the actual usage conditions are normal (such as pytorch calculation, training and inference), and eliminate potential hardware failures;
+  - 1 benchmark speed test, testing the training and inference of dozens of CNN networks, lasting about ten minutes;
+  - If there is no red error, it will pass. If there is a red F/error, the test item corresponding to the error will be displayed, which can be checked according to the information;
+  - The full test process of 4 cards 2080ti is about 10 minutes. If the test time is too long, such as more than half an hour, there may be a problem with the machine, and the test can be aborted in advance.
+  - Short test summary info in the test result: If all are passed, it means the test passed, as long as one item is failed, it means the test failed and the fault needs to be checked;
+  - After the end, the 'result' folder is generated to export the performance report;
+- Back to the host, shut down and delete the tested virtual machine: ./check_env --localip x.x.x.x (x.x.x.x is the internal network ip address of the virtual machine. If you do not operate this step, the dbc program will not be able to start the new virtual machine. Passed on-chain verification)
 
-##  If the execution of pytest is stuck or nvidia does not have any calls, please troubleshoot according to the following ideas
+## If the execution of pytest is stuck or nvidia does not have any calls, please troubleshoot according to the following ideas
+
 ```shell
 # Check if vfio reports an error dmesg | grep vfio-pci
 
@@ -228,7 +242,7 @@ root@HJICT:~# dmesg | grep vfio-pci
 
 # vfio-pci has an obvious bug, look further
 
-root@HJICT:~# cat /proc/iomem 
+root@HJICT:~# cat /proc/iomem
 00000000-00000fff : Reserved
 00001000-0009d3ff : System RAM
 0009d400-0009ffff : Reserved
@@ -275,20 +289,21 @@ reboot
 ```
 
 ## Check whether the machine is correctly added to the computing power network
-+ Use the official client node to view
-+ Mine pool build client node
-  For the above two points, please see: install_update_dbc_client_en.md
-+ After 1 minute, the machine information is requested through the client, and if the machine information can be found, the machine has been added to the network.
-quest machine info，refer to：dbc_client_http_api
-+ About client nodes: It is recommended that each mining pool set up 2 or more client nodes to ensure that the network can still be normal when the official nodes or other mining pools provide nodes are offline. If there are too few client nodes in the network or hang Too much drop will affect the rental situation of the machine. The client node construction can start a container to deploy on other servers without taking up too much resources.
-+ ***The client node can be deployed on the same machine as the computing power node. Be careful not to repeat the port number in the conf/core.conf configuration file of each node.***
 
+- Use the official client node to view
+- Mine pool build client node
+  For the above two points, please see: install_update_dbc_client_en.md
+- After 1 minute, the machine information is requested through the client, and if the machine information can be found, the machine has been added to the network.
+  quest machine info，refer to：dbc_client_http_api
+- About client nodes: It is recommended that each mining pool set up 2 or more client nodes to ensure that the network can still be normal when the official nodes or other mining pools provide nodes are offline. If there are too few client nodes in the network or hang Too much drop will affect the rental situation of the machine. The client node construction can start a container to deploy on other servers without taking up too much resources.
+- **_The client node can be deployed on the same machine as the computing power node. Be careful not to repeat the port number in the conf/core.conf configuration file of each node._**
 
 ## Machine on the chain
 
 https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/machine_online_en.md
 
 ## Monitoring setting
-+ Set the monitoring server address of DBC：add configuration "dbc_monitor_server=ip:port" in conf/core.conf
-+ Set the miner's monitoring server address：add configuration "miner_monitor_server=ip:port" in conf/core.conf
-+ Set the renter's monitoring server address：https://deepbrainchain.github.io/DBC-Wiki/en/install-and-update-dbc/dbc-monitor/http-monitor-api.html
+
+- Set the monitoring server address of DBC：add configuration "dbc_monitor_server=ip:port" in conf/core.conf
+- Set the miner's monitoring server address：add configuration "miner_monitor_server=ip:port" in conf/core.conf
+- Set the renter's monitoring server address：https://deepbrainchain.github.io/DBC-Wiki/en/install-and-update-dbc/dbc-monitor/http-monitor-api.html

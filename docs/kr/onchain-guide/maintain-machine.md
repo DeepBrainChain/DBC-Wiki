@@ -41,4 +41,3 @@ Operation： onlineProfile -- offlineMachineChangeHardwareInfo
 <img src="./assets/maintain_machine.assets/2021-12-15_14-12.png" width="50%" height="50%">
 
 Then execute: onlineProfile - addMachineInfo After re-adding the machine information, it will be reassigned for verification
-

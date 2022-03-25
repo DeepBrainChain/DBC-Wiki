@@ -1,6 +1,7 @@
 # monitoring items
 
 ## monitoring item list of the host
+
 <table>
   <tr>
     <td>classification</td>
@@ -192,6 +193,7 @@
 </table>
 
 ## monitoring item list of the virtual machine
+
 <table>
   <tr>
     <td></td>
@@ -487,18 +489,21 @@
 </table>
 
 ## gpu monitoring must read
+
 Video card monitoring must read
 Because of the isolation of the graphics card device on the host computer, dbc cannot directly obtain the specific information of the graphics card. Therefore, based on the qemu guest agent, we integrated the functions of the NVIDIA Management Library and implemented a set of independent services, namely the dbc guest agent, which obtains the detailed information of the graphics card in the virtual machine through communication with the virtual machine.
 
 For custom images, to monitor graphics card information, please install the dbc guest agent service inside the virtual machine, refer to the installation script: http://116.169.53.132:9000/dbc_guest_agent/install.sh
 
 :::tip 注意！
+
 1. Graphics card monitoring currently only supports NVIDIA graphics cards.
 
 2. The graphics card monitor can only see the graphics card devices that have been used by the virtual machine.
-:::
+   :::
 
 ## Calculation of usage and speed
+
 - CPU usage = (cpuTime2 - cpuTime1) / (realTime2 - realTime1) / Number of CPUs
 - memory usage = (total - unused) / total
 - disk average read speed = (rd_bytes2 - rd_bytes1) / (realTime2 - realTime1)

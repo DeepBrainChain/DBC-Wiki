@@ -55,9 +55,9 @@ security:
  8) use identifier
  9)db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
  10) #Set the markup rule, the percentage is followed by a number, 1 is 1%, and the example is 40%
-      db.DBCPercentage.insert({ _id: 'percentage',percentage: 40 })     
+      db.DBCPercentage.insert({ _id: 'percentage',percentage: 40 })
  11) #to see if the setting takes effect
-      db.DBCPercentage.find({}).toArray()        
+      db.DBCPercentage.find({}).toArray()
 ```
 
 ## 2.Java deployment
@@ -66,12 +66,12 @@ security:
 # Clone link address via git: https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. Modify the domain name of the dbc computing network client in the configuration file
   DBCGPUCloudService/src/main/resources
-  application-dev.properties application-dev.properties application-dev.properties 
+  application-dev.properties application-dev.properties application-dev.properties
   The clientUrl modification is replaced by the dbc client domain name deployed by yourself
 #2. Modify the domain name of the client to access the DBC wallet on the wss chain
 
 Modify chainUrl = wss://infotest.dbcwallet.io:7777 to chainUrl = wss://info.dbcwallet.io
-It can also be modified to the DBC wallet client address deployed by yourself. 
+It can also be modified to the DBC wallet client address deployed by yourself.
 info.dbcwallet.io is a public address, and 100% stability is not guaranteed.
 #3. Modify database address information
 
@@ -229,8 +229,11 @@ The following section explains the directory:
 ### HttpRequest directory
 
 - For writing detailed interface content for interacting with the front end
+
   - **api.js**
+
     - define express routes
+
     ```
     /**
     * Define routes to facilitate identification of corresponding modules
@@ -239,7 +242,9 @@ The following section explains the directory:
     export const Select = express.Router()
 
     ```
+
     - Create a route corresponding interface
+
     ```
     Select.get('/', (request, response , next) => {
         ******
@@ -248,9 +253,12 @@ The following section explains the directory:
     })
 
     ```
+
   - **router.js**
+
     - Define request information
     - set request headers
+
     ```
     /**
     * Import the routing module in api.js
@@ -260,7 +268,9 @@ The following section explains the directory:
     serve.use('/api/select', Select)
 
     ```
+
     - start the server service
+
     ```
     serve.listen(8090, ()=>{
         console.log('Server startup completed');
@@ -296,13 +306,13 @@ export const baseUrl = '<http://ip:5002>' // The dbc client ip and port number i
 /**
  * Connect to mongo database
  */
- 
+
 // export const mongoUrl = 'mongodb://localhost:27017/identifier' //  local access to mongo
 export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // server access mongo
 /**
  * Define a wallet for renting a machine for income
  */
-export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // The dbc revenue part paid 
+export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // The dbc revenue part paid
 //by the user will enter this wallet, which needs to be replaced with your own wallet address
 
 ```
@@ -363,7 +373,7 @@ server {
 
 
     }
-	
+
 server{
 
         listen 443;
@@ -476,7 +486,7 @@ server {
         error_page 500 502 503 504  /50x.html;
 
     }
-	
+
 server {
          listen 443;
         server_name xxxx.xxx; #gpu cloud website url ,no include www
@@ -528,18 +538,23 @@ sudo nginx -s reload
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
+
 ## 7.Paypal related documents
+
 ### Register a Paypal account
+
 - Register a Paypal account (individual companies are not limited) [https://www.paypal.com/c2/home](https://www.paypal.com/c2/home)
 - Login to paypal developer website [https://developer.paypal.com/developer/applications/](https://developer.paypal.com/developer/applications/)
 
 ### Get Client ID and Secret
+
 - Go to the developer page, as shown below, select the Live option, click the Create App button, and create an application to receive REST API credentials for testing and live transactions.
-![](./assets/dbc-gpu-cloud-service.assets/paypal1.png)
+  ![](./assets/dbc-gpu-cloud-service.assets/paypal1.png)
 - Create an App according to the prompts on the page. After the operation is completed, you will generate your own App, as shown in the figure below, you can view your Client ID & Secret
-![](./assets/dbc-gpu-cloud-service.assets/paypal2.png)
+  ![](./assets/dbc-gpu-cloud-service.assets/paypal2.png)
 
 ### Modify the relevant Paypal parameters in the cloud platform
+
 Open the folder src--> views --> trade_io --> buy_3.vue, modify the fields in it, where sandbox is the sandbox beta version, and production is the official online version
 
 ```
@@ -552,9 +567,13 @@ credentials: {
 },
 boxEnv: 'sandbox', // Sandbox Beta: sandbox, Production: production
 ```
+
 ![](./assets/dbc-gpu-cloud-service.assets/paypal3.png)
+
 ### Modify the Paypal parameters related to the node server
+
 Open the folder DBC-NodeScript-->publicResource.js
+
 ```
 // Modify paypalUrl
 /**
@@ -565,8 +584,10 @@ Open the folder DBC-NodeScript-->publicResource.js
 ```
 
 ### Database configuration
+
 - Set up the contractwallet collection (storing the contract wallet address and private key for transfer)
 - Set paypalInfo collection (store CLIENT_ID and SECRET required for paypal query)
+
 ```
 // contractwallet collection
 db.contractwallet.insert({

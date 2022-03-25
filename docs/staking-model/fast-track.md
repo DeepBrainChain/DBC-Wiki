@@ -10,7 +10,7 @@
 
 0xbb3e3bd46891ad75a32fa62a3897fb6374665943aca58cb2b2f91c401fadd2dd
 
-2. 议会成员执行下面的调用：注意，主网为 MemberCount 填写 10(至少是议会人数的3/4)，proposal_hash 填写上一步生成并复制的 Hash
+2. 议会成员执行下面的调用：注意，主网为 MemberCount 填写 10(至少是议会人数的 3/4)，proposal_hash 填写上一步生成并复制的 Hash
 
 ![image-20220127133432429](./assets/fast-track.assets/image-20220127133432429.png)
 

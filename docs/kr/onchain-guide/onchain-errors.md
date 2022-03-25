@@ -1,6 +1,7 @@
 # On-chain error description
 
 ## onlineProfile Module
+
 BadSignature,
 MachineIdExist,
 BalanceNotEnough,
@@ -31,6 +32,7 @@ TimeNotAllowed,
 ExpiredSlash,
 
 ## onlineCommittee Module
+
 NotInBookList,
 AlreadySubmitHash,
 NotAllHashSubmited,

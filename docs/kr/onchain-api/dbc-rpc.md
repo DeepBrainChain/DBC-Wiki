@@ -20,6 +20,7 @@ onlineProfile Module records the information of the machine's online rewards
       "params": ["5FEio5dgXeXsASdo3Wh5DQ8zfbRfQJTXYmFkCbSCFk2qsTt6"] # (stash account)
 }
 ```
+
 - Explanation of results
 
 ```json
@@ -644,7 +645,7 @@ onlineProfile Module records the information of the machine's online rewards
 
 ## 4. RentMachine Modul
 
-### 4.1  View machine rental information
+### 4.1 View machine rental information
 
 - Example
 
@@ -698,4 +699,3 @@ onlineProfile Module records the information of the machine's online rewards
     "id": 1
 }
 ```
-

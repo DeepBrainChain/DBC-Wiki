@@ -1,6 +1,6 @@
 # Create windows virtual machine application omniverse
 
-----
+---
 
 ## Step 1: Determine which machine to rent
 
@@ -24,14 +24,14 @@
 
 - Create a windows virtual machine:
 
-  >`request method`：POST
+  > `request method`：POST
   >
-  >`request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
+  > `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/start
   >
-  >`request body`：
+  > `request body`：
   >
-  >```json
-  >{
+  > ```json
+  > {
   >   "peer_nodes_list": [
   >       // The node_id of the requesting machine
   >       "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
@@ -64,23 +64,23 @@
   >
   >   "session_id": "The session_id distributed by the renter",
   >   "session_id_sign": "session_id_sign distributed by the renter"
-  >}
-  >```
+  > }
+  > ```
   >
-  >示例：
-  >![create_win](./assets/create_win.png)
+  > 示例：
+  > ![create_win](./assets/create_win.png)
 
-  * The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
-  * You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
+  - The length of the creation process will vary depending on the configuration, ranging from five to fifteen minutes.
+  - You can query the `login method` of the virtual machine and the `current status` of the virtual machine by requesting `virtual machine details` (when the status value is "creating", it means that the virtual machine is in the process of being created)
 
   For related operations, please [Reference](https://github.com/DeepBrainChain/DBC-DOC/blob/master/creat_macine/create_macine.md)
-  
+
 ## Step 3: Connect to the virtual machine remotely
 
-* After viewing the login method of the virtual machine, open a remote connection locally
+- After viewing the login method of the virtual machine, open a remote connection locally
 
   ![connect](./assets/connect.png)
-  
+
 ## Step 4: Confirm availability and lease
 
 ::: warning
@@ -93,18 +93,18 @@ Before confirming, you must confirm that the virtual machine can be started norm
 
 ## Step 5: Download omniverse
 
-* Open `NVIDIA` official website to download `NVIDIA omniverse`: https://www.nvidia.cn/omniverse/#
+- Open `NVIDIA` official website to download `NVIDIA omniverse`: https://www.nvidia.cn/omniverse/#
 
-* After the installation is complete according to the documentation on the official website: Navigate to `EXCHANGE`, find `Audio2Face` in the `Apps` section, then click `"Install"` and `"Launch" )`.
+- After the installation is complete according to the documentation on the official website: Navigate to `EXCHANGE`, find `Audio2Face` in the `Apps` section, then click `"Install"` and `"Launch" )`.
 
   ![install](./assets/install.png)
 
-* After startup, you can see the default avatar and accompanying voice and template parameters (it will take a few minutes to load the template engine)
+- After startup, you can see the default avatar and accompanying voice and template parameters (it will take a few minutes to load the template engine)
 
   For more operation details, please [Reference](https://docs.omniverse.nvidia.com/app_audio2face/app_audio2face/overview.html)
 
   ![face_info](./assets/face_info.png)
-  
+
 ## Step 6: Machine lease renewal
 
 ::: warning

@@ -1,6 +1,5 @@
 # DBC AMA 问答集合
 
->
 > 中文：https://docs.google.com/document/d/1xsrKkgitVhkw6LCR7K88ehr1HR3bfHENZY66x77uNew/edit?usp=sharing
 
 Q：首先感谢你接受我们的邀请，欢迎来到我们社区，请简单介绍下你自己和你的项目。

@@ -4,7 +4,7 @@
 
 （If you already have stash account, you can skip this）
 
-  Reference: [How to generate new account](generate-new-account.md)
+Reference: [How to generate new account](generate-new-account.md)
 
 ## 2. Get some DBC.
 
@@ -15,7 +15,6 @@ Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](htt
 ## 3. Nominator
 
 - Navigate to `Network > Staking > Account actions`, click `Nominator`
-
 
 <img src="./assets/staking_dbc_and_voting.assets/image-20210122210945889.png" width="50%" height="50%">
 
