@@ -8,7 +8,7 @@
 
 onlineProfile Module records the information of the machine's online rewards
 
-### 1.1 Query all machines controlled by a certain fund account
+### 1.1 Query all machines controlled by a certain stash account
 
 - Example
 
@@ -72,7 +72,7 @@ onlineProfile Module records the information of the machine's online rewards
 }
 ```
 
-### 1.2 Query a certain Era of the machine to obtain revenue
+### 1.2 Query machine's total reward of a certain Era
 
 - Example
 
@@ -98,7 +98,7 @@ onlineProfile Module records the information of the machine's online rewards
 }
 ```
 
-### 1.3. Query the machine's unlocking revenue in some Era
+### 1.3. Query machine's unlocked reward of a certain Era
 
 - Example
 
@@ -122,7 +122,7 @@ onlineProfile Module records the information of the machine's online rewards
 }
 ```
 
-### 1.4. Query a certain Era of the fund account to obtain income
+### 1.4 Query stash account total reward of a certain Era
 
 - Example
 
@@ -145,7 +145,7 @@ onlineProfile Module records the information of the machine's online rewards
 }
 ```
 
-### 1.5. Check the stash account for a certain Era unlocked reward
+### 1.5. Query stash account's unlocked reward of a certain Era
 
 - Example
 
@@ -163,7 +163,7 @@ onlineProfile Module records the information of the machine's online rewards
 ```json
 {
   "jsonrpc": "2.0",
-  "result": "123456", # Era 1 该资金账户解锁的奖励
+  "result": "123456", # The stash's unlocked reward of Era 1
   "id": 1
 }
 ```
