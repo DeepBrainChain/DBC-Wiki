@@ -28,3 +28,12 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Auto format doc
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: format-doc
+          delete-branch: true
+          title: "[Format doc] Auto format markdown doc"
+          assignees: kaigedong
+          reviewers: kaigedong
