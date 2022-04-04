@@ -39,12 +39,6 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
-      - name: Format docs
-        run: yarn global add prettier && prettier --write .
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-
       # 运行构建脚本
       - name: Build VuePress site
         run: yarn docs:build
