@@ -609,23 +609,28 @@ db.paypalInfo.insert({
     "Secret":'your Secret' // 自己app对应的Secret
 })
 ```
+
 ## 八、问题总结
 
-### 1.start.log报错：map is null
+### 1.start.log 报错：map is null
 
-- 用服务器访问地址：[http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=](http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=37.404704734328,127.10515530866)  (location=纬度，经度)
+- 用服务器访问地址：[http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=](http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=37.404704734328,127.10515530866) (location=纬度，经度)
 - 无法访问地址，执行：
+
 ```
  echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 ```
-- ping 111.206.208.72   
+
+- ping 111.206.208.72
 - ping api.map.baidu.com
-- 可以ping 111.206.208.72 但无法 ping 通api.map.baidu.com时，在/etc/hosts配置：
+- 可以 ping 111.206.208.72 但无法 ping 通 api.map.baidu.com 时，在/etc/hosts 配置：
+
 ```
 111.206.208.72  api.map.baidu.com
 ```
-### 2.dbc客户端无法连接到主网
 
-- 在安装目录下conf/peer.conf中添加节点：peer=116.169.53.134:5002,重启dbc
-- dbc日志出现报错：检查端口是否开启或被占用
+### 2.dbc 客户端无法连接到主网
+
+- 在安装目录下 conf/peer.conf 中添加节点：peer=116.169.53.134:5002,重启 dbc
+- dbc 日志出现报错：检查端口是否开启或被占用
   ![](./assets/dbc-gpu-cloud-service.assets/error1.png)

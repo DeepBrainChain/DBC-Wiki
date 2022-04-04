@@ -603,21 +603,26 @@ db.paypalInfo.insert({
     "Secret":'your Secret' // Secret corresponding to your app
 })
 ```
+
 ## 8. Summary of the problem
 
 ### 1.start.log reports an error: map is null:
 
-- Access address with server：[http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=](http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=37.404704734328,127.10515530866)  (location=latitude, longitude)
+- Access address with server：[http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=](http://api.map.baidu.com/reverse_geocoding/v3/?ak=jQc7i76SLm2k5j54z5y6ppjWjhb0nlhC&output=json&coordtype=wgs84ll&location=37.404704734328,127.10515530866) (location=latitude, longitude)
 - Unable to access address, execute:
+
 ```
  echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 ```
-- ping 111.206.208.72   
+
+- ping 111.206.208.72
 - ping api.map.baidu.com
 - Can ping 111.206.208.72 but can't ping api.map.baidu.com，Configure in /etc/hosts：
+
 ```
 111.206.208.72  api.map.baidu.com
 ```
+
 ### 2.The dbc client cannot connect to the mainnet
 
 - Add a node to conf/peer.conf in the installation directory: peer=116.169.53.134:5002, restart dbc
