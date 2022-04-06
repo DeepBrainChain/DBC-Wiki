@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2022-03-22T03:39:51Z</date>
+    <groups>
+        <group>
+            <name>dbc host group</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>DBC Host Template</template>
+            <name>DBC Host Template</name>
+            <description>DBC宿主机监控模板</description>
+            <groups>
+                <group>
+                    <name>dbc host group</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <name>version</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>dbc.version</key>
+                    <delay>30s</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>cpu Usage</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.cpuUsage</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>disk Free</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.diskFree</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>disk Total</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.diskTotal</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>disk Usage</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.diskUsage</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>gpu 0 busId</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.busId</key>
+                    <delay>30s</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>gpu 0 gpuUtilization</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.gpuUtilization</key>
+                    <delay>30s</delay>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>gpu 0 memFree</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.memFree</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                </item>
+                <item>
+                    <name>gpu 0 memTotal</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.memTotal</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                </item>
+                <item>
+                    <name>gpu 0 memUsed</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.memUsed</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                </item>
+                <item>
+                    <name>gpu 0 memUtilization</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.memUtilization</key>
+                    <delay>30s</delay>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>gpu 0 name</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.name</key>
+                    <delay>30s</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                </item>
+                <item>
+                    <name>gpu 0 powerCap</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.powerCap</key>
+                    <delay>30s</delay>
+                    <units>W</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.001</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>gpu 0 powerUsage</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.powerUsage</key>
+                    <delay>30s</delay>
+                    <units>W</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.001</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>gpu 0 temperature</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpu.0.temperature</key>
+                    <delay>30s</delay>
+                    <units>C</units>
+                </item>
+                <item>
+                    <name>gpu Count</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpuCount</key>
+                    <delay>30s</delay>
+                </item>
+                <item>
+                    <name>gpu Used</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.gpuUsed</key>
+                    <delay>30s</delay>
+                </item>
+                <item>
+                    <name>loadAverage 1m</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.loadAverage.1</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                </item>
+                <item>
+                    <name>loadAverage 5m</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.loadAverage.5</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                </item>
+                <item>
+                    <name>loadAverage 15m</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.loadAverage.15</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                </item>
+                <item>
+                    <name>mem Free</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.memFree</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>mem Total</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.memTotal</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>mem Usage</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.memUsage</key>
+                    <delay>30s</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                </item>
+                <item>
+                    <name>rx Flow</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.rxFlow</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                </item>
+                <item>
+                    <name>tx Flow</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.txFlow</key>
+                    <delay>30s</delay>
+                    <units>B</units>
+                </item>
+                <item>
+                    <name>vm Count</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.vmCount</key>
+                    <delay>30s</delay>
+                </item>
+                <item>
+                    <name>vm Running</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>host.vmRunning</key>
+                    <delay>30s</delay>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
