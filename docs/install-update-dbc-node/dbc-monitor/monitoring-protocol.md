@@ -113,7 +113,7 @@ server 必须响应成功。"response"字段为"success"表示成功，其他一
 
 server 端若想接收 dbc 发送的数据，需要做到以下设置：
 
-1. 在 zabbix 中导入 dbc 监控项模板"[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml)"；
+1. 在 zabbix 中导入 dbc 监控项模板"[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/install-update-dbc-node/dbc-monitor/DBC_Host_Templates.xml)"；
 2. 创建虚拟机；
-3. 在 zabbix 中使用模板"[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/en/install-and-update-dbc/dbc-monitor/DBC_Host_Templates.xml)"添加主机，主机名称填写虚拟机的 task id；
+3. 在 zabbix 中使用模板"[DBC VM Template](https://github.com/DeepBrainChain/DBC-Wiki/blob/main/docs/install-update-dbc-node/dbc-monitor/DBC_Host_Templates.xml)"添加主机，主机名称填写虚拟机的 task id；
 4. 等待虚拟机创建完成后即可发送监控数据。
