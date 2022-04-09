@@ -1,7 +1,10 @@
+import { defineUserConfig } from "@vuepress/cli";
 import { navbar, sidebar } from "./configs";
-import { comment } from "vuepress-plugin-comment2";
+import { path } from "@vuepress/utils";
+import type { DefaultThemeOptions } from "@vuepress/theme-default";
 
-module.exports = {
+// module.exports = {
+export default defineUserConfig<DefaultThemeOptions>({
   lang: "zh-CN",
   title: "DBC-Wiki",
   description: "这是 DBC-Wiki 站点",
@@ -24,6 +27,8 @@ module.exports = {
   },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   logo: "/images/dbc.icon.png",
+  // we are using a custom theme adding this plugin
+  theme: path.resolve(__dirname, "./theme"),
   themeConfig: {
     repo: "DeepBrainChain/DBC-Wiki",
     docsDir: "docs",
@@ -80,14 +85,5 @@ module.exports = {
         },
       },
     ],
-
-    comment({
-      type: "giscus",
-      comment: true,
-      repo: "DeepBrainChain/DBC-Wiki",
-      repoId: "R_kgDOGcH1KQ",
-      category: "Announcements",
-      categoryId: "DIC_kwDOGcH1Kc4COfW-",
-    }),
   ],
-};
+});
