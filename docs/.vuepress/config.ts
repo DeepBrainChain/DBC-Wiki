@@ -1,4 +1,5 @@
 import { navbar, sidebar } from "./configs";
+import { comment } from "vuepress-plugin-comment2";
 
 module.exports = {
   lang: "zh-CN",
@@ -79,5 +80,14 @@ module.exports = {
         },
       },
     ],
+
+    comment({
+      type: "giscus",
+      comment: true,
+      repo: "DeepBrainChain/DBC-Wiki",
+      repoId: "R_kgDOGcH1KQ",
+      category: "Announcements",
+      categoryId: "DIC_kwDOGcH1Kc4COfW-",
+    }),
   ],
 };
