@@ -21,3 +21,13 @@ yarn doc:dev
 ```
 
 打开 [http://localhost:8080/DBC-Wiki/](http://localhost:8080/DBC-Wiki/) 即可开始预览
+
+## 允许评论
+
+在 markdown 页面头部添加：
+
+```sh
+---
+comment: ture
+---
+```

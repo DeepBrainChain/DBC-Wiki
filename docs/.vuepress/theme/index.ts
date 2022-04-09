@@ -18,7 +18,7 @@ const commentTheme: Theme<DefaultThemeOptions> = {
       "vuepress-plugin-comment2",
       {
         type: "giscus",
-        comment: true,
+        comment: false,
         repo: "DeepBrainChain/DBC-Wiki",
         repoId: "R_kgDOGcH1KQ",
         category: "Announcements",
