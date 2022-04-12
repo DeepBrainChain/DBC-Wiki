@@ -32,8 +32,6 @@ export default defineThemeConfig({
       editLinkText: "Edit this page on GitHub",
     },
     "/kr/": {
-      lang: "ko-KR",
-
       navbar: navbar.kr,
       sidebar: sidebar.kr,
       selectLanguageName: "한국어",
@@ -45,7 +43,7 @@ export default defineThemeConfig({
       contributorsText: "기부자",
 
       navbarLocales: {
-        langName: "ko-KR",
+        langName: "한국어",
         selectLangText: "Language",
         selectLangAriaLabel: "Select language",
       },
