@@ -78,6 +78,8 @@ export const zh: NavbarConfig = [
     link: "/council",
     children: [
       "/council/2",
+      "/council/12",
+      "/council/13",
       "/council/15",
       "/council/16",
       "/council/26",
