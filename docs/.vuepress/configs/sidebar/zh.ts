@@ -39,11 +39,13 @@ export const zh = defineSidebarConfig({
       children: [
         {
           text: "DBC 进展",
+          collapsable: true,
           prefix: "dbc-progress/",
           children: ["2020", "2021-01-01", "2021", "2022-01-01"],
         },
         {
           text: "DBC AMA",
+          collapsable: true,
           prefix: "dbc-ama/",
           children: [
             "8btc-ama",
@@ -54,6 +56,7 @@ export const zh = defineSidebarConfig({
         },
         {
           text: "DBC 媒体报道",
+          collapsable: true,
           prefix: "dbc-report/",
           children: [
             "dbc-36kr-report",
@@ -153,6 +156,7 @@ export const zh = defineSidebarConfig({
       children: [
         {
           text: "安装和升级DBC节点",
+          collapsable: true,
           prefix: "install-update-dbc/",
           children: [
             "install-dbc-compute-node",
@@ -162,16 +166,19 @@ export const zh = defineSidebarConfig({
         },
         {
           text: "DBC客户端-HTTP请求",
+          collapsable: true,
           prefix: "dbc-client-api/",
           children: ["install-tool", "http-request-format", "http-api"],
         },
         {
           text: "创建windows虚拟机使用omniverse",
+          collapsable: true,
           prefix: "create-win-machine-omniverse/",
           children: ["create-win-machine-omniverse"],
         },
         {
           text: "DBC监控",
+          collapsable: true,
           prefix: "dbc-monitor/",
           children: [
             "http-monitor-api",

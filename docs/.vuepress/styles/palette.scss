@@ -6,7 +6,8 @@
   display: none;
 }
 
-.navbar-dropdown-wrapper .navbar-dropdown {
+.dropdown-wrapper:hover .nav-dropdown,
+.dropdown-wrapper.open .nav-dropdown {
   left: 0;
   right: auto;
 }
