@@ -75,7 +75,16 @@ export const zh: SidebarConfig = {
   "/council": [
     {
       text: "议案详情",
-      children: ["/council/33"],
+      children: [
+        "/council/2",
+        "/council/26",
+        "/council/27",
+        "/council/29",
+        "/council/30",
+        "/council/31",
+        "/council/32",
+        "/council/33",
+      ],
     },
   ],
   "/staking-model/": [

@@ -76,7 +76,16 @@ export const zh: NavbarConfig = [
   {
     text: "DBC议案",
     link: "/council",
-    children: ["/council/33"],
+    children: [
+      "/council/2",
+      "/council/26",
+      "/council/27",
+      "/council/29",
+      "/council/30",
+      "/council/31",
+      "/council/32",
+      "/council/33",
+    ],
   },
   {
     text: "链上操作说明",
