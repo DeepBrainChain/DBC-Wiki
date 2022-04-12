@@ -1,9 +1,14 @@
-// import { defineUserConfig } from "@vuepress/cli";
-import { navbar, sidebar } from "./configs";
-import { path } from "@vuepress/utils";
-// import type { DefaultThemeOptions } from "@vuepress/theme-default";
 import { defineHopeConfig } from "vuepress-theme-hope";
 import themeConfig from "./themeConfig";
+import type { ReadingTimeLocaleConfig } from "vuepress-plugin-reading-time2";
+
+export const krLocations: ReadingTimeLocaleConfig = {
+  "/kr/": {
+    word: "About $word words",
+    less1Minute: "Less than 1 minute",
+    time: "About $time min",
+  },
+};
 
 // module.exports = {
 export default defineHopeConfig({
@@ -48,6 +53,12 @@ export default defineHopeConfig({
             placeholder: "검색",
           },
         },
+      },
+    ],
+    [
+      "vuepress-plugin-reading-time2",
+      {
+        locales: krLocations,
       },
     ],
   ],
