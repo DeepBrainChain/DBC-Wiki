@@ -80,8 +80,9 @@ export const zh: SidebarConfig = {
         "/council/12",
         "/council/13",
         "/council/15",
-        "/council/16",
+        "/council/16", // 16,17,18用相同的链接
         "/council/19",
+        "/council/22",
         "/council/23",
         "/council/25",
         "/council/26",

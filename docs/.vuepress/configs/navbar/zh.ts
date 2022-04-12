@@ -83,6 +83,7 @@ export const zh: NavbarConfig = [
       "/council/15",
       "/council/16",
       "/council/19",
+      "/council/22",
       "/council/23",
       "/council/25",
       "/council/26",
