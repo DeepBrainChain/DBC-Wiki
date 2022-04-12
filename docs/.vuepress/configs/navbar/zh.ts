@@ -119,14 +119,14 @@ export const zh = defineNavbarConfig([
           "dbc-chain-logic",
           "machine-reward-model",
           "machine-slash-model",
-          "/bonding-machine",
-          "/unbonding-machine",
-          "/become-onchain-committee",
-          "/machine-verification",
-          "/rent-machine",
-          "/report-machine-fault",
-          "/maintain-machine",
-          "/onchain-errors",
+          "bonding-machine",
+          "unbonding-machine",
+          "become-onchain-committee",
+          "machine-verification",
+          "rent-machine",
+          "report-machine-fault",
+          "maintain-machine",
+          "onchain-errors",
         ],
       },
       {
@@ -147,19 +147,17 @@ export const zh = defineNavbarConfig([
     children: [
       {
         text: "安装和升级DBC节点",
+        prefix: "install-update-dbc/",
         children: [
-          "install-update-dbc/install-dbc-compute-node",
-          "install-update-dbc/update-dbc-compute-node",
-          "install-update-dbc/install-update-dbc-client",
+          "install-dbc-compute-node",
+          "update-dbc-compute-node",
+          "install-update-dbc-client",
         ],
       },
       {
         text: "DBC客户端-HTTP请求",
-        children: [
-          "dbc-client-api/install-tool",
-          "dbc-client-api/http-request-format",
-          "dbc-client-api/http-api",
-        ],
+        prefix: "dbc-client-api/",
+        children: ["install-tool", "http-request-format", "http-api"],
       },
       {
         text: "创建windows虚拟机使用omniverse",
@@ -167,10 +165,11 @@ export const zh = defineNavbarConfig([
       },
       {
         text: "DBC监控",
+        prefix: "dbc-monitor/",
         children: [
-          "dbc-monitor/http-monitor-api",
-          "dbc-monitor/monitoring-items",
-          "dbc-monitor/monitoring-protocol",
+          "http-monitor-api",
+          "monitoring-items",
+          "monitoring-protocol",
         ],
       },
     ],

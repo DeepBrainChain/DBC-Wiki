@@ -28,7 +28,6 @@ export default defineHopeConfig({
     },
   },
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
-  logo: "/images/dbc.icon.png",
   // we are using a custom theme adding this plugin
   // theme: path.resolve(__dirname, "./theme"),
   themeConfig,

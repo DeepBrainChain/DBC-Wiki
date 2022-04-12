@@ -1,72 +1,74 @@
-import type { SidebarConfig } from "@vuepress/theme-default";
+import { defineSidebarConfig } from "vuepress-theme-hope";
 
-export const en: SidebarConfig = {
-  "/en/dbc-introduction": [
+export const en = defineSidebarConfig({
+  "/en/dbc-introduction/": [
     {
       text: "DBC Introduction",
+      prefix: "/en/dbc-introduction/",
       children: [
-        "/en/dbc-introduction/dbc-introduction",
-        "/en/dbc-introduction/dbc-applications",
-        "/en/dbc-introduction/dbc-ecology",
-        "/en/dbc-introduction/dbc-profit-trade",
-        "/en/dbc-introduction/dbc-gpu-rent",
-        "/en/dbc-introduction/rent-virtual",
-        "/en/dbc-introduction/dbc-community",
-        "/en/dbc-introduction/dbc-hot-link",
+        "dbc-introduction",
+        "dbc-applications",
+        "dbc-ecology",
+        "dbc-profit-trade",
+        "dbc-gpu-rent",
+        "rent-virtual",
+        "dbc-community",
+        "dbc-hot-link",
       ],
     },
   ],
-  "/en/dbc-democracy": [
+  "/en/dbc-democracy/": [
     {
       text: "DBC Democracy",
+      prefix: "/en/dbc-democracy/",
       children: [
-        "/en/dbc-democracy/dbc-council",
-        "/en/dbc-democracy/join-council",
-        "/en/dbc-democracy/proposing-referenda",
-        "/en/dbc-democracy/voting-referenda",
-        "/en/dbc-democracy/apply-treasury",
-        "/en/dbc-democracy/dbc-nft",
-        "/en/dbc-democracy/staking-voting",
+        "dbc-council",
+        "join-council",
+        "proposing-referenda",
+        "voting-referenda",
+        "apply-treasury",
+        "dbc-nft",
+        "staking-voting",
       ],
     },
   ],
-  "/en/dbc-information": [
+
+  "/en/dbc-information/": [
     {
       text: "DBC News",
+      prefix: "/en/dbc-information/",
       children: [
         {
           text: "DBC Progress",
-          children: [
-            "/en/dbc-information/dbc-progress/2020",
-            "/en/dbc-information/dbc-progress/2021-01-01",
-            "/en/dbc-information/dbc-progress/2021",
-            "/en/dbc-information/dbc-progress/2022-01-01",
-          ],
+          prefix: "dbc-progress/",
+          children: ["dbc-progress/2020", "2021-01-01", "2021", "2022-01-01"],
         },
         {
           text: "DBC AMA",
+          prefix: "dbc-ama/",
           children: [
-            "/en/dbc-information/dbc-ama/8btc-ama",
-            "/en/dbc-information/dbc-ama/galaxy-ama",
-            "/en/dbc-information/dbc-ama/council-ama",
-            "/en/dbc-information/dbc-ama/dbc-ama-collection",
+            "8btc-ama",
+            "galaxy-ama",
+            "council-ama",
+            "dbc-ama-collection",
           ],
         },
         {
           text: "DBC Report",
+          prefix: "dbc-report/",
           children: [
-            "/en/dbc-information/dbc-report/dbc-36kr-report",
-            "/en/dbc-information/dbc-report/dbc-apnews-report",
-            "/en/dbc-information/dbc-report/dbc-asiaone-report",
-            "/en/dbc-information/dbc-report/dbc-businessinsider-report",
-            "/en/dbc-information/dbc-report/dbc-coindeals-report",
-            "/en/dbc-information/dbc-report/dbc-dailyherald-report",
-            "/en/dbc-information/dbc-report/dbc-marketscreener",
-            "/en/dbc-information/dbc-report/dbc-post-gazette",
-            "/en/dbc-information/dbc-report/dbc-theblockbeats-report",
-            "/en/dbc-information/dbc-report/dbc-uk-tech-daily",
-            "/en/dbc-information/dbc-report/dbc-yahoo-report2",
-            "/en/dbc-information/dbc-report/dbc-yahoo-report",
+            "dbc-36kr-report",
+            "dbc-apnews-report",
+            "dbc-asiaone-report",
+            "dbc-businessinsider-report",
+            "dbc-coindeals-report",
+            "dbc-dailyherald-report",
+            "dbc-marketscreener",
+            "dbc-post-gazette",
+            "dbc-theblockbeats-report",
+            "dbc-uk-tech-daily",
+            "dbc-yahoo-report2",
+            "dbc-yahoo-report",
           ],
         },
       ],
@@ -75,79 +77,83 @@ export const en: SidebarConfig = {
   "/en/staking-model/": [
     {
       text: "DBC Staking Model",
+      prefix: "/en/staking-model/",
       children: [
-        "/en/staking-model/dbc-chain-params",
-        "/en/staking-model/generate-new-account",
-        "/en/staking-model/join-dbc-network",
-        "/en/staking-model/staking-dbc-and-voting",
-        "/en/staking-model/fast-track",
-        "/en/staking-model/common-questions",
+        "dbc-chain-params",
+        "generate-new-account",
+        "join-dbc-network",
+        "staking-dbc-and-voting",
+        "fast-track",
+        "common-questions",
       ],
     },
   ],
   "/en/onchain-guide/": [
     {
       text: "OnchainGuide",
+      prefix: "/en/onchain-guide/",
       children: [
-        "/en/onchain-guide/dbc-chain-logic",
-        "/en/onchain-guide/machine-reward-model",
-        "/en/onchain-guide/machine-slash-model",
-        "/en/onchain-guide/unbonding-machine",
-        "/en/onchain-guide/become-onchain-committee",
-        "/en/onchain-guide/machine-verification",
-        "/en/onchain-guide/rent-machine",
-        "/en/onchain-guide/report-machine-fault",
-        "/en/onchain-guide/maintain-machine",
-        "/en/onchain-guide/onchain-errors",
+        "dbc-chain-logic",
+        "machine-reward-model",
+        "machine-slash-model",
+        "unbonding-machine",
+        "become-onchain-committee",
+        "machine-verification",
+        "rent-machine",
+        "report-machine-fault",
+        "maintain-machine",
+        "onchain-errors",
       ],
     },
   ],
   "/en/onchain-api/": [
     {
       text: "OnchainAPI",
-      children: [
-        "/en/onchain-api/dbc-rpc-readme",
-        "/en/onchain-api/dbc-rpc",
-        "/en/onchain-api/dbc-storage",
-      ],
+      prefix: "/en/onchain-api/",
+      children: ["dbc-rpc-readme", "dbc-rpc", "dbc-storage"],
     },
   ],
-  "/en/gpu-cloud": [
+  "/en/gpu-cloud/": [
     {
       text: "Deploy GPU cloud platform",
-      children: ["/en/gpu-cloud/dbc-gpu-cloud-service"],
+      prefix: "/en/gpu-cloud/",
+      children: ["dbc-gpu-cloud-service"],
     },
   ],
   "/en/install-update-dbc-node/": [
     {
-      text: "Install And Update DBC Node",
+      text: "Install & update DBC node",
+      prefix: "/en/install-update-dbc-node/",
       children: [
-        "/en/install-update-dbc-node/install-update-dbc/install-dbc-compute-node",
-        "/en/install-update-dbc-node/install-update-dbc/update-dbc-compute-node",
-        "/en/install-update-dbc-node/install-update-dbc/install-update-dbc-client",
-      ],
-    },
-    {
-      text: "DBC Client - HTTP API",
-      children: [
-        "/en/install-update-dbc-node/dbc-client-api/install-tool",
-        "/en/install-update-dbc-node/dbc-client-api/http-request-format",
-        "/en/install-update-dbc-node/dbc-client-api/http-api",
-      ],
-    },
-    {
-      text: "Create wins-machine application omniverse",
-      children: [
-        "/en/install-update-dbc-node/create-win-machine-omniverse/create-win-machine-omniverse",
-      ],
-    },
-    {
-      text: "DBC monitor",
-      children: [
-        "/en/install-update-dbc-node/dbc-monitor/http-monitor-api",
-        "/en/install-update-dbc-node/dbc-monitor/monitoring-items",
-        "/en/install-update-dbc-node/dbc-monitor/monitoring-protocol",
+        {
+          text: "Install And Update DBC Node",
+          prefix: "install-update-dbc/",
+          children: [
+            "install-dbc-compute-node",
+            "update-dbc-compute-node",
+            "install-update-dbc-client",
+          ],
+        },
+        {
+          text: "DBC Client - HTTP API",
+          prefix: "dbc-client-api/",
+          children: ["install-tool", "http-request-format", "http-api"],
+        },
+        {
+          text: "Create wins-machine application omniverse",
+          prefix: "create-win-machine-omniverse/",
+          children: ["create-win-machine-omniverse"],
+        },
+        {
+          text: "DBC monitor",
+          prefix: "dbc-monitor/",
+          children: [
+            "http-monitor-api",
+            "monitoring-items",
+            "monitoring-protocol",
+          ],
+        },
       ],
     },
   ],
-};
+});

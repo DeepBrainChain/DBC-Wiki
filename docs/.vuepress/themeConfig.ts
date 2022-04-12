@@ -40,7 +40,7 @@ export default defineThemeConfig({
       contributorsText: "기부자",
     },
   },
-
+  logo: "/images/dbc.icon.png",
   plugins: {
     comment: {
       type: "giscus",
