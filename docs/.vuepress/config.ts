@@ -1,10 +1,12 @@
-import { defineUserConfig } from "@vuepress/cli";
+// import { defineUserConfig } from "@vuepress/cli";
 import { navbar, sidebar } from "./configs";
 import { path } from "@vuepress/utils";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
+// import type { DefaultThemeOptions } from "@vuepress/theme-default";
+import { defineHopeConfig } from "vuepress-theme-hope";
+import themeConfig from "./themeConfig";
 
 // module.exports = {
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineHopeConfig({
   lang: "zh-CN",
   title: "DBC-Wiki",
   description: "这是 DBC-Wiki 站点",
@@ -28,44 +30,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   head: [["link", { rel: "icon", href: "/images/dbc.icon.png" }]],
   logo: "/images/dbc.icon.png",
   // we are using a custom theme adding this plugin
-  theme: path.resolve(__dirname, "./theme"),
-  themeConfig: {
-    repo: "DeepBrainChain/DBC-Wiki",
-    docsDir: "docs",
-    docsBranch: "main",
-    locales: {
-      "/": {
-        navbar: navbar.zh,
-        sidebar: sidebar.zh,
-        selectLanguageName: "简体中文",
-        selectLanguageText: "选择语言",
-
-        // page meta
-        editLinkText: "在 GitHub 上编辑此页",
-        lastUpdatedText: "上次更新",
-        contributorsText: "贡献者",
-      },
-      "/en/": {
-        navbar: navbar.en,
-        sidebar: sidebar.en,
-        selectLanguageName: "English",
-
-        // page meta
-        editLinkText: "Edit this page on GitHub",
-      },
-      "/kr/": {
-        navbar: navbar.kr,
-        sidebar: sidebar.kr,
-        selectLanguageName: "한국어",
-        selectLanguageText: "언어 선택",
-
-        // page meta
-        editLinkText: "GitHub에서 이 페이지 편집",
-        lastUpdatedText: "마지막 업데이트",
-        contributorsText: "기부자",
-      },
-    },
-  },
+  // theme: path.resolve(__dirname, "./theme"),
+  themeConfig,
   base: "/DBC-Wiki/",
   plugins: [
     [
