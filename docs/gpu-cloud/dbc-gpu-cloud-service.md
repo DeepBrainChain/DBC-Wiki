@@ -86,6 +86,7 @@ usr和passwd要和mongo中database_name用户名密码一致
    下载依赖包:https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
    解压:rar x Repository.rar
    拷贝：cp -r ~/.m2/repository/Repository/*  ~/.m2/repository/
+   回到DBCGPUCloudService/目录中打包（请确保机器中的java版本为java11）
    打包开发版本， 执行命令： mvn package -P dev
    打包测试版本， 执行命令： mvn package -P test
    打包正式版本， 执行命令： mvn package -P prod
