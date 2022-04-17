@@ -46,6 +46,6 @@
 
 ## 如何参与
 
-- [成为提名人](staking-model/staking-dbc-and-voting.md) -- 质押 DBC,并为你支持的节点投票成为提名人
+- [成为提名人](./staking-dbc-and-voting.md) -- 质押 DBC,并为你支持的节点投票成为提名人
 
-- [成为验证人](staking-model/join-dbc-network.md) -- 运行验证节点，成为验证人参与 DBC 网络出块获取收益
+- [成为验证人](./join-dbc-network.md) -- 运行验证节点，成为验证人参与 DBC 网络出块获取收益
