@@ -99,6 +99,7 @@ export const zh = defineSidebarConfig({
         "32",
         "33",
         "34",
+        "35",
       ],
     },
   ],

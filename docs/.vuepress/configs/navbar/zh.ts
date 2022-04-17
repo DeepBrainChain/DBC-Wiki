@@ -95,6 +95,7 @@ export const zh = defineNavbarConfig([
       "32",
       "33",
       "34",
+      "35",
     ],
   },
   {
