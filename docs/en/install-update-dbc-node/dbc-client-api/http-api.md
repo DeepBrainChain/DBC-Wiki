@@ -614,7 +614,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 
 ## 虚拟机组网
 
-### 1.创建网络（创建时请确保发送请求的客户端和机器是在同一机房）
+### 1.创建网络（创建的网络只能在同一机房内使用）
 
 - 请求方式：POST
 
@@ -629,14 +629,13 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 ```
 {
     "peer_nodes_list": [
-
+        // GPU节点的node_id
+        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
     ],
     "additional": {
-        //创建网络的名称
-        "network_name":"test",
-        //vni_ID(不可重复)
-        "vxlan_vni":"5801",
-        //网段/ 掩码位数
+        // 创建网络的名称(6-10位字母或者数字组合)
+        "network_name":"testnet",
+        // 网段/ 掩码位数
         "ip_cidr":"192.168.66.0/24"
     },
     "session_id":"租用者分发的session_id",
@@ -644,7 +643,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 }
 ```
 
-### 2.删除网络（发送请求时请确保发送请求的客户端和机器是在同一机房）
+### 2.删除网络（DBC会自动清理长时间没有虚拟机使用的网络）
 
 - 请求方式：POST
 
@@ -659,7 +658,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 ```
 {
     "peer_nodes_list": [
-        //可选（填入id表示删除机器网络，不填入表示删除客户端网络）
+        // GPU节点的node_id
         "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
     ],
     "additional": {
