@@ -17,7 +17,7 @@
 > 如果不能正常运行，请使用方式 2 自行编译：
 
 ```bash
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.2/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
 tar xf dbc_chain_linux_x64.tar.gz && cd dbc-chain-mainnet
 ```
 
@@ -37,7 +37,7 @@ cargo build --release
 ## 3. 运行同步节点
 
 ```bash
-./dbc-chain --base-path ./db_data --chain ./dbcSpecRaw.json --pruning archive --bootnodes /ip4/47.74.88.41/tcp/8947/p2p/12D3KooWD87i4TKA68P7zpGNXxUaHgvnimbgihEzDyJrmG3iGJPw
+./dbc-chain --base-path ./db_data --pruning archive
 ```
 
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
@@ -56,7 +56,7 @@ cargo build --release
 在第 3 步同步节点数据完成之后，关闭同步命令。然后以验证人的方式运行节点：
 
 ```bash
-nohup ./dbc-chain --base-path ./db_data --chain ./dbcSpecRaw.json --validator --name YourNodeName --bootnodes /ip4/47.74.88.41/tcp/8947/p2p/12D3KooWD87i4TKA68P7zpGNXxUaHgvnimbgihEzDyJrmG3iGJPw 1>dbc_node.log 2>&1 &
+nohup ./dbc-chain --base-path ./db_data --validator --name YourNodeName 1>dbc_node.log 2>&1 &
 ```
 
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
