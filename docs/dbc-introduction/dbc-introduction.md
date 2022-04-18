@@ -11,6 +11,7 @@
 中文线上发布会：[https://www.chainnode.com/live/34e61432](https://www.chainnode.com/live/34e61432)
 
 PPT详细介绍：
+
 [https://docs.google.com/presentation/d/1Cno9RDKA8QGTgslx6iWTSMbR2FTtbIJe/edit?usp=sharing&ouid=101819635951334046754&rtpof=true&sd=true](https://docs.google.com/presentation/d/1Cno9RDKA8QGTgslx6iWTSMbR2FTtbIJe/edit?usp=sharing&ouid=101819635951334046754&rtpof=true&sd=true)
 
 Github：[https://github.com/DeepBrainChain](https://github.com/DeepBrainChain)
