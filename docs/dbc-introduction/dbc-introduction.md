@@ -6,7 +6,7 @@
 
 愿景是基于区块链技术构建无限扩容的分布式高性能算力网络，成为 AI+元宇宙时代最重要的算力基础设施。深脑链包含三个重要部分：高性能算力网络和区块链主网、GPU 算力主网，经过 4 年的研发，高性能算力网络 2018 年年底正式上线，区块链主网于 2021 年 5 月 20 号上线，GPU 算力主网于 11 月 22 日正式上线。深脑链主网基于波卡 Substrate 开发，深脑链也是区块链行业极少数实现大规模落地的非金融类项目。
 
-**DBC 英文视频介绍：** [https://www.youtube.com/watch?v=V6k8ggbBkSkDBC](https://www.youtube.com/watch?v=V6k8ggbBkSkDBC)
+**DBC 英文视频介绍：** [https://www.youtube.com/watch?v=V6k8ggbBkSk](https://www.youtube.com/watch?v=V6k8ggbBkSk)
 
 中文线上发布会：[https://www.chainnode.com/live/34e61432](https://www.chainnode.com/live/34e61432)
 
