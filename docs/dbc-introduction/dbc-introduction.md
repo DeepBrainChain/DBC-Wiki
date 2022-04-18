@@ -8,7 +8,7 @@
 
 **DBC 英文视频介绍：** [https://www.youtube.com/watch?v=V6k8ggbBkSkDBC](https://www.youtube.com/watch?v=V6k8ggbBkSkDBC)
 
-中文线上发布会：[https://www.chainnode.com/live/34e61432DBC](https://www.chainnode.com/live/34e61432DBC)
+中文线上发布会：[https://www.chainnode.com/live/34e61432](https://www.chainnode.com/live/34e61432)
 
 PPT 详细介绍：[https://docs.google.com/presentation/d/1Cno9RDKA8QGTgslx6iWTSMbR2FTtbIJe/edit?usp=sharing&ouid=101819635951334046754&rtpof=true&sd=true](https://docs.google.com/presentation/d/1Cno9RDKA8QGTgslx6iWTSMbR2FTtbIJe/edit?usp=sharing&ouid=101819635951334046754&rtpof=true&sd=true)
 
