@@ -111,6 +111,7 @@ export const zh = defineSidebarConfig({
         "dbc-chain-params",
         "generate-new-account",
         "join-dbc-network",
+        "run-archive-node",
         "staking-dbc-and-voting",
         "fast-track",
         "common-questions",
