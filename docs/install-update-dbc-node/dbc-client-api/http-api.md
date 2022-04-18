@@ -643,7 +643,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 }
 ```
 
-### 2.删除网络（DBC会自动清理长时间没有虚拟机使用的网络）
+### 2.删除网络（DBC 会自动清理长时间没有虚拟机使用的网络）
 
 - 请求方式：POST
 
