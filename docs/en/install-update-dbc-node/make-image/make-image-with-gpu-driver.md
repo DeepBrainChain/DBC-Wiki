@@ -6,7 +6,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 
 ### 1. Install kvm and other software on linux host
 
-```Bash
+```bash
 sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
 ```
 
@@ -14,9 +14,8 @@ sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils vir
 
 After installing kvm and other software, you need to make sure the current machine supports kvm, use the following command to check virtualization support
 
-```Bash
+```bash
 egrep -c '(vmx|svm)' /proc/cpuinfo
-
 ```
 
 Any non-zero result means virtualization is supported. From the output below, we have confirmed that our server is working properly.
@@ -25,7 +24,7 @@ Any non-zero result means virtualization is supported. From the output below, we
 
 Then check the system support for kvm virtualization, using the following command
 
-```Bash
+```bash
 sudo kvm-ok
 ```
 
@@ -37,7 +36,7 @@ If you have the output of the above picture, you can proceed, if not please chec
 
 Set kernel module blacklist
 
-```Bash
+```bash
 sudo vim /etc/modprobe.d/blacklist.conf
 #Add these at the bottom of the file：
 blacklist snd_hda_intel
@@ -51,7 +50,7 @@ blacklist rivatv
 
 Set gpu passthrough
 
-```Bash
+```bash
 #search gpu ID
 lspci -nnv|grep -i NVIDIA
 #Record the graphics ID as shown below ,like 10de:2204 10de:1aef
@@ -59,7 +58,7 @@ lspci -nnv|grep -i NVIDIA
 
 ![image_2](./assets/make-image-with-gpu-driver.assets/image_2.png)
 
-```Bash
+```bash
 #Modify kernel file
 sudo vim /etc/default/grub
 #Add in GRUB_CMDLINE_LINUX_DEFAULT field (if AMD platform, intel_iommu=on to amd_iommu=on)
@@ -69,14 +68,14 @@ sudo vim /etc/default/grub
 
 ![image_3](./assets/make-image-with-gpu-driver.assets/image_3.png)
 
-```Bash
+```bash
 #update kernel
 sudo update-grub
 ```
 
 Then restart the machine and check the graphics card usage after the machine starts
 
-```Bash
+```bash
 #4f:00.0 as an example
 lspci -vv -s 4f:00 |grep driver
 ```
@@ -89,7 +88,7 @@ If vfio-pci is shown after driver, it is correct
 
 Check that the libvirt service is running, if it is not, you need to start it manually
 
-```Bash
+```bash
 sudo systemctl status libvirtd
 ```
 
@@ -97,7 +96,7 @@ sudo systemctl status libvirtd
 
 You can enable it to start if not running:
 
-```Bash
+```bash
 sudo systemctl enable --now libvirtd
 ```
 
@@ -105,13 +104,13 @@ sudo systemctl enable --now libvirtd
 
 Before we get to creating a template, we need to, first of all, have an installation instance. On the command-line, we are going to create a 50G Ubuntu KVM image using the qemu-img command as shown.
 
-```Bash
+```bash
 sudo qemu-img create -f qcow2 /data/ubuntu.qcow2 50G
 ```
 
 Then create the ubuntu virtual machine with the virt-install command as shown below. Note that the iso file after the "--cdrom" is the installation image of the OS you want to install, you need to download it yourself
 
-```Bash
+```bash
 virt-install --virt-type kvm --name ubuntu --memory 4096 \
 --vcpus 4 --cpu=host-passthrough \
 --cdrom=/data/ubuntu_install_dvd_base.iso \
@@ -133,13 +132,13 @@ This launches the virtual machine instance. You can confirm this by heading over
 
 Once the installation is complete, log into the VM and update all the system packages.
 
-```Bash
+```bash
 sudo apt update
 ```
 
 Install the prerequisite packages that you feel are essential to get started with.(Be sure to install qemu-guest-agent and nvidia gpu driver)
 
-```Bash
+```bash
 sudo apt install qemu-guest-agent
 sudo systemctl enable qemu-guest-agent --now
 #NVIDIA graphics card drivers need to go to the official website to download the corresponding version
@@ -148,7 +147,7 @@ sudo systemctl enable qemu-guest-agent --now
 
 Once you are done, be sure to power off your virtual machine and clean up the VM template image as shown.
 
-```Bash
+```bash
 sudo virt-sysprep --enable bash-history,tmp-files,machine-id -d ubuntu
 ```
 
