@@ -23,7 +23,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	sudo kvm-ok
 	```
 	
-	![](image/image_1.png "                                     Check kvm support")
+	![image_1](image/image_1.png "                                     Check kvm support")
 	If you have the output of the above picture, you can proceed, if not please check the host bios settings
 3. VFIO Preparation
 	Set kernel module blacklist
@@ -46,7 +46,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	#Record the graphics ID as shown below ,like 10de:2204 10de:1aef
 	```
 	
-	![](image/image_2.png "")
+	![image_2](image/image_2.png "")
 	```Bash
 	#Modify kernel file
 	sudo vim /etc/default/grub
@@ -55,7 +55,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	
 	```
 	
-	![](image/image_3.png "                                           /etc/default/grub contents")
+	![image_3](image/image_3.png "                                           /etc/default/grub contents")
 	```Bash
 	#update kernel
 	sudo update-grub
@@ -68,14 +68,14 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	If vfio-pci is shown after driver, it is correct
-	![](image/image_4.png "")
+	![image_4](image/image_4.png "")
 4. Checking libvirt running
 	Check that the libvirt service is running, if it is not, you need to start it manually
 	```Bash
 	sudo systemctl status libvirtd
 	```
 	
-	![](image/image_5.png "")
+	![image_5](image/image_5.png "")
 	You can enable it to start if not running:
 	```Bash
 	sudo systemctl enable --now libvirtd
@@ -106,11 +106,11 @@ virt-install --virt-type kvm --name ubuntu --memory 4096 \
 ```
 
 
-![](image/image_6.png "")
+![image_6](image/image_6.png "")
 
 This launches the virtual machine instance. You can confirm this by heading over to the [v](https://www.tecmint.com/create-virtual-machines-in-kvm-using-virt-manager/)nc viewer and opening the console window as shown. What you can see is the default welcome page for the installer. Be sure to complete the installation to the very end.
 
-![](image/image_7.png "")
+![image_7](image/image_7.png "")
 
 # Step 3: Create KVM Virtual Machine Template Image
 
@@ -128,6 +128,7 @@ Install the prerequisite packages that you feel are essential to get started wit
 sudo apt install qemu-guest-agent
 sudo systemctl enable qemu-guest-agent --now
 #NVIDIA graphics card drivers need to go to the official website to download the corresponding version
+#Or use apt install to install nvidia drivers
 ```
 
 
@@ -138,7 +139,7 @@ sudo virt-sysprep --enable bash-history,tmp-files,machine-id -d ubuntu
 ```
 
 
-![](image/image_8.png "")
+![image_8](image/image_8.png "")
 
 Lastly, invoke the command shown to undefine the VM domain. And he template image is now ready for cloning and deployment.
 
