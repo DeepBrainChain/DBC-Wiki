@@ -40,11 +40,13 @@ export const en = defineSidebarConfig({
       children: [
         {
           text: "DBC Progress",
+          collapsable: true,
           prefix: "dbc-progress/",
-          children: ["dbc-progress/2020", "2021-01-01", "2021", "2022-01-01"],
+          children: ["2020", "2021-01-01", "2021", "2022-01-01"],
         },
         {
           text: "DBC AMA",
+          collapsable: true,
           prefix: "dbc-ama/",
           children: [
             "8btc-ama",
@@ -55,6 +57,7 @@ export const en = defineSidebarConfig({
         },
         {
           text: "DBC Report",
+          collapsable: true,
           prefix: "dbc-report/",
           children: [
             "dbc-36kr-report",
@@ -127,6 +130,7 @@ export const en = defineSidebarConfig({
       children: [
         {
           text: "Install And Update DBC Node",
+          collapsable: true,
           prefix: "install-update-dbc/",
           children: [
             "install-dbc-compute-node",
@@ -136,16 +140,19 @@ export const en = defineSidebarConfig({
         },
         {
           text: "DBC Client - HTTP API",
+          collapsable: true,
           prefix: "dbc-client-api/",
           children: ["install-tool", "http-request-format", "http-api"],
         },
         {
           text: "Create wins-machine application omniverse",
+          collapsable: true,
           prefix: "create-win-machine-omniverse/",
           children: ["create-win-machine-omniverse"],
         },
         {
           text: "DBC monitor",
+          collapsable: true,
           prefix: "dbc-monitor/",
           children: [
             "http-monitor-api",
@@ -155,6 +162,7 @@ export const en = defineSidebarConfig({
         },
         {
           text: "Make image steps (with gpu driver)",
+          collapsable: true,
           prefix: "make-image/",
           children: ["make-image-with-gpu-driver"],
         },
