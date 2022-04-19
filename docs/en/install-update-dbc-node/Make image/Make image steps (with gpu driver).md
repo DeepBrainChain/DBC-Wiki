@@ -17,13 +17,16 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	Any non-zero result means virtualization is supported. From the output below, we have confirmed that our server is working properly.
-	![](image/image.png "")
+	
+	![image](image/image.png "")
+	
 	Then check the system support for kvm virtualization, using the following command
 	```Bash
 	sudo kvm-ok
 	```
 	
 	![image_1](image/image_1.png "                                     Check kvm support")
+	
 	If you have the output of the above picture, you can proceed, if not please check the host bios settings
 3. VFIO Preparation
 	Set kernel module blacklist
@@ -47,6 +50,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	![image_2](image/image_2.png "")
+	
 	```Bash
 	#Modify kernel file
 	sudo vim /etc/default/grub
@@ -56,6 +60,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	![image_3](image/image_3.png "                                           /etc/default/grub contents")
+	
 	```Bash
 	#update kernel
 	sudo update-grub
@@ -68,7 +73,9 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	If vfio-pci is shown after driver, it is correct
+	
 	![image_4](image/image_4.png "")
+	
 4. Checking libvirt running
 	Check that the libvirt service is running, if it is not, you need to start it manually
 	```Bash
@@ -76,6 +83,7 @@ Make a user's own virtual machine image that can be used to create multiple inst
 	```
 	
 	![image_5](image/image_5.png "")
+	
 	You can enable it to start if not running:
 	```Bash
 	sudo systemctl enable --now libvirtd
