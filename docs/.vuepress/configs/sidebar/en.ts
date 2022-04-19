@@ -156,7 +156,7 @@ export const en = defineSidebarConfig({
         {
           text: "Make image steps (with gpu driver)",
           prefix: "Make image/",
-          children: ["Make-image-steps-(with-gpu-driver)"],
+          children: ["Make-image-steps-(with-gpu-driver).md"],
         },
       ],
     },
