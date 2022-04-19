@@ -153,8 +153,8 @@ export const en = defineNavbarConfig([
       },
       {
         text: "Make image steps (with gpu driver)",
-        prefix: "Make image/",
-        children: ["Make-image-steps-(with-gpu-driver).md"],
+        prefix: "make-image/",
+        children: ["make-image-with-gpu-driver"],
       },
     ],
   },
