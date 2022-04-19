@@ -151,6 +151,11 @@ export const en = defineNavbarConfig([
           "monitoring-protocol",
         ],
       },
+      {
+        text: "Make image steps (with gpu driver)",
+        prefix: "Make image/",
+        children: ["Make-image-steps-(with-gpu-driver)"],
+      },
     ],
   },
 ]);
