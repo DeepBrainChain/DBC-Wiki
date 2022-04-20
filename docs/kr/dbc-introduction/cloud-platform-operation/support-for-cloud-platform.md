@@ -66,14 +66,12 @@ DBC 컴퓨팅 네트워크의 장점은 [가성비 높은 GPU 컴퓨팅 리소�
 
 하기 일부 목표 사용자 모임 장소가 공유드립니다 .
 
-| GPU사용자 커뮤니니          | 3D Rendering and Architectural V isualization                | https://www.facebook.com/groups/891302667703732  | 3D렌더링 및 건축 가시화           |
-| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------ | --------------------------------- |
-|                             | 3D Modeling,Texturing, Rendering, Rigging, Animation         | https://www.facebook.com/groups/290530545401744  | 3D건축 렌더링 에니메이션 등       |
+| GPU사용자 커뮤니니          | 3D Rendering and Architectural V isualization                               | https://www.facebook.com/groups/891302667703732  | 3D렌더링 및 건축 가시화           |
+| --------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------ | --------------------------------- |
+|                             | 3D Modeling,Texturing, Rendering, Rigging, Animation                        | https://www.facebook.com/groups/290530545401744  | 3D건축 렌더링 에니메이션 등       |
 |                             | 3D Modeling, 2D Art, Drawing, Design, Animation,VFX, Rendering, illustrator | https://www.facebook.com/groups/488801081988816  | 3D건축 렌더링 에니메이션 등       |
-| KOL(KOL 평가 커뮤니티 관심) | Benji-Sales                                                  | https://www.youtube.com/benjisales               | 영상게임 업계 블로거              |
-|                             | RedGaming Tech                                               | https://www.youtube.com/c/RedGamingTech/featured | GPU카드 및 각종 하드웨어 기술분석 |
-
-
+| KOL(KOL 평가 커뮤니티 관심) | Benji-Sales                                                                 | https://www.youtube.com/benjisales               | 영상게임 업계 블로거              |
+|                             | RedGaming Tech                                                              | https://www.youtube.com/c/RedGamingTech/featured | GPU카드 및 각종 하드웨어 기술분석 |
 
 ### 사용자 인센티트브 방안
 
