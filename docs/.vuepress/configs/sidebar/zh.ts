@@ -14,6 +14,12 @@ export const zh = defineSidebarConfig({
         "rent-virtual",
         "dbc-community",
         "dbc-hot-link",
+        {
+          text: "云平台运营",
+          collapsable: true,
+          prefix: "cloud-platform-operation/",
+          children: ["initial-operation-process", "support-for-cloud-platform"],
+        },
       ],
     },
   ],
@@ -41,7 +47,7 @@ export const zh = defineSidebarConfig({
           text: "DBC 进展",
           collapsable: true,
           prefix: "dbc-progress/",
-          children: ["2020", "2021-01-01", "2021", "2022-01-01"],
+          children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
         },
         {
           text: "DBC AMA",

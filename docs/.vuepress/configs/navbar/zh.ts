@@ -8,7 +8,6 @@ export const zh = defineNavbarConfig([
       {
         text: "DBC介绍",
         prefix: "/dbc-introduction/",
-        // prefix: "dbc-introduction/",
         children: [
           "dbc-applications",
           "dbc-ecology",
@@ -18,6 +17,11 @@ export const zh = defineNavbarConfig([
           "dbc-community",
           "dbc-hot-link",
         ],
+      },
+      {
+        text: "云平台运营",
+        prefix: "/dbc-introduction/cloud-platform-operation/",
+        children: ["initial-operation-process", "support-for-cloud-platform"],
       },
       {
         text: "社区治理",
@@ -36,12 +40,11 @@ export const zh = defineNavbarConfig([
   },
   {
     text: "DBC资讯",
-    // link: "/dbc-information",
     children: [
       {
         text: "DBC 进展",
         prefix: "/dbc-information/dbc-progress/",
-        children: ["2020", "2021-01-01", "2021", "2022-01-01"],
+        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
       },
       {
         text: "DBC AMA",

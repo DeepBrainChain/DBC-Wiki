@@ -21,6 +21,11 @@ export const kr = defineNavbarConfig([
         ],
       },
       {
+        text: "Cloud platform operation",
+        prefix: "dbc-introduction/cloud-platform-operation/",
+        children: ["initial-operation-process", "support-for-cloud-platform"],
+      },
+      {
         text: "DBC 민주주의",
         prefix: "dbc-democracy/",
         children: [
@@ -42,7 +47,7 @@ export const kr = defineNavbarConfig([
       {
         text: "DBC 진행",
         prefix: "dbc-progress/",
-        children: ["2020", "2021-01-01", "2021", "2022-01-01"],
+        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
       },
       {
         text: "DBC AMA",
