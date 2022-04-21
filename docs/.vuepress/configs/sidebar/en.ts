@@ -30,6 +30,7 @@ export const en = defineSidebarConfig({
       children: [
         "dbc-council",
         "join-council",
+        "council-meeting-procedures",
         "proposing-referenda",
         "voting-referenda",
         "apply-treasury",

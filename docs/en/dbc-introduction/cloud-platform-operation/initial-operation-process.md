@@ -1,27 +1,27 @@
-# GPU 云平台初期运营流程
+# GPU Cloud Platform Preliminary Operation Process
 
-## 1、获取种子用户
+## 1. Seed User Acquiring
 
-- 准备工作
+- Preperation Work
 
-  - 确保 GPU 云平台处于可用状态
-  - 建立官方 twitter/reddit/discord/youtube/tele 等社媒账号（不同国家根据实际情况侧重点有所不同）
-  - 制作基本的产品使用教程、宣传素材，图文及视频
+  - Make sure the GPU cloud platform is available
+  - Set up official twitter/reddit/discord/youtube/telegram social media accounts (focus varies by country)
+  - Create basic product tutorials, promotional materials, graphics and videos
 
-- 实操
+- Execution
 
-  - 制作产品使用教程发布在官方 reddit/youtube 账号，鼓励大家评论、转发，持续沉淀优质内容，能增加搜索引擎权重，获取自然流量，吸引用户主动找过来,导入官方社群，成为私域流量，为后续运营做准备
-  - 在 GPU 开发者聚集的 reddit/disord 群发帖、聊天主动搜索用户，尤其是英伟达、深度学习相关的社群，将精准流量导入自己社群，成为私域流量，为后续运营做准备
+  - Produce product tutorials posted on the official reddit/youtube account, encourage people to comment, forward, and continue to accumulate quality content, which can increase search engine ranking, obtain natural traffic, attract users to come and guide them to the official community, leading to private domain traffic, and prepare for subsequent operations.
+  - Post and chat in reddit/Disord groups where GPU developers gather to actively search for users, especially Nvidia and deep learning related communities, to import accurate traffic into their own communities leading to private domain traffic for subsequent operations.
 
-## 2、服务种子用户（留存、增加用户粘性）
+## 2.Serving Seed Users (User retention)
 
-- 督促、引导种子用户完整使用云平台相关功能
-- 种子用户使用过程中遇到任何问题及时响应
-- 种子用户提出的产品、技术相关问题及时处理、迭代
+- Supervise and guide the seed users to use the relevant functions of the cloud platform completely
+- Respond to any problems encountered by seed users in the process of using the platform in a timely manner
+- Timely process and iterate product and technology-related issues raised by seed users
 
-## 3、运营种子用户（持续扩大私域流量）
+## 3.Operation and Seed Users (Continued expansion of private domain traffic)
 
-- 鼓励用户撰写使用心得体会，在其社媒渠道（twitter/reddit/discord 等等）传播，官方社媒予以互动，并进一步沉淀优质内容，扩大云平台在开发者圈层的影响力；
-- 鼓励用户推荐新用户，转发官方指定的宣传素材
-- 鼓励活跃的种子用户来担任社区管理员，分担官方运营人员职责
-- 在服务好种子用户的基础上形成口碑传播，核心是利用用户产生优质内容，利用用户来扩大影响力，利用用户进一步获取用户，利用用户来服务用户，形成闭环。
+- Encourage users to write about their experiences and disseminate them in their social media channels (twitter/reddit/discord, etc.), and official social media to interact with them and further accumulate quality content to expand the influence of the cloud platform in the developer community;
+- Encourage users to refer new users and forward official promotional materials
+- Encourage active seed users to serve as community administrators and share the duties of the official operators
+- On the basis of serving seed users well, we spread our reputation by word-of-mouth, our core method is to use users to generate quality content, use users to expand influence, use users to further acquire users, and use users to serve users, forming a closed loop.
