@@ -141,7 +141,7 @@ export const kr = defineSidebarConfig({
             "install-dbc-compute-node",
             "update-dbc-compute-node",
             "install-update-dbc-client",
-            "deploy_image_server"
+            "deploy_image_server",
           ],
         },
         {
