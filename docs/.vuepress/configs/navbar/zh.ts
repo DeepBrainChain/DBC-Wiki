@@ -115,6 +115,7 @@ export const zh = defineNavbarConfig([
           "run-archive-node",
           "staking-dbc-and-voting",
           "fast-track",
+          "council-proposal",
           "common-questions",
         ],
       },

@@ -121,6 +121,7 @@ export const zh = defineSidebarConfig({
         "run-archive-node",
         "staking-dbc-and-voting",
         "fast-track",
+        "council-proposal",
         "common-questions",
       ],
     },
