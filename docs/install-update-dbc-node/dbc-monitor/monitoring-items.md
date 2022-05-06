@@ -158,7 +158,7 @@
   </tr>
   <tr>
     <td>host.diskMountStatus</td>
-    <td>挂载状态，"lost"或者"ok"</td>
+    <td>挂载状态，"lost"或者"normal"</td>
     <td>string</td>
     <td></td>
   </tr>

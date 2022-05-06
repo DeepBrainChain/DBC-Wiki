@@ -158,7 +158,7 @@
   </tr>
   <tr>
     <td>host.diskMountStatus</td>
-    <td>The mount status of the data disk，"lost" or "ok"</td>
+    <td>The mount status of the data disk，"lost" or "normal"</td>
     <td>string</td>
     <td></td>
   </tr>
