@@ -86,98 +86,96 @@
     <td>degrees C</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="2">虚拟机</td>
     <td>host.vmCount</td>
     <td>虚拟机数量</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.vmRunning</td>
     <td>正在运行的虚拟机个数</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
+    <td>CPU</td>
     <td>host.cpuUsage</td>
     <td>CPU使用率</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="3">内存</td>
     <td>host.memTotal</td>
     <td>总内存</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.memFree</td>
     <td>空闲内存</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.memUsage</td>
     <td>内存使用率</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="2">流量</td>
     <td>host.rxFlow</td>
     <td>接收总流量</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.txFlow</td>
     <td>发送总流量</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="4">数据盘</td>
     <td>host.diskTotal</td>
     <td>硬盘容量</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.diskFree</td>
     <td>硬盘空闲容量</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.diskUsage</td>
     <td>硬盘使用率</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
+    <td>host.diskMountStatus</td>
+    <td>挂载状态，"lost"或者"ok"</td>
+    <td>string</td>
     <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">平均负载</td>
     <td>host.loadAverage.1</td>
     <td>过去的1分钟内的平均负载</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.loadAverage.5</td>
     <td>过去的5分钟内的平均负载</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.loadAverage.15</td>
     <td>过去的15分钟内的平均负载</td>
     <td>float</td>
