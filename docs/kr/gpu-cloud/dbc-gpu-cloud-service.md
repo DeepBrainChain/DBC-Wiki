@@ -155,7 +155,7 @@ node -v //v16.13.0
 npm install
 
 #After the execution is successful, run the following command to start the web page locally to run the cloud platform for testing.
-npm run dev
+npm run serve
 
 2. Modify the cloud platform logo pattern configuration
 #Open the folder src--> locales --> CN.js && EN.js && RU.js, set the website_name field to the name of your cloud platform, run it locally to view
@@ -604,8 +604,58 @@ db.paypalInfo.insert({
     "Secret":'your Secret' // Secret corresponding to your app
 })
 ```
+## 8. Lease a single virtual machine
 
-## 8. Summary of the problem
+### Update node and web to the latest version (re-pull the latest code)
+
+::: warning
+
+  The re-pulled files need to be re-executed `npm install` in the folder
+
+  In the `HttpRequest` under the node folder, just use forever to start `router.js`, and all js files under `TimedTask` must be started
+
+:::
+
+### Preparation:
+
+- Rent a virtual machine on the chain ([Reference link](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html))
+
+- Query session_id information ([The third type in the reference link](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html))
+
+- Create network ([Reference link](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-api.html#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E7%BD%91))
+
+- View rent_end block height(Note that the comma should be removed when the obtained rent_end is saved: 1021788)
+
+![](./assets/dbc-gpu-cloud-service.assets/signle.png)
+
+### Add the above information to the database:
+
+- Set up a virMachine collection (stores machine information for renting a single GPU)
+
+```
+// virMachine Collection
+db.virMachine.insert({
+    "_id": "virtual_machine_list",
+    "machineList": [
+        {
+            "machine_id": "machine_id",
+            "session_id": "sessionid",
+            "session_id_sign": "session_id_sign",
+            "rent_end": "block height",
+            "network_name": "network name"
+        },
+        {
+            "machine_id": "machine_id",
+            "session_id": "sessionid",
+            "session_id_sign": "session_id_sign",
+            "rent_end": "block height",
+            "network_name": "network name"
+        }
+    ]
+})
+```
+
+## 9. Summary of the problem
 
 ### 1.start.log reports an error: map is null:
 

@@ -611,7 +611,55 @@ db.paypalInfo.insert({
 })
 ```
 
-## 八、问题总结
+## 八、单台虚拟机部署配置
+
+### 1.将node、web更新到最新版本（重新拉取最新代码）
+
+::: warning
+
+ 重新拉下来的文件要在文件夹中重新执行`npm install`
+
+ 在node文件夹下的`HttpRequest`中只需用forever启动`router.js`,`TimedTask`下的所有js文件都要启动
+
+:::
+
+### 2.准备工作：
+- 在链上租用一台虚拟机（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)）
+- 查询session_id信息（[参考链接中的第三种类型](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html)）
+- 创建网络（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-api.html#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E7%BD%91)）
+- 查看rent_end块高(注意获取的rent_end保存时要去掉逗号:1021788)
+
+![](./assets/dbc-gpu-cloud-service.assets/signle.png)
+
+### 3. 将以上信息添加到数据库中：
+
+- 设置 virMachine集合（存储用于租用单个GPU的机器信息）
+
+```
+// virMachine集合
+db.virMachine.insert({
+    "_id": "virtual_machine_list",
+    "machineList": [
+        {
+            "machine_id": "机器id",
+            "session_id": "sessionid",
+            "session_id_sign": "session信息",
+            "rent_end": "块高",
+            "network_name": "网络名称"
+        },
+        {
+            "machine_id": "机器id",
+            "session_id": "sessionid",
+            "session_id_sign": "session信息",
+            "rent_end": "块高",
+            "network_name": "网络名称"
+        }
+    ]
+})
+```
+
+
+## 九、问题总结
 
 ### 1.start.log 报错：map is null
 
