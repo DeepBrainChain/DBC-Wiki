@@ -62,13 +62,13 @@ security:
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
 
-## 二、java 部署
+## 二、Java 部署(建议Java环境为Java11)
 
 ```bash
 #通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. 修改配置文件中的dbc算力网络客户端域名
 在DBCGPUCloudService/src/main/resources 文件夹下面：
-application-dev.properties  application-dev.properties   application-dev.properties 中clientUrl修改用自己部署的dbc客户端域名替代
+application-dev.properties  application-prod.properties   application-test.properties 中clientUrl修改用自己部署的dbc客户端域名替代
 
 #2. 修改wss链上访问DBC钱包客户端域名
 
@@ -82,8 +82,9 @@ usr和passwd要和mongo中database_name用户名密码一致
 
 #4. 编译打包程序
 
+   提前装好maven
    进入ubuntu服务器的maven仓库文件夹:cd ~/.m2/repository
-   下载依赖包:https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
+   下载依赖包:wget https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
    解压:rar x Repository.rar
    拷贝：cp -r ~/.m2/repository/Repository/*  ~/.m2/repository/
    回到DBCGPUCloudService/目录中打包（请确保机器中的java版本为java11）
@@ -161,7 +162,7 @@ git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 #代码克隆以后，可使用 forever 插件创建定时任务，将node代码运行在服务器后台，通过ip加启动router.js的启动server服务端口号，即可访问对应的接口。
 服务器安装node示例：<https://www.cnblogs.com/niuben/p/12938501.html>
 forever部署示例请参考：<https://blog.csdn.net/superjunjin/article/details/73252194>
-
+(注意：安装forever以后如果未找到，可通过 npm list -g --depth 0 查找forever文件夹安装目录，进入forever/bin/目录下将forever软连接到/usr/bin/forever 全局使用)
 #检查node 和 forever 是否安装成功,执行以下命令
 node -v // v16.13.0
 forever --version // v4.0.1

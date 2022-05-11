@@ -60,13 +60,13 @@ security:
       db.DBCPercentage.find({}).toArray()
 ```
 
-## 2.Java deployment
+## 2.Java deployment (The recommended Java environment is Java11)
 
 ```bash
 # Clone link address via git: https://github.com/DeepBrainChain/DBCGPUCloudService.git
 #1. Modify the domain name of the dbc computing network client in the configuration file
   DBCGPUCloudService/src/main/resources
-  application-dev.properties application-dev.properties application-dev.properties
+  application-dev.properties application-prod.properties application-test.properties
   The clientUrl modification is replaced by the dbc client domain name deployed by yourself
 #2. Modify the domain name of the client to access the DBC wallet on the wss chain
 
@@ -79,8 +79,9 @@ spring.data.mongodb.uri=mongodb://usr:passwd@localhost:27017/database_name
 usr and passwd must be the same as the username and password of database_name in mongo
 #4. Compile the packager
 
+   Install maven in advance
    Enter the maven repository folder of the ubuntu server: cd ~/.m2/repository
-   Download the dependency package: https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
+   Download the dependency package: wget  https://github.com/DeepBrainChain/dbc_java_service_sdk/releases/download/1.0/Repository.rar
    Unzip: rar x Repository.rar
    Copy: cp -r  ~/.m2/repository/Repository/*  ~/.m2/repository/
    Go back to the DBCGPUCloudService/ directory to package (please make sure the java version in the machine is java11)
@@ -200,7 +201,7 @@ git clone https://github.com/DeepBrainChain/DBC-NodeScript.git
 #After the code is cloned, you can use the forever plugin to create a scheduled task, run the node code in the server background, and access the corresponding interface by adding the IP address to the server port number that starts router.js.
 Server installation node example: <https://www.cnblogs.com/niuben/p/12938501.html>
 For example of forever deployment, please refer to: <https://blog.csdn.net/superjunjin/article/details/73252194>
-
+(Note: After installing forever, if it is not found, you can use npm list -g --depth 0 to find the installation directory of the forever folder, enter the forever/bin/ directory and connect the forever to /usr/bin/forever for global use)
 #Check if node and forever are installed successfully, execute the following commands
 node -v // v16.13.0
 forever --version // v4.0.1
