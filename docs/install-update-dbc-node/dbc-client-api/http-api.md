@@ -120,9 +120,22 @@
 >
 >         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
 >         // 添加多组播地址续在括号中用","相隔,也可不填
->         "multicast":["230.0.0.1:5558"]
+>         "multicast":["230.0.0.1:5558"],
 >         //内网名称（创建虚拟机网络时填的名称）
 >         "network_name": "test",
+>         // 公网ip地址
+>         "public_ip": "",
+>         // 安全组
+>         // [
+>         //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
+>         //    "in,tcp,22,0.0.0.0/0,accept",
+>         //    "in,tcp,3389,0.0.0.0/0,accept",
+>         //    接受所有流出虚拟机的流量
+>         //    "out,all,all,0.0.0.0/0,accept",
+>         //    丢弃其他所有流入虚拟机的流量
+>         //    "in,all,all,0.0.0.0/0,drop"
+>         // ]
+>         "network_filters":[]
 >     },
 >
 >     "session_id": "租用者分发的session_id",
@@ -366,13 +379,47 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     ],
 >     "new_gpu_count": "2", // >= 0
 >     "new_cpu_cores": "8", // > 0, 单位:G
->     "new_mem_size": "8" // > 0, 单位:G
+>     "new_mem_size": "8",  // > 0, 单位:G
+>     "new_public_ip: "",   // 公网ip地址
+>     "new_network_filters": []  // 安全组
 >   },
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
 > }
 > ```
+
+### 11. 修改虚拟机登录密码
+
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/passwd/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>     "username": "dbc",
+>     "password": "vm123456"
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+:::warning
+1. 只有正在运行的虚拟机才能修改密码。
+
+2. 虚拟机内必须安装了 qemu guest agent 或者 dbc guest agent 才支持使用此API修改密码。
+
+3. Ubuntu系统默认使用用户名"dbc", windows系统默认使用用户名"Administrator"，自定义镜像请自行设置用户名。
+:::
 
 <br/>
 
