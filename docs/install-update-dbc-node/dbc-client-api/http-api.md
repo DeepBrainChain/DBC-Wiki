@@ -75,35 +75,38 @@
 >         "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >     ],
 >     "additional": {
+>         // 镜像名字
+>         "image_name": "ubuntu.qcow2",
+>         // 描述
+>         "desc": "...",
+>         // 操作系统类型: linux、windows (默认值：linux)
+>         "operation_system": "linux",
+>         // 引导方式:（默认值：legacy）
+>         //   linux系统设置: legacy
+>         // windows系统设置: uefi
+>         //        pxe方式: pxe
+>         "bios_mode": "legacy",
 >         // 远程登录linux虚拟机，ssh端口号（linux）
 >         "ssh_port": "5684",
 >         // 远程登录windows虚拟机，rdp端口号（windows）
 >         "rdp_port": "5685",
 >         // vnc连接端口号
 >         "vnc_port": "5904",
+>         //自定义端口映射
+>         // [
+>         //    宿主机的123转发到虚拟机的123
+>         //    "tcp/udp,123",
+>         //    宿主机的111转发到虚拟机的222
+>         //    "tcp/udp,111:222",
+>         //    宿主机的333-444转发到虚拟机的444
+>         //    "tcp/udp,333-444",
+>         //    宿主机的[555-666]转发到虚拟机的[777-888]
+>         //    "tcp/udp,555-666:777-888"
+>         // ]
 >         "custom_port": [
->            // 宿主机的123转发到虚拟机的123
->            "tcp/udp,123",
->            // 宿主机的111转发到虚拟机的222
->            "tcp/udp,111:222",
->            // 宿主机的333-444转发到虚拟机的444
->            "tcp/udp,333-444",
->            // 宿主机的[555-666]转发到虚拟机的[777-888]
->            "tcp/udp,555-666:777-888"
+>             
 >         ],
->         // 镜像名字
->         "image_name": "ubuntu.qcow2",
->         // 自定义虚拟机标识（例如：my-ubuntu-1804）
->         "custom_image_name": "my-ubuntu-1804",
->         // 操作系统类型: ubuntu、win
->         "operation_system": "ubuntu",
->         // 引导方式:
->         //   linux系统设置：legacy
->         // windows系统设置：uefi
->         "bios_mode": "legacy",
->         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
->         // 添加多组播地址续在括号中用","相隔,也可不填
->         "multicast":["230.0.0.1:5558"]
+> 
 >         // gpu数量（大于等于 0）
 >         "gpu_count": "2",
 >         // cpu数量（大于0）
@@ -111,7 +114,13 @@
 >         // 内存大小（大于0，单位：G）
 >         "mem_size": "8",
 >         // 磁盘大小（大于0，单位：G）
->         "disk_size": "10"
+>         "disk_size": "10",
+>         // 已存在的数据盘文件（如：xxx.qcow2）
+>         "data_file_name": "xxx.qcow2",
+>
+>         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
+>         // 添加多组播地址续在括号中用","相隔,也可不填
+>         "multicast":["230.0.0.1:5558"]
 >         //内网名称（创建虚拟机网络时填的名称）
 >         "network_name": "test",
 >     },
@@ -124,7 +133,7 @@
 > 示例：
 > <img src="./assets/create_task.png" width = "500" height = "240"  align=center />
 
-- 创建过程的时间长短，会根据配置的不同而不同，大约在五分钟到十五分钟之间。
+- 创建过程的时间长短，会根据配置的不同而不同，大约需要几分钟时间。
 - 可以通过请求`虚拟机详细信息`，查询到虚拟机`登录方式`以及虚拟机的`当前状态`（当状态值为"creating"，表示虚拟机正在创建过程中）
 
 <br/>
@@ -177,11 +186,11 @@
 > 示例：
 > <img src="./assets/list_task.png" width = "500" height = "200"  align=center />
 
-### 4. 停止虚拟机
+### 4. 关闭虚拟机(shutdown)
 
 > `请求方式`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/stop/<要停止的 task_id 值>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/shutdown/<要停止的 task_id 值>
 >
 > `请求body`：
 >
@@ -201,7 +210,31 @@
 > 示例：
 > <img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
 
-### 5. 启动虚拟机
+### 5. 关闭虚拟机(强制断电)
+
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/poweroff/<要停止的 task_id 值>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {},
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+>
+> 示例：
+> <img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
+
+### 6. 启动虚拟机
 
 > **唤醒处于睡眠状态的虚拟机，也是用此接口**
 >
@@ -227,7 +260,7 @@
 > 示例：
 > <img src="./assets/start_task.jpg" width = "500" height = "200"  align=center />
 
-### 6. 删除虚拟机
+### 7. 删除虚拟机
 
 > `请求方式`：POST
 >
@@ -251,7 +284,7 @@
 > 示例：
 > <img src="./assets/delete_task.png" width = "500" height = "200"  align=center />
 
-### 7. 重启虚拟机
+### 8. 重启虚拟机
 
 > `请求方式`：POST
 >
@@ -278,7 +311,7 @@
 http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启的 task_id 值>?force_reboot=true
 :::
 
-### 8. 查询虚拟机日志
+### 9. 查询虚拟机日志
 
 > `请求方式`：POST
 >
@@ -303,7 +336,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 查询虚拟机日志的请求 url 有两个参数，flag 表示查询日志的方向，参数等于 tail 即从日志文件的尾部开始查询，等于 head 即从日志文件的头部开始查询。line_num 表示要查询的日志行数，如果超过文件的实际行数，则以文件实际行数为准。最后，此请求最多返回 1024 个字节，超出范围的日志会被截断。
 :::
 
-### 9. 修改虚拟机配置
+### 10. 修改虚拟机配置
 
 :::tip
 需要先关闭虚拟机
@@ -332,9 +365,8 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >       "udp,555-666:777-888" // host的[555-666]转发到guest的[777-888]
 >     ],
 >     "new_gpu_count": "2", // >= 0
->     "new_cpu_cores": "8", // > 0, 单位G
->     "new_mem_size": "8", // > 0, 单位G
->     "increase_disk_size": "10" // > 0, 单位G
+>     "new_cpu_cores": "8", // > 0, 单位:G
+>     "new_mem_size": "8" // > 0, 单位:G
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -344,9 +376,147 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 
 <br/>
 
+## 磁盘管理
+
+### 1.查询磁盘列表
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/list/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+### 2.数据盘扩容
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/resize/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>       "disk": "vdb",  //盘符
+>       "size": 20  //单位: G
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+### 3.添加新的数据盘
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/add/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>       "size": 20,  //单位: G
+>       "mount_dir": "/data"  //挂载目录，默认：/data
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+### 4.删除数据盘
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/delete/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>       "disk": "vdb",  //盘符
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+<br />
+
 ## 快照管理
 
-### 1.创建快照
+### 1.查询快照列表
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>       
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+### 2.查询快照详细信息
+> `请求方式`：POST
+>
+> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>/<snapshot_name>
+>
+> `请求body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>       
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
+> }
+> ```
+
+### 3.创建快照
 
 :::tip 注意！
 创建快照是请确保虚拟机为关闭状态
@@ -357,7 +527,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 - 请求 URL：
 
 ```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/create
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/create/<task_id>
 ```
 
 - 请求 Body:
@@ -369,37 +539,23 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/create
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "snapshot_name": "snap2", //自定义的镜像名
-    "description": "finish hello world", // 自定义的镜像描述（可不写）
-    "disks": [
-      //选择磁盘创建（可以不写，如果没有"disks"，则默认对所有磁盘做外部增量快照，快照文件由 libvirt 自动生成）
-      {
-        "disk_name": "vda", //磁盘名称
-        "snapshot_type": "external" //external创建外部快照
-      },
-      {
-        "disk_name": "vdb", //磁盘名称
-        "snapshot_type": "no" //no不创建快照(不填写默认使用external)
-      }
-    ]
+    "snapshot_name": "snap1", //快照名
+    "desc": "...",  //描述
+    "image_server": "ID_2" //创建的快照上传到此镜像中心
   },
   "session_id": "租用者分发的 session_id",
   "session_id_sign": "租用者分发的 session_id_sign"
 }
 ```
 
-- 实例：
+### 4.删除快照
 
-![create_snap](./assets/snap_mirror_manage.assets/create_snap.png)
-
-### 2.查看快照列表
-
-- 请求方式：POST
+- 请求方式： POST
 
 - 请求 URL：
 
 ```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<snapshot_name>
 ```
 
 - 请求 Body:
@@ -410,43 +566,14 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>
     //GPU节点的node_id
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {},
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "additional": {
+
+  },
+  "session_id": "租用者分发的 session_id",
+  "session_id_sign": "租用者分发的 session_id_sign"
 }
 ```
-
-- 实例：
-
-![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
-
-### 3.查看快照详情信息
-
-- 请求方式：POST
-
-- 请求 URL：
-
-```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/<task_id>/<snap_name>
-```
-
-- 请求 Body:
-
-```json
-{
-  "peer_nodes_list": [
-    //GPU节点的node_id
-    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
-  ],
-  "additional": {},
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
-}
-```
-
-- 实例：
-
-![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
+<br />
 
 ## 镜像管理
 
@@ -612,6 +739,137 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
+
+### 5.查询下载进度
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/downloadprogress
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {
+    "image_filename": "ubuntu.qcow2",
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+### 6.查询上传进度
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/uploadprogress
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {
+    "image_filename": "ubuntu.qcow2",
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+### 7.停止下载
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download_stop
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {
+    "image_filename": "ubuntu.qcow2",
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+### 8.停止上传
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload_stop
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {
+    "image_filename": "ubuntu.qcow2",
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+### 9.删除镜像文件
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    //GPU节点的node_id
+    "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
+  ],
+  "additional": {
+    "image_filename": "ubuntu.qcow2",
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
 ## 虚拟机组网
 
 ### 1.创建网络（创建的网络只能在同一机房内使用）
@@ -626,7 +884,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 
 - 请求 Body:
 
-```
+```json
 {
     "peer_nodes_list": [
         // GPU节点的node_id
@@ -655,7 +913,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 - 请求 Body:
 
-```
+```json
 {
     "peer_nodes_list": [
         // GPU节点的node_id
