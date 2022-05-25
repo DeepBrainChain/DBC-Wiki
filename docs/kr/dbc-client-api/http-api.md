@@ -101,9 +101,9 @@ body요청：
          //    "tcp/udp,555-666:777-888"
          // ]
          "custom_port": [
-             
+
          ],
- 
+
          // gpu数量（大于等于 0）
          "gpu_count": "2",
          // cpu数量（大于0）
@@ -367,6 +367,7 @@ body 요청：
 ## 磁盘管理
 
 ### 1.查询磁盘列表
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/list/<task_id>
@@ -379,9 +380,7 @@ body 요청：
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -389,6 +388,7 @@ body 요청：
 > ```
 
 ### 2.数据盘扩容
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/resize/<task_id>
@@ -402,8 +402,8 @@ body 요청：
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "disk": "vdb",  //盘符
->       "size": 20  //单位: G
+>     "disk": "vdb", //盘符
+>     "size": 20 //单位: G
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -412,6 +412,7 @@ body 요청：
 > ```
 
 ### 3.添加新的数据盘
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/add/<task_id>
@@ -425,8 +426,8 @@ body 요청：
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "size": 20,  //单位: G
->       "mount_dir": "/data"  //挂载目录，默认：/data
+>     "size": 20, //单位: G
+>     "mount_dir": "/data" //挂载目录，默认：/data
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -435,6 +436,7 @@ body 요청：
 > ```
 
 ### 4.删除数据盘
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/delete/<task_id>
@@ -448,7 +450,7 @@ body 요청：
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "disk": "vdb",  //盘符
+>     "disk": "vdb" //盘符
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -460,8 +462,8 @@ body 요청：
 
 ## 스냅샷/ 이미지 관리
 
-
 ### 1.查询快照列表
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>
@@ -474,9 +476,7 @@ body 요청：
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->       
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -484,6 +484,7 @@ body 요청：
 > ```
 
 ### 2.查询快照详细信息
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>/<snapshot_name>
@@ -496,9 +497,7 @@ body 요청：
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->       
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -529,7 +528,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/create/<task_id>
   ],
   "additional": {
     "snapshot_name": "snap1", //快照名
-    "desc": "...",  //描述
+    "desc": "...", //描述
     "image_server": "ID_2" //创建的快照上传到此镜像中心
   },
   "session_id": "租用者分发的 session_id",
@@ -555,13 +554,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<s
     //GPU节点的node_id
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {
-
-  },
+  "additional": {},
   "session_id": "租用者分发的 session_id",
   "session_id_sign": "租用者分发的 session_id_sign"
 }
 ```
+
 <br />
 
 ## Image Manage
@@ -728,7 +726,6 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-
 ### 5.查询下载进度
 
 - 请求方式：POST
@@ -748,7 +745,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/downloadprogress
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -774,7 +771,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/uploadprogress
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -800,7 +797,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download_stop
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -826,7 +823,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload_stop
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -852,7 +849,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -875,18 +872,18 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 
 ```json
 {
-    "peer_nodes_list": [
-        // GPU节点的node_id
-        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
-    ],
-    "additional": {
-        // 创建网络的名称(6-10位字母或者数字组合)
-        "network_name":"testnet",
-        // 网段/ 掩码位数
-        "ip_cidr":"192.168.66.0/24"
-    },
-    "session_id":"租用者分发的session_id",
-    "session_id_sign":"租用者分发的session_id_sign"
+  "peer_nodes_list": [
+    // GPU节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 创建网络的名称(6-10位字母或者数字组合)
+    "network_name": "testnet",
+    // 网段/ 掩码位数
+    "ip_cidr": "192.168.66.0/24"
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
 
@@ -904,14 +901,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 ```json
 {
-    "peer_nodes_list": [
-        // GPU节点的node_id
-        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
-    ],
-    "additional": {
-
-    },
-    "session_id":"租用者分发的session_id",
-    "session_id_sign":"租用者分发的session_id_sign"
+  "peer_nodes_list": [
+    // GPU节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
 }
 ```

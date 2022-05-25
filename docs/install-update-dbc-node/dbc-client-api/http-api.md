@@ -70,76 +70,74 @@
 >
 > ```json
 > {
->     "peer_nodes_list": [
->         //GPU节点的node_id
->         "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
->     ],
->     "additional": {
->         // 镜像名字
->         "image_name": "ubuntu.qcow2",
->         // 描述
->         "desc": "...",
->         // 操作系统类型: linux、windows (默认值：linux)
->         "operation_system": "linux",
->         // 引导方式:（默认值：legacy）
->         //   linux系统设置: legacy
->         // windows系统设置: uefi
->         //        pxe方式: pxe
->         "bios_mode": "legacy",
->         // 远程登录linux虚拟机，ssh端口号（linux）
->         "ssh_port": "5684",
->         // 远程登录windows虚拟机，rdp端口号（windows）
->         "rdp_port": "5685",
->         // vnc连接端口号
->         "vnc_port": "5904",
->         //自定义端口映射
->         // [
->         //    宿主机的123转发到虚拟机的123
->         //    "tcp/udp,123",
->         //    宿主机的111转发到虚拟机的222
->         //    "tcp/udp,111:222",
->         //    宿主机的333-444转发到虚拟机的444
->         //    "tcp/udp,333-444",
->         //    宿主机的[555-666]转发到虚拟机的[777-888]
->         //    "tcp/udp,555-666:777-888"
->         // ]
->         "custom_port": [
->             
->         ],
-> 
->         // gpu数量（大于等于 0）
->         "gpu_count": "2",
->         // cpu数量（大于0）
->         "cpu_cores": "8",
->         // 内存大小（大于0，单位：G）
->         "mem_size": "8",
->         // 磁盘大小（大于0，单位：G）
->         "disk_size": "10",
->         // 已存在的数据盘文件（如：xxx.qcow2）
->         "data_file_name": "xxx.qcow2",
+>   "peer_nodes_list": [
+>     //GPU节点的node_id
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>     // 镜像名字
+>     "image_name": "ubuntu.qcow2",
+>     // 描述
+>     "desc": "...",
+>     // 操作系统类型: linux、windows (默认值：linux)
+>     "operation_system": "linux",
+>     // 引导方式:（默认值：legacy）
+>     //   linux系统设置: legacy
+>     // windows系统设置: uefi
+>     //        pxe方式: pxe
+>     "bios_mode": "legacy",
+>     // 远程登录linux虚拟机，ssh端口号（linux）
+>     "ssh_port": "5684",
+>     // 远程登录windows虚拟机，rdp端口号（windows）
+>     "rdp_port": "5685",
+>     // vnc连接端口号
+>     "vnc_port": "5904",
+>     //自定义端口映射
+>     // [
+>     //    宿主机的123转发到虚拟机的123
+>     //    "tcp/udp,123",
+>     //    宿主机的111转发到虚拟机的222
+>     //    "tcp/udp,111:222",
+>     //    宿主机的333-444转发到虚拟机的444
+>     //    "tcp/udp,333-444",
+>     //    宿主机的[555-666]转发到虚拟机的[777-888]
+>     //    "tcp/udp,555-666:777-888"
+>     // ]
+>     "custom_port": [],
 >
->         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
->         // 添加多组播地址续在括号中用","相隔,也可不填
->         "multicast":["230.0.0.1:5558"],
->         //内网名称（创建虚拟机网络时填的名称）
->         "network_name": "test",
->         // 公网ip地址
->         "public_ip": "",
->         // 安全组
->         // [
->         //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
->         //    "in,tcp,22,0.0.0.0/0,accept",
->         //    "in,tcp,3389,0.0.0.0/0,accept",
->         //    接受所有流出虚拟机的流量
->         //    "out,all,all,0.0.0.0/0,accept",
->         //    丢弃其他所有流入虚拟机的流量
->         //    "in,all,all,0.0.0.0/0,drop"
->         // ]
->         "network_filters":[]
->     },
+>     // gpu数量（大于等于 0）
+>     "gpu_count": "2",
+>     // cpu数量（大于0）
+>     "cpu_cores": "8",
+>     // 内存大小（大于0，单位：G）
+>     "mem_size": "8",
+>     // 磁盘大小（大于0，单位：G）
+>     "disk_size": "10",
+>     // 已存在的数据盘文件（如：xxx.qcow2）
+>     "data_file_name": "xxx.qcow2",
 >
->     "session_id": "租用者分发的session_id",
->     "session_id_sign": "租用者分发的session_id_sign"
+>     // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
+>     // 添加多组播地址续在括号中用","相隔,也可不填
+>     "multicast": ["230.0.0.1:5558"],
+>     //内网名称（创建虚拟机网络时填的名称）
+>     "network_name": "test",
+>     // 公网ip地址
+>     "public_ip": "",
+>     // 安全组
+>     // [
+>     //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
+>     //    "in,tcp,22,0.0.0.0/0,accept",
+>     //    "in,tcp,3389,0.0.0.0/0,accept",
+>     //    接受所有流出虚拟机的流量
+>     //    "out,all,all,0.0.0.0/0,accept",
+>     //    丢弃其他所有流入虚拟机的流量
+>     //    "in,all,all,0.0.0.0/0,drop"
+>     // ]
+>     "network_filters": []
+>   },
+>
+>   "session_id": "租用者分发的session_id",
+>   "session_id_sign": "租用者分发的session_id_sign"
 > }
 > ```
 >
@@ -414,18 +412,20 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 > ```
 
 :::warning
+
 1. 只有正在运行的虚拟机才能修改密码。
 
-2. 虚拟机内必须安装了 qemu guest agent 或者 dbc guest agent 才支持使用此API修改密码。
+2. 虚拟机内必须安装了 qemu guest agent 或者 dbc guest agent 才支持使用此 API 修改密码。
 
-3. Ubuntu系统默认使用用户名"dbc", windows系统默认使用用户名"Administrator"，自定义镜像请自行设置用户名。
-:::
+3. Ubuntu 系统默认使用用户名"dbc", windows 系统默认使用用户名"Administrator"，自定义镜像请自行设置用户名。
+   :::
 
 <br/>
 
 ## 磁盘管理
 
 ### 1.查询磁盘列表
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/list/<task_id>
@@ -438,9 +438,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -448,6 +446,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 > ```
 
 ### 2.数据盘扩容
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/resize/<task_id>
@@ -461,8 +460,8 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "disk": "vdb",  //盘符
->       "size": 20  //单位: G
+>     "disk": "vdb", //盘符
+>     "size": 20 //单位: G
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -471,6 +470,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 > ```
 
 ### 3.添加新的数据盘
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/add/<task_id>
@@ -484,8 +484,8 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "size": 20,  //单位: G
->       "mount_dir": "/data"  //挂载目录，默认：/data
+>     "size": 20, //单位: G
+>     "mount_dir": "/data" //挂载目录，默认：/data
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -494,6 +494,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 > ```
 
 ### 4.删除数据盘
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/delete/<task_id>
@@ -507,7 +508,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->       "disk": "vdb",  //盘符
+>     "disk": "vdb" //盘符
 >   },
 >
 >   "session_id": "租用者分发的session_id",
@@ -520,6 +521,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 ## 快照管理
 
 ### 1.查询快照列表
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>
@@ -532,9 +534,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->       
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -542,6 +542,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 > ```
 
 ### 2.查询快照详细信息
+
 > `请求方式`：POST
 >
 > `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>/<snapshot_name>
@@ -554,9 +555,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 >     //GPU节点的node_id
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
->   "additional": {
->       
->   },
+>   "additional": {},
 >
 >   "session_id": "租用者分发的session_id",
 >   "session_id_sign": "租用者分发的session_id_sign"
@@ -587,7 +586,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/create/<task_id>
   ],
   "additional": {
     "snapshot_name": "snap1", //快照名
-    "desc": "...",  //描述
+    "desc": "...", //描述
     "image_server": "ID_2" //创建的快照上传到此镜像中心
   },
   "session_id": "租用者分发的 session_id",
@@ -613,13 +612,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<s
     //GPU节点的node_id
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
-  "additional": {
-
-  },
+  "additional": {},
   "session_id": "租用者分发的 session_id",
   "session_id_sign": "租用者分发的 session_id_sign"
 }
 ```
+
 <br />
 
 ## 镜像管理
@@ -786,7 +784,6 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-
 ### 5.查询下载进度
 
 - 请求方式：POST
@@ -806,7 +803,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/downloadprogress
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -832,7 +829,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/uploadprogress
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -858,7 +855,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download_stop
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -884,7 +881,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload_stop
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -910,7 +907,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
-    "image_filename": "ubuntu.qcow2",
+    "image_filename": "ubuntu.qcow2"
   },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
@@ -933,18 +930,18 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 
 ```json
 {
-    "peer_nodes_list": [
-        // GPU节点的node_id
-        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
-    ],
-    "additional": {
-        // 创建网络的名称(6-10位字母或者数字组合)
-        "network_name":"testnet",
-        // 网段/ 掩码位数
-        "ip_cidr":"192.168.66.0/24"
-    },
-    "session_id":"租用者分发的session_id",
-    "session_id_sign":"租用者分发的session_id_sign"
+  "peer_nodes_list": [
+    // GPU节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 创建网络的名称(6-10位字母或者数字组合)
+    "network_name": "testnet",
+    // 网段/ 掩码位数
+    "ip_cidr": "192.168.66.0/24"
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
 
@@ -962,14 +959,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 ```json
 {
-    "peer_nodes_list": [
-        // GPU节点的node_id
-        "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
-    ],
-    "additional": {
-
-    },
-    "session_id":"租用者分发的session_id",
-    "session_id_sign":"租用者分发的session_id_sign"
+  "peer_nodes_list": [
+    // GPU节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
