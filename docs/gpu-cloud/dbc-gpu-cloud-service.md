@@ -62,7 +62,7 @@ security:
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
 
-## 二、Java 部署(建议Java环境为Java11)
+## 二、Java 部署(建议 Java 环境为 Java11)
 
 ```bash
 #通过git克隆链接地址：https://github.com/DeepBrainChain/DBCGPUCloudService.git
@@ -614,27 +614,28 @@ db.paypalInfo.insert({
 
 ## 八、单台虚拟机部署配置
 
-### 1.将node、web更新到最新版本（重新拉取最新代码）
+### 1.将 node、web 更新到最新版本（重新拉取最新代码）
 
 ::: warning
 
- 重新拉下来的文件要在文件夹中重新执行`npm install`
+重新拉下来的文件要在文件夹中重新执行`npm install`
 
- 在node文件夹下的`HttpRequest`中只需用forever启动`router.js`,`TimedTask`下的所有js文件都要启动
+在 node 文件夹下的`HttpRequest`中只需用 forever 启动`router.js`,`TimedTask`下的所有 js 文件都要启动
 
 :::
 
 ### 2.准备工作：
+
 - 在链上租用一台虚拟机（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)）
-- 查询session_id信息（[参考链接中的第三种类型](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html)）
+- 查询 session_id 信息（[参考链接中的第三种类型](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html)）
 - 创建网络（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-api.html#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E7%BD%91)）
-- 查看rent_end块高(注意获取的rent_end保存时要去掉逗号:1021788)
+- 查看 rent_end 块高(注意获取的 rent_end 保存时要去掉逗号:1021788)
 
 ![](./assets/dbc-gpu-cloud-service.assets/signle.png)
 
 ### 3. 将以上信息添加到数据库中：
 
-- 设置 virMachine集合（存储用于租用单个GPU的机器信息）
+- 设置 virMachine 集合（存储用于租用单个 GPU 的机器信息）
 
 ```
 // virMachine集合
@@ -658,7 +659,6 @@ db.virMachine.insert({
     ]
 })
 ```
-
 
 ## 九、问题总结
 
