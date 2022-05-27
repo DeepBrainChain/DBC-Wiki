@@ -51,10 +51,11 @@ export const zh = defineNavbarConfig([
         text: "DBC AMA",
         prefix: "/dbc-information/dbc-ama/",
         children: [
-          "8btc-ama",
-          "galaxy-ama",
-          "council-ama",
-          "dbc-ama-collection",
+          "dbc-ama",
+          // "8btc-ama",
+          // "galaxy-ama",
+          // "council-ama",
+          // "dbc-ama-collection",
         ],
       },
       {
