@@ -58,7 +58,8 @@ security:
  7) mongo,然后use admin ,然后 db.auth('admin','******')，
  8) use identifier  创建identifier数据库,此处数据库名字和java服务器以及nodejs服务器代码中名字需要保持一致
  9) db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
- 10) db.DBCPercentage.insert({ _id: 'percentage',percentage: 40 })   设置加价规则，percentage后跟数字，1为1%，示例为40%
+ 10) #设置加价规则，percentage_signle为单个租用虚拟机的加价大小，percentage_whole为租用整机的加价大小，参数后跟数字，1为1%，示例为40%
+        db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })   
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
 
@@ -173,8 +174,10 @@ npm install
 #执行无误后，在DBC-NodeScript文件夹下，打开publicResource.js文件，修改相关配置信息
 export const wssChain
 export const baseUrl
-export const mongoUrl
+export const mongoUrlSeed
+export const walletInfo
 export const designatedWallet
+#注意：mongoUrlSeed 及 walletInfo 为加密的字符串，需要提前生成，生成规则及方法需联系相关技术人员
 
 #进入 DBC-NodeScript\HttpRequest 文件夹下，执行
 forever start -o http-out.log -e http-err.log router.js //启动nodejs的server服务
@@ -268,8 +271,12 @@ export const baseUrl = '<http://ip:port>' // 步骤三中的dbc客户端ip和端
 /**
  * 连接mongo数据库
  */
-// export const mongoUrl = 'mongodb://localhost:27017/identifier' // 本地启动时访问mongo，服务器无效
-export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // 服务器访问mongo
+export const mongoUrlSeed = 'ba22370884954c456be7fc10cbae7a652fbadfb64e4ab9aab4a8a944f1f8ea052abc8968bfdb05ac1dc0f0842872089e' // 服务器访问mongo加密字段
+
+/**
+ * 钱包数据
+ */
+export const walletInfo = '16c2efe71e094d0b3dd7b319da9c6a636cc0c7740cb6e900a40220fc3b77ec8f22a99f79' // 服务器访问钱包加密字段
 
 /**
  * 定义租用机器获取收益差额的钱包

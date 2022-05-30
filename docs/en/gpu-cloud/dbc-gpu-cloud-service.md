@@ -54,10 +54,10 @@ security:
  7) mongo, then use admin, then db.auth('admin','******'),
  8) use identifier
  9)db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
- 10) #Set the markup rule, the percentage is followed by a number, 1 is 1%, and the example is 40%
-      db.DBCPercentage.insert({ _id: 'percentage',percentage: 40 })
+ 10) #Set the markup rule, percentage_signle is the markup size of a single rental virtual machine, percentage_whole is the markup size of the rental machine, the parameter is followed by a number, 1 is 1%, and the example is 40%
+    db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })
  11) #to see if the setting takes effect
-      db.DBCPercentage.find({}).toArray()
+    db.DBCPercentage.find({}).toArray()
 ```
 
 ## 2.Java deployment (The recommended Java environment is Java11)
@@ -212,8 +212,10 @@ npm install
 #After the execution is correct, open the publicResource.js file in the DBC-NodeScript folder and modify the relevant configuration information
 export const wssChain
 export const baseUrl
-export const mongoUrl
+export const mongoUrlSeed
+export const walletInfo
 export const designatedWallet
+#Note: mongoUrlSeed and walletInfo are encrypted strings, which need to be generated in advance, and the generation rules and methods need to contact relevant technical personnel
 
 #Enter the DBC-NodeScript\HttpRequest folder and execute
 forever start -o http-out.log -e http-err.log router.js //Start the server service of nodejs
@@ -309,8 +311,13 @@ export const baseUrl = '<http://ip:5002>' // The dbc client ip and port number i
  * Connect to mongo database
  */
 
-// export const mongoUrl = 'mongodb://localhost:27017/identifier' //  local access to mongo
-export const mongoUrl = 'mongodb://usr:passwd@localhost:27017/identifier' // server access mongo
+export const mongoUrlSeed = 'ba22370884954c456be7fc10cbae7a652fbadfb64e4ab9aab4a8a944f1f8ea052abc8968bfdb05ac1dc0f0842872089e' // Server access mongo encrypted field
+
+/**
+ * Wallet data
+ */
+export const walletInfo = '16c2efe71e094d0b3dd7b319da9c6a636cc0c7740cb6e900a40220fc3b77ec8f22a99f79' // Server access wallet encryption field
+
 /**
  * Define a wallet for renting a machine for income
  */
