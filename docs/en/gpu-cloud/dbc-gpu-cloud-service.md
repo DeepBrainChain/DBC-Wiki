@@ -612,15 +612,16 @@ db.paypalInfo.insert({
     "Secret":'your Secret' // Secret corresponding to your app
 })
 ```
+
 ## 8. Lease a single virtual machine
 
 ### Update node and web to the latest version (re-pull the latest code)
 
 ::: warning
 
-  The re-pulled files need to be re-executed `npm install` in the folder
+The re-pulled files need to be re-executed `npm install` in the folder
 
-  In the `HttpRequest` under the node folder, just use forever to start `router.js`, and all js files under `TimedTask` must be started
+In the `HttpRequest` under the node folder, just use forever to start `router.js`, and all js files under `TimedTask` must be started
 
 :::
 

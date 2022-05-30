@@ -7,7 +7,7 @@
 :::
 
 ```shell
-sudo echo "140.82.114.4 gitub.com"   >> /etc/hosts
+sudo echo "140.82.114.4 github.com"   >> /etc/hosts
 sudo echo "199.232.5.194 github.global.ssl.fastly.net"   >> /etc/hosts
 sudo echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt-get update
