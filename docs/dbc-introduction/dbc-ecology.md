@@ -6,7 +6,7 @@ DBC 云平台：
 
 2. haibao cloud: [https://www.haibao.io](https://www.haibao.io)
 
-3. tianyu cloud: [https://www.tianyuglobal.cloud](https://www.tianyuglobal.cloud)
+3. tianyu cloud: [https://tianyuglobal.cloud](https://tianyuglobal.cloud)
 
 4. DBC 银河竞赛: [https://galaxyrace.deepbrainchain.org/](https://galaxyrace.deepbrainchain.org/)
 
