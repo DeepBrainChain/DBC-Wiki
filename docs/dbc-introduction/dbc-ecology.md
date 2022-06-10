@@ -4,9 +4,9 @@ DBC 云平台：
 
 1. 聪图云：[https://www.congtu.cloud](https://www.congtu.cloud)
 
-2. dbchain: [https://www.dbchain.ai](https://www.dbchain.ai)
+2. haibao cloud: [https://www.haibao.io](https://www.haibao.io)
 
-3. 1024lab: [https://www.1024gpu.top/](https://www.1024gpu.top/)
+3. tianyu cloud: [https://www.tianyuglobal.cloud](https://www.tianyuglobal.cloud)
 
 4. DBC 银河竞赛: [https://galaxyrace.deepbrainchain.org/](https://galaxyrace.deepbrainchain.org/)
 
