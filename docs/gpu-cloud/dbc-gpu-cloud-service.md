@@ -287,10 +287,16 @@ export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVW
 ## 五、部署 web 环境
 
 ```bash
-#下载代码到本地或服务器
+#下载代码到本地或服务器(注意：master分支下的代码可能为测试版，部署时请以tags最新版本代码为准)
 1. 克隆代码
 #通过git克隆链接地址 https://github.com/DeepBrainChain/DBChainWebsite.git 将代码克隆到本地或服务器，运行
 git clone https://github.com/DeepBrainChain/DBChainWebsite.git
+
+#查询所有tag
+git tag
+
+#切换tag代码
+git checkout <tag-name>
 
 #检查是否安装Node,运行以下命令，检查Node是否全局安装
 node -v //v16.13.0

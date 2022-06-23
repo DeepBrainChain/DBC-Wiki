@@ -144,10 +144,16 @@ Download the update_client.sh script file in it
 ## 4.Deploy the web environment
 
 ```bash
-#download code to local or server
+#Download the code to the local or server (note: the code under the master branch may be a beta version, please refer to the latest version of tags when deploying)
 1. Clone the code
 #Clone the code to the local or server via git clone link address https://github.com/DeepBrainChain/DBChainWebsite.git, run
 git clone https://github.com/DeepBrainChain/DBChainWebsite.git
+
+#Query all tags
+git tag
+
+#Switch tag code
+git checkout <tag-name>
 
 #Check if Node is installed, run the following command to check if Node is installed globally
 node -v //v16.13.0
