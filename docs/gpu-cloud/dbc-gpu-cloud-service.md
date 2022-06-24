@@ -639,7 +639,7 @@ db.paypalInfo.insert({
 
 ### 2.准备工作：
 
-- 在链上租用一台虚拟机（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)）
+- 在链上租用一台整机（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html)）
 - 查询 session_id 信息（[参考链接中的第三种类型](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html)）
 - 创建网络（[参考链接](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-api.html#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BB%84%E7%BD%91)）
 - 查看 rent_end 块高(注意获取的 rent_end 保存时要去掉逗号:1021788)

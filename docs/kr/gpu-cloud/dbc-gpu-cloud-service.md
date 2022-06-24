@@ -633,7 +633,7 @@ In the `HttpRequest` under the node folder, just use forever to start `router.js
 
 ### Preparation:
 
-- Rent a virtual machine on the chain ([Reference link](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html))
+- Rent a whole machine on the chain ([Reference link](https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/rent-machine.html))
 
 - Query session_id information ([The third type in the reference link](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-request-format.html))
 
