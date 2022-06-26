@@ -22,7 +22,7 @@
 
 选择 democracy 下的 外部议案（externalPropose），外部默认通过的议案（externalProposeDefault）或者 externalProposeMajority 三者之一，
 
-它们区别在于:
+它们区别在于需要议会同意的个数及随后进行公投的通过条件不同:
 
 1. 议会同意的个数不同。externalPropose 需要>=1/2 同意；externalProposeDefault 需要 1/1 同意；externalProposeMajority 需要>=3/4 委员会同意。
 
@@ -34,11 +34,11 @@ externalProposeDefault 需要 Super Majority Against 的全民公投
 
 externalProposeMajority 需要 Simple Majority 的全民公投
 
-全民公投通过的计算公式具体参考：[https://deepbrainchain.github.io/DBC-Wiki/dbc-democracy/voting-referenda.html#\_3-%E7%BB%93%E6%9E%9C%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F](https://deepbrainchain.github.io/DBC-Wiki/dbc-democracy/voting-referenda.html#_3-%E7%BB%93%E6%9E%9C%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F)
+全民公投通过的通过条件计算公式具体参考：[https://deepbrainchain.github.io/DBC-Wiki/dbc-democracy/voting-referenda.html#\_3-%E7%BB%93%E6%9E%9C%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F](https://deepbrainchain.github.io/DBC-Wiki/dbc-democracy/voting-referenda.html#_3-%E7%BB%93%E6%9E%9C%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F)
 
 ## 3. 委员会投票
 
-在上图中，我们选择 externalProposeDefault 这个方法，它需要>=3/4 的委员会同意。在本次测试中，议会共有 6 名成员，因此，6\*3/4 =4.5，我们至少需要 5 名委员会通过才能满足条件。因此我们阈值设置为 5.
+在上图中，我们选择 externalProposeMajority 这个方法，它需要>=3/4 的委员会同意。在本次测试中，议会共有 6 名成员，因此，6\*3/4 =4.5，我们至少需要 5 名委员会通过才能满足条件。因此我们阈值设置为 5.
 
 提交后，我们可以在"治理"--"议会"--"Motions"下看到我们提交的议案。
 
