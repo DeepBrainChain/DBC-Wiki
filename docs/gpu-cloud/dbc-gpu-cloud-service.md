@@ -59,7 +59,7 @@ security:
  8) use identifier  创建identifier数据库,此处数据库名字和java服务器以及nodejs服务器代码中名字需要保持一致
  9) db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
  10) #设置加价规则，percentage_signle为单个租用虚拟机的加价大小，percentage_whole为租用整机的加价大小，参数后跟数字，1为1%，示例为40%
-        db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })   
+        db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
 
