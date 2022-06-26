@@ -1,7 +1,7 @@
 // import type { NavbarConfig } from "@vuepress/theme-default";
-import { defineNavbarConfig } from "vuepress-theme-hope";
+import { navbar } from "vuepress-theme-hope";
 
-export const kr = defineNavbarConfig([
+export const kr = navbar([
   {
     text: "DBC 소개",
     prefix: "/kr/",

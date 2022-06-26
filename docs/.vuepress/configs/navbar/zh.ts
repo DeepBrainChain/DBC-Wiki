@@ -1,7 +1,7 @@
 // import type { NavbarConfig } from "@vuepress/theme-default";
-import { defineNavbarConfig } from "vuepress-theme-hope";
+import { navbar } from "vuepress-theme-hope";
 
-export const zh = defineNavbarConfig([
+export const zh = navbar([
   {
     text: "了解DBC",
     children: [

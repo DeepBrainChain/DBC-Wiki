@@ -1,6 +1,6 @@
-import { defineSidebarConfig } from "vuepress-theme-hope";
+import { sidebar } from "vuepress-theme-hope";
 
-export const kr = defineSidebarConfig({
+export const kr = sidebar({
   "/kr/dbc-introduction/": [
     {
       text: "DBC Introduction",
