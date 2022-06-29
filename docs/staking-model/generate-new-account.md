@@ -16,7 +16,7 @@
 
 ```shell
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
+cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.2 --locked
 subkey generate --scheme sr25519 # 生成账户，输出内容如下：
 ```
 
