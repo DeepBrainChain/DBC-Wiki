@@ -46,9 +46,7 @@ When you vote for the council candidates on the page of `democracy-council`, DBC
 
 ## 5. How to release the staking in democracy
 
-### 5.1 Go to [Subscan](https://dbc.subscan.io) to query your own democratic voting records
-
-[subscan](https://dbc.subscan.io)
+- 5.1 Go to [Subscan](https://dbc.subscan.io) to query your own democratic voting records.
 
 - 5.2 On the `Developer-Transaction` page, select `democracy`-`removeVote` and execute.
 
