@@ -48,9 +48,7 @@
 
 ## 5. 如何解绑民主投票里的质押
 
-- 5.1 到 subscan 查询自己民主投票记录，找到投票全民公投的 ID，步骤 5.2 将用到。
-
-[subscan](https://dbc.subscan.io)
+- 5.1 到 [subscan](https://dbc.subscan.io) 查询自己民主投票记录，找到投票全民公投的 ID，步骤 5.2 将用到。
 
 - 5.2 在`开发者--交易`页面，选择`democracy`--`removeVote`，并执行。
 
