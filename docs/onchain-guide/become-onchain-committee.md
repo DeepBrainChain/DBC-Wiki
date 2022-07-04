@@ -41,4 +41,4 @@ node gen_boxpubkey.js --key "0x868020ae0687dda7d57565093a69090211449845a7e114536
 
 执行此步骤时，会质押 20000 DBC，每次被派单时，将会记录下“使用 1000 DBC”。完成派单任务，则退还"1000 DBC"
 
-<img src="./assets/machine_verification.assets/image-20210623145108399.png" width="50%" height="50%">
+![](/assets/machine_verification.assets/image-20210623145108399.png)
