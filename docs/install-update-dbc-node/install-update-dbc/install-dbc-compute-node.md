@@ -174,21 +174,13 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - virsh connect qemu+tcp://localhost:16509/system
 - 如果没有输出错误，就说明启动成功了；
 
-## (五) 创建 dbc 用户
 
-```shell
-sudo wget http://116.85.24.172:20444/static/add_dbc_user.sh
-sudo chmod +x add_dbc_user.sh
-sudo ./add_dbc_user.sh dbc
-#dbc用户密码自行设定
-```
-
-## (六) 安装 DBC 功能节点程序
+## (五) 安装 DBC 功能节点程序
 
 - **注意**：需要切换到 dbc 用户安装
 
 1. 下载 dbc 功能节点的安装脚本：
-   http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_mining.sh
+   [http://116.169.53.132:9000](http://119.6.235.169:9000/)http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. 给安装脚本添加可执行权限：
    命令行下执行：`chmod +x ./install_mining.sh`
 3. 运行安装脚本：
@@ -196,12 +188,12 @@ sudo ./add_dbc_user.sh dbc
 
 (安装过程中，需要用户输入 2 个本地监听端口号)
 
-## (七) 下载镜像模板（请放置于/data 目录下，dbc 启动虚拟机会去/data 目录搜寻）
+## (六) 下载镜像模板（请放置于/data 目录下，dbc 启动虚拟机会去/data 目录搜寻）
 
-http://116.169.53.132:9000/image
-下载：ubuntu.qcow2 和 windows_1909.qcow2 这两个镜像
+http://119.6.235.169:9000/image/
+下载：ubuntu.qcow2 和 windows_1909.qcow2 镜像
 
-## (八) 备份机器 id 以及私钥
+## (七) 备份机器 id 以及私钥
 
 ::: warning
 非常重要，如果此私钥丢失会损失 50%的质押币，请注意多个地方备份
@@ -209,15 +201,15 @@ http://116.169.53.132:9000/image
 
 > 备份安装目录下的 dat/node.dat 文件，放到安全的位置，后面如果重装系统或者重装 DBC 需要用原来的 id 和私钥，否则质押币会被扣除
 
-## (九) 测试创建带有显卡直通的虚拟机,用来检测前面是否正确配置
+## (八) 测试创建带有显卡直通的虚拟机,用来检测前面是否正确配置
 
 - 测试程序下载地址：http://116.169.53.132:9000/dbc/package/check_env
 - 二进制文件，添加执行权限直接执行即可: chmod 777 chec_env ; ./check_env
 - 出现绿色`check vm domain_test successful`即为成功，若没有出现，请排查前面各项配置是否正确。
 
-## (十) 检测机器的各种硬件参数指标是否正常
+## (九) 检测机器的各种硬件参数指标是否正常
 
-- 如果第十五步检测成功，会成功创建一个虚拟机，通过 ssh 登陆进入这个虚拟机内部，其中：vm_local_ip 是虚拟机的内网 ip 地址，用户名是 dbc，pwd 后面的是登陆密码
+- 如果第八步检测成功，会成功创建一个虚拟机，通过 ssh 登陆进入这个虚拟机内部，其中：vm_local_ip 是虚拟机的内网 ip 地址，用户名是 dbc，pwd 后面的是登陆密码
   <img width="542" alt="1629202906(1)" src="https://user-images.githubusercontent.com/32829693/129724788-d50728cd-913b-4e91-8d0b-e53a098da091.png">
 
 - 然后 cd 到测试脚本目录，运行: 【pytest .】，
