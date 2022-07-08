@@ -180,7 +180,7 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - **注意**：需要切换到 dbc 用户安装
 
 1. 下载 dbc 功能节点的安装脚本：
-   [http://116.169.53.132:9000](http://119.6.235.169:9000/)http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_mining.sh
+   http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. 给安装脚本添加可执行权限：
    命令行下执行：`chmod +x ./install_mining.sh`
 3. 运行安装脚本：
