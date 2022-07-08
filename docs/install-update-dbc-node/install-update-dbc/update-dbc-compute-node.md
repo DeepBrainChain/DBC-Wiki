@@ -2,7 +2,7 @@
 
 ## (一) 下载升级脚本：
 
-- [http://116.169.53.132:9000/](http://119.6.235.169:9000/)http://119.6.235.169:9000/dbc/install_update_script/mainnet/update_mining.sh
+- http://119.6.235.169:9000/dbc/install_update_script/mainnet/update_mining.sh
 
 ## (二) 给 update_mining.sh 脚本文件添加执行权限：
 
