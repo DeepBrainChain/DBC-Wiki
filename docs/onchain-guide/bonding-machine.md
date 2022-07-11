@@ -109,11 +109,13 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 导航到`开发者`--`链状态`，通过`资金账户`，查看**资金账户**下绑定的机房：下图生成了两个机房，查询参数为资金账户。
 
 ![](./assets/bonding_machine.assets/image-20210817114925965.png)
+
 ## 4. `控制账户`添加机器信息
 
 `控制账户`还需要补充机器信息：导航到`开发者`--`交易`--`onlineProfile`--`addMachineInfo`
 
 ![](./assets/bonding_machine.assets/image-20210817115411030.png)
+
 - 参数说明：
 
   - server_name: 选择上一步生成的机房 ID
@@ -143,6 +145,7 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 使用**控制账户**领取即可，奖励将发放到**`资金账户`**。
 
 ![](./assets/bonding_machine.assets/image-20210623144049700.png)
+
 ## 6. 查询账户绑定的机器
 
 - 查看资金账户下上链的机器：导航到`开发者`-->`链状态`-->`存储`-->`onlineProfile`-->`stashMachines`

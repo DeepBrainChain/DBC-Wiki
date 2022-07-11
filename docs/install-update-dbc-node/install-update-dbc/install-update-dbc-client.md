@@ -14,7 +14,7 @@
 
 - **下载安装脚本：**
 
- http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_client.sh
+http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_client.sh
 
 - **给 install_client.sh 脚本文件添加执行权限：**
 
@@ -34,7 +34,7 @@
 
 - **下载升级脚本：**
 
- http://119.6.235.169:9000dbc/install_update_script/mainnet/update_client.sh
+http://119.6.235.169:9000dbc/install_update_script/mainnet/update_client.sh
 
 - **给 update_client.sh 脚本文件添加执行权限：**
 
