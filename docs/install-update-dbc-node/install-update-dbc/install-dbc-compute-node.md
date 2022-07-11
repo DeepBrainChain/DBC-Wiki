@@ -174,7 +174,6 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - virsh connect qemu+tcp://localhost:16509/system
 - 如果没有输出错误，就说明启动成功了；
 
-
 ## (五) 安装 DBC 功能节点程序
 
 - **注意**：需要切换到 dbc 用户安装
