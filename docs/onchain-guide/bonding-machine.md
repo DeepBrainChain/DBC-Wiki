@@ -24,7 +24,7 @@ GPU 机器上线，可以获得在线奖励。本文介绍机器的上线步骤�
 
 点击`开发者`--`交易`，如下图选择`onlineProfile`模块的`setController`方法，分别选择`资金账户`和`控制账户`，点击右下角"提交交易"，进行绑定。
 
-<img src="./assets/bonding_machine.assets/image-20210629104434008.png" width="50%" height="50%">
+![](./assets/bonding_machine.assets/image-20210629104434008.png)
 
 > 如上图，BOB_STASH 账户(`资金账户`) 将 DAVE 账户设置为了`控制账户`。
 >
@@ -36,7 +36,7 @@ GPU 机器上线，可以获得在线奖励。本文介绍机器的上线步骤�
 
 如下图，当资金账户绑定成功控制账户后，可以通过`开发者`--`链状态`，选择`onlineProfile`模块的`controllerStash`存储，来查询`控制账户`对应的资金账户。下图，查询到了一个控制账户对应的资金账户。
 
-<img src="./assets/bonding_machine.assets/image-20210714140945243.png" width="50%" height="50%">
+![](./assets/bonding_machine.assets/image-20210714140945243.png)
 
 ## 2. 机器生成签名消息
 
@@ -84,7 +84,7 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 导航到：`开发者`--`交易`，如下图选择`onlineProfile`模块的`bondMachine`方法。使用`控制账户`，将`机器ID`(`MachineId`)与`控制账户`进行绑定即可。参数填写如下图：
 
-<img src="./assets/bonding_machine.assets/image-20210707140400114.png" width="50%" height="50%">
+![](./assets/bonding_machine.assets/image-20210707140400114.png)
 
 ### 2.4 查询机器是否绑定成功
 
