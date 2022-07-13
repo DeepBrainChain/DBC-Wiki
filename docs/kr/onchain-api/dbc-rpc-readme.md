@@ -67,7 +67,7 @@ This document only contains the DBC mainnet **`custom RPC description`**, if you
 
 Go to the dbc web wallet: https://www.dbcwallet.io/, click on the left to switch networks, and in the custom terminal, enter the websocket address. Then navigate to `RPC calls` as shown below to view all RPCs supported by the blockchain. As shown in the figure, select the `methods` method of the `rpc` module, click on the right side of `Submit RPC Call`, and all RPC method names will be listed.
 
-<img src="./assets/README.assets/image-20210813113734192.png" width="50%" height="50%">
+![](./assets/README.assets/image-20210813113734192.png)
 
 ## 2. **About `Block height`, reward distribution time, and description of `Era`**
 

@@ -8,12 +8,12 @@ The two method calls are: `rentMachine-confirmRent` and `rentMachine-reletMachin
 
 For example, you can go to subscan to find all confirmed lease transactions.
 
-<img src="./assets/query_rent_fee.assets/image-20211221174327098.png" width="50%" height="50%">
+![](./assets/query_rent_fee.assets/image-20211221174327098.png)
 
 As shown in the figure, the machine `12481de9a6d9abe7b8a0c8771b0db0e948333101b6c49b80470d955745c0407d` can be checked for lease at 608141.
 
 By querying the transaction of 608141:
 
-<img src="./assets/query_rent_fee.assets/image-20211221174759569.png" width="50%" height="50%">
+![](./assets/query_rent_fee.assets/image-20211221174759569.png)
 
 It can be queried that the user of 5Gv3Fy...vgUYRs called `Confirm Rent`. After executing the call, the pledged amount is transferred to the stash account of the machine.

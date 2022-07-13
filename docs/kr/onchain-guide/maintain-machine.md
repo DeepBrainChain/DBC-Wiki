@@ -10,13 +10,13 @@
 
 Operation of supplementary pledge:
 
-<img src="./assets/maintain_machine.assets/image-20210628174246842.png" width="50%" height="50%">
+![](./assets/maintain_machine.assets/image-20210628174246842.png)
 
 ### Rebind
 
 > When the machine is rejected by the committee, there are 10 days to declare rebinding.
 
-<img src="./assets/maintain_machine.assets/image-20210628173325854.png" width="50%" height="50%">
+![](./assets/maintain_machine.assets/image-20210628173325854.png)
 
 ### The machine is declared offline due to a fault
 
@@ -24,7 +24,7 @@ Operation of supplementary pledge:
 
 Operation：`onlineProfile` -- `controllerReportOffline`
 
-<img src="./assets/maintain_machine.assets/image-20210628174652781.png" width="50%" height="50%">
+![](./assets/maintain_machine.assets/image-20210628174652781.png)
 
 ### (After being declared offline due to failure) Declaring that the machine is online
 
@@ -32,12 +32,12 @@ Operation：`onlineProfile` -- `controllerReportOffline`
 
 Operation：`onlineProfile`--`controllerReportOnline`
 
-<img src="./assets/maintain_machine.assets/image-20210628174734910.png" width="50%" height="50%">
+![](./assets/maintain_machine.assets/image-20210628174734910.png)
 
 ### Modify the machine configuration offline (will be re-verified)
 
 Operation： onlineProfile -- offlineMachineChangeHardwareInfo
 
-<img src="./assets/maintain_machine.assets/2021-12-15_14-12.png" width="50%" height="50%">
+![](./assets/maintain_machine.assets/2021-12-15_14-12.png)
 
 Then execute: onlineProfile - addMachineInfo After re-adding the machine information, it will be reassigned for verification

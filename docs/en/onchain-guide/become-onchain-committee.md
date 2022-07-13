@@ -41,4 +41,4 @@ After generating the public key, go to `committee` --> `committeeSetBoxPubkey` a
 
 When this step is performed, 20000 DBC will be staked, and every time an order is dispatched, "1000 DBC used" will be recorded. After completing the dispatch task, "1000 DBC" will be refunded
 
-<img src="./assets/machine_verification.assets/image-20210623145108399.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20210623145108399.png)

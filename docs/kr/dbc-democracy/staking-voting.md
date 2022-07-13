@@ -22,7 +22,7 @@
 
 링크 클릭후 하기 파란색 네모 클릭 , 이하는 추가 완성후 페이지 입니다 .
 
-<img src="./assets/staking_voting.assets/3.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/3.jpg)
 
 파란색 네모칸이 하얀색으로 변경하면, 우측상단 레드 화살표 표시됩니다, 즉 플러그인 추가 완성 된것입니다 .
 
@@ -30,17 +30,17 @@
 
 이전단계 완료되면 플러그인 아이콘 클릭하여 메인넷 지갑 생성할 수 있습니다.
 
-<img src="./assets/staking_voting.assets/4.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/4.jpg)
 
-<img src="./assets/staking_voting.assets/5.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/5.jpg)
 
 상기 니모닉은 매우 중요합니다, 안전한 곳에 필수로 백업해주세요 . 기록후 next step 클릭하여 비밀번호 설정합니다 .
 
-<img src="./assets/staking_voting.assets/6.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/6.jpg)
 
 설정이 완료되면 다음 단계로 이동합니다. 플러그인 아이콘을 클릭하면 자체 딥브레인체인 지갑주소 확인할수있습니다.
 
-<img src="./assets/staking_voting.assets/7.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/7.jpg)
 
 ## C:DeepBrain Chain 메인넷 스테이킹 프로세스 , 검증인 노드 지명(슈퍼노드 스테이킹)
 
@@ -54,11 +54,11 @@
 
 클릭후, 여러분 지갑 주소와 지갑 잔액을 확인할 수 있습니다 .
 
-<img src="./assets/staking_voting.assets/8.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/8.jpg)
 
 이후 네트웍 스테이킹 클릭하여 슈퍼노드 리스트 정보 확인할 수 있습니다.
 
-<img src="./assets/staking_voting.assets/9.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/9.jpg)
 
 1분기에는 21개의 슈퍼노드가 있고, 주회측은 3개의 노드를 점유하지만, 슈퍼노드의 수량이 18개 이상일 경우 주최측 노드는 중지됩니다, 이후 분기마다 10개의 노드가 추가되어 현재 총 41개 노드 있습니다 . （https://dbc.subscan.io/validator）
 
@@ -68,19 +68,19 @@
 
 슈퍼노드는 24시간마다 선출되며, 영원한 슈퍼노드는 없습니다. 슈퍼노드의 총 보증량에 따라 슈퍼노드 선정될 수 있으며, 최종 상위 41개는 별도의 조작 없이 자동으로 슈퍼노드로 선정됩니다.
 
-<img src="./assets/staking_voting.assets/10.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/10.jpg)
 
 슈퍼노드 페이지에서 자신과 타인이 보증한 금액의 합이 가장 큰 41개의 노드가 슈퍼노드로 선정되는 것을 알 수 있습니다, 또한 선거에 참여하고 싶은 다른 노드도 있지만, 이번 선거 종료 혹은 순위가 41위 뒤로 되여 이 페이지에 나타납니다.
 
-<img src="./assets/staking_voting.assets/11.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/11.jpg)
 
 목표 클릭, 선거 참여하는 모든 슈포노드 확인 가능합니다. 다음은 슈퍼노드 데이터 분석을 통해 어떤 수퍼노드에 스테이킹해야 매일 수익 얻고 , 수익 최대화 할수있는지 확인합니다.
 
-<img src="./assets/staking_voting.assets/12.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/12.jpg)
 
 모든 슈퍼노드 확인후 , 하기 데이터 분석이 필요합니다
 
-<img src="./assets/staking_voting.assets/13.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/13.jpg)
 
 주의:
 
@@ -100,9 +100,9 @@ dbc 메인넷은 매일 41개 조각 케이크를 사용자를 위해 준비하�
 
 **[출처]** [슈퍼노드 투표 프로세스](https://blog.naver.com/dbc_korea/222643200202)|**작성자** [DBC KOREA](https://blog.naver.com/dbc_korea)
 
-<img src="./assets/staking_voting.assets/14.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/14.jpg)
 
-<img src="./assets/staking_voting.assets/14.2.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/14.2.jpg)
 
 ​
 
@@ -114,7 +114,7 @@ dbc 메인넷은 매일 41개 조각 케이크를 사용자를 위해 준비하�
 
 단 커미션 비율만 보지는 않습니다, 여러 데이터로 분석후 선별해야합니다 .
 
-<img src="./assets/staking_voting.assets/15.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/15.jpg)
 
 따라서 인과 관계는 커미션과 자신이 스테이킹한dbc 총량대비 비율이 최종 수익을 결정합니다 , 즉 return 크기 입니다.
 
@@ -122,26 +122,26 @@ dbc 메인넷은 매일 41개 조각 케이크를 사용자를 위해 준비하�
 
 고래해야 할 또 다른 조건은 슈퍼 노드의 기기 상황 입니다 .
 
-<img src="./assets/staking_voting.assets/16.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/16.jpg)
 
-<img src="./assets/staking_voting.assets/17.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/17.jpg)
 
 이 곡선 아이콘을 클릭하면 몇 가지 처벌과 보상을 볼 수 있습니다. 곡선의 일부가 갑자기 자주 떨어지는 경우이 슈퍼 노드가 자주 처벌 받는것을 의미합니다. 처벌을 받으면 오늘의 수익이 훨씬 적음을 의미합니다.
 
 하기 슈퍼노드에 대해 분석 완료후 구체적인 투표 프로세스 입니다 .
 
-<img src="./assets/staking_voting.assets/18.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/18.jpg)
 
-<img src="./assets/staking_voting.assets/19.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/19.jpg)
 
 한도액을 정할때 전부 스테이킹 하지 말고 네트웍 이체을 위해 일부 dbc를 남겨 두세요 .
 
-<img src="./assets/staking_voting.assets/20.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/20.jpg)
 
 계속 다음단계 클릭하여 하기 페이지 화면에 비밀 번호 입력하시면 됩니다 .
 
-<img src="./assets/staking_voting.assets/21.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/21.jpg)
 
-<img src="./assets/staking_voting.assets/22.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/22.jpg)
 
 스테이킹 완료되면 목록에서 자신이 스테이킹한 슈퍼노드의 대기 정보를 확인할 수 있으며, 다음 선거에서 담보로 지정된 슈퍼노드가 당선될 경우 해당 보상을 받을 수 있습니다.

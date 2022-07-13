@@ -46,7 +46,7 @@ cargo build --release
 
 - After finished synchronize, type `Control + C` to close the above command. You can compare `target` and `best` to infer if sync is finished. When `target` is closed (100 blocks, for example) to `best` , it can be regard sync is finished.
 
-<img src="./assets/join_dbc_network.assets/image-20210126021938613.png" width="50%" height="50%">
+![](./assets/join_dbc_network.assets/image-20210126021938613.png)
 
 - **Flags in detail：**
   - `--base-path`：Specifies a directory where Substrate should store all the data related to this chain. If this value is not specified, a default path will be used. If the directory does not exist it will be created for you. If other blockchain data already exists there you will get an error. Either clear the directory or choose a different one.

@@ -9,15 +9,15 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 首先，大家得有一个基于波卡的 DBC 主网钱包。建好钱包后打开 DBC 主网地址www.dbcwallet.io，点选“治理”一栏。
 
-<img src="./assets/join-council.assets/1.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/1.jpg)
 
 弹出栏会有“议会”这一选项
 
-<img src="./assets/join-council.assets/2.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/2.jpg)
 
 点进去，就是当前议会竞选状态概览
 
-<img src="./assets/join-council.assets/3.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/3.jpg)
 
 “座位” — — 当前被选上的理事会成员
 
@@ -25,7 +25,7 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 “候选人” — — 提交了候选人后暂时没进入前 20 的参选者
 
-<img src="./assets/join-council.assets/4.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/4.jpg)
 
 页面右上角分别是“投票”和“提交候选人”
 
@@ -33,7 +33,7 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 一、接下来我们先看“投票”
 
-<img src="./assets/join-council.assets/5.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/5.jpg)
 
 点进去可以看到自己账户余额
 
@@ -41,13 +41,13 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 1 个 DBC 算 1 票，注意，少于 1 个 DBC 的投票是不会成功的
 
-<img src="./assets/join-council.assets/6.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/6.jpg)
 
 确定好后签名提交、输密码确认就可以了
 
 二、接下来看“提交候选人”
 
-<img src="./assets/join-council.assets/7.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/7.jpg)
 
 进入后选择自己想要参与竞选的账户
 

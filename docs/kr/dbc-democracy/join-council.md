@@ -6,15 +6,15 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 우선 Polkadot 기반 DBC 메인넷 지갑을 가지고 있어야 합니다. 지갑을 만든후 DBC 메인넷 주소 www.dbcwallet.io를 열고 "거버넌스" 클릭합니다.
 
-<img src="./assets/join-council.assets/1.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/1.jpg)
 
 "의회"표시됩니다
 
-<img src="./assets/join-council.assets/2.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/2.jpg)
 
 클릭후 현재 의회 선거 상태 볼수있습니다
 
-<img src="./assets/join-council.assets/3.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/3.jpg)
 
 "의석"--현 이사회 구성원
 
@@ -22,7 +22,7 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 "후보자"--후보자 제출후 일시적으로 20위안에 못들어간 참가자들
 
-<img src="./assets/join-council.assets/4.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/4.jpg)
 
 페이지 우측상단에 "투표" 및 "후보자제츨" 있습니다
 
@@ -30,19 +30,19 @@ https://t.youku.com/yep/page/m/957gtxr1a1?wh_weex=true&isNeedBaseImage=1&objectT
 
 **A.우선"투표" 단계 확인합니다**
 
-<img src="./assets/join-council.assets/5.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/5.jpg)
 
 클릭후 자체 계좌 잔액 확인합니다
 
 1개DBC 는 1표입니다,주의사항: DBC가 1개 미만일 경우 투표 불가입니다
 
-<img src="./assets/join-council.assets/6.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/6.jpg)
 
 확인후 사인하여 제출, 비밀번호 입력하면 됩니다
 
 **B.다음은 "후보자 제출 "확인합니다**
 
-<img src="./assets/join-council.assets/7.jpg" width="50%" height="50%">
+![](./assets/join-council.assets/7.jpg)
 
 입력 후 선거 참여할 계정을 선택하세요.
 

@@ -10,21 +10,21 @@ Reference: [How to generate new account](generate-new-account.md)
 
 Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) and you can see your account and your balance:
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122210826588.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 
 ## 3. Nominator
 
 - Navigate to `Network > Staking > Account actions`, click `Nominator`
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122210945889.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122210945889.png)
 
 - set your stash account，controller account and`value bonded`，then click next
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211057762.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211057762.png)
 
 - then, you should select the validator. (**You can nominate more than one validator**).
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211203371.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211203371.png)
 
 - Finally click `Bond & Nominate` to send the transaction and finished the nominate.
 
@@ -32,7 +32,7 @@ Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](htt
 
 Navigate to`Network > Staking > Account actions`, you can see the balance of bonded DBC and the validator you nominated.
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211537605.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211537605.png)
 
 ## 5. Nominate the second time
 

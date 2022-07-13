@@ -8,21 +8,21 @@
 
 打开[https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts), 查看您的账户与余额
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122210826588.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 
 ## 3. 提名验证人
 
 - 导航到`网络 > 质押 > 账户操作`，点击`提名人`
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122210945889.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122210945889.png)
 
 - 在弹窗中选择存储账户(stash account)，控制账户(controller account)，并填写`绑定的金额(value bonded)`，点击下一步
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211057762.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211057762.png)
 
 - 接下来选择您要提名的验证人，点击左侧的账户，或者在输入框中输入地址，将您要提名的验证人添加到右侧（**您可以提名多个验证人**）。
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211203371.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211203371.png)
 
 - 最后点击`Bond & Nominate`发送交易，完成提名。
 
@@ -30,7 +30,7 @@
 
 导航到`网络 > 质押 > 账户操作`，您可以看到绑定的 DBC 数目，与提名的候选人。
 
-<img src="./assets/staking_dbc_and_voting.assets/image-20210122211537605.png" width="50%" height="50%">
+![](./assets/staking_dbc_and_voting.assets/image-20210122211537605.png)
 
 ## 5. 第二次提名
 

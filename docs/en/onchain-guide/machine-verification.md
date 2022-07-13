@@ -4,13 +4,13 @@
 
 Navigate to `Developer`-->`Chain Status`-->`Storage`, select the `committeeMachine` storage of the `onlineCommittee` module, and click the `+` sign on the right to see the committee's order status. As is shown, the committee has an order assigned by the system
 
-<img src="./assets/machine_verification.assets/image-20210601164137286.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20210601164137286.png)
 
 ## 2. View the time interval allocated by the system to the committee for verification
 
 Navigate to `Developer`--`Chain Storage`--`Storage`, select the `committeeOps` method of `onlineCommittee`, and enter your committee account, and the machine ID assigned in the previous step, you can find information similar to the following :
 
-<img src="./assets/machine_verification.assets/image-20210601164631426.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20210601164631426.png)
 
 Among them, booked_time represents the order dispatch time. Note that the committee submits the original information between 36 and 48 hours after dispatching the order (that is, the block height booked_time + 4320 ~ booked_time + 5760).
 
@@ -26,7 +26,7 @@ Download json file：http://114.116.21.175:22244/dbc-develop-0.3.7.5.postman_col
 
 Import json file: fiel----import----select json file to import import
 
-<img src="./assets/machine_verification.assets/133870420-b790637c-cab6-44f9-ba00-493eadc951cd.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/133870420-b790637c-cab6-44f9-ba00-493eadc951cd.png)
 
 Replace the client ip address and port with `121.57.95.175:5679`
 
@@ -47,31 +47,31 @@ chmod +x sign_tool
 ./sign_tool `Wallet address` `private key`
 ```
 
-<img src="./assets/machine_verification.assets/133870889-61976abb-ae6b-4cd6-97e3-9e9205745346.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/133870889-61976abb-ae6b-4cd6-97e3-9e9205745346.png)
 
 Replace in the following figure: sign, nonce, wallet (note: the sign and nonce of the same machine can only be used once), the machine information can be queried
 
-<img width="50%" height="50%" alt="1631934612(1)" src="./assets/machine_verification.assets/133870573-04dbcb84-9112-4837-b8e4-20db8538c079.png">
+![](./assets/machine_verification.assets/133870573-04dbcb84-9112-4837-b8e4-20db8538c079.png)
 
-<img width="50%" height="50%" alt="46ee522c8a34cfe14979db0e7b91ca6" src="./assets/machine_verification.assets/133871452-06dde25a-9691-44dc-b35b-124dbece44fd.png">
+![](./assets/machine_verification.assets/133871452-06dde25a-9691-44dc-b35b-124dbece44fd.png)
 
 View machine GPU information
 
 ### 3.3 Create a virtual machine
 
-<img src="./assets/machine_verification.assets/test_create.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/test_create.png)
 
 The creation process is relatively slow, about five minutes to fifteen minutes, check the virtual machine login information and virtual machine status in the view task details of postman. For example, in the returned result, "status": "creating" means that the virtual machine is being created , Just wait
 
-<img src="./assets/machine_verification.assets/task_info.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/task_info.png)
 
 ### 3.4 Enter the created virtual machine and execute `nvidia-smi -L` to view the graphics card type
 
-<img src="./assets/machine_verification.assets/nvidia.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/nvidia.png)
 
 After the query is completed, the virtual machine is deleted, and OK appears, indicating that the deletion is successful
 
-<img src="./assets/machine_verification.assets/delete.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/delete.png)
 
 ## 4. The committee calculates the hash of the machine information
 
@@ -91,13 +91,13 @@ As shown in the figure, submit the Hash of the machine information 36 hours ago 
 
 Note: In the picture, **leaseCommittee is replaced with onlineCommittee!!!** Others remain unchanged.
 
-<img src="./assets/machine_verification.assets/image-20210601165736511.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20210601165736511.png)
 
 ## 6. The committee submits the original information of the machine
 
 **Please make sure to submit the original information of the machine within 36~48 hours after the order is dispatched!**
 
-<img src="./assets/machine_verification.assets/image-20210601165851303.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20210601165851303.png)
 
 ## 7. Inquiry and collection of committee awards
 
@@ -105,13 +105,13 @@ Note: In the picture, **leaseCommittee is replaced with onlineCommittee!!!** Oth
 
 Navigate to Developer--Chain Status--Storage, and query the rewards corresponding to the committee account (committee module committeeStake method). As shown in the figure, `can_claim_reward` is the reward that can be claimed; `claimed_reward` is the reward that has been claimed.
 
-<img src="./assets/machine_verification.assets/image-20211020112744070.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20211020112744070.png)
 
 ### 7.2 Claim award
 
 Navigate to Developer-Transaction, select the committee account, select the claimReward method of the committee module, and submit the transaction.
 
-<img src="./assets/machine_verification.assets/image-20211020112948942.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20211020112948942.png)
 
 ## 8. Other operations
 
@@ -129,6 +129,6 @@ The committee can query the rewards by Developer -> ChainStatus, then select met
 
 As shown in the figure below, you can view the penalty amount (slash_amount), reason (slash_reason), penalty execution time (slash_exec_time), penalty generation time (slash_time) and other information.
 
-<img src="./assets/machine_verification.assets/image-20211020113330231.png" width="50%" height="50%">
+![](./assets/machine_verification.assets/image-20211020113330231.png)
 
 ### 8.4 Punishment Appeal (TODO)

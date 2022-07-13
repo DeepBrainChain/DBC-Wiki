@@ -71,7 +71,7 @@ cargo build --release
 
 可到 dbc 网页钱包：https://www.dbcwallet.io/ ，点击左侧切换网络，在自定义终端中，输入 websocket 地址。然后如下图导航到 `RPC calls`，查看区块链支持的所有 RPC。如图，选择 `rpc`模块的`methods`方法，点击右边的`提交RPC调用`，将列出所有的 RPC 方法名。
 
-<img src="./assets/README.assets/image-20210813113734192.png" width="50%" height="50%">
+![](./assets/README.assets/image-20210813113734192.png)
 
 ## 2. **关于`块高`，奖励发放时间，与`Era`的说明**
 

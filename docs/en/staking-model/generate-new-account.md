@@ -35,11 +35,11 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 
 Go to DBC wallet: [https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer), Click `Add Account`, a pop-up box will prompt `mnemonic phrase`, **click on the right side `mnemonic phrase`**, you can **switch to `original seed`, which is the private key that needs to be saved, properly save! **
 
-<img src="./assets/generate_new_account.assets/2021-09-13_09-58.png" width="50%" height="50%">
+![](./assets/generate_new_account.assets/2021-09-13_09-58.png)
 
 <br>
 
-<img src="./assets/generate_new_account.assets/2021-09-13_09-59.png" width="50%" height="50%">
+![](./assets/generate_new_account.assets/2021-09-13_09-59.png)
 
 ## How to convert `secret phrase` to `private key`
 

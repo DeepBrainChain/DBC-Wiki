@@ -14,11 +14,11 @@
 
    2. 解除绑定资金：用来减少质押
 
- <img src="./assets/common_questions.assets/staking_action.png" width="50%" height="50%">
+![](./assets/common_questions.assets/staking_action.png)
 
 3. 如点击解除绑定资金后，出现解除绑定资金的界面，在里面选择想要解除绑定的数量，点击解除绑定即可。
 
- <img src="./assets/common_questions.assets/unbond.png" width="50%" height="50%">
+![](./assets/common_questions.assets/unbond.png)
 
 ::: warning 注意
 解除质押，需要等待 14 天。14 天过后，需要到图 1 中，选择提取绑定资金。或者在帐号页面执行提取绑定资金
@@ -44,7 +44,7 @@
 
 当在 `治理--议会--投票`页面，给议会候选人投票之后，DBC 将会质押到该模块中，需要手动执行取消投票的操作，才能解绑。
 
- <img src="./assets/common_questions.assets/remove_council_voting.png" width="50%" height="50%">
+![](./assets/common_questions.assets/remove_council_voting.png)
 
 ## 5. 如何解绑民主投票里的质押
 
@@ -56,4 +56,4 @@
 
 ## 6. 如何退出委员会候选人
 
-<img src="./assets/common_questions.assets/exit_candidate.png" width="50%" height="50%">
+![](./assets/common_questions.assets/exit_candidate.png)

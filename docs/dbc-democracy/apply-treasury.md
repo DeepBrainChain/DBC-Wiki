@@ -18,7 +18,7 @@
 
 目前 DBC 在 reddit 上建立了 subreddit 社区 DBC_Council（[https://www.reddit.com/r/DBC_Council/](https://www.reddit.com/r/DBC_Council/)），中国大陆使用需科学上网。该社区也建立了提案讨论的分区【proposal_draft discussion】。提案人亦可将草案发布至该社区，并添加 flair【proposal_draft discussion】，进行讨论。
 
-<img src="./assets/apply_treasury.assets/apply_treasury1.png">
+![](./assets/apply_treasury.assets/apply_treasury1.png)
 
 ## 3.链上提交
 
@@ -30,11 +30,11 @@
 
 因此，请重视提案的准备工作，提交较为完整、可行的提案。
 
-<img src="./assets/apply_treasury.assets/apply_treasury2.png" width="50%" height="50%">
+![](./assets/apply_treasury.assets/apply_treasury2.png)
 
 链上提交的同时，提案人必须将提案内容发布至 subreddit 社区 DBC_Council（https://www.reddit.com/r/DBC_Council/），并添加flair【proposal_submitted onchain】。链上提交后你将获得链上提案的编号和区块高度，将【编号】添加入你的提案帖中，方便链上-链下对应。
 
-<img src="./assets/apply_treasury.assets/apply_treasury3.png" width="50%" height="50%">
+![](./assets/apply_treasury.assets/apply_treasury3.png)
 
 ## 4.理事会在链上进行投票
 

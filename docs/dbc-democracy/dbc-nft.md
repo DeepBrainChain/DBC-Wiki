@@ -16,4 +16,4 @@
 
 纪念币具体信息详见下图：
 
-<img src="./assets/dbc-nft.assets/dbc-nft.jpg" width="50%" height="50%">
+![](./assets/dbc-nft.assets/dbc-nft.jpg)

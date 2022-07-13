@@ -103,13 +103,13 @@ If the machines to be bound are in the same computer room, just generate the com
 
 ### 3.1 Operation: Generate new room information on the chain
 
-<img src="./assets/bonding_machine.assets/image-20210817114537368.png" width="50%" height="50%">
+![](./assets/bonding_machine.assets/image-20210817114537368.png)
 
 ### 3.2 Query the computer room records generated under the stash account
 
 Navigate to `developer`--`chain status`, through `stash account`, view the computer room bound under **stash account**: the following figure generates two computer rooms, and the query parameter is the fund account.
 
-<img src="./assets/bonding_machine.assets/image-20210817114925965.png" width="50%" height="50%">
+![](./assets/bonding_machine.assets/image-20210817114925965.png)
 
 ## 4. `Control account` add machine information
 

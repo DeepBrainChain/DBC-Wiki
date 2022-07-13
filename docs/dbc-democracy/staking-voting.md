@@ -22,7 +22,7 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
    点击进去后点击下载然后安装即可
 
-<img src="./assets/staking_voting.assets/1.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/1.jpg)
 
 4. 安装波卡 JS 钱包插件
 
@@ -30,11 +30,11 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
    进入官方下载地址后可以看到这个页面
 
-<img src="./assets/staking_voting.assets/2.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/2.jpg)
 
 点击蓝色的方框下载添加即可。添加完成后页面是这样的。
 
-<img src="./assets/staking_voting.assets/3.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/3.jpg)
 
 蓝色方框变成了白色，右上角红色箭头处出现了这个插件的图标。此时插件已经添加完毕。
 
@@ -42,17 +42,17 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
 在上一步完成后，可以点击该插件图标创建主网钱包。
 
-<img src="./assets/staking_voting.assets/4.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/4.jpg)
 
-<img src="./assets/staking_voting.assets/5.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/5.jpg)
 
 **_注意上面的助记词很重要，一定要保存到安全的地方并且做备份，记录好之后可以点击 Next Step 进入设置密码_**
 
-<img src="./assets/staking_voting.assets/6.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/6.jpg)
 
 设置完成后进入下一步。点击插件图标就可以看到自己的深脑链钱包地址了。
 
-<img src="./assets/staking_voting.assets/7.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/7.jpg)
 
 ## 三、正式进入深脑链主网质押环节，提名验证人节点(质押超级节点）
 
@@ -68,11 +68,11 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
 点进来以后，大家可以看到自己的钱包地址以及钱包里的余额。
 
-<img src="./assets/staking_voting.assets/8.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/8.jpg)
 
 接下来点击网络的质押选项就可以看到超级节点列表信息了
 
-<img src="./assets/staking_voting.assets/9.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/9.jpg)
 
 超级节点在最开始第一个季度有 21 个，官方会占有 3 个节点，但是超级节点数量大于 18 个时候，官方节点会下线，每个季度会增加 10 个节点，当前共 41 个节点。（https://dbc.subscan.io/validator）
 
@@ -82,19 +82,19 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 >
 > 超级节点每 24 小时选举一次，所有没有永久的超级节点，能否选上超级节点是根据这个超级节点的总的质押量排名后，前 41 名将会被自动选为超级节点，无需任何操作）
 
-<img src="./assets/staking_voting.assets/10.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/10.jpg)
 
 在超级节点页面我们可以看到自己质押的金额与其他人质押的金额加起来的总量最大的 41 个节点将被选为超级节点，但是也有其他的节点想要参与选举，但是由于这轮选举已经结束或者质押量排在了 41 名之后，这些节点将会出现在这个页面中
 
-<img src="./assets/staking_voting.assets/11.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/11.jpg)
 
 点击目标，我们可以看到所有参与选举的超级节点，接下来我们会通过分析这些超级节点的数据来决定我们投票那些超级节点让我们的利益尽可能的最大化的同时，又可以保证我们我们每天都获得利益。
 
-<img src="./assets/staking_voting.assets/12.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/12.jpg)
 
 看到所有的超级节点后，我们需要分析以下数据
 
-<img src="./assets/staking_voting.assets/13.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/13.jpg)
 
 > 注：
 >
@@ -114,9 +114,9 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 >
 > 目标页面的数据就可以帮助我们更好的筛选超级节点了。
 >
-> <img src="./assets/staking_voting.assets/14.jpg" width="50%" height="50%">
+> ![](./assets/staking_voting.assets/14.jpg)
 >
-> <img src="./assets/staking_voting.assets/14.2.jpg" width="50%" height="50%">
+> ![](./assets/staking_voting.assets/14.2.jpg)
 >
 > 所得蛋糕（dbc）的计算公式 = （蛋糕总量 _ （1 — 佣金）_ （你自己的 dbc 所占该节点权益总量的比例））
 >
@@ -128,7 +128,7 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
 但是也不是这个比例越低越好，否则也不会有这么多的筛选条件出现了。
 
-<img src="./assets/staking_voting.assets/15.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/15.jpg)
 
 所以因果关系就是这个佣金和你的持仓量所占这个节点的权益总量决定了你的收益，也就是 return 的大小。
 
@@ -136,26 +136,26 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
 还有一个需要考虑的条件就是就是超级节点的机器情况。
 
-<img src="./assets/staking_voting.assets/16.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/16.jpg)
 
-<img src="./assets/staking_voting.assets/17.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/17.jpg)
 
 点这些曲线图标后我们可以看到一些惩罚和奖励情况，如果图像经常有一些点突然掉下去了，说明这个超级节点经常被惩罚这个，一旦被惩罚也就意味着你今天的收益就会少很多。
 
 对这些提名人分析完毕后我们接下里就要进行具体操作了。
 
-<img src="./assets/staking_voting.assets/18.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/18.jpg)
 
-<img src="./assets/staking_voting.assets/19.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/19.jpg)
 
 在设立绑定金额的时候不要全部质押，要留一个 dbc 出来，用于网络转账。
 
-<img src="./assets/staking_voting.assets/20.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/20.jpg)
 
 一直点击下一步进入到该页面输入密码即可完成
 
-<img src="./assets/staking_voting.assets/21.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/21.jpg)
 
-<img src="./assets/staking_voting.assets/22.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/22.jpg)
 
 提名完成后可以在该列表看到自己所以提名的超级节点的等待信息，如果质押的超级节点在下一轮的选举中能够当选的话，你就可以拿到相对应的奖励了。

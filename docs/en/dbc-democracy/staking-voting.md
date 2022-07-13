@@ -20,7 +20,7 @@ https://v.qq.com/x/page/d3247jd4vjb.html?url_from=share&second_share=0&share_fro
 
 Click the link and click download and then install it
 
-<img src="./assets/staking_voting.assets/1.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/1.jpg)
 
 4. Install the Polka JS wallet plug-in
 
@@ -28,11 +28,11 @@ Plugin download address: [Polka's official plug-in download address](https://add
 
 After entering the official download address, you can see this page:
 
-<img src="./assets/staking_voting.assets/2.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/2.jpg)
 
 Just click on the blue box to download and add it. The page will look like this when you are done adding:
 
-<img src="./assets/staking_voting.assets/3.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/3.jpg)
 
 The blue box turns white and the icon for this plugin appears in the upper right corner at the red arrow. At this point the plugin has been added.
 
@@ -40,17 +40,17 @@ The blue box turns white and the icon for this plugin appears in the upper right
 
 After the completion of the previous step, you can click the plugin icon to create a mainnet wallet.
 
-<img src="./assets/staking_voting.assets/4.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/4.jpg)
 
-<img src="./assets/staking_voting.assets/5.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/5.jpg)
 
 \*Note that the above backup phrase is very important, be sure to save them in a safe place and make backup, after documenting the backup phrase you can click 'Next Step' to set the password
 
-<img src="./assets/staking_voting.assets/6.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/6.jpg)
 
 Once you set the password you can go to the next step. Click on the plugin icon then you will see your DBC wallet address.
 
-<img src="./assets/staking_voting.assets/7.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/7.jpg)
 
 ## III. Officially entering the DeepBrain Chain mainnet pledge process, nominate the verifier node (supernode pledge)
 
@@ -66,11 +66,11 @@ Important Notes:
 
 After you click in, you can see your wallet address and the balance in your wallet.
 
-<img src="./assets/staking_voting.assets/8.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/8.jpg)
 
 Then click on the ‘pledge’ option on the network and you will see the supernodes info list
 
-<img src="./assets/staking_voting.assets/9.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/9.jpg)
 
 There are 21 supernodes in the very first quarter,and 10 nodes will be added every quarter, with a total of 41 nodes currently. ([https://dbc.subscan.io/validator](https://dbc.subscan.io/validator))
 
@@ -80,19 +80,19 @@ The next step is to give you an analysis of the status of the 41 supernodes.
 (Note: Supernodes are elected every 24 hours, there are no permanent supernodes, whether you can be elected as a supernode is based on the ranking of the total pledge volume on this supernode, the top 41 will be automatically selected as supernodes, no operation needed)
 :::
 
-<img src="./assets/staking_voting.assets/10.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/10.jpg)
 
 On the supernode page we can see that the 41 nodes with the largest total amount pledged by themselves plus the total amount pledged by others will be elected as Supernodes, but there are other nodes that want to participate in the election, but since the round is over or that their pledged amount is ranked after 41, these nodes will appear on this page:
 
-<img src="./assets/staking_voting.assets/11.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/11.jpg)
 
 By clicking on 'Target', we can see all the supernodes participating in the election, and then we will analyze the data of these supernodes to decide which supernodes we will vote for to maximize our benefits as much as possible while ensuring that we gain benefits every day.
 
-<img src="./assets/staking_voting.assets/12.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/12.jpg)
 
 After seeing all supernodes, we need to analyze the below data:
 
-<img src="./assets/staking_voting.assets/13.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/13.jpg)
 
 ::: tip
 Notes:
@@ -111,9 +111,9 @@ There is another problem, the cake is there, but how to share the cake? I gave t
 
 First of all, the DBC mainnet will give this piece of cake to the supernode, that is, every day the supernode will get 6,772 (calculated according to 41 nodes) or so DBC, now the data on the target page can help us to filter the supernodes better.
 
-<img src="./assets/staking_voting.assets/14.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/14.jpg)
 
-<img src="./assets/staking_voting.assets/14.2.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/14.2.jpg)
 
 The formula for calculating the earned cake (DBC) = (total amount of cake _ (1 - commission) _ (the percentage of your own DBC in the total equity of the node))
 
@@ -128,7 +128,7 @@ But truthfully no nodes will set their ratio at 0%. The bigger the ratio is set,
 
 But it's not that the lower the ratio the better, otherwise there will not be so many other screening conditions.
 
-<img src="./assets/staking_voting.assets/15.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/15.jpg)
 
 So the cause and effect is that the total amount of equity in this node accounted for by this commission and your position determines your earnings, which is the size of the RETURN.
 
@@ -138,26 +138,26 @@ Note: When you are pledging in accordance with the RETURN ranking after choosing
 
 Another factor that needs to be considered is the condition of the supernode's machine.
 
-<img src="./assets/staking_voting.assets/16.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/16.jpg)
 
-<img src="./assets/staking_voting.assets/17.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/17.jpg)
 
 After clicking on these curve icons we can see some penalties and rewards. If the image often has some points of a sudden fall, it means that this supernode is often punished, once a node is punished it means that your earnings today will be much less.
 
 After the analysis of these nominees we will then proceed to the specific operation.
 
-<img src="./assets/staking_voting.assets/18.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/18.jpg)
 
-<img src="./assets/staking_voting.assets/19.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/19.jpg)
 
 Do not pledge the entire amount when setting up the binding amount, leave one DBC out for the transfer online.
 
-<img src="./assets/staking_voting.assets/20.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/20.jpg)
 
 Keep clicking next to go to this page to enter your password to finish
 
-<img src="./assets/staking_voting.assets/21.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/21.jpg)
 
-<img src="./assets/staking_voting.assets/22.jpg" width="50%" height="50%">
+![](./assets/staking_voting.assets/22.jpg)
 
 After the nomination is completed, you can see the waiting information of the supernode you nominated in this list. If the pledged supernode can be elected in the next round of election, you can get the corresponding reward.
