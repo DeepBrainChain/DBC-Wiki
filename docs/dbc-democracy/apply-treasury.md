@@ -22,7 +22,7 @@
 
 ## 3.链上提交
 
-在 DBC 主网-governance-treasury 页面（[https://www.dbcwallet.io/#/treasury](https://www.reddit.com/r/DBC_Council/)）进行链上提交提案，并抵押部分 DBC（至少为申请金额的 5%）作为保证金。
+在 DBC 主网-governance-treasury 页面（[https://www.dbcwallet.io/#/treasury](https://www.reddit.com/r/DBC_Council/)）进行链上提交提案，输入申请的DBC总数，然后系统会自动抵押5%的DBC作为保证金。
 
 ::: warning
 ⚠️ 注意！如果提案通过，保证金将退还；如果提案被拒绝，保证金不退回！
