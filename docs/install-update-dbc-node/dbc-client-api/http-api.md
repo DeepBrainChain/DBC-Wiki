@@ -971,9 +971,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 ## 裸金属节点操作
 
-想要控制一台裸金属服务器的开关机等操作，需要一台跟裸金属服务器在同一个网络中的CPU服务器。在此CPU服务器上运行dbc的裸金属节点程序，然后将裸金属服务器的相关信息(IP地址和IPMI控制信息)添加到节点中，节点会为裸金属服务器生成一个对应的NodeID加入到dbc的网络中，就可以通过NodeID来控制裸金属服务器了。
+想要控制一台裸金属服务器的开关机等操作，需要一台跟裸金属服务器在同一个网络中的 CPU 服务器。在此 CPU 服务器上运行 dbc 的裸金属节点程序，然后将裸金属服务器的相关信息(IP 地址和 IPMI 控制信息)添加到节点中，节点会为裸金属服务器生成一个对应的 NodeID 加入到 dbc 的网络中，就可以通过 NodeID 来控制裸金属服务器了。
 
-如需安装dbc裸金属节点，请参考 [安装 DBC 功能节点程序](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) 使用裸金属节点的安装脚本 [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
+如需安装 dbc 裸金属节点，请参考 [安装 DBC 功能节点程序](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) 使用裸金属节点的安装脚本 [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
 
 ### 1. 查询裸金属机器列表
 
@@ -993,9 +993,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
     // 裸金属节点的node_id
     "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
   ],
-  "additional": {
-    
-  }
+  "additional": {}
 }
 ```
 
