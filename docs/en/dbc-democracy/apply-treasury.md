@@ -17,7 +17,7 @@ Currently, DBC has established a subreddit community DBC_Council (https://www.re
 ## 3. on-chain submission
 
 submit your proposal on https://www.dbcwallet.io/#/treasury.
-Of the beneficiary amount, at least 5.00% would need to be put up as collateral. The maximum of this and the minimum bond will be used to secure the proposal, refundable if it passes.
+Enter the total amount of DBC applied for, and then the system will automatically mortgage 5% of DBC as a security deposit. The maximum of this and the minimum bond will be used to secure the proposal, refundable if it passes.
 
 ::: warning
 ⚠️ Be aware that once submitted the proposal will be put to a council vote. If the proposal is rejected due to a lack of info, invalid requirements or non-benefit to the network as a whole, the full bond posted will be lost.
