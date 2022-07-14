@@ -12,7 +12,7 @@
 
 - **download install script：**
 
-  http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
+  http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_client.sh
 
 - **add executable permission：**
 
@@ -31,7 +31,7 @@
 
 - **download update client script：**
 
-  http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
+  http://119.6.235.169:9000/dbc/install_update_script/mainnet/update_client.sh
 
 - **add executable permission：**
 

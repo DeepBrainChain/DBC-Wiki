@@ -916,7 +916,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
 
 ## 虚拟机组网
 
-### 1.创建网络（创建的网络只能在同一机房内使用）
+### 1. 创建网络（创建的网络只能在同一机房内使用）
 
 - 请求方式：POST
 
@@ -945,7 +945,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 }
 ```
 
-### 2.删除网络（DBC 会自动清理长时间没有虚拟机使用的网络）
+### 2. 删除网络（DBC 会自动清理长时间没有虚拟机使用的网络）
 
 - 请求方式：POST
 
@@ -964,6 +964,137 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
     "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
   ],
   "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+## 裸金属节点操作
+
+想要控制一台裸金属服务器的开关机等操作，需要一台跟裸金属服务器在同一个网络中的CPU服务器。在此CPU服务器上运行dbc的裸金属节点程序，然后将裸金属服务器的相关信息(IP地址和IPMI控制信息)添加到节点中，节点会为裸金属服务器生成一个对应的NodeID加入到dbc的网络中，就可以通过NodeID来控制裸金属服务器了。
+
+如需安装dbc裸金属节点，请参考 [安装 DBC 功能节点程序](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) 使用裸金属节点的安装脚本 [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
+
+### 1. 查询裸金属机器列表
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    
+  }
+}
+```
+
+### 2. 上线裸金属机器
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 裸金属服务器的信息列表
+    "bare_metal_nodes": [
+      {
+        // 机器供应商的识别裸金属的唯一ID，必填。
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
+        // 裸金属服务器给用户提供的连接方式，必填。建议固定IP地址。
+        "ip": "175.221.204.110",
+        // 裸金属服务器的操作系统，非必填。
+        "os": "Ubuntu 20.04.3 LTS (Focal Fossa) 5.4.0-121-generic GNU/Linux",
+        // 机器所有者自定义的描述，非必填。
+        "desc": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
+        // ipmi的主机标识，必填。建议固定IP地址。
+        "ipmi_hostname": "192.168.0.110",、
+        // ipmi的用户名，必填。
+        "ipmi_username": "admin",
+        // ipmi的用户密码，必填。
+        "ipmi_password": "dbtu2017"
+      }
+    ]
+  }
+}
+```
+
+### 3. 下线裸金属机器
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属节点的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 裸金属服务器对应的NodeID列表
+    "bare_metal_node_ids": [
+      // 上线裸金属机器时给生成的对应NodeID
+      "8c29b20da3fdb2d6c5ad7c2c85b303d9d337a1b82fa584a6b6cf1303331efd16"
+    ]
+  }
+}
+```
+
+### 4. 裸金属机器电源控制
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属机器对应的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 电源控制命令
+    // "on"     - 开机
+    // "off"    - 关机
+    // "reset"  - 重启
+    // "status" - 获取电源状态
+    "command": "on"
+  },
   "session_id": "租用者分发的session_id",
   "session_id_sign": "租用者分发的session_id_sign"
 }

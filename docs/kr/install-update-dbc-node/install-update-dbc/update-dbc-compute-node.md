@@ -2,7 +2,7 @@
 
 ## 1. download update script：
 
-- http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_mining.sh
+- http://119.6.235.169:9000/dbc/install_update_script/mainnet/update_mining.sh
 
 ## 2. add executable permission：
 

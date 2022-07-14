@@ -492,8 +492,8 @@
 
 对于自定义的镜像，想要监控显卡信息，请在虚拟机内部安装 dbc guest agent 服务。
 
-- Ubuntu 虚拟机安装脚本：http://116.169.53.132:9000/dbc_guest_agent/install.sh
-- Windows 64 位虚拟机安装程序：http://116.169.53.132:9000/dbc_guest_agent/qemu-ga-x86_64.msi
+- Ubuntu 虚拟机安装脚本：http://119.6.235.169:9000/dbc_guest_agent/install.sh
+- Windows 64 位虚拟机安装程序：http://119.6.235.169:9000/dbc_guest_agent/qemu-ga-x86_64.msi
 
 :::tip 注意！
 

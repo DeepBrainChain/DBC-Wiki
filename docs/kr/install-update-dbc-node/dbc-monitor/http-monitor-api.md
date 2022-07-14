@@ -33,7 +33,7 @@ The dbc_client_ip and dbc_client_port in the following HTTP request are the DBC 
 > {
 >   "errcode": 0,
 >   "message": {
->     "servers": ["116.169.53.132:10051"]
+>     "servers": ["119.6.235.169:10051"]
 >   }
 > }
 > ```
@@ -53,7 +53,7 @@ The dbc_client_ip and dbc_client_port in the following HTTP request are the DBC 
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
->     "servers": ["116.169.53.132:10051"]
+>     "servers": ["119.6.235.169:10051"]
 >   },
 >
 >   "session_id": "The session_id distributed by the renter",

@@ -13,7 +13,7 @@
 ​설치 환경
 sudo apt-get install libvirt-clients libvirt-daemon-system expect -y
 
-1. 설치 스크립트 다운로드： http://116.169.53.132:9000/dbc/install_update_script/mainnet/install_client.sh
+1. 설치 스크립트 다운로드： http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_client.sh
 
 ​2. install_client.sh 스크립트 문서에 집행 권한 추가 ：
 
@@ -31,7 +31,7 @@ chmod +x install_client.sh`
 
 1. 업그레이드 스크립트 다운로드:
 
-http://116.169.53.132:9000/dbc/install_update_script/mainnet/update_client.sh
+http://119.6.235.169:9000/dbc/install_update_script/mainnet/update_client.sh
 
 2.update_client.sh 스크립트 문서 진행권한 추가 ：
 
