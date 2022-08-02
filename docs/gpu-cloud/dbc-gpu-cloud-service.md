@@ -625,7 +625,52 @@ db.paypalInfo.insert({
 })
 ```
 
-## 八、单台虚拟机部署配置
+## 八、支付宝相关文档
+
+### 1.登录支付宝开发者平台
+
+- 打开支付宝开放平台 - 控制台  [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
+- 选择 网页/移动应用 栏，点击 创建网页/移动应用 按钮，根据提示完成应用创建操作
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay1.png)
+
+### 2.获取支付所需数据
+- 通过官方示例文档，获取所需接入数据  [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay2.png)
+
+### 3. 检测环境是否准备充分
+- 第2步创建完成后，通过下图步骤三-账户及应用准备 中可以检测应用是否具有正式使用的能力
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay3.png)
+
+### 4.修改对应配置文件
+
+- 打开文件夹 src--> locales --> CN.js && EN.js && ES.js && FR.js, 将showAliPay字段设置为0或1
+
+```
+#修改showAliPay
+export default {
+	···
+	showAliPay: '0', // 是否显示支付宝支付 1 显示 0 不显示
+	···
+}
+```
+
+### 5. 修改 node 服务器端相关的 Alipay 参数
+
+- 打开文件夹 DBC-NodeScript--> publicResource.js
+
+```
+// 修改AlipaySdk配置
+
+export const alipaySdk = new AlipaySdk.default({
+  appId: 'your appId',
+  signType: 'RSA2',
+  gateway: 'https://openapi.alipay.com/gateway.do',
+  alipayPublicKey: 'your alipayPublicKey',
+  privateKey: 'your privateKey',
+});
+```
+
+## 九、单台虚拟机部署配置
 
 ### 1.将 node、web 更新到最新版本（重新拉取最新代码）
 
@@ -673,7 +718,7 @@ db.virMachine.insert({
 })
 ```
 
-## 九、问题总结
+## 十、问题总结
 
 ### 1.start.log 报错：map is null
 

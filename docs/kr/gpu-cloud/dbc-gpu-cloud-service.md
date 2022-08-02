@@ -619,7 +619,52 @@ db.paypalInfo.insert({
 })
 ```
 
-## 8. Lease a single virtual machine
+## 8、Alipay related documents
+
+### 1.Log in to Alipay developer platform
+
+- Open Alipay Open Platform - Console  [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
+- Select the webpage/mobile application column, click the Create webpage/mobile application button, and follow the prompts to complete the application creation operation
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay1.png)
+
+### 2.Get the data required for payment
+- Obtain the required access data through the official sample document  [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay2.png)
+
+### 3. Check if the environment is well prepared
+- After the creation of step 2 is completed, you can check whether the application has the ability to be officially used through step 3 - account and application preparation in the following figure
+  ![](./assets/dbc-gpu-cloud-service.assets/alipay3.png)
+
+### 4.Modify the corresponding configuration file
+
+- Open the folder src--> locales --> CN.js && EN.js && ES.js && FR.js, set the showAliPay field to 0 or 1
+
+```
+#modifyshowAliPay
+export default {
+	···
+	showAliPay: '0', // Whether to display Alipay payment 1 display 0 not display
+	···
+}
+```
+
+### 5. Modify the Alipay parameters related to the node server
+
+- Open the folder DBC-NodeScript-->publicResource.js
+
+```
+// Modify AlipaySdk configuration
+
+export const alipaySdk = new AlipaySdk.default({
+  appId: 'your appId',
+  signType: 'RSA2',
+  gateway: 'https://openapi.alipay.com/gateway.do',
+  alipayPublicKey: 'your alipayPublicKey',
+  privateKey: 'your privateKey',
+});
+```
+
+## 9. Lease a single virtual machine
 
 ### Update node and web to the latest version (re-pull the latest code)
 
@@ -670,7 +715,7 @@ db.virMachine.insert({
 })
 ```
 
-## 9. Summary of the problem
+## 10. Summary of the problem
 
 ### 1.start.log reports an error: map is null:
 
