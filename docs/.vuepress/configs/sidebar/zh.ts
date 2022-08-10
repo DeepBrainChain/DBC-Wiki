@@ -14,6 +14,7 @@ export const zh = sidebar({
         "rent-virtual",
         "dbc-community",
         "dbc-hot-link",
+        "dbc-audit-report",
         {
           text: "云平台运营",
           collapsable: true,

@@ -3,6 +3,13 @@ import themeConfig from "./themeConfig";
 import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { commentPlugin } from "vuepress-plugin-comment2";
+// .vuepress/config.ts
+import { componentsPlugin } from "vuepress-plugin-components";
+
+// export default {
+//   plugins: [
+//   ],
+// };
 
 // module.exports = {
 export default defineUserConfig({
@@ -30,6 +37,10 @@ export default defineUserConfig({
     },
   },
   plugins: [
+    componentsPlugin({
+      components: ["PDF"],
+    }),
+
     searchPlugin({
       isSearchable: (page) => page.path !== "/",
       locales: {

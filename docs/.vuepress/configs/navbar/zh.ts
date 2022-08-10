@@ -16,6 +16,7 @@ export const zh = navbar([
           "rent-virtual",
           "dbc-community",
           "dbc-hot-link",
+          "dbc-audit-report"
         ],
       },
       {

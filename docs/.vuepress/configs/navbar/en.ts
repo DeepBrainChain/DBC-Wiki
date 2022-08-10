@@ -18,6 +18,7 @@ export const en = navbar([
           "rent-virtual",
           "dbc-community",
           "dbc-hot-link",
+          "",
         ],
       },
       {
