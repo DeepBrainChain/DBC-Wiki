@@ -59,7 +59,7 @@ security:
  11) #to see if the setting takes effect
     db.DBCPercentage.find({}).toArray()
 ```
-
+<!-- 
 ## 2.Java deployment (The recommended Java environment is Java11)
 
 ```bash
@@ -111,9 +111,9 @@ profiles="test" , can be set to: dev\test\prod
 
  1) Upload start.sh and stop.sh to the bin folder
  2) bash start.sh to start the program
-```
+``` -->
 
-## 3.Build DBC client
+## 2.Build DBC client
 
 ```bash
 #Install DBC client
@@ -141,7 +141,7 @@ Download the update_client.sh script file in it
 3. Run the upgrade script: Execute on the command line: ./update_client.sh [original client installation directory]
 ```
 
-## 4.Deploy the web environment
+## 3.Deploy the web environment
 
 ```bash
 #Download the code to the local or server (note: the code under the master branch may be a beta version, please refer to the latest version of tags when deploying)
@@ -194,7 +194,7 @@ const node = {
 npm run build
 ```
 
-## 5.Deploy Node service
+## 4.Deploy Node service
 
 ```bash
 #clone code
@@ -332,7 +332,7 @@ export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVW
 
 ```
 
-## 6.Deploy Nginx service
+## 5.Deploy Nginx service
 
 ```bash
 # Install Nginx
@@ -554,7 +554,7 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 
-## 7.Paypal related documents
+## 6.Paypal related documents
 
 ### Register a Paypal account
 
@@ -619,7 +619,7 @@ db.paypalInfo.insert({
 })
 ```
 
-## 8、Alipay related documents
+## 7、Alipay related documents
 
 ### 1.Log in to Alipay developer platform
 
@@ -664,7 +664,7 @@ export const alipaySdk = new AlipaySdk.default({
 });
 ```
 
-## 9. Lease a single virtual machine
+## 8. Lease a single virtual machine
 
 ### Update node and web to the latest version (re-pull the latest code)
 
@@ -715,7 +715,7 @@ db.virMachine.insert({
 })
 ```
 
-## 10. Summary of the problem
+## 9. Summary of the problem
 
 ### 1.start.log reports an error: map is null:
 

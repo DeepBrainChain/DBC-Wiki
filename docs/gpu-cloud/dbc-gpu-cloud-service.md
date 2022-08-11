@@ -62,7 +62,7 @@ security:
         db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
-
+<!-- 
 ## 二、Java 部署(建议 Java 环境为 Java11)
 
 ```bash
@@ -120,9 +120,9 @@ profiles="test"  ，可以设置为: dev\\test\\prod
 
  1) 将start.sh和 stop.sh上传到 bin文件夹中
  2) bash start.sh  启动程序
-```
+``` -->
 
-## 三、搭建 DBC 客户端
+## 二、搭建 DBC 客户端
 
 ```bash
 #装DBC客户端
@@ -150,7 +150,7 @@ apt-get install libvirt-clients libvirt-daemon-system
 3. 运行升级脚本: 命令行下执行：./update_client.sh [原客户端安装目录]
 ```
 
-## 四、部署 Node 服务器
+## 三、部署 Node 服务器
 
 ```bash
 #克隆代码
@@ -284,7 +284,7 @@ export const walletInfo = '16c2efe71e094d0b3dd7b319da9c6a636cc0c7740cb6e900a4022
 export const designatedWallet = '5F7L9bc3q4XdhVstJjVB2o7S8RHz2YKsHUB6k3uQpErTmVWu' // 用户支付的dbc收益部分会进入此钱包，需替换成自己的钱包地址
 ```
 
-## 五、部署 web 环境
+## 四、部署 web 环境
 
 ```bash
 #下载代码到本地或服务器(注意：master分支下的代码可能为测试版，部署时请以tags最新版本代码为准)
@@ -338,7 +338,7 @@ npm run build
 
 ```
 
-## 六、部署 Nginx
+## 五、部署 Nginx
 
 ```bash
 # 安装Nginx
@@ -560,7 +560,7 @@ sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 
-## 七、Paypal 相关文档
+## 六、Paypal 相关文档
 
 ### 1.注册 Paypal 账户
 
@@ -625,7 +625,7 @@ db.paypalInfo.insert({
 })
 ```
 
-## 八、支付宝相关文档
+## 七、支付宝相关文档
 
 ### 1.登录支付宝开发者平台
 
@@ -670,7 +670,7 @@ export const alipaySdk = new AlipaySdk.default({
 });
 ```
 
-## 九、单台虚拟机部署配置
+## 八、单台虚拟机部署配置
 
 ### 1.将 node、web 更新到最新版本（重新拉取最新代码）
 
@@ -718,7 +718,7 @@ db.virMachine.insert({
 })
 ```
 
-## 十、问题总结
+## 九、问题总结
 
 ### 1.start.log 报错：map is null
 
