@@ -56,7 +56,7 @@ security:
  6) mongod --config /etc/mongod.conf （需要提前配置好mongod.conf文件） 此处如果要配置2个不同服务器的数据库自动备份，
     则用命令：mongod --master --slave --autoresync --config /etc/mongod.conf  --source ip:27017
  7) mongo,然后use admin ,然后 db.auth('admin','******')，
- 8) use identifier  创建identifier数据库,此处数据库名字和java服务器以及nodejs服务器代码中名字需要保持一致
+ 8) use identifier  创建identifier数据库,此处数据库名字nodejs服务器代码中名字需要保持一致
  9) db.createUser({user: "dbc", pwd: "*******", roles: [ { role: "dbOwner", db: "identifier" } ]})
  10) #设置加价规则，percentage_signle为单个租用虚拟机的加价大小，percentage_whole为租用整机的加价大小，参数后跟数字，1为1%，示例为40%
         db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })
@@ -322,7 +322,6 @@ export default {
 #修改文件，使用nodeHost
 
 const nodeHost = 'https://xxxxxx'   //nodejs 服务器地址
-const host = "https://xxxxx"; //java 服务器地址
 
 4. 修改访问链地址
 #打开文件夹 src--> utlis --> dot --> api.ts && index.ts ,配置访问链
@@ -350,49 +349,6 @@ mkdir /etc/nginx/gpucloud.conf
 sudo vim /etc/nginx/gpucloud.conf
 
 #示例如下，实际请按照自身环境改动，仅作参考
-
-server{
-
-        listen 443;
-        server_name java.xxxx.xxxx;
-        ssl on;
-
-        ssl_certificate   cert/gpucloud/example.crt;
-        ssl_certificate_key  cert/gpucloud/example.key;
-        ssl_session_timeout 5m;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_prefer_server_ciphers on;
-
-        location / {
-
-        proxy_pass http://ip:8031; #java server ip and port
-        proxy_set_header   Host             $host;
-                         proxy_set_header   X-Real-IP        $remote_addr;
-                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-
-
-        }
-
-
-    }
-
-
-server {
-         listen 80;
-        server_name java.xxxx.xxxx;
-
-        location / {
-
-        proxy_pass http://ip:8031; #java server ip and port
-        proxy_set_header   Host             $host;
-                         proxy_set_header   X-Real-IP        $remote_addr;
-                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-
-        }
-
-
-    }
 
 server{
 

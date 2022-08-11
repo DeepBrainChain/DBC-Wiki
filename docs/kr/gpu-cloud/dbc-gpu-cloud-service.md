@@ -179,7 +179,6 @@ export default {
 #Modify the file, use nodeHost
 
 const nodeHost = 'https://xxxxxx' //nodejs server address
-const host = "https://xxxxx"; //java server address
 
 4. Modify the access chain address
 #Open the folder src--> utlis --> dot --> api.ts && index.ts , configure the access chain
@@ -345,49 +344,6 @@ sudo vim /etc/nginx/gpucloud.conf
 
 #The example is as follows, please change it according to your own environment, for reference only
 # If it is two hosts, please do load balancing
-
-server{
-
-        listen 443;
-        server_name java.xxxx.xxxx;
-        ssl on;
-
-        ssl_certificate   cert/gpucloud/example.crt;
-        ssl_certificate_key  cert/gpucloud/example.key;
-        ssl_session_timeout 5m;
-        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_prefer_server_ciphers on;
-
-        location / {
-
-        proxy_pass http://ip:8031; #java server ip and port
-        proxy_set_header   Host             $host;
-                         proxy_set_header   X-Real-IP        $remote_addr;
-                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-
-
-        }
-
-
-    }
-
-
-server {
-         listen 80;
-        server_name java.xxxx.xxxx;
-
-        location / {
-
-        proxy_pass http://ip:8031; #java server ip and port
-        proxy_set_header   Host             $host;
-                         proxy_set_header   X-Real-IP        $remote_addr;
-                         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
-
-        }
-
-
-    }
 
 server{
 
