@@ -1,6 +1,6 @@
 # DBC GPU Cloud Service English description
 
-![](./assets/dbc-gpu-cloud-service.assets/1.png)
+![](./assets/dbc-gpu-cloud-service.assets/detail.png)
 
 ## Preface:
 

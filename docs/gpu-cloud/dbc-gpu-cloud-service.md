@@ -1,6 +1,6 @@
 # DBC GPU 云服务
 
-![](./assets/dbc-gpu-cloud-service.assets/1.png)
+![](./assets/dbc-gpu-cloud-service.assets/detail.png)
 
 ## 前言：
 
