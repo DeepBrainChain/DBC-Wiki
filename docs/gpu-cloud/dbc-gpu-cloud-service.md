@@ -62,7 +62,8 @@ security:
         db.DBCPercentage.insert({ _id: 'percentage',percentage_signle: 40, percentage_whole: 50 })
  11) db.DBCPercentage.find({}).toArray()    查看设置是否生效
 ```
-<!-- 
+
+<!--
 ## 二、Java 部署(建议 Java 环境为 Java11)
 
 ```bash
@@ -585,21 +586,23 @@ db.paypalInfo.insert({
 
 ### 1.登录支付宝开发者平台
 
-- 打开支付宝开放平台 - 控制台  [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
+- 打开支付宝开放平台 - 控制台 [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
 - 选择 网页/移动应用 栏，点击 创建网页/移动应用 按钮，根据提示完成应用创建操作
   ![](./assets/dbc-gpu-cloud-service.assets/alipay1.png)
 
 ### 2.获取支付所需数据
-- 通过官方示例文档，获取所需接入数据  [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
+
+- 通过官方示例文档，获取所需接入数据 [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
   ![](./assets/dbc-gpu-cloud-service.assets/alipay2.png)
 
 ### 3. 检测环境是否准备充分
-- 第2步创建完成后，通过下图步骤三-账户及应用准备 中可以检测应用是否具有正式使用的能力
+
+- 第 2 步创建完成后，通过下图步骤三-账户及应用准备 中可以检测应用是否具有正式使用的能力
   ![](./assets/dbc-gpu-cloud-service.assets/alipay3.png)
 
 ### 4.修改对应配置文件
 
-- 打开文件夹 src--> locales --> CN.js && EN.js && ES.js && FR.js, 将showAliPay字段设置为0或1
+- 打开文件夹 src--> locales --> CN.js && EN.js && ES.js && FR.js, 将 showAliPay 字段设置为 0 或 1
 
 ```
 #修改showAliPay
