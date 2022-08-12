@@ -14,6 +14,7 @@ export const en = sidebar({
         "rent-virtual",
         "dbc-community",
         "dbc-hot-link",
+        "dbc-audit-report",
         {
           text: "Cloud platform operation",
           collapsable: true,

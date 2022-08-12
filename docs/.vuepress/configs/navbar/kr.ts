@@ -18,6 +18,7 @@ export const kr = navbar([
           "rent-virtual",
           "dbc-community",
           "dbc-hot-link",
+          "dbc-audit-report",
         ],
       },
       {
