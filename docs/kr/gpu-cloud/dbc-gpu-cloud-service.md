@@ -59,7 +59,8 @@ security:
  11) #to see if the setting takes effect
     db.DBCPercentage.find({}).toArray()
 ```
-<!-- 
+
+<!--
 ## 2.Java deployment (The recommended Java environment is Java11)
 
 ```bash
@@ -579,15 +580,17 @@ db.paypalInfo.insert({
 
 ### 1.Log in to Alipay developer platform
 
-- Open Alipay Open Platform - Console  [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
+- Open Alipay Open Platform - Console [https://open.alipay.com/develop/manage](https://open.alipay.com/develop/manage)
 - Select the webpage/mobile application column, click the Create webpage/mobile application button, and follow the prompts to complete the application creation operation
   ![](./assets/dbc-gpu-cloud-service.assets/alipay1.png)
 
 ### 2.Get the data required for payment
-- Obtain the required access data through the official sample document  [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
+
+- Obtain the required access data through the official sample document [https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish](https://ideservice.alipay.com/devflow/intelliAssist/page/SC00002446?projectId=670000105#lastFinish)
   ![](./assets/dbc-gpu-cloud-service.assets/alipay2.png)
 
 ### 3. Check if the environment is well prepared
+
 - After the creation of step 2 is completed, you can check whether the application has the ability to be officially used through step 3 - account and application preparation in the following figure
   ![](./assets/dbc-gpu-cloud-service.assets/alipay3.png)
 
