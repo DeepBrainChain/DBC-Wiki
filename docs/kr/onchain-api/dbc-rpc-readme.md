@@ -41,7 +41,7 @@ Example of using the HTTP interface to obtain data, you can view `dbc_chain_rpc.
   "jsonrpc": "2.0",
   "id": 1,
   "method": method_name,
-  "params": [params_1, params_2...]
+  "params": [params_1, params_2, ...]
 }
 ```
 
@@ -92,20 +92,20 @@ The block height is the time on the chain.
 
   ```json
   {
-      "jsonrpc": "2.0",
-      "result": {
-          "block": {
+    "jsonrpc": "2.0",
+    "result": {
+      "block": {
         ...
-              "header": {
-        ...
-                  "number": "0x2d8",
-                  "parentHash": "0xc0e1b239fafc0edf3e08a908b5caecb27c2b351ed0daef3fc60c5600b28d6d7d",
-                  "stateRoot": "0x55ce4794b2cdd21275656a80febf5133d882d909a2de6d40d7b8887bd65628bc"
-              }
-          },
-          "justification": null
+        "header": {
+          ...
+          "number": "0x2d8",
+          "parentHash": "0xc0e1b239fafc0edf3e08a908b5caecb27c2b351ed0daef3fc60c5600b28d6d7d",
+          "stateRoot": "0x55ce4794b2cdd21275656a80febf5133d882d909a2de6d40d7b8887bd65628bc"
+        }
       },
-      "id": 1
+      "justification": null
+    },
+    "id": 1
   }
   ```
 
