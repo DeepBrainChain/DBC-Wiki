@@ -31,28 +31,26 @@ onlineProfile Module records the information of the machine's online rewards
       {
         "calcPoint": 51775, # Machine power points
         "gpuNum": 4, # Machine GPU Num
-        "machineId": [53, 97, 53, 51, 52, ...], # Machine ID
+        "machineId": "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f", # Machine ID
         "machineStatus": "online" # The current state of the machine
       },
       {
         "calcPoint": 51775,
         "gpuNum": 4,
-        "machineId": [97, 52, 100, 98, 98, ...],
+        "machineId": "8a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "machineStatus": "online"
       },
       {
         "calcPoint": 94143,
         "gpuNum": 4,
-        "machineId": [100, 56, 54, 97, 101, 53, ...],
+        "machineId": "9a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "machineStatus": "online"
       }
     ],
     "stashStatistic": {
       "canClaimReward": "664079816723400000", # DBC rewards that can be received
       "onlineMachine": [ # Online machine
-        [53, 97, 53, 51, 52, ...],
-        [97, 52, 100, 98, 98, ...],
-        [100, 56, 54, 97, 101, 53, ...]
+        "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
       ],
       "totalBurnFee": "0", # The number of rents destroyed after the start of the Galaxy Contest
       "totalCalcPoints": 197930, # Machine total calc Points
@@ -60,9 +58,7 @@ onlineProfile Module records the information of the machine's online rewards
       "totalEarnedReward": "2656319266893600000", # Rewards already rewarded
       "totalGpuNum": 12, # GPU bond to stash account
       "totalMachine": [ # Stash account Bound machine
-        [53, 97, 53, 51, 10, ...],
-        [97, 52, 100, 98, 98, 100, ...],
-        [100, 56, 54, 97, 101, ...]
+        "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
       ],
       "totalRentFee": "0", # Machine obtained rent fee
       "totalRentedGpu": 0 # Number of rented GPUs
@@ -198,16 +194,16 @@ onlineProfile Module records the information of the machine's online rewards
         "calc_point": 60775,
         "cpu_core_num": 64,
         "cpu_rate": 2900,
-        "cpu_type": [73, 110, 116, 101, ...],
+        "cpu_type": "Intel(R) Xeon(R) Silver 4214R",
         "cuda_core": 8704,
         "data_disk": 1800,
         "gpu_mem": 10,
         "gpu_num": 4,
-        "gpu_type": [71, 101, 70, 111, 114, ...],
+        "gpu_type": "GeForceRTX2080Ti",
         "is_support": true,
-        "machine_id": [101, 101, 48, 100, 48, 48, 51, ...],
+        "machine_id": "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "mem_num": 471,
-        "rand_str": [],
+        "rand_str": "",
         "sys_disk": 350
       },
       "staker_customize_info": { # Other machine information
@@ -219,7 +215,7 @@ onlineProfile Module records the information of the machine's online rewards
           "East": 1040667
         },
         "server_room": "0x6465f54d26f4b406261e7e5201a4a17551ad4d27448609f2d7cdcb75b413524c",
-        "telecom_operators": [[67, 104, 105, 110, ...]],
+        "telecom_operators": ["China Unicom"],
         "upload_net": 20
       }
     },
@@ -286,8 +282,9 @@ onlineProfile Module records the information of the machine's online rewards
   "result": {
     "bondingMachine": [],
     "bookedMachine": [
-      [51, 101, 55, 98, ...],
-      [53, 97, 99, 54, 99, 57, ...]
+      "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef12"
+      "9a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
+      "aa79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1d"
     ],
     "confirmedMachine": [],
     "fulfillingMachine": [],
@@ -350,7 +347,7 @@ onlineProfile Module records the information of the machine's online rewards
 ```json
 {
   "jsonrpc": "2.0",
-  "result": [226, 156, 168, 100, 98, ...],
+  "result": "Alice",
   "id": 1
 }
 ```
@@ -378,7 +375,7 @@ onlineProfile Module records the information of the machine's online rewards
       "calcPoints": 10045876,
       "index": 0,
       "stakerAccount": "5CsRZJCDiFJbZas6m2NnuYpBqo9gYv2nixHbzGLUVGdgx94w",
-      "stakerName": [229, 133, 131, ...],
+      "stakerName": "Alice",
       "totalBurnFee": "0",
       "totalGpuNum": 400,
       "totalReleasedReward": "3058070375932000902000",
@@ -390,7 +387,7 @@ onlineProfile Module records the information of the machine's online rewards
       "calcPoints": 3153803,
       "index": 2,
       "stakerAccount": "5HJugpuDxQGKLJwmv6K5eWFepDPkhPbwyTDR5vKjCv1MwUcS",
-      "stakerName": [229, 133, 131, 232, 190, ...],
+      "stakerName": "Bob",
       "totalBurnFee": "0",
       "totalGpuNum": 132,
       "totalReleasedReward": "1392103944062414253000",
@@ -402,7 +399,7 @@ onlineProfile Module records the information of the machine's online rewards
       "calcPoints": 617340,
       "index": 4,
       "stakerAccount": "5Gg1z77NCrUNyV4c5rm9tb3x27rYjBVYh74UrVNJh1TJGsx4",
-      "stakerName": [232, 135, 170, 231, 132, 182, ...],
+      "stakerName": "Eve",
       "totalBurnFee": "0",
       "totalGpuNum": 28,
       "totalReleasedReward": "279809088882620814000",
@@ -462,7 +459,6 @@ onlineProfile Module records the information of the machine's online rewards
         "rentedGpu": 1
       }
     ]
-    ...
   ],
   "id": 1
 }
@@ -580,7 +576,7 @@ onlineProfile Module records the information of the machine's online rewards
   "jsonrpc": "2.0",
   "result": {
     "bookedTime": 600340, # Order Dispatch time
-    "confirmHash": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # Submitted machine information Hash
+    "confirmHash": "0x00000000000000000000000000000000", # Submitted machine information Hash
     "confirmTime": 0,
     "hashTime": 0,
     "machineInfo": { # Submitted machine information
@@ -592,11 +588,11 @@ onlineProfile Module records the information of the machine's online rewards
       "data_disk": 0,
       "gpu_mem": 0,
       "gpu_num": 0,
-      "gpu_type": [],
+      "gpu_type": "NVIDIA GeForce GTX 3080",
       "is_support": false,
-      "machine_id": [],
+      "machine_id": "74339d3413c1386d23d92e55586ccf25090c7eb762928f9bc69799b677f65f51",
       "mem_num": 0,
-      "rand_str": [],
+      "rand_str": "abc",
       "sys_disk": 0
     },
     "machineStatus": "booked",
@@ -667,7 +663,7 @@ onlineProfile Module records the information of the machine's online rewards
 }
 ```
 
-### 4.2 View the list of machines rented by an account
+### 4.2 View the list of `Rent Order` of an account
 
 - Example
 
@@ -685,7 +681,7 @@ onlineProfile Module records the information of the machine's online rewards
 ```json
 {
   "jsonrpc": "2.0",
-  "result": [[102, 97, 101, 100, 99, 53, 53]], # MachineId，u8 Array
+  "result": [0, 1], # Rent OrderId
   "id": 1
 }
 ```

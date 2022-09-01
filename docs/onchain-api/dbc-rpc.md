@@ -31,28 +31,26 @@ onlineProfile 模块记录了机器在线奖励的信息
       {
         "calcPoint": 51775, # 机器算力点数
         "gpuNum": 4, # 机器GPU数量
-        "machineId": [53, 97, 53, 51, 52, ...], # 机器ID
+        "machineId": "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f", # 机器ID
         "machineStatus": "online" # 机器当前状态
       },
       {
         "calcPoint": 51775,
         "gpuNum": 4,
-        "machineId": [97, 52, 100, 98, 98, ...],
+        "machineId": "8a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "machineStatus": "online"
       },
       {
         "calcPoint": 94143,
         "gpuNum": 4,
-        "machineId": [100, 56, 54, 97, 101, 53, ...],
+        "machineId": "9a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "machineStatus": "online"
       }
     ],
     "stashStatistic": {
       "canClaimReward": "664079816723400000", # 可以领取的DBC奖励
       "onlineMachine": [ # 在线的机器
-        [53, 97, 53, 51, 52],
-        [97, 52, 100, 98, 98],
-        [100, 56, 54, 97, 101, 53]
+        "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
       ],
       "totalBurnFee": "0", # 银河竞赛开启后，销毁的租金数
       "totalCalcPoints": 197930, # 总算力点数
@@ -60,9 +58,7 @@ onlineProfile 模块记录了机器在线奖励的信息
       "totalEarnedReward": "2656319266893600000", # 已经获得的奖励
       "totalGpuNum": 12, # 总绑定的GPU数量
       "totalMachine": [
-        [53, 97, 53, 51, 10, ...],
-        [97, 52, 100, 98, 98, 100, ...],
-        [100, 56, 54, 97, 101, ...]
+        "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
       ],
       "totalRentFee": "0", # 获得的机器租金
       "totalRentedGpu": 0 # 被租用的GPU数量
@@ -200,16 +196,16 @@ onlineProfile 模块记录了机器在线奖励的信息
         "calc_point": 60775,
         "cpu_core_num": 64,
         "cpu_rate": 2900,
-        "cpu_type": [73, 110, 116, 101, ...],
+        "cpu_type": "Intel(R) Xeon(R) Silver 4214R",
         "cuda_core": 8704,
         "data_disk": 1800,
         "gpu_mem": 10,
         "gpu_num": 4,
-        "gpu_type": [71, 101, 70, 111, 114, ...],
+        "gpu_type": "GeForceRTX2080Ti",
         "is_support": true,
-        "machine_id": [101, 101, 48, 100, 48, 48, 51, ...],
+        "machine_id": "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f",
         "mem_num": 471,
-        "rand_str": [],
+        "rand_str": "",
         "sys_disk": 350
       },
       "staker_customize_info": { # 机器其他信息
@@ -221,7 +217,7 @@ onlineProfile 模块记录了机器在线奖励的信息
           "East": 1040667
         },
         "server_room": "0x6465f54d26f4b406261e7e5201a4a17551ad4d27448609f2d7cdcb75b413524c",
-        "telecom_operators": [[67, 104, 105, 110, ...]],
+        "telecom_operators": ["China Unicom"],
         "upload_net": 20
       }
     },
@@ -288,8 +284,9 @@ onlineProfile 模块记录了机器在线奖励的信息
   "result": {
     "bondingMachine": [],
     "bookedMachine": [
-      [51, 101, 55, 98, ...],
-      [53, 97, 99, 54, 99, 57, ...]
+      "7a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef12"
+      "9a79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1f"
+      "aa79fd95e89c3db2e8bc052cb307d4130f6750cb715c44639e2c3faa7217ef1d"
     ],
     "confirmedMachine": [],
     "fulfillingMachine": [],
@@ -352,7 +349,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 ```json
 {
   "jsonrpc": "2.0",
-  "result": [226, 156, 168, 100, 98, ...],
+  "result": "Alice",
   "id": 1
 }
 ```
@@ -380,7 +377,7 @@ onlineProfile 模块记录了机器在线奖励的信息
       "calcPoints": 10045876,
       "index": 0,
       "stakerAccount": "5CsRZJCDiFJbZas6m2NnuYpBqo9gYv2nixHbzGLUVGdgx94w",
-      "stakerName": [229, 133, 131, ...],
+      "stakerName": "Alice",
       "totalBurnFee": "0",
       "totalGpuNum": 400,
       "totalReleasedReward": "3058070375932000902000",
@@ -392,7 +389,7 @@ onlineProfile 模块记录了机器在线奖励的信息
       "calcPoints": 3153803,
       "index": 2,
       "stakerAccount": "5HJugpuDxQGKLJwmv6K5eWFepDPkhPbwyTDR5vKjCv1MwUcS",
-      "stakerName": [229, 133, 131, 232, 190, ...],
+      "stakerName": "Bob",
       "totalBurnFee": "0",
       "totalGpuNum": 132,
       "totalReleasedReward": "1392103944062414253000",
@@ -404,7 +401,7 @@ onlineProfile 模块记录了机器在线奖励的信息
       "calcPoints": 617340,
       "index": 4,
       "stakerAccount": "5Gg1z77NCrUNyV4c5rm9tb3x27rYjBVYh74UrVNJh1TJGsx4",
-      "stakerName": [232, 135, 170, 231, 132, 182, ...],
+      "stakerName": "Eve",
       "totalBurnFee": "0",
       "totalGpuNum": 28,
       "totalReleasedReward": "279809088882620814000",
@@ -464,7 +461,6 @@ onlineProfile 模块记录了机器在线奖励的信息
         "rentedGpu": 1
       }
     ]
-    ...,
   ],
   "id": 1
 }
@@ -582,23 +578,23 @@ onlineProfile 模块记录了机器在线奖励的信息
   "jsonrpc": "2.0",
   "result": {
     "bookedTime": 600340, # 派单时间
-    "confirmHash": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # 提交的机器信息Hash
+    "confirmHash": "0x00000000000000000000000000000000", # 提交的机器信息Hash
     "confirmTime": 0,
     "hashTime": 0,
     "machineInfo": { # 提交的机器信息
       "calc_point": 0,
       "cpu_core_num": 0,
       "cpu_rate": 0,
-      "cpu_type": [],
+      "cpu_type": "AMD 5900x",
       "cuda_core": 0,
       "data_disk": 0,
       "gpu_mem": 0,
       "gpu_num": 0,
-      "gpu_type": [],
+      "gpu_type": "NVIDIA GeForce GTX 3080",
       "is_support": false,
-      "machine_id": [],
+      "machine_id": "74339d3413c1386d23d92e55586ccf25090c7eb762928f9bc69799b677f65f51",
       "mem_num": 0,
-      "rand_str": [],
+      "rand_str": "abc",
       "sys_disk": 0
     },
     "machineStatus": "booked",
@@ -669,7 +665,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 }
 ```
 
-### 4.2 查看某个账户租用的机器列表
+### 4.2 查看某个账户租用的订单列表
 
 - 示例
 
@@ -687,7 +683,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 ```json
 {
   "jsonrpc": "2.0",
-  "result": [[102, 97, 101, 100, 99, 53, 53, ...]], # 地址，为u8 Array格式
+  "result": [0,1], # 订单ID
   "id": 1
 }
 ```
