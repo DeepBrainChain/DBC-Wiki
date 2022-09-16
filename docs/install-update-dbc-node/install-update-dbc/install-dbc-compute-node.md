@@ -295,9 +295,9 @@ reboot
 ## (十二) 查看机器是否正确加入到算力网络
 
 - 矿池搭建客户端节点
-  请参考 install_update_dbc_client_cn.md
+  请参考 [install_update_dbc_client_cn.md](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-update-dbc-client.html)
 - 1 分钟后，通过客户端请求机器信息，如果能够查到机器信息，说明机器已加入到网络中
-  请求机器信息，请参考：dbc_client_http_api
+  请求机器信息，请参考：[dbc_client_http_api](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-client-api/http-api.html)
 - 关于客户端节点：建议每家矿池搭建 2 个及以上客户端节点，保证在官方提供节点或者其他矿池提供节点掉线情况下依旧可以保证网络正常，如果网络中客户端节点过少或者挂掉过多，会影响机器出租情况。客户端节点搭建可以在其他服务器启动一个容器来部署，并不会占用太多资源。
 - **_客户端节点可以与算力节点部署在同一台机器，注意每个节点的 conf/core.conf 配置文件中的端口号不要重复_**
 
