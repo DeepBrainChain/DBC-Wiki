@@ -350,7 +350,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<要重启
 ### 10. 修改虚拟机配置
 
 :::tip
-需要先关闭虚拟机
+有些修改需要重启虚拟机才能生效
 :::
 
 > `请求方式`：POST
@@ -916,7 +916,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
 
 ## 虚拟机组网
 
-### 1. 创建网络（创建的网络只能在同一机房内使用）
+### 1. 创建网络
+
+:::tip 注意！
+创建的网络只能在同一机房内使用
+:::
 
 - 请求方式：POST
 
@@ -945,7 +949,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 }
 ```
 
-### 2. 删除网络（DBC 会自动清理长时间没有虚拟机使用的网络）
+### 2. 删除网络
+
+:::tip 注意！
+DBC 会自动清理长时间没有虚拟机使用的网络
+:::
 
 - 请求方式：POST
 
@@ -1028,7 +1036,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
         // 机器所有者自定义的描述，非必填。
         "desc": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
         // ipmi的主机标识，必填。建议固定IP地址。
-        "ipmi_hostname": "192.168.0.110",、
+        "ipmi_hostname": "192.168.0.110",
         // ipmi的用户名，必填。
         "ipmi_username": "admin",
         // ipmi的用户密码，必填。

@@ -118,9 +118,22 @@
 >
 >         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
 >         // 添加多组播地址续在括号中用","相隔,也可不填
->         "multicast":["230.0.0.1:5558"]
+>         "multicast":["230.0.0.1:5558"],
 >         //内网名称（创建虚拟机网络时填的名称）
 >         "network_name": "test",
+>         // 公网ip地址
+>         "public_ip": "",
+>         // 安全组
+>         // [
+>         //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
+>         //    "in,tcp,22,0.0.0.0/0,accept",
+>         //    "in,tcp,3389,0.0.0.0/0,accept",
+>         //    接受所有流出虚拟机的流量
+>         //    "out,all,all,0.0.0.0/0,accept",
+>         //    丢弃其他所有流入虚拟机的流量
+>         //    "in,all,all,0.0.0.0/0,drop"
+>         // ]
+>         "network_filters": []
 >        },
 >
 >        "session_id": "The session_id distributed by the renter",
@@ -184,48 +197,48 @@ Example：
 > Example：
 > <img src="./assets/list_task.png" width = "500" height = "200"  align=center />
 
-### 4. 关闭虚拟机(shutdown)
+### 4. Shut down the virtual machine
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/shutdown/<要停止的 task_id 值>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/shutdown/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 >
 > 示例：
 > <img src="./assets/stop_task.jpg" width = "500" height = "200"  align=center />
 
-### 5. 关闭虚拟机(强制断电)
+### 5. Shut down the virtual machine (forced power off)
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/poweroff/<要停止的 task_id 值>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/poweroff/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 >
@@ -319,7 +332,7 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<task_id>?
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
@@ -333,22 +346,22 @@ http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/restart/<task_id>?
 The request url for querying virtual machine logs has two parameters. The flag indicates the direction of the query log. If the parameter is equal to tail, the query starts from the end of the log file. If it is equal to head, the query starts from the head of the log file. line_num indicates the number of log lines to be queried. If it exceeds the actual number of lines in the file, the actual number of lines in the file shall prevail. Finally, this request returns up to 1024 bytes, and logs that are out of range are truncated.
 :::
 
-### 10. 修改虚拟机配置
+### 10. Modify virtual machine configuration
 
 :::tip
-需要先关闭虚拟机
+Some changes require a restart of the virtual machine to take effect
 :::
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/modify/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/modify/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
@@ -366,48 +379,81 @@ The request url for querying virtual machine logs has two parameters. The flag i
 >     "new_mem_size": "8" // > 0, 单位G
 >   },
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-<br/>
+### 11. Modifying the virtual machine login password
 
-## 磁盘管理
-
-### 1.查询磁盘列表
-
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/list/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/tasks/passwd/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>     "username": "dbc",
+>     "password": "vm123456"
+>   },
+>
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
+> }
+> ```
+
+:::warning
+
+1. Only the running virtual machine can change the password.
+
+2. The qemu guest agent or dbc guest agent must be installed in the virtual machine to support using this API to change the password.
+
+3. The Ubuntu system uses the default username "dbc", and the Windows system uses the default username "Administrator". For custom images, please set your own username.
+   :::
+
+<br/>
+
+## Disk management
+
+### 1. Query disk list
+
+> `request method`：POST
+>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/list/<task_id>
+>
+> `request body`：
+>
+> ```json
+> {
+>   "peer_nodes_list": [
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-### 2.数据盘扩容
+### 2. Data disk expansion
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/resize/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/resize/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
@@ -415,23 +461,23 @@ The request url for querying virtual machine logs has two parameters. The flag i
 >     "size": 20 //单位: G
 >   },
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-### 3.添加新的数据盘
+### 3. Add a new data disk
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/add/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/add/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
@@ -439,31 +485,31 @@ The request url for querying virtual machine logs has two parameters. The flag i
 >     "mount_dir": "/data" //挂载目录，默认：/data
 >   },
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-### 4.删除数据盘
+### 4. Delete data disk
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/delete/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/disk/delete/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {
 >     "disk": "vdb" //盘符
 >   },
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
@@ -471,68 +517,68 @@ The request url for querying virtual machine logs has two parameters. The flag i
 
 ## Snapshot Manage
 
-### 1.查询快照列表
+### 1. Query snapshot list
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-### 2.查询快照详细信息
+### 2. Querying snapshot details
 
-> `请求方式`：POST
+> `request method`：POST
 >
-> `请求URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>/<snapshot_name>
+> `request URL`：http://<**dbc_client_ip**>:<**dbc_client_port**>/api/v1/snapshot/list/<task_id>/<snapshot_name>
 >
-> `请求body`：
+> `request body`：
 >
 > ```json
 > {
 >   "peer_nodes_list": [
->     //GPU节点的node_id
+>     //node_id of GPU Node
 >     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
 >   ],
 >   "additional": {},
 >
->   "session_id": "租用者分发的session_id",
->   "session_id_sign": "租用者分发的session_id_sign"
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
 > }
 > ```
 
-### 3.创建快照
+### 3. Create snapshot
 
 :::tip 注意！
-创建快照是请确保虚拟机为关闭状态
+To create a snapshot, make sure the virtual machine is powered off.
 :::
 
-- 请求方式： POST
+- request method： POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/create/<task_id>
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
@@ -540,32 +586,32 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/create/<task_id>
     "desc": "...", //描述
     "image_server": "ID_2" //创建的快照上传到此镜像中心
   },
-  "session_id": "租用者分发的 session_id",
-  "session_id_sign": "租用者分发的 session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 4.删除快照
+### 4. Delete snapshot
 
-- 请求方式： POST
+- request method： POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<snapshot_name>
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {},
-  "session_id": "租用者分发的 session_id",
-  "session_id_sign": "租用者分发的 session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
@@ -573,17 +619,17 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<s
 
 ## Image Manage
 
-### 1. 查询镜像中心 ID 列表
+### 1. Query the mirror center ID list
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URl：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/servers`
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
@@ -592,19 +638,19 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/servers`
 }
 ```
 
-### 2.查询镜像列表
+### 2. Query image list
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URl：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 ```
 
-- 请求 Body:
+- request body:
 
-**1. 查询镜像中心的镜像列表**
+**1. Query the image list of the image center**
 
 ```json
 {
@@ -616,12 +662,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 }
 ```
 
-**2. 查询 GPU 节点的镜像列表**
+**2. Query the image list of GPU nodes**
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
@@ -631,45 +677,45 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
 }
 ```
 
-**3. 查询 GPU 节点上某个用户的镜像列表**
+**3. Query the image list of a user on a GPU node**
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     // 指定要查询的镜像中心ID
     "image_server": "ID_1"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-- 实例：
+- examples：
 
 ![all_images](./assets/snap_mirror_manage.assets/all_images.png)
 
-### 3.上传镜像
+### 3. Upload image
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
 ```
 
-- 请求 Body:
+- request body:
 
-**1. 将 GPU 节点上的某个镜像上传到镜像中心**
+**1. Upload an image on the GPU node to the image center**
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
@@ -677,12 +723,12 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
     // 指定要查询的镜像中心ID
     "image_server": "ID_1"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-**2. 将客户端节点上的某个镜像上传到镜像中心**
+**2. Upload an image on the client node to the image center**
 
 ```json
 {
@@ -695,28 +741,28 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload
 }
 ```
 
-- 实例：
+- examples：
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-### 4.下载镜像
+### 4. Download image
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
 ```
 
-- 请求 Body:
+- request body:
 
-**从镜像中心下载镜像到 GPU 节点**
+**Download the image from the image center to the GPU node**
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
@@ -726,163 +772,167 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download
     // 本地存储路径
     "local_dir": "/my_local_dir"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-- 实例：
+- examples：
 
 ![snap_list](./assets/snap_mirror_manage.assets/snap_list.png)
 
-### 5.查询下载进度
+### 5. Query download progress
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/downloadprogress
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "image_filename": "ubuntu.qcow2"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 6.查询上传进度
+### 6. Query upload progress
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/uploadprogress
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "image_filename": "ubuntu.qcow2"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 7.停止下载
+### 7. Stop download
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/download_stop
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "image_filename": "ubuntu.qcow2"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 8.停止上传
+### 8. Stop upload
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/upload_stop
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "image_filename": "ubuntu.qcow2"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 9.删除镜像文件
+### 9. Delete image file
 
-- 请求方式：POST
+- request method：POST
 
-- 请求 URL：
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    //GPU节点的node_id
+    //node_id of GPU Node
     "80720ffadecb07087b3a5b6f88b91b58f7c738b15405c93914ee04f607a14965"
   ],
   "additional": {
     "image_filename": "ubuntu.qcow2"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-## 虚拟机组网
+## Virtual LAN networking
 
-### 1.创建网络（创建的网络只能在同一机房内使用）
+### 1. Create a network
 
-- 请求方式：POST
+:::tip 注意！
+the created network can only be used in the same computer room
+:::
 
-- 请求 URl：
+- request method：POST
+
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    // GPU节点的node_id
+    // node_id of GPU Node
     "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
   ],
   "additional": {
@@ -891,31 +941,195 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
     // 网段/ 掩码位数
     "ip_cidr": "192.168.66.0/24"
   },
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
 
-### 2.删除网络（DBC 会自动清理长时间没有虚拟机使用的网络）
+### 2. Delete the network
 
-- 请求方式：POST
+:::tip 注意！
+DBC will automatically clean up the network that has not been used by the virtual machine for a long time
+:::
 
-- 请求 URL：
+- request method：POST
+
+- request URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 ```
 
-- 请求 Body:
+- request body:
 
 ```json
 {
   "peer_nodes_list": [
-    // GPU节点的node_id
+    // node_id of GPU Node
     "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
   ],
   "additional": {},
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
+}
+```
+
+## Bare Metal Node Operations
+
+To control operations such as switching on and off a bare metal server, you need a CPU server that is on the same network as the bare metal server. Run the bare metal node program of dbc on this CPU server, and then add the relevant information of the bare metal server (IP address and IPMI control information) to the node, and the node will generate a corresponding NodeID for the bare metal server to join the dbc network. , you can control the bare metal server through NodeID.
+
+To install dbc bare metal node, please refer to [Install dbc computer node](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) Installation script using bare metal nodes [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
+
+### 1. Query the list of bare metal machines
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
+```
+
+- request body:
+
+```json
+{
+  "peer_nodes_list": [
+    // node_id of bare metal node
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {}
+}
+```
+
+### 2. On-Line Bare Metal Machines
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
+```
+
+- request body:
+
+```json
+{
+  "peer_nodes_list": [
+    // node_id of bare metal node
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // Informations of bare metal server node
+    "bare_metal_nodes": [
+      {
+        // The unique ID of the machine supplier to identify the bare metal, required.
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
+        // The connection method provided by the bare metal server to the user. Required. A fixed IP address is recommended.
+        "ip": "175.221.204.110",
+        // Operating system of the bare metal server, optional.
+        "os": "Ubuntu 20.04.3 LTS (Focal Fossa) 5.4.0-121-generic GNU/Linux",
+        // A description customized by the machine owner, not required.
+        "desc": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
+        // The host ID of ipmi, required. A fixed IP address is recommended.
+        "ipmi_hostname": "192.168.0.110",
+        // ipmi username, required.
+        "ipmi_username": "admin",
+        // ipmi user password, required.
+        "ipmi_password": "dbtu2017"
+      }
+    ]
+  }
+}
+```
+
+### 3. Offline Bare Metal Machines
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
+```
+
+- request body:
+
+```json
+{
+  "peer_nodes_list": [
+    // node_id of bare metal node
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // NodeID list of bare metal server node
+    "bare_metal_node_ids": [
+      // The corresponding NodeID generated when the bare metal machine goes online
+      "8c29b20da3fdb2d6c5ad7c2c85b303d9d337a1b82fa584a6b6cf1303331efd16"
+    ]
+  }
+}
+```
+
+### 4. Bare Metal Machine Power Control
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
+```
+
+- request body:
+
+```json
+{
+  "peer_nodes_list": [
+    // node_id of bare metal server node
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // power control command
+    // "on"     - power on
+    // "off"    - power off
+    // "reset"  - power reset
+    // "status" - get power status
+    "command": "on"
+  },
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
+}
+```
+
+### 5. Modifying the Boot device order of Bare Metal Machines
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
+```
+
+- request body:
+
+```json
+{
+  "peer_nodes_list": [
+    // node_id of bare metal server node
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // boot device order
+    // "pxe"    - Force PXE boot
+    // "disk"   - Force boot from default Hard-drive
+    // "cdrom"  - Force boot from CD/DVD
+    // "bios"   - Force boot into BIOS Setup
+    "device": "pxe"
+  },
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
