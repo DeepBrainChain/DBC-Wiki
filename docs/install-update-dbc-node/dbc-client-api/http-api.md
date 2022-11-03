@@ -1097,3 +1097,34 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
   "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
+
+### 5. 修改裸金属机器引导启动顺序
+
+- 请求方式：POST
+
+- 请求 URl：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属机器对应的node_id
+    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+  ],
+  "additional": {
+    // 引导启动顺序
+    // "pxe"    - 从PXE启动
+    // "disk"   - 从硬盘启动
+    // "cdrom"  - 从CD/DVD启动
+    // "bios"   - 启动进入BIOS设置
+    "device": "pxe"
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
