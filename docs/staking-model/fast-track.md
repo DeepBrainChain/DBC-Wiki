@@ -10,7 +10,7 @@
 
 0xbb3e3bd46891ad75a32fa62a3897fb6374665943aca58cb2b2f91c401fadd2dd
 
-2. 议会成员执行下面的调用：注意，主网为 MemberCount 至少是议会人数的 3/4 (如主网委员会成员是21名，则需要21*3/4 = 15.75，则需要至少16名)，proposal_hash 填写上一步生成并复制的 Hash
+2. 议会成员执行下面的调用：注意，主网为 MemberCount 至少是议会人数的 3/4 (如主网委员会成员是 21 名，则需要 21\*3/4 = 15.75，则需要至少 16 名)，proposal_hash 填写上一步生成并复制的 Hash
 
 ![image-20220127133432429](./assets/fast-track.assets/image-20220127133432429.png)
 
