@@ -67,78 +67,76 @@
 > `request body`：
 >
 > ```json
->    {
->        "peer_nodes_list": [
->            // node_id of GPU Node
->            "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
->        ],
->        "additional": {
->         // 镜像名字
->         "image_name": "ubuntu.qcow2",
->         // 描述
->         "desc": "...",
->         // 操作系统类型: linux、windows (默认值：linux)
->         "operation_system": "linux",
->         // 引导方式:（默认值：legacy）
->         //   linux系统设置: legacy
->         // windows系统设置: uefi
->         //        pxe方式: pxe
->         "bios_mode": "legacy",
->         // 远程登录linux虚拟机，ssh端口号（linux）
->         "ssh_port": "5684",
->         // 远程登录windows虚拟机，rdp端口号（windows）
->         "rdp_port": "5685",
->         // vnc连接端口号
->         "vnc_port": "5904",
->         //自定义端口映射
->         // [
->         //    宿主机的123转发到虚拟机的123
->         //    "tcp/udp,123",
->         //    宿主机的111转发到虚拟机的222
->         //    "tcp/udp,111:222",
->         //    宿主机的333-444转发到虚拟机的444
->         //    "tcp/udp,333-444",
->         //    宿主机的[555-666]转发到虚拟机的[777-888]
->         //    "tcp/udp,555-666:777-888"
->         // ]
->         "custom_port": [
+> {
+>   "peer_nodes_list": [
+>     // node_id of GPU Node
+>     "58fb618aa482c41114eb3cfdaefd3ba183172da9e25251449d045043fbd37f45"
+>   ],
+>   "additional": {
+>     // 镜像名字
+>     "image_name": "ubuntu.qcow2",
+>     // 描述
+>     "desc": "...",
+>     // 操作系统类型: linux、windows (默认值：linux)
+>     "operation_system": "linux",
+>     // 引导方式:（默认值：legacy）
+>     //   linux系统设置: legacy
+>     // windows系统设置: uefi
+>     //        pxe方式: pxe
+>     "bios_mode": "legacy",
+>     // 远程登录linux虚拟机，ssh端口号（linux）
+>     "ssh_port": "5684",
+>     // 远程登录windows虚拟机，rdp端口号（windows）
+>     "rdp_port": "5685",
+>     // vnc连接端口号
+>     "vnc_port": "5904",
+>     //自定义端口映射
+>     // [
+>     //    宿主机的123转发到虚拟机的123
+>     //    "tcp/udp,123",
+>     //    宿主机的111转发到虚拟机的222
+>     //    "tcp/udp,111:222",
+>     //    宿主机的333-444转发到虚拟机的444
+>     //    "tcp/udp,333-444",
+>     //    宿主机的[555-666]转发到虚拟机的[777-888]
+>     //    "tcp/udp,555-666:777-888"
+>     // ]
+>     "custom_port": [],
 >
->         ],
+>     // gpu数量（大于等于 0）
+>     "gpu_count": "2",
+>     // cpu数量（大于0）
+>     "cpu_cores": "8",
+>     // 内存大小（大于0，单位：G）
+>     "mem_size": "8",
+>     // 磁盘大小（大于0，单位：G）
+>     "disk_size": "10",
+>     // 已存在的数据盘文件（如：xxx.qcow2）
+>     "data_file_name": "xxx.qcow2",
 >
->         // gpu数量（大于等于 0）
->         "gpu_count": "2",
->         // cpu数量（大于0）
->         "cpu_cores": "8",
->         // 内存大小（大于0，单位：G）
->         "mem_size": "8",
->         // 磁盘大小（大于0，单位：G）
->         "disk_size": "10",
->         // 已存在的数据盘文件（如：xxx.qcow2）
->         "data_file_name": "xxx.qcow2",
+>     // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
+>     // 添加多组播地址续在括号中用","相隔,也可不填
+>     "multicast": ["230.0.0.1:5558"],
+>     //内网名称（创建虚拟机网络时填的名称）
+>     "network_name": "test",
+>     // 公网ip地址
+>     "public_ip": "",
+>     // 安全组
+>     // [
+>     //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
+>     //    "in,tcp,22,0.0.0.0/0,accept",
+>     //    "in,tcp,3389,0.0.0.0/0,accept",
+>     //    接受所有流出虚拟机的流量
+>     //    "out,all,all,0.0.0.0/0,accept",
+>     //    丢弃其他所有流入虚拟机的流量
+>     //    "in,all,all,0.0.0.0/0,drop"
+>     // ]
+>     "network_filters": []
+>   },
 >
->         // 不同虚拟机之间互相传输的组播地址,范围为224.0.0.0~239.0.0.0
->         // 添加多组播地址续在括号中用","相隔,也可不填
->         "multicast":["230.0.0.1:5558"],
->         //内网名称（创建虚拟机网络时填的名称）
->         "network_name": "test",
->         // 公网ip地址
->         "public_ip": "",
->         // 安全组
->         // [
->         //    使 TCP 端口 22 (ssh) 和 3389 (rdp) 可访问
->         //    "in,tcp,22,0.0.0.0/0,accept",
->         //    "in,tcp,3389,0.0.0.0/0,accept",
->         //    接受所有流出虚拟机的流量
->         //    "out,all,all,0.0.0.0/0,accept",
->         //    丢弃其他所有流入虚拟机的流量
->         //    "in,all,all,0.0.0.0/0,drop"
->         // ]
->         "network_filters": []
->        },
->
->        "session_id": "The session_id distributed by the renter",
->        "session_id_sign": "session_id_sign distributed by the renter"
->    }
+>   "session_id": "The session_id distributed by the renter",
+>   "session_id_sign": "session_id_sign distributed by the renter"
+> }
 > ```
 >
 > Example：
