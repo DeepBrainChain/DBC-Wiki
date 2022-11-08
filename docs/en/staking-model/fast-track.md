@@ -8,7 +8,7 @@ Note: The screenshots are all from testnet. The values in it need to be filled i
 
 After filling in the parameters, the pre-image hash is: `0xbb3e3bd46891ad75a32fa62a3897fb6374665943aca58cb2b2f91c401fadd2dd`
 
-2. Council members execute the following calls: Note that the mainnet fills in 10 for MemberCount (at least 3/4 of council members), and the proposal_hash fills in the Hash generated and copied in the previous step
+2. Council members execute the following calls: Note that `MemberCount` at least 3/4 of council members (e.g. there are 21 council members, MemberCount should be at least 16), and the proposal_hash fills in the Hash generated and copied in the previous step
 
 ![image-20220127133432429](./assets/fast-track.assets/image-20220127133432429.png)
 
