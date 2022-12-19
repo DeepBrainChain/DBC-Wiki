@@ -72,10 +72,10 @@
 ### Map
 
 | 存储                | 键类型      | 值类型           | 说明                             |
-| :------------------ | :---------- | :--------------- | :------------------------------- | -------------------------- |
+| :------------------ | :---------- | :--------------- | :------------------------------- |
 | userRented          | AccountId   | `Vec<MachineId>` | 存储用户当前租用的机器列表       |
 | rentOrder           | MachineId   | RentOrderDetail  | 用户当前租用的某个机器的详情     |
-| pendingConfirming   | MachineId   | AccountId        |                                  | 等待用户确认租用成功的机器 |
+| pendingConfirming   | MachineId   | AccountId        | 等待用户确认租用成功的机器       |
 | pending_rent_ending | BlockNumber | `Vec<MachineId>` | 记录每个区块将要结束租用的机器   |
 | userTotalStake      | AccountId   | Balance          | 存储每个用户在该模块中的总质押量 |
 

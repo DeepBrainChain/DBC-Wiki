@@ -71,13 +71,13 @@
 
 ### Map
 
-| Storage             | KeyType     | ValueType        | Description                                              |
-| :------------------ | :---------- | :--------------- | :------------------------------------------------------- | ------------------------------------------------------------------ |
-| userRented          | AccountId   | `Vec<MachineId>` | Store the list of machines currently rented by the user  |
-| rentOrder           | MachineId   | RentOrderDetail  | Details of a machine currently rented by the user        |
-| pendingConfirming   | MachineId   | AccountId        |                                                          | Waiting for the user to confirm the successful rent of the machine |
-| pending_rent_ending | BlockNumber | `Vec<MachineId>` | Record the machine that will end the rent at each block  |
-| userTotalStake      | AccountId   | Balance          | Store the total pledge amount of each user in the module |
+| Storage             | KeyType     | ValueType        | Description                                                        |
+| :------------------ | :---------- | :--------------- | :----------------------------------------------------------------- |
+| userRented          | AccountId   | `Vec<MachineId>` | Store the list of machines currently rented by the user            |
+| rentOrder           | MachineId   | RentOrderDetail  | Details of a machine currently rented by the user                  |
+| pendingConfirming   | MachineId   | AccountId        | Waiting for the user to confirm the successful rent of the machine |
+| pending_rent_ending | BlockNumber | `Vec<MachineId>` | Record the machine that will end the rent at each block            |
+| userTotalStake      | AccountId   | Balance          | Store the total pledge amount of each user in the module           |
 
 ### Value
 
