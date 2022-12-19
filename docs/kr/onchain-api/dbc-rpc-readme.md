@@ -17,10 +17,11 @@ source ~/.cargo/env
 
 # compile dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git && cd DeepBrainChain-MainChain
+git checkout v2.3
 cargo build --release
 
 # run sync node：
-./target/release/dbc-chain --base-path ./db_data --chain ./dbcSpecRaw.json --pruning archive --rpc-cors all --no-mdns --bootnodes /ip4/47.74.88.41/tcp/8947/p2p/12D3KooWD87i4TKA68P7zpGNXxUaHgvnimbgihEzDyJrmG3iGJPw
+./target/release/dbc-chain --base-path ./db_data --pruning archive --rpc-cors all --no-mdns
 
 # Port：
 --rpc-port 9933   # Specify the port on which your node listens for RPC. 9933 is the default value, so this parameter can also be ignored

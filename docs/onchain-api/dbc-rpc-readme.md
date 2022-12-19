@@ -21,10 +21,11 @@ source ~/.cargo/env
 
 # 编译dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git && cd DeepBrainChain-MainChain
+git checkout v2.3
 cargo build --release
 
 # 运行同步节点：
-./target/release/dbc-chain --base-path ./db_data --chain ./dbcSpecRaw.json --pruning archive --rpc-cors all --no-mdns --bootnodes /ip4/47.74.88.41/tcp/8947/p2p/12D3KooWD87i4TKA68P7zpGNXxUaHgvnimbgihEzDyJrmG3iGJPw
+./target/release/dbc-chain --base-path ./db_data --pruning archive --rpc-cors all --no-mdns
 
 # 端口参数：
 --rpc-port 9933   # 指定你的节点监听RPC的端口。 9933 是默认值，因此该参数也可忽略
