@@ -635,7 +635,34 @@ onlineProfile 模块记录了机器在线奖励的信息
 
 ## 4. RentMachine 模块
 
-### 4.1 查看机器的租用信息
+### 4.1 查看机器对应的订单
+
+说明：由于当前支持单卡租用，一台多卡机器可能对应多个订单
+
+- 示例
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "rentMachine_getMachineRentId",
+  "params": ["0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022"] # RentID
+}
+```
+
+- 结果说明
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "rentOrder": [889], # 机器订单
+    "usedGpu": [0,1,2,3] # 机器已使用GPU
+  },
+  "id": 1
+}
+```
+
+### 4.2 查看租用的详情
 
 - 示例
 
@@ -644,7 +671,7 @@ onlineProfile 模块记录了机器在线奖励的信息
   "jsonrpc": "2.0",
   "id": 1,
   "method": "rentMachine_getRentOrder",
-  "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # 机器ID
+  "params": [1] # RentID
 }
 ```
 
@@ -654,18 +681,26 @@ onlineProfile 模块记录了机器在线奖励的信息
 {
   "jsonrpc": "2.0",
   "result": {
-    "confirmRent": 539746, # 确认租用块高
-    "rentEnd": 623264, # 租用结束时间
-    "rentStart": 539744, # 租用开始时间
-    "rentStatus": "renting", # 当前订单状态
-    "renter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5", # 租用者
-    "stakeAmount": "0" # 租用者质押金额
+    "confirmRent": 1600590, # 确认租用块高
+    "gpuIndex": [ # 当前订单使用的GPU序号
+      0,
+      1,
+      2,
+      3
+    ],
+    "gpuNum": 4, # 当前订单租用GPU个数
+    "machineId": "0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022", # 机器ID
+    "rentEnd": 1635148, # 租用结束块高
+    "rentStart": 1600588, # 租用开始时间
+    "rentStatus": "renting", # 当前租用状态
+    "renter": "5GETYD36iceKpKf1fpKdTwtToh4MskTt5RsuouYTGxmrcouC", # 租用人
+    "stakeAmount": "0" # 租用人质押金额
   },
   "id": 1
 }
 ```
 
-### 4.2 查看某个账户租用的订单列表
+### 4.3 查看某个账户租用的订单列表
 
 - 示例
 
