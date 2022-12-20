@@ -633,7 +633,32 @@ onlineProfile Module records the information of the machine's online rewards
 
 ## 4. RentMachine Modul
 
-### 4.1 View machine rental information
+### 4.1 Get rentOrder ID of Machine
+
+- Example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "rentMachine_getMachineRentId",
+  "params": ["0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022"] # MachineID
+}
+```
+
+- Explanation of results
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "rentOrder": [889], # Machine rentOrder Id
+    "usedGpu": [0, 1, 2, 3] # Used GPU
+  },
+  "id": 1
+}
+```
+
+### 4.2 View machine rental information
 
 - Example
 
@@ -642,7 +667,7 @@ onlineProfile Module records the information of the machine's online rewards
   "jsonrpc": "2.0",
   "id": 1,
   "method": "rentMachine_getRentOrder",
-  "params": ["38f4a824e0dc1fc5a9a7dccff53417b300fc0edad208176d8770597d98f6eb5c"] # Machine ID
+  "params": [1] # RentOrder ID
 }
 ```
 
@@ -652,18 +677,21 @@ onlineProfile Module records the information of the machine's online rewards
 {
   "jsonrpc": "2.0",
   "result": {
-    "confirmRent": 539746, # Confirm rent succeed block height
-    "rentEnd": 623264, # Rental end time
-    "rentStart": 539744, # Rental start time
-    "rentStatus": "renting", # Current order status
-    "renter": "5D45i3Ac4fXoimZQETJVMyYu79tAYzt4xQzEwzNLfirhsbg5",
-    "stakeAmount": "0" # Renter's staked amount
+    "confirmRent": 1600590,
+    "gpuIndex": [0, 1, 2, 3],
+    "gpuNum": 4,
+    "machineId": "0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022",
+    "rentEnd": 1635148,
+    "rentStart": 1600588,
+    "rentStatus": "renting",
+    "renter": "5GETYD36iceKpKf1fpKdTwtToh4MskTt5RsuouYTGxmrcouC",
+    "stakeAmount": "0"
   },
   "id": 1
 }
 ```
 
-### 4.2 View the list of `Rent Order` of an account
+### 4.3 View the list of `Rent Order` of an account
 
 - Example
 

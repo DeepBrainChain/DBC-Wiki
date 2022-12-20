@@ -646,7 +646,7 @@ onlineProfile 模块记录了机器在线奖励的信息
   "jsonrpc": "2.0",
   "id": 1,
   "method": "rentMachine_getMachineRentId",
-  "params": ["0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022"] # RentID
+  "params": ["0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022"] # MachineID
 }
 ```
 
@@ -656,7 +656,7 @@ onlineProfile 模块记录了机器在线奖励的信息
   "jsonrpc": "2.0",
   "result": {
     "rentOrder": [889], # 机器订单
-    "usedGpu": [0,1,2,3] # 机器已使用GPU
+    "usedGpu": [0, 1, 2, 3] # 机器已使用GPU
   },
   "id": 1
 }
@@ -682,12 +682,7 @@ onlineProfile 模块记录了机器在线奖励的信息
   "jsonrpc": "2.0",
   "result": {
     "confirmRent": 1600590, # 确认租用块高
-    "gpuIndex": [ # 当前订单使用的GPU序号
-      0,
-      1,
-      2,
-      3
-    ],
+    "gpuIndex": [0, 1, 2, 3], # 当前订单使用的GPU序号
     "gpuNum": 4, # 当前订单租用GPU个数
     "machineId": "0edac3b0263dd09538717bb0f5bf3f1bced70d7e017239d6f307b0801220c022", # 机器ID
     "rentEnd": 1635148, # 租用结束块高
@@ -718,7 +713,7 @@ onlineProfile 模块记录了机器在线奖励的信息
 ```json
 {
   "jsonrpc": "2.0",
-  "result": [0,1], # 订单ID
+  "result": [0, 1], # 订单ID
   "id": 1
 }
 ```
