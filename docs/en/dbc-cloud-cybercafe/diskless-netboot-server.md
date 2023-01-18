@@ -47,6 +47,7 @@ systemctl status tftpd-hpa.service
 tftpd-hpa uses the /srv/tftp folder as the storage directory by default. You need to put undionly.kpxe and ipxe.efi in this directory. These two files can use the files provided by the ipxe official website. We recommend using custom scripts to compile them file yourself, and how to compile iPXE will be introduced later.
 
 The download address of the startup file provided by the iPXE official website is as follows：
+
 - undionly.kpxe: https://boot.ipxe.org/undionly.kpxe
 - ipxe.efi: https://boot.ipxe.org/ipxe.efi
 
@@ -417,27 +418,28 @@ As long as you execute the `sudo python3 home.py` command in the `DBC-CloudCyber
 After opening the diskless console in the browser, you need to fill in some settings on the `Setting` page.
 
 - Storage
-    - Volume Group: Fill in the volume group created in the lvm2 step above.
+  - Volume Group: Fill in the volume group created in the lvm2 step above.
 - DHCP
-    - network name: Network or subnet name, default `dbc`.
-    - interface: Network card device name, the network card connected in a LAN, such as `eno1`.
-    - subnet: Network segment, IP address segment, such as `192.168.1.0`.
-    - subnet mask: Subnet mask, such as `255.255.255.0`.
-    - range: Starting IP address and ending IP address range, for example `192.168.1.100`-`192.168.1.200`.
-    - routers: Gateway IP address, such as `192.168.1.1`.
-    - dns servers: DNS server address, such as `114.114.114.114` and Alibaba Cloud public DNS `223.5.5.5`.
-    - broadcast address: Broadcast address, such as `192.168.1.255`.
-    - filename: The address of the script file loaded after iPXE starts, for example `http://192.168.1.2:8080/ipxe/boot.ipxe`.
-    - next server: The IP address of the TFTP server deployed above, such as `192.168.1.2`.
+  - network name: Network or subnet name, default `dbc`.
+  - interface: Network card device name, the network card connected in a LAN, such as `eno1`.
+  - subnet: Network segment, IP address segment, such as `192.168.1.0`.
+  - subnet mask: Subnet mask, such as `255.255.255.0`.
+  - range: Starting IP address and ending IP address range, for example `192.168.1.100`-`192.168.1.200`.
+  - routers: Gateway IP address, such as `192.168.1.1`.
+  - dns servers: DNS server address, such as `114.114.114.114` and Alibaba Cloud public DNS `223.5.5.5`.
+  - broadcast address: Broadcast address, such as `192.168.1.255`.
+  - filename: The address of the script file loaded after iPXE starts, for example `http://192.168.1.2:8080/ipxe/boot.ipxe`.
+  - next server: The IP address of the TFTP server deployed above, such as `192.168.1.2`.
 - HTTP
-    - root path: The storage directory of the HTTP file service deployed above, the console program will generate the configuration corresponding to the MAC address of the machine under its ipxe/cfg folder.
-    - http ip:port: The IP address and port of the HTTP service deployed above, such as `http://192.168.1.2:8080`.
+  - root path: The storage directory of the HTTP file service deployed above, the console program will generate the configuration corresponding to the MAC address of the machine under its ipxe/cfg folder.
+  - http ip:port: The IP address and port of the HTTP service deployed above, such as `http://192.168.1.2:8080`.
 - iSCSI
-    - iscsi server: IP address of the iSCSI server deployed above. For example `192.168.1.2`.
-    - initiator iqn: A public iSCSI initiator name, such as `iqn.2022-10.org.dbc.iscsi:global.client`.
-    - target prefix: Public iSCSI target name prefix, eg `iqn.2022-10.org.dbc.iscsi`.
+  - iscsi server: IP address of the iSCSI server deployed above. For example `192.168.1.2`.
+  - initiator iqn: A public iSCSI initiator name, such as `iqn.2022-10.org.dbc.iscsi:global.client`.
+  - target prefix: Public iSCSI target name prefix, eg `iqn.2022-10.org.dbc.iscsi`.
 
 :::tip 注意！
+
 1. Theoretically, services such as TFTP, HTTP, and iSCSI can be deployed on different servers, so the settings distinguish many server addresses. It is recommended to use one server and use a secure RAID for lvm2.
 2. The filename in DHCP is the script loaded after iPXE starts, if undionly.kpxe and ipxe.efi have been compiled with custom scripts, this item can be ignored.
-:::
+   :::
