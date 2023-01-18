@@ -647,6 +647,7 @@ onlineProfile Module records the information of the machine's online rewards
 ```
 
 - Explanation of results
+
 ```json
 {
   "jsonrpc": "2.0",
