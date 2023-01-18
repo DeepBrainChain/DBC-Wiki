@@ -169,6 +169,6 @@ export const en = navbar([
   {
     text: "Diskless Netboot",
     prefix: "/en/dbc-cloud-cybercafe/",
-    children: ["diskless-netboot-server","diskless-netboot-image"],
+    children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
 ]);
