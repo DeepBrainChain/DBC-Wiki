@@ -1,17 +1,9 @@
 import { defineUserConfig } from "vuepress";
 import themeConfig from "./themeConfig";
-import { readingTimePlugin } from "vuepress-plugin-reading-time2";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { commentPlugin } from "vuepress-plugin-comment2";
-// .vuepress/config.ts
 import { componentsPlugin } from "vuepress-plugin-components";
 
-// export default {
-//   plugins: [
-//   ],
-// };
-
-// module.exports = {
 export default defineUserConfig({
   title: "DBC-Wiki",
   lang: "zh-CN",
@@ -52,15 +44,6 @@ export default defineUserConfig({
         },
         "/kr/": {
           placeholder: "검색",
-        },
-      },
-    }),
-    readingTimePlugin({
-      locales: {
-        "/kr/": {
-          word: "About $word words",
-          less1Minute: "Less than 1 minute",
-          time: "About $time min",
         },
       },
     }),

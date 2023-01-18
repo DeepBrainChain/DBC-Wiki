@@ -13,7 +13,7 @@ export default hopeTheme({
 
       navbarLocales: {
         selectLangAriaLabel: "简体中文",
-        selectLangText: "选择语言",
+        // selectLangText: "选择语言",
         langName: "简体中文",
       },
 
@@ -43,7 +43,7 @@ export default hopeTheme({
 
       navbarLocales: {
         langName: "한국어",
-        selectLangText: "Language",
+        // selectLangText: "Language",
         selectLangAriaLabel: "Select language",
       },
 
@@ -76,13 +76,13 @@ export default hopeTheme({
       },
 
       encryptLocales: {
-        title: "Please enter password",
+        placeholder: "Please enter password",
         errorHint: "Please enter the correct password!",
       },
 
       routeLocales: {
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        "404msg": [
+        notFoundMsg: [
           "There’s nothing here.",
           "How did we get here?",
           "That’s a Four-Oh-Four.",
