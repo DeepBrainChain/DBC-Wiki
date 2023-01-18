@@ -1,6 +1,6 @@
 # Diskless netboot server
 
-The DBC-CloudCyberCafe project uses iPXE to boot, uses iSCSI for diskless services, uses lvm2 for storage management, uses thrift for API interfaces, and uses plotly to provide console interfaces. Together they provide customers with diskless network boot services, so deploy the diskless server is to deploy these modules separately. The server system uses ubuntu 20.04.
+The DBC-CloudCyberCafe project uses iPXE to boot, uses iSCSI for diskless services, uses lvm2 for storage management, uses thrift for API interfaces, and uses plotly to provide console interfaces. Together they provide customers with diskless network boot services, so deploy the diskless netboot server is to deploy these modules separately. The server system uses ubuntu 20.04.
 
 ## iPXE
 
@@ -354,7 +354,7 @@ Here it is recommended to use the `pvcreate` command to initialize the safe and 
 
 ## thrift
 
-The DBC-CloudCyberCafe project uses the thrift rpc framework to provide an API interface to facilitate third-party programs (mainly dbc programs) to set the machine to enter the Windows or Ubuntu system, modify the system login password, and close the diskless client. Therefore, the diskless server needs to install the necessary thrift tools.
+The DBC-CloudCyberCafe project uses the thrift rpc framework to provide an API interface to facilitate third-party programs (mainly dbc programs) to set the machine to enter the Windows or Ubuntu system, modify the system login password, and close the diskless client. Therefore, the diskless netboot server needs to install the necessary thrift tools.
 
 ```
 sudo apt install thrift-compiler python3-pip
@@ -365,7 +365,7 @@ sudo pip3 install thrift
 
 The DBC-CloudCyberCafe project uses plotly to implement a diskless console to facilitate customer managers to add machines, bind MAC addresses and IP addresses, and modify machine startup items.
 
-Because the operation of lvm2 and iSCSI requires the root user authority of the diskless server, the diskless console may wait for the root user password to be entered, resulting in many subsequent operations failing, so it is recommended that the user who sets the server do not need to enter the password when executing the sudo command by adding the content `dbc ALL=(ALL) NOPASSWD:ALL` in `/etc/sudoers`. The contents of the `/etc/sudoers` file are as follows:
+Because the operation of lvm2 and iSCSI requires the root user authority of the diskless netboot server, the diskless console may wait for the root user password to be entered, resulting in many subsequent operations failing, so it is recommended that the user who sets the server do not need to enter the password when executing the sudo command by adding the content `dbc ALL=(ALL) NOPASSWD:ALL` in `/etc/sudoers`. The contents of the `/etc/sudoers` file are as follows:
 
 ```
 #
@@ -412,7 +412,7 @@ cd ../plotly/
 sudo python3 home.py
 ```
 
-As long as you execute the `sudo python3 home.py` command in the `DBC-CloudCyberCafe/plotly/` directory of the project code, you can start the console program of the diskless service, and then enter `http://localhost:8050/` in the browser to access the console. Don't forget to replace `localhost` with the IP address of the diskless server.
+As long as you execute the `sudo python3 home.py` command in the `DBC-CloudCyberCafe/plotly/` directory of the project code, you can start the console program of the diskless service, and then enter `http://localhost:8050/` in the browser to access the console. Don't forget to replace `localhost` with the IP address of the diskless netboot server.
 
 After opening the diskless console in the browser, you need to fill in some settings on the `Setting` page.
 

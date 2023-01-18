@@ -1,6 +1,6 @@
-# 无盘服务器
+# 无盘网起服务器
 
-DBC-CloudCyberCafe 项目使用 iPXE 引导启动，使用 iSCSI 做无盘服务，使用 lvm2 做存储管理，使用 thrift 做API接口，使用 plotly 提供控制台界面，共同组合为客户提供无盘启动服务，因此部署无盘服务器也就是分别部署这些模块。服务器系统使用 ubuntu 20.04。
+DBC-CloudCyberCafe 项目使用 iPXE 引导启动，使用 iSCSI 做无盘服务，使用 lvm2 做存储管理，使用 thrift 做API接口，使用 plotly 提供控制台界面，共同组合为客户提供无盘启动服务，因此部署无盘网起服务器也就是分别部署这些模块。服务器系统使用 ubuntu 20.04。
 
 ## iPXE
 
@@ -269,7 +269,7 @@ set base-url http://192.168.1.159:8080
 set menu-timeout 5000
 ```
 
-其中 iscsi-server 的IP地址即无盘服务器的IP地址，base-url 即 HTTP 服务的 url，这些内容请根据实际情况自行设置。
+其中 iscsi-server 的IP地址即无盘网起服务器的IP地址，base-url 即 HTTP 服务的 url，这些内容请根据实际情况自行设置。
 
 ### iPXE的文件配置
 
@@ -288,7 +288,7 @@ dhcp
 chain --autofree http://192.168.1.2:8080/ipxe/boot.ipxe
 ```
 
-此处 192.168.1.2 为无盘服务器的IP地址，8080端口为nginx配置的HTTP服务的端口，请根据各自的实际配置填写。
+此处 192.168.1.2 为无盘网起服务器的IP地址，8080端口为nginx配置的HTTP服务的端口，请根据各自的实际配置填写。
 
 然后使用 script.ipxe 编译 iPXE 启动文件，就能在启动 PXE 引导后自动加载 HTTP 服务提供的 boot.ipxe 配置，使用以下命令编译：
 
@@ -354,18 +354,18 @@ sudo apt install lvm2
 
 ## thrift
 
-DBC-CloudCyberCafe 项目使用 thrift rpc 框架对外提供 API 接口，以方便第三方程序(主要是指dbc程序)设置机器进入Windows还是Ubuntu系统，修改系统的登录密码和关闭无盘的客户机等操作。因此无盘服务器需要安装必要的 thrift 工具。
+DBC-CloudCyberCafe 项目使用 thrift rpc 框架对外提供 API 接口，以方便第三方程序(主要是指dbc程序)设置机器进入Windows还是Ubuntu系统，修改系统的登录密码和关闭无盘的客户机等操作。因此无盘网起服务器需要安装必要的 thrift 工具。
 
 ```
 sudo apt install thrift-compiler python3-pip
 sudo pip3 install thrift
 ```
 
-## 无盘控制台
+## 无盘网起管理控制台
 
-DBC-CloudCyberCafe 项目使用 plotly 实现了一个无盘控制台，以方便客户的管理人员添加机器，绑定MAC地址和IP地址，修改机器的启动项等。
+DBC-CloudCyberCafe 项目使用 plotly 实现了一个无盘管理控制台，以方便客户的管理人员添加机器，绑定MAC地址和IP地址，修改机器的启动项等。
 
-因为对 lvm2 和 iSCSI 的操作都需要无盘服务器的root用户权限，无盘控制台可能会因为请求输入root用户密码而一直等待导致后续很多操作失败，所以建议设置服务器的用户在执行 sudo 命令时无需输入密码，在 `/etc/sudoers` 中添加内容 `dbc	ALL=(ALL) NOPASSWD:ALL`，`/etc/sudoers` 文件内容如下：
+因为对 lvm2 和 iSCSI 的操作都需要无盘网起服务器的root用户权限，无盘控制台可能会因为请求输入root用户密码而一直等待导致后续很多操作失败，所以建议设置服务器的用户在执行 sudo 命令时无需输入密码，在 `/etc/sudoers` 中添加内容 `dbc	ALL=(ALL) NOPASSWD:ALL`，`/etc/sudoers` 文件内容如下：
 
 ```
 #
@@ -412,7 +412,7 @@ cd ../plotly/
 sudo python3 home.py
 ```
 
-只要在项目代码的 `DBC-CloudCyberCafe/plotly/` 目录下执行 `sudo python3 home.py` 命令，就能启动无盘服务的控制台程序，然后浏览器中输入 `http://localhost:8050/` 即可访问控制台。切忌不要忘了将 `localhost` 换成无盘服务器的IP地址。
+只要在项目代码的 `DBC-CloudCyberCafe/plotly/` 目录下执行 `sudo python3 home.py` 命令，就能启动无盘服务的控制台程序，然后浏览器中输入 `http://localhost:8050/` 即可访问控制台。切忌不要忘了将 `localhost` 换成无盘网起服务器的IP地址。
 
 在浏览器中打开无盘控制台后，需要在`Setting`页面填写一些设置。
 
