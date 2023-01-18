@@ -14,6 +14,5 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
-  },
-  "packageManager": "yarn@3.3.1"
+  }
 }
