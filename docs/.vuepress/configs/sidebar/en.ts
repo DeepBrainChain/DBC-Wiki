@@ -178,4 +178,11 @@ export const en = sidebar({
       ],
     },
   ],
+  "/en/dbc-cloud-cybercafe/": [
+    {
+      text: "Diskless Netboot",
+      prefix: "/en/dbc-cloud-cybercafe/",
+      children: ["diskless-netboot-server","diskless-netboot-image"],
+    },
+  ],
 });
