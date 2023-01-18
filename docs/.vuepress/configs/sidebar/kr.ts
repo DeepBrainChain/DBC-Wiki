@@ -170,4 +170,11 @@ export const kr = sidebar({
       ],
     },
   ],
+  "/kr/dbc-cloud-cybercafe/": [
+    {
+      text: "디스크가 없는 넷부팅",
+      prefix: "/kr/dbc-cloud-cybercafe/",
+      children: ["diskless-netboot-server","diskless-netboot-image"],
+    },
+  ],
 });
