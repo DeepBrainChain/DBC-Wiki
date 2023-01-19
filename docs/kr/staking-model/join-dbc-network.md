@@ -14,13 +14,15 @@ Reference: [Generate new dbc account](generate-new-account.md)
 
 ## 2. Get `dbc-chain` binary
 
-### Option 1: use pre-build version
+### Option 1: use pre-build version (recommended)
 
 > If any errors, please use Option 2
 
 ```bash
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.2/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
-tar xf dbc_chain_linux_x64.tar.gz && cd dbc-chain-mainnet
+mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
+
+tar xf dbc_chain_linux_x64.tar.gz
 ```
 
 ### Option 2: compile from source (recommended)
@@ -32,7 +34,7 @@ source ~/.cargo/env
 
 # compile dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git
-cd DeepBrainChain-MainChain
+cd DeepBrainChain-MainChain && git checkout v2.3
 cargo build --release
 ```
 
