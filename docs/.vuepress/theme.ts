@@ -14,9 +14,9 @@ export default hopeTheme({
 
   logo: "/images/dbc.icon.png",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "DeepBrainChain/DBC-Wiki",
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: "docs",
 
   locales: {
     /**
