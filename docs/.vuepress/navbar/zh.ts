@@ -190,6 +190,4 @@ export const zhNavbar = navbar([
     prefix: "/dbc-cloud-cybercafe/",
     children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
-
-
 ]);

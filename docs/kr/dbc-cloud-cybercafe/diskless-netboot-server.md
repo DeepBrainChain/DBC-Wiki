@@ -47,6 +47,7 @@ systemctl status tftpd-hpa.service
 tftpd-hpa는 기본적으로 /srv/tftp 폴더를 스토리지 디렉토리로 사용합니다. 이 디렉토리에 undionly.kpxe 및 ipxe.efi를 넣어야 합니다. 이 두 파일은 ipxe 공식 홈페이지에서 제공하는 파일을 사용하시면 됩니다. 사용자 지정 스크립트를 사용하여 직접 파일을 컴파일하는 것이 좋으며 iPXE를 컴파일하는 방법은 나중에 소개합니다.
 
 iPXE 공식 웹사이트에서 제공하는 시작 파일의 다운로드 주소는 다음과 같습니다:
+
 - undionly.kpxe: https://boot.ipxe.org/undionly.kpxe
 - ipxe.efi: https://boot.ipxe.org/ipxe.efi
 
@@ -417,27 +418,28 @@ sudo python3 home.py
 브라우저에서 디스크 없는 콘솔을 연 후 `설정` 페이지에서 일부 설정을 입력해야 합니다.
 
 - Storage
-    - Volume Group: 위의 lvm2 단계에서 생성한 볼륨 그룹을 입력합니다.
+  - Volume Group: 위의 lvm2 단계에서 생성한 볼륨 그룹을 입력합니다.
 - DHCP
-    - network name: 네트워크 또는 서브넷 이름, 기본값 `dbc`.
-    - interface: 네트워크 카드 장치 이름, `eno1`과 같이 LAN에 연결된 네트워크 카드.
-    - subnet: 네트워크 세그먼트, IP 주소 세그먼트(예: `192.168.1.0`).
-    - subnet mask: `255.255.255.0`과 같은 서브넷 마스크입니다.
-    - range: 시작 IP 주소 및 종료 IP 주소 범위(예: `192.168.1.100`-`192.168.1.200`).
-    - routers: 게이트웨이 IP 주소(예: `192.168.1.1`).
-    - dns servers: `114.114.114.114` 및 Alibaba Cloud 공용 DNS `223.5.5.5`와 같은 DNS 서버 주소입니다.
-    - broadcast address: 브로드캐스트 주소(예: `192.168.1.255`).
-    - filename: iPXE가 시작된 후 로드된 스크립트 파일의 주소(예: `http://192.168.1.2:8080/ipxe/boot.ipxe`).
-    - next server: 위에서 배포한 TFTP 서버의 IP 주소(예: `192.168.1.2`).
+  - network name: 네트워크 또는 서브넷 이름, 기본값 `dbc`.
+  - interface: 네트워크 카드 장치 이름, `eno1`과 같이 LAN에 연결된 네트워크 카드.
+  - subnet: 네트워크 세그먼트, IP 주소 세그먼트(예: `192.168.1.0`).
+  - subnet mask: `255.255.255.0`과 같은 서브넷 마스크입니다.
+  - range: 시작 IP 주소 및 종료 IP 주소 범위(예: `192.168.1.100`-`192.168.1.200`).
+  - routers: 게이트웨이 IP 주소(예: `192.168.1.1`).
+  - dns servers: `114.114.114.114` 및 Alibaba Cloud 공용 DNS `223.5.5.5`와 같은 DNS 서버 주소입니다.
+  - broadcast address: 브로드캐스트 주소(예: `192.168.1.255`).
+  - filename: iPXE가 시작된 후 로드된 스크립트 파일의 주소(예: `http://192.168.1.2:8080/ipxe/boot.ipxe`).
+  - next server: 위에서 배포한 TFTP 서버의 IP 주소(예: `192.168.1.2`).
 - HTTP
-    - root path: 위에 배포된 HTTP 파일 서비스의 저장소 디렉터리인 콘솔 프로그램은 ipxe/cfg 폴더 아래에 있는 시스템의 MAC 주소에 해당하는 구성을 생성합니다.
-    - http ip:port: `http://192.168.1.2:8080`과 같이 위에서 배포한 HTTP 서비스의 IP 주소 및 포트입니다.
+  - root path: 위에 배포된 HTTP 파일 서비스의 저장소 디렉터리인 콘솔 프로그램은 ipxe/cfg 폴더 아래에 있는 시스템의 MAC 주소에 해당하는 구성을 생성합니다.
+  - http ip:port: `http://192.168.1.2:8080`과 같이 위에서 배포한 HTTP 서비스의 IP 주소 및 포트입니다.
 - iSCSI
-    - iscsi server: 위에 배포된 iSCSI 서버의 IP 주소입니다. 예를 들어 `192.168.1.2`.
-    - initiator iqn: 공개 iSCSI 초기자 이름(예: `iqn.2022-10.org.dbc.iscsi:global.client`).
-    - target prefix: 공용 iSCSI 대상 이름 접두사(예: `iqn.2022-10.org.dbc.iscsi`).
+  - iscsi server: 위에 배포된 iSCSI 서버의 IP 주소입니다. 예를 들어 `192.168.1.2`.
+  - initiator iqn: 공개 iSCSI 초기자 이름(예: `iqn.2022-10.org.dbc.iscsi:global.client`).
+  - target prefix: 공용 iSCSI 대상 이름 접두사(예: `iqn.2022-10.org.dbc.iscsi`).
 
 :::tip 注意！
+
 1. 이론적으로 TFTP, HTTP 및 iSCSI와 같은 서비스는 서로 다른 서버에 배포될 수 있으므로 설정은 많은 서버 주소를 구분합니다. 하나의 서버를 사용하고 lvm2에 보안 RAID를 사용하는 것이 좋습니다.
 2. DHCP의 파일 이름은 iPXE 시작 후 로드되는 스크립트입니다. undionly.kpxe 및 ipxe.efi가 사용자 지정 스크립트로 컴파일된 경우 이 항목을 무시할 수 있습니다.
-:::
+   :::
