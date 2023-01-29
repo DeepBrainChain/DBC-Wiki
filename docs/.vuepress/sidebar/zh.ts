@@ -1,10 +1,28 @@
 import { sidebar } from "vuepress-theme-hope";
 
-export const kr = sidebar({
-  "/kr/dbc-introduction/": [
+export const zhSidebar = sidebar({
+  // "/zh/": [
+  //   "",
+  //   {
+  //     icon: "discover",
+  //     text: "案例",
+  //     prefix: "demo/",
+  //     link: "demo/",
+  //     children: "structure",
+  //   },
+  //   {
+  //     text: "文档",
+  //     icon: "note",
+  //     prefix: "guide/",
+  //     children: "structure",
+  //   },
+  //   "slides",
+  // ],
+
+  "/dbc-introduction/": [
     {
-      text: "DBC Introduction",
-      prefix: "/kr/dbc-introduction/",
+      text: "了解DBC",
+      prefix: "/dbc-introduction/",
       children: [
         "dbc-introduction",
         "dbc-applications",
@@ -16,22 +34,24 @@ export const kr = sidebar({
         "dbc-hot-link",
         "dbc-audit-report",
         {
-          text: "Cloud platform operation",
-          collapsable: true,
+          text: "云平台运营",
+          // collapsable: true,
           prefix: "cloud-platform-operation/",
           children: ["initial-operation-process", "support-for-cloud-platform"],
         },
       ],
     },
   ],
-  "/kr/dbc-democracy/": [
+  "/dbc-democracy/": [
     {
       text: "DBC Democracy",
-      prefix: "/kr/dbc-democracy/",
+      prefix: "/dbc-democracy/",
       children: [
         "dbc-council",
         "join-council",
+        "council-meeting-procedures",
         "proposing-referenda",
+        "council-proposal",
         "voting-referenda",
         "apply-treasury",
         "dbc-nft",
@@ -39,31 +59,32 @@ export const kr = sidebar({
       ],
     },
   ],
-  "/kr/dbc-information/": [
+  "/dbc-information/": [
     {
-      text: "DBC News",
-      prefix: "/kr/dbc-information/",
+      text: "DBC资讯",
+      prefix: "/dbc-information/",
       children: [
         {
-          text: "DBC Progress",
-          collapsable: true,
+          text: "DBC 进展",
+          // collapsable: true,
           prefix: "dbc-progress/",
           children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
         },
         {
           text: "DBC AMA",
-          collapsable: true,
+          // collapsable: true,
           prefix: "dbc-ama/",
           children: [
-            "8btc-ama",
-            "galaxy-ama",
-            "council-ama",
-            "dbc-ama-collection",
+            "dbc-ama",
+            // "8btc-ama",
+            // "galaxy-ama",
+            // "council-ama",
+            // "dbc-ama-collection",
           ],
         },
         {
-          text: "DBC Report",
-          collapsable: true,
+          text: "DBC 媒体报道",
+          // collapsable: true,
           prefix: "dbc-report/",
           children: [
             "dbc-36kr-report",
@@ -83,28 +104,57 @@ export const kr = sidebar({
       ],
     },
   ],
-  "/kr/staking-model/": [
+  "/council/": [
     {
-      text: "DBC Staking Model",
-      prefix: "/kr/staking-model/",
+      text: "议案详情",
+      prefix: "/council/",
+      children: [
+        "2",
+        "12",
+        "13",
+        "15",
+        "16", // 16,18,19用相同的链接
+        "17",
+        "22",
+        "23",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+      ],
+    },
+  ],
+  "/staking-model/": [
+    {
+      text: "StakingModel",
+      prefix: "/staking-model/",
       children: [
         "dbc-chain-params",
         "generate-new-account",
         "join-dbc-network",
+        "run-archive-node",
         "staking-dbc-and-voting",
         "fast-track",
         "common-questions",
       ],
     },
   ],
-  "/kr/onchain-guide/": [
+  "/onchain-guide/": [
     {
       text: "OnchainGuide",
-      prefix: "/kr/onchain-guide/",
+      prefix: "/onchain-guide/",
       children: [
         "dbc-chain-logic",
         "machine-reward-model",
         "machine-slash-model",
+        "bonding-machine",
         "unbonding-machine",
         "become-onchain-committee",
         "machine-verification",
@@ -115,28 +165,28 @@ export const kr = sidebar({
       ],
     },
   ],
-  "/kr/onchain-api/": [
+  "/onchain-api/": [
     {
       text: "OnchainAPI",
-      prefix: "/kr/onchain-api/",
+      prefix: "/onchain-api/",
       children: ["dbc-rpc-readme", "dbc-rpc", "dbc-storage"],
     },
   ],
-  "/kr/gpu-cloud/": [
+  "/gpu-cloud/": [
     {
-      text: "Deploy GPU cloud platform",
-      prefix: "/kr/gpu-cloud/",
+      text: "部署GPU云平台",
+      prefix: "/gpu-cloud/",
       children: ["dbc-gpu-cloud-service"],
     },
   ],
-  "/kr/install-update-dbc-node/": [
+  "/install-update-dbc-node/": [
     {
-      text: "install and update dbc node",
-      prefix: "/kr/install-update-dbc-node/",
+      text: "安装&升级DBC节点",
+      prefix: "/install-update-dbc-node/",
       children: [
         {
-          text: "Install And Update DBC Node",
-          collapsable: true,
+          text: "安装和升级DBC节点",
+          // collapsable: true,
           prefix: "install-update-dbc/",
           children: [
             "install-dbc-compute-node",
@@ -146,20 +196,20 @@ export const kr = sidebar({
           ],
         },
         {
-          text: "DBC Client - HTTP API",
-          collapsable: true,
+          text: "DBC客户端-HTTP请求",
+          // collapsable: true,
           prefix: "dbc-client-api/",
           children: ["install-tool", "http-request-format", "http-api"],
         },
         {
-          text: "Create wins-machine application omniverse",
-          collapsable: true,
+          text: "创建windows虚拟机使用omniverse",
+          // collapsable: true,
           prefix: "create-win-machine-omniverse/",
           children: ["create-win-machine-omniverse"],
         },
         {
-          text: "DBC monitor",
-          collapsable: true,
+          text: "DBC监控",
+          // collapsable: true,
           prefix: "dbc-monitor/",
           children: [
             "http-monitor-api",
@@ -170,11 +220,13 @@ export const kr = sidebar({
       ],
     },
   ],
-  "/kr/dbc-cloud-cybercafe/": [
+  "/dbc-cloud-cybercafe/": [
     {
-      text: "디스크가 없는 넷부팅",
-      prefix: "/kr/dbc-cloud-cybercafe/",
-      children: ["diskless-netboot-server","diskless-netboot-image"],
+      text: "无盘网络启动",
+      prefix: "/dbc-cloud-cybercafe/",
+      children: ["diskless-netboot-server", "diskless-netboot-image"],
     },
   ],
+
+
 });

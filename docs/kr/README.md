@@ -1,6 +1,8 @@
 ---
 home: true
 title: DBC-Wiki Home
+heroImage: "/images/logo.jpg"
+heroText: DBC-Wiki Home
 description: Welcome to DBC-Wiki
 actions:
   - text: Onchain-Operations

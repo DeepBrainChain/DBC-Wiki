@@ -1,15 +1,13 @@
-// import type { NavbarConfig } from "@vuepress/theme-default";
 import { navbar } from "vuepress-theme-hope";
 
-export const kr = navbar([
+export const zhNavbar = navbar([
+  "/",
   {
-    text: "DBC 소개",
-    prefix: "/kr/",
+    text: "了解DBC",
     children: [
-      "dbc-introduction/dbc-introduction",
       {
-        text: "DBC 소개",
-        prefix: "dbc-introduction/",
+        text: "DBC介绍",
+        prefix: "/dbc-introduction/",
         children: [
           "dbc-applications",
           "dbc-ecology",
@@ -22,16 +20,17 @@ export const kr = navbar([
         ],
       },
       {
-        text: "Cloud platform operation",
-        prefix: "dbc-introduction/cloud-platform-operation/",
+        text: "云平台运营",
+        prefix: "/dbc-introduction/cloud-platform-operation/",
         children: ["initial-operation-process", "support-for-cloud-platform"],
       },
       {
-        text: "DBC 민주주의",
-        prefix: "dbc-democracy/",
+        text: "社区治理",
+        prefix: "/dbc-democracy/",
         children: [
           "dbc-council",
           "join-council",
+          "council-meeting-procedures",
           "proposing-referenda",
           "voting-referenda",
           "apply-treasury",
@@ -41,28 +40,29 @@ export const kr = navbar([
       },
     ],
   },
+
   {
-    text: "DBC 뉴스",
-    prefix: "/kr/dbc-information/",
+    text: "DBC资讯",
     children: [
       {
-        text: "DBC 진행",
-        prefix: "dbc-progress/",
+        text: "DBC 进展",
+        prefix: "/dbc-information/dbc-progress/",
         children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
       },
       {
         text: "DBC AMA",
-        prefix: "dbc-ama/",
+        prefix: "/dbc-information/dbc-ama/",
         children: [
-          "8btc-ama",
-          "galaxy-ama",
-          "council-ama",
-          "dbc-ama-collection",
+          "dbc-ama",
+          // "8btc-ama",
+          // "galaxy-ama",
+          // "council-ama",
+          // "dbc-ama-collection",
         ],
       },
       {
-        text: "DBC 보고서",
-        prefix: "dbc-report/",
+        text: "DBC 媒体报道",
+        prefix: "/dbc-information/dbc-report/",
         children: [
           "dbc-36kr-report",
           "dbc-apnews-report",
@@ -81,24 +81,50 @@ export const kr = navbar([
     ],
   },
   {
-    text: "온체인 운영",
-    prefix: "/kr/",
+    text: "DBC议案",
+    prefix: "/council/",
+    children: [
+      "2",
+      "12",
+      "13",
+      "15",
+      "16",
+      "17",
+      "22",
+      "23",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+    ],
+  },
+  {
+    text: "链上操作说明",
     children: [
       {
-        text: "DBC 네트워크 가입 소개",
-        prefix: "staking-model/",
+        text: "参与 DBC 深脑链说明",
+        prefix: "/staking-model/",
         children: [
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
+          "run-archive-node",
           "staking-dbc-and-voting",
           "fast-track",
+          "council-proposal",
           "common-questions",
         ],
       },
       {
-        text: "On-chain computing platform",
-        prefix: "onchain-guide/",
+        text: "链上算力平台",
+        prefix: "/onchain-guide/",
         children: [
           "dbc-chain-logic",
           "machine-reward-model",
@@ -114,23 +140,23 @@ export const kr = navbar([
         ],
       },
       {
-        text: "Onchain API",
-        prefix: "onchain-api/",
+        text: "链上API",
+        prefix: "/onchain-api/",
         children: ["dbc-rpc-readme", "dbc-rpc", "dbc-storage"],
       },
     ],
   },
   {
-    text: "DBC GPU 클라우드 서비스",
-    prefix: "/kr/gpu-cloud/",
+    text: "部署GPU云平台",
+    prefix: "/gpu-cloud/",
     children: ["dbc-gpu-cloud-service"],
   },
   {
-    text: "DBC 노드 설치 및 업그레이드",
-    prefix: "/kr/install-update-dbc-node/",
+    text: "安装&升级DBC节点",
+    prefix: "/install-update-dbc-node/",
     children: [
       {
-        text: "DBC 노드 설치 및 업그레이드",
+        text: "安装和升级DBC节点",
         prefix: "install-update-dbc/",
         children: [
           "install-dbc-compute-node",
@@ -140,17 +166,16 @@ export const kr = navbar([
         ],
       },
       {
-        text: "DBC Client - HTTP API",
+        text: "DBC客户端-HTTP请求",
         prefix: "dbc-client-api/",
         children: ["install-tool", "http-request-format", "http-api"],
       },
       {
-        text: "Create wins-machine application omniverse",
-        prefix: "create-win-machine-omniverse/",
-        children: ["create-win-machine-omniverse"],
+        text: "创建windows虚拟机使用omniverse",
+        children: ["create-win-machine-omniverse/create-win-machine-omniverse"],
       },
       {
-        text: "DBC monitor",
+        text: "DBC监控",
         prefix: "dbc-monitor/",
         children: [
           "http-monitor-api",
@@ -161,8 +186,10 @@ export const kr = navbar([
     ],
   },
   {
-    text: "디스크가 없는 넷부팅",
-    prefix: "/kr/dbc-cloud-cybercafe/",
-    children: ["diskless-netboot-server","diskless-netboot-image"],
+    text: "无盘网络启动",
+    prefix: "/dbc-cloud-cybercafe/",
+    children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
+
+
 ]);

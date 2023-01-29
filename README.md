@@ -7,8 +7,8 @@
 ```sh
 # 下载仓库
 git clone https://github.com/DeepBrainChain/DBC-Wiki.git
-cd  DBC-Wiki && yarn
-yarn docs:dev
+cd  DBC-Wiki && pnpm install
+pnpm docs:dev
 ```
 
 执行了以上命令后，将会看到类似下面的输出：

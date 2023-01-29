@@ -1,7 +1,32 @@
-// import type { NavbarConfig } from "@vuepress/theme-default";
 import { navbar } from "vuepress-theme-hope";
 
-export const en = navbar([
+export const enNavbar = navbar([
+  "/en",
+  // { text: "Demo", icon: "discover", link: "/demo/" },
+  // {
+  //   text: "Guide",
+  //   icon: "creative",
+  //   prefix: "/guide/",
+  //   children: [
+  //     {
+  //       text: "Bar",
+  //       icon: "creative",
+  //       prefix: "bar/",
+  //       children: ["baz", { text: "...", icon: "more", link: "" }],
+  //     },
+  //     {
+  //       text: "Foo",
+  //       icon: "config",
+  //       prefix: "foo/",
+  //       children: ["ray", { text: "...", icon: "more", link: "" }],
+  //     },
+  //   ],
+  // },
+  // {
+  //   text: "V2 Docs",
+  //   icon: "note",
+  //   link: "https://theme-hope.vuejs.press/",
+  // },
   {
     text: "DBC Introduction",
     prefix: "/en/",
@@ -169,6 +194,8 @@ export const en = navbar([
   {
     text: "Diskless Netboot",
     prefix: "/en/dbc-cloud-cybercafe/",
-    children: ["diskless-netboot-server","diskless-netboot-image"],
+    children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
+
+
 ]);
