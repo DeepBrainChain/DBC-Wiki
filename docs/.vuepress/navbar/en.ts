@@ -196,6 +196,4 @@ export const enNavbar = navbar([
     prefix: "/en/dbc-cloud-cybercafe/",
     children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
-
-
 ]);

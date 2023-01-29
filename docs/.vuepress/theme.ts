@@ -70,7 +70,6 @@ export default hopeTheme({
         editLink: "Edit this page on GitHub",
       },
     },
-
   },
 
   encrypt: {

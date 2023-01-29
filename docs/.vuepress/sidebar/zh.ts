@@ -227,6 +227,4 @@ export const zhSidebar = sidebar({
       children: ["diskless-netboot-server", "diskless-netboot-image"],
     },
   ],
-
-
 });
