@@ -142,6 +142,7 @@ export const krSidebar = sidebar({
             "install-dbc-compute-node",
             "update-dbc-compute-node",
             "install-update-dbc-client",
+            "dbc-bare-metal-node",
             "deploy_image_server",
           ],
         },

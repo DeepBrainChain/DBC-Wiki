@@ -626,7 +626,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/snapshot/delete/<task_id>/<s
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/servers`
@@ -645,7 +645,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/servers`
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images`
@@ -924,7 +924,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/images/delete
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/create
@@ -979,15 +979,15 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 ## 裸金属节点操作
 
-想要控制一台裸金属服务器的开关机等操作，需要一台跟裸金属服务器在同一个网络中的 CPU 服务器。在此 CPU 服务器上运行 dbc 的裸金属节点程序，然后将裸金属服务器的相关信息(IP 地址和 IPMI 控制信息)添加到节点中，节点会为裸金属服务器生成一个对应的 NodeID 加入到 dbc 的网络中，就可以通过 NodeID 来控制裸金属服务器了。
+想要控制一台裸金属服务器的开关机等操作，需要一台跟裸金属服务器在同一个网络中的 CPU 服务器。在此 CPU 服务器上运行 dbc 的裸金属节点程序，然后将裸金属服务器的相关信息(IP 地址和 IPMI 控制信息)添加到节点中，节点会为裸金属服务器生成一个对应的 "node_id" 加入到 dbc 的网络中，就可以通过 "node_id" 来租用和控制裸金属服务器了。
 
-如需安装 dbc 裸金属节点，请参考 [安装 DBC 功能节点程序](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) 使用裸金属节点的安装脚本 [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
+如需安装 dbc 裸金属节点，请参考 [DBC 裸金属节点](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/dbc-bare-metal-node.html)
 
-### 1. 查询裸金属机器列表
+### 1. 查询裸金属服务器列表
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
@@ -999,17 +999,17 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 {
   "peer_nodes_list": [
     // 裸金属节点的node_id
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {}
 }
 ```
 
-### 2. 上线裸金属机器
+### 2. 添加裸金属服务器
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
@@ -1021,7 +1021,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
 {
   "peer_nodes_list": [
     // 裸金属节点的node_id
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
     // 裸金属服务器的信息列表
@@ -1047,11 +1047,27 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
 }
 ```
 
-### 3. 下线裸金属机器
+- 返回示例：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "bare_metal_nodes": [
+      {
+        "node_id": "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d"
+      }
+    ]
+  }
+}
+```
+
+### 3. 删除裸金属服务器
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
@@ -1063,23 +1079,23 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
 {
   "peer_nodes_list": [
     // 裸金属节点的node_id
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
-    // 裸金属服务器对应的NodeID列表
+    // 裸金属服务器对应的 node_id 列表
     "bare_metal_node_ids": [
-      // 上线裸金属机器时给生成的对应NodeID
+      // 添加裸金属服务器时返回的 node_id
       "8c29b20da3fdb2d6c5ad7c2c85b303d9d337a1b82fa584a6b6cf1303331efd16"
     ]
   }
 }
 ```
 
-### 4. 裸金属机器电源控制
+### 4. 裸金属服务器电源控制
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
@@ -1090,8 +1106,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属机器对应的node_id
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    // 裸金属服务器对应的node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
     // 电源控制命令
@@ -1106,11 +1122,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 }
 ```
 
-### 5. 修改裸金属机器引导启动顺序
+### 5. 修改裸金属服务器引导启动顺序
 
 - 请求方式：POST
 
-- 请求 URl：
+- 请求 URL：
 
 ```
 http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
@@ -1121,8 +1137,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属机器对应的node_id
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    // 裸金属服务器对应的node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
     // 引导启动顺序

@@ -974,11 +974,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/lan/delete/<network_name>
 
 ## Bare Metal Node Operations
 
-To control operations such as switching on and off a bare metal server, you need a CPU server that is on the same network as the bare metal server. Run the bare metal node program of dbc on this CPU server, and then add the relevant information of the bare metal server (IP address and IPMI control information) to the node, and the node will generate a corresponding NodeID for the bare metal server to join the dbc network. , you can control the bare metal server through NodeID.
+To control operations such as switching on and off a bare metal server, you need a CPU server that is on the same network as the bare metal server. Run the bare metal node program of dbc on this CPU server, and then add the relevant information of the bare metal server (IP address and IPMI control information) to the node, and the node will generate a corresponding "node_id" for the bare metal server to join the dbc network, the bare metal server can be rented and controlled by "node_id".
 
-To install dbc bare metal node, please refer to [Install dbc computer node](https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/install-dbc-compute-node.html#%E4%BA%94-%E5%AE%89%E8%A3%85-dbc-%E5%8A%9F%E8%83%BD%E8%8A%82%E7%82%B9%E7%A8%8B%E5%BA%8F) Installation script using bare metal nodes [install_baremetal.sh](http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_baremetal.sh)
+To install dbc bare metal node, please refer to [dbc bare metal node](https://deepbrainchain.github.io/DBC-Wiki/en/install-update-dbc-node/install-update-dbc/dbc-bare-metal-node.html)
 
-### 1. Query the list of bare metal machines
+### 1. Query the list of bare metal servers
 
 - request method：POST
 
@@ -994,13 +994,13 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 {
   "peer_nodes_list": [
     // node_id of bare metal node
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {}
 }
 ```
 
-### 2. On-Line Bare Metal Machines
+### 2. Add a bare metal server
 
 - request method：POST
 
@@ -1016,10 +1016,10 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
 {
   "peer_nodes_list": [
     // node_id of bare metal node
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
-    // Informations of bare metal server node
+    // Informations of bare metal server
     "bare_metal_nodes": [
       {
         // The unique ID of the machine supplier to identify the bare metal, required.
@@ -1042,7 +1042,23 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
 }
 ```
 
-### 3. Offline Bare Metal Machines
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "bare_metal_nodes": [
+      {
+        "node_id": "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d"
+      }
+    ]
+  }
+}
+```
+
+### 3. Delete bare metal servers
 
 - request method：POST
 
@@ -1058,19 +1074,19 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
 {
   "peer_nodes_list": [
     // node_id of bare metal node
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
-    // NodeID list of bare metal server node
+    // node_id list of bare metal server
     "bare_metal_node_ids": [
-      // The corresponding NodeID generated when the bare metal machine goes online
+      // The node_id returned when adding a bare metal server
       "8c29b20da3fdb2d6c5ad7c2c85b303d9d337a1b82fa584a6b6cf1303331efd16"
     ]
   }
 }
 ```
 
-### 4. Bare Metal Machine Power Control
+### 4. Bare Metal Server Power Control
 
 - request method：POST
 
@@ -1085,8 +1101,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 ```json
 {
   "peer_nodes_list": [
-    // node_id of bare metal server node
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    // node_id of bare metal server
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
     // power control command
@@ -1101,7 +1117,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 }
 ```
 
-### 5. Modifying the Boot device order of Bare Metal Machines
+### 5. Modifying the boot device order of a bare metal server
 
 - request method：POST
 
@@ -1116,8 +1132,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
 ```json
 {
   "peer_nodes_list": [
-    // node_id of bare metal server node
-    "441f631da912b2186a3ef0452430f139cf01641bf4e2dce07e06103d8d70e533"
+    // node_id of bare metal server
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
     // boot device order

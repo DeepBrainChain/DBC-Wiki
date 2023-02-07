@@ -144,6 +144,7 @@ export const enSidebar = sidebar({
             "install-dbc-compute-node",
             "update-dbc-compute-node",
             "install-update-dbc-client",
+            "dbc-bare-metal-node",
             "deploy_image_server",
           ],
         },
