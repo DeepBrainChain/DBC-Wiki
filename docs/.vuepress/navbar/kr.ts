@@ -31,6 +31,7 @@ export const krNavbar = navbar([
         prefix: "dbc-democracy/",
         children: [
           "dbc-council-establishment-notice",
+          "treasury-usage",
           "dbc-council",
           "join-council",
           "proposing-referenda",

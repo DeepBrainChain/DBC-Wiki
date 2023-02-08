@@ -31,6 +31,7 @@ export const enNavbar = navbar([
         prefix: "dbc-democracy/",
         children: [
           "dbc-council-establishment-notice",
+          "treasury-usage",
           "dbc-council",
           "join-council",
           "council-meeting-procedures",
