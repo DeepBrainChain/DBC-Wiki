@@ -35,7 +35,6 @@ export const zhSidebar = sidebar({
         "join-council",
         "council-meeting-procedures",
         "proposing-referenda",
-        "council-proposal",
         "voting-referenda",
         "apply-treasury",
         "dbc-nft",

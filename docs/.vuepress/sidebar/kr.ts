@@ -33,6 +33,7 @@ export const krSidebar = sidebar({
         "treasury-usage",
         "dbc-council",
         "join-council",
+        "council-meeting-procedures",
         "proposing-referenda",
         "voting-referenda",
         "apply-treasury",
