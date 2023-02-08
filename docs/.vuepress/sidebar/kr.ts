@@ -29,6 +29,7 @@ export const krSidebar = sidebar({
       text: "DBC Democracy",
       prefix: "/kr/dbc-democracy/",
       children: [
+        "dbc-council-establishment-notice",
         "dbc-council",
         "join-council",
         "proposing-referenda",

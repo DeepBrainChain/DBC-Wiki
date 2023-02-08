@@ -2,31 +2,6 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   "/en",
-  // { text: "Demo", icon: "discover", link: "/demo/" },
-  // {
-  //   text: "Guide",
-  //   icon: "creative",
-  //   prefix: "/guide/",
-  //   children: [
-  //     {
-  //       text: "Bar",
-  //       icon: "creative",
-  //       prefix: "bar/",
-  //       children: ["baz", { text: "...", icon: "more", link: "" }],
-  //     },
-  //     {
-  //       text: "Foo",
-  //       icon: "config",
-  //       prefix: "foo/",
-  //       children: ["ray", { text: "...", icon: "more", link: "" }],
-  //     },
-  //   ],
-  // },
-  // {
-  //   text: "V2 Docs",
-  //   icon: "note",
-  //   link: "https://theme-hope.vuejs.press/",
-  // },
   {
     text: "DBC Introduction",
     prefix: "/en/",
@@ -55,6 +30,7 @@ export const enNavbar = navbar([
         text: "DBC Democracy",
         prefix: "dbc-democracy/",
         children: [
+          "dbc-council-establishment-notice",
           "dbc-council",
           "join-council",
           "council-meeting-procedures",

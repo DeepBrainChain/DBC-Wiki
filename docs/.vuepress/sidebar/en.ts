@@ -29,6 +29,7 @@ export const enSidebar = sidebar({
       text: "DBC Democracy",
       prefix: "/en/dbc-democracy/",
       children: [
+        "dbc-council-establishment-notice",
         "dbc-council",
         "join-council",
         "council-meeting-procedures",

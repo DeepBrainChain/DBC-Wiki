@@ -28,6 +28,7 @@ export const zhNavbar = navbar([
         text: "社区治理",
         prefix: "/dbc-democracy/",
         children: [
+          "dbc-council-establishment-notice",
           "dbc-council",
           "join-council",
           "council-meeting-procedures",

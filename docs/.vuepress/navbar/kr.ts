@@ -2,31 +2,6 @@ import { navbar } from "vuepress-theme-hope";
 
 export const krNavbar = navbar([
   "/kr",
-  // { text: "Demo", icon: "discover", link: "/demo/" },
-  // {
-  //     text: "Guide",
-  //     icon: "creative",
-  //     prefix: "/guide/",
-  //     children: [
-  //         {
-  //             text: "Bar",
-  //             icon: "creative",
-  //             prefix: "bar/",
-  //             children: ["baz", { text: "...", icon: "more", link: "" }],
-  //         },
-  //         {
-  //             text: "Foo",
-  //             icon: "config",
-  //             prefix: "foo/",
-  //             children: ["ray", { text: "...", icon: "more", link: "" }],
-  //         },
-  //     ],
-  // },
-  // {
-  //     text: "V2 Docs",
-  //     icon: "note",
-  //     link: "https://theme-hope.vuejs.press/",
-  // },
   {
     text: "DBC 소개",
     prefix: "/kr/",
@@ -55,6 +30,7 @@ export const krNavbar = navbar([
         text: "DBC 민주주의",
         prefix: "dbc-democracy/",
         children: [
+          "dbc-council-establishment-notice",
           "dbc-council",
           "join-council",
           "proposing-referenda",

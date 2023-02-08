@@ -1,24 +1,6 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export const zhSidebar = sidebar({
-  // "/zh/": [
-  //   "",
-  //   {
-  //     icon: "discover",
-  //     text: "案例",
-  //     prefix: "demo/",
-  //     link: "demo/",
-  //     children: "structure",
-  //   },
-  //   {
-  //     text: "文档",
-  //     icon: "note",
-  //     prefix: "guide/",
-  //     children: "structure",
-  //   },
-  //   "slides",
-  // ],
-
   "/dbc-introduction/": [
     {
       text: "了解DBC",
@@ -47,6 +29,7 @@ export const zhSidebar = sidebar({
       text: "DBC Democracy",
       prefix: "/dbc-democracy/",
       children: [
+        "dbc-council-establishment-notice",
         "dbc-council",
         "join-council",
         "council-meeting-procedures",
