@@ -4,7 +4,7 @@ As DBC has already launched on the mainnet and has been running stably, the foun
 
 DBC council is an on-chain entity consisting of 13 members. All theses members are elected by voting. This governance system will run for test within 2021. During the test period, the council will be elected every 14 days, and since 2022 it will be elected every 2 months，increasing to 21 members . According to polkadot governance system, the council can decide the priority of the proposals, and has access to the Treasury.
 
-Accourding to DBC whitepaper, the foundation will unlock 1.5 billion DBCs within 6 years. 
+Accourding to DBC whitepaper, the foundation will unlock 1.5 billion DBCs within 6 years.
 
 However, for better decentralized on-chain governance, DBC foundation decide to extend the period to 15 years, which means unlocking 100 million per year. Since 2022, each year the 51% of the 100 million will be monthly distributed to DBC Treasury, enacted by intelligent contract. If the DBCs in Treasury of the current year are not used up, they will be automatically burning. The remaining 49% will be used as the operating expenses of the foundation. The foundation will make financial disclosure and release financial reports regularly every quarter.
 
@@ -12,14 +12,14 @@ The funds in DBC Treasury is managed by council. All members of the DBC communit
 
 Proposals may consist of (but are not limited to):
 
-+ Infrastructure deployment and continued operation.
-+ Network security operations (monitoring services, continuous auditing).
-+ Ecosystem provisions (collaborations with friendly chains).
-+ Marketing activities (advertising, paid features, collaborations).
-+ Community events and outreach (meetups, pizza parties, hackerspaces).
-+ Software development (wallets and wallet integration, clients and client upgrades).
+- Infrastructure deployment and continued operation.
+- Network security operations (monitoring services, continuous auditing).
+- Ecosystem provisions (collaborations with friendly chains).
+- Marketing activities (advertising, paid features, collaborations).
+- Community events and outreach (meetups, pizza parties, hackerspaces).
+- Software development (wallets and wallet integration, clients and client upgrades).
 
-(*refer to the polkadot wiki.)
+(\*refer to the polkadot wiki.)
 
 Candidates for the council can campaign in the community to attract votes, focusing on what you can do and what value you can created for the DBC ecosystem.
 
