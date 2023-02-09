@@ -14,7 +14,7 @@ This article mentions two kinds of node_id, which are distinguished here:
 
 - "The node_id of the bare metal node" refers to the "node_id" field in the "dat/node.dat" file in the node installation directory.
 - "The node_id of the bare metal server" is the "node_id" field returned by sending the request to add the bare metal server.
-:::
+  :::
 
 ## install node
 

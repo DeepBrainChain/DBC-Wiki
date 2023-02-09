@@ -10,9 +10,8 @@ KOL cooperation in the English-speaking region is currently a relatively mature 
 
 KOL cooperation basically includes screening KOLs, inviting KOLs, determining specific cooperation methods, applying for treasury funds, and checking and accepting cooperation results. Under the marketing mechanism led by the council and the community, active members of the council and the community can participate in all aspects of KOL cooperation, actively explore high-quality cooperation opportunities, and assist KOL to complete the cooperation. As a reward, the cooperation leader can apply for a certain amount of DBC from the national treasury as a service fee. In order to mobilize everyone's enthusiasm in the early stage, we suggest that it be 20%-30% of the cooperation funds (approved by the DBC council), especially excellent cooperation cases It can reach 50%. For example, the transaction price of a youtube cooperation is 4000U, and the cooperation leader can get 800U, so the treasury approval fee is 4800U, and so on. (except for the founder of the foundation, everyone can apply for service remuneration)
 
-The following is the KOL cooperation link and the specific implementation work of each link. The specific service remuneration ratio can be determined by the council after discussion according to the difficulty and influence of the actual case. 
+The following is the KOL cooperation link and the specific implementation work of each link. The specific service remuneration ratio can be determined by the council after discussion according to the difficulty and influence of the actual case.
 
 ![](./assets/council-outreach-proposal.assets/2.png)
 
 Attached is the list and follow-up status of some English-language youtube bloggers that have been screened and sorted out, for your reference.https://docs.google.com/spreadsheets/d/1cL6i-sGW8uOnyj-jtxJ5pAa_Fdy7IeIiaX9j96Vfs8c/edit#gid=0
-
