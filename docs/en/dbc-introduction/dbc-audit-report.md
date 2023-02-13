@@ -2,7 +2,7 @@
 
 ## English Version
 
-<PDF url="/DeepBrainChain+security+audit+report.pdf" />
+<PDF url="/DeepBrainChain_security_audit_report.pdf" />
 
 ## Chinese Version
 

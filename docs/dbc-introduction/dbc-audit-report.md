@@ -2,7 +2,7 @@
 
 ## 英文版
 
-<PDF url="/DeepBrainChain+security+audit+report.pdf" />
+<PDF url="/DeepBrainChain_security_audit_report.pdf" />
 
 ## 中文版
 
