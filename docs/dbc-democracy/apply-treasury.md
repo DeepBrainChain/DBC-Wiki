@@ -42,7 +42,7 @@
 
 当申请人完成申请后，将能在[https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)中看到申请。
 
-这时，**理事会可以对该申请提出动议，接受或拒绝该提案。**接受申请提案的动议需要3/5的议会同意；拒绝申请提案的动议需要1/2的议会同意。
+这时，**理事会可以对该申请提出动议，接受或拒绝该提案。** 接受申请提案的动议需要3/5的议会同意；拒绝申请提案的动议需要1/2的议会同意。
 
 请注意！理事会需要在国库中[https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)提出动议才能在议会--动议[https://www.dbcwallet.io/#/council/motions](https://www.dbcwallet.io/#/council/motions) 中进行投票。
 

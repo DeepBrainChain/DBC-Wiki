@@ -36,7 +36,7 @@ Meanwhileï¼Œpost the final version of your proposal to the DBC subreddit flairã€
 
 When the applicant completes the application, the application will be visible in [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury).
 
-At this point, **the council can make a motion to accept or reject the proposal for the application. **A motion to accept an application proposal requires 3/5 of the council to agree; a motion to reject an application proposal requires 1/2 of the council to agree.
+At this point, **the council can make a motion to accept or reject the proposal for the application. ** A motion to accept an application proposal requires 3/5 of the council to agree; a motion to reject an application proposal requires 1/2 of the council to agree.
 
 Please note! Council needs to make a motion in the treasury [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury) in order to make a motion in the council - motion [https://www.dbcwallet.io/#/ council/motions](https://www.dbcwallet.io/#/council/motions) for voting.
 

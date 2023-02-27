@@ -48,7 +48,7 @@ DBC메인넷-governance-treasury페이지 ([https://www.dbcwallet.io/#/treasury]
 
 신청자가 신청서를 작성하면 [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)에서 신청서를 볼 수 있습니다.
 
-이 때 **평의회는 해당 신청에 대한 제안을 수락하거나 거부하는 동의안을 제출할 수 있습니다. **신청 제안 수락 동의는 협의회 3/5의 동의가 필요하며, 신청 제안 거부 동의는 협의회 1/2의 동의가 필요합니다.
+이 때 **평의회는 해당 신청에 대한 제안을 수락하거나 거부하는 동의안을 제출할 수 있습니다. ** 신청 제안 수락 동의는 협의회 3/5의 동의가 필요하며, 신청 제안 거부 동의는 협의회 1/2의 동의가 필요합니다.
 
 참고하세요! 협의회에서 동의안을 제출하려면 재무부 [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)에서 동의안을 제출해야 하며, 투표를 위해서는 [https://www.dbcwallet.io/#/ council/motions](https://www.dbcwallet.io/#/council/motions)에서 동의안을 제출해야 합니다.
 
