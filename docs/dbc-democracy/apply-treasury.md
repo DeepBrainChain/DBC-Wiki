@@ -1,5 +1,7 @@
 # 教程 | DBC Treasury 资金申请流程
 
+当申请人从国库申请就资金时，需要保留提案申请金额5%的资金。如果国库提案被通过，则该保留的资金会被退还；如果国库提案被拒绝，该保留的资金将被惩罚。请注意，用户无法在提交财务提案后撤销该提案。
+
 > Treasury 资金申请流程：https://bit.ly/3FJ4gwo
 
 ## 1.准备草案
@@ -36,9 +38,17 @@
 
 ![](./assets/apply_treasury.assets/apply_treasury3.png)
 
-## 4.理事会在链上进行投票
+## 4.理事会提出动议并进行投票
+
+当申请人完成申请后，将能在[https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)中看到申请。
+
+这时，**理事会可以对该申请提出动议，接受或拒绝该提案。**接受申请提案的动议需要3/5的议会同意；拒绝申请提案的动议需要1/2的议会同意。
+
+请注意！理事会需要在国库中[https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)提出动议才能在议会--动议[https://www.dbcwallet.io/#/council/motions](https://www.dbcwallet.io/#/council/motions) 中进行投票。
 
 ## 5.投票完成
+
+在投票周期结束之后，**议会需要手动关闭该动议**([https://www.dbcwallet.io/#/council/motions](https://www.dbcwallet.io/#/council/motions))。
 
 投票出结果后，DBC subreddit 的社区管理员会降通过的提案归档至 flair【proposal_approved】，未通过的提案归入 flair【proposal_rejected】。
 
@@ -47,3 +57,5 @@
 资金分批发放，请申请成功的提案人持续更新自己的成果。请在提案中写明每阶段需要的资金。提案完成情况由社区成员（非理事会成员）进行监督投票。
 
 **_特别注意：接收资金的地址不能是交易所地址，需要是自己能掌握私钥的地址，最好是 DBC 主网生成的地址，否则通过后无法收到下发的资金。_**
+
+注意：通过的资金申请发放将在花费周期结束时发放。花费周期可以到[https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury)进行查看(右上角有花费周期倒计时)。

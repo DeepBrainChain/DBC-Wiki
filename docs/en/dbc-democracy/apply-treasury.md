@@ -1,5 +1,7 @@
 # How to apply funds from DBC Treasury
 
+When an applicant applies for funds from the Treasury in a proposal, 5% of the proposal request amount is required to be reserved. If the treasury proposal is approved, the reserved funds will be refunded; if the treasury proposal is rejected, the reserved funds will be slashed. Please note that users cannot withdraw a proposal after it has been submitted.
+
 ## 1. proposal draft
 
 prepare your proposal draft according to the template
@@ -30,9 +32,17 @@ Meanwhile，post the final version of your proposal to the DBC subreddit flair�
 
 ![](./assets/apply-treasury.assets/4.png)
 
-## 4. waiting for the council voting
+## 4. Council make motion and voting
+
+When the applicant completes the application, the application will be visible in [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury).
+
+At this point, **the council can make a motion to accept or reject the proposal for the application. **A motion to accept an application proposal requires 3/5 of the council to agree; a motion to reject an application proposal requires 1/2 of the council to agree.
+
+Please note! Council needs to make a motion in the treasury [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury) in order to make a motion in the council - motion [https://www.dbcwallet.io/#/ council/motions](https://www.dbcwallet.io/#/council/motions) for voting.
 
 ## 5. After voting
+
+After the end of the voting, **the council needs to close the motion manually** ([https://www.dbcwallet.io/#/council/motions](https://www.dbcwallet.io/#/council/motions)).
 
 After voting，the admin of the DBC subreddit will move the proposal to flair【proposal_approved】or【proposal_rejected】according to the outcome。
 
@@ -41,3 +51,5 @@ After voting，the admin of the DBC subreddit will move the proposal to flair【
 The funds will be divided on installments
 
 The proposer who have successfully applied are requested to continue to update their outcomes. Please specify the funds required for each stage in the proposal. The outcomes of the proposal is monitored by community members (except members of the council)
+
+Note: The release of approved funding requests will be released at the end of the spending cycle. The spending cycle can be viewed at [https://www.dbcwallet.io/#/treasury](https://www.dbcwallet.io/#/treasury) (there is a countdown to the spending cycle in the upper right corner).
