@@ -7,7 +7,7 @@
 ```sh
 # 下载仓库
 git clone https://github.com/DeepBrainChain/DBC-Wiki.git
-cd  DBC-Wiki 
+cd  DBC-Wiki
 npm install -g pnpm && pnpm install
 pnpm docs:dev
 ```
