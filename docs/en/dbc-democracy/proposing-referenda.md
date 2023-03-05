@@ -1,8 +1,6 @@
 # Guide | Proposing a referendum
 
-Referenda are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved.
-
-Referenda can be started in one of several ways for example, from the public and council. This guide shows how the general public can propose a referendum.
+Referenda are discrete events, have a fixed period where voting happens, and then are tallied and the function call is made if the vote is approved. The proposal here can be any one of a group of privileged functions that users cannot directly touch, such as setting account balance, forced transfer, the number of GPUs activated by the Galaxy Race, the price of GPU computing power, and so on. Referenda can be started in one of several ways for example, from the public and council. This guide shows how the general public can propose a referendum.
 
 Anyone can propose a referendum by depositing the minimum amount of tokens for a certain period (number of blocks). If someone agrees with the proposal, they may deposit tokens to support it — this action is called second. The proposal with the highest amount of bonded support will be selected to be a referendum in the next voting cycle.
 
