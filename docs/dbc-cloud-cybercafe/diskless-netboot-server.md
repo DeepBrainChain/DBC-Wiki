@@ -415,7 +415,7 @@ sudo python3 home.py
 
 只要在项目代码的 `DBC-CloudCyberCafe/plotly/` 目录下执行 `sudo python3 home.py` 命令，就能启动无盘服务的控制台程序，然后浏览器中输入 `http://localhost:8050/` 即可访问控制台。切忌不要忘了将 `localhost` 换成无盘网起服务器的 IP 地址。
 
-还可以使用打包好的可执行程序来部署无盘控制台，详见 https://github.com/DeepBrainChain/DBC-CloudCyberCafe/releases。
+还可以使用打包好的可执行程序来部署无盘控制台，详见 <https://github.com/DeepBrainChain/DBC-CloudCyberCafe/releases>。
 
 在浏览器中打开无盘控制台后，需要在`Setting`页面填写一些设置。
 
