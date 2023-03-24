@@ -250,7 +250,7 @@ dbtu@dbtu:/var/www/file$ tree
 - The iPXE startup script is stored in the ipxe folder, where mac-000c29c63944.ipxe.cfg is named after the MAC address in all lowercase format without the colon. Each booted machine needs to have a corresponding configuration file, which is automatically configured by the console program.
 - The wimboot files are downloaded from https://github.com/ipxe/wimboot/releases.
 - The PE file used to install the Windows system is stored under winpe, which is not needed for the time being and is used for development and testing.
-- netboot is the file used to install ubuntu on the network. It can be downloaded from Alibaba Cloud or Tsinghua University. If the customer needs the ubuntu system image, he needs to download this file.
+- netboot is the file used to install ubuntu on the network. It can be downloaded from Alibaba Cloud or Tsinghua University, reference [file download address](http://www.archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz). If the customer needs the ubuntu system image, he needs to download this file.
 - ubuntu/preseed.cfg is the unattended configuration file used by network installations of ubuntu.
 
 The content of the ipxe/boot.ipxe file is as follows:
@@ -402,9 +402,9 @@ dbc  ALL=(ALL) NOPASSWD:ALL
 #includedir /etc/sudoers.d
 ```
 
-The command to deploy the diskless console is as follows:
+The command to deploy the diskless console from source code is as follows:
 
-```
+```shell
 # Download the DBC-CloudCyberCafe project code
 git clone https://github.com/DeepBrainChain/DBC-CloudCyberCafe.git
 cd DBC-CloudCyberCafe/preset/
@@ -416,6 +416,8 @@ sudo python3 home.py
 As long as you execute the `sudo python3 home.py` command in the `DBC-CloudCyberCafe/plotly/` directory of the project code, you can start the console program of the diskless service, and then enter `http://localhost:8050/` in the browser to access the console. Don't forget to replace `localhost` with the IP address of the diskless netboot server.
 
 After opening the diskless console in the browser, you need to fill in some settings on the `Setting` page.
+
+You can also use a packaged executable program to deploy a diskless console, see https://github.com/DeepBrainChain/DBC-CloudCyberCafe/releases .
 
 - Storage
   - Volume Group: Fill in the volume group created in the lvm2 step above.

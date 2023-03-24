@@ -41,7 +41,7 @@
 
 - 3.1. 먼저 Windows 10 시스템과 필요한 네트워크 카드, 그래픽 카드 및 기타 하드웨어 드라이버를 로컬 하드 디스크에 설치합니다. 테스트 중에 중복 소프트웨어를 설치하지 마십시오. 디스크 없이 부팅할 수 있는 한 나중에 언제든지 다른 소프트웨어를 계속 설치할 수 있습니다. 현재 MBR 파티션 형식만 지원하고 GUID 파티션(UEFI 부팅에 해당)을 지원하지 않습니다.
 - 3.2. 레지스트리 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management`의 `PagingFiles` 필드 값을 지웁니다.
-- 3.3. Windows 검색 상자에 `iSCSI Initiator`를 입력하여 `iSCSI Initiator`를 시작합니다. 처음 시작하면 해당 서비스를 시작하라는 메시지가 표시됩니다. 동의를 클릭한 다음 `iSCSI Initiator`의 구성 페이지에서 `iSCSI Initiator Name`을 `iqn.2022-10.org.dbc.iscsi:global.client`로 수정합니다.
+- 3.3. Windows 검색 상자에 iSCSI 이니시에이터를 입력하고 iSCSI 이니시에이터를 시작하여 처음 시작할 때 적절한 서비스를 시작하도록 경고하고 동의를 클릭한 다음 iSCSI 이니시에이터의 구성 페이지에서 iSCSI 이니시에이터 이름을 `<iscsi target prefix>:sn.<boot menu name>`로 수정합니다. 예를 들어 `iqn.2022-10.org.dbc.iscsi:sn.win10test`.
 - 3.4. 시스템을 다시 시작한 후 로컬 하드 디스크의 시스템을 디스크가 없는 네트워크 부팅 서버에 복제합니다.
 
 4. 로컬 하드 디스크에 설치된 시스템을 디스크 없는 네트워크 부팅 서버에 복제

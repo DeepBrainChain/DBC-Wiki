@@ -41,7 +41,7 @@
 
 - 3.1. 先在本地硬盘上安装 Windows 10 系统和必要的网卡、显卡等硬件驱动。在测试的时候请不要安装多余的软件，只要能够从无盘启动，后面随时都可以继续安装其他软件。目前仅支持 MBR 分区格式，不支持 GUID 分区(对应 UEFI 启动)。
 - 3.2. 将注册表`HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management`的`PagingFiles`字段值清空。
-- 3.3. 在 Windows 搜索框中输入`iSCSI 发起程序`，启动`iSCSI 发起程序`，首次启动时会提醒开启相应的服务，点击同意，然后在`iSCSI 发起程序`的配置页面修改`iSCSI 发起程序名称`为`iqn.2022-10.org.dbc.iscsi:global.client`。
+- 3.3. 在 Windows 搜索框中输入`iSCSI 发起程序`，启动`iSCSI 发起程序`，首次启动时会提醒开启相应的服务，点击同意，然后在`iSCSI 发起程序`的配置页面修改`iSCSI 发起程序名称`为`<iscsi target prefix>:sn.<boot menu name>`，例如 `iqn.2022-10.org.dbc.iscsi:sn.win10test`。
 - 3.4. 重启机器后将本地硬盘中的系统克隆到无盘网起服务器上。
 
 4. 将本地硬盘上安装的系统克隆到无盘网起服务器上

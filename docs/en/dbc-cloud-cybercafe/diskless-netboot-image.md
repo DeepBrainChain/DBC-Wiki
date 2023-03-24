@@ -41,7 +41,7 @@ After deploying the diskless netboot server, you can create a diskless boot imag
 
 - 3.1. First install the Windows 10 system and the necessary network card, graphics card and other hardware drivers on the local hard disk. Please do not install redundant software during the test, as long as it can be booted from no disk, you can continue to install other software at any time later. Currently only supports MBR partition format, does not support GUID partition (corresponding to UEFI boot).
 - 3.2. Clear the `PagingFiles` field value of the registry `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\Memory Management`.
-- 3.3. Enter `iSCSI Initiator` in the Windows search box to start `iSCSI Initiator`. When you start it for the first time, you will be prompted to start the corresponding service. Click Agree, and then modify the `iSCSI Initiator Name` on the configuration page of `iSCSI Initiator` to `iqn.2022-10.org.dbc.iscsi:global.client`.
+- 3.3. Enter `iSCSI Initiator` in the Windows search box to start `iSCSI Initiator`. When you start it for the first time, you will be prompted to start the corresponding service. Click Agree, and then modify the `iSCSI Initiator Name` on the configuration page of `iSCSI Initiator` to `<iscsi target prefix>:sn.<boot menu name>`, such as `iqn.2022-10.org.dbc.iscsi:global.client`.
 - 3.4. After restarting the machine, clone the system in the local hard disk to the diskless netboot server.
 
 4. Clone the system installed on the local hard disk to the diskless netboot server

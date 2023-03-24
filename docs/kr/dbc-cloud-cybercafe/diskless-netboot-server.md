@@ -250,7 +250,7 @@ dbtu@dbtu:/var/www/file$ tree
 - iPXE 시작 스크립트는 ipxe 폴더에 저장됩니다. 여기서 mac-000c29c63944.ipxe.cfg는 콜론 없이 모두 소문자 형식의 MAC 주소 이름을 따릅니다. 부팅된 각 머신에는 콘솔 프로그램에 의해 자동으로 구성되는 해당 구성 파일이 있어야 합니다.
 - wimboot 파일은 https://github.com/ipxe/wimboot/releases에서 다운로드됩니다.
 - 윈도 시스템 설치에 사용되는 PE 파일은 winpe에 저장되는데 당분간은 필요하지 않으며 개발 및 테스트용으로 사용된다.
-- netboot는 네트워크에 우분투를 설치하는 데 사용되는 파일입니다. Alibaba Cloud 또는 Tsinghua University에서 다운로드할 수 있습니다. 고객이 우분투 시스템 이미지가 필요한 경우 이 파일을 다운로드해야 합니다.
+- netboot는 네트워크에 Ubuntu를 설치하기 위해 사용하는 파일로 Alibaba Cloud 또는 Tsinghua University에서 다운로드할 수 있으며 [파일 다운로드 주소](http://www.archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz)를 참조하십시오 고객이 Ubuntu 시스템 이미지가 필요한 경우 이 파일을 다운로드해야 합니다.
 - ubuntu/preseed.cfg는 우분투의 네트워크 설치에서 사용하는 무인 구성 파일입니다.
 
 ipxe/boot.ipxe 파일의 내용은 다음과 같습니다.
@@ -402,9 +402,9 @@ dbc  ALL=(ALL) NOPASSWD:ALL
 #includedir /etc/sudoers.d
 ```
 
-디스크 없는 콘솔을 배포하는 명령은 다음과 같습니다.
+소스 코드에서 디스크 없는 콘솔을 배포하는 명령은 다음과 같습니다.
 
-```
+```shell
 # Download the DBC-CloudCyberCafe project code
 git clone https://github.com/DeepBrainChain/DBC-CloudCyberCafe.git
 cd DBC-CloudCyberCafe/preset/
@@ -416,6 +416,8 @@ sudo python3 home.py
 프로젝트 코드의 `DBC-CloudCyberCafe/plotly/` 디렉토리에서 `sudo python3 home.py` 명령을 실행하는 한 디스크 없는 서비스의 콘솔 프로그램을 시작한 다음 `http://localhost를 입력할 수 있습니다. :8050/` 브라우저에서 콘솔에 액세스합니다. `localhost`를 디스크가 없는 네트워크 부팅 서버의 IP 주소로 바꾸는 것을 잊지 마십시오.
 
 브라우저에서 디스크 없는 콘솔을 연 후 `설정` 페이지에서 일부 설정을 입력해야 합니다.
+
+패키지 실행 프로그램을 사용하여 디스크 없는 콘솔을 배포할 수도 있습니다 https://github.com/DeepBrainChain/DBC-CloudCyberCafe/releases.
 
 - Storage
   - Volume Group: 위의 lvm2 단계에서 생성한 볼륨 그룹을 입력합니다.

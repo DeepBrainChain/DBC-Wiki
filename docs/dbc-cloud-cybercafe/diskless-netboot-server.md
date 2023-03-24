@@ -250,7 +250,7 @@ dbtu@dbtu:/var/www/file$ tree
 - ipxe 文件夹下存放的是 iPXE 的启动脚本，其中 mac-000c29c63944.ipxe.cfg 以 MAC 地址去除冒号全小写格式命名，每个被引导的机器都需要有一个对应的配置文件，由控制台程序自动生成。
 - wimboot 文件从 https://github.com/ipxe/wimboot/releases 下载。
 - winpe 下面存放安装 Windows 系统所用的 PE 文件，暂时不需要，开发测试使用。
-- netboot 是网络安装 ubuntu 所用的文件，可以从阿里云或者清华源下面，如果客户需要 ubuntu 系统镜像就需要下载此文件。
+- netboot 是网络安装 ubuntu 所用的文件，可以从阿里云或者清华源下面，参考[文件下载地址](http://www.archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz)，如果客户需要 ubuntu 系统镜像就需要下载此文件。
 - ubuntu/preseed.cfg 是网络安装 ubuntu 使用的无人值守配置文件。
 
 其中 ipxe/boot.ipxe 文件内容如下：
@@ -402,9 +402,9 @@ dbc  ALL=(ALL) NOPASSWD:ALL
 #includedir /etc/sudoers.d
 ```
 
-部署无盘控制台的命令如下:
+从源码部署无盘控制台的命令如下:
 
-```
+```shell
 # 下载 DBC-CloudCyberCafe 项目代码
 git clone https://github.com/DeepBrainChain/DBC-CloudCyberCafe.git
 cd DBC-CloudCyberCafe/preset/
@@ -414,6 +414,8 @@ sudo python3 home.py
 ```
 
 只要在项目代码的 `DBC-CloudCyberCafe/plotly/` 目录下执行 `sudo python3 home.py` 命令，就能启动无盘服务的控制台程序，然后浏览器中输入 `http://localhost:8050/` 即可访问控制台。切忌不要忘了将 `localhost` 换成无盘网起服务器的 IP 地址。
+
+还可以使用打包好的可执行程序来部署无盘控制台，详见 https://github.com/DeepBrainChain/DBC-CloudCyberCafe/releases。
 
 在浏览器中打开无盘控制台后，需要在`Setting`页面填写一些设置。
 
