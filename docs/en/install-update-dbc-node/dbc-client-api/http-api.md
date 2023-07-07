@@ -1035,7 +1035,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
         // ipmi username, required.
         "ipmi_username": "admin",
         // ipmi user password, required.
-        "ipmi_password": "dbtu2017"
+        "ipmi_password": "dbtu2017",
+        // ipmi port，optional. v0.4.0.9 version added.
+        "ipmi_port": 623
       }
     ]
   }

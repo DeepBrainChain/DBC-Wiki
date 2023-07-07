@@ -71,7 +71,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
         // ipmi的用户名，必填。
         "ipmi_username": "admin",
         // ipmi的用户密码，必填。
-        "ipmi_password": "dbtu2017"
+        "ipmi_password": "dbtu2017",
+        // ipmi的端口号，非必填。v0.4.0.9 版本增加。
+        "ipmi_port": 623
       }
     ]
   }
