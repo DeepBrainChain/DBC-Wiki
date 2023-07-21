@@ -1149,3 +1149,87 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
   "session_id_sign": "session_id_sign distributed by the renter"
 }
 ```
+
+## DeepLink device information
+
+In the cloud Internet cafe scene, after a GPU machine is connected to the chain in the form of a bare metal server, if you want to obtain an e-sports-level gaming experience, you also need to use a low-latency remote control software based on cloud games- [DeepLink](https://deeplink.cloud/).
+
+Correspondingly, to use DeepLink remote control, it is necessary to obtain the device code and device verification code of the DeepLink software running on the GPU machine (hereinafter collectively referred to as DeepLink device information). To this end, we add an interface to query DeepLink device information through the dbc node.
+
+In order to ensure security, it is recommended that the GPU machines in the cloud Internet cafe scene have different device verification codes every time they are powered on, and use the interface for setting DeepLink device information to inform the bare metal node of the dbc of the device information as soon as it is powered on.
+
+In addition, you need to modify `http_ip=127.0.0.1` in the configuration file `dbc_baremetal_node/conf/core.conf` of the bare metal node to `http_ip=0.0.0.0`, so that the bare metal node can directly accept HTTP requests.
+
+When the GPU machine and the bare metal node of dbc are in the same network, you can directly use the HTTP service of the bare metal node to get/set device information, and the request at this time does not need `session_id` and `session_id_sign` parameters. When the renter queries the device information through the HTTP service of the client node, it must have `session_id` and `session_id_sign` parameters.
+
+### 1. Get DeepLink device information
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
+```
+
+- request Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // The node_id corresponding to the GPU machine
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {},
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
+}
+```
+
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  }
+}
+```
+
+### 2. Set DeepLink device information
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink/set
+```
+
+- request Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // The node_id corresponding to the GPU machine
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  },
+  "session_id": "The session_id distributed by the renter",
+  "session_id_sign": "session_id_sign distributed by the renter"
+}
+```
+
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": "ok"
+}
+```

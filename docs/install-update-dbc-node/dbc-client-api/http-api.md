@@ -1154,3 +1154,87 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
   "session_id_sign": "租用者分发的session_id_sign"
 }
 ```
+
+## DeepLink 设备信息
+
+在云网吧场景中，一台 GPU 机器以裸金属服务器的方式上链后，想要获得电竞级的游戏体验，还需要使用基于云游戏的低延迟远程控制软件 [DeepLink](https://deeplink.cloud/)。
+
+相应的，使用 DeepLink 远程控制，需要获得 GPU 机器上运行的 DeepLink 软件的设备码和设备验证码(后面统称为 DeepLink 设备信息)。为此，我们增加通过 dbc 节点来查询 DeepLink 设备信息的接口。
+
+为了保证安全，建议云网吧场景中的 GPU 机器每次开机后都有不同的设备验证码，并且在开机后的第一时间使用设置 DeepLink 设备信息的接口将设备信息告知 dbc 的裸金属节点。
+
+另外，需要将裸金属节点的配置文件 `dbc_baremetal_node/conf/core.conf` 中的 `http_ip=127.0.0.1` 修改为 `http_ip=0.0.0.0`，这样设置将使得裸金属节点可以直接接受 HTTP 请求。
+
+当 GPU 机器和 dbc 的裸金属节点位于同一个网络中的时候，可以直接使用裸金属节点的 HTTP 服务来获取/设置设备信息，而且此时的请求不需要 `session_id` 和 `session_id_sign` 参数。当租用人通过客户端节点的 HTTP 服务查询设备信息时，就必需带有 `session_id` 和 `session_id_sign` 参数了。
+
+### 1. 查询 DeepLink 设备信息
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // GPU 机器对应的 node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+- 返回示例：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  }
+}
+```
+
+### 2. 设置 DeepLink 设备信息
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink/set
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // GPU 机器对应的 node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+- 返回示例：
+
+```json
+{
+  "errcode": 0,
+  "message": "ok"
+}
+```

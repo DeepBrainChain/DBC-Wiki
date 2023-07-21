@@ -187,3 +187,92 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 ```
 
 For other API interfaces, please refer to [Bare Metal Node Operations](https://deepbrainchain.github.io/DBC-Wiki/en/install-update-dbc-node/dbc-client-api/http-api.html#bare-metal-node-operations)
+
+## Cloud internet cafe
+
+In the cloud Internet cafe scene, after a GPU machine is connected to the chain in the form of a bare metal server, if you want to obtain an e-sports-level gaming experience, you also need to use a low-latency remote control software based on cloud games- [DeepLink](https://deeplink.cloud/).
+
+Correspondingly, to use DeepLink remote control, it is necessary to obtain the device code and device verification code of the DeepLink software running on the GPU machine (hereinafter collectively referred to as DeepLink device information). To this end, we add an interface to query DeepLink device information through the dbc node.
+
+In order to ensure security, it is recommended that the GPU machines in the cloud Internet cafe scene have different device verification codes every time they are powered on, and use the interface for setting DeepLink device information to inform the bare metal node of the dbc of the device information as soon as it is powered on.
+
+In addition, you need to modify `http_ip=127.0.0.1` in the configuration file `dbc_baremetal_node/conf/core.conf` of the bare metal node to `http_ip=0.0.0.0`, so that the bare metal node can directly accept HTTP requests.
+
+When the GPU machine and the bare metal node of dbc are in the same network, you can directly use the HTTP service of the bare metal node to get/set device information, and the request at this time does not need `session_id` and `session_id_sign` parameters. When the renter queries the device information through the HTTP service of the client node, it must have `session_id` and `session_id_sign` parameters.
+
+The specific usage process is as follows:
+1. After the GPU machine is turned on, the service program of the cloud Internet cafe calls the DeepLink device information setting interface of the bare metal node immediately.
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink/set
+```
+
+- request Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // GPU 机器对应的 node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  }
+}
+```
+
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": "ok"
+}
+```
+
+Note that the URL of this request is `http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink/set` instead of `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink/set`, and the request content does not need `session_id` and `session_id_sign` parameters.
+
+Similarly, you can also call `http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink` at this time to query the device information of the bare metal node.
+
+2. The renter queries DeepLink device information.
+
+- request method：POST
+
+- request URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
+```
+
+- request Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // GPU 机器对应的 node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {},
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "device_id": "123456789",
+    "device_password": "aAbBcC"
+  }
+}
+```
+
+Note that the URL of this request is `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink`, and the request content requires `session_id` and `session_id_sign` parameters.
