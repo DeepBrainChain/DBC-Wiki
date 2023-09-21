@@ -76,7 +76,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
         "ipmi_port": 623
       }
     ]
-  }
+  },
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -111,10 +115,14 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属节点的node_id
+    // 裸金属节点的 node_id
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
-  "additional": {}
+  "additional": {},
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -224,7 +232,11 @@ http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink/set
   "additional": {
     "device_id": "123456789",
     "device_password": "aAbBcC"
-  }
+  },
+  // 由 GPU 机器的 node_id 和 node_private_key 生成
+  "wallet":"fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+  "nonce":"3bxrsXVW2z2ELH7G9RvF7BMUQkEGkBfQhd8YD5r8somf3UdNWcEYAFa",
+  "sign":"e096764ac7462220bc9b8fa223b81cfb9a501eaea9ea355c0d561b6fe61cb729abed61e5d8488178856e198d9cde51c37e2aac8886cb5e7b674591b1eca8108f"
 }
 ```
 

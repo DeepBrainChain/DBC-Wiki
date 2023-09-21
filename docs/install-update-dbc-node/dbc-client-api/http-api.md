@@ -998,10 +998,14 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属节点的node_id
+    // 裸金属节点的 node_id
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
-  "additional": {}
+  "additional": {},
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -1020,7 +1024,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属节点的node_id
+    // 裸金属节点的 node_id
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
@@ -1045,7 +1049,11 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
         "ipmi_port": 623
       }
     ]
-  }
+  },
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -1080,7 +1088,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属节点的node_id
+    // 裸金属节点的 node_id
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {
@@ -1089,11 +1097,62 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
       // 添加裸金属服务器时返回的 node_id
       "8c29b20da3fdb2d6c5ad7c2c85b303d9d337a1b82fa584a6b6cf1303331efd16"
     ]
-  }
+  },
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
-### 4. 裸金属服务器电源控制
+### 4. 修改裸金属服务器 IPMI 等信息
+
+v0.4.1.1 版本增加。
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/modify/{{node_id}}
+```
+
+URL 中的 node_id 是裸金属服务器对应的node_id，请与 Body 中的 id 做好区分。
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // 裸金属节点的 node_id
+    "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
+  ],
+  "additional": {
+    // 机器供应商的识别裸金属的唯一ID。
+    "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
+    // 裸金属服务器给用户提供的连接方式。建议固定IP地址。
+    "ip": "175.221.204.110",
+    // 裸金属服务器的操作系统。
+    "os": "Ubuntu 20.04.3 LTS (Focal Fossa) 5.4.0-121-generic GNU/Linux",
+    // 机器所有者自定义的描述。
+    "desc": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
+    // ipmi的主机标识。建议固定IP地址。
+    "ipmi_hostname": "192.168.0.110",
+    // ipmi的用户名。
+    "ipmi_username": "admin",
+    // ipmi的用户密码。
+    "ipmi_password": "dbtu2017",
+    // ipmi的端口号。
+    "ipmi_port": 623
+  },
+  // 由裸金属节点的 node_id 和 node_private_key 生成
+  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+}
+```
+
+### 5. 裸金属服务器电源控制
 
 - 请求方式：POST
 
@@ -1108,7 +1167,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属服务器对应的node_id
+    // 裸金属服务器对应的 node_id
     "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
@@ -1124,7 +1183,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 }
 ```
 
-### 5. 修改裸金属服务器引导启动顺序
+### 6. 修改裸金属服务器引导启动顺序
 
 - 请求方式：POST
 
@@ -1139,7 +1198,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/bootdev
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属服务器对应的node_id
+    // 裸金属服务器对应的 node_id
     "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {
