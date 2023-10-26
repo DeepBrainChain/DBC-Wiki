@@ -142,12 +142,17 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
         "description": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
         "ipmi_hostname": "192.168.0.110",
         "ipmi_username": "admin",
-        "ipmi_password": "dbtu2017"
+        "ipmi_password": "dbtu2017",
+        "deeplink_device_id": "123456789",
+        "deeplink_device_password": "aAbBcC"
       }
     ]
   }
 }
 ```
+
+- Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` to query related information about the bare metal server with the specified `node_id`.
+- Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` to query related information about the bare metal server with the specified `uuid`.
 
 ## Bare metal server on-chain
 

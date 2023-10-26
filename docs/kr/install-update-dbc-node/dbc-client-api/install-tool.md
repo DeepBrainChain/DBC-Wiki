@@ -1,6 +1,8 @@
-# 准备工作
+# Get ready
 
-- 下载安装 Http 请求工具：https://www.postman.com/downloads/
-- 下载签名工具，稍后会用到：
-  http://119.6.235.169:9000/dbc/package/sign_tool
-- 给签名工具 sign_tool 文件添加可执行权限：`chmod +x ./sign_tool`
+- download and install http request tool：https://www.postman.com/downloads/
+
+- download the signature tool, it will be used later：
+  http://112.192.16.27:9000/dbc/package/sign_tool
+
+- add executable permission to the signing tool with the file name sign_tool：`chmod +x ./sign_tool`

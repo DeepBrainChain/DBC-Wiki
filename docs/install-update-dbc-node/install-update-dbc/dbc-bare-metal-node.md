@@ -144,12 +144,15 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
         "ipmi_username": "admin",
         "ipmi_password": "dbtu2017",
         "deeplink_device_id": "123456789",
-        "deeplink_device_password": "******"
+        "deeplink_device_password": "aAbBcC"
       }
     ]
   }
 }
 ```
+
+- 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` 查询指定 `node_id` 的裸金属服务器的相关信息。
+- 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` 查询指定 `uuid` 的裸金属服务器的相关信息。
 
 ## 裸金属服务器上链
 

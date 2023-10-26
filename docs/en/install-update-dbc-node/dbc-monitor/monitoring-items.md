@@ -493,8 +493,8 @@ Because of the isolation of the graphics card device on the host computer, dbc c
 
 For custom images, to monitor graphics card information, please install the dbc guest agent service inside the virtual machine.
 
-- Ubuntu virtual machine installation script: http://119.6.235.169:9000/dbc_guest_agent/install.sh
-- Windows 64-bit virtual machine installer: http://119.6.235.169:9000/dbc_guest_agent/qemu-ga-x86_64.msi
+- Ubuntu virtual machine installation script: http://112.192.16.27:9000/dbc_guest_agent/install.sh
+- Windows 64-bit virtual machine installer: http://112.192.16.27:9000/dbc_guest_agent/qemu-ga-x86_64.msi
 
 :::tip 注意！
 

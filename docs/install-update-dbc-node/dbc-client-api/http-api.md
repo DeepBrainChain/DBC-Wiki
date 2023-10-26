@@ -1009,6 +1009,34 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 }
 ```
 
+- 返回示例：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "bare_metal_nodes": [
+      {
+        "node_id": "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+        "node_private_key": "4c2e7133834d6d7dd35088beda5556215f6f5b15d2cd3c3153f117aaeec2c28b",
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
+        "ip": "175.221.204.110",
+        "os": "Ubuntu 20.04.3 LTS (Focal Fossa) 5.4.0-121-generic GNU/Linux",
+        "description": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
+        "ipmi_hostname": "192.168.0.110",
+        "ipmi_username": "admin",
+        "ipmi_password": "dbtu2017",
+        "deeplink_device_id": "123456789",
+        "deeplink_device_password": "aAbBcC"
+      }
+    ]
+  }
+}
+```
+
+- 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` 查询指定 `node_id` 的裸金属服务器的相关信息。
+- 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` 查询指定 `uuid` 的裸金属服务器的相关信息。
+
 ### 2. 添加裸金属服务器
 
 - 请求方式：POST
@@ -1032,6 +1060,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
     "bare_metal_nodes": [
       {
         // 机器供应商的识别裸金属的唯一ID，必填。
+        // v0.4.1.2 开始支持通过 uuid 检索指定的裸金属服务器的相关信息。
+        // 因此 uuid 只能由 a-z、 A-Z 和 - 组合而成，且同一裸金属节点内不可重复。
         "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
         // 裸金属服务器给用户提供的连接方式，必填。建议固定IP地址。
         "ip": "175.221.204.110",

@@ -86,98 +86,96 @@
     <td>degrees C</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="2">virtual machine</td>
     <td>host.vmCount</td>
     <td>total number of virtual machines</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.vmRunning</td>
     <td>number of running virtual machines</td>
     <td>unsigned int</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
+    <td>CPU</td>
     <td>host.cpuUsage</td>
     <td>CPU usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="3">memory</td>
     <td>host.memTotal</td>
     <td>total memory</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.memFree</td>
     <td>free memory</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.memUsage</td>
     <td>memory usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="2">flow</td>
     <td>host.rxFlow</td>
     <td>receive total flow</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.txFlow</td>
     <td>total flow sent</td>
     <td>long long</td>
     <td>B</td>
   </tr>
   <tr>
-    <td></td>
+    <td rowspan="4">data disk</td>
     <td>host.diskTotal</td>
     <td>data disk capacity</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.diskFree</td>
     <td>data disk free capacity</td>
     <td>unsigned long long</td>
     <td>KB</td>
   </tr>
   <tr>
-    <td></td>
     <td>host.diskUsage</td>
     <td>data disk usage</td>
     <td>float</td>
     <td>%</td>
   </tr>
   <tr>
+    <td>host.diskMountStatus</td>
+    <td>The mount status of the data disk，"lost" or "normal"</td>
+    <td>string</td>
     <td></td>
+  </tr>
+  <tr>
+    <td rowspan="3">load average</td>
     <td>host.loadAverage.1</td>
     <td>Average load over the past 1 minute</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.loadAverage.5</td>
     <td>Average load over the past 5 minute</td>
     <td>float</td>
     <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>host.loadAverage.15</td>
     <td>Average load over the past 15 minute</td>
     <td>float</td>
@@ -493,7 +491,10 @@
 Video card monitoring must read
 Because of the isolation of the graphics card device on the host computer, dbc cannot directly obtain the specific information of the graphics card. Therefore, based on the qemu guest agent, we integrated the functions of the NVIDIA Management Library and implemented a set of independent services, namely the dbc guest agent, which obtains the detailed information of the graphics card in the virtual machine through communication with the virtual machine.
 
-For custom images, to monitor graphics card information, please install the dbc guest agent service inside the virtual machine, refer to the installation script: http://119.6.235.169:9000/dbc_guest_agent/install.sh
+For custom images, to monitor graphics card information, please install the dbc guest agent service inside the virtual machine.
+
+- Ubuntu virtual machine installation script: http://112.192.16.27:9000/dbc_guest_agent/install.sh
+- Windows 64-bit virtual machine installer: http://112.192.16.27:9000/dbc_guest_agent/qemu-ga-x86_64.msi
 
 :::tip 注意！
 

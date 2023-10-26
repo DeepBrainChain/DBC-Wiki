@@ -1004,6 +1004,34 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 }
 ```
 
+- return example：
+
+```json
+{
+  "errcode": 0,
+  "message": {
+    "bare_metal_nodes": [
+      {
+        "node_id": "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+        "node_private_key": "4c2e7133834d6d7dd35088beda5556215f6f5b15d2cd3c3153f117aaeec2c28b",
+        "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
+        "ip": "175.221.204.110",
+        "os": "Ubuntu 20.04.3 LTS (Focal Fossa) 5.4.0-121-generic GNU/Linux",
+        "description": "在xxx平台租用的裸金属服务器，用于xxx业务，机房id是9f01ca9c-38bd-46a9-9637-dac92b352a63",
+        "ipmi_hostname": "192.168.0.110",
+        "ipmi_username": "admin",
+        "ipmi_password": "dbtu2017",
+        "deeplink_device_id": "123456789",
+        "deeplink_device_password": "aAbBcC"
+      }
+    ]
+  }
+}
+```
+
+- Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` to query related information about the bare metal server with the specified `node_id`.
+- Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` to query related information about the bare metal server with the specified `uuid`.
+
 ### 2. Add a bare metal server
 
 - request method：POST
@@ -1027,6 +1055,8 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
     "bare_metal_nodes": [
       {
         // The unique ID of the machine supplier to identify the bare metal, required.
+        // v0.4.1.2 starts to support retrieving related information of the specified bare metal server through uuid.
+        // Therefore uuid can only be composed of a-z, A-Z and -, and cannot be repeated within the same bare metal node.
         "uuid": "3156995b-da18-4268-9734-f8d168e90a7d",
         // The connection method provided by the bare metal server to the user. Required. A fixed IP address is recommended.
         "ip": "175.221.204.110",

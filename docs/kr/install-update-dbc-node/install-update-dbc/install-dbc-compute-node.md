@@ -306,7 +306,7 @@ sudo ./add_dbc_user.sh dbc
 
 - 주의: DBC유저 설치 전환 필요
 
-  1.dbc성능 노드 설치 스크립트 다운로드:http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_mining.sh
+  1.dbc성능 노드 설치 스크립트 다운로드:http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_mining.sh
 
   2.설치 스크립트에 실행가능 권한 추가:명령줄에서 실행 :chmod +x ./install_mining.sh
 
@@ -314,7 +314,7 @@ sudo ./add_dbc_user.sh dbc
 
 ## 【J】미러이미지 모델 다운로드(/data 목차에 넣으면 dbc가 가상 기기 시작하고 /data 목차로 이동하여 검색합니다)
 
-http://119.6.235.169:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qcow2 이두개의 미러이미지#
+http://112.192.16.27:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qcow2 이두개의 미러이미지#
 
 ## 【K】기기 아이디 및 개인키 백업(매우 중요합니다, 개인키 분실 시 담보된 코인의 50%가 손실되므로 여러곳에 백업해 두시기 바랍니다)
 
@@ -322,7 +322,7 @@ http://119.6.235.169:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qcow
 
 ## 【L】앞부분 정상 설정 여부 검사 하기 위해 , 그래픽카드 직통의 가상기기 생성 및 테스트합니다
 
-- 테스트 프로그램 다운로드 주소 :http://119.6.235.169:9000/dbc/package/check_env
+- 테스트 프로그램 다운로드 주소 :http://112.192.16.27:9000/dbc/package/check_env
 
 - 바이너리 파일, 실행 권한 추가 및 직접 실행: chmod 777 chec_env ; ./check_env
 

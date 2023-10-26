@@ -179,7 +179,7 @@ sudo ./add_dbc_user.sh dbc
 - **Note**: need to switch to dbc user installation
 
 1. download install script: install_mining.sh
-   http://119.6.235.169:9000/dbc/install_update_script/mainnet/install_mining.sh
+   http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. add executable permissions
    `chmod +x ./install_mining.sh`
 3. run install_mining.sh
@@ -189,7 +189,7 @@ sudo ./add_dbc_user.sh dbc
 
 ## Download the mirror template
 
-- http://119.6.235.169:9000/image
+- http://112.192.16.27:9000/image
 
 Download: ubuntu.qcow2 and ubuntu-2004.qcow2 these two mirrors
 
@@ -199,7 +199,7 @@ Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/nod
 
 ## Test to create a virtual machine with graphics card pass-through to check whether the previous configuration is correct
 
-- Test program download address: http://119.6.235.169:9000/dbc/package/check_env
+- Test program download address: http://112.192.16.27:9000/dbc/package/check_env
 - Binary file, add execute permission and execute directly: chmod 777 chec_env ; ./check_env
 - If the green check 'vm domain_test successful' appears, it means success. If it does not appear, please check whether the previous configurations are correct.
 
