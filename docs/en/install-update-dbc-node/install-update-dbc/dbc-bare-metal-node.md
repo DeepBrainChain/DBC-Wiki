@@ -115,7 +115,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```json
 {
   "peer_nodes_list": [
-    // node_id of bare metal node
+    // node_id of bare metal node. When this is empty, it means querying the list of all bare metal servers.
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {},
@@ -151,6 +151,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 }
 ```
 
+When the "peer_nodes_list" array in the request body contains the node_id of the bare metal node, you can also query the specified bare metal server based on the `uuid` entered when adding the bare metal server.
 - Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` to query related information about the bare metal server with the specified `node_id`.
 - Use `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` to query related information about the bare metal server with the specified `uuid`.
 

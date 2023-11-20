@@ -998,7 +998,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```json
 {
   "peer_nodes_list": [
-    // 裸金属节点的 node_id
+    // 裸金属节点的 node_id，此处为空时意味着查询所有的裸金属服务器列表。
     "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573"
   ],
   "additional": {},
@@ -1034,6 +1034,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 }
 ```
 
+当请求 Body 中的 "peer_nodes_list" 数组中包含裸金属节点的 node_id 时，还可以根据添加裸金属服务器时输入的 `uuid` 查询指定的裸金属服务器。
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` 查询指定 `node_id` 的裸金属服务器的相关信息。
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` 查询指定 `uuid` 的裸金属服务器的相关信息。
 
