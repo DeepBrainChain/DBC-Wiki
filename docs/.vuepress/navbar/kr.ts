@@ -98,6 +98,7 @@ export const krNavbar = navbar([
           "staking-dbc-and-voting",
           "fast-track",
           "common-questions",
+	  "dbc-chain-upgrade",
         ],
       },
       {
