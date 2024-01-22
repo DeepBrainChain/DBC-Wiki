@@ -2,7 +2,7 @@
 
 Note: The screenshots are all from testnet. The values in it need to be filled in according to the situation after reading this document. Please do not fill in directly according to the picture.
 
-1. (Any account can) Go to the democracy page, submit the preimage, as shown below, and copy the "preimage hash". As shown in the figure, the code is upgraded.
+1. (Any account can) Go to the Preimages page, submit the preimage, as shown below, and copy the "preimage hash". As shown in the figure, the code is upgraded.
 
 ![image-20220127133353228](./assets/fast-track.assets/image-20220127133353228.png)
 
