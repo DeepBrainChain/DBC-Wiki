@@ -1,6 +1,7 @@
 # DBC-Chain verification node upgrade 
 
 
+> Note:In order to maintain the stability of block production and prevent the penalty mechanism from being triggered due to excessive node offline during the upgrade process, it is recommended that you stop participating in the super node election before upgrading the node, and then continue to participate in the election after the upgrade is completed.
 
 ## 1. Get the new dbc-chain binary
 
