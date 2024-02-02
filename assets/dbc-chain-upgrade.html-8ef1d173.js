@@ -56,4 +56,28 @@ root      <span class="token number">926101</span>  <span class="token number">2
 <span class="token number">2024</span>-01-16 02:37:00 ✨ Imported <span class="token comment">#2747462 (0xab90…ecb0)</span>
 <span class="token number">2024</span>-01-16 02:37:01 💤 Idle <span class="token punctuation">(</span><span class="token number">20</span> peers<span class="token punctuation">)</span>, best: <span class="token comment">#2747462 (0xab90…ecb0), finalized #2747459 (0x91e2…44c5), ⬇ 7.2kiB/s ⬆ 25.1kiB/s</span>
 <span class="token number">2024</span>-01-16 02:37:06 💤 Idle <span class="token punctuation">(</span><span class="token number">20</span> peers<span class="token punctuation">)</span>, best: <span class="token comment">#2747462 (0xab90…ecb0), finalized #2747460 (0xcd3a…fb6d), ⬇ 27.2kiB/s ⬆ 21.6kiB/s</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,12),t=[c];function p(l,o){return s(),a("div",null,t)}const d=n(i,[["render",p],["__file","dbc-chain-upgrade.html.vue"]]);export{d as default};
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_4-使用脚本辅助自动重启" tabindex="-1"><a class="header-anchor" href="#_4-使用脚本辅助自动重启" aria-hidden="true">#</a> 4.使用脚本辅助自动重启</h2><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span> start.sh</span>
+#!/usr/bin/env sh
+
+panicCount=0
+while true; do
+    #注意！！！！以下启动命令内容根据自己的实际情况进行替换！！！！
+    cd /data/dbc-chain &amp;&amp; nohup ./dbc-chain_V3.2_latest --base-path ./db_data --chain dbcSpecRaw_main.json --validator --name Heaven  1&gt;std.log 2&gt;&amp;1
+
+    exit_status=<span class="token variable">$?</span>
+
+    if [ <span class="token variable">$exit_status</span> -eq 0 ]; then
+        break
+    else
+        echo &quot;Command exited with non-zero status. Restarting in 5 seconds...&quot;
+        mv std.log std.log.<span class="token variable">$panicCount</span>
+        panicCount=<span class="token variable"><span class="token variable">$((</span>panicCount<span class="token operator">+</span><span class="token number">1</span><span class="token variable">))</span></span>
+        sleep 5
+    fi
+done
+EOF</span>
+
+<span class="token comment">#启动命令</span>
+<span class="token function">nohup</span> start.sh <span class="token operator">&amp;</span>
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,14),t=[c];function l(p,o){return s(),a("div",null,t)}const r=n(i,[["render",l],["__file","dbc-chain-upgrade.html.vue"]]);export{r as default};
