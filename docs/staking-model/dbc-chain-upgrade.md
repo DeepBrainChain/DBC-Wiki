@@ -108,7 +108,10 @@ while true; do
 done
 EOF
 
+
+#添加执行权限
+sudo chmod +x start.sh
 #启动命令
-nohup start.sh &
+nohup ./start.sh &
 
 ```

@@ -84,31 +84,31 @@ tail -f dbc_node.log
 2024-01-16 02:37:01 💤 Idle (20 peers), best: #2747462 (0xab90…ecb0), finalized #2747459 (0x91e2…44c5), ⬇ 7.2kiB/s ⬆ 25.1kiB/s
 2024-01-16 02:37:06 💤 Idle (20 peers), best: #2747462 (0xab90…ecb0), finalized #2747460 (0xcd3a…fb6d), ⬇ 27.2kiB/s ⬆ 21.6kiB/s
 ```
-## 4.使用脚本辅助自动重启
+
+## 4. Use script to assist automatic restart
 ```shell
 cat <<EOF > start.sh
 #!/usr/bin/env sh
 
 panicCount=0
 while true; do
-    #注意！！！！以下启动命令内容根据自己的实际情况进行替换！！！！
-    cd /data/dbc-chain && nohup ./dbc-chain_V3.2_latest --base-path ./db_data --chain dbcSpecRaw_main.json --validator --name Heaven  1>std.log 2>&1
+     #Notice! ! ! ! Replace the following startup command content according to your actual situation! ! ! !
+     cd /data/dbc-chain && nohup ./dbc-chain_V3.2_latest --base-path ./db_data --chain dbcSpecRaw_main.json --validator --name Heaven 1>std.log 2>&1
 
-    exit_status=$?
+     exit_status=$?
 
-    if [ $exit_status -eq 0 ]; then
-        break
-    else
-        echo "Command exited with non-zero status. Restarting in 5 seconds..."
-        mv std.log std.log.$panicCount
-        panicCount=$((panicCount+1))
-        sleep 5
-    fi
+     if [ $exit_status -eq 0 ]; then
+         break
+     else
+         echo "Command exited with non-zero status. Restarting in 5 seconds..."
+         mv std.log std.log.$panicCount
+         panicCount=$((panicCount+1))
+         sleep 5
+     fi
 done
 EOF
-
-#启动命令
-nohup start.sh &
-
+#Add execution permissions
+sudo chmod +x start.sh
+#start command
+nohup ./start.sh &
 ```
-
