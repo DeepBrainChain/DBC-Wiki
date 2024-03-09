@@ -5,6 +5,7 @@
 - 内存：8G
 - CPU：2 核
 - 硬盘：100G
+- 系统： Ubuntu22.04
 
 ## 1. 生成资金账户（已有资金账户可以略过）
 
@@ -55,15 +56,50 @@ cargo build --release
 
 ## 4. 以验证人的方式运行节点
 
-在第 3 步同步节点数据完成之后，关闭同步命令。然后以验证人的方式运行节点：
++ 当dbc主网升级到3.0版本时，会有很多的新特性，这与旧版本不兼容，为了稳定获得质押奖励，请升级到3.0版本
 
-```bash
-nohup ./dbc-chain --base-path ./db_data --validator --name YourNodeName 1>dbc_node.log 2>&1 &
+```shell
+# 在第2步生成的文件夹下执行
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v3.2/dbc-chain-v3.tar.gz -O dbc_chain_linux_x64.tar.gz
+
+tar xf dbc_chain_linux_x64.tar.gz
+
+#运行验证节点
+# 查询并停止旧版本的同步节点
+ps aux | grep dbc-chain
+
+#结果类似于如下显示
+root      761495  0.0  0.0   9584  2588 pts/0    S+   17:07   0:00 grep --color=auto -w dbc-chain
+root      926101  2.0  5.1 4295592 1650640 ?     Sl    2023 5320:10 ./dbc-chain --base-path ./db_data --port 30337 --ws-port 9948 --rpc-port 9937 --pruning archive
+
+# 停止旧节点
+sudo kill -9 926101 (注意替换为实际查询到的PID)
+
+#启动新版本节点
+nohup ./dbc-chain --base-path ./db_data --chain dbcSpecRaw.json --validator --name YourNodeName 1>dbc_node.log 2>&1 &
+
+#如果遇到启动报错
+./dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by ./dbc-chain)
+./dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by ./dbc-chain)
+./dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by ./dbc-chain)
+./dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./dbc-chain)
+./dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by ./dbc-chain)
+
+#解决方案：
+#1.中国地区的用户：
+echo "deb http://mirrors.aliyun.com/ubuntu/ jammy main" >> /etc/apt/sources.list
+sudo apt update
+sudo apt install libc6 libstdc++6 -y
+#2. 非中国地区用户
+echo "deb http://archive.ubuntu.com/ubuntu/ jammy main" >> /etc/apt/sources.list
+sudo apt update
+sudo apt install libc6 libstdc++6 -y
 ```
 
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
 
 - 注意，这里 **`--name YourNodeName` 是设置你的节点名称**，你可以为你的节点起一个独一无二容易辨认的名称，别人将能在网络上看到它。
+  
 
 ## 5. 生成`rotateKey`
 
