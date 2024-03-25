@@ -5,6 +5,7 @@
 - RAM：8G
 - CPU：2 cores
 - Disk：100G
+- OS: ubuntu20.04 ++
 
 ## 1. Generate stash account
 
@@ -54,7 +55,7 @@ cargo build --release
   - `--base-path`：Specifies a directory where Substrate should store all the data related to this chain. If this value is not specified, a default path will be used. If the directory does not exist it will be created for you. If other blockchain data already exists there you will get an error. Either clear the directory or choose a different one.
     - `--chain ./dbcSpecRaw.json`：Specifies which chain specification to use.
     - `--pruning=archive`：synchronize chain data
-    - `--bootnodes`：specified a single boot node.
+    - `--bootnodes`：specified a single boot node. ( If you encounter a synchronization status of 0 peers, you can try to specify --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5 or other known synchronization nodes)
 
 ## 4.Then run the node as a validator:
 

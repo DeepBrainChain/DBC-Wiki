@@ -19,7 +19,7 @@
 
 ```bash
 mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.6/dbc-daily-release.tar.gz -O dbc_chain_linux_x64.tar.gz
 
 tar xf dbc_chain_linux_x64.tar.gz
 ```
@@ -33,7 +33,7 @@ source ~/.cargo/env
 
 # 编译dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git
-cd DeepBrainChain-MainChain && git checkout v2.3
+cd DeepBrainChain-MainChain && git checkout v2.6
 cargo build --release
 ```
 
@@ -52,7 +52,7 @@ cargo build --release
 - **参数说明：**
   - `--base-path`：指定该区块链存储数据的目录。如果不指定，将使用默认路径。如果目录不存在，将会为你自动创建。如果该目录已经有了区块链数据，将会报错，这时应该选择不同的目录或清除该目录内容
   - `--pruning=archive`：以归档的方式启动区块链
-  - `--bootnodes`：指定引导节点地址。
+  - `--bootnodes`：指定引导节点地址。（如果遇到0 peers的同步状态，可以尝试指定--bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5 或者其他已知同步节点）
 
 ## 4. 以验证人的方式运行节点
 
@@ -86,11 +86,11 @@ nohup ./dbc-chain --base-path ./db_data --chain dbcSpecRaw.json --validator --na
 ./dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by ./dbc-chain)
 
 #解决方案：
-#1.中国地区的用户：
+#1.中国地区的设备：
 echo "deb http://mirrors.aliyun.com/ubuntu/ jammy main" >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
-#2. 非中国地区用户
+#2. 非中国地区设备：
 echo "deb http://archive.ubuntu.com/ubuntu/ jammy main" >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
