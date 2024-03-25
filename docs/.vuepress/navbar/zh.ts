@@ -123,7 +123,7 @@ export const zhNavbar = navbar([
           "fast-track",
           "council-proposal",
           "common-questions",
-	  "dbc-chain-upgrade",
+          "dbc-chain-upgrade",
         ],
       },
       {
