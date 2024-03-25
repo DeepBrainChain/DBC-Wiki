@@ -54,7 +54,7 @@ cargo build --release
 > ```
 >
 > When encountering the phenomenon of 0 peers during synchronization, you need to specify bootnodes for synchronization. Old users can find it by querying the previous synchronization node logs. New users can try to specify
-> ```` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5````
+> ` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5`
 
 ## 3. After synchronization is completed, upgrade to 3.0 synchronization node
 
