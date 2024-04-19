@@ -8,7 +8,7 @@
 
 + 导航到 `开发者`-->`链状态`-->`存储`，在其中选择`terminatingRental`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
 
-  ![image-20240418180654901](/Users/totus/Library/Application Support/typora-user-images/image-20240418180654901.png)
+  ![image-20240418180654901](./assets/Machine_verification.assets/image-20240418180654901.png)
 
 ## 2. 查看系统分配给该委员会进行验证的时间区间
 
@@ -85,7 +85,7 @@ chmod +x sign_tool
 
 ## 4. 查询机器信息（terminatingRental 模块下以这个方式查询为主，主要涉及裸金属模式，APIfox当中有针对裸金属模式的接口）
 
-![image-20240418182108544](/Users/totus/Library/Application Support/typora-user-images/image-20240418182108544.png)
+![image-20240418182108544](./assets/Machine_verification.assets/image-20240418182108544.png)
 
 + 验证人使用查询指定裸金属服务器接口，选择正式环境输入设备ID进行查询，返回的结果主要关注```power_satus、deeplink_device_id、deeplink_device_password```,当power显示off时，需要调用开机接口。
 
@@ -113,13 +113,13 @@ python3 hash_machine_info.py
 
 注意：如果是在terminatingRental中的机器，则要去terminatingRental 提交submitConfirmHash
 
-![image-20240418183059812](/Users/totus/Library/Application Support/typora-user-images/image-20240418183059812.png)
+![image-20240418183059812](./assets/Machine_verification.assets/image-20240418183059812.png)
 
 ## 7. 委员会提交机器的原始信息
 
 **请确保提交机器原始信息时，在派单之后的 36~48 小时之间！**
 
-![image-20240418183216059](/Users/totus/Library/Application Support/typora-user-images/image-20240418183216059.png)
+![image-20240418183216059](./assets/Machine_verification.assets/image-20240418183216059.png)
 
 ## 8. 委员会奖励的查询与领取
 
