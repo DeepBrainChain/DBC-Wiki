@@ -33,15 +33,6 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 >
 > `subkey`的安装及其他用法，请参考：[https://substrate.dev/docs/en/knowledgebase/integrate/subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
 
-## 方式 3: 通过网页生成账户
-
-到[网页钱包 https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer)，点击`添加账户`，在弹出框中会提示`助记词`，**点击右侧`助记词`**，可以**切换到`原始种子`，即为需要保存的私钥，妥善保存！**
-
-![](./assets/generate_new_account.assets/2021-09-13_09-58.png)
-
-<br>
-
-![](./assets/generate_new_account.assets/2021-09-13_09-59.png)
 
 ## 使用命令行工具 subkey,将助记词转私钥种子
 
