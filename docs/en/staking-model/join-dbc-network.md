@@ -21,7 +21,7 @@ Reference: [Generate new dbc account](generate-new-account.md)
 
 ```bash
 mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.6/dbc-daily-release.tar.gz -O dbc_chain_linux_x64.tar.gz
 
 tar xf dbc_chain_linux_x64.tar.gz
 ```
@@ -35,7 +35,7 @@ source ~/.cargo/env
 
 # compile dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git
-cd DeepBrainChain-MainChain && git checkout v2.3
+cd DeepBrainChain-MainChain && git checkout v2.6
 cargo build --release
 ```
 
