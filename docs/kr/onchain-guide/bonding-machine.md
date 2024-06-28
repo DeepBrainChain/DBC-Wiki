@@ -6,7 +6,7 @@
 
 - Make sure DBC client is installed on the machine.
 
-- Before bonding GPU Machine online, please make sure you have enough balance in your wallet. (Each GPU need to stake 100,000 DBC).
+- Before bonding GPU Machine online, please make sure you have enough balance in your wallet. (Each GPU need to stake 1000 DBC).
 
 ## Stash account binding control account
 
