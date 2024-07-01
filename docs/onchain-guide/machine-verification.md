@@ -38,7 +38,11 @@
 
 ### 3.2  使用APIFOX
 
-+ 下载APIfox后可以使用以下链接加入 https://app.apifox.com/invite?token=NInyq16FZQBH147J_Krpe， 如果遇到失效的情况，可以与我们联系。
++ 网页链接：https://46fqx9l1bt.apifox.cn， 如果遇到失效的情况，可以与我们联系。
+
++ APP 使用： 在API Hub内搜索DeepBrainChain收藏即可
+
+  ![](./assets/machine_verification.assets/apifox.jpg)
 
 ### 3.3 查看宿主机详细信息：
 
