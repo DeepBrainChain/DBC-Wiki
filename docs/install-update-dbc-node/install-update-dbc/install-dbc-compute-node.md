@@ -310,3 +310,14 @@ reboot
 - 设置 DBC 的监控服务器地址：在 conf/core.conf 中添加配置"dbc_monitor_server=ip:port"
 - 设置矿工的监控服务器地址：在 conf/core.conf 中添加配置"miner_monitor_server=ip:port"
 - 设置租用人的监控服务器地址：https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/dbc-monitor/http-monitor-api.html
+
+## （十五）监听DBC广播
+
+> 矿工可以机器闲置的时候启动虚拟机自己使用，但是需要在用户租用的时候10s内关闭正在使用的虚拟机， 这样就不会被用户举报受到惩罚，UDP 广播相关消息如下： 
+
++ dbc节点会在内网广播设备node_id 及其对应的状态
++ 广播地址：UDP 广播 255.255.255.255 端口 55555
++ 广播内容：{ "node_id": "xxx", "status": "renting" }
+  { "node_id": "xxx", "status": "empty" }
++ 加密方式：base64 加密
+
