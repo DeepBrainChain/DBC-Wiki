@@ -165,14 +165,6 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - virsh connect qemu+tcp://localhost:16509/system
 - If there is no output error, it means the startup is successful
 
-## Create a dbc user
-
-```shell
-sudo wget http://116.85.24.172:20444/static/add_dbc_user.sh
-sudo chmod +x add_dbc_user.sh
-sudo ./add_dbc_user.sh dbc
-#dbcUser password is set by yourself
-```
 
 ## Install the DBC node program
 

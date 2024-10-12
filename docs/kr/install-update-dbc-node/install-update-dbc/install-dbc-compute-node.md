@@ -293,14 +293,6 @@ systemctl status libvirtd
 
 - 출력 잘못이 없을경우 작동 성공을 의마합니다 ;
 
-## 【H】DBC유저 생성
-
-```bash
-sudo wget http://116.85.24.172:20444/static/add_dbc_user.sh
-sudo chmod +x add_dbc_user.sh
-sudo ./add_dbc_user.sh dbc
-#dbc유저 비밀번호 자체 설정
-```
 
 ## 【I】DBC성능노드 프로그램 설치
 
