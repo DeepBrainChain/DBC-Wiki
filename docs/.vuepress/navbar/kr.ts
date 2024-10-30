@@ -1,14 +1,14 @@
 import { navbar } from "vuepress-theme-hope";
 
-export const krNavbar = navbar([
-  "/kr",
+export const enNavbar = navbar([
+  "/en",
   {
-    text: "DBC 소개",
-    prefix: "/kr/",
+    text: "DBC Introduction",
+    prefix: "/en/",
     children: [
       "dbc-introduction/dbc-introduction",
       {
-        text: "DBC 소개",
+        text: "DBC Introduction",
         prefix: "dbc-introduction/",
         children: [
           "dbc-applications",
@@ -27,7 +27,7 @@ export const krNavbar = navbar([
         children: ["initial-operation-process", "support-for-cloud-platform"],
       },
       {
-        text: "DBC 민주주의",
+        text: "DBC Democracy",
         prefix: "dbc-democracy/",
         children: [
           "council-outreach-proposal",
@@ -46,50 +46,55 @@ export const krNavbar = navbar([
     ],
   },
   {
-    text: "DBC 뉴스",
-    prefix: "/kr/dbc-information/",
+    text: "DBC AI PublicChain",
+    prefix: "/en/dbc-information/",
     children: [
-      {
-        text: "DBC 진행",
-        prefix: "dbc-progress/",
-        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
+	{
+        text: "AI container build",
+        prefix: "/dbc-information/dbc-AIimage/",
+        children: ["docker_build"],
       },
-      {
-        text: "DBC AMA",
-        prefix: "dbc-ama/",
-        children: [
-          "8btc-ama",
-          "galaxy-ama",
-          "council-ama",
-          "dbc-ama-collection",
-        ],
-      },
-      {
-        text: "DBC 보고서",
-        prefix: "dbc-report/",
-        children: [
-          "dbc-36kr-report",
-          "dbc-apnews-report",
-          "dbc-asiaone-report",
-          "dbc-businessinsider-report",
-          "dbc-coindeals-report",
-          "dbc-dailyherald-report",
-          "dbc-marketscreener",
-          "dbc-post-gazette",
-          "dbc-theblockbeats-report",
-          "dbc-uk-tech-daily",
-          "dbc-yahoo-report2",
-          "dbc-yahoo-report",
-        ],
-      },
+//      {
+//        text: "DBC progress",
+//        prefix: "dbc-progress/",
+//        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
+//      },
+//      {
+//        text: "DBC AMA",
+//        prefix: "dbc-ama/",
+//        children: [
+//          "8btc-ama",
+//          "galaxy-ama",
+//          "council-ama",
+//          "dbc-ama-collection",
+//        ],
+//      },
+//      {
+//        text: "DBC Report",
+//        prefix: "dbc-report/",
+//        children: [
+//          "dbc-36kr-report",
+//          "dbc-apnews-report",
+//         "dbc-asiaone-report",
+//         "dbc-businessinsider-report",
+//          "dbc-coindeals-report",
+//          "dbc-dailyherald-report",
+//          "dbc-marketscreener",
+//          "dbc-post-gazette",
+//          "dbc-theblockbeats-report",
+//          "dbc-uk-tech-daily",
+//          "dbc-yahoo-report2",
+//          "dbc-yahoo-report",
+ //       ],
+//      },
     ],
   },
   {
-    text: "온체인 운영",
-    prefix: "/kr/",
+    text: "Onchain Operate",
+    prefix: "/en/",
     children: [
       {
-        text: "DBC 네트워크 가입 소개",
+        text: "Introduction for Joining DBC Network",
         prefix: "staking-model/",
         children: [
           "dbc-chain-params",
@@ -126,16 +131,16 @@ export const krNavbar = navbar([
     ],
   },
   {
-    text: "DBC GPU 클라우드 서비스",
-    prefix: "/kr/gpu-cloud/",
+    text: "DBC GPU Cloud Service",
+    prefix: "/en/gpu-cloud/",
     children: ["dbc-gpu-cloud-service"],
   },
   {
-    text: "DBC 노드 설치 및 업그레이드",
-    prefix: "/kr/install-update-dbc-node/",
+    text: "Install and upgrade DBC nodes",
+    prefix: "/en/install-update-dbc-node/",
     children: [
       {
-        text: "DBC 노드 설치 및 업그레이드",
+        text: "Install And Update DBC Node",
         prefix: "install-update-dbc/",
         children: [
           "install-dbc-compute-node",
@@ -164,11 +169,16 @@ export const krNavbar = navbar([
           "monitoring-protocol",
         ],
       },
+      {
+        text: "Make image steps (with gpu driver)",
+        prefix: "make-image/",
+        children: ["make-image-with-gpu-driver"],
+      },
     ],
   },
   {
-    text: "디스크가 없는 넷부팅",
-    prefix: "/kr/dbc-cloud-cybercafe/",
+    text: "Diskless Netboot",
+    prefix: "/en/dbc-cloud-cybercafe/",
     children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
 ]);

@@ -45,42 +45,47 @@ export const zhNavbar = navbar([
   },
 
   {
-    text: "DBC资讯",
+    text: "DBC AI公链",
     children: [
-      {
-        text: "DBC 进展",
-        prefix: "/dbc-information/dbc-progress/",
-        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
+	{
+        text: "AI容器制作",
+        prefix: "/dbc-information/dbc-AIimage/",
+        children: ["docker_build"],
       },
-      {
-        text: "DBC AMA",
-        prefix: "/dbc-information/dbc-ama/",
-        children: [
-          "dbc-ama",
+      //{
+      //  text: "DBC 进展",
+      //  prefix: "/dbc-information/dbc-progress/",
+      //  children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
+      //},
+      //{
+      //  text: "DBC AMA",
+      //  prefix: "/dbc-information/dbc-ama/",
+      //  children: [
+      //    "dbc-ama",
           // "8btc-ama",
           // "galaxy-ama",
           // "council-ama",
           // "dbc-ama-collection",
-        ],
-      },
-      {
-        text: "DBC 媒体报道",
-        prefix: "/dbc-information/dbc-report/",
-        children: [
-          "dbc-36kr-report",
-          "dbc-apnews-report",
-          "dbc-asiaone-report",
-          "dbc-businessinsider-report",
-          "dbc-coindeals-report",
-          "dbc-dailyherald-report",
-          "dbc-marketscreener",
-          "dbc-post-gazette",
-          "dbc-theblockbeats-report",
-          "dbc-uk-tech-daily",
-          "dbc-yahoo-report2",
-          "dbc-yahoo-report",
-        ],
-      },
+      //  ],
+      //},
+      //{
+      //  text: "DBC 媒体报道",
+      //  prefix: "/dbc-information/dbc-report/",
+      //  children: [
+      //    "dbc-36kr-report",
+      //    "dbc-apnews-report",
+      //    "dbc-asiaone-report",
+      //    "dbc-businessinsider-report",
+      //    "dbc-coindeals-report",
+      //    "dbc-dailyherald-report",
+      //    "dbc-marketscreener",
+      //    "dbc-post-gazette",
+      //    "dbc-theblockbeats-report",
+      //    "dbc-uk-tech-daily",
+      //    "dbc-yahoo-report2",
+      //    "dbc-yahoo-report",
+      //  ],
+      //},
     ],
   },
   {
