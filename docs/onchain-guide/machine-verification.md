@@ -42,7 +42,7 @@
 
 + APP 使用： 在API Hub内搜索DeepBrainChain收藏即可
 
-  ![](./assets/machine_verification.assets/apifox.jpg)
+  ![](./assets/machine_verification1.assets/apifox.jpg)
 
 ### 3.3 查看宿主机详细信息：
 
