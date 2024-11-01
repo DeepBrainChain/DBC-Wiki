@@ -54,7 +54,7 @@ cargo build --release
 > ```
 >
 > 当遇到同步出现0 peers现象时，需要指定bootnodes进行同步，老用户可以通过查询以前的同步节点log日志找到，新用户可以尝试指定
-> ``` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5```
+> ` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5`
 
 ## 3. 同步完成后升级到3.0同步节点
 
@@ -95,4 +95,3 @@ echo "deb http://archive.ubuntu.com/ubuntu/ jammy main" >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
 ```
-

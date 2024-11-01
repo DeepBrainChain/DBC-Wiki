@@ -165,7 +165,6 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - virsh connect qemu+tcp://localhost:16509/system
 - If there is no output error, it means the startup is successful
 
-
 ## Install the DBC node program
 
 - **Note**: need to switch to dbc user installation
@@ -300,12 +299,12 @@ https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/machine_online_e
 - Set the miner's monitoring server address：add configuration "miner_monitor_server=ip:port" in conf/core.conf
 - Set the renter's monitoring server address：https://deepbrainchain.github.io/DBC-Wiki/en/install-and-update-dbc/dbc-monitor/http-monitor-api.html
 
-##  Listen to DBC broadcast
+## Listen to DBC broadcast
 
 > Miners can start the virtual machine for their own use when the machine is idle, but they need to shut down the virtual machine in use within 10 seconds when the user rents it, so that they will not be reported and punished by the user. The UDP broadcast related messages are as follows:
 
-+ The dbc node will broadcast the device node_id and its corresponding status in the intranet
-+ Broadcast address: UDP broadcast 255.255.255.255 port 55555
-+ Broadcast content: { "node_id": "xxx", "status": "renting" }
-{ "node_id": "xxx", "status": "empty" }
-+ Encryption method: base64 encryption
+- The dbc node will broadcast the device node_id and its corresponding status in the intranet
+- Broadcast address: UDP broadcast 255.255.255.255 port 55555
+- Broadcast content: { "node_id": "xxx", "status": "renting" }
+  { "node_id": "xxx", "status": "empty" }
+- Encryption method: base64 encryption
