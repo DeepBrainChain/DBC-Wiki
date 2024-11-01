@@ -1,6 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { enNavbar, zhNavbar, krNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar, krSidebar } from "./sidebar/index.js";
+import { enNavbar, zhNavbar, koNavbar } from "./navbar/index.js";
+import { enSidebar, zhSidebar, koSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
@@ -55,12 +55,12 @@ export default hopeTheme({
       },
     },
 
-    "/kr/": {
+    "/ko/": {
       // navbar
-      navbar: krNavbar,
+      navbar: koNavbar,
 
       // sidebar
-      sidebar: krSidebar,
+      sidebar: koSidebar,
 
       footer: "MIT Licensed | Copyright © 2017-Present DeepBrainChain",
 

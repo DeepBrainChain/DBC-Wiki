@@ -14,7 +14,7 @@ export default defineUserConfig({
       title: "DBC-Wiki",
       description: "Welcome to DBC-Wiki",
     },
-    "/kr/": {
+    "/ko/": {
       lang: "ko-KR",
       title: "DBC-Wiki",
       description: "DBC-Wiki에 오신 것을 환영합니다",
