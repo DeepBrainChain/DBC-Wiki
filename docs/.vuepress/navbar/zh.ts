@@ -47,7 +47,7 @@ export const zhNavbar = navbar([
   {
     text: "DBC AI公链",
     children: [
-	{
+	    {
         text: "AI容器制作",
         prefix: "/dbc-information/dbc-AIimage/",
         children: ["docker_build"],
@@ -128,7 +128,7 @@ export const zhNavbar = navbar([
           "fast-track",
           "council-proposal",
           "common-questions",
-	  "dbc-chain-upgrade",
+	        "dbc-chain-upgrade",
         ],
       },
       {

@@ -49,7 +49,7 @@ export const koNavbar = navbar([
     text: "DBC AI PublicChain",
     prefix: "/en/dbc-information/",
     children: [
-	{
+	    {
         text: "AI container build",
         prefix: "/dbc-information/dbc-AIimage/",
         children: ["docker_build"],
@@ -103,7 +103,7 @@ export const koNavbar = navbar([
           "staking-dbc-and-voting",
           "fast-track",
           "common-questions",
-	  "dbc-chain-upgrade",
+	        "dbc-chain-upgrade",
         ],
       },
       {
