@@ -1,3 +1,3 @@
-export * from "./en.js";
-export * from "./zh.js";
-export * from "./kr.js";
+export * from "./en.ts";
+export * from "./zh.ts";
+export * from "./kr.ts";
