@@ -1,6 +1,6 @@
 import { navbar } from "vuepress-theme-hope";
 
-export const koNavbar = navbar([
+export const enNavbar = navbar([
   "/en",
   {
     text: "DBC Introduction",
@@ -47,46 +47,13 @@ export const koNavbar = navbar([
   },
   {
     text: "DBC AI PublicChain",
-    prefix: "/en/dbc-information/",
+    prefix: "/kr/dbc-aipublicchain/",
     children: [
-	    {
+      {
         text: "AI container build",
-        prefix: "/dbc-information/dbc-AIimage/",
+        prefix: "/dbc-information/",
         children: ["docker_build"],
       },
-//      {
-//        text: "DBC progress",
-//        prefix: "dbc-progress/",
-//        children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
-//      },
-//      {
-//        text: "DBC AMA",
-//        prefix: "dbc-ama/",
-//        children: [
-//          "8btc-ama",
-//          "galaxy-ama",
-//          "council-ama",
-//          "dbc-ama-collection",
-//        ],
-//      },
-//      {
-//        text: "DBC Report",
-//        prefix: "dbc-report/",
-//        children: [
-//          "dbc-36kr-report",
-//          "dbc-apnews-report",
-//         "dbc-asiaone-report",
-//         "dbc-businessinsider-report",
-//          "dbc-coindeals-report",
-//          "dbc-dailyherald-report",
-//          "dbc-marketscreener",
-//          "dbc-post-gazette",
-//          "dbc-theblockbeats-report",
-//          "dbc-uk-tech-daily",
-//          "dbc-yahoo-report2",
-//          "dbc-yahoo-report",
- //       ],
-//      },
     ],
   },
   {
