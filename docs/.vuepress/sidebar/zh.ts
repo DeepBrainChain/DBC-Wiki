@@ -43,47 +43,15 @@ export const zhSidebar = sidebar({
       ],
     },
   ],
-  "/dbc-information/": [
+  "/dbc-aipublicchain/": [
     {
-      text: "DBC资讯",
-      prefix: "/dbc-information/",
+      text: "DBC AI公链",
+      prefix: "/dbc-aipublicchain/",
       children: [
         {
-          text: "DBC 进展",
-          // collapsable: true,
-          prefix: "dbc-progress/",
-          children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
-        },
-        {
-          text: "DBC AMA",
-          // collapsable: true,
-          prefix: "dbc-ama/",
-          children: [
-            "dbc-ama",
-            // "8btc-ama",
-            // "galaxy-ama",
-            // "council-ama",
-            // "dbc-ama-collection",
-          ],
-        },
-        {
-          text: "DBC 媒体报道",
-          // collapsable: true,
-          prefix: "dbc-report/",
-          children: [
-            "dbc-36kr-report",
-            "dbc-apnews-report",
-            "dbc-asiaone-report",
-            "dbc-businessinsider-report",
-            "dbc-coindeals-report",
-            "dbc-dailyherald-report",
-            "dbc-marketscreener",
-            "dbc-post-gazette",
-            "dbc-theblockbeats-report",
-            "dbc-uk-tech-daily",
-            "dbc-yahoo-report2",
-            "dbc-yahoo-report",
-          ],
+        text: "AI容器制作",
+        prefix: "/dbc-aipublicchain",
+        children: ["docker_build"],
         },
       ],
     },

@@ -1,10 +1,10 @@
 import { navbar } from "vuepress-theme-hope";
 
-export const enNavbar = navbar([
-  "/en",
+export const koNavbar = navbar([
+  "/kr",
   {
     text: "DBC Introduction",
-    prefix: "/en/",
+    prefix: "/kr/",
     children: [
       "dbc-introduction/dbc-introduction",
       {
@@ -51,14 +51,14 @@ export const enNavbar = navbar([
     children: [
       {
         text: "AI container build",
-        prefix: "/dbc-information/",
+        prefix: "/dbc-aipublicchain/",
         children: ["docker_build"],
       },
     ],
   },
   {
     text: "Onchain Operate",
-    prefix: "/en/",
+    prefix: "/kr/",
     children: [
       {
         text: "Introduction for Joining DBC Network",
@@ -99,12 +99,12 @@ export const enNavbar = navbar([
   },
   {
     text: "DBC GPU Cloud Service",
-    prefix: "/en/gpu-cloud/",
+    prefix: "/kr/gpu-cloud/",
     children: ["dbc-gpu-cloud-service"],
   },
   {
     text: "Install and upgrade DBC nodes",
-    prefix: "/en/install-update-dbc-node/",
+    prefix: "/kr/install-update-dbc-node/",
     children: [
       {
         text: "Install And Update DBC Node",
@@ -145,7 +145,7 @@ export const enNavbar = navbar([
   },
   {
     text: "Diskless Netboot",
-    prefix: "/en/dbc-cloud-cybercafe/",
+    prefix: "/kr/dbc-cloud-cybercafe/",
     children: ["diskless-netboot-server", "diskless-netboot-image"],
   },
 ]);

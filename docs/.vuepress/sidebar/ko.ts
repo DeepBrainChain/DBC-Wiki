@@ -1,10 +1,10 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export const koSidebar = sidebar({
-  "/ko/dbc-introduction/": [
+  "/kr/dbc-introduction/": [
     {
       text: "DBC Introduction",
-      prefix: "/ko/dbc-introduction/",
+      prefix: "/kr/dbc-introduction/",
       children: [
         "dbc-introduction",
         "dbc-applications",
@@ -24,10 +24,10 @@ export const koSidebar = sidebar({
       ],
     },
   ],
-  "/ko/dbc-democracy/": [
+  "/kr/dbc-democracy/": [
     {
       text: "DBC Democracy",
-      prefix: "/ko/dbc-democracy/",
+      prefix: "/kr/dbc-democracy/",
       children: [
         "council-outreach-proposal",
         "dbc-council-establishment-notice",
@@ -43,54 +43,24 @@ export const koSidebar = sidebar({
       ],
     },
   ],
-  "/ko/dbc-information/": [
+
+  "/kr/dbc-aipublicchain/": [
     {
-      text: "DBC News",
-      prefix: "/ko/dbc-information/",
-      children: [
-        {
-          text: "DBC Progress",
-          // collapsable: true,
-          prefix: "dbc-progress/",
-          children: ["2020", "2021-01-01", "2021", "2022-01-01", "2022"],
-        },
-        {
-          text: "DBC AMA",
-          // collapsable: true,
-          prefix: "dbc-ama/",
-          children: [
-            "8btc-ama",
-            "galaxy-ama",
-            "council-ama",
-            "dbc-ama-collection",
-          ],
-        },
-        {
-          text: "DBC Report",
-          // collapsable: true,
-          prefix: "dbc-report/",
-          children: [
-            "dbc-36kr-report",
-            "dbc-apnews-report",
-            "dbc-asiaone-report",
-            "dbc-businessinsider-report",
-            "dbc-coindeals-report",
-            "dbc-dailyherald-report",
-            "dbc-marketscreener",
-            "dbc-post-gazette",
-            "dbc-theblockbeats-report",
-            "dbc-uk-tech-daily",
-            "dbc-yahoo-report2",
-            "dbc-yahoo-report",
-          ],
-        },
-      ],
-    },
+    text: "DBC AI PublicChain",
+    prefix: "/kr/dbc-aipublicchain/",
+    children: [
+      {
+        text: "AI container build",
+        prefix: "/dbc-aipublicchain/",
+        children: ["docker_build"],
+      },
+    ],
+  },
   ],
-  "/ko/staking-model/": [
+  "/kr/staking-model/": [
     {
       text: "DBC Staking Model",
-      prefix: "/ko/staking-model/",
+      prefix: "/kr/staking-model/",
       children: [
         "dbc-chain-params",
         "generate-new-account",
@@ -101,10 +71,10 @@ export const koSidebar = sidebar({
       ],
     },
   ],
-  "/ko/onchain-guide/": [
+  "/kr/onchain-guide/": [
     {
       text: "OnchainGuide",
-      prefix: "/ko/onchain-guide/",
+      prefix: "/kr/onchain-guide/",
       children: [
         "dbc-chain-logic",
         "machine-reward-model",
@@ -119,24 +89,24 @@ export const koSidebar = sidebar({
       ],
     },
   ],
-  "/ko/onchain-api/": [
+  "/kr/onchain-api/": [
     {
       text: "OnchainAPI",
-      prefix: "/ko/onchain-api/",
+      prefix: "/kr/onchain-api/",
       children: ["dbc-rpc-readme", "dbc-rpc", "dbc-storage"],
     },
   ],
-  "/ko/gpu-cloud/": [
+  "/kr/gpu-cloud/": [
     {
       text: "Deploy GPU cloud platform",
-      prefix: "/ko/gpu-cloud/",
+      prefix: "/en/gpu-cloud/",
       children: ["dbc-gpu-cloud-service"],
     },
   ],
-  "/ko/install-update-dbc-node/": [
+  "/kr/install-update-dbc-node/": [
     {
-      text: "install and update dbc node",
-      prefix: "/ko/install-update-dbc-node/",
+      text: "Install & update DBC node",
+      prefix: "/kr/install-update-dbc-node/",
       children: [
         {
           text: "Install And Update DBC Node",
@@ -172,13 +142,19 @@ export const koSidebar = sidebar({
             "monitoring-protocol",
           ],
         },
+        {
+          text: "Make image steps (with gpu driver)",
+          // collapsable: true,
+          prefix: "make-image/",
+          children: ["make-image-with-gpu-driver"],
+        },
       ],
     },
   ],
-  "/ko/dbc-cloud-cybercafe/": [
+  "/kr/dbc-cloud-cybercafe/": [
     {
-      text: "디스크가 없는 넷부팅",
-      prefix: "/ko/dbc-cloud-cybercafe/",
+      text: "Diskless Netboot",
+      prefix: "/kr/dbc-cloud-cybercafe/",
       children: ["diskless-netboot-server", "diskless-netboot-image"],
     },
   ],

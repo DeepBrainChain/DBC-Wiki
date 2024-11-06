@@ -51,7 +51,7 @@ export const enNavbar = navbar([
     children: [
       {
         text: "AI container build",
-        prefix: "/dbc-information/",
+        prefix: "/dbc-aipublicchain/",
         children: ["docker_build"],
       },
     ],
