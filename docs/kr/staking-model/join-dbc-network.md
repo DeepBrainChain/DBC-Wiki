@@ -21,7 +21,7 @@ Reference: [Generate new dbc account](generate-new-account.md)
 
 ```bash
 mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v2.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v3.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
 
 tar xf dbc_chain_linux_x64.tar.gz
 ```
@@ -35,7 +35,7 @@ source ~/.cargo/env
 
 # compile dbc-chain
 git clone https://github.com/DeepBrainChain/DeepBrainChain-MainChain.git
-cd DeepBrainChain-MainChain && git checkout v2.3
+cd DeepBrainChain-MainChain && git checkout v3.3
 cargo build --release
 ```
 
@@ -59,26 +59,8 @@ cargo build --release
 
 ## 4.Then run the node as a validator:
 
-When the dbc mainnet is upgraded to version 3.0, there will be many new features that are incompatible with the old version. In order to obtain staking rewards stably, please upgrade to version 3.0
-
 ```bash
-# Execute in the folder generated in step 2
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v3.2/dbc-chain-v3.tar.gz -O dbc_chain_linux_x64.tar.gz
-
-tar xf dbc_chain_linux_x64.tar.gz
-
-#Run verification node
-# Query and stop the old version of the synchronization node
-ps aux | grep dbc-chain
-
-#The result is similar to the following display
-root 761495 0.0 0.0 9584 2588 pts/0 S+ 17:07 0:00 grep --color=auto -w dbc-chain
-root 926101 2.0 5.1 4295592 1650640 ? Sl 2023 5320:10 ./dbc-chain --base-path ./db_data --port 30337 --ws-port 9948 --rpc-port 9937 --pruning archive
-
-# Stop old node
-sudo kill -9 926101 (note to replace with the actual queried PID)
-
-#Start new version node
+#Start  node
 nohup ./dbc-chain --base-path ./db_data --chain dbcSpecRaw.json --validator --name YourNodeName 1>dbc_node.log 2>&1 &
 
 #If you encounter a startup error
