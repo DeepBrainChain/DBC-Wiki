@@ -35,7 +35,7 @@ sudo mount -a
 
 1.하드웨어 지원 활성화
 
-BIOS VT-d활성화 (AMD플랫폼일 경우,AMD-Vi를 켜야합니다, 구체적인 작업은 메인보드 유형 브라우저에 따라 검색할 수 있습니다)VT(VT-x) 및 VT-d 지원.AMD는 AMD-Vi로 부릅니다.관련 지원을 enable 설치진행 ,기본적으로 켜짐)
+BIOS IOMMU VT-d활성화 (AMD플랫폼일 경우,AMD-Vi를 켜야합니다, 구체적인 작업은 메인보드 유형 브라우저에 따라 검색할 수 있습니다)VT(VT-x) 및 VT-d 지원.AMD는 AMD-Vi로 부릅니다.관련 지원을 enable 설치진행 ,기본적으로 켜짐)
 
 일반적 경로:Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)
 

@@ -37,7 +37,7 @@ sudo mount -a
 
 **1、开启硬件支持**
 
-> BIOS 开启 VT-d（如果是 AMD 平台，需要开启 AMD-Vi 具体操作根据主板类型浏览器搜索即可）
+> BIOS 开启IOMMU 以及 VT-d（如果是 AMD 平台，需要开启 AMD-Vi 具体操作根据主板类型浏览器搜索即可）
 > VT（VT-x）及 VT-d 支持，AMD 叫 AMD-Vi。需要将相关支持设置为 enable，默认开启
 >
 > 一般情况下路径：Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)

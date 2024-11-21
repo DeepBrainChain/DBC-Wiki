@@ -37,7 +37,7 @@ sudo mount -a
 
 ### Turn on hardware support
 
-> BIOS open VT-d (search according to the motherboard type browser)
+> BIOS open IOMMU and VT-d (search according to the motherboard type browser)
 > VT (VT-x) and VT-d support, you need to set related support to enable, which is enabled by default
 >
 > Path under normal circumstances: Processor—IIO Configuration—Intel@ VT for Directed I/O(VT-d)
