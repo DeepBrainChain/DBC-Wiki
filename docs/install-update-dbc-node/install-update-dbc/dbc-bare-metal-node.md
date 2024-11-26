@@ -208,63 +208,36 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 
 相应的，使用 DeepLink 远程控制，需要获得 GPU 机器上运行的 DeepLink 软件的设备码和设备验证码(后面统称为 DeepLink 设备信息)。为此，我们增加通过 dbc 节点来查询 DeepLink 设备信息的接口。
 
-为了保证安全，建议云网吧场景中的 GPU 机器每次开机后都有不同的设备验证码，并且在开机后的第一时间使用设置 DeepLink 设备信息的接口将设备信息告知 dbc 的裸金属节点。
+为了保证安全，建议云网吧场景中的 GPU 机器每次开机后都有不同的设备验证码，为保 dbc 的裸金属节点能够获取 DeepLink 的设备信息及其变动，需要在 dbc 的裸金属节点上启动一个局域网 TCP 服务与 DeepLink 建立连接，可在 dbc 的裸金属节点配置文件 `dbc_baremetal_node/conf/core.conf` 中增加以下配置:
+```conf
+deeplink_listen_ip=0.0.0.0
+deeplink_listen_port=5003
+```
+同时在 DeepLink 的配置文件 `%appdata%\DeepLink\config.ini` 中增加 dbc 的裸金属节点刚启动的局域网 TCP 服务，例如:
+```ini
+[dbc]
+bare_metal_ip=192.168.1.159
+bare_metal_port=5003
+```
+如此设置后，DeepLink 将在开机启动时自动连接 dbc 的裸金属节点，并同步 DeepLink 的设备信息。
+
+:::tip 注意！
+上述的局域网连接需要 dbc 0.4.1.7 和 DeepLink 1.0.3.1 及其以上版本。
+:::
 
 另外，需要将裸金属节点的配置文件 `dbc_baremetal_node/conf/core.conf` 中的 `http_ip=127.0.0.1` 修改为 `http_ip=0.0.0.0`，这样设置将使得裸金属节点可以直接接受 HTTP 请求。
 
 当 GPU 机器和 dbc 的裸金属节点位于同一个网络中的时候，可以直接使用裸金属节点的 HTTP 服务来获取/设置设备信息，而且此时的请求不需要 `session_id` 和 `session_id_sign` 参数。当租用人通过客户端节点的 HTTP 服务查询设备信息时，就必需带有 `session_id` 和 `session_id_sign` 参数了。
 
 具体的使用流程如下:
-1. 在 GPU 机器开机后，云网吧的服务程序第一时间调用裸金属节点的设置 DeepLink 设备信息接口。
+1. 在 GPU 机器开机后，查询 DeepLink 设备信息。
 
 - 请求方式：POST
 
 - 请求 URL：
 
 ```
-http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink/set
-```
-
-- 请求 Body:
-
-```json
-{
-  "peer_nodes_list": [
-    // GPU 机器对应的 node_id
-    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
-  ],
-  "additional": {
-    "device_id": "123456789",
-    "device_password": "aAbBcC"
-  },
-  // 由 GPU 机器的 node_id 和 node_private_key 生成
-  "wallet":"fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
-  "nonce":"3bxrsXVW2z2ELH7G9RvF7BMUQkEGkBfQhd8YD5r8somf3UdNWcEYAFa",
-  "sign":"e096764ac7462220bc9b8fa223b81cfb9a501eaea9ea355c0d561b6fe61cb729abed61e5d8488178856e198d9cde51c37e2aac8886cb5e7b674591b1eca8108f"
-}
-```
-
-- 返回示例：
-
-```json
-{
-  "errcode": 0,
-  "message": "ok"
-}
-```
-
-注意此请求的 URL 是 `http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink/set`，而不是 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink/set`，而且请求内容不需要 `session_id` 和 `session_id_sign` 参数。
-
-同理，此时也可以调用 `http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink` 查询裸金属节点的设备信息。
-
-2. 租用人查询 DeepLink 设备信息。
-
-- 请求方式：POST
-
-- 请求 URL：
-
-```
-http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
+http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink
 ```
 
 - 请求 Body:
@@ -276,8 +249,10 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
     "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
   ],
   "additional": {},
-  "session_id": "租用者分发的session_id",
-  "session_id_sign": "租用者分发的session_id_sign"
+  // 由 GPU 机器的 node_id 和 node_private_key 生成
+  "wallet":"fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+  "nonce":"3bxrsXVW2z2ELH7G9RvF7BMUQkEGkBfQhd8YD5r8somf3UdNWcEYAFa",
+  "sign":"e096764ac7462220bc9b8fa223b81cfb9a501eaea9ea355c0d561b6fe61cb729abed61e5d8488178856e198d9cde51c37e2aac8886cb5e7b674591b1eca8108f"
 }
 ```
 
@@ -293,4 +268,41 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink
 }
 ```
 
-注意此请求的 URL 是 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink`，而且请求内容需要 `session_id` 和 `session_id_sign` 参数。
+同理，此时也可以由租用人使用 `session_id` 和 `session_id_sign` 调用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink` 查询裸金属节点的设备信息。
+
+2. 租用人修改 DeepLink 设备信息。
+
+- 请求方式：POST
+
+- 请求 URL：
+
+```
+http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/deeplink/set
+```
+
+- 请求 Body:
+
+```json
+{
+  "peer_nodes_list": [
+    // GPU 机器对应的 node_id
+    "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39"
+  ],
+  "additional": {
+    // 设备码只能由 DeepLink 的服务器来生成，不支持随意设置
+    // "device_id": "123456789",
+    "device_password": "aAbBcC"
+  },
+  "session_id": "租用者分发的session_id",
+  "session_id_sign": "租用者分发的session_id_sign"
+}
+```
+
+- 返回示例：
+
+```json
+{
+  "errcode": 0,
+  "message": "ok"
+}
+```
