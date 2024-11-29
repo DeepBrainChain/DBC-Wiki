@@ -35,5 +35,5 @@ jobs:
           branch: format-doc
           delete-branch: true
           title: "[Format doc] Auto format markdown doc"
-          assignees: kaigedong
-          reviewers: kaigedong
+          assignees: ytvchsy
+          reviewers: ytvchsy
