@@ -88,6 +88,7 @@ export const zhNavbar = navbar([
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
+	  "dbc-ai-public-chain-pos",
           "run-archive-node",
           "staking-dbc-and-voting",
           "fast-track",

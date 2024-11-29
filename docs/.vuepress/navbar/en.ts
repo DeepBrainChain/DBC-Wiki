@@ -67,6 +67,7 @@ export const enNavbar = navbar([
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
+	  "dbc-ai-public-chain-pos_en",
           "staking-dbc-and-voting",
           "fast-track",
           "common-questions",
