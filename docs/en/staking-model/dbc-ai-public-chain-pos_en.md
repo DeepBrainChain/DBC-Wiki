@@ -52,9 +52,11 @@ cargo build --release
 ## 4. Run the node as a verifier
 
 ## Start the node
+
 nohup . /dbc-chain ---base-path . /db_data --chain dbc-spec-v4.json --validator --name YourNodeName 1>dbc_node.log 2>&1 &
 
 # If you get a startup error
+
 . /dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by . /dbc-chain)
 . /dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by . /dbc-chain)
 . /dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by . /dbc-chain)
@@ -62,14 +64,16 @@ nohup . /dbc-chain ---base-path . /db_data --chain dbc-spec-v4.json --validator 
 . /dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by . /dbc-chain)
 
 # Solution:
+
 #1. devices in China region:
 echo “deb http://mirrors.aliyun.com/ubuntu/ jammy main” >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
-#For non-Chinese devices, echo “deb  jammy main”:
+#For non-Chinese devices, echo “deb jammy main”:
 echo “deb http://archive.ubuntu.com/ubuntu/ jammy main” >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
+
 ```
 
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
