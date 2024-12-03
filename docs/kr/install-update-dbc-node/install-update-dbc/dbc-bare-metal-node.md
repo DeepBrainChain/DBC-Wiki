@@ -225,6 +225,10 @@ After this setting, DeepLink will automatically connect to the bare metal node o
 The above LAN connection requires dbc 0.4.1.7 and DeepLink 1.0.3.1 and above.
 :::
 
+There are two tables in the bare metal node of dbc. One table stores node information. The key is the node_id of the node, and the value is uuid, ip, ipmi_hostname and other information. The other table stores the TCP connection established by DeepLink. The key is the ip address of the TCP connection, and the value is the deeplink_device_id and deeplink_device_password device information received by the TCP connection.
+
+When the bare metal node of dbc receives a query request, it first checks the first table above, finds the ip address through node_id, and then uses the ip address to query the device information of DeepLink in the second table. Therefore, the ip address set when adding a bare metal server must be real and valid, and correspond to the DeepLink device one by one. It is recommended to correctly set the fields such as uuid and ip, otherwise the interface for querying DeepLink device information may report an error.
+
 In addition, you need to modify `http_ip=127.0.0.1` in the configuration file `dbc_baremetal_node/conf/core.conf` of the bare metal node to `http_ip=0.0.0.0`, so that the bare metal node can directly accept HTTP requests.
 
 When the GPU machine and the bare metal node of dbc are in the same network, you can directly use the HTTP service of the bare metal node to get/set device information, and the request at this time does not need `session_id` and `session_id_sign` parameters. When the renter queries the device information through the HTTP service of the client node, it must have `session_id` and `session_id_sign` parameters.

@@ -225,6 +225,10 @@ bare_metal_port=5003
 上述的局域网连接需要 dbc 0.4.1.7 和 DeepLink 1.0.3.1 及其以上版本。
 :::
 
+dbc 的裸金属节点里面有两张表，一张表存储节点信息，key 是节点的 node_id，value 是 uuid、ip、ipmi_hostname 等信息，另一张表存储 DeepLink 建立的 TCP 连接，key 是 TCP 连接的 ip 地址，value 是 TCP 连接收到的 deeplink_device_id、deeplink_device_password 设备信息。
+
+当 dbc 的裸金属节点收到查询请求时，先查上面的第一张表，通过 node_id 查到 ip 地址，再拿 ip 地址去第二张表查询 DeepLink 的设备信息。因此添加裸金属服务器时设置的 ip 地址必须真实有效，且跟 DeepLink 设备一一对应，建议正确的设置 uuid 和 ip 等字段，否则查询 DeepLink 设备信息的接口可能会报错。
+
 另外，需要将裸金属节点的配置文件 `dbc_baremetal_node/conf/core.conf` 中的 `http_ip=127.0.0.1` 修改为 `http_ip=0.0.0.0`，这样设置将使得裸金属节点可以直接接受 HTTP 请求。
 
 当 GPU 机器和 dbc 的裸金属节点位于同一个网络中的时候，可以直接使用裸金属节点的 HTTP 服务来获取/设置设备信息，而且此时的请求不需要 `session_id` 和 `session_id_sign` 参数。当租用人通过客户端节点的 HTTP 服务查询设备信息时，就必需带有 `session_id` 和 `session_id_sign` 参数了。
