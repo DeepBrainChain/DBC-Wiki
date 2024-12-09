@@ -16,7 +16,11 @@ Reference: [How to generate account](generate-new-account.md)
 ### Way 1: Use the precompiled version
 
 ```bash
-is not uploaded yet, you can use the second way to compile it yourself if you need to
+sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
+
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.tar.gz -O dbc_chain_linux_x64.tar.gz
+
+tar xf dbc_chain_linux_x64.tar.gz 
 ```
 
 ### Way 2: Compiling from source code
@@ -35,8 +39,7 @@ cargo build --release
 ## 3. Run the synchronization node
 
 ```bash
- target/release/dbc-chain build-spec --raw --chain=mainnet > dbc-spec-v4.json
- target/release/dbc-chain --base-path . /db_data --chain dbc-spec-v4.json --bootnodes xxxxxxxxxxxxx --pruning archive
+nohup ./dbc-chain --base-path ./db_data --chain ./dbc-spec-v4-new.json --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 ```
 
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
@@ -51,10 +54,13 @@ cargo build --release
 
 ## 4. Run the node as a verifier
 
+```shell
 ## Start the node
+
 nohup . /dbc-chain ---base-path . /db_data --chain dbc-spec-v4.json --validator --name YourNodeName 1>dbc_node.log 2>&1 &
 
 # If you get a startup error
+
 . /dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by . /dbc-chain)
 . /dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by . /dbc-chain)
 . /dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.32' not found (required by . /dbc-chain)
@@ -62,6 +68,7 @@ nohup . /dbc-chain ---base-path . /db_data --chain dbc-spec-v4.json --validator 
 . /dbc-chain: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by . /dbc-chain)
 
 # Solution:
+
 #1. devices in China region:
 echo “deb http://mirrors.aliyun.com/ubuntu/ jammy main” >> /etc/apt/sources.list
 sudo apt update
@@ -70,7 +77,6 @@ sudo apt install libc6 libstdc++6 -y
 echo “deb http://archive.ubuntu.com/ubuntu/ jammy main” >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
-```
 
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
 
