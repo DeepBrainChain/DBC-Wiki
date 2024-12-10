@@ -49,9 +49,9 @@ export const zhSidebar = sidebar({
       prefix: "/dbc-aipublicchain/",
       children: [
         {
-        text: "AI容器制作",
-        prefix: "/dbc-aipublicchain/",
-        children: ["docker_build"],
+          text: "AI容器制作",
+          prefix: "/dbc-aipublicchain/",
+          children: ["docker_build"],
         },
       ],
     },
