@@ -78,14 +78,15 @@ sudo apt install libc6 libstdc++6 -y
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
 
 - 注意，这里 **`--name YourNodeName` 是设置你的节点名称**，你可以为你的节点起一个独一无二容易辨认的名称，别人将能在网络上看到它。
-  
+ 
+```
 
 ## 5. 生成`rotateKey`
 
 在运行验证人节点命令的机器上运行下面命令
 
 ```bash
-curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9983
 ```
 
 ## 6. 设置绑定（bond）金额

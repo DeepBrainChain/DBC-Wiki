@@ -80,15 +80,19 @@ sudo apt install libc6 libstdc++6 -y
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
 
 - Note that here **`--name YourNodeName` is to set your node name**, you can give your node a unique and easily recognizable name and others will be able to see it on the network.
+```
+
 
 
 ## 5. Generating a `rotateKey`
 
 Run the following command on the machine where you are running the verifier node command
 
-``bash
-curl -H “Content-Type: application/json” -d '{“id”:1, “jsonrpc”: “2.0”, “method”: “author_rotateKeys”, “params”:[]}' http://localhost:9933
+```shell
+curl -H “Content-Type: application/json” -d '{“id”:1, “jsonrpc”: “2.0”, “method”: “author_rotateKeys”, “params”:[]}' http://localhost:9983
 ```
+
+
 
 ## 6. Setting the bond amount
 
