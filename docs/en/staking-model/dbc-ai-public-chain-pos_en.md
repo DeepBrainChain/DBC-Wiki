@@ -46,7 +46,7 @@ cargo build --release
 
 - When synchronization is complete, `Control + C` closes the program. You can tell if the synchronization has completed by comparing `target` to `best`. When the difference between target and best is small (e.g., within 100), you can assume that the synchronization is complete.
 
-! [](. /assets/join_dbc_network.assets/image-20210126021938613.png)
+![](./assets/join_dbc_network.assets/image-20210126021938613.png)
 
 - **Parameter description:**
   - `--base-path`: specifies the directory where this blockchain stores data. If not specified, the default path will be used. If the directory does not exist, it will be automatically created for you. If the directory already has blockchain data, an error will be reported and you should choose a different directory or clear the contents of that directory.
@@ -100,11 +100,11 @@ curl -H “Content-Type: application/json” -d '{“id”:1, “jsonrpc”: “
 
 - Navigate to `Network` > `Pledge` > `Account Operations` > `Storage Accounts`.
 
-! [](. /assets/join_dbc_network.assets/image-20210323095232363.png)
+![](./assets/join_dbc_network.assets/image-20210323095232363.png)
 
 - Set the amount of the bond (make sure that in addition to the bond amount, you have a balance in your account to use to send the transaction):
 
-! [](. /assets/join_dbc_network.assets/image-20210121195033167.png)
+![](./assets/join_dbc_network.assets/image-20210121195033167.png)
 
 **Description:**
 
@@ -124,35 +124,35 @@ curl -H “Content-Type: application/json” -d '{“id”:1, “jsonrpc”: “
 
 - After executing the bond, you will be able to see the `Session Key` button on Polkadot:
 
-! [](. /assets/join_dbc_network.assets/image-20210121195307711.png)
+![](./assets/join_dbc_network.assets/image-20210121195307711.png)
 
 - Click on it and populate it with the `rotateKeys` generated in step 5.
 
-! [](. /assets/join_dbc_network.assets/image-20210121200709277.png)
+![](./assets/join_dbc_network.assets/image-20210121200709277.png)
 
 - Now you can go to [Telemetry](https://telemetry.polkadot.io/#list/0xd523fa2e0581f069b4f0c7b5944c21e9abc72305a08067868c91b898d1bf1dff) and see your node! !
 
-! [](. /assets/join_dbc_network.assets/image-20210121234945030.png)
+![](./assets/join_dbc_network.assets/image-20210121234945030.png)
 
 ## 8. Setting Up Participation in the Validator Election
 
 - After completing the above steps, you will be able to see the `Validate` button. Click on the `Validate` button.
 
-! [](. /assets/join_dbc_network.assets/image-20210121235144583.png)
+![](./assets/join_dbc_network.assets/image-20210121235144583.png)
 
 - At this point you will need to set the Validator Preferences:
 
-! [](. /assets/join_dbc_network.assets/image-20210121235217665.png)
+![](./assets/join_dbc_network.assets/image-20210121235217665.png)
 
 - In the `reward commission percentage` field, you will need to enter your revenue preference as a verifier. Then click `Validate` in the bottom right corner and send the transaction. In the `Waiting` screen, you will be able to see that your account is waiting for the next `Era`, to participate in the election to become a Validator node.
 
-! [](. /assets/join_dbc_network.assets/image-20210121235451552.png)
+![](./assets/join_dbc_network.assets/image-20210121235451552.png)
 
 ## 9. Claiming node rewards
 
 Login to your stash account in the browser plugin polkadot and in `Pledge > Payments > Max 84 eras` you will be able to see all pending rewards:
 
-! [](. /assets/join_dbc_network.assets/image-20210329095613442.png)
+![](./assets/join_dbc_network.assets/image-20210329095613442.png)
 
 Just click `Pay All` on the right side and send the transaction.
 
