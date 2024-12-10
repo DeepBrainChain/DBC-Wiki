@@ -39,7 +39,7 @@ cargo build --release
 ## 3. Run the synchronization node
 
 ```bash
-nohup ./dbc-chain --base-path ./db_data --chain ./dbc-spec-v4-new.json --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
+nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 ```
 
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
@@ -56,8 +56,7 @@ nohup ./dbc-chain --base-path ./db_data --chain ./dbc-spec-v4-new.json --port 30
 
 ```shell
 ## Start the node
-
-nohup . /dbc-chain ---base-path . /db_data --chain dbc-spec-v4.json --validator --name YourNodeName 1>dbc_node.log 2>&1 &
+nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 
 # If you get a startup error
 
