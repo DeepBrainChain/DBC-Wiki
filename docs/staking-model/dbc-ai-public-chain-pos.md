@@ -18,7 +18,7 @@
 ```bash
 sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
 
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.0.0.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.tar.gz -O dbc_chain_linux_x64.tar.gz
 
 tar xf dbc_chain_linux_x64.tar.gz 
 
@@ -40,7 +40,7 @@ cargo build --release
 ## 3. 运行同步节点
 
 ```bash
-nohup ./target/release/dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
+nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 ```
 
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
@@ -57,7 +57,7 @@ nohup ./target/release/dbc-chain --base-path ./db_data --chain=mainnet --port 30
 
 ```shell
 #启动节点
-nohup ./target/release/dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --validator --pruning=archive --name YourNodeName --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
+nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --validator --pruning=archive --name YourNodeName --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 
 #如果遇到启动报错
 ./dbc-chain: /lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by ./dbc-chain)
