@@ -130,7 +130,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ![](./assets/join_dbc_network.assets/image-20210121200709277.png)
 
-- Now you can go to [Telemetry](https://telemetry.polkadot.io/#list/0xf7dac6d76a649c989c9ff2f6d4555e7a718466f572e30d7a255d1aa3f5218a45) and see your node! !
+- Now you can go to [Telemetry](https://telemetry.polkadot.io/#list/0x03aa6b475a03f8baf7f83e448513b00eaab03aefa4ed64bd1d31160dce028add) and see your node! !
 
 ![](./assets/join_dbc_network.assets/image-20210121234945030.png)
 
