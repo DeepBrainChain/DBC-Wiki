@@ -18,7 +18,7 @@ Reference: [How to generate account](generate-new-account.md)
 ```bash
 sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
 
-wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.tar.gz -O dbc_chain_linux_x64.tar.gz
+wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.0.0.tar.gz -O dbc_chain_linux_x64.tar.gz
 
 tar xf dbc_chain_linux_x64.tar.gz 
 ```
@@ -39,7 +39,7 @@ cargo build --release
 ## 3. Run the synchronization node
 
 ```bash
- nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
+ nohup ./target/release/dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --pruning=archive --name dbc-chain --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 ```
 
 - If you are compiling from source, the path to the executable is: `. /target/release/dbc-chain`.
@@ -57,7 +57,7 @@ cargo build --release
 ```shell
 # Start the node
 
-nohup ./dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --validator --pruning=archive --name YourNodeName --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
+nohup ./target/release/dbc-chain --base-path ./db_data --chain=mainnet --port 30333 --rpc-port 9983 --validator --pruning=archive --name YourNodeName --rpc-cors=all --rpc-methods=unsafe --rpc-external  1>dbc_node.log 2>&1 &
 
 # If you get a startup error
 
