@@ -1,5 +1,7 @@
 # Become a verified node on the DBC AI public chain
 
+**Note: 1. Before you start the execution, be sure to use a new db_data to start the node to prevent data synchronization errors, which will cause you to be unable to generate blocks and be punished. 2. If you have participated in the election or started a new node, please generate a new sessionkey in time and replace it in the Staking-Account section**
+
 ## 0. Machine Configuration
 
 - RAM: 8G
