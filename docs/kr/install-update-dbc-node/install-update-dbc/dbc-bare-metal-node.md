@@ -222,12 +222,18 @@ bare_metal_port=5003
 After this setting, DeepLink will automatically connect to the bare metal node of dbc at startup and synchronize the device information of DeepLink.
 
 :::tip Note!
-The above LAN connection requires dbc 0.4.1.7 and DeepLink 1.0.3.1 and above.
+The above LAN connection requires dbc 0.4.1.7 and DeepLink 1.0.3.1 and above. This function replaces the middleware that was previously independently developed, deployed and stored for setting the DeepLink verification code, and integrates the functions of those middleware into the dbc and DeepLink software. At the same time, the interface for querying and setting machine information has also been changed, because a LAN connection needs to be established to query and set machine information. Please ensure that the configuration file and the IP address filled in when adding a bare metal machine are correct.
 :::
 
 There are two tables in the bare metal node of dbc. One table stores node information. The key is the node_id of the node, and the value is uuid, ip, ipmi_hostname and other information. The other table stores the TCP connection established by DeepLink. The key is the ip address of the TCP connection, and the value is the deeplink_device_id and deeplink_device_password device information received by the TCP connection.
 
 When the bare metal node of dbc receives a query request, it first checks the first table above, finds the ip address through node_id, and then uses the ip address to query the device information of DeepLink in the second table. Therefore, the ip address set when adding a bare metal server must be real and valid, and correspond to the DeepLink device one by one. It is recommended to correctly set the fields such as uuid and ip, otherwise the interface for querying DeepLink device information may report an error.
+
+:::tip Note!
+For example, the "deeplink service not connected" error that frequently appears now is when the dbc bare metal node finds the IP address in the first table through node_id, but finds that this IP address does not exist in the second table. The reasons may be the following two points:
+1. The IP address set in the first table is inconsistent with the actual IP of the machine where DeepLink is installed.
+2. The incorrect configuration mentioned above causes DeepLink to fail to establish a connection with dbc, so there is no such data in the second table.
+:::
 
 In addition, you need to modify `http_ip=127.0.0.1` in the configuration file `dbc_baremetal_node/conf/core.conf` of the bare metal node to `http_ip=0.0.0.0`, so that the bare metal node can directly accept HTTP requests.
 

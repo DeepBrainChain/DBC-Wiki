@@ -222,12 +222,18 @@ bare_metal_port=5003
 如此设置后，DeepLink 将在开机启动时自动连接 dbc 的裸金属节点，并同步 DeepLink 的设备信息。
 
 :::tip 注意！
-上述的局域网连接需要 dbc 0.4.1.7 和 DeepLink 1.0.3.1 及其以上版本。
+上述的局域网连接需要 dbc 0.4.1.7 和 DeepLink 1.0.3.1 及其以上版本，这个功能代替了以前为了设置 DeepLink 验证码而独立开发部署和存储的中间件，将那些中间件的功能集成在 dbc 和 DeepLink 软件中，同时还改动了查询和设置机器信息的接口，因为需要建立局域网的连接才能查询和设置机器信息，请确保配置文件和添加裸金属机器时填写的 ip 地址等信息的正确。
 :::
 
 dbc 的裸金属节点里面有两张表，一张表存储节点信息，key 是节点的 node_id，value 是 uuid、ip、ipmi_hostname 等信息，另一张表存储 DeepLink 建立的 TCP 连接，key 是 TCP 连接的 ip 地址，value 是 TCP 连接收到的 deeplink_device_id、deeplink_device_password 设备信息。
 
 当 dbc 的裸金属节点收到查询请求时，先查上面的第一张表，通过 node_id 查到 ip 地址，再拿 ip 地址去第二张表查询 DeepLink 的设备信息。因此添加裸金属服务器时设置的 ip 地址必须真实有效，且跟 DeepLink 设备一一对应，建议正确的设置 uuid 和 ip 等字段，否则查询 DeepLink 设备信息的接口可能会报错。
+
+:::tip 注意！
+例如现在频繁出现的 "deeplink service not connected" 报错，这个报错就是当 dbc 裸金属节点通过 node_id 在第一张表查到 ip 地址，却发现这个 ip 地址在第二张表中不存在，原因可能是以下两点：
+1. 第一张表设置的 ip 地址跟安装了 DeepLink 的那台机器的实际 ip 不一致。
+2. 上面提到的配置不正确导致 DeepLink 跟 dbc 没有建立连接，所以在第二张表中没有这个数据。
+:::
 
 另外，需要将裸金属节点的配置文件 `dbc_baremetal_node/conf/core.conf` 中的 `http_ip=127.0.0.1` 修改为 `http_ip=0.0.0.0`，这样设置将使得裸金属节点可以直接接受 HTTP 请求。
 
