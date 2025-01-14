@@ -161,9 +161,4 @@ export const zhNavbar = navbar([
       },
     ],
   },
-  {
-    text: "无盘网络启动",
-    prefix: "/dbc-cloud-cybercafe/",
-    children: ["diskless-netboot-server", "diskless-netboot-image"],
-  },
 ]);

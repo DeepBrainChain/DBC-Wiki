@@ -144,9 +144,4 @@ export const koNavbar = navbar([
       },
     ],
   },
-  {
-    text: "Diskless Netboot",
-    prefix: "/kr/dbc-cloud-cybercafe/",
-    children: ["diskless-netboot-server", "diskless-netboot-image"],
-  },
 ]);

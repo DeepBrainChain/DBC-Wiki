@@ -173,11 +173,4 @@ export const zhSidebar = sidebar({
       ],
     },
   ],
-  "/dbc-cloud-cybercafe/": [
-    {
-      text: "无盘网络启动",
-      prefix: "/dbc-cloud-cybercafe/",
-      children: ["diskless-netboot-server", "diskless-netboot-image"],
-    },
-  ],
 });

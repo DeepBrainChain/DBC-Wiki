@@ -151,11 +151,4 @@ export const koSidebar = sidebar({
       ],
     },
   ],
-  "/kr/dbc-cloud-cybercafe/": [
-    {
-      text: "Diskless Netboot",
-      prefix: "/kr/dbc-cloud-cybercafe/",
-      children: ["diskless-netboot-server", "diskless-netboot-image"],
-    },
-  ],
 });
