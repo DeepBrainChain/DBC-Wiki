@@ -3,13 +3,10 @@
 ## (一) 安装前准备(基于已配置好固定公网 ip 地址），部署 KVM 安装环境
 
 :::tip 注意！
-系统采用 20.04 server 版本
+系统采用 20.04 server 版本 或者22.04版本
 :::
 
 ```shell
-sudo echo "140.82.114.4 github.com"   >> /etc/hosts
-sudo echo "199.232.5.194 github.global.ssl.fastly.net"   >> /etc/hosts
-sudo echo "nameserver 8.8.4.4" | sudo tee /etc/resolv.conf > /dev/null
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get  install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf cpu-checker vim expect -y
@@ -158,6 +155,8 @@ sudo vim /etc/libvirt/libvirtd.conf
 sudo vim /etc/default/libvirtd
 #对应修改为如下配置（这个是小写L）
 libvirtd_opts="-l"
+#如果是ubuntu22.04级以上版本，则是
+LIBVIRT_ARGS="-l"
 
 #修改完成后请执行：
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
@@ -190,7 +189,7 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 ## (六) 下载镜像模板（请放置于/data 目录下，dbc 启动虚拟机会去/data 目录搜寻）
 
 http://112.192.16.27:9000/image/
-下载：ubuntu.qcow2 和 windows_1909.qcow2 镜像
+下载：ubuntu.qcow2(此版本带有测试脚本，ubuntu2204.qcow2是纯净版） 和 windows_1909.qcow2 镜像
 
 ## (七) 备份机器 id 以及私钥
 
