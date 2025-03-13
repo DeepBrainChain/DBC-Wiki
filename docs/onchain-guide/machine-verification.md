@@ -2,21 +2,21 @@
 
 ## 1. 查看系统分配给自己的订单
 
-+ 导航到 `开发者`-->`链状态`-->`存储`，在其中选择`onlineCommittee`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
+- 导航到 `开发者`-->`链状态`-->`存储`，在其中选择`onlineCommittee`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
 
 ![](./assets/machine_verification.assets/image-20210601164137286.png)
 
-+ 导航到 `开发者`-->`链状态`-->`存储`，在其中选择`terminatingRental`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
+- 导航到 `开发者`-->`链状态`-->`存储`，在其中选择`terminatingRental`模块的`committeeMachine`存储，点击右侧的`+`号，可以看到委员会的订单情况。如图所示，该委员会有一个系统分配的订单
 
   ![image-20240418180654901](./assets/Machine_verification.assets/image-20240418180654901.png)
 
 ## 2. 查看系统分配给该委员会进行验证的时间区间
 
-+ 导航到 `开发者`--`链存储`--`存储`，选择`onlineCommittee`的`committeeOps`方法，并输入自己的委员会帐号，与上一步委派的机器 ID，可以查询到类似下面的信息：
+- 导航到 `开发者`--`链存储`--`存储`，选择`onlineCommittee`的`committeeOps`方法，并输入自己的委员会帐号，与上一步委派的机器 ID，可以查询到类似下面的信息：
 
 ![](./assets/machine_verification.assets/image-20210601164631426.png)
 
-+ 短租模式导航到 `开发者`--`链存储`--`存储`，选择`terminatingRental`的`committeeOlineOps`方法，并输入自己的委员会帐号，与上面类似
+- 短租模式导航到 `开发者`--`链存储`--`存储`，选择`terminatingRental`的`committeeOlineOps`方法，并输入自己的委员会帐号，与上面类似
 
 其中，booked_time 表示派单时间，注意，派单之后的 36~48 小时(也就是区块高度 booked_time + 4320 ~ booked_time + 5760)之间，委员会提交原始信息。
 
@@ -36,11 +36,11 @@
 
 将客户端 ip 地址以及端口更换为 `121.57.95.175:5679`
 
-### 3.2  使用APIFOX
+### 3.2 使用APIFOX
 
-+ 网页链接：https://46fqx9l1bt.apifox.cn， 如果遇到失效的情况，可以与我们联系。
+- 网页链接：https://46fqx9l1bt.apifox.cn， 如果遇到失效的情况，可以与我们联系。
 
-+ APP 使用： 在API Hub内搜索DeepBrainChain收藏即可
+- APP 使用： 在API Hub内搜索DeepBrainChain收藏即可
 
   ![](./assets/machine_verification1.assets/apifox.jpg)
 
@@ -91,13 +91,11 @@ chmod +x sign_tool
 
 ![image-20240418182108544](./assets/Machine_verification.assets/image-20240418182108544.png)
 
-+ 验证人使用查询指定裸金属服务器接口，选择正式环境输入设备ID进行查询，返回的结果主要关注```power_satus、deeplink_device_id、deeplink_device_password```,当power显示off时，需要调用开机接口。
+- 验证人使用查询指定裸金属服务器接口，选择正式环境输入设备ID进行查询，返回的结果主要关注`power_satus、deeplink_device_id、deeplink_device_password`,当power显示off时，需要调用开机接口。
 
-+ 这时候获取设备的详细信息，需要验证人使用deeplink连接到我们查询到的这个deeplink ID设备上进行获取。 deeplink下载地址： https://www.deeplink.cloud 。 
+- 这时候获取设备的详细信息，需要验证人使用deeplink连接到我们查询到的这个deeplink ID设备上进行获取。 deeplink下载地址： https://www.deeplink.cloud 。
 
-+ 如果可以正常登录，则收集相关信息并生成哈希进行提交，如果无法正常获取，则可以拒绝。
-
-  
+- 如果可以正常登录，则收集相关信息并生成哈希进行提交，如果无法正常获取，则可以拒绝。
 
 ## 5. 委员会计算获得机器信息的 hash
 
