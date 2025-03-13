@@ -16,7 +16,7 @@
 
 - `machine_id`: Enter the id of the machine to be rented, the `0x` in the input box must be deleted first
 
-- `duration`: Enter the time to be rented (unit: 1 BlockNumber = 30 seconds )
+- `duration`: Enter the time to be rented (unit: 1 BlockNumber = 6 seconds, the minimum rental time is 300 blocks. If it exceeds half an hour, it must be a multiple of 300 blocks. )
 
 - After the input is complete, click Submit Transaction, and confirm whether the machine is available within 30 minutes. (If the lease is not confirmed within 30 minutes, the payment of `dbc` will be refunded, but the transaction fee of 10 `dbc` cannot be refunded)
 
