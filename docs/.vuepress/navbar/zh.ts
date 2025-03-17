@@ -49,7 +49,10 @@ export const zhNavbar = navbar([
       {
         text: "AI容器制作",
         prefix: "/dbc-aipublicchain/",
-        children: ["docker_build"],
+        children: [
+          "docker_build",
+          "Deeplink-Long-term-rental-document",
+        ],
       },
     ],
   },
