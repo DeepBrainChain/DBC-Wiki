@@ -47,14 +47,14 @@ export const enNavbar = navbar([
   },
   {
     text: "DBC AI PublicChain",
-    prefix: "/en/dbc-aipublicchain/",
+    prefix: "/en/",
     children: [
       {
         text: "AI container build",
-        prefix: "/dbc-aipublicchain/",
+        prefix: "dbc-aipublicchain/",
         children: [
           "docker_build",
-          "Deeplink-Long-term-rental-document",
+          "Deeplink-Long-term-rental-document_en",
         ],
       },
     ],

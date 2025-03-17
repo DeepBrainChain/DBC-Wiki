@@ -47,7 +47,7 @@ export const koNavbar = navbar([
   },
   {
     text: "DBC AI PublicChain",
-    prefix: "/kr/dbc-aipublicchain/",
+    prefix: "/kr/",
     children: [
       {
         text: "AI container build",
