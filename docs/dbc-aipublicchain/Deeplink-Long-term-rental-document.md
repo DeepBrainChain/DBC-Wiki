@@ -1,74 +1,74 @@
-# Deeplink 长租操作流程
+# Deeplink long-term operation process
 
-## 1. 在DBC链上上架符合Deeplink采矿要求的设备
+## 1. List equipment that meets Deeplink mining requirements on the DBC chain
 
-### 1.1 设备要求
+### 1.1 Equipment requirements
 
-+ 参考： https://orion.deeplink.cloud/longterm
++ Reference: https://orion.deeplink.cloud/longterm
 
-### 1.2 安装Deeplink软件
+### 1.2 Install Deeplink software
 
-+ 软件下载地址： https://www.deeplink.cloud/software
++ Software download address: https://www.deeplink.cloud/software
 
-+ 如果您是本地盘的设备，直接下载安装deeplink，并登陆您的钱包即可
++ If you are using a local disk device, just download and install Deeplink and log in to your wallet
 
-+ 如果您是无盘系统带动GPU设备，请注意以下操作：
++ If you are using a diskless system to drive a GPU device, please pay attention to the following operations:
 
-  +  在超级模式当中安装deeplink
-  + 打开配置文件 (%appdata%\deeplink\config.ini)
-  + 删除掉[host]选项中的 uuid \ machine_id 保留token，删除掉[device]选项的所有内容（token一定要保留，不然这个无盘服务器下的GPU设备无法与您的钱包关联）
++  Install Deeplink in super mode
++ Open the configuration file (%appdata%\deeplink\config.ini)
++ Delete the "uuid" \ "machine_id" in the "[host]" option, keep the token, and delete all the contents of the "[device]" option (the token must be kept, otherwise the GPU device under this diskless server cannot be associated with your wallet)
 
-  ![image-20250317144551786](./images/image-20250317144551786.png)
+![image-20250317155921525](/Users/totus/Library/Application Support/typora-user-images/image-20250317155921525.png)
 
-  + 保存 并关机，然后将此镜像打包为启动镜像
-  + GPU设备开机验证，确认您的GPU设备没有使用同样的ID 以及密码
++ Save and shut down, then package this image as a boot image
++ GPU device startup verification, confirm that your GPU device does not use the same ID and password
 
-### 1.3 将设备加入到DBC网络中
+### 1.3 Add the device to the DBC network
 
-+ 参考：https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
++ Reference: https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
 
-## 2. 在DBC链上租用您的设备并绑定EVM 钱包地址
+## 2. Rent your device on the DBC chain and bind the EVM wallet address
 
-### 2.1 租用设备（注意：参加DeepLink挖矿的用户，要使用上架设备的资金账户账户地址进行租用，否则会出现上线deeplink合约失败）
+### 2.1 Rent equipment (Note: Users participating in DeepLink mining must use the fund account address of the listed device to rent, otherwise the launch of the deeplink contract will fail)
 
-![image-20250317142144601](./images/image-20250317142144601.png)
+![](/Users/totus/Library/Application Support/typora-user-images/image-20250317160654632.png)
 
-### 2.2 确认租用
+### 2.2 Confirm the rental
 
->  提示： 确认租用要在租用后15分钟内进行确认
+> Tip: Confirm the rental within 15 minutes after the rental
 
-+ 查询租用订单号
++ Check the rental order number
 
-![image-20250317142501729](./images/image-20250317142501729.png)
+![image-20250317160941750](/Users/totus/Library/Application Support/typora-user-images/image-20250317160941750.png)
 
-+ 输入租用订单号确认租用
++ Enter the rental order number to confirm the rental
 
-![image-20250317142652996](./images/image-20250317142652996.png)
+![image-20250317160850254](/Users/totus/Library/Application Support/typora-user-images/image-20250317160850254.png)
 
-+ 后续处理续租问题
++ Relet machine
 
-![image-20250317142808630](./images/image-20250317142808630.png)
+![image-20250317161215125](/Users/totus/Library/Application Support/typora-user-images/image-20250317161215125.png)
 
-+ 绑定EVM地址，
++ Bond EVM wallet address
 
-![image-20250317143049937](./images/image-20250317143049937.png)
+![image-20250317161421163](/Users/totus/Library/Application Support/typora-user-images/image-20250317161421163.png)
 
-## 3. 将设备加入到Deeplink长租模式采矿当中
+## 3. Add the device to Deeplink long-term rental mode mining
 
-### 3.1 GPU mining页面
+### 3.1 GPU mining page
 
-+ https://www.dbcscan.io/mining/DeepLink (主网)
++ https://www.dbcscan.io/en/mining/DeepLink (mainnet)
 
-### 3.2 质押NFT 以及 DLC 开始采矿
+### 3.2 Stake NFT and DLC to start mining
 
-+ 质押NFT
++ Stake NFT
 
-![image-20250317145306383](./images/image-20250317145306383.png)
+![image-20250317161643208](/Users/totus/Library/Application Support/typora-user-images/image-20250317161643208.png)
 
-+ 质押DLC（可以不质押，但是质押的越多您的收益越高）
++ Pledge DLC (you don’t have to pledge, but the more you pledge, the higher your returns will be)
 
-![image-20250317145421650](./images/image-20250317145421650.png)
+![image-20250317161807044](/Users/totus/Library/Application Support/typora-user-images/image-20250317161807044.png)
 
-### 3.3质押完成后进入竞赛页面查询您的设备
+### 3.3 After the pledge is completed, enter the competition page to query your device
 
-+ 竞赛页面： https://orion.deeplink.cloud/device
++ Competition page: https://orion.deeplink.cloud/device

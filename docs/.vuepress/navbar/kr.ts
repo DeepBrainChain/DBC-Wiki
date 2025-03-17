@@ -52,7 +52,10 @@ export const enNavbar = navbar([
       {
         text: "AI container build",
         prefix: "/dbc-information/",
-        children: ["docker_build"],
+        children: [
+          "docker_build",
+          "Deeplink-Long-term-rental-document",
+        ],
       },
     ],
   },
