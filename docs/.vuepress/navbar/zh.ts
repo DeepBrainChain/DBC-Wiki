@@ -51,7 +51,7 @@ export const zhNavbar = navbar([
         prefix: "/dbc-aipublicchain/",
         children: [
           "docker_build",
-          "Deeplink-Long-term-rental-document",
+          "Deeplink-Long-term-rental-document_zh",
         ],
       },
     ],

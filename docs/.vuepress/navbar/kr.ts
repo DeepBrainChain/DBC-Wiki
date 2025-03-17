@@ -51,10 +51,10 @@ export const enNavbar = navbar([
     children: [
       {
         text: "AI container build",
-        prefix: "/dbc-information/",
+        prefix: "dbc-information/",
         children: [
           "docker_build",
-          "Deeplink-Long-term-rental-document",
+          "Deeplink-Long-term-rental-document_en",
         ],
       },
     ],

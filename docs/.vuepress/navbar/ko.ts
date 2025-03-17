@@ -51,10 +51,10 @@ export const koNavbar = navbar([
     children: [
       {
         text: "AI container build",
-        prefix: "/dbc-aipublicchain/",
+        prefix: "dbc-aipublicchain/",
         children: [
           "docker_build",
-          "Deeplink-Long-term-rental-document",
+          "Deeplink-Long-term-rental-document_en",
         ],
       },
     ],
