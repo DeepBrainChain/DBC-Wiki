@@ -49,10 +49,7 @@ export const zhNavbar = navbar([
       {
         text: "AI容器制作",
         prefix: "/dbc-aipublicchain/",
-        children: [
-          "docker_build",
-          "Deeplink-Long-term-rental-document_zh",
-        ],
+        children: ["docker_build", "Deeplink-Long-term-rental-document_zh"],
       },
     ],
   },
@@ -91,13 +88,13 @@ export const zhNavbar = navbar([
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
-	  "dbc-ai-public-chain-pos",
+          "dbc-ai-public-chain-pos",
           "run-archive-node",
           "staking-dbc-and-voting",
           "fast-track",
           "council-proposal",
           "common-questions",
-	        "dbc-chain-upgrade",
+          "dbc-chain-upgrade",
         ],
       },
       {

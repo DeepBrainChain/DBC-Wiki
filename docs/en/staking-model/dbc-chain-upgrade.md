@@ -1,8 +1,8 @@
-# DBC-Chain verification node upgrade 
-
+# DBC-Chain verification node upgrade
 
 > Note:In order to maintain the stability of block production and prevent the penalty mechanism from being triggered due to excessive node offline during the upgrade process, it is recommended that you stop participating in the super node election before upgrading the node, and then continue to participate in the election after the upgrade is completed.
 > Note: It is best to use ubuntu22.04 and above for the system
+
 ## 1. Get the new dbc-chain binary
 
 ### Method 1: Use precompiled version
@@ -86,6 +86,7 @@ tail -f dbc_node.log
 ```
 
 ## 4. Use script to assist automatic restart
+
 ```shell
 cat <<EOF > start.sh
 #!/usr/bin/env sh
