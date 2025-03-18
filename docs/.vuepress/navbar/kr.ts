@@ -52,10 +52,7 @@ export const enNavbar = navbar([
       {
         text: "AI container build",
         prefix: "dbc-information/",
-        children: [
-          "docker_build",
-          "Deeplink-Long-term-rental-document_en",
-        ],
+        children: ["docker_build", "Deeplink-Long-term-rental-document_en"],
       },
     ],
   },
@@ -70,11 +67,11 @@ export const enNavbar = navbar([
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
-	  "dbc-ai-public-chain-pos_en",
+          "dbc-ai-public-chain-pos_en",
           "staking-dbc-and-voting",
           "fast-track",
           "common-questions",
-	        "dbc-chain-upgrade",
+          "dbc-chain-upgrade",
         ],
       },
       {
