@@ -11,6 +11,3 @@
    [https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract
    ](https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract)![image-20250331175705011](./images/image-20250331175705011.png)
 
-### Withdraw via exchange
-
-You can recharge the DBC in the evm wallet to the evm address of the exchange, and then withdraw it to the address starting with 5 (it is recommended to recharge and withdraw 1DBC for testing first)

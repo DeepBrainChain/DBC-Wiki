@@ -11,6 +11,3 @@
    [https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract
    ](https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract)![image-20250331175705011](./images/image-20250331175705011.png)
 
-### 通过交易所提现
-
-可以将evm钱包的DBC充值到交易所的evm地址，然后提现到5开头地址（建议先充提1DBC测试）
