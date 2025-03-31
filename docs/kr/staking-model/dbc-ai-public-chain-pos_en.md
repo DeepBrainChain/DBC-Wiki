@@ -22,7 +22,7 @@ sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
 
 wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.tar.gz -O dbc_chain_linux_x64.tar.gz
 
-tar xf dbc_chain_linux_x64.tar.gz 
+tar xf dbc_chain_linux_x64.tar.gz
 ```
 
 ### Way 2: Compiling from source code
@@ -93,8 +93,6 @@ Run the following command on the machine where you are running the verifier node
 ```shell
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9983
 ```
-
-
 
 ## 6. Setting the bond amount
 
