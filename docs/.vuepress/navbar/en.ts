@@ -57,6 +57,13 @@ export const enNavbar = navbar([
           "Deeplink-Long-term-rental-document_en",
         ],
       },
+      {
+        text: "EVM Token transfer to Substrate wallet",
+        prefix: "/dbc-aipublicchain/",
+        children: [
+          "EVMtoSubstrate",
+        ],
+      },
     ],
   },
   {

@@ -54,6 +54,13 @@ export const zhNavbar = navbar([
           "Deeplink-Long-term-rental-document_zh",
         ],
       },
+      {
+        text: "EVM Token转回Substrate地址",
+        prefix: "/dbc-aipublicchain/",
+        children: [
+          "EVMtoSubstrate",
+        ],
+      },
     ],
   },
   {
