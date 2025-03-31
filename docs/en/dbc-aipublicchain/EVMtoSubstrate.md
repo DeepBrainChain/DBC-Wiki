@@ -11,3 +11,4 @@
    [https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract
    ](https://www.dbcscan.io/address/0xD6D5252ab5cbDac9dd53468A12fC1f8050A4Ee22?tab=write_contract)![image-20250331175705011](./images/image-20250331175705011.png)
 
+### We do not recommend transferring to an exchange address. The loss of tokens caused by this will be borne by you.
