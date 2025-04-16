@@ -55,6 +55,7 @@ export const enNavbar = navbar([
         children: [
           "docker_build",
           "Deeplink-Long-term-rental-document_en",
+          "Deeplink-short-term-rental-document_en",
         ],
       },
       {

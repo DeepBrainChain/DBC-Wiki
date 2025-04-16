@@ -52,6 +52,7 @@ export const zhNavbar = navbar([
         children: [
           "docker_build",
           "Deeplink-Long-term-rental-document_zh",
+          "Deeplink-short-term-rental-document_zh",
         ],
       },
       {
