@@ -7,7 +7,7 @@
 ```bash
 sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
 wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v3.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
-tar xf dbc_chain_linux_x64.tar.gz 
+tar xf dbc_chain_linux_x64.tar.gz
 ```
 
 ### 1.2 Manual compilation
@@ -53,7 +53,7 @@ cargo build --release
 > ```
 >
 > When encountering the phenomenon of 0 peers during synchronization, you need to specify bootnodes for synchronization. Old users can find it by querying the previous synchronization node logs. New users can try to specify
-> ```` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5````
+> ` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5`
 
 ## 3. Runtime Error Solution
 

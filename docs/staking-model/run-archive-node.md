@@ -7,7 +7,7 @@
 ```bash
   sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
   wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v3.3/dbc_chain_linux_x64.tar.gz -O dbc_chain_linux_x64.tar.gz
-  tar xf dbc_chain_linux_x64.tar.gz 
+  tar xf dbc_chain_linux_x64.tar.gz
 ```
 
 ### 1.2 手动编译
@@ -53,7 +53,7 @@ cargo build --release
 > ```
 >
 > 当遇到同步出现0 peers现象时，需要指定bootnodes进行同步，老用户可以通过查询以前的同步节点log日志找到，新用户可以尝试指定
-> ``` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5```
+> ` --bootnodes /ip4/122.99.183.53/tcp/3308/p2p/12D3KooWDx4pgzT2RAPF12QkmiBZy6BUsTtPt7JgiYxgFm6Z5Hc5`
 
 ## 3. 运行错误解决方案
 
@@ -75,4 +75,3 @@ echo "deb http://archive.ubuntu.com/ubuntu/ jammy main" >> /etc/apt/sources.list
 sudo apt update
 sudo apt install libc6 libstdc++6 -y
 ```
-
