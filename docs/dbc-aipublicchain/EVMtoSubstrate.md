@@ -3,6 +3,7 @@
 ## 0x格式地址的DBC转回5开头格式地址:
 
 ### 通过官方bridge合约
+
 1. 转换5开头地址的公钥，复制Public Key，填入第2步的to地址
    [https://dbc.subscan.io/tools/format_transform
    ](https://dbc.subscan.io/tools/format_transform)![image-20250331175328048](./images/image-20250331175328048.png)

@@ -4,28 +4,28 @@
 
 ### 1.1 设备要求
 
-+ 参考： https://orion.deeplink.cloud/longterm
+- 参考： https://orion.deeplink.cloud/longterm
 
 ### 1.2 安装Deeplink软件
 
-+ 软件下载地址： https://www.deeplink.cloud/software
+- 软件下载地址： https://www.deeplink.cloud/software
 
-+ 如果您是本地盘的设备，直接下载安装deeplink，并登陆您的钱包即可
+- 如果您是本地盘的设备，直接下载安装deeplink，并登陆您的钱包即可
 
-+ 如果您是无盘系统带动GPU设备，请注意以下操作：
+- 如果您是无盘系统带动GPU设备，请注意以下操作：
 
-  +  在超级模式当中安装deeplink
-  + 打开配置文件 (%appdata%\deeplink\config.ini)
-  + 删除掉[host]选项中的 uuid \ machine_id 保留token，删除掉[device]选项的所有内容（token一定要保留，不然这个无盘服务器下的GPU设备无法与您的钱包关联）
+  - 在超级模式当中安装deeplink
+  - 打开配置文件 (%appdata%\deeplink\config.ini)
+  - 删除掉[host]选项中的 uuid \ machine_id 保留token，删除掉[device]选项的所有内容（token一定要保留，不然这个无盘服务器下的GPU设备无法与您的钱包关联）
 
   ![image-20250317144551786](/Users/totus/Library/Application Support/typora-user-images/image-20250317144551786.png)
 
-  + 保存 并关机，然后将此镜像打包为启动镜像
-  + GPU设备开机验证，确认您的GPU设备没有使用同样的ID 以及密码
+  - 保存 并关机，然后将此镜像打包为启动镜像
+  - GPU设备开机验证，确认您的GPU设备没有使用同样的ID 以及密码
 
 ### 1.3 将设备加入到DBC网络中
 
-+ 参考：https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
+- 参考：https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
 
 ## 2. 在DBC链上租用您的设备并绑定EVM 钱包地址
 
@@ -35,21 +35,21 @@
 
 ### 2.2 确认租用
 
->  提示： 确认租用要在租用后15分钟内进行确认
+> 提示： 确认租用要在租用后15分钟内进行确认
 
-+ 查询租用订单号
+- 查询租用订单号
 
 ![image-20250317142501729](/Users/totus/Library/Application Support/typora-user-images/image-20250317142501729.png)
 
-+ 输入租用订单号确认租用
+- 输入租用订单号确认租用
 
 ![image-20250317142652996](/Users/totus/Library/Application Support/typora-user-images/image-20250317142652996.png)
 
-+ 后续处理续租问题
+- 后续处理续租问题
 
 ![image-20250317142808630](/Users/totus/Library/Application Support/typora-user-images/image-20250317142808630.png)
 
-+ 绑定EVM地址，
+- 绑定EVM地址，
 
 ![image-20250317143049937](/Users/totus/Library/Application Support/typora-user-images/image-20250317143049937.png)
 
@@ -57,18 +57,18 @@
 
 ### 3.1 GPU mining页面
 
-+ https://www.dbcscan.io/mining/DeepLink (主网)
+- https://www.dbcscan.io/mining/DeepLink (主网)
 
 ### 3.2 质押NFT 以及 DLC 开始采矿
 
-+ 质押NFT
+- 质押NFT
 
 ![image-20250317145306383](/Users/totus/Library/Application Support/typora-user-images/image-20250317145306383.png)
 
-+ 质押DLC（可以不质押，但是质押的越多您的收益越高）
+- 质押DLC（可以不质押，但是质押的越多您的收益越高）
 
 ![image-20250317145421650](/Users/totus/Library/Application Support/typora-user-images/image-20250317145421650.png)
 
 ### 3.3质押完成后进入竞赛页面查询您的设备
 
-+ 竞赛页面： https://orion.deeplink.cloud/device
+- 竞赛页面： https://orion.deeplink.cloud/device
