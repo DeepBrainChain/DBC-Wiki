@@ -23,7 +23,11 @@
   + 保存 并关机，然后将此镜像打包为启动镜像
   + GPU设备开机验证，确认您的GPU设备没有使用同样的ID 以及密码
 
-### 1.3 将设备加入到DBC网络中
+### 1.3 安装dbc裸金属节点并生成设备ID
+
++ 参考：https://deepbrainchain.github.io/DBC-Wiki/install-update-dbc-node/install-update-dbc/dbc-bare-metal-node.html
+
+### 1.4 将设备加入到DBC网络中
 
 + 参考：https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
 

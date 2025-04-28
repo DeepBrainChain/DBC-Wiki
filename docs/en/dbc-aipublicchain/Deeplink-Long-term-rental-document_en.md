@@ -23,7 +23,11 @@
 + Save and shut down, then package this image as a boot image
 + GPU device startup verification, confirm that your GPU device does not use the same ID and password
 
-### 1.3 Add the device to the DBC network
+### 1.3 Install DBC Bare Metal Node
+
++ Reference: https://deepbrainchain.github.io/DBC-Wiki/en/install-update-dbc-node/install-update-dbc/dbc-bare-metal-node.html
+
+### 1.4 Add the device to the DBC network
 
 + Reference: https://deepbrainchain.github.io/DBC-Wiki/onchain-guide/bonding-machine.html
 
