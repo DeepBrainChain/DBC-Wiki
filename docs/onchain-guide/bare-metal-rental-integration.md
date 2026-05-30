@@ -44,7 +44,7 @@ flowchart TB
     customer([顾客])
     cafesys["网吧系统"]
     currency["币种兑换 / 钱包系统"]
-    deeplink["DeepLink 客户端"]
+    deeplink["DeepLink / 第三方远程软件<br/>客户端"]
     customer -->|"1.支付法币"| cafesys
     cafesys -->|"2.法币→DBC 充值到用户钱包"| currency
     currency --> deeplink
@@ -56,7 +56,7 @@ flowchart TB
     dbcnode["DBC Node (CPU 节点)"]
     ipmi["IPMI 服务器"]
     diskless[("无盘服务器")]
-    gpuwin["Windows GPU 服务器<br/>(DeepLink)"]
+    gpuwin["Windows GPU 服务器<br/>(DeepLink / 其他第三方远程软件)"]
     gpulinux["Linux GPU 服务器<br/>(linux program)"]
   end
   deeplink -->|"3.选机 / 4.发送机器ID下单"| dbcclient
@@ -66,7 +66,7 @@ flowchart TB
   ipmi -->|"7.上电启动"| gpulinux
   diskless -. "net boot" .-> gpuwin
   diskless -. "net boot" .-> gpulinux
-  gpuwin -->|"8.回传 DeepLink 设备码+验证码"| dbcnode
+  gpuwin -->|"8.回传 DeepLink 设备码+验证码<br/>(或其他远程软件凭证)"| dbcnode
   gpulinux -->|"8.回传 IP+端口 / SSH"| dbcnode
   dbcnode -->|"经 DBC Client 回传"| dbcclient
   dbcclient --> deeplink
@@ -324,6 +324,7 @@ console.log(info.rentStatus, "剩余", Math.floor(secsLeft / 3600), "小时");
 要点：
 - **链上 `Rented` + `renter` 是访问授权的唯一可信凭证**——机器侧 DBC Node 据此放行、上电、净启动。
 - 机器的 **IP + 端口**也记录在链上机器信息中，可直接读取用于 SSH / Windows 远程连接；DeepLink 的**设备码 + 验证码**由裸机节点经 GPU 机与裸机节点间的 LAN TCP 服务自动同步获取（与官方 DBC-Wiki「DBC Bare Metal Node」页一致）。
+- **远程连接软件不限于 DeepLink**：Windows 机除 DeepLink 外，第三方平台也可接入自有客户端或其它第三方远程软件（RDP / 远程桌面等）；Linux 机用 SSH。链上租用授权（`Rented` + `renter`）与凭证下发机制保持不变，与具体远程软件无关。
 - 裸机的**上架（卡商侧）**走 DBC Node 的 `/api/v1/bare_metal/add`（提供 UUID / IP / IPMI 等），与本文档的「租用侧」无关。
 - 第三方平台需要实现的部分：(a) 为每个用户生成对应 DBC 钱包、收款后按价值充值 DBC（§1.1 步骤 1–2）；(b) 用该用户钱包完成 §5 链上下单+确认（步骤 4）；(c) 接收并向用户透传步骤 8 回传的访问凭证；(d) 提供远程连接客户端（步骤 9，如 DeepLink）。
 - 机器侧（DBC Node / IPMI / 无盘服务器 / GPU 服务器）由卡商 + DBC 提供，平台无需自建。
