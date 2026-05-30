@@ -2,7 +2,7 @@
 
 ## Step 1: Determine the machine to be rented
 
-- Open [Mainnet Wallet](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io)
+- Open [Mainnet Wallet](https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io)
 
 - Create a wallet: Account-->Add account (The mnemonic phrase must be saved, if the mnemonic phrase is lost, the account cannot be retrieved, and the currency is lost)
 

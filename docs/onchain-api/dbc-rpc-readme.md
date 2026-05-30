@@ -6,9 +6,9 @@
 
 文档适用 dbc 主网，主网分支[`master`](https://github.com/DeepBrainChain/DeepBrainChain-MainChain)，
 
-- websocket 地址： `wss://info.dbcwallet.io`,
+- websocket 地址： `wss://info1.dbcwallet.io`,
 
-- http 地址: `https://httpinfo.dbcwallet.io`
+- http 地址: `https://httpinfo1.dbcwallet.io`
 
 ### 1.2 搭建自己的 RPC 节点
 

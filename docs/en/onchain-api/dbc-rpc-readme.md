@@ -6,9 +6,9 @@
 
 This document applies to dbc mainnet, mainnet branch [`master`](https://github.com/DeepBrainChain/DeepBrainChain-MainChain)，
 
-- websocket： `wss://info.dbcwallet.io`
+- websocket： `wss://info1.dbcwallet.io`
 
-- http: `https://httpinfo.dbcwallet.io`
+- http: `https://httpinfo1.dbcwallet.io`
 
 ### 1.2 Build your own RPC node
 

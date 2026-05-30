@@ -6,7 +6,7 @@
 
 - 메인넷 지갑 열기
 
-https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer
+https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/explorer
 
 - 지갑 만들기:계정-->계정추가 (니모닉 워드는 꼭 잘 보관하세요, 니모닉 워드 분실 경우 계정도 다시 찾을수 없습니다, 코인도 분실됩니다)
 

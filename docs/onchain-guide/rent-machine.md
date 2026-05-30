@@ -2,7 +2,7 @@
 
 ## 步骤一: 确定要租用的机器
 
-- 打开[主网钱包](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io)
+- 打开[主网钱包](https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io)
 
 - 创建钱包：账户-->添加账户 （助记词一定要保存好，丢失了助记词，账户就无法找回，币就丢失掉了）
 

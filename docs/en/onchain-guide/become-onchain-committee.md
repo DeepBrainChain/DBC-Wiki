@@ -1,6 +1,6 @@
 # DBC On-chain committee
 
-> Please go to the mainnet to perform on-chain operations: https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer
+> Please go to the mainnet to perform on-chain operations: https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/explorer
 
 ## 1. Responsibilities of the committee
 

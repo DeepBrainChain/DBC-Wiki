@@ -74,8 +74,8 @@ application-dev.properties  application-prod.properties   application-test.prope
 
 #2. 修改wss链上访问DBC钱包客户端域名
 
-修改 chainUrl = wss://infotest.dbcwallet.io:7777 为 chainUrl = wss://info.dbcwallet.io
-也可以修改为自己部署的DBC钱包客户端地址，info.dbcwallet.io为公开的地址，不保证100%稳定
+修改 chainUrl = wss://infotest.dbcwallet.io:7777 为 chainUrl = wss://info1.dbcwallet.io
+也可以修改为自己部署的DBC钱包客户端地址，info1.dbcwallet.io为公开的地址，不保证100%稳定
 
 #3. 修改数据库地址信息
 
@@ -258,7 +258,7 @@ forever start -o ver-out.log -e ver-err.log VerificationMachine.js
  * wssChain 调用链名称
  */
 export const wssChain = {
-  dbc: 'wss://info.dbcwallet.io' // 公链正式链，也可以自己部署DBC钱包客户端
+  dbc: 'wss://info1.dbcwallet.io' // 公链正式链，也可以自己部署DBC钱包客户端
 }
 
 /**
@@ -328,7 +328,7 @@ const nodeHost = 'https://xxxxxx'   //nodejs 服务器地址
 #打开文件夹 src--> utlis --> dot --> api.ts && index.ts ,配置访问链
 const node = {
     ···
-    dbc: 'wss://info.dbcwallet.io' // 公链正式链
+    dbc: 'wss://info1.dbcwallet.io' // 公链正式链
     ···
 }
 

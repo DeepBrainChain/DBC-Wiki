@@ -92,7 +92,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ## 6. 设置绑定（bond）金额
 
-- 打开[https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts) 你将能看到你的余额：
+- 打开[https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/accounts) 你将能看到你的余额：
 
 ![](./assets/join_dbc_network.assets/image-20210121194808850.png)
 

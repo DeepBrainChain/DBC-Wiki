@@ -15,7 +15,7 @@
 
      Then generate by `polkadot{.js}`
 
-   - Option 2: Generate account from [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts)，click `Account` -- `Add account`
+   - Option 2: Generate account from [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts)，click `Account` -- `Add account`
 
    - Option 3: Generate by command line:
 
@@ -81,7 +81,7 @@
 
 6. Bond stash
 
-   - open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
+   - open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
 
    - navigate to`Staking > Account actions`，click `stash`![image-20210121194953014](./assets/join_dbc_network.assets/image-20210121194953014.png)
 

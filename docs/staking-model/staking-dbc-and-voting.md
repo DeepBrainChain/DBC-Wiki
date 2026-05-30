@@ -6,7 +6,7 @@
 
 ## 2. 获取一些的 DBC
 
-打开[https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/accounts), 查看您的账户与余额
+打开[https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/accounts), 查看您的账户与余额
 
 ![](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 

@@ -55,7 +55,7 @@ DBC 超级节点选举质押、投票链接：[https://www.dbcwallet.io/#/stakin
 
 NFT 申请及发放规则：[https://m.bitalk.com/flash/detail/472323921396502528](https://m.bitalk.com/flash/detail/472323921396502528)
 
-主网钱包地址：[https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts)
+主网钱包地址：[https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts)
 
 主网查看节点状态：[https://telemetry.polkadot.io/#list/DBC%20Mainnet](https://telemetry.polkadot.io/#list/DBC%20Mainnet)
 

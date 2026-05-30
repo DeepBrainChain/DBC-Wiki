@@ -1,6 +1,6 @@
 # DBC 链上委员会
 
-> 链上操作请到主网执行：https://www.dbcwallet.io/?rpc=wss://info.dbcwallet.io#/explorer
+> 链上操作请到主网执行：https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io#/explorer
 
 ## 1. 委员会的职责
 

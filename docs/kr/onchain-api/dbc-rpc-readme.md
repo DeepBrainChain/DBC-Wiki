@@ -4,7 +4,7 @@
 
 ### 1.1 Applicable version
 
-This document applies to dbc mainnet, mainnet branch [`master`](https://github.com/DeepBrainChain/DeepBrainChain-MainChain)，websocket： `wss://info.dbcwallet.io`
+This document applies to dbc mainnet, mainnet branch [`master`](https://github.com/DeepBrainChain/DeepBrainChain-MainChain)，websocket： `wss://info1.dbcwallet.io`
 
 ### 1.2 Build your own RPC node
 

@@ -71,9 +71,9 @@ security:
   The clientUrl modification is replaced by the dbc client domain name deployed by yourself
 #2. Modify the domain name of the client to access the DBC wallet on the wss chain
 
-Modify chainUrl = wss://infotest.dbcwallet.io:7777 to chainUrl = wss://info.dbcwallet.io
+Modify chainUrl = wss://infotest.dbcwallet.io:7777 to chainUrl = wss://info1.dbcwallet.io
 It can also be modified to the DBC wallet client address deployed by yourself.
-info.dbcwallet.io is a public address, and 100% stability is not guaranteed.
+info1.dbcwallet.io is a public address, and 100% stability is not guaranteed.
 #3. Modify database address information
 
 spring.data.mongodb.uri=mongodb://usr:passwd@localhost:27017/database_name
@@ -185,7 +185,7 @@ const nodeHost = 'https://xxxxxx' //nodejs server address
 #Open the folder src--> utlis --> dot --> api.ts && index.ts , configure the access chain
 const node = {
   ···
-  dbc: 'wss://info.dbcwallet.io' // Official public chain
+  dbc: 'wss://info1.dbcwallet.io' // Official public chain
   ···
 }
 
@@ -305,7 +305,7 @@ The following section explains the directory:
  * wssChain call chain name
  */
 export const wssChain = {
-  dbc: 'wss://info.dbcwallet.io'
+  dbc: 'wss://info1.dbcwallet.io'
 }
 
 /**

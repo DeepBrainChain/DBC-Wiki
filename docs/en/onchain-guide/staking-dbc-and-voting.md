@@ -11,7 +11,7 @@
 
      Then generate by `polkadot{.js}`
 
-   - Option 2: Generate account from [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts)，click `Account` -- `Add account`
+   - Option 2: Generate account from [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts)，click `Account` -- `Add account`
 
    - Option 3: Generate by command line:
 
@@ -20,7 +20,7 @@
      cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
      ```
 
-2. Get some DBC. Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) and you can see your account and your balance:
+2. Get some DBC. Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts) and you can see your account and your balance:
 
    ![image-20210122210826588](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 

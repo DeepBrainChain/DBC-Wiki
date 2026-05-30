@@ -111,7 +111,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 ## 6. Bond stash
 
-- open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
+- open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
 
 - navigate to`Staking > Account actions`，click `stash`![image-20210121194953014](./assets/join_dbc_network.assets/image-20210121194953014.png)
 

@@ -8,7 +8,7 @@ Reference: [How to generate new account](generate-new-account.md)
 
 ## 2. Get some DBC.
 
-Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo.dbcwallet.io#/accounts) and you can see your account and your balance:
+Open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts) and you can see your account and your balance:
 
 ![](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 
