@@ -120,6 +120,7 @@ export const zhNavbar = navbar([
           "become-onchain-committee",
           "machine-verification",
           "rent-machine",
+        "bare-metal-rental-integration",
           "report-machine-fault",
           "maintain-machine",
           "onchain-errors",

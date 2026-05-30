@@ -1,5 +1,7 @@
 # 链上机器租用
 
+> 💡 第三方云平台 / 程序化批量对接（网吧模式裸机），请参阅 [网吧模式链上租用对接（完整版 + 流程图 + polkadot.js 示例）](./bare-metal-rental-integration.md)。
+
 ## 步骤一: 确定要租用的机器
 
 - 打开[主网钱包](https://www.dbcwallet.io/?rpc=wss://info1.dbcwallet.io)
