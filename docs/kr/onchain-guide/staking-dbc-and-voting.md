@@ -1,9 +1,7 @@
 # How to nominate on DBC?
 
 1. Generate stash account （If you already have stash account, you can skip this）
-
    - Option 1: Install `polkadot{.js}` adds-on
-
      - Chrome, install via [Chrome web store](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
        - [https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
      - Firefox, install via [Firefox add-ons](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/)
@@ -25,7 +23,6 @@
    ![image-20210122210826588](./assets/staking_dbc_and_voting.assets/image-20210122210826588.png)
 
 3. Nominator
-
    - Navigate to `Network > Staking > Account actions`, click `Nominator`
 
      ![image-20210122210945889](./assets/staking_dbc_and_voting.assets/image-20210122210945889.png)

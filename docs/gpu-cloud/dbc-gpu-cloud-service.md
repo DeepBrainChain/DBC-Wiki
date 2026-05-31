@@ -196,9 +196,7 @@ forever start -o ver-out.log -e ver-err.log VerificationMachine.js
 ### HttpRequest 目录
 
 - 用于书写与前端交互的详细接口内容
-
   - **api.js**
-
     - 定义 express 路由
 
     ```json
@@ -220,7 +218,6 @@ forever start -o ver-out.log -e ver-err.log VerificationMachine.js
     ```
 
   - **router.js**
-
     - 定义请求信息
     - 设置请求头
 

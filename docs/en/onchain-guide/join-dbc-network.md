@@ -1,15 +1,12 @@
 # How to run a DBC validator?
 
 0. Recommended hardware
-
    - RAM：8G
    - CPU：2 cores
    - Disk：100G
 
 1. Generate stash account （If you already have stash account, you can skip this）
-
    - Option 1: Install `polkadot{.js}` adds-on
-
      - Chrome, install via [Chrome web store](https://chrome.google.com/webstore/detail/polkadot{js}-extension/mopnmbcafieddcagagdcbnhejhlodfdd)
      - Firefox, install via [Firefox add-ons](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension/)
 
@@ -26,7 +23,6 @@
      ```
 
 2. Get `dbc-chain` binary
-
    - Option 1: use pre-build version (If any errors, please use Option 2).
 
      ```
@@ -80,7 +76,6 @@
    ```
 
 6. Bond stash
-
    - open [https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts](https://www.dbcwallet.io/?rpc=wss%3A%2F%2Finfo1.dbcwallet.io#/accounts) you will see your balance: ![image-20210121194808850](./assets/join_dbc_network.assets/image-20210121194808850.png)
 
    - navigate to`Staking > Account actions`，click `stash`![image-20210121194953014](./assets/join_dbc_network.assets/image-20210121194953014.png)
@@ -88,14 +83,12 @@
    - You should set bond balance（Make sure not to bond all your DBC balance since you will be unable to pay transaction fees from your bonded balance.）：![image-20210121195033167](./assets/join_dbc_network.assets/image-20210121195033167.png)
 
    **Description：**
-
    - `Stash account`：Select your Stash account. In this example, we will bond 45 DBC - make sure that your Stash account contains _at least_ this much. You can, of course, stake more than this.
    - `controller account`：Select the Controller account created earlier. This account will also need a small amount of DBC in order to start and stop validating.
    - `value bonded`：How much DBC from the Stash account you want to bond/stake. Note that you do not need to bond all of the DBC in that account. Also note that you can always bond _more_ DBC later.
    - `payment destination`：The account where the rewards from validating are sent.
 
 7. Set Session Keys
-
    - After bond your stash，you can see in Polkadot UI `Session Key`button：![image-20210121195307711](./assets/join_dbc_network.assets/image-20210121195307711.png)
 
    - click it and input the result in step 5`rotateKeys`![image-20210121200709277](./assets/join_dbc_network.assets/image-20210121200709277.png)
@@ -103,7 +96,6 @@
    - Now, check in [Telemetry](https://telemetry.polkadot.io/#list/0xd523fa2e0581f069b4f0c7b5944c21e9abc72305a08067868c91b898d1bf1dff) and you can see your node.![image-20210121234945030](./assets/join_dbc_network.assets/image-20210121234945030.png)
 
 8. Validate
-
    - After steps above you can see`Validate` button and click it,![image-20210121235144583](./assets/join_dbc_network.assets/image-20210121235144583.png)
 
    - You should set your preference as a validator.![image-20210121235217665](./assets/join_dbc_network.assets/image-20210121235217665.png)

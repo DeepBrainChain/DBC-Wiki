@@ -118,7 +118,6 @@ Navigate to `developer`--`chain status`, through `stash account`, view the compu
 ![2021-08-09_11-15](./assets/Machine_winding_steps_english.assets/2021-08-09_11-15-16284796475672.png)
 
 - Parameter description:
-
   - server_name: Select the computer room ID generated in the previous step
 
   - upload_net: upload bandwidth (take 20MB bandwidth as an example, fill in 20).

@@ -42,7 +42,6 @@
 1. Committee module (`committee` pallet): add a committee through a referendum (Root authority), committee members (committee) stake a certain DBC, participate in the management of the machine and obtain DBC rewards
 
 2. Main logic of machine online (`online-profile` pallet and `online-committee` pallet)
-
    1. stash account(stash) bond machine controller account (controller)
 
    2. The control account submits the machine online request (submit the machine private key signature for machine authentication stash account), and stake the stash account to a certain DBC
@@ -68,7 +67,6 @@
    10. Go offline to modify the machine configuration. Different from direct offline, in this case, the committee needs to review before going online.
 
 3. The main logic of the machine maintenance module (`maintain-committee`)
-
    1. The successfully online machine can be rented by ordinary users. If you find any problems before/during the rental process, you can report it through `maintain-committee`.
 
    2. Circumstances that can be reported:

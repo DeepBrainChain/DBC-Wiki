@@ -239,9 +239,7 @@ The following section explains the directory:
 ### HttpRequest directory
 
 - For writing detailed interface content for interacting with the front end
-
   - **api.js**
-
     - define express routes
 
     ```
@@ -265,7 +263,6 @@ The following section explains the directory:
     ```
 
   - **router.js**
-
     - Define request information
     - set request headers
 

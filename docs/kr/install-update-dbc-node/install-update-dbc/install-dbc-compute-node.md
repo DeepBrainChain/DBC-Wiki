@@ -293,7 +293,6 @@ systemctl status libvirtd
 
 - 출력 잘못이 없을경우 작동 성공을 의마합니다 ;
 
-
 ## 【I】DBC성능노드 프로그램 설치
 
 - 주의: DBC유저 설치 전환 필요
@@ -372,14 +371,12 @@ http://112.192.16.27:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qcow
 
 https://github.com/DeepBrainChain/DBC-DOC/blob/master/chain_ops/bonding_machine.md#%E6%9C%BA%E5%99%A8%E4%B8%8A%E7%BA%BF%E6%AD%A5%E9%AA%A4
 
-
-
 ## DBC 방송 모니터링
 
 > 채굴자는 머신이 유휴 상태일 때 자신이 사용하기 위해 가상 머신을 시작할 수 있지만, 사용자가 임대한 경우에는 사용 중인 가상 머신을 10초 이내에 종료해야 사용자에게 신고 및 처벌을 받을 수 없습니다. UDP 브로드캐스트 관련 메시지는 다음과 같습니다.
 
-+ dbc 노드는 인트라넷에서 장치 node_id와 해당 상태를 브로드캐스트합니다.
-+ 브로드캐스트 주소: UDP 브로드캐스트 255.255.255.255 포트 55555
-+ 방송 콘텐츠: { "node_id": "xxx", "status": "renting" }
- { "node_id": "xxx", "status": "비어 있음" }
-+ 암호화 방식: base64 암호화
+- dbc 노드는 인트라넷에서 장치 node_id와 해당 상태를 브로드캐스트합니다.
+- 브로드캐스트 주소: UDP 브로드캐스트 255.255.255.255 포트 55555
+- 방송 콘텐츠: { "node_id": "xxx", "status": "renting" }
+  { "node_id": "xxx", "status": "비어 있음" }
+- 암호화 방식: base64 암호화

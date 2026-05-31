@@ -3,13 +3,11 @@
 ## 1. Seed User Acquiring
 
 - Preperation Work
-
   - Make sure the GPU cloud platform is available
   - Set up official twitter/reddit/discord/youtube/telegram social media accounts (focus varies by country)
   - Create basic product tutorials, promotional materials, graphics and videos
 
 - Execution
-
   - Produce product tutorials posted on the official reddit/youtube account, encourage people to comment, forward, and continue to accumulate quality content, which can increase search engine ranking, obtain natural traffic, attract users to come and guide them to the official community, leading to private domain traffic, and prepare for subsequent operations.
   - Post and chat in reddit/Disord groups where GPU developers gather to actively search for users, especially Nvidia and deep learning related communities, to import accurate traffic into their own communities leading to private domain traffic for subsequent operations.
 

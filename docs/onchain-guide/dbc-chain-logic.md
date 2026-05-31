@@ -42,7 +42,6 @@
 1. 委员会模块(`committee` pallet)：通过公投（Root 权限）添加委员会，委员会成员(committee)质押一定 DBC，参与机器的管理并获取 DBC 奖励
 
 2. 机器上线主要逻辑 (`online-profile` pallet 和 `online-committee` pallet)
-
    1. 机器资金帐号(stash) 绑定 机器控制帐号(controller)
 
    2. 控制帐号提交机器上线请求（提交机器私钥签名，用于机器认证 stash 账户），并质押 stash 账户一定 DBC
@@ -68,7 +67,6 @@
    10. 下线以用于修改机器配置。不同于直接下线，这种情况下，需要委员会重新审核才能上线。
 
 3. 机器维护模块(`maintain-committee`)主要逻辑
-
    1. 成功上线的机器，可以被普通用户租用(renter)。租用之前/租用过程中发现问题，可以通过`maintain-committee`进行举报。
 
    2. 可以举报的情况：

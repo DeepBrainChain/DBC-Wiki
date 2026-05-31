@@ -3,6 +3,7 @@
 ## 0x format address DBC transfer back to 5 format address:
 
 ### Through the official bridge contract
+
 1. Convert the public key of the address starting with 5, copy the Public Key, and fill in the to address in step 2
    [https://dbc.subscan.io/tools/format_transform
    ](https://dbc.subscan.io/tools/format_transform)![image-20250331175328048](./images/image-20250331175328048.png)

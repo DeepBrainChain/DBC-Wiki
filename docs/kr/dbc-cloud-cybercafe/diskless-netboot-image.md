@@ -9,7 +9,6 @@
 - 1.1 브라우저에서 디스크 없는 콘솔을 열고 `Image` 페이지에서 이미지를 생성합니다.
 
   이 페이지에는 3개의 테이블이 있습니다.
-
   - Operation System: 시스템 디스크. name(디스크 이름), `win10`과 같은; description(디스크 설명), `windows 10 21H1`과 같은; capacity(디스크 용량), 100G과 같은.
   - Data Disk: 데이터 디스크 또는 게임 디스크와 같은 비시스템 디스크. name(디스크 이름), `game`과 같은; description(디스크 설명), `game disk`과 같은; capacity(디스크 용량), 200G과 같은.
   - Boot Menu: 시스템 디스크와 여러 데이터 디스크의 부팅 항목 조합. name (시작 항목의 이름), `win10test`과 같은; operation system (시작 항목의 시스템 디스크 이름); data disk (시작 항목의 데이터 디스크 이름 모음).

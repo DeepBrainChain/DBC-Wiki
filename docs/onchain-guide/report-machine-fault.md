@@ -9,7 +9,6 @@
 1. 机器被租用后**无法访问故障(`RentedInaccessible(MachineId)`)**,
 
 2. 其他类型故障，包括
-
    - 机器被租用，但是有**硬件故障(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**；
 
    - 机器被租用，但是**硬件造假(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**；
@@ -187,7 +186,6 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
 当举报完成，根据委员会提交的结果将会进行惩罚与奖励。简单的说，
 
 - 对于验证人来说，
-
   - 未完成所有任务的委员会将被惩罚，如预订了报告/提交了验证 Hash，却没有最终提交确认信息
 
   - 验证结果与多数委员会不同的情况，如 2 个委员会反对举报，1 个委员会支持举报，则支持的委员会会被惩罚，其余 2 个委员会会被奖励
@@ -195,7 +193,6 @@ node open_msg.js --sender_box_pubkey 0xe30cac79ec5fe7c9811ed9f1a18ca3806b22798e2
   - 当成功完成验证机器故障任务，并与其余多数委员会观点相同（都认为机器有故障/无故障）时，会被奖励
 
 - 对于举报人来说
-
   - 当举报人举报需要提交加密信息的故障类型时，如没有在委员会抢单半小时内提交加密信息，举报将会失败，会被惩罚
 
   - 当举报人的举报被大多数委员会所反对时，会被惩罚

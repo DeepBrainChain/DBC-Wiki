@@ -9,7 +9,6 @@ The four types of machine faults that can be reported are divided into two categ
 1. After the machine is leased **Inaccessible fault(`RentedInaccessible(MachineId)`)**,
 
 2. Other types of fault, including
-
    - The machine is rented, but has a **hardware malfunction(`RentedHardwareMalfunction(ReportHash, BoxPubkey)`)**;
 
    - The machine is rented, but **hardware counterfeit(`RentedHardwareCounterfeit(ReportHash, BoxPubkey)`)**;
@@ -190,7 +189,6 @@ Among them, `extra_err_info` is judged by the committee and may be different fro
 When the report is completed, penalties and rewards will be given according to the results submitted by the committee. simply put,
 
 - For validators,
-
   - Committees that do not complete all tasks will be penalized, such as booking a report/submitting a verification hash without final submission confirmation
 
   - When the verification result is different from the majority of the committees, if 2 committees oppose the report and 1 committee supports the report, the supporting committee will be punished, and the remaining 2 committees will be rewarded
@@ -198,7 +196,6 @@ When the report is completed, penalties and rewards will be given according to t
   - Rewarded when successfully completing the verification machine failure task and agreeing with the majority of the rest of the committee (both think the machine is faulty/non-faulty)
 
 - For whistleblowers
-
   - When the whistleblower reports the type of failure that requires the submission of encrypted information, if the encrypted information is not submitted within half an hour of the committee's order grabbing, the report will fail and will be punished
 
   - Penalties for whistleblowers when their report is disapproved by a majority of the committee

@@ -33,7 +33,6 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 >
 > `subkey`的安装及其他用法，请参考：[https://substrate.dev/docs/en/knowledgebase/integrate/subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
 
-
 ## 使用命令行工具 subkey,将助记词转私钥种子
 
 链上的一些操作，有时候会需要使用私钥来签名。在保存了助记词时，可以通过 subkey 来将助记词转换成私钥。

@@ -103,7 +103,6 @@ bash ./stop-service.sh <config-name>
 完成开发和调试后，可以开始打包 Docker 镜像。以下是具体步骤：
 
 1. **编写 Dockerfile**：根据不同情况，Dockerfile的编写有如下可能的方式：
-
    - 基于开源项目Dockerfile，修改后重新从头构建
    - 基于开源镜像作为基础镜像，加入修改的内容后进行增量构建
    - 自行编写Dockerfile，从头构建一个新的定制化镜像
