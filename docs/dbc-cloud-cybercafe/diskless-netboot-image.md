@@ -9,7 +9,6 @@
 - 1.1 在浏览器中打开无盘控制台，在`Image`页面创建镜像
 
   这个页面有三张表格。
-
   - Operation System: 系统盘。name(磁盘名称)，例如`win10`; description(磁盘描述)，例如`windows 10 21H1`; capacity(磁盘容量)，例如 100G。
   - Data Disk: 数据盘或者游戏盘等非系统盘。name(磁盘名称)，例如`game`; description(磁盘描述)，例如`game disk`; capacity(磁盘容量)，例如 200G。
   - Boot Menu: 一个系统盘和多个数据盘的启动项组合。name(启动项名称)，例如`win10test`; operation system(启动项的系统盘名称); data disk(启动项的数据盘名称集合)。

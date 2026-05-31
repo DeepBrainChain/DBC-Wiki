@@ -9,7 +9,6 @@ After deploying the diskless netboot server, you can create a diskless boot imag
 - 1.1 Open the diskless console in the browser and create an image on the `Image` page
 
   This page has three tables.
-
   - Operation System: system disk. name(disk name), such as `win10`; description(disk description), such as `windows 10 21H1`; capacity(disk capacity), such as 100G.
   - Data Disk: Non-system disks such as data disks or game disks. name(disk name), such as `game`; description(disk description), such as `game disk`; capacity(disk capacity), such as 200G.
   - Boot Menu: A combination of boot items for a system disk and multiple data disks. name (the name of the startup item), such as `win10test`; operation system (the system disk name of the startup item); data disk (the collection of data disk names of the startup item).

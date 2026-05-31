@@ -23,7 +23,6 @@ If you have some DBC and want to get more, you can choose to **become a `validat
 #### Reward rules：
 
 - After each block is generated, the rewards obtained by the block producer will be recorded to the `ErasRewardPoints`, and the rules for reward `EraRewardPoints` are:
-
   - 20 points for main chain block producers
   - 2 points for uncle block producers
   - 1 point for producers who quoted uncle blocks

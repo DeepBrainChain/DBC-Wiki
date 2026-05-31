@@ -80,7 +80,7 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 
 ### 2.3 使用`控制账户`将机器绑定到资金账户
 
-现在，我们需要通过`控制账户`，把步骤 2.2 产生的**_签名数据_**提交到链上。
+现在，我们需要通过`控制账户`，把步骤 2.2 产生的***签名数据***提交到链上。
 
 导航到：`开发者`--`交易`，如下图选择`onlineProfile`模块的`bondMachine`方法。使用`控制账户`，将`机器ID`(`MachineId`)与`控制账户`进行绑定即可。参数填写如下图：
 
@@ -117,7 +117,6 @@ node gen_signature.js --key 0x398f0c28f98885e046333d4a41c19cee4c37368a9832c6502f
 ![](./assets/bonding_machine.assets/image-20210817115411030.png)
 
 - 参数说明：
-
   - server_name: 选择上一步生成的机房 ID
 
   - upload_net: 上传带宽（**以 20MB 带宽为例，填入 20** ）。

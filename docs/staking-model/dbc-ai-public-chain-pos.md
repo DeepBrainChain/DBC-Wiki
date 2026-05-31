@@ -22,7 +22,7 @@ sudo mkdir dbc-chain-mainnet && cd dbc-chain-mainnet
 
 wget https://github.com/DeepBrainChain/DeepBrainChain-MainChain/releases/download/v4.0/dbc-chain-4.tar.gz -O dbc_chain_linux_x64.tar.gz
 
-tar xf dbc_chain_linux_x64.tar.gz 
+tar xf dbc_chain_linux_x64.tar.gz
 
 ```
 
@@ -80,7 +80,7 @@ sudo apt install libc6 libstdc++6 -y
 - 如果你是从源码进行编译，可执行文件路径为：`./target/release/dbc-chain`
 
 - 注意，这里 **`--name YourNodeName` 是设置你的节点名称**，你可以为你的节点起一个独一无二容易辨认的名称，别人将能在网络上看到它。
- 
+
 ```
 
 ## 5. 生成`rotateKey`

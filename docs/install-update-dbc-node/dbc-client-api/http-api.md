@@ -1003,9 +1003,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
   ],
   "additional": {},
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -1035,6 +1035,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```
 
 当请求 Body 中的 "peer_nodes_list" 数组中包含裸金属节点的 node_id 时，还可以根据添加裸金属服务器时输入的 `uuid` 查询指定的裸金属服务器。
+
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` 查询指定 `node_id` 的裸金属服务器的相关信息。
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` 查询指定 `uuid` 的裸金属服务器的相关信息。
 
@@ -1082,9 +1083,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
     ]
   },
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -1130,9 +1131,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/delete
     ]
   },
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -1177,9 +1178,9 @@ URL 中的 node_id 是裸金属服务器对应的node_id，请与 Body 中的 id
     "ipmi_port": 623
   },
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 

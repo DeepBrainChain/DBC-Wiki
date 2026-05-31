@@ -20,7 +20,7 @@
 
 - rent_gpu_num 输入本次要租用的 GPU 数量（不超过该机器的空闲 GPU 数；当前按 GPU 数计费，支持一机多租）
 
-- duration 输入需要租用的时间(单位：1 BlockNumber = 6 seconds, 最低租用半小时起，租用时间也是300个块高的倍数，即300 * N )
+- duration 输入需要租用的时间(单位：1 BlockNumber = 6 seconds, 最低租用半小时起，租用时间也是300个块高的倍数，即300 \* N )
 
 - 输入完成后点击提交交易。提交成功后会生成一个**租用订单号 `rent_id`**（可在交易事件 `rentMachine.Rent` 中查看，或在 `开发者`-`链状态`-`rentMachine`-`userOrder(你的账户)` 中查询）。后续的确认、续租都使用这个 `rent_id`。
 
