@@ -171,7 +171,7 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - **Note**: need to switch to dbc user installation
 
 1. download install script: install_mining.sh
-   http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_mining.sh
+   http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. add executable permissions
    `chmod +x ./install_mining.sh`
 3. run install_mining.sh
@@ -191,7 +191,7 @@ Back up the contents of the following file: ` /home/dbc/0.3.7.3/dbc_repo/dat/nod
 
 ## Test to create a virtual machine with graphics card pass-through to check whether the previous configuration is correct
 
-- Test program download address: http://112.192.16.27:9000/dbc/package/check_env
+- Test program download address: http://pkg.dbcwallet.io:9000/dbc/package/check_env
 - Binary file, add execute permission and execute directly: chmod 777 chec_env ; ./check_env
 - If the green check 'vm domain_test successful' appears, it means success. If it does not appear, please check whether the previous configurations are correct.
 

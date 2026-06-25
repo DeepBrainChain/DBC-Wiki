@@ -12,7 +12,7 @@
 
 - **download install script：**
 
-  http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_client.sh
+  http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_client.sh
 
 - **add executable permission：**
 
@@ -31,7 +31,7 @@
 
 - **download update client script：**
 
-  http://112.192.16.27:9000/dbc/install_update_script/mainnet/update_client.sh
+  http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/update_client.sh
 
 - **add executable permission：**
 

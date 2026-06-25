@@ -18,7 +18,7 @@ DBC 的裸金属节点本身有个 "node_id"，不需要上链，只用来为裸
 
 ## 安装节点
 
-1. 下载安装脚本：http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_baremetal.sh
+1. 下载安装脚本：http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_baremetal.sh
 2. 运行安装脚本:
 
 ```
@@ -29,7 +29,7 @@ sudo bash ./install_baremetal.sh 安装目录
 
 ## 升级节点
 
-1. 下载升级脚本：http://112.192.16.27:9000/dbc/install_update_script/mainnet/update_baremetal.sh
+1. 下载升级脚本：http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/update_baremetal.sh
 2. 运行升级脚本：
 
 ```

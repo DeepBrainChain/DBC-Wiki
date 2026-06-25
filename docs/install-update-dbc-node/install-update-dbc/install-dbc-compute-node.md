@@ -178,7 +178,7 @@ systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd
 - **注意**：需要切换到 dbc 用户安装
 
 1. 下载 dbc 功能节点的安装脚本：
-   http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_mining.sh
+   http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_mining.sh
 2. 给安装脚本添加可执行权限：
    命令行下执行：`chmod +x ./install_mining.sh`
 3. 运行安装脚本：
@@ -201,7 +201,7 @@ http://112.192.16.27:9000/image/
 
 ## (八) 测试创建带有显卡直通的虚拟机,用来检测前面是否正确配置
 
-- 测试程序下载地址：http://112.192.16.27:9000/dbc/package/check_env
+- 测试程序下载地址：http://pkg.dbcwallet.io:9000/dbc/package/check_env
 - 二进制文件，添加执行权限直接执行即可: chmod 777 chec_env ; ./check_env
 - 出现绿色`check vm domain_test successful`即为成功，若没有出现，请排查前面各项配置是否正确。
 

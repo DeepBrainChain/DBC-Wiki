@@ -18,7 +18,7 @@ This article mentions two kinds of node_id, which are distinguished here:
 
 ## install node
 
-1. Download the installation script：http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_baremetal.sh
+1. Download the installation script：http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_baremetal.sh
 2. run the install script:
 
 ```
@@ -29,7 +29,7 @@ The installation script will automatically install the IPMI tool, and like the s
 
 ## upgrade node
 
-1. Download upgrade script：http://112.192.16.27:9000/dbc/install_update_script/mainnet/update_baremetal.sh
+1. Download upgrade script：http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/update_baremetal.sh
 2. Run the upgrade script：
 
 ```

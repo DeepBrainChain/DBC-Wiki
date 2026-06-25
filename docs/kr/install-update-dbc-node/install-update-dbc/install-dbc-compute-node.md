@@ -298,7 +298,7 @@ systemctl status libvirtd
 
 - 주의: DBC유저 설치 전환 필요
 
-  1.dbc성능 노드 설치 스크립트 다운로드:http://112.192.16.27:9000/dbc/install_update_script/mainnet/install_mining.sh
+  1.dbc성능 노드 설치 스크립트 다운로드:http://pkg.dbcwallet.io:9000/dbc/install_update_script/mainnet/install_mining.sh
 
   2.설치 스크립트에 실행가능 권한 추가:명령줄에서 실행 :chmod +x ./install_mining.sh
 
@@ -314,7 +314,7 @@ http://112.192.16.27:9000/image 다운로드：ubuntu.qcow2 和 ubuntu-2004.qcow
 
 ## 【L】앞부분 정상 설정 여부 검사 하기 위해 , 그래픽카드 직통의 가상기기 생성 및 테스트합니다
 
-- 테스트 프로그램 다운로드 주소 :http://112.192.16.27:9000/dbc/package/check_env
+- 테스트 프로그램 다운로드 주소 :http://pkg.dbcwallet.io:9000/dbc/package/check_env
 
 - 바이너리 파일, 실행 권한 추가 및 직접 실행: chmod 777 chec_env ; ./check_env
 
