@@ -61,9 +61,7 @@ export const koNavbar = navbar([
       {
         text: "EVM Token transfer to Substrate wallet",
         prefix: "/dbc-aipublicchain/",
-        children: [
-          "EVMtoSubstrate",
-        ],
+        children: ["EVMtoSubstrate"],
       },
     ],
   },
@@ -78,11 +76,11 @@ export const koNavbar = navbar([
           "dbc-chain-params",
           "generate-new-account",
           "join-dbc-network",
-	  "dbc-ai-public-chain-pos_en",
+          "dbc-ai-public-chain-pos_en",
           "staking-dbc-and-voting",
           "fast-track",
           "common-questions",
-	        "dbc-chain-upgrade",
+          "dbc-chain-upgrade",
         ],
       },
       {

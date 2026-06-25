@@ -31,7 +31,6 @@ Secret phrase `final huge obscure action vacuum public banner autumn remove clos
 
 > Install `subkey` and other flags, please reference：[https://substrate.dev/docs/en/knowledgebase/integrate/subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
 
-
 ## How to convert `secret phrase` to `private key`
 
 Some operations on the chain sometimes need to be signed with a private key. When the mnemonic phrase is saved, you can use subkey to convert the mnemonic phrase into a private key.

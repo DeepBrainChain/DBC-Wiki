@@ -46,16 +46,16 @@ export const enSidebar = sidebar({
 
   "/en/dbc-aipublicchain/": [
     {
-    text: "DBC AI PublicChain",
-    prefix: "/en/dbc-aipublicchain/",
-    children: [
-      {
-        text: "AI container build",
-        prefix: "/dbc-aipublicchain/",
-        children: ["docker_build"],
-      },
-    ],
-  },
+      text: "DBC AI PublicChain",
+      prefix: "/en/dbc-aipublicchain/",
+      children: [
+        {
+          text: "AI container build",
+          prefix: "/dbc-aipublicchain/",
+          children: ["docker_build"],
+        },
+      ],
+    },
   ],
   "/en/staking-model/": [
     {

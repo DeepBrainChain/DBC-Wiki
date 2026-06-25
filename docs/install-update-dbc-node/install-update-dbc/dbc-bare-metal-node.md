@@ -78,9 +78,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/add
     ]
   },
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -120,9 +120,9 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
   ],
   "additional": {},
   // 由裸金属节点的 node_id 和 node_private_key 生成
-  "wallet":"ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
-  "nonce":"5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
-  "sign":"3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
+  "wallet": "ccd9a2118ba3c95cd458302601f15281edc39d72dcf11a07527893d97ac1a573",
+  "nonce": "5tYLiAF9vVP8bRqSfV9DfZnizsDNY7dNeEWrSUAY8f1LKiZqBu8zaVs",
+  "sign": "3c680ba745af6695981fe2b30aedf6861749f570d9a6fe949930caf4613c225d4a674c33ec3d4af26c20caf871dd0f3a7cb4e0c045f12c211a345781054fc282"
 }
 ```
 
@@ -152,6 +152,7 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal
 ```
 
 当请求 Body 中的 "peer_nodes_list" 数组中包含裸金属节点的 node_id 时，还可以根据添加裸金属服务器时输入的 `uuid` 查询指定的裸金属服务器。
+
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<node_id>` 查询指定 `node_id` 的裸金属服务器的相关信息。
 - 使用 `http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/<uuid>` 查询指定 `uuid` 的裸金属服务器的相关信息。
 
@@ -209,16 +210,20 @@ http://{{dbc_client_ip}}:{{dbc_client_port}}/api/v1/bare_metal/power
 相应的，使用 DeepLink 远程控制，需要获得 GPU 机器上运行的 DeepLink 软件的设备码和设备验证码(后面统称为 DeepLink 设备信息)。为此，我们增加通过 dbc 节点来查询 DeepLink 设备信息的接口。
 
 为了保证安全，建议云网吧场景中的 GPU 机器每次开机后都有不同的设备验证码，为保 dbc 的裸金属节点能够获取 DeepLink 的设备信息及其变动，需要在 dbc 的裸金属节点上启动一个局域网 TCP 服务与 DeepLink 建立连接，可在 dbc 的裸金属节点配置文件 `dbc_baremetal_node/conf/core.conf` 中增加以下配置:
+
 ```conf
 deeplink_listen_ip=0.0.0.0
 deeplink_listen_port=5003
 ```
+
 同时在 DeepLink 的配置文件 `%appdata%\DeepLink\config.ini` 中增加 dbc 的裸金属节点刚启动的局域网 TCP 服务，例如:
+
 ```ini
 [dbc]
 bare_metal_ip=192.168.1.159
 bare_metal_port=5003
 ```
+
 如此设置后，DeepLink 将在开机启动时自动连接 dbc 的裸金属节点，并同步 DeepLink 的设备信息。
 
 :::tip 注意！
@@ -231,15 +236,17 @@ dbc 的裸金属节点里面有两张表，一张表存储节点信息，key 是
 
 :::tip 注意！
 例如现在频繁出现的 "deeplink service not connected" 报错，这个报错就是当 dbc 裸金属节点通过 node_id 在第一张表查到 ip 地址，却发现这个 ip 地址在第二张表中不存在，原因可能是以下两点：
+
 1. 第一张表设置的 ip 地址跟安装了 DeepLink 的那台机器的实际 ip 不一致。
 2. 上面提到的配置不正确导致 DeepLink 跟 dbc 没有建立连接，所以在第二张表中没有这个数据。
-:::
+   :::
 
 另外，需要将裸金属节点的配置文件 `dbc_baremetal_node/conf/core.conf` 中的 `http_ip=127.0.0.1` 修改为 `http_ip=0.0.0.0`，这样设置将使得裸金属节点可以直接接受 HTTP 请求。
 
 当 GPU 机器和 dbc 的裸金属节点位于同一个网络中的时候，可以直接使用裸金属节点的 HTTP 服务来获取/设置设备信息，而且此时的请求不需要 `session_id` 和 `session_id_sign` 参数。当租用人通过客户端节点的 HTTP 服务查询设备信息时，就必需带有 `session_id` 和 `session_id_sign` 参数了。
 
 具体的使用流程如下:
+
 1. 在 GPU 机器开机后，查询 DeepLink 设备信息。
 
 - 请求方式：POST
@@ -260,9 +267,9 @@ http://{{dbc_baremetal_ip}}:{{dbc_baremetal_port}}/api/v1/deeplink
   ],
   "additional": {},
   // 由 GPU 机器的 node_id 和 node_private_key 生成
-  "wallet":"fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
-  "nonce":"3bxrsXVW2z2ELH7G9RvF7BMUQkEGkBfQhd8YD5r8somf3UdNWcEYAFa",
-  "sign":"e096764ac7462220bc9b8fa223b81cfb9a501eaea9ea355c0d561b6fe61cb729abed61e5d8488178856e198d9cde51c37e2aac8886cb5e7b674591b1eca8108f"
+  "wallet": "fcf2cd8b99958606d260ca00c5ac00c88c242bcf8eb38e7cc3f29e9719a73f39",
+  "nonce": "3bxrsXVW2z2ELH7G9RvF7BMUQkEGkBfQhd8YD5r8somf3UdNWcEYAFa",
+  "sign": "e096764ac7462220bc9b8fa223b81cfb9a501eaea9ea355c0d561b6fe61cb729abed61e5d8488178856e198d9cde51c37e2aac8886cb5e7b674591b1eca8108f"
 }
 ```
 
